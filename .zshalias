@@ -1,0 +1,20 @@
+## aliases
+alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias snapshot='sudo /usr/bin/timeshift --create --comments "alias" --tags D'
+alias vim="nvim"
+alias nano="nvim"
+
+## functions
+# do ls after every cd
+function cd
+{
+  builtin cd "$@" && ls --color=tty
+}
+
+# twich streamlink (usage 'twitch <channel>')
+function twitch
+{
+  nohup /usr/bin/streamlink -p mpv --twitch-low-latency twitch.tv/"$1" best &
+  nohup /usr/bin/chatterino -c "$1" &
+  kill -9 $PPID
+}
