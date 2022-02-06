@@ -1,0 +1,223 @@
+
+set $mod Mod4
+
+# font
+font pango:JetBrainsMono Nerd Font 12
+
+# drag floating windows with mouse
+floating_modifier $mod
+
+# terminal
+bindsym $mod+Return exec alacritty
+bindsym $mod+shift+Return exec alacritty --title scratch
+
+# ranger
+bindsym $mod+b exec alacritty -e ranger
+
+# kill focused window
+bindsym $mod+q kill
+
+# rofi menu
+bindsym $mod+d exec --no-startup-id rofi -i -show drun -icon-theme "Papirus" -show-icons
+
+# browser
+bindsym $mod+F1 exec --no-startup-id firefox
+
+# discord
+bindsym $mod+F2 exec --no-startup-id discord
+
+# spotify
+bindsym $mod+F3 exec --no-startup-id spotify
+
+# screenshot
+bindsym $mod+z exec flameshot gui
+
+# change window focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# cycle between containers
+bindsym $mod+Tab workspace back_and_forth
+
+# split in horizontal orientation
+bindsym $mod+c split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# fullscreen mode
+bindsym $mod+f fullscreen toggle
+
+# scratchpad
+bindsym $mod+shift+g move scratchpad
+bindsym $mod+g scratchpad show
+for_window [title="^scratch$"] move scratchpad
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# workspaces, TODO use icons
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+
+# switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+
+# restart i3
+bindsym $mod+Shift+r restart
+
+## MODES ##
+
+# Create Log out, Reboot, Poweroff bindings
+mode "Exit (L)ogout, (R)eboot, (P)oweroff" {
+        bindsym $mod+r exec systemctl reboot
+                bindsym $mod+l exit
+                bindsym $mod+p exec systemctl poweroff
+
+# back to normal: Enter or Escape
+                bindsym Return mode "default"
+                bindsym Escape mode "default"
+                bindsym $mod+Shift+e mode "default"
+}
+
+bindsym $mod+Shift+e mode "Exit (L)ogout, (R)eboot, (P)oweroff"
+
+# keyboard layout switcher
+mode "(U)S, (F)innish" {
+        bindsym $mod+u exec setxkbmap -layout us
+                bindsym $mod+f exec setxkbmap -layout fi
+
+# exit mode
+                bindsym Return mode "default"
+                bindsym Escape mode "default"
+                bindsym $mod+l mode "default"
+}
+
+bindsym $mod+m mode "(U)S, (F)innish"
+
+# keyboard
+exec setxkbmap -layout us
+exec setxkbmap -option caps:none
+
+# resize window
+mode "resize" {
+
+# arrow keys to resize window
+        bindsym Left resize shrink width 10 px or 10 ppt
+                bindsym Down resize grow height 10 px or 10 ppt
+                bindsym Up resize shrink height 10 px or 10 ppt
+                bindsym Right resize grow width 10 px or 10 ppt
+
+# more accurate resize bindings
+                bindsym Shift+Left resize shrink width 1 px or 1 ppt
+                bindsym Shift+Down resize grow height 1 px or 1 ppt
+                bindsym Shift+Up resize shrink height 1 px or 1 ppt
+                bindsym Shift+Right resize grow width 1 px or 1 ppt
+
+# exit resize mode
+                bindsym Return mode "default"
+                bindsym Escape mode "default"
+                bindsym $mod+r mode "default"
+}
+bindsym $mod+r mode "resize"
+
+
+## COLORS TODO ##
+
+#                       border  backgr. text    indicator
+client.focused          #4c566a #4c566a #2e3440 #4c566a
+client.unfocused        #434c5e #434c5e #888888 #434c5e
+client.focused_inactive #434c5e #434c5e #888888 #434c5e
+client.placeholder      #434c5e #434c5e #888888 #434c5e
+client.urgent           #bf616a #bf616a #d8dee9 #bf616a
+
+## i3-gaps ##
+
+gaps inner 20
+gaps outer 0
+
+## borders ##
+
+smart_borders on
+for_window [class="^.*"] border pixel 0
+
+## external apps ##
+
+exec_always --no-startup-id picom
+exec_always --no-startup-id nitrogen --restore
+exec_always --no-startup-id dunst
+
+## floating windows ##
+for_window [class="feh"] floating enable
+
+## primary status bar ## 
+bar {
+        i3bar_command i3bar -t
+	output DP-0
+	position top
+        strip_workspace_numbers yes
+        tray_output none 
+	status_command /usr/bin/bumblebee-status \
+	-m spotify cpu layout-xkb date \
+	-p spotify.layout="spotify.song" \
+        -t catppuccin-powerline
+        colors 
+        {
+                background #161320
+                separator  #666666
+                statusline #dddddd
+
+                focused_workspace  #302D41 #2e3440 #DDB6F2
+                active_workspace   #4c566a #434c5e #DDB6F2
+                inactive_workspace #4c566a #434c5e #DDB6F2
+                urgent_workspace   #4c566a #F28FAD #DDB6F2
+                binding_mode       #1E1E2E #1E1E2E #DDB6F2
+        }
+}
+
+## secondary status bar ## 
+bar {
+	output HDMI-0
+        position top
+        strip_workspace_numbers yes
+        colors 
+        {
+                background #161320
+
+                focused_workspace  #4c566a #2e3440 #DDB6F2
+                active_workspace   #4c566a #434c5e #DDB6F2
+                inactive_workspace #4c566a #434c5e #DDB6F2
+                urgent_workspace   #4c566a #F28FAD #DDB6F2
+                binding_mode       #4c566a #89DCEB #DDB6F2
+        }
+}

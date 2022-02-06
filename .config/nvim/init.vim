@@ -1,8 +1,34 @@
+"=======================================================================
+"general
+"=======================================================================
 
-" turn on syntax highlighting
 syntax on
+set ma
+set mouse=a
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set expandtab
+set autoread
+set nobackup
+set nowritebackup
+set noswapfile
+set nu
+set foldlevelstart=99
+set scrolloff=7
+set number
+set ruler
+
+
+
+"=======================================================================
+"plugins
+"=======================================================================
 
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
+
+" color scheme
+Plug 'catppuccin/nvim', {'as': 'catppuccin'}
 
 " tree shitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -10,112 +36,70 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 " better statusline
 Plug 'itchyny/lightline.vim'
 
-" color scheme
-Plug 'catppuccin/nvim', {'as': 'catppuccin'}
+" motions
+Plug 'phaazon/hop.nvim'
 
-" autoformat (todo. find alt)
-Plug 'chiel92/vim-autoformat'
-
-" language packs and syntax highlighting
+" lang packs
 Plug 'sheerun/vim-polyglot'
 
-" fancy stuff
-Plug 'preservim/nerdtree'
-Plug 'ryanoasis/vim-devicons'
-Plug 'psliwka/vim-smoothie'
-Plug 'frazrepo/vim-rainbow'
+" native LSP
+Plug 'neovim/nvim-lspconfig'
 
+" LSP autocomplete
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/vim-vsnip-integ'
+Plug 'onsails/lspkind-nvim'
+
+" Fuzzy
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+
+
+" fancy
+Plug 'frazrepo/vim-rainbow'
+Plug 'sbdchd/neoformat'
 
 call plug#end()
 
-" map space as leader
+colorscheme catppuccin
+
+highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
+set cursorline
+hi normal guibg=none ctermbg=none
+hi nontext ctermbg=none
+
+"=======================================================================
+" keybindings
+"=======================================================================
+
 let mapleader = " "
 
-" security
-set modelines=0
-
-" show line numbers
-set number
-
-" show file stats
-set ruler
-
-" blink cursor on error instead of beeping
-set visualbell
-
-" whitespace
-set wrap
-set textwidth=79
-set formatoptions=tcqrn1
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
-set expandtab
-set noshiftround
-
-" list ends here. plugins become visible to vim after this caller.
-call plug#end()
-
-" cursor motion
-set scrolloff=3
-set backspace=indent,eol,start
-set matchpairs+=<:> " use % to jump between pairs
-runtime! macros/matchit.vim
-
-" move up/down editor lines
-nnoremap j gj
-nnoremap k gk
-
-" allow hidden buffers
-set hidden
-
-" rendering
-set ttyfast
-
-" status bar
-set laststatus=2
-
-" last line
-set noshowmode
-set showcmd
-
-" searching
-nnoremap / /\v
-vnoremap / /\v
-set hlsearch
-set incsearch
-set ignorecase
-set smartcase
-set showmatch
-map <leader><space> :let @/=''<cr> " clear search
-
-" remap help key.
-inoremap <f1> <esc>:set invfullscreen<cr>a
-nnoremap <f1> :set invfullscreen<cr>
-vnoremap <f1> :set invfullscreen<cr>
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap {<CR> {<CR>}<ESC>O
+inoremap {;<CR> {<CR>};<ESC>O
 
 
-" formatting
-au bufwrite * :Autoformat
-nnoremap <leader>f :Autoformat<cr>
+"format
+nnoremap <leader>f :Neoformat
 
-" visualize tabs and newlines
-set listchars=tab:▸\ ,eol:¬
-" uncomment this to enable by default:
-" set list " to enable by default
-" or use your leader key + l to toggle on/off
-map <leader>l :set list!<cr> " toggle tabs and eol
+"=======================================================================
+" plugin configs
+"=======================================================================
+
+let $FZF_DEFAULT_OPTS='--reverse'
+let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
 
 
-" statusline
 let g:lightline = {
       \ 'colorscheme': 'catppuccin',
       \ }
 
-" color scheme
-set termguicolors
-set t_co=256
-colorscheme catppuccin
-hi normal guibg=none ctermbg=none
-hi nontext ctermbg=none
 
+lua require("jervw")
