@@ -57,10 +57,13 @@ Plug 'onsails/lspkind-nvim'
 " Fuzzy
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
+" files
+Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
 
 " fancy
 Plug 'frazrepo/vim-rainbow'
 Plug 'sbdchd/neoformat'
+Plug 'psliwka/vim-smoothie'
 
 call plug#end()
 
@@ -85,6 +88,7 @@ inoremap { {}<left>
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
 
+nnoremap <leader>v <cmd>CHADopen<cr>
 
 "format
 nnoremap <leader>f :Neoformat

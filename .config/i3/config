@@ -8,11 +8,11 @@ font pango:JetBrainsMono Nerd Font 12
 floating_modifier $mod
 
 # terminal
-bindsym $mod+Return exec alacritty
-bindsym $mod+shift+Return exec alacritty --title scratch
+bindsym $mod+Return exec --no-startup-id alacritty
+bindsym $mod+shift+Return exec --no-startup-id alacritty --title scratch
 
 # ranger
-bindsym $mod+b exec alacritty -e ranger
+bindsym $mod+b exec --no-startup-id alacritty -e ranger
 
 # kill focused window
 bindsym $mod+q kill
@@ -30,7 +30,7 @@ bindsym $mod+F2 exec --no-startup-id discord
 bindsym $mod+F3 exec --no-startup-id spotify
 
 # screenshot
-bindsym $mod+z exec flameshot gui
+bindsym $mod+z exec --no-startup-id flameshot gui
 
 # change window focus
 bindsym $mod+h focus left
@@ -126,8 +126,9 @@ mode "(U)S, (F)innish" {
 bindsym $mod+m mode "(U)S, (F)innish"
 
 # keyboard
-exec setxkbmap -layout us
-exec setxkbmap -option caps:none
+exec_always --no-startup-id setxkbmap -layout us
+exec_always --no-startup-id setxkbmap -option caps:escape
+
 
 # resize window
 mode "resize" {
@@ -176,9 +177,12 @@ for_window [class="^.*"] border pixel 0
 exec_always --no-startup-id picom
 exec_always --no-startup-id nitrogen --restore
 exec_always --no-startup-id dunst
+exec_always --no-startup-id alternating_layouts.py
+exec_always --no-startup-id nm-applet
 
 ## floating windows ##
 for_window [class="feh"] floating enable
+for_window [title="Friends List"] floating enable
 
 ## primary status bar ## 
 bar {
