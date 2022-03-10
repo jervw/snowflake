@@ -61,8 +61,7 @@ bindsym $mod+shift+g move scratchpad
 bindsym $mod+g scratchpad show
 for_window [title="^scratch$"] move scratchpad
 
-# change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
+# change container layout (tabbed, toggle split)
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
@@ -112,38 +111,25 @@ mode "Exit (L)ogout, (R)eboot, (P)oweroff" {
 
 bindsym $mod+Shift+e mode "Exit (L)ogout, (R)eboot, (P)oweroff"
 
-# keyboard layout switcher
-mode "(U)S, (F)innish" {
-        bindsym $mod+u exec setxkbmap -layout us
-                bindsym $mod+f exec setxkbmap -layout fi
-
-# exit mode
-                bindsym Return mode "default"
-                bindsym Escape mode "default"
-                bindsym $mod+l mode "default"
-}
-
-bindsym $mod+m mode "(U)S, (F)innish"
 
 # keyboard
-exec_always --no-startup-id setxkbmap -layout us
 exec_always --no-startup-id setxkbmap -option caps:escape
-
+exec_always --no-startup-id setxkbmap -model pc104 -layout fi,us -variant , -option grp:alt_space_toggle
 
 # resize window
 mode "resize" {
 
 # arrow keys to resize window
-        bindsym Left resize shrink width 10 px or 10 ppt
-                bindsym Down resize grow height 10 px or 10 ppt
-                bindsym Up resize shrink height 10 px or 10 ppt
-                bindsym Right resize grow width 10 px or 10 ppt
+                bindsym h resize shrink width 10 px or 10 ppt
+                bindsym j resize grow height 10 px or 10 ppt
+                bindsym k resize shrink height 10 px or 10 ppt
+                bindsym l resize grow width 10 px or 10 ppt
 
 # more accurate resize bindings
-                bindsym Shift+Left resize shrink width 1 px or 1 ppt
-                bindsym Shift+Down resize grow height 1 px or 1 ppt
-                bindsym Shift+Up resize shrink height 1 px or 1 ppt
-                bindsym Shift+Right resize grow width 1 px or 1 ppt
+                bindsym Shift+h resize shrink width 1 px or 1 ppt
+                bindsym Shift+j resize grow height 1 px or 1 ppt
+                bindsym Shift+k resize shrink height 1 px or 1 ppt
+                bindsym Shift+l resize grow width 1 px or 1 ppt
 
 # exit resize mode
                 bindsym Return mode "default"
@@ -156,16 +142,17 @@ bindsym $mod+r mode "resize"
 ## COLORS TODO ##
 
 #                       border  backgr. text    indicator
-client.focused          #4c566a #4c566a #2e3440 #4c566a
-client.unfocused        #434c5e #434c5e #888888 #434c5e
-client.focused_inactive #434c5e #434c5e #888888 #434c5e
-client.placeholder      #434c5e #434c5e #888888 #434c5e
-client.urgent           #bf616a #bf616a #d8dee9 #bf616a
+client.focused          #DDB6F2 #DDB6F2 #2e3440 #DDB6F2
+client.unfocused        #1A1826 #1A1826 #988BA2 #1A1826
+client.focused_inactive #1A1826 #1A1826 #988BA2 #1A1826
+client.placeholder      #1A1826 #1A1826 #988BA2 #1A1826
+client.urgent           #F28FAD #F28FAD #F28FAD #F28FAD
 
 ## i3-gaps ##
 
-gaps inner 20
-gaps outer 0
+gaps inner 25
+gaps top 20
+gaps outer -5
 
 ## borders ##
 
@@ -174,54 +161,16 @@ for_window [class="^.*"] border pixel 0
 
 ## external apps ##
 
-exec_always --no-startup-id picom
+exec_always --no-startup-id picom &
 exec_always --no-startup-id nitrogen --restore
 exec_always --no-startup-id dunst
 exec_always --no-startup-id alternating_layouts.py
 exec_always --no-startup-id nm-applet
+exec_always --no-startup-id /home/jervw/.config/polybar/launch.sh
+exec --no-startup-id stalonetray
+
 
 ## floating windows ##
 for_window [class="feh"] floating enable
 for_window [title="Friends List"] floating enable
-
-## primary status bar ## 
-bar {
-        i3bar_command i3bar -t
-	output DP-0
-	position top
-        strip_workspace_numbers yes
-        tray_output none 
-	status_command /usr/bin/bumblebee-status \
-	-m spotify cpu layout-xkb date \
-	-p spotify.layout="spotify.song" \
-        -t catppuccin-powerline
-        colors 
-        {
-                background #161320
-                separator  #666666
-                statusline #dddddd
-
-                focused_workspace  #302D41 #2e3440 #DDB6F2
-                active_workspace   #4c566a #434c5e #DDB6F2
-                inactive_workspace #4c566a #434c5e #DDB6F2
-                urgent_workspace   #4c566a #F28FAD #DDB6F2
-                binding_mode       #1E1E2E #1E1E2E #DDB6F2
-        }
-}
-
-## secondary status bar ## 
-bar {
-	output HDMI-0
-        position top
-        strip_workspace_numbers yes
-        colors 
-        {
-                background #161320
-
-                focused_workspace  #4c566a #2e3440 #DDB6F2
-                active_workspace   #4c566a #434c5e #DDB6F2
-                inactive_workspace #4c566a #434c5e #DDB6F2
-                urgent_workspace   #4c566a #F28FAD #DDB6F2
-                binding_mode       #4c566a #89DCEB #DDB6F2
-        }
-}
+for_window [class="zoom"] floating enable
