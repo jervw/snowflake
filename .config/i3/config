@@ -164,4 +164,3 @@ exec --no-startup-id stalonetray
 ## floating windows ##
 for_window [class="feh"] floating enable
 for_window [title="Friends List"] floating enable
-for_window [class="zoom"] floating enableu

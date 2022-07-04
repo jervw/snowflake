@@ -74,6 +74,11 @@ _G.packer_plugins = {
     path = "/home/jervw/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["barbar.nvim"] = {
+    loaded = true,
+    path = "/home/jervw/.local/share/nvim/site/pack/packer/start/barbar.nvim",
+    url = "https://github.com/romgrk/barbar.nvim"
+  },
   catppuccin = {
     loaded = true,
     path = "/home/jervw/.local/share/nvim/site/pack/packer/start/catppuccin",
@@ -109,11 +114,6 @@ _G.packer_plugins = {
     path = "/home/jervw/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
-  ["impatient.nvim"] = {
-    loaded = true,
-    path = "/home/jervw/.local/share/nvim/site/pack/packer/start/impatient.nvim",
-    url = "https://github.com/lewis6991/impatient.nvim"
-  },
   ["lsp-zero.nvim"] = {
     loaded = true,
     path = "/home/jervw/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
@@ -123,6 +123,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/jervw/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
+  neoformat = {
+    loaded = true,
+    path = "/home/jervw/.local/share/nvim/site/pack/packer/start/neoformat",
+    url = "https://github.com/sbdchd/neoformat"
   },
   ["nvim-autopairs"] = {
     loaded = true,
@@ -143,6 +148,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/jervw/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-scrollbar"] = {
+    loaded = true,
+    path = "/home/jervw/.local/share/nvim/site/pack/packer/start/nvim-scrollbar",
+    url = "https://github.com/petertriho/nvim-scrollbar"
   },
   ["nvim-tree.lua"] = {
     loaded = true,
@@ -169,6 +179,11 @@ _G.packer_plugins = {
     path = "/home/jervw/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
+  ["presence.nvim"] = {
+    loaded = true,
+    path = "/home/jervw/.local/share/nvim/site/pack/packer/start/presence.nvim",
+    url = "https://github.com/andweeb/presence.nvim"
+  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/jervw/.local/share/nvim/site/pack/packer/start/telescope.nvim",
@@ -178,11 +193,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/jervw/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
-  },
-  ["vim-startify"] = {
-    loaded = true,
-    path = "/home/jervw/.local/share/nvim/site/pack/packer/start/vim-startify",
-    url = "https://github.com/mhinz/vim-startify"
   }
 }
 

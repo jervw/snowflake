@@ -1,4 +1,4 @@
--- [[ plug.lua ]]
+-- [[ packer.lua ]]
 
 vim.cmd [[packadd packer.nvim]]
 
@@ -10,8 +10,7 @@ return require('packer').startup(function(use)
   use 'lewis6991/impatient.nvim'
 
   -- Code completion
-  use {
-    'VonHeikemen/lsp-zero.nvim',
+  use { 'VonHeikemen/lsp-zero.nvim',
     requires = {
       -- LSP Support
       { 'neovim/nvim-lspconfig' },
@@ -36,14 +35,23 @@ return require('packer').startup(function(use)
   use { 'kyazdani42/nvim-tree.lua', requires = 'kyazdani42/nvim-web-devicons' }
   -- Fuzzy finder
   use { 'nvim-telescope/telescope.nvim', requires = { { 'nvim-lua/plenary.nvim' } } }
-  -- Start screen
-  use 'mhinz/vim-startify'
   -- Auto close brackets
   use 'windwp/nvim-autopairs'
   -- Git integration
-  use { 'tpope/vim-fugitive' }
+  use 'tpope/vim-fugitive'
   -- Statusline
   use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } }
   -- Colorscheme
   use { "catppuccin/nvim", as = "catppuccin" }
+  -- Tabline
+  use {'romgrk/barbar.nvim', requires = {'kyazdani42/nvim-web-devicons'}}
+  -- Scrollbar
+  use "petertriho/nvim-scrollbar"
+  -- Discord presence
+  use 'andweeb/presence.nvim'
+  -- Formatting
+  use 'sbdchd/neoformat'
 end)
+
+
+

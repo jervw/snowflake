@@ -1,6 +1,22 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR --export EXA_LA_OPTIONS:\x2d\x2dbinary\x1e\x2d\x2dlinks\x1e\x2d\x2dinode\x1e\x2d\x2dblocks
+SETUVAR --export EXA_LD_OPTIONS:\x2d\x2dlist\x2ddirs
+SETUVAR --export EXA_LE_OPTIONS:\x2d\x2dextended
+SETUVAR --export EXA_LG_OPTIONS:\x2d\x2dgit
+SETUVAR --export EXA_LT_OPTIONS:\x2d\x2dtree\x1e\x2d\x2dlevel
+SETUVAR --export EXA_STANDARD_OPTIONS:\x2d\x2dlong\x1e\x2d\x2dall\x1e\x2d\x2dgroup\x1e\x2d\x2dheader
+SETUVAR ZO_CMD:zo
+SETUVAR Z_CMD:z
+SETUVAR Z_DATA:/home/jervw/\x2elocal/share/z/data
+SETUVAR Z_DATA_DIR:/home/jervw/\x2elocal/share/z
+SETUVAR Z_EXCLUDE:\x5e/home/jervw\x24
 SETUVAR __fish_initialized:3400
+SETUVAR _fisher_gazorby_2F_fish_2D_exa_files:/home/jervw/\x2econfig/fish/functions/exa_git\x2efish\x1e/home/jervw/\x2econfig/fish/conf\x2ed/fish\x2dexa\x2efish
+SETUVAR _fisher_jethrokuan_2F_z_files:/home/jervw/\x2econfig/fish/functions/__z\x2efish\x1e/home/jervw/\x2econfig/fish/functions/__z_add\x2efish\x1e/home/jervw/\x2econfig/fish/functions/__z_clean\x2efish\x1e/home/jervw/\x2econfig/fish/functions/__z_complete\x2efish\x1e/home/jervw/\x2econfig/fish/conf\x2ed/z\x2efish
+SETUVAR _fisher_jorgebucaran_2F_fisher_files:/home/jervw/\x2econfig/fish/functions/fisher\x2efish\x1e/home/jervw/\x2econfig/fish/completions/fisher\x2efish
+SETUVAR _fisher_joseluisq_2F_gitnow_40_32_2E_31_30_2E_30__files:/home/jervw/\x2econfig/fish/functions/__gitnow_config_file\x2efish\x1e/home/jervw/\x2econfig/fish/functions/__gitnow_functions\x2efish\x1e/home/jervw/\x2econfig/fish/functions/__gitnow_manual\x2efish\x1e/home/jervw/\x2econfig/fish/conf\x2ed/gitnow\x2efish\x1e/home/jervw/\x2econfig/fish/conf\x2ed/gitnow_config\x2efish\x1e/home/jervw/\x2econfig/fish/completions/__gitnow_completions\x2efish
+SETUVAR _fisher_plugins:jorgebucaran/fisher\x1egazorby/fish\x2dexa\x1ejoseluisq/gitnow\x402\x2e10\x2e0\x1ejethrokuan/z
 SETUVAR fish_color_autosuggestion:555\x1ebrblack
 SETUVAR fish_color_cancel:\x2dr
 SETUVAR fish_color_command:blue
@@ -30,3 +46,4 @@ SETUVAR fish_pager_color_description:B3A06D\x1eyellow\x1e\x2di
 SETUVAR fish_pager_color_prefix:cyan\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
 SETUVAR fish_pager_color_selected_background:\x2dr
+SETUVAR fish_user_paths:/home/jervw/\x2espicetify\x1e/home/jervw/\x2ecargo/bin

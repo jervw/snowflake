@@ -21,3 +21,4 @@ alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias snapshot='sudo /usr/bin/timeshift --create --comments "alias" --tags D'
 alias vim="nvim"
 alias nano="nvim"
+alias cat="bat"
