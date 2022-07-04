@@ -13,6 +13,12 @@ shell:
 env:
   TERM: xterm-256color
 
+key_bindings:
+  - { key: H, mods: Alt, chars: "\x1bh" }
+  - { key: L, mods: Alt, chars: "\x1bl" }
+  - { key: H, mods: Alt|Shift, chars: "\x1bH" }
+  - { key: L, mods: Alt|Shift, chars: "\x1bL" }
+
 # Font
 font:
   normal:
