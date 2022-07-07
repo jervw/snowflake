@@ -32,5 +32,10 @@ map('n', '<A-0>', ':BufferLast<CR>', opts)
 map('n', '<A-w>', ':BufferClose<CR>', opts)
 map('n', '<A-n>', ':tabnew<CR>', opts)
 
+-- Telescope
+map('n', '<A-f>', ':Telescope find_files<CR>', opts)
+map('n', '<A-g>', ':Telescope live_grep<CR>', opts)
+map('n', '<A-b>', ':Telescope buffers<CR>', opts)
+
 -- Formatting
 map('n', '<Space>f', ':Neoformat<CR>', opts)
