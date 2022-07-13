@@ -1,5 +1,6 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR --export BUN_INSTALL:/home/jervw/\x2ebun
 SETUVAR --export EXA_LA_OPTIONS:\x2d\x2dbinary\x1e\x2d\x2dlinks\x1e\x2d\x2dinode\x1e\x2d\x2dblocks
 SETUVAR --export EXA_LD_OPTIONS:\x2d\x2dlist\x2ddirs
 SETUVAR --export EXA_LE_OPTIONS:\x2d\x2dextended

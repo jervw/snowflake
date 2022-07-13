@@ -16,9 +16,21 @@ end
 
 thefuck --alias | source
 
+
+function twitch
+    kill -9 $(ps -o ppid -p $fish_pid)
+    nohup streamlink -p mpv --quiet --twitch-low-latency twitch.tv/"$argv" best &
+    nohup chatterino -c "$argv" &> /dev/null 
+end
+
 # aliases
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias snapshot='sudo /usr/bin/timeshift --create --comments "alias" --tags D'
 alias vim="nvim"
 alias nano="nvim"
 alias cat="bat"
+
+# Bun
+set -Ux BUN_INSTALL "/home/jervw/.bun"
+set -px --path PATH "/home/jervw/.bun/bin"
+
