@@ -16,13 +16,16 @@ opt.clipboard = 'unnamedplus'
 opt.shell = '/bin/bash'
 
 cmd "set noshowmode"
+cmd "abb WQ wq"
+cmd "abb Wq wq"
+
 
 -- Theme
 g.t_co = 256
 g.background = "dark"
 opt.syntax = "ON"
 opt.termguicolors = true
-cmd('colorscheme catppuccin')
+cmd 'colorscheme catppuccin'
 
 -- Update the packer path
 local packer_path = vim.fn.stdpath('config') .. '/site'
