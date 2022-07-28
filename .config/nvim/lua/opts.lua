@@ -23,6 +23,8 @@ cmd "abb Wq wq"
 -- Theme
 g.t_co = 256
 g.background = "dark"
+g.catppuccin_flavour = "mocha"
+
 opt.syntax = "ON"
 opt.termguicolors = true
 cmd 'colorscheme catppuccin'

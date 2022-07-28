@@ -4,9 +4,11 @@
 local api = vim.api
 
 require('nvim-tree').setup()
+require("catppuccin").setup()
 require('lualine').setup {options = {theme = 'catppuccin'}}
 require('nvim-autopairs').setup()
 require("scrollbar").setup()
+
 
 -- Tabline configuration
 api.nvim_create_autocmd('BufWinEnter', {
