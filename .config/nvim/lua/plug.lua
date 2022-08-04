@@ -47,6 +47,8 @@ return require('packer').startup(function(use)
   use {'romgrk/barbar.nvim', requires = {'kyazdani42/nvim-web-devicons'}}
   -- Scrollbar
   use "petertriho/nvim-scrollbar"
+  -- Smoothscroll
+  use 'karb94/neoscroll.nvim'
   -- Formatting
   use 'sbdchd/neoformat'
 end)
