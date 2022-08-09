@@ -14,8 +14,12 @@ end
     end
 end
 
-thefuck --alias | source
-
+#k# Start X at login
+#if status is-login
+#    if test -z "$DISPLAY" -a "$XDG_VTNR" = 1
+#        exec startx -- -keeptty
+#    end
+#end
 
 function twitch
     kill -9 $(ps -o ppid -p $fish_pid)
@@ -25,12 +29,7 @@ end
 
 # aliases
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-alias snapshot='sudo /usr/bin/timeshift --create --comments "alias" --tags D'
 alias vim="nvim"
 alias nano="nvim"
 alias cat="bat"
-
-# Bun
-set -Ux BUN_INSTALL "/home/jervw/.bun"
-set -px --path PATH "/home/jervw/.bun/bin"
 

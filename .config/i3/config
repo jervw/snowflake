@@ -142,7 +142,7 @@ client.urgent           #F28FAD #F28FAD #F28FAD #F28FAD
 ## i3-gaps ##
 
 gaps inner 30
-gaps top 50
+gaps top -10
 
 ## borders ##
 
@@ -152,7 +152,7 @@ for_window [class="^.*"] border pixel 0
 ## external apps ##
 
 exec_always --no-startup-id setxkbmap -option ctrl:nocaps
-exec_always --no-startup-id picom &
+exec_always --no-startup-id picom --experimental-backends &
 exec_always --no-startup-id nitrogen --restore
 exec_always --no-startup-id dunst
 exec_always --no-startup-id alternating_layouts.py
