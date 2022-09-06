@@ -51,6 +51,17 @@ return require('packer').startup(function(use)
   use 'karb94/neoscroll.nvim'
   -- Formatting
   use 'sbdchd/neoformat'
+
+  use 'jeffkreeftmeijer/vim-numbertoggle'
+
+  use {
+    'saecki/crates.nvim',
+    tag = 'v0.2.1',
+    requires = { 'nvim-lua/plenary.nvim' },
+    config = function()
+        require('crates').setup()
+    end,
+}
 end)
 
 

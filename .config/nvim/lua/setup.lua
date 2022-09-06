@@ -11,7 +11,6 @@ require("scrollbar").setup()
 require('neoscroll').setup()
 
 
-
 -- Tabline configuration
 api.nvim_create_autocmd('BufWinEnter', {
 	pattern = '*',
