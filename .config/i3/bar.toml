@@ -1,0 +1,26 @@
+theme = "space-villain"
+icons = "awesome"
+
+[[block]]
+block = "custom"
+command = "python ~/.config/i3/spotify.py -f ' {artist} - {song}'"
+interval = 20
+
+[[block]]
+block = "cpu"
+
+[[block]]
+block = "memory"
+display_type = "memory"
+format_mem = "{mem_used;M}/{mem_total;M:1} ({mem_used_percents:1})"
+format_swap = "{swap_used;M}/{swap_total;M}({swap_used_percents})"
+
+[[block]]
+block = "custom"
+command = "sed 's/  //' <(curl 'https://wttr.in/?format=1' -s)"
+interval = 600
+
+[[block]]
+block = "time"
+interval = 5
+format = "%a %-d. %R"

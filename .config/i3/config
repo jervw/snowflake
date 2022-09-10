@@ -111,10 +111,10 @@ exec_always --no-startup-id setxkbmap -model pc104 -layout fi,us -variant , -opt
 mode "resize" {
 
 # arrow keys to resize window
-                bindsym h resize shrink width 10 px or 10 ppt
-                bindsym j resize grow height 10 px or 10 ppt
-                bindsym k resize shrink height 10 px or 10 ppt
-                bindsym l resize grow width 10 px or 10 ppt
+                bindsym h resize shrink width 5 px or 5 ppt
+                bindsym j resize grow height 5 px or 5 ppt
+                bindsym k resize shrink height 5 px or 5 ppt
+                bindsym l resize grow width 5 px or 5 ppt
 
 # more accurate resize bindings
                 bindsym Shift+h resize shrink width 1 px or 1 ppt
@@ -140,9 +140,8 @@ client.placeholder      #1A1826 #1A1826 #988BA2 #1A1826
 client.urgent           #F28FAD #F28FAD #F28FAD #F28FAD
 
 ## i3-gaps ##
-
-gaps inner 30
-gaps top -10
+gaps inner 20
+smart_gaps on
 
 ## borders ##
 
@@ -157,11 +156,28 @@ exec_always --no-startup-id nitrogen --restore
 exec_always --no-startup-id dunst
 exec_always --no-startup-id alternating_layouts.py
 exec_always --no-startup-id nm-applet
-exec_always --no-startup-id /home/jervw/.config/polybar/launch.sh
-exec_always --no-startup-id redshift -l 60.205238:24.654079
+##exec_always --no-startup-id /home/jervw/.config/polybar/launch.sh
+exec --no-startup-id redshift -l 60.205238:24.654079
 exec --no-startup-id stalonetray
 
 
 ## floating windows ##
 for_window [class="feh"] floating enable
 for_window [title="Friends List"] floating enable
+
+bar {
+    font pango:JetBrainsMono Nerd Font 12
+    position bottom
+    status_command /sbin/i3status-rs ~/.config/i3/bar.toml
+    colors {
+        separator #11111b
+        background #1e1e2e
+        statusline #1e1e2e
+
+        focused_workspace #74c7ec #74c7ec #ffffff
+        active_workspace #333333 #333333 #ffffff
+        inactive_workspace #333333 #333333 #888888
+        urgent_workspace #2f343a #900000 #ffffff
+    }
+}
+

@@ -31,5 +31,12 @@ end
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias vim="nvim"
 alias nano="nvim"
+alias ocat="/usr/bin/cat"
 alias cat="bat"
+alias code="/sbin/vscodium"
 
+export FrameworkPathOverride=/lib/mono/4.5
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
