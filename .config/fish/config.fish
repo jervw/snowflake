@@ -6,11 +6,19 @@ end
   #intentionally left blank
  end
  
+ function doas
+    if test "$argv" = !!
+        eval command doas $history[1]
+    else
+        command doas $argv
+    end
+end
+
  function sudo
     if test "$argv" = !!
-        eval command sudo $history[1]
+        eval command doas $history[1]
     else
-        command sudo $argv
+        command doas $argv
     end
 end
 
@@ -23,7 +31,7 @@ end
 
 function twitch
     kill -9 $(ps -o ppid -p $fish_pid)
-    nohup streamlink -p mpv --quiet --twitch-low-latency twitch.tv/"$argv" best &
+    nohup streamlink -p mpv --twitch-api-header --quiet --twitch-low-latency twitch.tv/"$argv" best &
     nohup chatterino -c "$argv" &> /dev/null 
 end
 
@@ -33,10 +41,6 @@ alias vim="nvim"
 alias nano="nvim"
 alias ocat="/usr/bin/cat"
 alias cat="bat"
-alias code="/sbin/vscodium"
+alias whereami="curl ifconfig.co/country"
 
-export FrameworkPathOverride=/lib/mono/4.5
 
-# bun
-set --export BUN_INSTALL "$HOME/.bun"
-set --export PATH $BUN_INSTALL/bin $PATH

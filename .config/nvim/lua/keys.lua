@@ -7,10 +7,8 @@ local opts = { noremap = true, silent = true }
 -- Leader key
 vim.g.mapleader = " "
 
--- Toggle nvim-tree
-map('n', 'n', ':NvimTreeToggle<CR>', {})
+map('n', 'n', ':tabe ', {})
 
--- Tabline
 map('n', '<A-h>', ':BufferPrevious<CR>', opts)
 map('n', '<A-l>', ':BufferNext<CR>', opts)
 map('n', '<A-S-h>', ':BufferMovePrevious<CR>', opts)

@@ -2,9 +2,8 @@ theme = "space-villain"
 icons = "awesome"
 
 [[block]]
-block = "custom"
-command = "python ~/.config/i3/spotify.py -f ' {artist} - {song}'"
-interval = 20
+block = "music"
+max_width = 25
 
 [[block]]
 block = "cpu"

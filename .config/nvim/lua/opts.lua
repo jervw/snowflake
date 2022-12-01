@@ -9,6 +9,7 @@ opt.shiftwidth = 4
 opt.autoindent = true
 opt.smartindent = true
 opt.expandtab = true
+opt.number = true
 opt.nu = true
 opt.relativenumber = true
 opt.mouse = 'a'

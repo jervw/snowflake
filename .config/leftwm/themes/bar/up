@@ -12,6 +12,7 @@ ln -s $SCRIPTPATH/down /tmp/leftwm-theme-down
 # disable caps lock
 setxkbmap -option ctrl:nocaps &
 
+setxkbmap -model pc105 -layout us,fi -variant , -option grp:alt_space_toggle
 # picom --experimental-backends &
 dunst &
 redshift -l 60.205238:24.654079 &

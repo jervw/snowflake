@@ -11,15 +11,13 @@ floating_modifier $mod
 bindsym $mod+Return exec --no-startup-id alacritty
 bindsym $mod+shift+Return exec --no-startup-id alacritty --title scratch
 
-# ranger
-bindsym $mod+b exec --no-startup-id firefox
+bindsym $mod+b exec --no-startup-id librewolf
 
 # kill focused window
 bindsym $mod+q kill
 
 # rofi menu
 bindsym $mod+d exec --no-startup-id rofi -i -show drun -icon-theme "Papirus" -show-icons
-
 # screenshot
 bindsym $mod+z exec --no-startup-id flameshot gui
 
@@ -37,12 +35,6 @@ bindsym $mod+Shift+l move right
 
 # cycle between containers
 bindsym $mod+Tab workspace back_and_forth
-
-# split in horizontal orientation
-bindsym $mod+c split h
-
-# split in vertical orientation
-bindsym $mod+v split v
 
 # fullscreen mode
 bindsym $mod+f fullscreen toggle
@@ -62,7 +54,7 @@ bindsym $mod+Shift+space floating toggle
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
 
-# workspaces, TODO use icons
+# workspaces
 set $ws1 "1"
 set $ws2 "2"
 set $ws3 "3"
@@ -154,11 +146,8 @@ exec_always --no-startup-id setxkbmap -option ctrl:nocaps
 exec_always --no-startup-id picom --experimental-backends &
 exec_always --no-startup-id nitrogen --restore
 exec_always --no-startup-id dunst
-exec_always --no-startup-id alternating_layouts.py
-exec_always --no-startup-id nm-applet
-##exec_always --no-startup-id /home/jervw/.config/polybar/launch.sh
+exec_always --no-startup-id i3-autolayout autolayout
 exec --no-startup-id redshift -l 60.205238:24.654079
-exec --no-startup-id stalonetray
 
 
 ## floating windows ##

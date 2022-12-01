@@ -21,17 +21,12 @@
     ],
     max_window_width: None,
     layouts: [
-        MainAndVertStack,
-        MainAndHorizontalStack,
-        MainAndDeck,
+        Fibonacci,
         GridHorizontal,
         EvenHorizontal,
         EvenVertical,
-        Fibonacci,
         LeftMain,
-        CenterMain,
         CenterMainBalanced,
-        CenterMainFluid,
         Monocle,
         RightWiderLeftStack,
         LeftWiderRightStack,
@@ -49,8 +44,6 @@
     focus_new_windows: true,
     sloppy_mouse_follows_focus: true,
     keybind: [
-        (command: Execute, value: "rofi -i -show drun", modifier: ["modkey"], key: "d"),
-        (command: Execute, value: "alacritty", modifier: ["modkey"], key: "Return"),
         (command: CloseWindow, value: "", modifier: ["modkey"], key: "q"),
         (command: SoftReload, value: "", modifier: ["modkey", "Shift"], key: "r"),
         (command: Execute, value: "loginctl kill-session $XDG_SESSION_ID", modifier: ["modkey", "Shift"], key: "e"),
@@ -76,6 +69,20 @@
         (command: MoveToTag, value: "5", modifier: ["modkey", "Shift"], key: "5"),
         (command: ToggleFloating, value: "", modifier: ["modkey", "Shift"], key: "space"),
         (command: ToggleFullScreen, value: "", modifier: ["modkey"], key: "f"),
+        (command: IncreaseMainWidth, value: "5", modifier: ["modkey", "Shift"], key: "bracketright"),
+        (command: DecreaseMainWidth, value: "5", modifier: ["modkey", "Shift"], key: "bracketleft"),
+
+        // applications
+        (command: Execute, value: "rofi -i -show drun", modifier: ["modkey"], key: "d"),
+        (command: Execute, value: "alacritty", modifier: ["modkey"], key: "Return"),
+        (command: Execute, value: "flameshot gui", modifier: ["modkey"], key: "z"),
+        (command: Execute, value: "librewolf", modifier: ["modkey"], key: "b"),
+
+        // media controls
+        (command: Execute, value: "playerctl play-pause", modifier: ["modkey"], key: "slash"),
+        (command: Execute, value: "playerctl previous", modifier: ["modkey"], key: "comma"),
+        (command: Execute, value: "playerctl next", modifier: ["modkey"], key: "period"),
+
     ],
     state_path: None,
 )
