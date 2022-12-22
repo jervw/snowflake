@@ -1,7 +1,17 @@
 -- [[ plug.lua ]]
--- Plugin specific setup 
+-- Plugin specific setup
 require("catppuccin").setup()
-require('lualine').setup {options = {theme = 'catppuccin'}}
-require('nvim-autopairs').setup()
-require("scrollbar").setup()
-require('neoscroll').setup()
+require("lualine").setup({ options = { theme = "catppuccin" } })
+require("nvim-autopairs").setup()
+require("neoscroll").setup()
+require("nvim-tree").setup()
+
+-- Treesitter configuration
+require("nvim-treesitter.configs").setup({
+	highlight = {},
+	rainbow = {
+		enable = true,
+		extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
+		max_file_lines = nil, -- Do not enable for files with more than n lines, int
+	},
+})
