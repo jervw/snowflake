@@ -4,15 +4,18 @@
 local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 
+-- Replace ; with : to enter command mode without pressing shift
+map("n", ";", ":", {})
+
 -- Leader key
 vim.g.mapleader = " "
 
 map("n", "n", ":NvimTreeToggle<CR>", {})
 
-map("n", "<A-h>", ":BufferPrevious<CR>", opts)
-map("n", "<A-l>", ":BufferNext<CR>", opts)
-map("n", "<A-S-h>", ":BufferMovePrevious<CR>", opts)
-map("n", "<A-S-l>", ":BufferMoveNext<CR>", opts)
+map("n", "<A-,>", ":BufferPrevious<CR>", opts)
+map("n", "<A-.>", ":BufferNext<CR>", opts)
+map("n", "<A-S-,>", ":BufferMovePrevious<CR>", opts)
+map("n", "<A-S-.>", ":BufferMoveNext<CR>", opts)
 
 -- Goto buffer in position...
 map("n", "<A-1>", ":BufferGoto 1<CR>", opts)

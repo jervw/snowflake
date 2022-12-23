@@ -1,23 +1,25 @@
-theme = "space-villain"
+[theme]
+theme = "nord-dark"
+
+[icons]
 icons = "awesome"
 
 [[block]]
 block = "music"
-max_width = 25
 
 [[block]]
 block = "cpu"
+interval = 1
+format = " $icon $utilization"
+format_alt = " $icon $frequency"
 
 [[block]]
 block = "memory"
-display_type = "memory"
-format_mem = "{mem_used;M}/{mem_total;M:1} ({mem_used_percents:1})"
-format_swap = "{swap_used;M}/{swap_total;M}({swap_used_percents})"
-
-[[block]]
-block = "custom"
-command = "sed 's/  //' <(curl 'https://wttr.in/?format=1' -s)"
-interval = 600
+format = " $icon $mem_used_percents.eng(1) "
+format_alt = " $icon_swap $swap_free.eng(3,B,M)/$swap_total.eng(3,B,M)($swap_used_percents.eng(2)) "
+interval = 30
+warning_mem = 70
+critical_mem = 90
 
 [[block]]
 block = "time"

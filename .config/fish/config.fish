@@ -41,6 +41,6 @@ alias vim="nvim"
 alias nano="nvim"
 alias ocat="/usr/bin/cat"
 alias cat="bat"
-alias whereami="curl ifconfig.co/country"
+alias whereami="curl ipinfo.io/city"
 
 

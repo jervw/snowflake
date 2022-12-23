@@ -31,26 +31,9 @@ return require("packer").startup(function(use)
 		},
 	})
 	-- Copilot
-	use({
-		"zbirenbaum/copilot.lua",
-		event = "VimEnter",
-		config = function()
-			vim.defer_fn(function()
-				require("copilot").setup()
-			end, 100)
-		end,
-	})
-
+	use("zbirenbaum/copilot.lua")
 	-- Rust crates
-	use({
-		"saecki/crates.nvim",
-		tag = "v0.2.1",
-		requires = { "nvim-lua/plenary.nvim" },
-		config = function()
-			require("crates").setup()
-		end,
-	})
-
+	use({ "saecki/crates.nvim", requires = { "nvim-lua/plenary.nvim" } })
 	-- Tree shitter
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
 	-- Auto close brackets

@@ -1,5 +1,10 @@
+## I3wm config by Jervw ##
 
+# alt as modkey
 set $mod Mod4
+
+# terminal emulator
+set $term kitty
 
 # font
 font pango:JetBrainsMono Nerd Font 12
@@ -8,16 +13,18 @@ font pango:JetBrainsMono Nerd Font 12
 floating_modifier $mod
 
 # terminal
-bindsym $mod+Return exec --no-startup-id alacritty
-bindsym $mod+shift+Return exec --no-startup-id alacritty --title scratch
+bindsym $mod+Return exec --no-startup-id $term
+bindsym $mod+shift+Return exec --no-startup-id $term --title scratch
 
-bindsym $mod+b exec --no-startup-id librewolf
+# browser
+bindsym $mod+b exec --no-startup-id chromium
 
 # kill focused window
 bindsym $mod+q kill
 
 # rofi menu
 bindsym $mod+d exec --no-startup-id rofi -i -show drun -icon-theme "Papirus" -show-icons
+
 # screenshot
 bindsym $mod+z exec --no-startup-id flameshot gui
 
@@ -84,7 +91,7 @@ bindsym $mod+Shift+r restart
 mode "Exit (L)ogout, (R)eboot, (P)oweroff" {
         bindsym $mod+r exec systemctl reboot
                 bindsym $mod+l exit
-                bindsym $mod+p exec systemctl poweroff
+                bindsym $mod+p exec poweroff
 
 # back to normal: Enter or Escape
                 bindsym Return mode "default"
@@ -103,16 +110,16 @@ exec_always --no-startup-id setxkbmap -model pc104 -layout fi,us -variant , -opt
 mode "resize" {
 
 # arrow keys to resize window
-                bindsym h resize shrink width 5 px or 5 ppt
-                bindsym j resize grow height 5 px or 5 ppt
-                bindsym k resize shrink height 5 px or 5 ppt
-                bindsym l resize grow width 5 px or 5 ppt
+                bindsym h resize grow width 5 px or 5 ppt
+                bindsym j resize shrink height 5 px or 5 ppt
+                bindsym k resize grow height 5 px or 5 ppt
+                bindsym l resize shrink width 5 px or 5 ppt
 
 # more accurate resize bindings
-                bindsym Shift+h resize shrink width 1 px or 1 ppt
-                bindsym Shift+j resize grow height 1 px or 1 ppt
-                bindsym Shift+k resize shrink height 1 px or 1 ppt
-                bindsym Shift+l resize grow width 1 px or 1 ppt
+                bindsym Shift+h resize grow width 1 px or 1 ppt
+                bindsym Shift+j resize shrink height 1 px or 1 ppt
+                bindsym Shift+k resize grow height 1 px or 1 ppt
+                bindsym Shift+l resize shrink width 1 px or 1 ppt
 
 # exit resize mode
                 bindsym Return mode "default"
@@ -142,13 +149,11 @@ for_window [class="^.*"] border pixel 0
 
 ## external apps ##
 
-exec_always --no-startup-id setxkbmap -option ctrl:nocaps
-exec_always --no-startup-id picom --experimental-backends &
-exec_always --no-startup-id nitrogen --restore
+exec_always --no-startup-id feh --bg-fill ~/.wallpaper/* -z --bg-fill ~/.wallpaper/portrait/* -z
 exec_always --no-startup-id dunst
 exec_always --no-startup-id i3-autolayout autolayout
+exec --no-startup-id nm-applet
 exec --no-startup-id redshift -l 60.205238:24.654079
-
 
 ## floating windows ##
 for_window [class="feh"] floating enable
@@ -157,7 +162,7 @@ for_window [title="Friends List"] floating enable
 bar {
     font pango:JetBrainsMono Nerd Font 12
     position bottom
-    status_command /sbin/i3status-rs ~/.config/i3/bar.toml
+    status_command /usr/bin/i3status-rs ~/.config/i3/bar.toml
     colors {
         separator #11111b
         background #1e1e2e

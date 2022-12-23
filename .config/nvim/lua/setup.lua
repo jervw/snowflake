@@ -6,12 +6,29 @@ require("nvim-autopairs").setup()
 require("neoscroll").setup()
 require("nvim-tree").setup()
 
+-- Copilot configuration
+require("copilot").setup {
+    suggestion = {
+    enabled = true,
+    auto_trigger = true,
+    debounce = 75,
+    keymap = {
+      accept = "<M-e>",
+      accept_word = false,
+      accept_line = false,
+      next = "<M-]>",
+      prev = "<M-[>",
+      dismiss = "<C-]>",
+    },
+  },
+}
+
 -- Treesitter configuration
 require("nvim-treesitter.configs").setup({
 	highlight = {},
 	rainbow = {
 		enable = true,
-		extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
-		max_file_lines = nil, -- Do not enable for files with more than n lines, int
+		extended_mode = true,
+		max_file_lines = nil,
 	},
 })
