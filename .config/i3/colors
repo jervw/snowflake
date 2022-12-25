@@ -1,0 +1,10 @@
+## i3 COLORS ##
+
+# TODO set colors from Xresources
+
+#                       border  backgr. text    indicator
+client.focused          #DDB6F2 #DDB6F2 #2e3440 #DDB6F2
+client.unfocused        #1A1826 #1A1826 #988BA2 #1A1826
+client.focused_inactive #1A1826 #1A1826 #988BA2 #1A1826
+client.placeholder      #1A1826 #1A1826 #988BA2 #1A1826
+client.urgent           #F28FAD #F28FAD #F28FAD #F28FAD

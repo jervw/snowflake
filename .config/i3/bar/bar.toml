@@ -22,6 +22,10 @@ warning_mem = 70
 critical_mem = 90
 
 [[block]]
+block = "battery"
+format = " $icon  $percentage "
+
+[[block]]
 block = "time"
 interval = 5
 format = "%a %-d. %R"

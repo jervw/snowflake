@@ -1,168 +1,33 @@
 ## I3wm config by Jervw ##
-
-# alt as modkey
-set $mod Mod4
-
-# terminal emulator
-set $term kitty
+include ~/.config/i3/bindings
+include ~/.config/i3/modes
+include ~/.config/i3/colors
+include ~/.config/i3/exec
 
 # font
 font pango:JetBrainsMono Nerd Font 12
 
-# drag floating windows with mouse
-floating_modifier $mod
-
-# terminal
-bindsym $mod+Return exec --no-startup-id $term
-bindsym $mod+shift+Return exec --no-startup-id $term --title scratch
-
-# browser
-bindsym $mod+b exec --no-startup-id chromium
-
-# kill focused window
-bindsym $mod+q kill
-
-# rofi menu
-bindsym $mod+d exec --no-startup-id rofi -i -show drun -icon-theme "Papirus" -show-icons
-
-# screenshot
-bindsym $mod+z exec --no-startup-id flameshot gui
-
-# change window focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
-
-# move focused window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
-
-# cycle between containers
-bindsym $mod+Tab workspace back_and_forth
-
-# fullscreen mode
-bindsym $mod+f fullscreen toggle
-
-# scratchpad
-bindsym $mod+shift+g move scratchpad
-bindsym $mod+g scratchpad show
-for_window [title="^scratch$"] move scratchpad
-
-# change container layout (tabbed, toggle split)
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
-
-# toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
-
-# change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
-
-# workspaces
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
-
-# switch to workspace
-bindsym $mod+1 workspace $ws1
-bindsym $mod+2 workspace $ws2
-bindsym $mod+3 workspace $ws3
-bindsym $mod+4 workspace $ws4
-bindsym $mod+5 workspace $ws5
-
-# move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace $ws1
-bindsym $mod+Shift+2 move container to workspace $ws2
-bindsym $mod+Shift+3 move container to workspace $ws3
-bindsym $mod+Shift+4 move container to workspace $ws4
-bindsym $mod+Shift+5 move container to workspace $ws5
-
-# restart i3
-bindsym $mod+Shift+r restart
-
-## MODES ##
-
-# Create Log out, Reboot, Poweroff bindings
-mode "Exit (L)ogout, (R)eboot, (P)oweroff" {
-        bindsym $mod+r exec systemctl reboot
-                bindsym $mod+l exit
-                bindsym $mod+p exec poweroff
-
-# back to normal: Enter or Escape
-                bindsym Return mode "default"
-                bindsym Escape mode "default"
-                bindsym $mod+Shift+e mode "default"
-}
-
-bindsym $mod+Shift+e mode "Exit (L)ogout, (R)eboot, (P)oweroff"
-
-
-# keyboard
-exec_always --no-startup-id setxkbmap -option caps:escape
-exec_always --no-startup-id setxkbmap -model pc104 -layout fi,us -variant , -option grp:alt_space_toggle
-
-# resize window
-mode "resize" {
-
-# arrow keys to resize window
-                bindsym h resize grow width 5 px or 5 ppt
-                bindsym j resize shrink height 5 px or 5 ppt
-                bindsym k resize grow height 5 px or 5 ppt
-                bindsym l resize shrink width 5 px or 5 ppt
-
-# more accurate resize bindings
-                bindsym Shift+h resize grow width 1 px or 1 ppt
-                bindsym Shift+j resize shrink height 1 px or 1 ppt
-                bindsym Shift+k resize grow height 1 px or 1 ppt
-                bindsym Shift+l resize shrink width 1 px or 1 ppt
-
-# exit resize mode
-                bindsym Return mode "default"
-                bindsym Escape mode "default"
-                bindsym $mod+r mode "default"
-}
-bindsym $mod+r mode "resize"
-
-
-## COLORS TODO ##
-
-#                       border  backgr. text    indicator
-client.focused          #DDB6F2 #DDB6F2 #2e3440 #DDB6F2
-client.unfocused        #1A1826 #1A1826 #988BA2 #1A1826
-client.focused_inactive #1A1826 #1A1826 #988BA2 #1A1826
-client.placeholder      #1A1826 #1A1826 #988BA2 #1A1826
-client.urgent           #F28FAD #F28FAD #F28FAD #F28FAD
-
-## i3-gaps ##
+# gaps
 gaps inner 20
 smart_gaps on
 
-## borders ##
-
+# bon
 smart_borders on
-for_window [class="^.*"] border pixel 0
+default_border pixel 1
+default_floating_border pixel 1
 
-## external apps ##
-
-exec_always --no-startup-id feh --bg-fill ~/.wallpaper/* -z --bg-fill ~/.wallpaper/portrait/* -z
-exec_always --no-startup-id dunst
-exec_always --no-startup-id i3-autolayout autolayout
-exec --no-startup-id nm-applet
-exec --no-startup-id redshift -l 60.205238:24.654079
-
-## floating windows ##
+# window rules
+for_window [title="^scratch$"] move scratchpad
 for_window [class="feh"] floating enable
 for_window [title="Friends List"] floating enable
 
+
+# bar
 bar {
     font pango:JetBrainsMono Nerd Font 12
     position bottom
-    status_command /usr/bin/i3status-rs ~/.config/i3/bar.toml
+    tray_output primary
+    status_command /usr/bin/i3status-rs ~/.config/i3/bar/bar.toml
     colors {
         separator #11111b
         background #1e1e2e
