@@ -1,11 +1,16 @@
 [theme]
-theme = "nord-dark"
+theme = "/home/jervw/.config/i3/bar/theme.toml"
 
 [icons]
-icons = "awesome"
+icons = "material-nf"
 
 [[block]]
 block = "music"
+format = " $icon {$combo.rot-str(20) $play $next |}"
+
+[[block]]
+block = "sound"
+step_width = 3
 
 [[block]]
 block = "cpu"
@@ -24,8 +29,16 @@ critical_mem = 90
 [[block]]
 block = "battery"
 format = " $icon  $percentage "
+missing_format = ""
+
+[[block]]
+block = "custom"
+command = "xkblayout-state print %s"
+format = " $text"
+interval = 1
 
 [[block]]
 block = "time"
-interval = 5
-format = "%a %-d. %R"
+interval = 60
+format = "$icon %d/%m %R "
+

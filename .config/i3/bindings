@@ -20,7 +20,7 @@ bindsym $mod+b exec --no-startup-id chromium
 bindsym $mod+q kill
 
 # rofi menu
-bindsym $mod+d exec --no-startup-id rofi -i -show drun -dpi 120
+bindsym $mod+d exec --no-startup-id rofi -i -show drun
 
 # screenshot
 bindsym $mod+z exec --no-startup-id flameshot gui

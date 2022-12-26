@@ -13,8 +13,8 @@ smart_gaps on
 
 # bon
 smart_borders on
-default_border pixel 1
-default_floating_border pixel 1
+default_border pixel 2
+default_floating_border pixel 2
 
 # window rules
 for_window [title="^scratch$"] move scratchpad
@@ -31,7 +31,6 @@ bar {
     colors {
         separator #11111b
         background #1e1e2e
-        statusline #1e1e2e
 
         focused_workspace #74c7ec #74c7ec #ffffff
         active_workspace #333333 #333333 #ffffff
