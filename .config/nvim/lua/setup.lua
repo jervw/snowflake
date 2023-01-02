@@ -31,4 +31,14 @@ require("nvim-treesitter.configs").setup({
 		extended_mode = true,
 		max_file_lines = nil,
 	},
+    cpp = {
+        file = {
+            enable = true,
+            priority = 1,
+            parser = "cpp",
+            conditions = {
+                filetype = "cc",
+            },
+        },
+    }
 })

@@ -21,16 +21,15 @@ for_window [title="^scratch$"] move scratchpad
 for_window [class="feh"] floating enable
 for_window [title="Friends List"] floating enable
 
-
 # bar
 bar {
     font pango:JetBrainsMono Nerd Font 12
-    position bottom
+    position top
     tray_output primary
     status_command /usr/bin/i3status-rs ~/.config/i3/bar/bar.toml
     colors {
         separator #11111b
-        background #1e1e2e
+        background #181825
 
         focused_workspace #74c7ec #74c7ec #ffffff
         active_workspace #333333 #333333 #ffffff
