@@ -1,0 +1,10 @@
+[user]
+	name = jervw
+	email = vuolajere@gmail.com
+	signingkey = 99627FCBF2F3FD52
+[color]
+  ui = auto
+[init]
+	defaultBranch = main
+[commit]
+	gpgsign = true

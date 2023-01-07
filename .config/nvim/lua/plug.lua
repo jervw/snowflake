@@ -54,6 +54,6 @@ return require("packer").startup(function(use)
 	use("sbdchd/neoformat")
 	-- Rainbow brackets
 	use("p00f/nvim-ts-rainbow")
-	-- Zen
-	use("folke/zen-mode.nvim")
+	-- Rust crates
+	use({ "saecki/crates.nvim", requires = { "nvim-lua/plenary.nvim" } })
 end)

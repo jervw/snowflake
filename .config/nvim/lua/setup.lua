@@ -5,6 +5,7 @@ require("lualine").setup({ options = { theme = "catppuccin" } })
 require("nvim-autopairs").setup()
 require("neoscroll").setup()
 require("nvim-tree").setup()
+require('crates').setup()
 
 -- Copilot configuration
 require("copilot").setup {
