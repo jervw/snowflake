@@ -5,24 +5,25 @@ require("lualine").setup({ options = { theme = "catppuccin" } })
 require("nvim-autopairs").setup()
 require("neoscroll").setup()
 require("nvim-tree").setup()
-require('crates').setup()
+require("crates").setup()
+require("gitsigns").setup()
 
 -- Copilot configuration
-require("copilot").setup {
-    suggestion = {
-    enabled = true,
-    auto_trigger = true,
-    debounce = 75,
-    keymap = {
-      accept = "<M-e>",
-      accept_word = false,
-      accept_line = false,
-      next = "<M-]>",
-      prev = "<M-[>",
-      dismiss = "<C-]>",
-    },
-  },
-}
+require("copilot").setup({
+	suggestion = {
+		enabled = true,
+		auto_trigger = true,
+		debounce = 75,
+		keymap = {
+			accept = "<M-e>",
+			accept_word = false,
+			accept_line = false,
+			next = "<M-]>",
+			prev = "<M-[>",
+			dismiss = "<C-]>",
+		},
+	},
+})
 
 -- Treesitter configuration
 require("nvim-treesitter.configs").setup({
@@ -32,14 +33,14 @@ require("nvim-treesitter.configs").setup({
 		extended_mode = true,
 		max_file_lines = nil,
 	},
-    cpp = {
-        file = {
-            enable = true,
-            priority = 1,
-            parser = "cpp",
-            conditions = {
-                filetype = "cc",
-            },
-        },
-    }
+	cpp = {
+		file = {
+			enable = true,
+			priority = 1,
+			parser = "cpp",
+			conditions = {
+				filetype = "cc",
+			},
+		},
+	},
 })

@@ -33,8 +33,9 @@ map("n", "<A-0>", ":BufferLast<CR>", opts)
 map("n", "<A-w>", ":BufferClose<CR>", opts)
 map("n", "<A-n>", ":tabnew<CR>", opts)
 
--- Zen mode
-map("n", "<leader>f", ":ZenMode<CR>", opts)
+-- Git signs
+map("n", "<leader>b", ":Gitsigns toggle_current_line_blame<CR>", opts)
+map("n", "<leader>s", ":Gitsigns toggle_signs<CR>", opts)
 
 -- Formatting
 map("n", "<leader><leader>", ":Neoformat<CR>", opts)

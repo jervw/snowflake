@@ -54,6 +54,6 @@ return require("packer").startup(function(use)
 	use("sbdchd/neoformat")
 	-- Rainbow brackets
 	use("p00f/nvim-ts-rainbow")
-	-- Rust crates
-	use({ "saecki/crates.nvim", requires = { "nvim-lua/plenary.nvim" } })
+    -- Git decorations
+    use("lewis6991/gitsigns.nvim")
 end)
