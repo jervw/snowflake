@@ -14,9 +14,12 @@ pipewire &
 pipewire-pulse &
 wireplumber &
 
-# start i3
+# disable caps lock
+setxkbmap -option caps:none
+
 
 # US-Nordic hybrid keyboard layout
 [[ -f ~/.Xmodmap ]] && xmodmap ~/.Xmodmap
 
+# start i3
 exec i3
