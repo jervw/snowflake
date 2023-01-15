@@ -46,7 +46,7 @@ return require("packer").startup(function(use)
 	use("nvim-tree/nvim-tree.lua")
 	-- Colorscheme
 	use({ "catppuccin/nvim", as = "catppuccin" })
-	-- Tabline
+	-- Tabs
 	use("romgrk/barbar.nvim")
 	-- Smoothscroll
 	use("karb94/neoscroll.nvim")
@@ -54,6 +54,6 @@ return require("packer").startup(function(use)
 	use("sbdchd/neoformat")
 	-- Rainbow brackets
 	use("p00f/nvim-ts-rainbow")
-    -- Git decorations
-    use("lewis6991/gitsigns.nvim")
+	-- Git decorations
+	use("lewis6991/gitsigns.nvim")
 end)

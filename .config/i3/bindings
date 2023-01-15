@@ -19,11 +19,15 @@ bindsym $mod+b exec --no-startup-id chromium
 # kill focused window
 bindsym $mod+q kill
 
-# rofi menu
-bindsym $mod+d exec --no-startup-id rofi -i -show drun
+# dmenu
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -p 'run' --font 'JetBrainsMono Nerd Font-13' --nb '#181825' --nf '#cdd6f4' --sb '#74c7ec' --sf '#ffffff'"
+
+
+# joshuto
+bindsym $mod+z exec --no-startup-id $term -e joshuto
 
 # screenshot
-bindsym $mod+z exec --no-startup-id flameshot gui
+bindsym $mod+p exec --no-startup-id flameshot gui
 
 # change window focus
 bindsym $mod+h focus left

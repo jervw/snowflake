@@ -11,7 +11,7 @@
     replacing_enabled: true,
     replacing_resets_timeout: true,
 
-    timeout: 5000,       // 3 sec timeout
+    timeout: 5000,       // 5 sec timeout
     idle_threshold: 600, // 600 sec = 10 min
     unpause_on_input: true,
 

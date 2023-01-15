@@ -21,5 +21,9 @@ setxkbmap -option caps:none
 # US-Nordic hybrid keyboard layout
 [[ -f ~/.Xmodmap ]] && xmodmap ~/.Xmodmap
 
+# Load Xresources
+[[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
+
+
 # start i3
 exec i3

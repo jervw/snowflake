@@ -1,15 +1,8 @@
 ## i3 external applications to start on startup
 
-# keyboard
-exec_always --no-startup-id setxkbmap -option caps:escape
-exec_always --no-startup-id setxkbmap -model pc104 -layout fi,us -variant , -option grp:alt_space_toggle
-
 # other applications
-exec_always --no-startup-id ~/scripts/random-wallpaper.sh
-exec_always --no-startup-id dunst
+exec_always --no-startup-id wired & # notifcation daemon
 exec_always --no-startup-id i3-autolayout autolayout
-exec --no-startup-id nm-applet
+exec --no-startup-id nm-applet # network manager
 exec --no-startup-id redshift -l 60.205238:24.654079
 exec --no-startup-id keepassxc
-exec --no-startup-id morgen
-

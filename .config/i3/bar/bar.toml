@@ -32,12 +32,6 @@ format = " $icon  $percentage "
 missing_format = ""
 
 [[block]]
-block = "custom"
-command = "xkblayout-state print %s"
-format = " $text"
-interval = 1
-
-[[block]]
 block = "time"
 interval = 60
 format = "$icon %d/%m %R "

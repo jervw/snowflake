@@ -6,7 +6,7 @@ local g = vim.g
 -- Options
 opt.tabstop = 4
 opt.shiftwidth = 4
-opt.autoindent = false --experimenting 
+opt.autoindent = false --experimenting
 opt.smartindent = true
 opt.expandtab = true
 opt.number = true
@@ -17,6 +17,7 @@ opt.updatetime = 50
 opt.mouse = "a"
 opt.clipboard = "unnamedplus"
 opt.shell = "/bin/bash"
+opt.udf = true
 
 cmd("set noshowmode")
 cmd("abb WQ wq")
