@@ -1,17 +1,23 @@
--- [[ packer.lua ]]
+-- [[ plug.lua ]]
+--
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+	vim.fn.system({
+		"git",
+		"clone",
+		"--filter=blob:none",
+		"https://github.com/folke/lazy.nvim.git",
+		"--branch=stable", -- latest stable release
+		lazypath,
+	})
+end
+vim.opt.rtp:prepend(lazypath)
 
-vim.cmd([[packadd packer.nvim]])
-
-return require("packer").startup(function(use)
-	-- Self
-	use("wbthomason/packer.nvim")
-	-- Blazingly fast nvim
-	use("lewis6991/impatient.nvim")
-
-	-- Code completion
-	use({
+require("lazy").setup({
+	{
 		"VonHeikemen/lsp-zero.nvim",
-		requires = {
+		branch = "v1.x",
+		dependencies = {
 			-- LSP Support
 			{ "neovim/nvim-lspconfig" },
 			{ "williamboman/mason.nvim" },
@@ -19,41 +25,30 @@ return require("packer").startup(function(use)
 
 			-- Autocompletion
 			{ "hrsh7th/nvim-cmp" },
+			{ "hrsh7th/cmp-nvim-lsp" },
 			{ "hrsh7th/cmp-buffer" },
 			{ "hrsh7th/cmp-path" },
-			{ "saadparwaiz1/cmp_luasnip" },
-			{ "hrsh7th/cmp-nvim-lsp" },
-			{ "hrsh7th/cmp-nvim-lua" },
 
-			-- Snippets
+			{ "saadparwaiz1/cmp_luasnip" },
+			{ "hrsh7th/cmp-nvim-lua" },
 			{ "L3MON4D3/LuaSnip" },
 			{ "rafamadriz/friendly-snippets" },
 		},
-	})
-	-- Copilot
-	use("zbirenbaum/copilot.lua")
-	-- Rust crates
-	use({ "saecki/crates.nvim", requires = { "nvim-lua/plenary.nvim" } })
-	-- Tree shitter
-	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
-	-- Auto close brackets
-	use("windwp/nvim-autopairs")
-	-- Icons
-	use("nvim-tree/nvim-web-devicons")
-	-- Statusline
-	use("nvim-lualine/lualine.nvim")
-	-- File explorer
-	use("nvim-tree/nvim-tree.lua")
-	-- Colorscheme
-	use({ "catppuccin/nvim", as = "catppuccin" })
-	-- Tabs
-	use("romgrk/barbar.nvim")
-	-- Smoothscroll
-	use("karb94/neoscroll.nvim")
-	-- Formatting
-	use("sbdchd/neoformat")
-	-- Rainbow brackets
-	use("p00f/nvim-ts-rainbow")
-	-- Git decorations
-	use("lewis6991/gitsigns.nvim")
-end)
+	},
+
+	{ "saecki/crates.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
+
+	"lewis6991/impatient.nvim", -- Speed up startup
+	"zbirenbaum/copilot.lua", -- copilot
+	"nvim-treesitter/nvim-treesitter", -- Treesitter
+	"windwp/nvim-autopairs", -- Auto close brackets
+	"nvim-tree/nvim-web-devicons", -- Icons
+	"nvim-lualine/lualine.nvim", -- Statusline
+	"nvim-tree/nvim-tree.lua", -- File explorer
+	"romgrk/barbar.nvim", -- Tabs
+	"karb94/neoscroll.nvim", -- Smoothscroll
+	"sbdchd/neoformat", -- Format code
+	"p00f/nvim-ts-rainbow", -- Rainbow brackets
+	"lewis6991/gitsigns.nvim", -- Git decorations
+    "EdenEast/nightfox.nvim", -- Colorscheme
+})

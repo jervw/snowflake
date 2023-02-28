@@ -1,6 +1,5 @@
 -- [[ plug.lua ]]
 -- Plugin specific setup
-require("catppuccin").setup()
 require("nvim-autopairs").setup()
 require("neoscroll").setup()
 require("nvim-tree").setup()
@@ -27,7 +26,7 @@ require("copilot").setup({
 -- Tabline configuration
 require("lualine").setup({
 	options = {
-		theme = "catppuccin",
+		theme = "nightfox",
 		section_separators = { left = "", right = "" },
 		component_separators = { left = "", right = "" },
 	},
