@@ -14,13 +14,13 @@ bindsym $mod+Return exec --no-startup-id $term
 bindsym $mod+shift+Return exec --no-startup-id $term --title scratch
 
 # browser
-bindsym $mod+b exec --no-startup-id chromium
+bindsym $mod+b exec --no-startup-id firefox
 
 # kill focused window
 bindsym $mod+q kill
 
 # dmenu
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -p 'run' --font 'JetBrainsMono Nerd Font-13' --nb '#181825' --nf '#cdd6f4' --sb '#74c7ec' --sf '#ffffff'"
+bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -p 'run' --font 'JetBrainsMono Nerd Font-13' --nb '#181825' --nf '#cdd6f4' --sb '#74c7ec' --sf '#ffffff'"
 
 
 # joshuto

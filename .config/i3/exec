@@ -5,4 +5,3 @@ exec_always --no-startup-id wired & # notifcation daemon
 exec_always --no-startup-id i3-autolayout autolayout
 exec --no-startup-id nm-applet # network manager
 exec --no-startup-id redshift -l 60.205238:24.654079
-exec --no-startup-id keepassxc

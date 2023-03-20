@@ -4,6 +4,9 @@ include ~/.config/i3/modes
 include ~/.config/i3/colors
 include ~/.config/i3/exec
 
+# sway
+
+
 # font
 font pango:JetBrainsMono Nerd Font 12
 

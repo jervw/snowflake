@@ -2,7 +2,7 @@
 theme = "solarized-dark"
 
 [icons]
-icons = "awesome"
+icons = "awesome4"
 
 [[block]]
 block = "music"
