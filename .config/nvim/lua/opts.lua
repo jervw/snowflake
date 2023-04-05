@@ -23,7 +23,7 @@ cmd("set noshowmode")
 -- Theme
 g.t_co = 256
 g.background = "dark"
-cmd("colorscheme duskfox")
+cmd("colorscheme carbonfox")
 
 opt.termguicolors = true
 

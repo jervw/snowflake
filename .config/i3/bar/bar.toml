@@ -34,5 +34,8 @@ missing_format = ""
 [[block]]
 block = "time"
 interval = 60
-format = "$icon %d/%m %R "
+[block.format]
+full = " $icon $timestamp.datetime(f:'%d.%m %R') "
+short = " $icon $timestamp.datetime(f:%R) "
+
 

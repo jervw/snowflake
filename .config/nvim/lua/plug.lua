@@ -36,19 +36,42 @@ require("lazy").setup({
 		},
 	},
 
+	{
+		"iamcco/markdown-preview.nvim",
+		ft = "markdown",
+		build = function()
+			vim.fn["mkdp#util#install"]()
+		end,
+	},
+
+	{
+		"folke/which-key.nvim",
+		config = function()
+			vim.o.timeout = true
+			vim.o.timeoutlen = 500
+			require("which-key").setup()
+		end,
+	},
+
+	{
+		"nvim-telescope/telescope.nvim",
+		tag = "0.1.1",
+		dependencies = { "nvim-lua/plenary.nvim" },
+	},
+
 	{ "saecki/crates.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
 
 	"lewis6991/impatient.nvim", -- Speed up startup
-	"zbirenbaum/copilot.lua", -- copilot
+	"akinsho/toggleterm.nvim", -- Terminal
+	"zbirenbaum/copilot.lua", -- Copilot
 	"nvim-treesitter/nvim-treesitter", -- Treesitter
 	"windwp/nvim-autopairs", -- Auto close brackets
 	"nvim-tree/nvim-web-devicons", -- Icons
 	"nvim-lualine/lualine.nvim", -- Statusline
-	"nvim-tree/nvim-tree.lua", -- File explorer
 	"romgrk/barbar.nvim", -- Tabs
 	"karb94/neoscroll.nvim", -- Smoothscroll
 	"sbdchd/neoformat", -- Format code
 	"p00f/nvim-ts-rainbow", -- Rainbow brackets
 	"lewis6991/gitsigns.nvim", -- Git decorations
-    "EdenEast/nightfox.nvim", -- Colorscheme
+	"EdenEast/nightfox.nvim", -- Colorscheme
 })

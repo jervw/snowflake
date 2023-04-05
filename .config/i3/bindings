@@ -19,9 +19,9 @@ bindsym $mod+b exec --no-startup-id firefox
 # kill focused window
 bindsym $mod+q kill
 
-# dmenu
-bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -p 'run' --font 'JetBrainsMono Nerd Font-13' --nb '#181825' --nf '#cdd6f4' --sb '#74c7ec' --sf '#ffffff'"
 
+# dmenu
+bindsym $mod+d exec --no-startup-id rofi -show drun
 
 # joshuto
 bindsym $mod+z exec --no-startup-id $term -e joshuto

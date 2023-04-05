@@ -2,9 +2,15 @@
 -- Plugin specific setup
 require("nvim-autopairs").setup()
 require("neoscroll").setup()
-require("nvim-tree").setup()
 require("crates").setup()
 require("gitsigns").setup()
+
+-- Terminal configuration
+require("toggleterm").setup{
+	direction = "horizontal",
+	size = 15,
+	open_mapping = [[<M-j>]]
+}
 
 -- Copilot configuration
 require("copilot").setup({
@@ -26,7 +32,7 @@ require("copilot").setup({
 -- Tabline configuration
 require("lualine").setup({
 	options = {
-		theme = "nightfox",
+		theme = "auto",
 		section_separators = { left = "", right = "" },
 		component_separators = { left = "", right = "" },
 	},
