@@ -44,7 +44,9 @@
         extraPackages = with pkgs; [
           dmenu
           i3status-rust
-          networkmanagerapplet
+          j4-dmenu-desktop
+          i3-auto-layout
+          dmenu-rs
         ];
       };
     };

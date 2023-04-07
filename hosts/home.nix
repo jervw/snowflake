@@ -9,8 +9,13 @@
     packages = with pkgs; [
       firefox
       neovim
+      neofetch
+      ripgrep
+      discord
       kitty
+      alacritty
       cider
+      rustup
     ];
 
     stateVersion = "22.11";
