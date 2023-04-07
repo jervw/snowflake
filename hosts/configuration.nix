@@ -9,6 +9,7 @@
     isNormalUser = true;
     extraGroups = [ "networkmanager" "wheel"];
     shell = pkgs.fish;
+    initialPassword = "password";
   };
 
   time.timeZone = "Europe/Helsinki";
@@ -24,6 +25,7 @@
       users = [ user ];
       keepEnv = true;
       persist = true;
+      wheelNeedsPassword = false;
     }];
   };
 
@@ -34,7 +36,6 @@
       VISUAL = "nvim";
     };
     systemPackages = with pkgs; [
-      git
       killall
       wget
       nano

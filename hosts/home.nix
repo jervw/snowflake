@@ -2,6 +2,13 @@
 { config, lib, pkgs, user, ...}:
 
 {
+  # Modules
+  imports = [
+    ../modules/git
+    ../modules/alacritty
+  ];
+
+
   home = {
     username = "${user}";
     homeDirectory = "/home/${user}";
@@ -13,9 +20,14 @@
       ripgrep
       discord
       kitty
-      alacritty
       cider
       rustup
+
+      # LSP's
+      rust-analyzer
+
+      # Formatters
+      nixpkgs-fmt
     ];
 
     stateVersion = "22.11";
