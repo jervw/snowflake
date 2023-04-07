@@ -18,15 +18,19 @@
   security = {
     rtkit.enable = true;
     polkit.enable = true;
-
-    doas.enable = true;
     sudo.enable = false;
-    doas.extraRules = [{
-      users = [ user ];
-      keepEnv = true;
-      persist = true;
+
+    doas = {
+      enable = true;
       wheelNeedsPassword = false;
-    }];
+
+      extraRules = [{
+        users = [ user ];
+        keepEnv = true;
+        persist = true;
+      }];
+    };
+
   };
 
   environment = {
