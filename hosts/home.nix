@@ -1,5 +1,5 @@
 # Universal packages shared between all hosts
-{ config, lib, pkgs, user, ...}:
+{ config, lib, pkgs, user, ... }:
 
 {
   # Modules

@@ -1,5 +1,5 @@
 # Specific packages for Desktop
-{ pkgs, ...}:
+{ pkgs, ... }:
 
 {
   home = {

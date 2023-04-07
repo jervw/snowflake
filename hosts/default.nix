@@ -11,35 +11,36 @@ let
   lib = nixpkgs.lib;
 
 in
-  {
-    desktop = lib.nixosSystem {
-      inherit system;
-      specialArgs = {
-        inherit user location system;
-        host.hostName = "loki";
-      };
-
-      modules = [
-        ./desktop
-        ./configuration.nix
-
-        home-manager.nixosModules.home-manager {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.extraSpecialArgs = {
-            inherit user;
-            host.hostName = "loki";
-          };
-
-          home-manager.users.${user} = {
-            imports = [
-              ./home.nix
-              ./desktop/home.nix
-            ];
-          };
-        }
-      ];
+{
+  desktop = lib.nixosSystem {
+    inherit system;
+    specialArgs = {
+      inherit user location system;
+      host.hostName = "loki";
     };
 
-    # Add more hosts here..
-  }
+    modules = [
+      ./desktop
+      ./configuration.nix
+
+      home-manager.nixosModules.home-manager
+      {
+        home-manager.useGlobalPkgs = true;
+        home-manager.useUserPackages = true;
+        home-manager.extraSpecialArgs = {
+          inherit user;
+          host.hostName = "loki";
+        };
+
+        home-manager.users.${user} = {
+          imports = [
+            ./home.nix
+            ./desktop/home.nix
+          ];
+        };
+      }
+    ];
+  };
+
+  # Add more hosts here..
+}

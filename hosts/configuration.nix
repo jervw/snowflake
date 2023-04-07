@@ -1,13 +1,13 @@
 # Universal configuration file for all hosts
 
-{ config, lib, pkgs, user, ...}:
+{ config, lib, pkgs, user, ... }:
 
 {
   programs.fish.enable = true;
 
   users.users.${user} = {
     isNormalUser = true;
-    extraGroups = [ "networkmanager" "wheel"];
+    extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.fish;
     initialPassword = "password";
   };
@@ -52,7 +52,7 @@
     noto-fonts-emoji
     font-awesome
     corefonts
-    (nerdfonts.override { fonts = ["JetBrainsMono"]; })
+    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
 
   nixpkgs.config.allowUnfree = true;
