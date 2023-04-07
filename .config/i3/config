@@ -4,9 +4,6 @@ include ~/.config/i3/modes
 include ~/.config/i3/colors
 include ~/.config/i3/exec
 
-# sway
-
-
 # font
 font pango:JetBrainsMono Nerd Font 12
 
@@ -29,7 +26,7 @@ bar {
     font pango:JetBrainsMono Nerd Font 12
     position top
     tray_output primary
-    status_command /usr/bin/i3status-rs ~/.config/i3/bar/bar.toml
+    status_command i3status-rs ~/.config/i3/bar/bar.toml
     colors {
         separator #11111b
         background #181825

@@ -42,11 +42,10 @@
         enable = true;
         package = pkgs.i3-gaps;
         extraPackages = with pkgs; [
-          dmenu
+          dmenu-rs
           i3status-rust
           j4-dmenu-desktop
           i3-auto-layout
-          dmenu-rs
         ];
       };
     };
