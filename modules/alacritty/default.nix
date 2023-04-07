@@ -19,8 +19,12 @@
           x = 10;
           y = 10;
         };
+<<<<<<< HEAD
     };
     };
+=======
+      };
+>>>>>>> 2a79b2b (git and alacritty nix modules)
     };
   };
 }
