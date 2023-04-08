@@ -34,9 +34,12 @@
     xserver = {
       enable = true;
       videoDrivers = [ "nvidia" ];
+      layout = "us,fi";
+      xkbOptions = "grp:win_space_toggle";
 
       desktopManager.xterm.enable = false;
       displayManager.defaultSession = "none+i3";
+
 
       windowManager.i3 = {
         enable = true;
