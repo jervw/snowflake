@@ -35,7 +35,7 @@
 
   environment = {
     variables = {
-      TERMINAL = "kitty";
+      TERMINAL = "alacritty";
       EDITOR = "nvim";
       VISUAL = "nvim";
     };

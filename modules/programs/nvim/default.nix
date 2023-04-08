@@ -56,9 +56,6 @@
         config = "lua require('lualine').setup()";
       }
       {
-
-      }
-      {
         plugin = nvim-lspconfig;
         config = ''
         lua << EOF

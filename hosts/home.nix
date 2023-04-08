@@ -20,12 +20,6 @@
       kitty
       cider
       rustup
-
-      # LSP's
-      rust-analyzer
-
-      # Formatters
-      nixpkgs-fmt
     ];
 
     stateVersion = "22.11";

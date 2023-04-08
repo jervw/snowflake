@@ -11,8 +11,29 @@
 
   # NVIDIA specific stuff
   hardware = {
-    opengl.enable = true;
-    nvidia.modesetting.enable = true;
+    opengl = {
+      enable = true;
+      extraPackages = with pkgs; [nvidia-vaapi-driver];
+    };
+    nvidia = {
+      open = true;
+      powerManagement.enable = true;
+      modesetting.enable = true;
+    };
+  };
+
+  environment = {
+    variables = {
+      GBM_BACKEND = "nvidia-drm";
+      LIBVA_DRIVER_NAME = "nvidia";
+      __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+    };
+    systemPackages = with pkgs; [
+      xclip
+      vulkan-loader
+      vulkan-validation-layers
+      vulkan-tools
+    ];
   };
 
   # Networking
@@ -20,11 +41,6 @@
     networkmanager.enable = true;
     hostName = "loki";
   };
-
-  # System packages
-  environment.systemPackages = with pkgs; [
-    xclip
-  ];
 
   # Services
   services = {
@@ -41,7 +57,6 @@
 
       displayManager = {
         defaultSession = "none+i3";
-        sessionCommands = "${pkgs.xorg.xrandr}/bin/xrandr --output HDMI-0 --mode 1920x1080 --pos 0x0 --rotate right --output DP-0 --primary --mode 2560x1440 --rate 143.97 --pos 1080x106 --rotate normal --output DP-1 --off --output DP-2 --off --output DP-3 --off --output DP-4 --off --output DP-5 --off";
       };
 
       windowManager.i3 = {
