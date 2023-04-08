@@ -3,11 +3,9 @@
 
 {
   # Modules
-  imports = [
-    ../modules/git
-    ../modules/alacritty
-  ];
-
+  imports = 
+    (import ../modules/programs) ++
+    (import ../modules/services);
 
   home = {
     username = "${user}";
@@ -15,7 +13,7 @@
 
     packages = with pkgs; [
       firefox
-      neovim
+      vim
       neofetch
       ripgrep
       discord

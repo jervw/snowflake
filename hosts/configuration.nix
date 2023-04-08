@@ -40,6 +40,7 @@
       VISUAL = "nvim";
     };
     systemPackages = with pkgs; [
+      git
       killall
       wget
       nano
