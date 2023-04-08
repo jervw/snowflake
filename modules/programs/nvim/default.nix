@@ -1,17 +1,30 @@
 { pkgs, ... }:
 
 {
+  home.file.".config/nvim/settings.lua".source = ./init.lua;
+
+  home.packages = with pkgs; [
+    # LSP's
+    rust-analyzer
+    nodejs
+
+    # Formatters
+    nixpkgs-fmt
+  ];
+
   programs.neovim = {
     enable = true;
     withNodeJs = true;
+    withRuby = false;
 
     plugins = with pkgs.vimPlugins; [
       vim-nix
       plenary-nvim
       nightfox-nvim
       barbar-nvim
-      nvim-ts-rainbow
       nvim-web-devicons
+      nvim-cmp
+      cmp-nvim-lsp
 
       {
         plugin = impatient-nvim;
@@ -42,6 +55,25 @@
         plugin = lualine-nvim;
         config = "lua require('lualine').setup()";
       }
+      {
+
+      }
+      {
+        plugin = nvim-lspconfig;
+        config = ''
+        lua << EOF
+        local lspconfig = require('lspconfig')
+        local lsp_defaults = lspconfig.util.default_config
+
+        lsp_defaults.capabilities = vim.tbl_deep_extend(
+          'force',
+          lsp_defaults.capabilities,
+          require('cmp_nvim_lsp').default_capabilities()
+        )
+
+        EOF
+        '';
+      }
 
       {
         plugin = toggleterm-nvim;
@@ -64,31 +96,12 @@
                 enable = true,
                 additional_vim_regex_highlighting = false,
             },
-            rainbow = {
-                enable = true,
-                extended_mode = true,
-                max_file_lines = nil,
-            },
-            cpp = {
-                file = {
-                    enable = true,
-                    priority = 1,
-                    parser = "cpp",
-                    conditions = {
-                        filetype = "cc",
-                    },
-                },
-            },
         })
         EOF
         '';
       }
     ];
 
-    extraConfig = ''
-      syntax enable
-      colorscheme carbonfox
-      set rnu
-      '';
+    extraConfig = "luafile ~/.config/nvim/settings.lua";
   };
 }
