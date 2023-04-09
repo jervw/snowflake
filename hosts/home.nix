@@ -16,10 +16,11 @@
       # Development
       cmake
       gcc
-      clang
       llvm
       python3
       rustup
+      nodejs
+      nodePackages.pnpm
 
       # Applications
       firefox
