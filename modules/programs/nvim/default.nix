@@ -7,7 +7,7 @@
     # LSP's
     rust-analyzer
     lua-language-server
-    nodejs
+    rnix-lsp
 
     # Formatters
     nixpkgs-fmt
