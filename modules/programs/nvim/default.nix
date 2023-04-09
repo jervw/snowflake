@@ -25,6 +25,7 @@
       nvim-web-devicons
       nvim-cmp
       cmp-nvim-lsp
+      nvim-treesitter.withAllGrammars
 
       {
         plugin = impatient-nvim;
@@ -46,6 +47,22 @@
       {
         plugin = crates-nvim;
         config = "lua require('crates').setup()";
+      }
+      {
+        plugin = copilot-lua;
+        config = ''
+        lua << EOF
+        require("copilot").setup({
+          suggestion = {
+              auto_trigger = true,
+              keymap = {
+                  accept = "<M-e>",
+              },
+          },
+          copilot_node_command = "node",
+        })
+        EOF
+        '';
       }
       {
         plugin = gitsigns-nvim;

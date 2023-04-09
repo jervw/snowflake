@@ -17,14 +17,12 @@ opt.updatetime = 50
 opt.mouse = "a"
 opt.clipboard = "unnamedplus"
 opt.syntax = "ON"
-opt.shell = "/bin/bash"
 opt.udf = true
 
 cmd("set noshowmode")
 
 g.t_co = 256
 g.background = "dark"
-g.copilot_no_tab_map = true
 cmd("colorscheme carbonfox")
 
 opt.termguicolors = true
@@ -77,6 +75,7 @@ vmap("n", "<leader>d", telescope.diagnostics, { desc = "Find diagnostics" })
 -- Gitsigns
 map("n", "<leader>b", ":Gitsigns toggle_current_line_blame<CR>", { desc = "Gitsigns blame" })
 map("n", "<leader>s", ":Gitsigns toggle_signs<CR>", { desc = "Gitsigns toggle signs" })
+
 
 -- Copilot toggle
 map("n", "<leader>o", ':lua require("copilot.suggestion").toggle_auto_trigger()<CR>', { desc = "Toggle copilot" })
