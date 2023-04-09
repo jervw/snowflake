@@ -6,6 +6,7 @@
   home.packages = with pkgs; [
     # LSP's
     rust-analyzer
+    lua-language-server
     nodejs
 
     # Formatters
@@ -23,15 +24,19 @@
       nightfox-nvim
       barbar-nvim
       nvim-web-devicons
+      nvim-ts-rainbow
+      nvim-treesitter.withAllGrammars
+      null-ls-nvim
+      lsp-zero-nvim
+      nvim-lspconfig
       nvim-cmp
       cmp-nvim-lsp
-      nvim-treesitter.withAllGrammars
+      luasnip
 
       {
         plugin = impatient-nvim;
         config = "lua require('impatient')";
       }
-
       {
         plugin = telescope-nvim;
         config = "lua require('telescope').setup()";
@@ -49,6 +54,14 @@
         config = "lua require('crates').setup()";
       }
       {
+        plugin = gitsigns-nvim;
+        config = "lua require('gitsigns').setup()";
+      }
+      {
+        plugin = lualine-nvim;
+        config = "lua require('lualine').setup()";
+      }
+      {
         plugin = copilot-lua;
         config = ''
         lua << EOF
@@ -59,36 +72,10 @@
                   accept = "<M-e>",
               },
           },
-          copilot_node_command = "node",
         })
         EOF
         '';
       }
-      {
-        plugin = gitsigns-nvim;
-        config = "lua require('gitsigns').setup()";
-      }
-      {
-        plugin = lualine-nvim;
-        config = "lua require('lualine').setup()";
-      }
-      {
-        plugin = nvim-lspconfig;
-        config = ''
-        lua << EOF
-        local lspconfig = require('lspconfig')
-        local lsp_defaults = lspconfig.util.default_config
-
-        lsp_defaults.capabilities = vim.tbl_deep_extend(
-          'force',
-          lsp_defaults.capabilities,
-          require('cmp_nvim_lsp').default_capabilities()
-        )
-
-        EOF
-        '';
-      }
-
       {
         plugin = toggleterm-nvim;
         config = ''
@@ -109,6 +96,11 @@
             highlight = {
                 enable = true,
                 additional_vim_regex_highlighting = false,
+            },
+            rainbow = {
+              enable = true,
+              extended_mode = true,
+              max_file_lines = nil,
             },
         })
         EOF
