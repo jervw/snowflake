@@ -5,13 +5,15 @@
 {
   programs.fish.enable = true;
 
+  # User management
   users.users.${user} = {
     isNormalUser = true;
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "doas" ];
     shell = pkgs.fish;
     initialPassword = "password";
   };
 
+  # Set the localisation
   time.timeZone = "Europe/Helsinki";
   i18n.defaultLocale = "en_US.UTF-8";
 
@@ -27,7 +29,6 @@
       extraRules = [{
         users = [ user ];
         keepEnv = true;
-        persist = true;
       }];
     };
 
@@ -42,11 +43,13 @@
     systemPackages = with pkgs; [
       git
       killall
+      tmux
       wget
       nano
     ];
   };
 
+  # Font management
   fonts.fonts = with pkgs; [
     noto-fonts
     noto-fonts-cjk

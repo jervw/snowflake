@@ -7,19 +7,32 @@
     (import ../modules/programs) ++
     (import ../modules/services);
 
+  # Home manager configuration
   home = {
     username = "${user}";
     homeDirectory = "/home/${user}";
 
     packages = with pkgs; [
-      firefox
-      vim
-      neofetch
-      ripgrep
-      discord
-      kitty
-      cider
+      # Development
+      cmake
+      gcc
+      clang
+      llvm
+      python3
       rustup
+
+      # Applications
+      firefox
+      librewolf
+      discord-canary
+      cider
+
+      # Utilities
+      bat
+      exa
+      pfetch
+      ripgrep
+      fd
     ];
 
     stateVersion = "22.11";
