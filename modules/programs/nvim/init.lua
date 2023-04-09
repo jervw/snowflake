@@ -38,7 +38,7 @@ lsp.set_sign_icons({
 })
 
 -- List LSP servers here
-lsp.setup_servers({'rust_analyzer', 'lua_ls'})
+lsp.setup_servers({'rust_analyzer', 'lua_ls', 'rnix'})
 
 lsp.setup()
 
