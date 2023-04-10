@@ -24,21 +24,23 @@ cmd("colorscheme carbonfox")
 opt.termguicolors = true
 
 -- LSP
-local lsp = require('lsp-zero').preset('recommended')
+local lsp = require('lsp-zero')
+lsp.preset({
+    name = 'recommended',
+    sign_icons = {
+        error = 'E',
+        warn = 'W',
+        hint = 'H',
+        info = 'I',
+    },
+})
 
 lsp.on_attach(function(client, bufnr)
   lsp.default_keymaps({buffer = bufnr})
 end)
 
-lsp.set_sign_icons({
-    error = "E",
-    warn = "W",
-    hint = "H",
-    info = "I",
-})
-
 -- List LSP servers here
-lsp.setup_servers({'rust_analyzer', 'lua_ls', 'rnix'})
+lsp.setup_servers({'rust_analyzer', 'lua_ls', 'rnix', 'pyright'})
 
 lsp.setup()
 
@@ -54,7 +56,9 @@ null_ls.setup({
 
 -- Inline diagnostics
 vim.diagnostic.config({
-	virtual_text = true,
+    virtual_text = {
+        prefix = '',
+    },
 })
 
 -- KEY MAPPINGS
@@ -90,7 +94,7 @@ map("n", "<A-8>", ":BufferGoto 8<CR>", opts)
 map("n", "<A-9>", ":BufferGoto 9<CR>", opts)
 
 -- Format document
-map("n", "<leader><leader>", ":lua vim.lsp.buf.format()<CR>", opts)
+map("n", "<leader><leader>", ":LspZeroFormat!<CR>", opts)
 
 -- Telescope
 local telescope = require("telescope.builtin")

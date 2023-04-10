@@ -8,6 +8,7 @@
     rust-analyzer
     lua-language-server
     rnix-lsp
+    pyright
 
     # Formatters
     nixpkgs-fmt
@@ -17,6 +18,8 @@
     enable = true;
     withNodeJs = true;
     withRuby = false;
+    viAlias = true;
+    vimAlias = true;
 
     plugins = with pkgs.vimPlugins; [
       vim-nix
@@ -25,11 +28,14 @@
       barbar-nvim
       nvim-web-devicons
       nvim-ts-rainbow
+      indent-blankline-nvim
       nvim-treesitter.withAllGrammars
       null-ls-nvim
       lsp-zero-nvim
       nvim-lspconfig
       nvim-cmp
+      cmp-buffer
+      cmp-path
       cmp-nvim-lsp
       luasnip
 
