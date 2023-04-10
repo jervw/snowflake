@@ -34,6 +34,7 @@
       pfetch
       ripgrep
       fd
+      feh
     ];
 
     stateVersion = "22.11";

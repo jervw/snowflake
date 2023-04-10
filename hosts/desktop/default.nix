@@ -13,7 +13,8 @@
   hardware = {
     opengl = {
       enable = true;
-      extraPackages = with pkgs; [nvidia-vaapi-driver];
+      driSupport32Bit = true;
+      extraPackages = with pkgs; [ nvidia-vaapi-driver ];
     };
     nvidia = {
       open = true;
@@ -61,12 +62,10 @@
 
       windowManager.i3 = {
         enable = true;
-        package = pkgs.i3-gaps;
         extraPackages = with pkgs; [
           dmenu-rs
           i3status-rust
           j4-dmenu-desktop
-          i3-auto-layout
         ];
       };
     };
