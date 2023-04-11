@@ -27,6 +27,8 @@
       librewolf
       discord-canary
       cider
+      mpv
+      feh
 
       # Utilities
       bat
@@ -34,7 +36,6 @@
       pfetch
       ripgrep
       fd
-      feh
     ];
 
     stateVersion = "22.11";

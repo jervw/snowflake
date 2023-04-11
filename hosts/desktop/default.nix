@@ -58,6 +58,9 @@
 
       displayManager = {
         defaultSession = "none+i3";
+        setupCommands = ''
+          ${pkgs.xorg.xrandr}/bin/xrandr --output HDMI-0 --mode 1920x1080 --pos 0x0 --rotate right --output DP-0 --primary --mode 2560x1440 --rate 143.97 --pos 1080x106 --rotate normal
+        '';
       };
 
       windowManager.i3 = {
