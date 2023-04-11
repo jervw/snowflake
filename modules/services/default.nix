@@ -1,4 +1,3 @@
 [
   ./dunst
-  ./redshift
 ]
