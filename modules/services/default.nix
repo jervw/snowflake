@@ -1,4 +1,4 @@
 [
-  #./dunst
+  ./dunst
   ./redshift
 ]
