@@ -14,7 +14,7 @@
       });
 
       backend = "glx";
-      vSync = true;
+      vSync = false;
 
       shadow = false;
       shadowOpacity = 0.75;
