@@ -8,6 +8,8 @@
     packages = with pkgs; [
       networkmanagerapplet
       steam
+      ungoogled-chromium
+      vscode
     ];
   };
 }
