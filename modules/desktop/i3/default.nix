@@ -11,6 +11,8 @@ in
       config = {
         inherit modifier;
 
+        defaultWorkspace = "workspace number 1";
+
         fonts = {
           names = [ "JetBrainsMono Nerd Font" ];
           size = 12.0;
@@ -68,9 +70,9 @@ in
 
         bars = [
           {
-            position = "top";
+            position = "bottom";
             trayOutput = "primary";
-            statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ~/.config/i3status-rust/config-top.toml";
+            statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ~/.config/i3status-rust/config-bottom.toml";
             fonts = {
               names = [ "JetBrainsMono Nerd Font" ];
               size = 12.0;
@@ -85,7 +87,7 @@ in
   programs.i3status-rust = {
     enable = true;
     bars = {
-      top = {
+      bottom = {
         blocks = [
           {
             block = "music";
