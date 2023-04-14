@@ -12,6 +12,7 @@
 
     # Formatters
     nixpkgs-fmt
+    clang-tools
   ];
 
   programs.neovim = {

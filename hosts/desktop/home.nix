@@ -2,7 +2,7 @@
 { pkgs, ... }:
 
 {
-  imports = [ ../../modules/desktop/i3 ];
+  #imports = [ ../../modules/desktop/i3 ];
 
   home = {
     packages = with pkgs; [

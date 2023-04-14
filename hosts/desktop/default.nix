@@ -1,7 +1,9 @@
 { pkgs, lib, user, ... }:
 
 {
-  imports = [ ./hardware-configuration.nix ];
+  imports =
+    [ (import ./hardware-configuration.nix) ] ++
+    [ (import ../../modules/desktop/hyprland/default.nix) ];
 
   boot.loader = {
     systemd-boot.enable = true;
@@ -13,8 +15,14 @@
   hardware = {
     opengl = {
       enable = true;
+      driSupport = true;
       driSupport32Bit = true;
-      extraPackages = with pkgs; [ nvidia-vaapi-driver ];
+      extraPackages = with pkgs;
+        [
+          nvidia-vaapi-driver
+          vaapiVdpau
+          libvdpau-va-gl
+        ];
     };
     nvidia = {
       open = true;
@@ -24,11 +32,6 @@
   };
 
   environment = {
-    variables = {
-      GBM_BACKEND = "nvidia-drm";
-      LIBVA_DRIVER_NAME = "nvidia";
-      __GLX_VENDOR_LIBRARY_NAME = "nvidia";
-    };
     systemPackages = with pkgs; [
       xclip
       vulkan-loader
@@ -45,33 +48,9 @@
 
   # Services
   services = {
+    xserver.videoDrivers = [ "nvidia" ];
+
     openssh.enable = false;
-
-    # Xorg 
-    xserver = {
-      enable = true;
-      videoDrivers = [ "nvidia" ];
-      layout = "us,fi";
-      xkbOptions = "grp:win_space_toggle";
-
-      desktopManager.xterm.enable = false;
-
-      displayManager = {
-        defaultSession = "none+i3";
-        setupCommands = ''
-          ${pkgs.xorg.xrandr}/bin/xrandr --output HDMI-0 --mode 1920x1080 --pos 0x0 --rotate right --output DP-0 --primary --mode 2560x1440 --rate 143.97 --pos 1080x106 --rotate normal
-        '';
-      };
-
-      windowManager.i3 = {
-        enable = true;
-        extraPackages = with pkgs; [
-          dmenu-rs
-          i3status-rust
-          j4-dmenu-desktop
-        ];
-      };
-    };
 
     # Audio
     pipewire = {

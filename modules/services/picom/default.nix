@@ -3,7 +3,7 @@
 { 
   config = lib.mkIf (config.xsession.enable) {      # Only evaluate code if using X11
     services.picom = {
-      enable = true;
+      enable = false;
       package = pkgs.picom.overrideAttrs(o: {
         src = pkgs.fetchFromGitHub {
           repo = "picom";

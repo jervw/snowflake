@@ -1,4 +1,4 @@
-{ lib, nixpkgs, home-manager, user, location }:
+{ lib, nixpkgs, home-manager, hyprland, user, location, ... }:
 
 let
   system = "x86_64-linux";
@@ -15,11 +15,12 @@ in
   desktop = lib.nixosSystem {
     inherit system;
     specialArgs = {
-      inherit user location system;
+      inherit user location hyprland system;
       host.hostName = "loki";
     };
 
     modules = [
+      hyprland.nixosModules.default
       ./desktop
       ./configuration.nix
 

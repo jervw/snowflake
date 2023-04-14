@@ -40,7 +40,7 @@ lsp.on_attach(function(client, bufnr)
 end)
 
 -- List LSP servers here
-lsp.setup_servers({'rust_analyzer', 'lua_ls', 'rnix', 'pyright'})
+lsp.setup_servers({'rust_analyzer', 'lua_ls', 'rnix', 'pyright', 'clangd'})
 
 lsp.setup()
 
@@ -51,6 +51,8 @@ null_ls.setup({
   sources = {
     null_ls.builtins.formatting.rustfmt,
     null_ls.builtins.formatting.nixpkgs_fmt,
+    null_ls.builtins.formatting.clang_format,
+
   }
 })
 
