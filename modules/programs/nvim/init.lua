@@ -49,11 +49,11 @@ lsp.setup()
 local null_ls = require('null-ls')
 
 null_ls.setup({
-    sources = {
-        null_ls.builtins.formatting.rustfmt,
-        null_ls.builtins.formatting.nixpkgs_fmt,
-        null_ls.builtins.formatting.clang_format,
-    }
+  sources = {
+    null_ls.builtins.formatting.rustfmt,
+    null_ls.builtins.formatting.nixpkgs_fmt,
+    null_ls.builtins.formatting.clang_format,
+  }
 })
 
 -- Inline diagnostics
@@ -96,7 +96,7 @@ map("n", "<A-8>", ":BufferGoto 8<CR>", opts)
 map("n", "<A-9>", ":BufferGoto 9<CR>", opts)
 
 -- Format document
-map("n", "<leader><leader>", ":LspZeroFormat!<CR>", opts)
+map("n", "<leader><leader>", ":lua vim.lsp.buf.format()<CR> ", opts)
 
 -- Telescope
 local telescope = require("telescope.builtin")

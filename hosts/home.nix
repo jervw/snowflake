@@ -19,6 +19,7 @@
       llvm
       python3
       rustup
+      clang-tools
       nodejs
       nodePackages.pnpm
 
