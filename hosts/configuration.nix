@@ -3,12 +3,14 @@
 { config, lib, pkgs, user, ... }:
 
 {
+  imports = [ ./../modules/virtualisation.nix ];
+
   programs.fish.enable = true;
 
   # User management
   users.users.${user} = {
     isNormalUser = true;
-    extraGroups = [ "networkmanager" "wheel" "doas" ];
+    extraGroups = [ "networkmanager" "wheel" "doas" "libvirtd"];
     shell = pkgs.fish;
     initialPassword = "password";
   };
@@ -29,6 +31,7 @@
       extraRules = [{
         users = [ user ];
         keepEnv = true;
+        noPass = true;
       }];
     };
 
@@ -46,6 +49,8 @@
       tmux
       wget
       nano
+      gsettings-desktop-schemas
+      glib
     ];
   };
 

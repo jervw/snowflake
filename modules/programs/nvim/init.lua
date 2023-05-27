@@ -5,6 +5,7 @@ local g = vim.g
 
 opt.tabstop = 4
 opt.shiftwidth = 4
+opt.softtabstop = 4
 opt.autoindent = false
 opt.smartindent = true
 opt.expandtab = true
@@ -17,6 +18,8 @@ opt.shell = "/bin/bash"
 opt.syntax = "ON"
 opt.udf = true
 opt.showmode = false
+opt.wrap = false
+opt.colorcolumn = "80"
 
 g.t_co = 256
 g.background = "dark"
@@ -88,7 +91,7 @@ map("n", "<A-n>", ":tabnew<CR>", opts)
 map("n", "<A-1>", ":BufferGoto 1<CR>", opts)
 map("n", "<A-2>", ":BufferGoto 2<CR>", opts)
 map("n", "<A-3>", ":BufferGoto 3<CR>", opts)
-map("n", "<A-4>", ":BufferGoto 5<CR>", opts)
+map("n", "<A-4>", ":BufferGoto 4<CR>", opts)
 map("n", "<A-5>", ":BufferGoto 5<CR>", opts)
 map("n", "<A-6>", ":BufferGoto 6<CR>", opts)
 map("n", "<A-7>", ":BufferGoto 7<CR>", opts)

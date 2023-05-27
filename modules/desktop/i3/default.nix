@@ -20,7 +20,9 @@ in
         gaps = {
           inner = 20;
           smartGaps = true;
+          smartBorders = "on";
         };
+
         keybindings = lib.mkOptionDefault {
           "${modifier}+Return" = "exec alacritty";
           "${modifier}+d" = "exec j4-dmenu-desktop";

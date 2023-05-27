@@ -25,7 +25,6 @@
 
       # Applications
       firefox
-      librewolf
       discord-canary
       qbittorrent
       cider

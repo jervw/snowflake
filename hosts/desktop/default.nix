@@ -25,18 +25,20 @@
         ];
     };
     nvidia = {
-      open = true;
+      open = false; # testing
       powerManagement.enable = true;
       modesetting.enable = true;
     };
+    bluetooth.enable = true;
   };
 
   environment = {
     systemPackages = with pkgs; [
-      xclip
       vulkan-loader
       vulkan-validation-layers
       vulkan-tools
+
+      xclip
     ];
   };
 
@@ -45,6 +47,8 @@
     networkmanager.enable = true;
     hostName = "loki";
   };
+
+  programs.dconf.enable = true;
 
   # Services
   services = {
@@ -58,6 +62,10 @@
       alsa.enable = true;
       alsa.support32Bit = true;
       pulse.enable = true;
+    };
+
+    blueman = {
+      enable = true;
     };
   };
 }

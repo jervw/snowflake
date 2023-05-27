@@ -9,8 +9,7 @@
       networkmanagerapplet
       steam
       vscode
-      zoom-us
-      SDL2
+      obs-studio
     ];
   };
 }
