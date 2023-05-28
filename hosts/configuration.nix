@@ -5,13 +5,13 @@
 {
   imports = [ ./../modules/virtualisation.nix ];
 
-  programs.fish.enable = true;
+  programs.zsh.enable = true;
 
   # User management
   users.users.${user} = {
     isNormalUser = true;
     extraGroups = [ "networkmanager" "wheel" "doas" "libvirtd"];
-    shell = pkgs.fish;
+    shell = pkgs.zsh;
     initialPassword = "password";
   };
 
