@@ -14,7 +14,8 @@ programs.zsh = {
       PROMPT='%F{yellow}%~ %F{green}➜ %F{reset}'
       export EDITOR=nvim
       export VISUAL=nvim
-      export NIX_BUILD_SHELL=${pkgs.zsh}/bin/zsh
+
+      bindkey -e
     '';
 
     dirHashes = {
