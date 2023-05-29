@@ -10,7 +10,7 @@
   # User management
   users.users.${user} = {
     isNormalUser = true;
-    extraGroups = [ "networkmanager" "wheel" "doas" "libvirtd"];
+    extraGroups = [ "networkmanager" "wheel" "doas" "libvirtd" "docker" ];
     shell = pkgs.zsh;
     initialPassword = "password";
   };
@@ -38,11 +38,6 @@
   };
 
   environment = {
-    variables = {
-      TERMINAL = "alacritty";
-      EDITOR = "nvim";
-      VISUAL = "nvim";
-    };
     systemPackages = with pkgs; [
       git
       killall

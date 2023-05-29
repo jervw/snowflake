@@ -1,5 +1,5 @@
 # Universal packages shared between all hosts
-{ config, lib, pkgs, user, ... }:
+{ config, hyprland, lib, pkgs, user, ... }:
 
 {
   # Modules
@@ -25,11 +25,14 @@
 
       # Applications
       firefox
-      discord-canary
+      discord
       qbittorrent
+      xfce.thunar
+      morgen
       cider
       mpv
       feh
+      lxappearance
 
       # Utilities
       bat

@@ -30,7 +30,6 @@ programs.zsh = {
       ls = "exa -a --icons";
       tree = "exa --tree --icons";
       whereami = "curl ipinfo.io/city";
-      rebuild = "doas nixos-rebuild switch --flake #desktop";
     };
 
     history = {

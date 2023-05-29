@@ -37,7 +37,6 @@
       vulkan-loader
       vulkan-validation-layers
       vulkan-tools
-
       xclip
     ];
   };

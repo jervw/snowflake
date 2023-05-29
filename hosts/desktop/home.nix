@@ -1,8 +1,8 @@
 # Specific packages for Desktop
-{ pkgs, ... }:
+{ pkgs, hyprland, ... }:
 
 {
-  #imports = [ ../../modules/desktop/i3 ];
+  imports = [../../modules/desktop/hyprland/config.nix];
 
   home = {
     packages = with pkgs; [

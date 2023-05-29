@@ -38,5 +38,4 @@
     enable = true;
     nvidiaPatches = true;
   };
-
 }

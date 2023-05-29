@@ -1,5 +1,5 @@
 [
   ./dunst
   ./picom
-  ./redshift
+  ./wlsunset
 ]

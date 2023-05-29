@@ -27,6 +27,26 @@ cmd("colorscheme nightfox")
 
 opt.termguicolors = true
 
+vim.cmd [[
+  hi Normal guibg=NONE ctermbg=NONE
+  hi NonText guibg=NONE ctermbg=NONE
+  hi LineNr guibg=NONE ctermbg=NONE
+  hi SignColumn guibg=NONE ctermbg=NONE
+  hi VertSplit guibg=NONE ctermbg=NONE
+  hi EndOfBuffer ctermbg=NONE
+  hi PmenuSel guibg=grey guifg=black ctermbg=grey ctermfg=black
+  hi Pmenu  guibg=NONE guifg=grey ctermbg=NONE ctermfg=grey
+  hi PmenuSbar guibg=grey guifg=black ctermbg=grey ctermfg=black
+  hi PmenuThumb guibg=grey guifg=black ctermbg=grey ctermfg=black
+  hi TelescopeNormal guibg=NONE ctermbg=NONE
+  hi TelescopeBorder guibg=NONE ctermbg=NONE
+  hi TelescopePromptBorder guibg=NONE ctermbg=NONE
+  hi TelescopeResultsBorder guibg=NONE ctermbg=NONE
+  hi TelescopePreviewBorder guibg=NONE ctermbg=NONE
+
+]]
+
+
 -- LSP
 local lsp = require('lsp-zero')
 lsp.preset({
