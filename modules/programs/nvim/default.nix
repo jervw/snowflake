@@ -9,6 +9,7 @@
     lua-language-server
     rnix-lsp
     pyright
+    nodePackages.typescript-language-server
 
     # Formatters
     nixpkgs-fmt

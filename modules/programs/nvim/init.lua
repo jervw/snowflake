@@ -19,7 +19,7 @@ opt.showmode = false
 
 g.t_co = 256
 g.background = "dark"
-cmd("colorscheme carbonfox")
+cmd("colorscheme nightfox")
 
 opt.termguicolors = true
 
@@ -40,7 +40,7 @@ lsp.on_attach(function(client, bufnr)
 end)
 
 -- List LSP servers here
-lsp.setup_servers({'rust_analyzer', 'lua_ls', 'rnix', 'pyright', 'clangd'})
+lsp.setup_servers({'rust_analyzer', 'lua_ls', 'rnix', 'pyright', 'clangd', 'tsserver'})
 
 lsp.setup()
 
