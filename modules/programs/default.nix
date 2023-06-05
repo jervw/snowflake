@@ -2,4 +2,5 @@
   ./git
   ./nvim
   ./alacritty
+  ./fish
 ]
