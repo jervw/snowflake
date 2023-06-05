@@ -5,7 +5,6 @@
 
   home.packages = with pkgs; [
     # LSP's
-    rust-analyzer
     lua-language-server
     rnix-lsp
     pyright
@@ -42,10 +41,6 @@
       luasnip
 
       {
-        plugin = impatient-nvim;
-        config = "lua require('impatient')";
-      }
-      {
         plugin = telescope-nvim;
         config = "lua require('telescope').setup()";
       }
@@ -81,18 +76,6 @@
               },
           },
         })
-        EOF
-        '';
-      }
-      {
-        plugin = toggleterm-nvim;
-        config = ''
-        lua << EOF
-        require("toggleterm").setup{
-          direction = "horizontal",
-          size = 15,
-          open_mapping = [[<M-j>]]
-        }
         EOF
         '';
       }

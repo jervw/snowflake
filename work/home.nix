@@ -14,6 +14,7 @@
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     pkgs.pfetch
+    pkgs.rust-analyzer
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

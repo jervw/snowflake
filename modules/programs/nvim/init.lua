@@ -13,6 +13,7 @@ opt.swapfile = false
 opt.updatetime = 50
 opt.mouse = "a"
 opt.clipboard = "unnamedplus"
+opt.shell = "/bin/bash"
 opt.syntax = "ON"
 opt.udf = true
 opt.showmode = false
@@ -36,11 +37,11 @@ lsp.preset({
 })
 
 lsp.on_attach(function(client, bufnr)
-  lsp.default_keymaps({buffer = bufnr})
+    lsp.default_keymaps({ buffer = bufnr })
 end)
 
 -- List LSP servers here
-lsp.setup_servers({'rust_analyzer', 'lua_ls', 'rnix', 'pyright', 'clangd', 'tsserver'})
+lsp.setup_servers({ 'rust_analyzer', 'lua_ls', 'rnix', 'pyright', 'clangd', 'tsserver' })
 
 lsp.setup()
 
@@ -48,12 +49,11 @@ lsp.setup()
 local null_ls = require('null-ls')
 
 null_ls.setup({
-  sources = {
-    null_ls.builtins.formatting.rustfmt,
-    null_ls.builtins.formatting.nixpkgs_fmt,
-    null_ls.builtins.formatting.clang_format,
-
-  }
+    sources = {
+        null_ls.builtins.formatting.rustfmt,
+        null_ls.builtins.formatting.nixpkgs_fmt,
+        null_ls.builtins.formatting.clang_format,
+    }
 })
 
 -- Inline diagnostics
@@ -100,7 +100,7 @@ map("n", "<leader><leader>", ":LspZeroFormat!<CR>", opts)
 
 -- Telescope
 local telescope = require("telescope.builtin")
-vmap("n", "<leader>?", telescope.oldfiles, opts)
+vmap("n", "<leader>/", telescope.oldfiles, opts)
 vmap("n", "<leader>f", telescope.find_files, opts)
 vmap("n", "<leader>w", telescope.grep_string, opts)
 vmap("n", "<leader>g", telescope.live_grep, opts)
