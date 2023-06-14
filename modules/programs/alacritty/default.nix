@@ -20,6 +20,8 @@
           y = 10;
         };
       };
+      dynamic_title = false;
+      dynamic_padding = true;
       colors = {
         primary = {
           background = "0x161616";

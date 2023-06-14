@@ -2,14 +2,14 @@
 { pkgs, hyprland, ... }:
 
 {
-  imports = [../../modules/desktop/hyprland/config.nix];
+  imports = [ ../../modules/desktop/hyprland/config.nix ];
 
   home = {
     packages = with pkgs; [
       networkmanagerapplet
-      steam
-      vscode
+      lutris
       obs-studio
     ];
   };
+
 }

@@ -24,18 +24,21 @@
       nodePackages.pnpm
 
       # Applications
-      firefox
-      discord
+      firefox-wayland
+      ungoogled-chromium
       qbittorrent
       xfce.thunar
       morgen
       cider
       mpv
+      viewnior
       feh
       lxappearance
+      orchis-theme
 
       # Utilities
       bat
+      xdg-utils
       exa
       pfetch
       ripgrep

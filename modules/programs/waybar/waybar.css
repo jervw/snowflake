@@ -1,7 +1,7 @@
 * {
     border: none;
     border-radius: 0;
-    font-family: Cartograph CF Nerd Font, monospace;
+    font-family: JetBrains Mono, monospace;
     font-weight: bold;
     font-size: 16px;
     min-height: 0;
@@ -118,13 +118,6 @@ tooltip {
     border-left: 0px;
     border-right: 0px;
 }
-
-#pulseaudio {
-    color: #89b4fa;
-    border-left: 0px;
-    border-right: 0px;
-}
-
 
 #battery {
     color: #a6e3a1;

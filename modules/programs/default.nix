@@ -2,7 +2,8 @@
   ./git
   ./nvim
   ./alacritty
-  ./zsh
   ./waybar
   ./rofi
+  ./fish
+  ./vscode
 ]

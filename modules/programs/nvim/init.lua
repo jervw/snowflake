@@ -23,7 +23,7 @@ opt.colorcolumn = "80"
 
 g.t_co = 256
 g.background = "dark"
-cmd("colorscheme nightfox")
+cmd("colorscheme carbonfox")
 
 opt.termguicolors = true
 

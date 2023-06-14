@@ -1,4 +1,5 @@
 {config, pkgs, ... }:
+
 {  
   boot.kernelParams = [ "amd_iommu=on" ];
   boot.kernelModules = [ "vfio" "vfio_iommu_type1" "vfio_pci" "vfio_virqfd" ];
@@ -12,6 +13,7 @@
   # Docker
   virtualisation.docker = {
     enable = true;
+    enableNvidia = true;
     rootless = {
       enable = true;
       setSocketVariable = true;

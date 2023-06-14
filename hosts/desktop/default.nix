@@ -25,7 +25,7 @@
         ];
     };
     nvidia = {
-      open = false; # testing
+      open = true; # testing
       powerManagement.enable = true;
       modesetting.enable = true;
     };
@@ -38,6 +38,10 @@
       vulkan-validation-layers
       vulkan-tools
       xclip
+      libva
+      libva-utils
+      glxinfo
+      egl-wayland
     ];
   };
 
@@ -53,7 +57,10 @@
   services = {
     xserver.videoDrivers = [ "nvidia" ];
 
-    openssh.enable = false;
+    openssh.enable = true;
+    passSecretService.enable = true;
+
+    gnome.gnome-keyring.enable = true;
 
     # Audio
     pipewire = {
@@ -64,6 +71,9 @@
     };
 
     blueman = {
+      enable = true;
+    };
+    flatpak = {
       enable = true;
     };
   };

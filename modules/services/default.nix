@@ -1,5 +1,4 @@
 [
   ./dunst
-  ./picom
   ./wlsunset
 ]

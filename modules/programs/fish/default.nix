@@ -114,7 +114,7 @@ programs.fish = {
       vi = "nvim";
       nano = "nvim";
       cat = "bat --paging=never --style=plain";
-      ls = "exa -a --icons";
+      ls = "exa --icons";
       tree = "exa --tree --icons";
       whereami = "curl ipinfo.io/city";
     };

@@ -5,13 +5,13 @@
 {
   imports = [ ./../modules/virtualisation.nix ];
 
-  programs.zsh.enable = true;
+  programs.fish.enable = true;
 
   # User management
   users.users.${user} = {
     isNormalUser = true;
     extraGroups = [ "networkmanager" "wheel" "doas" "libvirtd" "docker" ];
-    shell = pkgs.zsh;
+    shell = pkgs.fish;
     initialPassword = "password";
   };
 
@@ -46,6 +46,8 @@
       nano
       gsettings-desktop-schemas
       glib
+      pkgconfig
+      gnome.seahorse
     ];
   };
 
@@ -58,6 +60,11 @@
     corefonts
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
+
+  programs.gnupg.agent = {
+    enable = true;
+    enableSSHSupport = true;
+  };
 
   nixpkgs.config.allowUnfree = true;
 
