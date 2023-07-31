@@ -5,5 +5,5 @@
   ./waybar
   ./rofi
   ./fish
-  ./vscode
+  ./helix
 ]
