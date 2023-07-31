@@ -5,13 +5,18 @@
   home.homeDirectory = "/home/jere";
   home.stateVersion = "22.11"; 
 
-  imports = [ ../modules/programs/helix ];
-
-  home.packages = [
-    pkgs.rust-analyzer
+  imports = [ 
+    ../modules/programs/helix
+    ../modules/programs/fish
+    ../modules/programs/tmux
   ];
 
-  home.file = {};
+  home.packages = with pkgs; [
+    rust-analyzer
+    bat
+    fd
+    exa
+  ];
 
   home.sessionVariables = {};
 

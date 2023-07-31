@@ -6,4 +6,5 @@
   ./rofi
   ./fish
   ./helix
+  ./tmux
 ]
