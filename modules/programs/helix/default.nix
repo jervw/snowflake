@@ -29,6 +29,10 @@
         indent-guides.render = true;
         gutters.line-numbers.min-width = 1;
       };
+
+      keys.normal.space.u = {
+          h = ":toggle lsp.display-inlay-hints";
+      };
     };
   };
 }
