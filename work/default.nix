@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, nixpkgs, ... }:
 
 {
   home.username = "jere";
