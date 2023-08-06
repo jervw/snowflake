@@ -16,6 +16,8 @@
       mpv
       feh
       lxappearance
+      morgen
+      lazygit
       playerctl
       orchis-theme
       steam
