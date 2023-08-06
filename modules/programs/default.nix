@@ -7,5 +7,6 @@
     ./fish
     ./helix
     ./tmux
+    ./firefox
   ];
 }

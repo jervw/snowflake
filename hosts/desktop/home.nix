@@ -10,7 +10,6 @@
 
   home = {
     packages = with pkgs; [
-      firefox-wayland
       calibre
       xfce.thunar
       mpv
@@ -20,6 +19,7 @@
       lazygit
       playerctl
       pavucontrol
+      viewnior
       orchis-theme
       steam
       spotify

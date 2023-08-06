@@ -116,8 +116,7 @@
   windowrule = float, title:^(Firefox — Sharing Indicator)$
   windowrule = size 800 600, title:^(Volume Control)$
   windowrule = move 75 44%, title:^(Volume Control)$
-
-  layerrule = noanim, wofi
+  layerrule = noanim, rofi
 
   # MISC BINDINGS
   bind = SUPER, Return, exec, alacritty
