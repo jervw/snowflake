@@ -1,10 +1,11 @@
-[
-  ./git
-  ./nvim
-  ./alacritty
-  ./waybar
-  ./rofi
-  ./fish
-  ./helix
-  ./tmux
-]
+{
+  imports = [
+    ./git
+    ./alacritty
+    ./waybar
+    ./rofi
+    ./fish
+    ./helix
+    ./tmux
+  ];
+}

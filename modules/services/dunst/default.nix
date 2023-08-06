@@ -2,35 +2,39 @@
 
 {
   services.dunst = {
-    enable = true;
+  enable = true;
+    iconTheme = {
+      name = "Papirus-Dark";
+      package = pkgs.papirus-icon-theme;
+    };
     settings = {
       global = {
-        frame_color = "#f4b8e4";
-        separator_color = "#f4b8e4";
-        width = 220;
-        height = 220;
-        offset = "0x15";
-        font = "JetBrainsMono Nerd Font 14";
-        corner_radius = 10;
-        origin = "top-center";
-        notification_limit = 3;
-        idle_threshold = 120;
-        ignore_newline = "no";
-        mouse_left_click = "close_current";
-        mouse_right_click = "close_all";
-        sticky_history = "yes";
-        history_length = 20;
-        show_age_threshold = 60;
-        ellipsize = "middle";
-        padding = 10;
-        always_run_script = true;
-        frame_width = 3;
-        transparency = 10;
-        progress_bar = true;
-        progress_bar_frame_width = 0;
-        highlight = "#f4b8e4";
+        alignment = "center";
+        corner_radius = 5;
+        follow = "mouse";
+        font = "JetBrainsMono Nerd Font 10";
+        format = "<b>%s</b>\\n%b";
+        frame_width = 0;
+        offset = "5x5";
+        horizontal_padding = 8;
+        icon_position = "left";
+        indicate_hidden = "yes";
+        markup = "yes";
+        max_icon_size = 64;
+        mouse_left_click = "do_action";
+        mouse_middle_click = "close_all";
+        mouse_right_click = "close_current";
+        padding = 8;
+        plain_text = "no";
+        separator_color = "auto";
+        separator_height = 1;
+        show_indicators = false;
+        shrink = "no";
+        word_wrap = "yes";
       };
-      fullscreen_delay_everything.fullscreen = "delay";
+
+      fullscreen_delay_everything = { fullscreen = "delay"; };
+      
       urgency_low = {
         background = "#1e1e2e";
         foreground = "#c6d0f5";

@@ -24,6 +24,12 @@
     polkit.enable = true;
     sudo.enable = false;
 
+    pam = {
+      services = {
+        login.u2fAuth = true;
+      };
+    };
+
     doas = {
       enable = true;
       wheelNeedsPassword = false;
@@ -34,7 +40,6 @@
         noPass = true;
       }];
     };
-
   };
 
   environment = {
@@ -52,7 +57,7 @@
   };
 
   # Font management
-  fonts.fonts = with pkgs; [
+  fonts.packages = with pkgs; [
     noto-fonts
     noto-fonts-cjk
     noto-fonts-emoji

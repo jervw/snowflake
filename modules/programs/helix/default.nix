@@ -3,8 +3,9 @@
 {
   programs.helix = {
     enable = true;
+    defaultEditor = true;
     settings = {
-      theme = "nightfox";
+      theme = "nightfox_transparent";
       editor = {
         line-number = "relative";
         bufferline = "always";
@@ -35,4 +36,9 @@
       };
     };
   };
+
+  home.file.".config/helix/themes/nightfox_transparent.toml".text = ''
+  inherits = "nightfox"
+  "ui.background" = {}
+  '';
 }

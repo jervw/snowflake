@@ -2,11 +2,6 @@
 { config, hyprland, lib, pkgs, user, ... }:
 
 {
-  # Modules
-  imports = 
-    (import ../modules/programs) ++
-    (import ../modules/services);
-
   # Home manager configuration
   home = {
     username = "${user}";
@@ -22,19 +17,6 @@
       clang-tools
       nodejs
       nodePackages.pnpm
-
-      # Applications
-      firefox-wayland
-      ungoogled-chromium
-      qbittorrent
-      xfce.thunar
-      morgen
-      cider
-      mpv
-      viewnior
-      feh
-      lxappearance
-      orchis-theme
 
       # Utilities
       bat

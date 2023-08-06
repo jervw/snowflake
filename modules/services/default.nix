@@ -1,4 +1,7 @@
-[
-  ./dunst
-  ./wlsunset
-]
+{
+  imports = [
+    ./dunst
+    ./wlsunset
+  ];
+}
+
