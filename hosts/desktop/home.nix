@@ -19,6 +19,7 @@
       morgen
       lazygit
       playerctl
+      pavucontrol
       orchis-theme
       steam
       spotify

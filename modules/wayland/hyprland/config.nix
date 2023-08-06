@@ -101,8 +101,6 @@
   windowrule = float, confirmreset
   windowrule = float, title:Open File
   windowrule = float, title:branchdialog
-  windowrule = float, viewnior
-  windowrule = float, Viewnior
   windowrule = float, feh
   windowrule = float, pavucontrol-qt
   windowrule = float, pavucontrol
@@ -118,6 +116,8 @@
   windowrule = float, title:^(Firefox — Sharing Indicator)$
   windowrule = size 800 600, title:^(Volume Control)$
   windowrule = move 75 44%, title:^(Volume Control)$
+
+  layerrule = noanim, wofi
 
   # MISC BINDINGS
   bind = SUPER, Return, exec, alacritty

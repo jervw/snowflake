@@ -7,6 +7,7 @@
     [ (import ../../modules/wayland/hyprland) ];
 
   boot = {
+    initrd.systemd.enable = true;
     kernelPackages = pkgs.linuxPackages_latest;
     loader = {
       systemd-boot.enable = true;
@@ -20,7 +21,12 @@
     hostName = "loki";
   };
 
-  programs.dconf.enable = true;
+  environment = {
+    systemPackages = with pkgs; [
+      tpm2-tss
+    ];
+  };
+
 
   # Services
   services = {
