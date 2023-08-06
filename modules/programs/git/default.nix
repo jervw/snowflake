@@ -14,5 +14,10 @@
       s = "status --short";
       ss = "status";
     };
+
+    signing = {
+      key = "2A19308BA17F69683BB4FF821E3FCE4BF382E951";
+      signByDefault = true;
+    };
   };
 }
