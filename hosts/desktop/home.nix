@@ -22,7 +22,9 @@
       orchis-theme
       steam
       spotify
-      discord-canary
+      webcord-vencord
+      prismlauncher
+      jdk17
       networkmanagerapplet
       obs-studio
     ];
