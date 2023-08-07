@@ -3,7 +3,7 @@
 { config, lib, pkgs, user, ... }:
 
 {
-  imports = [ ./../modules/virtualisation.nix ];
+  imports = [ ./../modules/virtualisation ];
 
   programs.fish.enable = true;
 

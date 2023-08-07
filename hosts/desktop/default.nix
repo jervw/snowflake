@@ -3,8 +3,8 @@
 {
   imports =
     [ (import ./hardware-configuration.nix) ] ++
-    [ (import ../../modules/nvidia.nix) ] ++
-    [ (import ../../modules/wayland/hyprland) ];
+    [ (import ../../modules/desktop/nvidia.nix) ] ++
+    [ (import ../../modules/desktop/hyprland) ];
 
   boot = {
     initrd.systemd.enable = true;

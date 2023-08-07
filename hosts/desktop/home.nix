@@ -3,7 +3,7 @@
 
 {
   imports = [
-    ../../modules/wayland/hyprland/config.nix
+    ../../modules/desktop/hyprland/config.nix
     ../../modules/programs
     ../../modules/services
   ];
@@ -12,7 +12,6 @@
     packages = with pkgs; [
       calibre
       xfce.thunar
-      mpv
       feh
       lxappearance
       morgen

@@ -12,10 +12,6 @@
       config = {
         gpu-context = "wayland";
         save-position-on-quit = true;
-        ytdl-format = "bestvideo[height<=?1080]+bestaudio/best";
-        profile = mkIf hardwareAcceleration "gpu-hq";
-        hwdec = mkIf hardwareAcceleration "auto-safe";
-        vo = mkIf hardwareAcceleration "gpu";
       };
   };
 }
