@@ -6,8 +6,7 @@
   extraConfig = ''
   # EXEC
   exec-once = waybar &
-  exec-once = swaybg -i ~/.setup/.wallpaper/el-captain-rock-reflection.jpg
-  exec-once = wlsunset -l 60.1 -L 24.9
+  exec-once = swaybg -i ~/.setup/wallpapers/el-captain-rock-reflection.jpg
 
   # MONITORS
   monitor = DP-1,2560x1440@144,1080x0,1

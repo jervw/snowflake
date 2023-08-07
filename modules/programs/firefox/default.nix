@@ -52,6 +52,7 @@
         # Extra
         "browser.fixup.domainsuffixwhitelist.asgard" = true;
         "browser.tabs.tabmanager.enabled" = false;
+        "browser.fullscreen.autohide" = false;
         "browser.urlbar.shortcuts.bookmarks" = false;
         "browser.urlbar.shortcuts.tabs" = false;
         "browser.urlbar.suggest.bookmark" = false;
