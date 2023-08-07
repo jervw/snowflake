@@ -8,5 +8,6 @@
     ./helix
     ./tmux
     ./firefox
+    ./mpv
   ];
 }
