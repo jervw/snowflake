@@ -12,8 +12,11 @@
     isNormalUser = true;
     extraGroups = [ "networkmanager" "wheel" "doas" "libvirtd" "docker" ];
     shell = pkgs.fish;
-    initialPassword = "password";
+    initialPassword = user;
   };
+
+  # Disable root password
+  users.users.root.hashedPassword = "!";
 
   # Set the localisation
   time.timeZone = "Europe/Helsinki";
@@ -23,17 +26,14 @@
     rtkit.enable = true;
     polkit.enable = true;
     sudo.enable = false;
-
     pam = {
       services = {
         login.u2fAuth = true;
       };
     };
-
     doas = {
       enable = true;
       wheelNeedsPassword = false;
-
       extraRules = [{
         users = [ user ];
         keepEnv = true;
@@ -45,13 +45,11 @@
   environment = {
     systemPackages = with pkgs; [
       git
-      killall
-      tmux
       wget
-      nano
       gsettings-desktop-schemas
       glib
       pkgconfig
+      any-nix-shell
       gnome.seahorse
     ];
   };

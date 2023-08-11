@@ -7,13 +7,22 @@
     [ (import ../../modules/desktop/hyprland) ];
 
   boot = {
-    initrd.systemd.enable = true;
+    kernelParams = ["quiet" "rd.systemd.show_status=false" "rd.udev.log_level=3" "udev.log_priority=3"];
+    consoleLogLevel = 0;
+    plymouth.enable = true;
     kernelPackages = pkgs.linuxPackages_latest;
+    initrd = {
+      verbose = false;
+      systemd.enable = true;
+    };
     loader = {
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
+      timeout = 1;
     };
   };
+
+  systemd.watchdog.rebootTime = "0";
 
   # Networking
   networking = {
@@ -30,6 +39,7 @@
 
   # Services
   services = {
+    mingetty.autologinUser = user;
     openssh.enable = true;
     passSecretService.enable = true;
     gnome.gnome-keyring.enable = true;

@@ -14,6 +14,8 @@
   monitor = DP-1,2560x1440@144,1080x0,1
   monitor = HDMI-A-1,1920x1080@60,0x0,1,transform,3
 
+  workspace = 5, rounding:false, gapsin:0, gapsout:0, border:false, monitor:HDMI-A-1
+
   # INPUT 
   input {
     follow_mouse = 1
@@ -36,6 +38,7 @@
     disable_splash_rendering = true
     mouse_move_enables_dpms = true
     vfr = true
+    vrr = 2
     enable_swallow = true
     swallow_regex = ^(Alacritty)$
   }
@@ -92,6 +95,8 @@
   }
 
   # WINDOW RULES
+  windowrulev2 = workspace 5,class:(WebCord)
+
   windowrule = float, file_progress
   windowrule = float, confirm
   windowrule = float, dialog

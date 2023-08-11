@@ -4,6 +4,7 @@
 programs.fish = {
     enable = true;
     interactiveShellInit = ''
+      any-nix-shell fish --info-right | source
       set fish_greeting # Disable greeting
     '';
 

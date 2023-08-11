@@ -3,6 +3,7 @@
 {
   mainBar = {
     position = "top";
+    output = "DP-1";
     layer = "top";
     height = 16;
     margin-top = 0;
