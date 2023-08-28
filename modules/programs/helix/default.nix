@@ -31,8 +31,15 @@
         gutters.line-numbers.min-width = 1;
       };
 
-      keys.normal.space.u = {
-          h = ":toggle lsp.display-inlay-hints";
+      keys.normal = {
+        X = ["extend_line_up" "extend_to_line_bounds"];
+        A-x = "extend_to_line_bounds";
+        space.u.h = ":toggle lsp.display-inlay-hints";
+      };
+
+      keys.select = {
+        X = ["extend_line_up" "extend_to_line_bounds"];
+        A-x = "extend_to_line_bounds";
       };
     };
   };
