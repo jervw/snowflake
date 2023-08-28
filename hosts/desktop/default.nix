@@ -2,6 +2,7 @@
 
 {
   imports =
+    #[ ./../modules/virtualisation ] ++
     [ (import ./hardware-configuration.nix) ] ++
     [ (import ../../modules/desktop/nvidia.nix) ] ++
     [ (import ../../modules/desktop/hyprland) ];
@@ -39,7 +40,7 @@
 
   # Services
   services = {
-    mingetty.autologinUser = user;
+    #mingetty.autologinUser = user;
     openssh.enable = true;
     passSecretService.enable = true;
     gnome.gnome-keyring.enable = true;

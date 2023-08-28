@@ -35,12 +35,15 @@
   # MISC
   misc {
     disable_hyprland_logo = true
+    disable_autoreload = true
     disable_splash_rendering = true
     mouse_move_enables_dpms = true
+    animate_manual_resizes = true
     vfr = true
     vrr = 2
     enable_swallow = true
     swallow_regex = ^(Alacritty)$
+    groupbar_gradients = false
   }
 
   # DECORATION
@@ -54,10 +57,11 @@
     inactive_opacity = 1.0
 
     # Blur 
-    blur = true
-    blur_size = 3
-    blur_passes = 3
-    blur_new_optimizations = true
+    blur {
+      enabled = true
+      size = 3
+      passes = 3
+    }
 
     # Shadows
     drop_shadow = true
@@ -68,7 +72,7 @@
     col.shadow = 0x66000000
 
     blurls = gtk-layer-shell
-    # blurls = waybar
+    blurls = waybar
     blurls = lockscreen
   }
 
@@ -173,11 +177,11 @@
   bind = SUPER, 5, workspace, 5
 
   # MOVE
-  bind = SUPER SHIFT, 1, movetoworkspace, 1
-  bind = SUPER SHIFT, 2, movetoworkspace, 2
-  bind = SUPER SHIFT, 3, movetoworkspace, 3
-  bind = SUPER SHIFT, 4, movetoworkspace, 4
-  bind = SUPER SHIFT, 5, movetoworkspace, 5
+  bind = SUPER SHIFT, 1, movetoworkspacesilent, 1
+  bind = SUPER SHIFT, 2, movetoworkspacesilent, 2
+  bind = SUPER SHIFT, 3, movetoworkspacesilent, 3
+  bind = SUPER SHIFT, 4, movetoworkspacesilent, 4
+  bind = SUPER SHIFT, 5, movetoworkspacesilent, 5
 
   # MOUSE
   bindm = SUPER, mouse:272, movewindow

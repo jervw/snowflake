@@ -59,6 +59,7 @@
         "browser.urlbar.suggest.engines" = false;
         "browser.urlbar.suggest.openpage" = false;
         "browser.uidensity" = 1;
+        "dom.confirm_repost.testing.always_accept" = true;
         
         "privacy.firstparty.isolate" = true;
         "network.http.sendRefererHeader" = 0;

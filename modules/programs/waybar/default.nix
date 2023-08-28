@@ -7,7 +7,6 @@ in
 {
   programs.waybar = {
     enable = true;
-    package = hyprland.packages.${pkgs.system}.waybar-hyprland;
     settings = bar_config;
     style = bar_style;
   };
