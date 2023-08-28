@@ -25,11 +25,5 @@
           inherit nixpkgs home-manager hyprland user location;
         }
       );
-
-      homeConfigurations."work" = home-manager.lib.homeManagerConfiguration (
-        import ./work {
-          inherit nixpkgs;          
-        }
-      );
     };
 }
