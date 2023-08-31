@@ -24,7 +24,6 @@
       spotify
       webcord-vencord
       prismlauncher
-      jdk17
       networkmanagerapplet
       obs-studio
     ];

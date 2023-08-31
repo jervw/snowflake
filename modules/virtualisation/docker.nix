@@ -8,5 +8,4 @@
   };
 
   users.groups.docker.members = [ "${user}" ];
- 
 }

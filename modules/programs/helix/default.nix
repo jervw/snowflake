@@ -44,6 +44,20 @@
     };
   };
 
+  home.packages = with pkgs; [
+    # LSP
+    nil
+    nodePackages.typescript-language-server
+    nodePackages_latest.bash-language-server
+    taplo
+    marksman
+    lua-language-server
+
+    # Formatter
+    nixpkgs-fmt 
+  ];
+
+  # remove background
   home.file.".config/helix/themes/nightfox_transparent.toml".text = ''
   inherits = "nightfox"
   "ui.background" = {}
