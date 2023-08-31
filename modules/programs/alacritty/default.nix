@@ -38,17 +38,17 @@
           cyan = "0x63cdcf";
           white = "0xdfdfe0";
         };
-        
+
         bright = {
-            black = "0x575860";
-            red = "0xd16983";
-            green = "0x8ebaa4";
-            yellow = "0xe0c989";
-            blue = "0x86abdc";
-            magenta = "0xbaa1e2";
-            cyan = "0x7ad5d6";
-            white = "0xe4e4e5";
-        };       
+          black = "0x575860";
+          red = "0xd16983";
+          green = "0x8ebaa4";
+          yellow = "0xe0c989";
+          blue = "0x86abdc";
+          magenta = "0xbaa1e2";
+          cyan = "0x7ad5d6";
+          white = "0xe4e4e5";
+        };
       };
     };
   };

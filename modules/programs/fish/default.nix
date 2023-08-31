@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-programs.fish = {
+  programs.fish = {
     enable = true;
     interactiveShellInit = ''
       any-nix-shell fish --info-right | source

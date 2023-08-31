@@ -1,4 +1,4 @@
-{ hyprland, ...}: 
+{ hyprland, ... }:
 ''
   * {
       font-family: JetBrainsMono Nerd Font, FontAwesome, Noto Sans CJK;

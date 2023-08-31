@@ -1,6 +1,6 @@
 { pkgs, hyprland, ... }:
 with hyprland;
-let 
+let
   bar_config = import ./config.nix { inherit hyprland; };
   bar_style = import ./style.nix { inherit hyprland; };
 in

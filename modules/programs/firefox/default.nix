@@ -1,4 +1,4 @@
-{ pkgs, ...}:
+{ pkgs, ... }:
 {
   programs.firefox = {
     enable = true;
@@ -60,11 +60,11 @@
         "browser.urlbar.suggest.openpage" = false;
         "browser.uidensity" = 1;
         "dom.confirm_repost.testing.always_accept" = true;
-        
+
         "privacy.firstparty.isolate" = true;
         "network.http.sendRefererHeader" = 0;
-    };
-    userChrome = "
+      };
+      userChrome = "
         * { 
             box-shadow: none !important;
             border: 0px solid !important;
@@ -166,7 +166,7 @@
             padding-bottom: 2px !important;
         }
   ";
+    };
   };
- };
 
 }

@@ -2,7 +2,7 @@
 
 {
   services.dunst = {
-  enable = true;
+    enable = true;
     iconTheme = {
       name = "Papirus-Dark";
       package = pkgs.papirus-icon-theme;
@@ -34,7 +34,7 @@
       };
 
       fullscreen_delay_everything = { fullscreen = "delay"; };
-      
+
       urgency_low = {
         background = "#1e1e2e";
         foreground = "#c6d0f5";
