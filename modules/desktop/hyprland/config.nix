@@ -9,6 +9,7 @@
       # EXEC
       exec-once = waybar &
       exec-once = swaybg -i ~/.setup/wallpapers/el-captain-rock-reflection.jpg
+      exec-once = nm-applet &
 
       # MONITORS
       monitor = DP-1,2560x1440@144,1080x0,1

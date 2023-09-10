@@ -6,6 +6,7 @@
     ../../modules/desktop/hyprland/config.nix
     ../../modules/programs
     ../../modules/services
+    ../../modules/theme
   ];
 
   home = {
@@ -13,17 +14,13 @@
       calibre
       xfce.thunar
       feh
-      lxappearance
       morgen
       lazygit
       playerctl
       pavucontrol
       viewnior
-      orchis-theme
       steam
-      spotify
       webcord-vencord
-      prismlauncher
       networkmanagerapplet
       obs-studio
     ];

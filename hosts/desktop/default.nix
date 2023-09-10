@@ -43,7 +43,6 @@
     openssh.enable = true;
     passSecretService.enable = true;
     gnome.gnome-keyring.enable = true;
-    flatpak.enable = true;
 
     udev = {
       packages = [ pkgs.yubikey-personalization ];

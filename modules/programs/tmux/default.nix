@@ -33,9 +33,6 @@
       bind-key q kill-pane
       bind-key x kill-window
 
-      set -ga terminal-overrides ",xterm-256color:Tc"
-      set-option -g default-terminal "screen-256color"
-
       # statusbar
       set -g status-position top
       set -g status-interval 1
