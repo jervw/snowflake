@@ -9,6 +9,7 @@
 
     packages = with pkgs; [
       # Development
+      swaybg
       cmake
       gcc
       llvm

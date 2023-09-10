@@ -26,7 +26,8 @@
       wlsunset
       wlogout
       wlr-randr
-      swaybg
+      swww
+      waypaper
       hyprpicker
     ];
   };

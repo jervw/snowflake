@@ -7,7 +7,7 @@
     xwayland.enable = true;
     extraConfig = ''
       # EXEC
-      exec-once = waybar &
+      exec-once = waypaper --restore --random
       exec-once = swaybg -i ~/.setup/wallpapers/el-captain-rock-reflection.jpg
       exec-once = nm-applet &
 
@@ -105,6 +105,7 @@
       windowrule = float, file_progress
       windowrule = float, confirm
       windowrule = float, dialog
+      windowrule = float, waypaper
       windowrule = float, download
       windowrule = float, notification
       windowrule = float, error

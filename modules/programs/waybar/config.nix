@@ -130,7 +130,7 @@
     };
     "custom/launcher" = {
       format = "";
-      on-click = "killall rofi || rofi -show drun";
+      on-click = "waypaper";
       tooltip = "false";
     };
   };
