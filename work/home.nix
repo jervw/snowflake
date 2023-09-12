@@ -15,7 +15,7 @@
     rust-analyzer
     bat
     fd
-    exa
+    eza
   ];
 
   home.sessionVariables = {};

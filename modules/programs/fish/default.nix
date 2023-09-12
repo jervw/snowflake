@@ -11,8 +11,8 @@
     shellAliases = {
       nvim = "hx";
       nano = "hx";
-      ls = "exa --icons";
-      tree = "exa --tree --icons";
+      ls = "eza --icons";
+      tree = "eza --tree --icons";
       whereami = "curl ipinfo.io/city";
     };
   };

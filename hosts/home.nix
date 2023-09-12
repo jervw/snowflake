@@ -22,7 +22,7 @@
       # Utilities
       bat
       xdg-utils
-      exa
+      eza
       pfetch
       ripgrep
       fd
