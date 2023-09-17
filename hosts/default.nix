@@ -45,15 +45,15 @@ in
   server = lib.nixosSystem {
     inherit system;
     specialArgs = {
-      inherit user location system;
-      host.hostName = "loki";
+      inherit user location inputs system;
+      host.hostName = "thor";
     };
 
     modules = [
       ./server
       ./configuration.nix
 
-      home-manager.nixosModules.home-manager
+      inputs.home-manager.nixosModules.home-manager
       {
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
