@@ -7,13 +7,15 @@
     xwayland.enable = true;
     extraConfig = ''
       # EXEC
-      exec-once = waypaper --restore --random
-      exec-once = swaybg -i ~/.setup/wallpapers/el-captain-rock-reflection.jpg
+      exec-once = waybar &
       exec-once = nm-applet &
+      exec-once = waypaper --restore
 
       # MONITORS
-      monitor = DP-1,2560x1440@144,1080x0,1
+      #monitor = DP-1,2560x1440@144,1080x0,1
+      monitor=,highrr,auto,1
       monitor = HDMI-A-1,1920x1080@60,0x0,1,transform,3
+      
 
       workspace = 5, rounding:false, gapsin:0, gapsout:0, border:false, monitor:HDMI-A-1
 
@@ -41,7 +43,6 @@
         mouse_move_enables_dpms = true
         animate_manual_resizes = true
         vfr = true
-        vrr = 2
         enable_swallow = true
         swallow_regex = ^(Alacritty)$
         groupbar_gradients = false

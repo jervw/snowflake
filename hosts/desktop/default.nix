@@ -1,4 +1,4 @@
-{ pkgs, lib, user, ... }:
+{ pkgs, user, ... }:
 
 {
   imports =
@@ -31,15 +31,9 @@
     hostName = "loki";
   };
 
-  environment = {
-    systemPackages = with pkgs; [
-      tpm2-tss
-    ];
-  };
-
   # Services
   services = {
-    #mingetty.autologinUser = user;
+    getty.autologinUser = user;
     openssh.enable = true;
     passSecretService.enable = true;
     gnome.gnome-keyring.enable = true;
@@ -47,6 +41,32 @@
     udev = {
       packages = [ pkgs.yubikey-personalization ];
     };
+
+    # backups
+    restic = {
+      backups.${user} = {
+        initialize = true;
+        user = user;
+        paths = ["/home/${user}"];
+        passwordFile = "/etc/nixos/secrets/restic.txt";
+        repository = "sftp:jervw@thor.asgard:/mnt/ext/Backups/restic";
+        timerConfig = {
+          OnUnitActiveSec = "1d";
+        };
+        pruneOpts = [
+          "--keep-daily 7"
+        ];
+        exclude = [
+          ".cache/"
+          ".local/"
+          ".config/"
+          ".cargo/"
+          ".rustup/"
+          "Downloads/"
+        ];
+      };
+    };
+
 
     # Audio
     pipewire = {

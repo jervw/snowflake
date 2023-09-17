@@ -1,5 +1,5 @@
 # Universal packages shared between all hosts
-{ config, hyprland, lib, pkgs, user, ... }:
+{ pkgs, user, ... }:
 
 {
   # Home manager configuration
@@ -9,7 +9,6 @@
 
     packages = with pkgs; [
       # Development
-      swaybg
       cmake
       gcc
       llvm

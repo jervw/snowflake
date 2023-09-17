@@ -1,5 +1,5 @@
 # Specific packages for Desktop
-{ pkgs, hyprland, ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -21,6 +21,7 @@
       viewnior
       steam
       webcord-vencord
+      discord
       networkmanagerapplet
       obs-studio
     ];

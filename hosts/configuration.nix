@@ -48,7 +48,8 @@
       wget
       gsettings-desktop-schemas
       glib
-      pkgconfig
+      killall
+      pkg-config
       any-nix-shell
       gnome.seahorse
     ];

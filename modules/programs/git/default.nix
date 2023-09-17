@@ -1,16 +1,16 @@
 {
   programs.git = {
     enable = true;
-    delta.enable = true;
     userName = "jervw";
     userEmail = "vuolajere@gmail.com";
 
     extraConfig = {
       init = { defaultBranch = "main"; };
+      push.autoSetupRemote = true;
     };
 
     aliases = {
-      forgor = "commit --amend --no-edit";
+      fuck = "commit --amend --no-edit";
       s = "status --short";
       ss = "status";
     };

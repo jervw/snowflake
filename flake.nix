@@ -1,10 +1,10 @@
 {
-  description = "My personal NixOS system configuration.";
+  description = "My personal Nix configurations.";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager = {
-      url = github:nix-community/home-manager;
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprland = {
@@ -13,7 +13,7 @@
     };
   };
 
-  outputs = inputs @ { self, nixpkgs, hyprland, home-manager, ... }:
+  outputs = { self, nixpkgs, ... }@inputs:
     let
       user = "jervw";
       location = "$HOME/.";
@@ -22,7 +22,7 @@
       nixosConfigurations = (
         import ./hosts {
           inherit (nixpkgs) lib;
-          inherit nixpkgs home-manager hyprland user location;
+          inherit nixpkgs inputs user location;
         }
       );
     };

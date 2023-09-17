@@ -1,9 +1,9 @@
-{ hyprland, ... }:
+{ ... }:
 
 {
   mainBar = {
     position = "top";
-    output = "DP-1";
+    output = "!HDMI-A-1";
     layer = "top";
     height = 16;
     margin-top = 0;
@@ -13,7 +13,7 @@
     modules-left =
       [ "custom/launcher" "custom/playerctl" "custom/playerlabel" ];
     modules-center = [
-      "wlr/workspaces"
+      "hyprland/workspaces"
     ];
     modules-right = [
       "tray"
@@ -29,7 +29,7 @@
       format-alt = " {:%d/%m}";
     };
 
-    "wlr/workspaces" = {
+    "hyprland/workspaces" = {
       active-only = false;
       all-outputs = true;
       disable-scroll = false;
