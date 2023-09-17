@@ -2,7 +2,6 @@
 
 {
   imports =
-    #[ ./../modules/virtualisation ] ++
     [ (import ./hardware-configuration.nix) ] ++
     [ (import ../../modules/desktop/nvidia.nix) ] ++
     [ (import ../../modules/desktop/hyprland) ];

@@ -2,7 +2,8 @@
 
 {
   imports =
-    [ (import ./hardware-configuration.nix) ];
+    [ (import ./hardware-configuration.nix) ] ++
+    [ (import ../../modules/containers) ];
 
   boot = {
     loader = {

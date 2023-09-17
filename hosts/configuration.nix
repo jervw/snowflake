@@ -1,6 +1,6 @@
 # Universal configuration file for all hosts
 
-{ config, lib, pkgs, user, ... }:
+{ pkgs, user, ... }:
 
 {
   imports = [ ./../modules/virtualisation ];
