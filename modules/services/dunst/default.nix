@@ -33,8 +33,6 @@
         word_wrap = "yes";
       };
 
-      fullscreen_delay_everything = { fullscreen = "delay"; };
-
       urgency_low = {
         background = "#1e1e2e";
         foreground = "#c6d0f5";
