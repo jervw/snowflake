@@ -43,16 +43,15 @@
         mouse_move_enables_dpms = true
         animate_manual_resizes = true
         vfr = true
+        vrr = true
         enable_swallow = true
         swallow_regex = ^(Alacritty)$
-        groupbar_gradients = false
       }
 
       # DECORATION
       decoration {
         # Corners
         rounding = 8
-        multisample_edges = true
 
         # Opacity
         active_opacity = 1.0
@@ -101,7 +100,8 @@
       }
 
       # WINDOW RULES
-      windowrulev2 = workspace 5,class:(WebCord)
+      windowrulev2 = workspace 5,class:(VencordDesktop)
+      windowrulev2 = workspace 5,class:(Cider)
 
       windowrule = float, file_progress
       windowrule = float, confirm
@@ -115,7 +115,6 @@
       windowrule = float, title:Open File
       windowrule = float, title:branchdialog
       windowrule = float, feh
-      windowrule = float, pavucontrol-qt
       windowrule = float, pavucontrol
       windowrule = float, file-roller
       windowrule = fullscreen, wlogout

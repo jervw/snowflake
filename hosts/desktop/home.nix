@@ -11,7 +11,6 @@
 
   home = {
     packages = with pkgs; [
-      calibre
       xfce.thunar
       feh
       morgen
@@ -20,7 +19,8 @@
       pavucontrol
       viewnior
       steam
-      webcord-vencord
+      vesktop
+      qbittorrent
       discord
       networkmanagerapplet
       obs-studio

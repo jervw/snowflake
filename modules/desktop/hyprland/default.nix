@@ -23,7 +23,6 @@
       grim
       slurp
       wl-clipboard
-      wlsunset
       wlogout
       wlr-randr
       swww

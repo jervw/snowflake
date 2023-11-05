@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ pkgs, lib, config, ... }:
 
 {
   hardware = {
@@ -14,7 +14,8 @@
         ];
     };
     nvidia = {
-      open = true; # testing
+      open = true;
+      package = config.boot.kernelPackages.nvidiaPackages.beta;
       powerManagement.enable = true;
       modesetting.enable = true;
     };
@@ -32,6 +33,7 @@
       vulkan-validation-layers
       vulkan-tools
       xclip
+      xorg.xeyes
       libva
       libva-utils
       glxinfo

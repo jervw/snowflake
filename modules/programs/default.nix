@@ -9,5 +9,6 @@
     ./tmux
     ./firefox
     ./mpv
+    ./direnv
   ];
 }

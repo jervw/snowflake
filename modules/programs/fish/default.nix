@@ -6,6 +6,7 @@
     interactiveShellInit = ''
       any-nix-shell fish --info-right | source
       set fish_greeting # Disable greeting
+      direnv hook fish | source
     '';
 
     shellAliases = {

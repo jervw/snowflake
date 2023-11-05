@@ -67,6 +67,7 @@
 
   programs.gnupg.agent = {
     enable = true;
+    pinentryFlavor = "gnome3";
     enableSSHSupport = true;
   };
 
@@ -86,5 +87,5 @@
     };
   };
 
-  system.stateVersion = "22.11";
+  system.stateVersion = "23.05";
 }
