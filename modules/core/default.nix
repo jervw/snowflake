@@ -2,7 +2,6 @@
 
 {
   imports = [
-    inputs.nh.nixosModules.default
     ./system.nix
     ./users.nix
     ./fonts.nix

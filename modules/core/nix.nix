@@ -1,4 +1,4 @@
-{ user, ...}:
+{ ...}:
 {
   nixpkgs = {
     config = {
@@ -7,20 +7,12 @@
     overlays = [];
   };
 
-  nh = {
-    enable = true;
-    clean = {
-      enable = true;
-      dates = "daily";
-      extraArgs = "--keep-since 2d --keep 3";
-    };
-  };
-
-  environment.sessionVariables = {
-    FLAKE = "/home/${user}/.setup";
-  };
-
   nix = {
+    gc = {
+      automatic = true;
+      dates = "daily";
+      options = "--delete-older-than 2d";
+    };
     settings = {
       extra-experimental-features = ["flakes" "nix-command"];
       warn-dirty = false;

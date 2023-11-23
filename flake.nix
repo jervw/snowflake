@@ -13,11 +13,6 @@
       url = "github:vaxerski/Hyprland";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    nh = {
-      url = "github:viperML/nh";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = { self, nixpkgs, ... } @ inputs:
@@ -28,6 +23,14 @@
       };
     in
     {
+    devShells.${system}.default = pkgs.mkShell {
+      packages = with pkgs; [
+        sops
+        alejandra
+        yaml-language-server
+      ];
+    };
+
       formatter.${system} = pkgs.alejandra;
       nixosConfigurations = import ./hosts inputs;
     };
