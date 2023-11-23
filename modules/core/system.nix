@@ -25,6 +25,7 @@
       killall
       unzip
       zip
+      nvd
     ];
   };
 
