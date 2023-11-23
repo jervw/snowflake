@@ -1,7 +1,0 @@
-{
-  imports = [
-    ./dunst
-    ./wlsunset
-  ];
-}
-

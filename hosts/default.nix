@@ -1,72 +1,30 @@
-{ nixpkgs, inputs, user, location, ... }:
+inputs:
 
 let
   system = "x86_64-linux";
-
-  pkgs = import nixpkgs {
-    inherit system;
-    config.allowUnfree = true;
-  };
-
-  lib = nixpkgs.lib;
+  user = "jervw";
+  hmModule = inputs.home-manager.nixosModules.home-manager;
+  hyprlandModule = inputs.hyprland.homeManagerModules.default;
+  inherit (inputs.nixpkgs.lib) nixosSystem;
 in
 {
-  desktop = lib.nixosSystem {
+  loki = nixosSystem {
     inherit system;
-    specialArgs = {
-      inherit user location inputs system;
-      host.hostName = "loki";
-    };
-
+    specialArgs = {inherit user inputs;};
     modules = [
-      inputs.hyprland.nixosModules.default
-      ./desktop
-      ./configuration.nix
-
-      inputs.home-manager.nixosModules.home-manager
+      ./loki
+      hmModule
       {
-        home-manager.useGlobalPkgs = true;
-        home-manager.useUserPackages = true;
-        home-manager.extraSpecialArgs = {
-          inherit user inputs;
-          host.hostName = "loki";
-        };
-
-        home-manager.users.${user} = {
-          imports = [
-            ./home.nix
-            ./desktop/home.nix
-          ];
-        };
-      }
-    ];
-  };
-
-  server = lib.nixosSystem {
-    inherit system;
-    specialArgs = {
-      inherit user location inputs system;
-      host.hostName = "thor";
-    };
-
-    modules = [
-      ./server
-      ./configuration.nix
-
-      inputs.home-manager.nixosModules.home-manager
-      {
-        home-manager.useGlobalPkgs = true;
-        home-manager.useUserPackages = true;
-        home-manager.extraSpecialArgs = {
-          inherit user;
-          host.hostName = "thor";
-        };
-
-        home-manager.users.${user} = {
-          imports = [
-            ./home.nix
-            ./server/home.nix
-          ];
+        home-manager = {
+          useGlobalPkgs = true;
+          useUserPackages = true;
+          extraSpecialArgs = {inherit user inputs;};
+          users.${user} = {
+            imports = [
+              ./loki/home.nix
+              hyprlandModule
+            ];
+          };
         };
       }
     ];

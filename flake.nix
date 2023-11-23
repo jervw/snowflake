@@ -1,31 +1,34 @@
 {
-  description = "My personal Nix configurations.";
+  description = "NixOS configuration";
 
   inputs = {
-    nixpkgs = {
-      url = "github:NixOS/nixpkgs/nixos-unstable";
-    };
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     hyprland = {
       url = "github:vaxerski/Hyprland";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nh = {
+      url = "github:viperML/nh";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, ... }@inputs:
+  outputs = { self, nixpkgs, ... } @ inputs:
     let
-      user = "jervw";
-      location = "$HOME/.";
+      system = "x86_64-linux";
+      pkgs = import nixpkgs {
+        inherit system;
+      };
     in
     {
-      nixosConfigurations = (
-        import ./hosts {
-          inherit (nixpkgs) lib;
-          inherit nixpkgs inputs user location;
-        }
-      );
+      # formatter.${system} = pkgs.alejandra;
+      nixosConfigurations = import ./hosts inputs;
     };
 }
