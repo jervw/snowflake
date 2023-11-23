@@ -16,6 +16,10 @@
     hostName = "thor";
   };
 
+  services = {
+    openssh.enable = true;
+  };
+
   programs.gnupg.agent = {
     enable = true;
     pinentryFlavor = "curses";

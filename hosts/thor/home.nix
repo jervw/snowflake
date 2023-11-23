@@ -1,4 +1,3 @@
-# Specific packages for Desktop
 {
   pkgs,
   user,

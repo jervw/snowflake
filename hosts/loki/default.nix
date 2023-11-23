@@ -1,5 +1,11 @@
-{pkgs, ...}: {
+{
+  inputs,
+  pkgs,
+  ...
+}: {
   imports = [
+    inputs.nix-gaming.nixosModules.steamCompat
+    inputs.nix-gaming.nixosModules.pipewireLowLatency
     ./hardware-configuration.nix
     ../../modules/core
     ../../modules/virtualisation
@@ -27,6 +33,13 @@
     enableSSHSupport = true;
   };
 
+  programs.steam = {
+    enable = true;
+    extraCompatPackages = [
+      inputs.nix-gaming.packages.${pkgs.system}.proton-ge
+    ];
+  };
+
   # Services
   services = {
     passSecretService.enable = true;
@@ -42,6 +55,11 @@
       alsa.enable = true;
       alsa.support32Bit = true;
       pulse.enable = true;
+      lowLatency = {
+        enable = true;
+        quantum = 64;
+        rate = 48000;
+      };
     };
   };
 }

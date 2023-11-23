@@ -2,6 +2,7 @@ inputs: let
   system = "x86_64-linux";
   user = "jervw";
   hmModule = inputs.home-manager.nixosModules.home-manager;
+  agenixModule = inputs.agenix.nixosModules.age;
   hyprlandModule = inputs.hyprland.homeManagerModules.default;
   inherit (inputs.nixpkgs.lib) nixosSystem;
 in {
@@ -11,6 +12,7 @@ in {
     modules = [
       ./loki
       hmModule
+      agenixModule
       {
         home-manager = {
           useGlobalPkgs = true;
@@ -33,6 +35,7 @@ in {
     modules = [
       ./thor
       hmModule
+      agenixModule
       {
         home-manager = {
           useGlobalPkgs = true;

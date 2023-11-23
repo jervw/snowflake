@@ -21,6 +21,7 @@
       git
       glib
       killall
+      python3
       unzip
       zip
       nvd

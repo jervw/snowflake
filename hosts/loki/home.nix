@@ -1,5 +1,5 @@
-# Specific packages for Desktop
 {
+  inputs,
   pkgs,
   user,
   ...
@@ -26,11 +26,11 @@
       pavucontrol
       lutris
       viewnior
-      steam
       qbittorrent
       discord
       networkmanagerapplet
       obs-studio
+      inputs.nix-gaming.packages.${pkgs.system}.wine-ge
     ];
 
     stateVersion = "23.05";
