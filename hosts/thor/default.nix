@@ -15,7 +15,7 @@
   };
 
   networking = {
-    hostName = "loki";
+    hostName = "thor";
   };
 
   programs.gnupg.agent = {

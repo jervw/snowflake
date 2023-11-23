@@ -43,7 +43,7 @@ in
           extraSpecialArgs = {inherit user inputs;};
           users.${user} = {
             imports = [
-              ./loki/home.nix
+              ./thor/home.nix
             ];
           };
         };
