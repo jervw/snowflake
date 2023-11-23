@@ -1,5 +1,8 @@
-{ pkgs, user, ... }:
 {
+  pkgs,
+  user,
+  ...
+}: {
   programs.firefox = {
     enable = true;
     package = pkgs.firefox-wayland;
@@ -46,7 +49,7 @@
         # Disable JS in PDFs
         "pdfjs.enableScripting" = false;
 
-        # Harden SSL 
+        # Harden SSL
         "security.ssl.require_safe_negotiation" = true;
 
         # Extra
@@ -170,5 +173,4 @@
   ";
     };
   };
-
 }

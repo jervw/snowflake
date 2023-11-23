@@ -1,7 +1,9 @@
 # Specific packages for Desktop
-{ pkgs, user, ... }:
-
 {
+  pkgs,
+  user,
+  ...
+}: {
   imports = [
     ../../home/core
     ../../home/desktop

@@ -1,17 +1,14 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   hardware = {
     opengl = {
       enable = true;
       driSupport = true;
       driSupport32Bit = true;
-      extraPackages = with pkgs;
-        [
-          nvidia-vaapi-driver
-          vaapiVdpau
-          libvdpau-va-gl
-        ];
+      extraPackages = with pkgs; [
+        nvidia-vaapi-driver
+        vaapiVdpau
+        libvdpau-va-gl
+      ];
     };
     nvidia = {
       open = true;
@@ -40,5 +37,5 @@
     ];
   };
 
-  services.xserver.videoDrivers = [ "nvidia" ];
+  services.xserver.videoDrivers = ["nvidia"];
 }

@@ -1,6 +1,8 @@
-{ pkgs, user, ... }:
-
 {
+  pkgs,
+  user,
+  ...
+}: {
   environment.systemPackages = with pkgs; [
     virt-manager
   ];
@@ -17,6 +19,6 @@
     };
   };
 
-  networking.firewall.trustedInterfaces = [ "virbr0" ];
-  users.groups.libvirtd.members = [ "${user}" ];
+  networking.firewall.trustedInterfaces = ["virbr0"];
+  users.groups.libvirtd.members = ["${user}"];
 }

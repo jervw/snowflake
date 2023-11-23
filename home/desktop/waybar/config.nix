@@ -1,6 +1,4 @@
-{ ... }:
-
-{
+{...}: {
   mainBar = {
     position = "top";
     output = "!HDMI-A-1";
@@ -10,8 +8,7 @@
     margin-bottom = 0;
     margin-left = 0;
     margin-right = 0;
-    modules-left =
-      [ "custom/launcher" "custom/playerctl" "custom/playerlabel" ];
+    modules-left = ["custom/launcher" "custom/playerctl" "custom/playerlabel"];
     modules-center = [
       "hyprland/workspaces"
     ];
@@ -85,7 +82,7 @@
       format-alt = "{icon} {time}";
       # "format-good"= "", // An empty format will hide the module
       # "format-full"= "";
-      format-icons = [ "" "" "" "" "" ];
+      format-icons = ["" "" "" "" ""];
     };
 
     memory = {
@@ -125,7 +122,7 @@
     pulseaudio = {
       format = "{icon} {volume}%";
       format-muted = "󰝟";
-      format-icons = { default = [ "󰕿" "󰖀" "󱄠" ]; };
+      format-icons = {default = ["󰕿" "󰖀" "󱄠"];};
       on-click = "pavucontrol";
     };
     "custom/launcher" = {

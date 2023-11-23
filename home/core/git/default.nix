@@ -11,7 +11,7 @@
     ];
 
     extraConfig = {
-      init = { defaultBranch = "main"; };
+      init = {defaultBranch = "main";};
       push.autoSetupRemote = true;
     };
 

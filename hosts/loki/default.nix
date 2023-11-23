@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   imports = [
     ./hardware-configuration.nix
     ../../modules/core
@@ -35,7 +33,7 @@
     gnome.gnome-keyring.enable = true;
 
     udev = {
-      packages = [ pkgs.yubikey-personalization ];
+      packages = [pkgs.yubikey-personalization];
     };
 
     # Audio

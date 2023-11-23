@@ -1,13 +1,10 @@
-inputs:
-
-let
+inputs: let
   system = "x86_64-linux";
   user = "jervw";
   hmModule = inputs.home-manager.nixosModules.home-manager;
   hyprlandModule = inputs.hyprland.homeManagerModules.default;
   inherit (inputs.nixpkgs.lib) nixosSystem;
-in
-{
+in {
   loki = nixosSystem {
     inherit system;
     specialArgs = {inherit user inputs;};

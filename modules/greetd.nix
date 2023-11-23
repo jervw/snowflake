@@ -1,5 +1,4 @@
-{ user, ...}: 
-{
+{user, ...}: {
   services.greetd = {
     enable = true;
     settings = rec {

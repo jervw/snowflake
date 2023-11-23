@@ -1,7 +1,5 @@
-{ user, ...}:
-
-{
-    security = {
+{user, ...}: {
+  security = {
     rtkit.enable = true;
     polkit.enable = true;
     sudo.enable = false;
@@ -13,11 +11,13 @@
     doas = {
       enable = true;
       wheelNeedsPassword = false;
-      extraRules = [{
-        users = [ user ];
-        keepEnv = true;
-        noPass = true;
-      }];
+      extraRules = [
+        {
+          users = [user];
+          keepEnv = true;
+          noPass = true;
+        }
+      ];
     };
   };
 
@@ -63,4 +63,3 @@
   };
   boot.kernelModules = ["tcp_bbr"];
 }
-

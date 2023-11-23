@@ -1,6 +1,8 @@
-{ pkgs, user, ...}:
-
 {
+  pkgs,
+  user,
+  ...
+}: {
   programs.fish.enable = true;
 
   users = {

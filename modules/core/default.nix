@@ -1,6 +1,4 @@
-{ inputs, ...}:
-
-{
+{inputs, ...}: {
   imports = [
     ./system.nix
     ./users.nix

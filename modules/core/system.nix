@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   time.timeZone = "Europe/Helsinki";
 
   i18n = {

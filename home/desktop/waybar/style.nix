@@ -1,5 +1,4 @@
-{ hyprland, ... }:
-''
+{hyprland, ...}: ''
   * {
       font-family: JetBrainsMono Nerd Font, FontAwesome, Noto Sans CJK;
       font-size: 15px;
@@ -12,7 +11,7 @@
     background: rgba(25, 35, 48, 0.8);
     color: #cdcecf;
   }
-  
+
   #workspaces {
   	background: #12162E;
   	margin: 5px 5px;
@@ -181,4 +180,3 @@
       padding: 0px 10px 0px 10px;
   }
 ''
-

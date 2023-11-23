@@ -15,14 +15,16 @@
     };
   };
 
-  outputs = { self, nixpkgs, ... } @ inputs:
-    let
-      system = "x86_64-linux";
-      pkgs = import nixpkgs {
-        inherit system;
-      };
-    in
-    {
+  outputs = {
+    self,
+    nixpkgs,
+    ...
+  } @ inputs: let
+    system = "x86_64-linux";
+    pkgs = import nixpkgs {
+      inherit system;
+    };
+  in {
     devShells.${system}.default = pkgs.mkShell {
       packages = with pkgs; [
         sops
@@ -31,7 +33,7 @@
       ];
     };
 
-      formatter.${system} = pkgs.alejandra;
-      nixosConfigurations = import ./hosts inputs;
-    };
+    formatter.${system} = pkgs.alejandra;
+    nixosConfigurations = import ./hosts inputs;
+  };
 }

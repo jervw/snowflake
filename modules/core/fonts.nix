@@ -1,5 +1,4 @@
-{ pkgs, ...}:
-{
+{pkgs, ...}: {
   fonts = {
     enableDefaultPackages = false;
     packages = with pkgs; [
@@ -9,7 +8,7 @@
       noto-fonts-emoji
       font-awesome
       corefonts
-      (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+      (nerdfonts.override {fonts = ["JetBrainsMono"];})
     ];
   };
 }

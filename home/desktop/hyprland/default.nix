@@ -1,6 +1,4 @@
-{ ... }:
-
-{
+{...}: {
   wayland.windowManager.hyprland = {
     enable = true;
     enableNvidiaPatches = true;
@@ -15,11 +13,11 @@
       #monitor = DP-1,2560x1440@144,1080x0,1
       monitor=,highrr,auto,1
       monitor = HDMI-A-1,1920x1080@60,0x0,1,transform,3
-      
+
 
       workspace = 5, rounding:false, gapsin:0, gapsout:0, border:false, monitor:HDMI-A-1
 
-      # INPUT 
+      # INPUT
       input {
         follow_mouse = 1
         kb_layout = us,fi
@@ -57,7 +55,7 @@
         active_opacity = 1.0
         inactive_opacity = 1.0
 
-        # Blur 
+        # Blur
         blur {
           enabled = true
           size = 3
@@ -95,8 +93,8 @@
 
       dwindle {
         no_gaps_when_only = false
-        pseudotile = true 
-        preserve_split = true 
+        pseudotile = true
+        preserve_split = true
       }
 
       # WINDOW RULES
@@ -132,9 +130,9 @@
 
       # MISC BINDINGS
       bind = SUPER, Return, exec, alacritty
-      bind = SUPER, D, exec, killall rofi || rofi -show drun 
-      bind = SUPER, B, exec, firefox 
-      bind = SUPER, Z, exec, slurp | grim -g - - | wl-copy 
+      bind = SUPER, D, exec, killall rofi || rofi -show drun
+      bind = SUPER, B, exec, firefox
+      bind = SUPER, Z, exec, slurp | grim -g - - | wl-copy
       bind = SUPER, C, exec, hyprpicker -a | --autocopy
 
       # WINDOWS MANAGEMENT
@@ -193,4 +191,3 @@
     '';
   };
 }
-
