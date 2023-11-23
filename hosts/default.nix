@@ -30,5 +30,26 @@ in
     ];
   };
 
+  thor = nixosSystem {
+    inherit system;
+    specialArgs = {inherit user inputs;};
+    modules = [
+      ./thor
+      hmModule
+      {
+        home-manager = {
+          useGlobalPkgs = true;
+          useUserPackages = true;
+          extraSpecialArgs = {inherit user inputs;};
+          users.${user} = {
+            imports = [
+              ./loki/home.nix
+            ];
+          };
+        };
+      }
+    ];
+  };
+
   # Add more hosts here..
 }

@@ -28,7 +28,7 @@
       };
     in
     {
-      # formatter.${system} = pkgs.alejandra;
+      formatter.${system} = pkgs.alejandra;
       nixosConfigurations = import ./hosts inputs;
     };
 }
