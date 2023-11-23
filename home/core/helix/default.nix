@@ -1,6 +1,9 @@
-{ pkgs, ... }:
+{ ... }:
 
 {
+  imports = [
+    ./languages.nix
+  ];
   programs.helix = {
     enable = true;
     defaultEditor = true;
@@ -44,21 +47,7 @@
     };
   };
 
-  home.packages = with pkgs; [
-    # LSP
-    nil
-    nodePackages.typescript-language-server
-    nodePackages_latest.bash-language-server
-    nodePackages.svelte-language-server
-    taplo
-    marksman
-    lua-language-server
-
-    # Formatter
-    nixpkgs-fmt
-  ];
-
-  # remove background
+  # make background transparent
   home.file.".config/helix/themes/nightfox_transparent.toml".text = ''
     inherits = "nightfox"
     "ui.background" = {}
