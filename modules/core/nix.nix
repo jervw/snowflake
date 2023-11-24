@@ -5,14 +5,26 @@
     };
   };
 
+  # faster rebuilding
+  documentation = {
+    enable = true;
+    doc.enable = false;
+    man.enable = true;
+    dev.enable = false;
+  };
+
   nix = {
     gc = {
       automatic = true;
       dates = "daily";
       options = "--delete-older-than 2d";
     };
+
+    daemonCPUSchedPolicy = "idle";
+    daemonIOSchedClass = "idle";
+
     settings = {
-      extra-experimental-features = ["flakes" "nix-command"];
+      extra-experimental-features = ["flakes" "nix-command" "recursive-nix"];
       warn-dirty = false;
       auto-optimise-store = true;
       builders-use-substitutes = true;

@@ -1,4 +1,5 @@
 {
+  config,
   pkgs,
   user,
   ...
@@ -19,5 +20,13 @@
       ];
     };
     users.root.hashedPassword = "!"; # disable root password
+  };
+
+  # secrets
+  age.secrets = {
+    plex = {
+      file = ../../secrets/plex.age;
+      owner = user;
+    };
   };
 }
