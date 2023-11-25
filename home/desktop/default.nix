@@ -10,4 +10,9 @@
     ./waybar
     ./wlsunset
   ];
+  config = {
+    services = {
+      udiskie.enable = true;
+    };
+  };
 }

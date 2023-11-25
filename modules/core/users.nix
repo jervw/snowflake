@@ -24,8 +24,8 @@
 
   # secrets
   age.secrets = {
-    plex = {
-      file = ../../secrets/plex.age;
+    pia = {
+      file = ../../secrets/pia.age;
       owner = user;
     };
   };
