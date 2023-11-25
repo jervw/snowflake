@@ -1,5 +1,4 @@
 {
-  inputs,
   pkgs,
   user,
   ...
@@ -30,7 +29,6 @@
       discord
       networkmanagerapplet
       obs-studio
-      inputs.nix-gaming.packages.${pkgs.system}.wine-ge
     ];
 
     stateVersion = "23.05";
