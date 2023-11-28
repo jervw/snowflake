@@ -25,6 +25,7 @@
       unzip
       zip
       nvd
+      zfs
     ];
   };
 

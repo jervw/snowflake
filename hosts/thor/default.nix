@@ -11,10 +11,18 @@
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
     };
+    supportedFilesystems = ["zfs"];
+    zfs = {
+      forceImportRoot = false;
+      extraPools = ["zpool"];
+    };
   };
 
   networking = {
     hostName = "thor";
+    hostId = "7f6f07cd";
+    networkmanager.enable = true;
+    firewall.enable = false;
   };
 
   programs.gnupg.agent = {
