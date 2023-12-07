@@ -23,11 +23,10 @@
     users.root.hashedPassword = "!"; # disable root password
   };
 
-  # secrets
-  # age.secrets = {
-  #   pia = {
-  #     file = ../../secrets/pia.age;
-  #     owner = user;
-  #   };
-  # };
+  age.secrets = {
+    pia = {
+      file = ../../secrets/pia.age;
+      owner = user;
+    };
+  };
 }

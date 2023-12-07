@@ -1,9 +1,11 @@
-{config, ...}: {
-  # WIP
-
+{
+  config,
+  lib,
+  ...
+}: {
   virtualisation.oci-containers.containers.qbittorrent = {
-    image = "j4ym0/pia-qbittorrent";
-    # environmentFiles = [config.age.secrets.pia.path];
+    image = lib.mkForce "j4ym0/pia-qbittorrent";
+    environmentFiles = [config.age.secrets.pia.path];
     volumes = [
       "pia_config:/config"
     ];
