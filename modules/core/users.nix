@@ -17,6 +17,7 @@
         "doas"
         "disk"
         "video"
+        "input"
       ];
     };
     users.root.hashedPassword = "!"; # disable root password

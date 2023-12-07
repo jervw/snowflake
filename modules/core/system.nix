@@ -26,6 +26,7 @@
       zip
       nvd
       zfs
+      file
     ];
   };
 

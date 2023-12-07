@@ -1,4 +1,5 @@
 {
+  inputs,
   pkgs,
   user,
   ...
@@ -14,7 +15,7 @@
     username = user;
     homeDirectory = "/home/${user}";
     packages = with pkgs; [
-      xfce.thunar
+      gnome.nautilus
       feh
       imv
       morgen
@@ -24,11 +25,16 @@
       playerctl
       pavucontrol
       lutris
+      steam
+      heroic
+      (jetbrains.plugins.addPlugins jetbrains.rust-rover ["github-copilot"])
       viewnior
       qbittorrent
       discord
       networkmanagerapplet
       obs-studio
+      inputs.nix-gaming.packages.${pkgs.system}.wine-ge
+      (callPackage ../../pkgs/cider2 {})
     ];
 
     stateVersion = "23.05";

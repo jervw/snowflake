@@ -1,8 +1,4 @@
-{
-  inputs,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ./hardware-configuration.nix
     ../../modules/core
@@ -14,7 +10,7 @@
   ];
 
   boot = {
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_xanmod_latest;
     loader = {
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
@@ -23,6 +19,7 @@
 
   networking = {
     hostName = "loki";
+    networkmanager.enable = true;
   };
 
   programs.gnupg.agent = {
@@ -39,6 +36,8 @@
     udev = {
       packages = [pkgs.yubikey-personalization];
     };
+
+    gvfs.enable = true;
 
     # Audio
     pipewire = {

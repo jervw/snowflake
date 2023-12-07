@@ -11,9 +11,11 @@
     dconf
     bat
     xdg-utils
+    rustup
     eza
     pfetch
     ripgrep
+    rclone
     fd
     fzf
     nix-search-cli

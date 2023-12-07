@@ -1,7 +1,6 @@
 {
   wayland.windowManager.hyprland = {
     enable = true;
-    enableNvidiaPatches = true;
     xwayland.enable = true;
     extraConfig = ''
       # EXEC
@@ -31,6 +30,7 @@
         border_size=0
         no_border_on_floating = true
         layout = dwindle
+        # allow_tearing = true
       }
 
       # MISC
@@ -41,7 +41,6 @@
         mouse_move_enables_dpms = true
         animate_manual_resizes = true
         vfr = true
-        # vrr = true
         enable_swallow = true
         swallow_regex = ^(Alacritty)$
       }
@@ -96,6 +95,9 @@
         pseudotile = true
         preserve_split = true
       }
+
+      windowrulev2 = immediate, class:^(steam_app_252950)$
+      windowrulev2 = immediate, title:^(FREEGLUT)$
 
       # WINDOW RULES
       windowrulev2 = workspace 5,class:(VencordDesktop)

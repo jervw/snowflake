@@ -26,7 +26,7 @@
     };
     systemPackages = with pkgs; [
       vulkan-loader
-      # vulkan-validation-layers
+      vulkan-validation-layers
       vulkan-tools
       xclip
       xorg.xeyes

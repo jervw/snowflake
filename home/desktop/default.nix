@@ -1,4 +1,4 @@
-{
+{pkgs, ...}: {
   imports = [
     ./alacritty
     ./dunst
@@ -10,9 +10,9 @@
     ./waybar
     ./wlsunset
   ];
-  config = {
-    services = {
-      udiskie.enable = true;
-    };
+
+  services.espanso = {
+    enable = true;
+    package = pkgs.espanso-wayland;
   };
 }
