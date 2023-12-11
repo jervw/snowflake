@@ -4,6 +4,7 @@ inputs: let
   hmModule = inputs.home-manager.nixosModules.home-manager;
   agenixModule = inputs.agenix.nixosModules.age;
   hyprlandModule = inputs.hyprland.homeManagerModules.default;
+  wslModule = inputs.nixos-wsl.nixosModules.wsl;
   inherit (inputs.nixpkgs.lib) nixosSystem;
 in {
   loki = nixosSystem {
@@ -44,6 +45,29 @@ in {
           users.${user} = {
             imports = [
               ./thor/home.nix
+            ];
+          };
+        };
+      }
+    ];
+  };
+
+  vidar = nixosSystem {
+    inherit system;
+    specialArgs = {inherit user inputs;};
+    modules = [
+      ./vidar
+      hmModule
+      agenixModule
+      wslModule
+      {
+        home-manager = {
+          useGlobalPkgs = true;
+          useUserPackages = true;
+          extraSpecialArgs = {inherit user inputs;};
+          users.${user} = {
+            imports = [
+              ./vidar/home.nix
             ];
           };
         };
