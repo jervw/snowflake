@@ -12,7 +12,7 @@
   sources = {
     x86_64-linux = {
       url = "https://r2.jervw/Cider-${version}.AppImage";
-      hash = "sha256-iHuWVqdDfmdmoJaGnI9wOETwA/jPkelHuJLmjh/lHnk=";
+      hash = "sha256-4LGy+K+u0mUbFuiLlvQkxW5T+HwXSZYyZRUJNOVlO0Q=";
     };
   };
 

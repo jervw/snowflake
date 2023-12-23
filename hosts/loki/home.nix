@@ -18,8 +18,8 @@
       gnome.nautilus
       feh
       imv
-      morgen
-      obsidian
+      # morgen
+      # obsidian
       vscode-fhs
       lazygit
       playerctl
@@ -30,6 +30,7 @@
       (jetbrains.plugins.addPlugins jetbrains.rust-rover ["github-copilot"])
       viewnior
       qbittorrent
+      vesktop
       discord
       networkmanagerapplet
       obs-studio

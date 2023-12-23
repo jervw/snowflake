@@ -16,6 +16,7 @@
       efi.canTouchEfiVariables = true;
     };
   };
+  boot.supportedFilesystems = ["ntfs"];
 
   networking = {
     hostName = "loki";

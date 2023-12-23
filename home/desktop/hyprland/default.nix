@@ -9,10 +9,9 @@
       exec-once = waypaper --restore
 
       # MONITORS
-      #monitor = DP-1,2560x1440@144,1080x0,1
       monitor=,highrr,auto,1
       monitor = HDMI-A-1,1920x1080@60,0x0,1,transform,3
-
+      # monitor= HDMI-A-1,disable
 
       workspace = 5, rounding:false, gapsin:0, gapsout:0, border:false, monitor:HDMI-A-1
 

@@ -1,14 +1,13 @@
-{
-  pkgs,
-  user,
-  ...
-}: {
+{user, ...}: {
   programs.firefox = {
     enable = true;
-    package = pkgs.firefox-wayland;
 
     profiles.${user} = {
       settings = {
+        "gfx.webrender.all" = true; # Force enable GPU acceleration
+        "media.ffmpeg.vaapi.enabled" = true;
+        "widget.dmabuf.force-enabled" = true; # Required in recent Firefoxes
+
         "browser.send_pings" = false;
         "browser.urlbar.speculativeConnect.enabled" = false;
         "dom.event.clipboardevents.enabled" = true;
