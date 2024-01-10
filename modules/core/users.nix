@@ -1,5 +1,4 @@
 {
-  config,
   pkgs,
   user,
   ...
@@ -21,12 +20,5 @@
       ];
     };
     users.root.hashedPassword = "!"; # disable root password
-  };
-
-  age.secrets = {
-    pia = {
-      file = ../../secrets/pia.age;
-      owner = user;
-    };
   };
 }

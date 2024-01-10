@@ -4,10 +4,6 @@
 
     profiles.${user} = {
       settings = {
-        "gfx.webrender.all" = true; # Force enable GPU acceleration
-        "media.ffmpeg.vaapi.enabled" = true;
-        "widget.dmabuf.force-enabled" = true; # Required in recent Firefoxes
-
         "browser.send_pings" = false;
         "browser.urlbar.speculativeConnect.enabled" = false;
         "dom.event.clipboardevents.enabled" = true;
@@ -24,6 +20,14 @@
         "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
         "browser.toolbars.bookmarks.visibility" = "never";
         "geo.enabled" = false;
+
+        # Stuff to make nvidia-vaapi-driver work
+        # https://github.com/elFarto/nvidia-vaapi-driver
+        "gfx.webrender.all" = true;
+        "media.ffmpeg.vaapi.enabled" = true;
+        "widget.dmabuf.force-enabled" = true;
+        "media.av1.enabled" = false;
+        "gfx.x11-egl.force-enabled" = true;
 
         # Disable telemetry
         "browser.newtabpage.activity-stream.feeds.telemetry" = false;

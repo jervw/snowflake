@@ -1,4 +1,9 @@
-{lib, ...}: {
+{
+  inputs,
+  lib,
+  user,
+  ...
+}: {
   services.openssh = {
     enable = true;
     settings = {
@@ -16,4 +21,6 @@
       }
     ];
   };
+
+  users.users.${user}.openssh.authorizedKeys.keyFiles = [inputs.ssh-keys.outPath];
 }

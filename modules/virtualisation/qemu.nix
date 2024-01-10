@@ -18,16 +18,6 @@
         ovmf.enable = true;
         swtpm.enable = true;
         runAsRoot = true;
-        ovmf.packages = [
-          ((pkgs.OVMFFull.override
-            {
-              secureBoot = true;
-              tpmSupport = true;
-              csmSupport = true;
-              httpSupport = true;
-            })
-          .fd)
-        ];
       };
       onBoot = "ignore";
       onShutdown = "shutdown";

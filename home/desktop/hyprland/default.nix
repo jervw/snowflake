@@ -1,12 +1,70 @@
-{
+{...}: {
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
+    settings = {
+      "$mod" = "SUPER";
+
+      env = [
+        "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
+      ];
+
+      exec-once = [
+        "systemctl --user import-environment"
+        "xrandr --output DP-1 --primary"
+        "swaylock"
+        "waybar &"
+        "waypaper --restore"
+      ];
+
+      general = {
+        gaps_in = 10;
+        gaps_out = 10;
+        border_size = 0;
+        # allow_tearing = true;
+      };
+
+      dwindle = {
+        pseudotile = true;
+        preserve_split = true;
+      };
+
+      input = {
+        kb_layout = "us,fi";
+        kb_options = "grp:alt_space_toggle";
+        follow_mouse = 1;
+        force_no_accel = true;
+      };
+
+      misc = {
+        disable_autoreload = true;
+        disable_hyprland_logo = true;
+        disable_splash_rendering = true;
+        animate_manual_resizes = true;
+        # vrr = 1;
+        enable_swallow = true;
+        swallow_regex = "^(Alacritty)$";
+      };
+
+      decoration = {
+        rounding = 12;
+        active_opacity = 1.0;
+        inactive_opacity = 0.85;
+        blur = {
+          enabled = true;
+          size = 5;
+          passes = 3;
+        };
+
+        drop_shadow = true;
+        shadow_ignore_window = true;
+        shadow_offset = "2 2";
+        shadow_range = 4;
+        shadow_render_power = 2;
+        "col.shadow" = "0x66000000";
+      };
+    };
     extraConfig = ''
-      # EXEC
-      exec-once = waybar &
-      exec-once = nm-applet &
-      exec-once = waypaper --restore
 
       # MONITORS
       monitor=,highrr,auto,1
@@ -14,65 +72,6 @@
       # monitor= HDMI-A-1,disable
 
       workspace = 5, rounding:false, gapsin:0, gapsout:0, border:false, monitor:HDMI-A-1
-
-      # INPUT
-      input {
-        follow_mouse = 1
-        kb_layout = us,fi
-        kb_options = grp:alt_space_toggle
-      }
-
-      # GENERAL
-      general {
-        gaps_in=10
-        gaps_out=10
-        border_size=0
-        no_border_on_floating = true
-        layout = dwindle
-        # allow_tearing = true
-      }
-
-      # MISC
-      misc {
-        disable_hyprland_logo = true
-        disable_autoreload = true
-        disable_splash_rendering = true
-        mouse_move_enables_dpms = true
-        animate_manual_resizes = true
-        vfr = true
-        enable_swallow = true
-        swallow_regex = ^(Alacritty)$
-      }
-
-      # DECORATION
-      decoration {
-        # Corners
-        rounding = 8
-
-        # Opacity
-        active_opacity = 1.0
-        inactive_opacity = 1.0
-
-        # Blur
-        blur {
-          enabled = true
-          size = 3
-          passes = 3
-        }
-
-        # Shadows
-        drop_shadow = true
-        shadow_ignore_window = true
-        shadow_offset = 2 2
-        shadow_range = 4
-        shadow_render_power = 2
-        col.shadow = 0x66000000
-
-        blurls = gtk-layer-shell
-        blurls = waybar
-        blurls = lockscreen
-      }
-
       # ANIMATIONS
       animations {
         enabled = true
@@ -90,13 +89,9 @@
       }
 
       dwindle {
-        no_gaps_when_only = false
         pseudotile = true
         preserve_split = true
       }
-
-      windowrulev2 = immediate, class:^(steam_app_252950)$
-      windowrulev2 = immediate, title:^(FREEGLUT)$
 
       # WINDOW RULES
       windowrulev2 = workspace 5,class:(VencordDesktop)

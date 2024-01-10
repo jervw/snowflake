@@ -1,5 +1,4 @@
 {
-  inputs,
   pkgs,
   user,
   ...
@@ -15,11 +14,10 @@
     username = user;
     homeDirectory = "/home/${user}";
     packages = with pkgs; [
+      gnome.file-roller
       gnome.nautilus
       feh
       imv
-      # morgen
-      # obsidian
       vscode-fhs
       lazygit
       playerctl
@@ -27,14 +25,11 @@
       lutris
       steam
       heroic
-      (jetbrains.plugins.addPlugins jetbrains.rust-rover ["github-copilot"])
       viewnior
       qbittorrent
       vesktop
-      discord
-      networkmanagerapplet
       obs-studio
-      inputs.nix-gaming.packages.${pkgs.system}.wine-ge
+      (jetbrains.plugins.addPlugins jetbrains.rust-rover ["github-copilot"])
       (callPackage ../../pkgs/cider2 {})
     ];
 

@@ -1,19 +1,22 @@
 inputs: let
+  inherit (inputs.nixpkgs.lib) nixosSystem;
   system = "x86_64-linux";
   user = "jervw";
-  hmModule = inputs.home-manager.nixosModules.home-manager;
-  agenixModule = inputs.agenix.nixosModules.age;
-  hyprlandModule = inputs.hyprland.homeManagerModules.default;
-  wslModule = inputs.nixos-wsl.nixosModules.wsl;
-  inherit (inputs.nixpkgs.lib) nixosSystem;
+
+  homeMod = inputs.home-manager.nixosModules.home-manager;
+  wslMod = inputs.nixos-wsl.nixosModules.wsl;
+  diskoMod = inputs.disko.nixosModules.disko;
+  agenixMod = inputs.agenix.nixosModules.age;
+  hyprlandMod = inputs.hyprland.homeManagerModules.default;
 in {
+  # Desktop
   loki = nixosSystem {
     inherit system;
     specialArgs = {inherit user inputs;};
     modules = [
       ./loki
-      hmModule
-      agenixModule
+      homeMod
+      agenixMod
       {
         home-manager = {
           useGlobalPkgs = true;
@@ -22,7 +25,7 @@ in {
           users.${user} = {
             imports = [
               ./loki/home.nix
-              hyprlandModule
+              hyprlandMod
             ];
           };
         };
@@ -30,13 +33,14 @@ in {
     ];
   };
 
+  # Home server
   thor = nixosSystem {
     inherit system;
     specialArgs = {inherit user inputs;};
     modules = [
       ./thor
-      hmModule
-      agenixModule
+      homeMod
+      agenixMod
       {
         home-manager = {
           useGlobalPkgs = true;
@@ -52,14 +56,15 @@ in {
     ];
   };
 
+  # Generic WSL host
   vidar = nixosSystem {
     inherit system;
     specialArgs = {inherit user inputs;};
     modules = [
       ./vidar
-      hmModule
-      agenixModule
-      wslModule
+      homeMod
+      agenixMod
+      wslMod
       {
         home-manager = {
           useGlobalPkgs = true;
@@ -72,6 +77,16 @@ in {
           };
         };
       }
+    ];
+  };
+
+  # Hezner VPS
+  huginn = nixosSystem {
+    inherit system;
+    specialArgs = {inherit user inputs;};
+    modules = [
+      ./huginn
+      diskoMod
     ];
   };
 

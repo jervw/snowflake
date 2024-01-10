@@ -25,6 +25,10 @@
       nil = {
         command = lib.getExe nil;
       };
+      marksman = {
+        command = lib.getExe marksman;
+      };
+
       vscode-css-language-server = {
         command = "${nodePackages.vscode-css-languageserver-bin}/bin/css-languageserver";
         args = ["--stdio"];

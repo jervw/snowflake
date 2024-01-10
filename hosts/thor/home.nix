@@ -12,10 +12,6 @@
   home = {
     username = user;
     homeDirectory = "/home/${user}";
-    packages = with pkgs; [
-      # Packages
-    ];
-
     stateVersion = "23.05";
   };
 }
