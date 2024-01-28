@@ -1,9 +1,11 @@
 {
   imports = [
+    ./torrent.nix
     ./adguard.nix
     ./plex.nix
     ./media-services.nix
     ./overseerr.nix
+    ./audiobookshelf.nix
     ./samba.nix
   ];
 
@@ -32,4 +34,9 @@
       };
     };
   };
+
+  users.groups.media = {};
+  users.users.plex.extraGroups = ["media"];
+  users.users.radarr.extraGroups = ["media"];
+  users.users.sonarr.extraGroups = ["media"];
 }

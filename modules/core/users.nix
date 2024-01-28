@@ -17,6 +17,7 @@
         "disk"
         "video"
         "input"
+        "media"
       ];
     };
     users.root.hashedPassword = "!"; # disable root password

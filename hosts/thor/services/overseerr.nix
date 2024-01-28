@@ -1,5 +1,5 @@
 {
-  virtualisation.oci-containers.containers.qbittorrent = {
+  virtualisation.oci-containers.containers.overseerr = {
     image = "sctx/overseerr";
     ports = [
       "5055:5055"
