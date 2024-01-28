@@ -11,28 +11,16 @@
   ];
 
   boot = {
-    kernelPackages = pkgs.linuxPackages_xanmod_latest;
+    # kernelPackages = pkgs.linuxPackages_xanmod_latest;
+    kernelPackages = pkgs.linuxPackages_latest;
     loader = {
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
     };
   };
 
-  networking = {
-    interfaces = {
-      enp5s0.ipv4.addresses = [
-        {
-          address = "192.168.50.101";
-          prefixLength = 24;
-        }
-      ];
-    };
-    defaultGateway = {
-      address = "192.168.50.1";
-      interface = "enp5s0";
-    };
-    nameservers = ["192.168.50.140" "1.1.1.1"];
-  };
+  networking.networkmanager.enable = true;
+  networking.firewall.checkReversePath = false;
 
   programs.gnupg.agent = {
     enable = true;

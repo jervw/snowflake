@@ -16,8 +16,9 @@
     packages = with pkgs; [
       gnome.file-roller
       gnome.nautilus
+      loupe
+      networkmanagerapplet
       feh
-      imv
       vscode-fhs
       lazygit
       playerctl

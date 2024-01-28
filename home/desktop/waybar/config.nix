@@ -51,8 +51,8 @@
       on-click = "playerctl play-pause";
       on-click-right = "playerctl next";
       format-icons = {
-        Playing = "<span foreground='#6791eb'>󰓇 </span>";
-        Paused = "<span foreground='#cdd6f4'>󰓇 </span>";
+        Playing = "<span foreground='#6791eb'> </span>";
+        Paused = "<span foreground='#cdd6f4'> </span>";
       };
     };
 

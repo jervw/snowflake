@@ -5,6 +5,7 @@
     ./helix
     ./tmux
     ./direnv
+    ./zellij
   ];
 
   home.packages = with pkgs; [

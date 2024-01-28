@@ -1,6 +1,5 @@
 {
   imports = [
-    ./torrent.nix
     ./adguard.nix
     ./plex.nix
     ./media-services.nix

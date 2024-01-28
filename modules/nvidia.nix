@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  config,
+  ...
+}: {
   hardware = {
     opengl = {
       enable = true;
@@ -11,7 +15,9 @@
       ];
     };
     nvidia = {
-      # open = true;
+      package = config.boot.kernelPackages.nvidiaPackages.beta;
+
+      # open = true; // breaks VA-API driver
       powerManagement.enable = true;
       modesetting.enable = true;
     };

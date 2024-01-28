@@ -12,7 +12,6 @@
       exec-once = [
         "systemctl --user import-environment"
         "xrandr --output DP-1 --primary"
-        "swaylock"
         "waybar &"
         "waypaper --restore"
       ];
@@ -21,7 +20,7 @@
         gaps_in = 10;
         gaps_out = 10;
         border_size = 0;
-        # allow_tearing = true;
+        allow_tearing = true;
       };
 
       dwindle = {
@@ -41,15 +40,14 @@
         disable_hyprland_logo = true;
         disable_splash_rendering = true;
         animate_manual_resizes = true;
-        # vrr = 1;
+        mouse_move_enables_dpms = true;
+        vrr = 1;
         enable_swallow = true;
         swallow_regex = "^(Alacritty)$";
       };
 
       decoration = {
         rounding = 12;
-        active_opacity = 1.0;
-        inactive_opacity = 0.85;
         blur = {
           enabled = true;
           size = 5;
@@ -118,10 +116,9 @@
       windowrule = idleinhibit fullscreen, firefox
       windowrule = float, title:^(Media viewer)$
       windowrule = float, title:^(Volume Control)$
+      windowrule = size 800 600, title:^(Volume Control)$
       windowrule = float, title:^(Picture-in-Picture)$
       windowrule = float, title:^(Firefox — Sharing Indicator)$
-      windowrule = size 800 600, title:^(Volume Control)$
-      windowrule = move 75 44%, title:^(Volume Control)$
       layerrule = noanim, rofi
 
       # MISC BINDINGS
@@ -152,10 +149,10 @@
       bind = SUPER SHIFT, J, movewindow, d
 
       # RESIZE WINDOWS
-      bind = SUPER CTRL, H, resizeactive, -20 0
-      bind = SUPER CTRL, L, resizeactive, 20 0
-      bind = SUPER CTRL, K, resizeactive, 0 -20
-      bind = SUPER CTRL, J, resizeactive, 0 20
+      bind = SUPER CTRL, H, resizeactive, -30 0
+      bind = SUPER CTRL, L, resizeactive, 30 0
+      bind = SUPER CTRL, K, resizeactive, 0 -30
+      bind = SUPER CTRL, J, resizeactive, 0 l0
 
       # TABBED LAYOUT
       bind= SUPER, g, togglegroup

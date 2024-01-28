@@ -31,11 +31,14 @@
         indent-guides.render = true;
         gutters.line-numbers.min-width = 1;
       };
-
       keys.normal = {
+        C-s = ":w";
+        C-q = ":bclose";
+        A-t = ":toggle lsp.display-inlay-hints";
+        A-l = "goto_next_buffer";
+        A-h = "goto_previous_buffer";
         X = ["extend_line_up" "extend_to_line_bounds"];
         A-x = "extend_to_line_bounds";
-        space.u.h = ":toggle lsp.display-inlay-hints";
       };
 
       keys.select = {

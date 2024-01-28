@@ -7,12 +7,17 @@
   pname = "cider";
   version = "2.3.0";
 
-  # Builds are not public domain.
+  # Packages are not public domain.
   # Buy Cider2 from https://cidercollective.itch.io/cider
   sources = {
+    x86_64-darwin = {
+      url = "https://r2.jervw.dev/Cider2-x64.dmg";
+      hash = "sha256-5yQY/3QIc26vBSl5+NhhVxKiuLaiQb5YHoVdyqx57H0=";
+    };
+
     x86_64-linux = {
-      url = "https://r2.jervw/Cider-${version}.AppImage";
-      hash = "sha256-4LGy+K+u0mUbFuiLlvQkxW5T+HwXSZYyZRUJNOVlO0Q=";
+      url = "https://r2.jervw.dev/Cider-${version}.AppImage";
+      hash = "sha256-oVyFwyCbESaoY4KBKQ0M3DoBaMA8SY62HGJJ+L276Lc=";
     };
   };
 
@@ -30,4 +35,6 @@
     sourceProvenance = with lib.sourceTypes; [binaryNativeCode];
   };
 in
-  callPackage ./linux.nix {inherit pname version src meta;}
+  if stdenv.isDarwin
+  then callPackage ./darwin.nix {inherit pname version src meta;}
+  else callPackage ./linux.nix {inherit pname version src meta;}

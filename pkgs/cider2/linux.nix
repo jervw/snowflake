@@ -13,9 +13,6 @@
   };
 in
   # Does not work on Nvidia currently (line 26)
-  # wrapProgram "$out/bin/${pname}" \
-  #   --add-flags "\''${NIXOS_OZONE_WL:+\''${WAYLAND_DISPLAY:+--ozone-platform-hint=auto --enable-features=WaylandWindowDecorations}}" \
-  #   --add-flags '--disable-seccomp-filter-sandbox'
   appimageTools.wrapType2 {
     inherit name src meta;
 
@@ -23,6 +20,10 @@ in
       mv "$out/bin/${name}" "$out/bin/${pname}"
 
       source '${makeWrapper}/nix-support/setup-hook'
+
+      wrapProgram "$out/bin/${pname}" \
+        --add-flags "\''${NIXOS_OZONE_WL:+\''${WAYLAND_DISPLAY:+--ozone-platform-hint=auto --enable-features=WaylandWindowDecorations}}" \
+        --add-flags '--disable-seccomp-filter-sandbox'
 
       install -m 444 -D '${extracted}/usr/share/icons/hicolor/512x512/apps/${pname}.png' \
         "$out/share/icons/hicolor/512x512/apps/${pname}.png"
