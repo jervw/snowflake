@@ -23,4 +23,5 @@
   };
 
   users.users.${user}.openssh.authorizedKeys.keyFiles = [inputs.ssh-keys.outPath];
+  users.users.root.openssh.authorizedKeys.keyFiles = [inputs.ssh-keys.outPath];
 }
