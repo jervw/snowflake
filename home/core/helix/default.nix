@@ -1,4 +1,4 @@
-{...}: {
+{pkgs, ...}: {
   imports = [
     ./languages.nix
   ];
@@ -44,13 +44,17 @@
       keys.select = {
         X = ["extend_line_up" "extend_to_line_bounds"];
         A-x = "extend_to_line_bounds";
+        "0" = "goto_line_start"; # Note that this will not work because 0 will be taken as a count
+        "$" = "goto_line_end";
       };
     };
   };
 
-  # make background transparent
-  home.file.".config/helix/themes/nightfox_transparent.toml".text = ''
-    inherits = "nightfox"
-    "ui.background" = {}
-  '';
+  home = {
+    # make background transparent
+    file.".config/helix/themes/nightfox_transparent.toml".text = ''
+      inherits = "nightfox"
+      "ui.background" = {}
+    '';
+  };
 }

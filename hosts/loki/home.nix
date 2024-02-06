@@ -26,10 +26,10 @@
       lutris
       steam
       heroic
-      viewnior
       qbittorrent
       vesktop
       obs-studio
+
       (jetbrains.plugins.addPlugins jetbrains.rust-rover ["github-copilot"])
       (callPackage ../../pkgs/cider2 {})
     ];

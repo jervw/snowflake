@@ -13,10 +13,4 @@
   };
 
   networking.hostName = "vidar";
-
-  programs.gnupg.agent = {
-    enable = true;
-    pinentryFlavor = "curses";
-    enableSSHSupport = true;
-  };
 }

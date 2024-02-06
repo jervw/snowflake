@@ -17,7 +17,7 @@
 
     x86_64-linux = {
       url = "https://r2.jervw.dev/Cider-${version}.AppImage";
-      hash = "sha256-oVyFwyCbESaoY4KBKQ0M3DoBaMA8SY62HGJJ+L276Lc=";
+      hash = "sha256-7CkMCJlbi5mSlsjP5FOj9Prn6zKblz6yrbLDmPec1uI=";
     };
   };
 

@@ -18,10 +18,4 @@
       allowedTCPPorts = [80 443];
     };
   };
-
-  programs.gnupg.agent = {
-    enable = true;
-    pinentryFlavor = "curses";
-    enableSSHSupport = true;
-  };
 }

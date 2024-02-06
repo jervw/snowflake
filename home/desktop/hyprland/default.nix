@@ -16,6 +16,11 @@
         "waypaper --restore"
       ];
 
+      monitor = [
+        # "highrr,auto,1"
+        "HDMI-A-1,1920x1080@60,0x0,1,transform,3"
+      ];
+
       general = {
         gaps_in = 10;
         gaps_out = 10;
@@ -41,7 +46,7 @@
         disable_splash_rendering = true;
         animate_manual_resizes = true;
         mouse_move_enables_dpms = true;
-        vrr = 1;
+        # vrr = 1;
         enable_swallow = true;
         swallow_regex = "^(Alacritty)$";
       };
@@ -61,39 +66,49 @@
         shadow_render_power = 2;
         "col.shadow" = "0x66000000";
       };
+
+      animations = {
+        enabled = true;
+        bezier = [
+          "overshot, 0.05, 0.9, 0.1, 1.05"
+          "smoothOut, 0.36, 0, 0.66, -0.56"
+          "smoothIn, 0.25, 1, 0.5, 1"
+        ];
+        animation = [
+          "windows, 1, 5, overshot, slide"
+          "windowsOut, 1, 4, smoothOut, slide"
+          "windowsMove, 1, 4, default"
+          "border, 1, 10, default"
+          "fade, 1, 10, smoothIn"
+          "fadeDim, 1, 10, smoothIn"
+          "workspaces, 1, 6, default"
+        ];
+
+        windowrulev2 = [
+          "noshadow, floating:0"
+          "float, title:^(Volume Control)$"
+          "float, title:^(Picture in picture)$"
+          "float, title:^(Steam)$"
+          "float, title:^(Friends List)$"
+          "float, title:^(Cryptomator)$"
+          "float, title:^(RuneLite)$"
+          "float, title:^(Lutris)$"
+          "float, title:^(satty)$"
+          "move 850 360, title:^(RuneLite)$"
+          "size 830 600, title:^(RuneLite)$"
+          "size 1200 600, title:^(satty)$"
+          " fullscreen, title:^(cs2)$"
+        ];
+      };
     };
     extraConfig = ''
-
-      # MONITORS
-      monitor=,highrr,auto,1
-      monitor = HDMI-A-1,1920x1080@60,0x0,1,transform,3
-      # monitor= HDMI-A-1,disable
-
       workspace = 5, rounding:false, gapsin:0, gapsout:0, border:false, monitor:HDMI-A-1
-      # ANIMATIONS
-      animations {
-        enabled = true
-        bezier = overshot, 0.05, 0.9, 0.1, 1.05
-        bezier = smoothOut, 0.36, 0, 0.66, -0.56
-        bezier = smoothIn, 0.25, 1, 0.5, 1
-
-        animation = windows, 1, 5, overshot, slide
-        animation = windowsOut, 1, 4, smoothOut, slide
-        animation = windowsMove, 1, 4, default
-        animation = border, 1, 10, default
-        animation = fade, 1, 10, smoothIn
-        animation = fadeDim, 1, 10, smoothIn
-        animation = workspaces, 1, 6, default
-      }
-
-      dwindle {
-        pseudotile = true
-        preserve_split = true
-      }
 
       # WINDOW RULES
       windowrulev2 = workspace 5,class:(VencordDesktop)
       windowrulev2 = workspace 5,class:(Cider)
+      windowrulev2 = immediate, class:^(steam_app_252950)$
+      windowrulev2 = immediate, class:^(steam_app_1245620)$
 
       windowrule = float, file_progress
       windowrule = float, confirm

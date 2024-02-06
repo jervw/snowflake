@@ -28,6 +28,7 @@
       zfs
       file
       ffmpeg
+      nvd
     ];
   };
 

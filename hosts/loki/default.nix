@@ -5,8 +5,7 @@
     ../../modules/virtualisation
     ../../modules/nvidia.nix
     ../../modules/wayland.nix
-    ../../modules/quiet.nix
-    ../../modules/greetd.nix
+    # ../../modules/quiet.nix
     ../../modules/syncthing.nix
   ];
 
@@ -19,13 +18,15 @@
     };
   };
 
-  networking.networkmanager.enable = true;
-  networking.firewall.checkReversePath = false;
+  programs.gamemode.enable = true;
 
-  programs.gnupg.agent = {
-    enable = true;
-    pinentryFlavor = "gnome3";
-    enableSSHSupport = true;
+  hardware.xone.enable = true;
+  environment.systemPackages = with pkgs; [linuxKernel.packages.linux_zen.xone];
+
+  networking = {
+    hostName = "loki";
+    networkmanager.enable = true;
+    firewall.checkReversePath = false;
   };
 
   # Services
@@ -34,7 +35,7 @@
     gnome.gnome-keyring.enable = true;
 
     udev = {
-      packages = [pkgs.yubikey-personalization];
+      packages = with pkgs; [yubikey-personalization vial via];
     };
 
     # Auto mounting
