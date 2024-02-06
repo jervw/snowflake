@@ -3,6 +3,8 @@
   config,
   ...
 }: {
+  services.xserver.videoDrivers = ["nvidia"];
+
   hardware = {
     opengl = {
       enable = true;
@@ -16,8 +18,7 @@
     };
     nvidia = {
       package = config.boot.kernelPackages.nvidiaPackages.beta;
-
-      open = true; # breaks VA-API driver
+      open = true; # better but breaks VA-API driver on FF
       powerManagement.enable = true;
       modesetting.enable = true;
     };
@@ -25,13 +26,12 @@
 
   environment = {
     sessionVariables = {
-      WLR_NO_HARDWARE_CURSORS = "1";
-      GBM_BACKEND = "nvidia-drm";
-      LIBVA_DRIVER_NAME = "nvidia";
-      __GLX_VENDOR_LIBRARY_NAME = "nvidia";
       MOZ_DISABLE_RDD_SANDBOX = "1";
       NVD_BACKEND = "direct";
-      EGL_PLATFORM = "wayland";
+      GBM_BACKEND = "nvidia-drm";
+      WLR_NO_HARDWARE_CURSORS = "1";
+      LIBVA_DRIVER_NAME = "nvidia";
+      __GLX_VENDOR_LIBRARY_NAME = "nvidia";
     };
     systemPackages = with pkgs; [
       vulkan-loader
@@ -43,6 +43,4 @@
       egl-wayland
     ];
   };
-
-  services.xserver.videoDrivers = ["nvidia"];
 }

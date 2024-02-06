@@ -1,8 +1,4 @@
-{
-  pkgs,
-  user,
-  ...
-}: {
+{user, ...}: {
   imports = [
     ../../home/core
   ];

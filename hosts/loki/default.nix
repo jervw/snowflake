@@ -1,27 +1,34 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
   imports = [
     ./hardware-configuration.nix
+    ../../modules/nixos
     ../../modules/core
     ../../modules/virtualisation
-    ../../modules/nvidia.nix
-    ../../modules/wayland.nix
-    # ../../modules/quiet.nix
-    ../../modules/syncthing.nix
+    # ../../modules/etc/syncthing.nix
   ];
 
   boot = {
-    # kernelPackages = pkgs.linuxPackages_xanmod_latest;
+    # kernelPackages = pkgs.linuxPackages_xanmod_latest; # Switch back when stable NVIDIA Drivers arrive
     kernelPackages = pkgs.linuxPackages_latest;
     loader = {
-      systemd-boot.enable = true;
+      systemd-boot.enable = lib.mkForce false; # Let Lanzaboote handle this
       efi.canTouchEfiVariables = true;
+    };
+    lanzaboote = {
+      enable = true;
+      pkiBundle = "/etc/secureboot";
+    };
+    initrd.systemd = {
+      enable = true;
+      enableTpm2 = true;
     };
   };
 
-  programs.gamemode.enable = true;
-
-  hardware.xone.enable = true;
-  environment.systemPackages = with pkgs; [linuxKernel.packages.linux_zen.xone];
+  environment.systemPackages = with pkgs; [tpm2-tss];
 
   networking = {
     hostName = "loki";
@@ -37,9 +44,6 @@
     udev = {
       packages = with pkgs; [yubikey-personalization vial via];
     };
-
-    # Auto mounting
-    gvfs.enable = true;
 
     # Audio
     pipewire = {

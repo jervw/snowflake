@@ -6,6 +6,7 @@
   imports = [
     ../../home/core
     ../../home/desktop
+    ../../home/wayland
   ];
 
   programs.home-manager.enable = true;
@@ -20,7 +21,6 @@
       networkmanagerapplet
       feh
       vscode-fhs
-      lazygit
       playerctl
       pavucontrol
       lutris
@@ -29,7 +29,7 @@
       qbittorrent
       vesktop
       obs-studio
-
+      vial
       (jetbrains.plugins.addPlugins jetbrains.rust-rover ["github-copilot"])
       (callPackage ../../pkgs/cider2 {})
     ];

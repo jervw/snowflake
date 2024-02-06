@@ -2,22 +2,10 @@
   security = {
     rtkit.enable = true;
     polkit.enable = true;
-    sudo.enable = false;
     pam = {
       services = {
         login.u2fAuth = true;
       };
-    };
-    doas = {
-      enable = true;
-      wheelNeedsPassword = false;
-      extraRules = [
-        {
-          users = [user];
-          keepEnv = true;
-          noPass = true;
-        }
-      ];
     };
   };
 

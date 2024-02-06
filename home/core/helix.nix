@@ -1,7 +1,8 @@
-{pkgs, ...}: {
-  imports = [
-    ./languages.nix
-  ];
+{
+  pkgs,
+  lib,
+  ...
+}: {
   programs.helix = {
     enable = true;
     defaultEditor = true;
@@ -40,12 +41,50 @@
         X = ["extend_line_up" "extend_to_line_bounds"];
         A-x = "extend_to_line_bounds";
       };
-
       keys.select = {
         X = ["extend_line_up" "extend_to_line_bounds"];
         A-x = "extend_to_line_bounds";
-        "0" = "goto_line_start"; # Note that this will not work because 0 will be taken as a count
+        "0" = "goto_line_start";
         "$" = "goto_line_end";
+      };
+    };
+
+    languages = {
+      language = with pkgs; [
+        {
+          name = "nix";
+          auto-format = true;
+          formatter = {
+            command = lib.getExe alejandra;
+            args = ["-q"];
+          };
+        }
+        {
+          name = "rust";
+          auto-format = true;
+          formatter = {
+            command = lib.getExe rustfmt;
+          };
+        }
+      ];
+      language-server = with pkgs; {
+        nil = {
+          command = lib.getExe nil;
+        };
+        marksman = {
+          command = lib.getExe marksman;
+        };
+        rust-analyzer = {
+          timeout = 120;
+          config.check = {
+            command = "clippy";
+          };
+        };
+
+        vscode-css-language-server = {
+          command = "${nodePackages.vscode-css-languageserver-bin}/bin/css-languageserver";
+          args = ["--stdio"];
+        };
       };
     };
   };

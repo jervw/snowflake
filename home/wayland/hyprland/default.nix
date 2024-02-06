@@ -12,12 +12,11 @@
       exec-once = [
         "systemctl --user import-environment"
         "xrandr --output DP-1 --primary"
-        "waybar &"
         "waypaper --restore"
       ];
 
       monitor = [
-        # "highrr,auto,1"
+        ",highrr,auto,1"
         "HDMI-A-1,1920x1080@60,0x0,1,transform,3"
       ];
 

@@ -1,11 +1,11 @@
 {pkgs, ...}: {
   imports = [
-    ./git
-    ./fish
-    ./helix
-    ./tmux
-    ./direnv
-    ./zellij
+    ./git.nix
+    ./fish.nix
+    ./helix.nix
+    ./tmux.nix
+    ./direnv.nix
+    ./zellij.nix
   ];
 
   home.packages = with pkgs; [

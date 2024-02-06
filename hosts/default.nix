@@ -3,6 +3,7 @@ inputs: let
   system = "x86_64-linux";
   user = "jervw";
 
+  secureMod = inputs.lanzaboote.nixosModules.lanzaboote;
   homeMod = inputs.home-manager.nixosModules.home-manager;
   wslMod = inputs.nixos-wsl.nixosModules.wsl;
   diskoMod = inputs.disko.nixosModules.disko;
@@ -15,6 +16,7 @@ in {
     specialArgs = {inherit user inputs;};
     modules = [
       ./loki
+      secureMod
       homeMod
       agenixMod
       {

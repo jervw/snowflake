@@ -8,6 +8,7 @@
     '';
 
     shellAliases = {
+      doas = "sudo";
       nvim = "hx";
       nano = "hx";
       ls = "eza --icons";

@@ -1,8 +1,4 @@
-{
-  pkgs,
-  lib,
-  ...
-}: let
+{pkgs, ...}: let
   # The wired external interface
   eth-interface = "enp4s0";
   wg-interface = "wg0";
