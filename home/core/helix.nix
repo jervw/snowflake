@@ -1,10 +1,12 @@
 {
   pkgs,
+  inputs,
   lib,
   ...
 }: {
   programs.helix = {
     enable = true;
+    package = inputs.helix.packages.${pkgs.system}.default;
     defaultEditor = true;
     settings = {
       theme = "nightfox_transparent";

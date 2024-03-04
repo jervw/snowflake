@@ -6,7 +6,6 @@
     ./media-services.nix
     ./overseerr.nix
     ./audiobookshelf.nix
-    ./samba.nix
   ];
 
   networking.firewall.allowedTCPPorts = [80 443];

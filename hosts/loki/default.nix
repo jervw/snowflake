@@ -8,7 +8,6 @@
     ../../modules/nixos
     ../../modules/core
     ../../modules/virtualisation
-    # ../../modules/etc/syncthing.nix
   ];
 
   boot = {
@@ -40,9 +39,11 @@
   services = {
     passSecretService.enable = true;
     gnome.gnome-keyring.enable = true;
+    gvfs.enable = true;
+    tailscale.enable = true;
 
     udev = {
-      packages = with pkgs; [yubikey-personalization vial via];
+      packages = with pkgs; [yubikey-personalization vial];
     };
 
     # Audio

@@ -10,6 +10,7 @@
       KbdInteractiveAuthentication = false;
       PasswordAuthentication = lib.mkForce false;
       PubkeyAuthentication = lib.mkForce true;
+      PubkeyAuthOptions = "none";
       PermitRootLogin = lib.mkForce "yes";
       StreamLocalBindUnlink = "yes";
       GatewayPorts = "clientspecified";

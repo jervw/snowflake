@@ -5,10 +5,9 @@
 }: {
   environment.systemPackages = with pkgs; [
     virt-manager
+    virt-viewer
     pciutils
   ];
-
-  hardware.opengl.enable = true;
 
   virtualisation = {
     spiceUSBRedirection.enable = true;

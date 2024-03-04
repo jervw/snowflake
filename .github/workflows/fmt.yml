@@ -1,0 +1,19 @@
+name: Nix Formatting Check
+
+on: [push, pull_request, workflow_dispatch]
+
+jobs:
+  checks:
+    name: Check expression
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: cachix/install-nix-action@v25
+        with:
+          install_url: https://nixos.org/nix/install
+          github_access_token: ${{ secrets.GITHUB_TOKEN }}
+          extra_nix_config: |
+            auto-optimise-store = true
+            experimental-features = nix-command flakes
+      - run: nix run nixpkgs#alejandra -- -c .

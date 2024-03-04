@@ -27,7 +27,6 @@
       grim
       slurp
       wl-clipboard
-      wlogout
       wlr-randr
       swww
       waypaper

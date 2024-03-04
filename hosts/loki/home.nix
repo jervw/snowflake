@@ -24,16 +24,17 @@
       playerctl
       pavucontrol
       lutris
-      steam
       heroic
       qbittorrent
       vesktop
+      steam
+      streamlink
+      chatterino2
       obs-studio
       vial
-      (jetbrains.plugins.addPlugins jetbrains.rust-rover ["github-copilot"])
       (callPackage ../../pkgs/cider2 {})
     ];
 
-    stateVersion = "23.05";
+    stateVersion = "23.11";
   };
 }

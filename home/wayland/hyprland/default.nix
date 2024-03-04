@@ -1,18 +1,39 @@
-{...}: {
+_:let
+  mod = "SUPER";
+  modshift = "${mod}SHIFT";
+
+  # binds $mod + [shift +] {1..5} to [move to] workspace {1..5}
+  workspaces = builtins.concatLists (builtins.genList (
+      x: let
+        ws = let
+          c = (x + 1) / 5;
+        in
+          builtins.toString (x + 1 - (c * 5));
+      in [
+        "${mod}, ${ws}, workspace, ${toString (x + 1)}"
+        "${mod} SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
+      ]
+    )
+    5);
+in {
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
+    systemd = {
+      variables = ["--all"];
+      extraCommands = [
+        "systemctl --user stop graphical-session.target"
+        "systemctl --user start hyprland-session.target"
+      ];
+    };
     settings = {
       "$mod" = "SUPER";
-
-      env = [
-        "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
-      ];
 
       exec-once = [
         "systemctl --user import-environment"
         "xrandr --output DP-1 --primary"
         "waypaper --restore"
+        "hyprlock"
       ];
 
       monitor = [
@@ -20,11 +41,18 @@
         "HDMI-A-1,1920x1080@60,0x0,1,transform,3"
       ];
 
+      workspace = [
+        "1, monitor:DP-1"
+        "2, monitor:DP-1"
+        "3, monitor:DP-1"
+        "4, monitor:DP-1"
+        "5, rounding:false, gapsin:0, gapsout:0, border:false, monitor:HDMI-A-1"
+      ];
+
       general = {
         gaps_in = 10;
         gaps_out = 10;
         border_size = 0;
-        allow_tearing = true;
       };
 
       dwindle = {
@@ -34,7 +62,7 @@
 
       input = {
         kb_layout = "us,fi";
-        kb_options = "grp:alt_space_toggle";
+        kb_options = "grp:alt_shift_toggle";
         follow_mouse = 1;
         force_no_accel = true;
       };
@@ -45,9 +73,8 @@
         disable_splash_rendering = true;
         animate_manual_resizes = true;
         mouse_move_enables_dpms = true;
-        # vrr = 1;
         enable_swallow = true;
-        swallow_regex = "^(Alacritty)$";
+        swallow_regex = "^(foot)$";
       };
 
       decoration = {
@@ -83,72 +110,39 @@
           "workspaces, 1, 6, default"
         ];
 
+        layerrule = [
+          "blur, rofi"
+          "noanim, rofi"
+        ];
+
         windowrulev2 = [
           "noshadow, floating:0"
           "float, title:^(Volume Control)$"
+          "float, class:feh"
+          "float, class:waypaper"
           "float, title:^(Picture in picture)$"
           "float, title:^(Steam)$"
           "float, title:^(Friends List)$"
-          "float, title:^(Cryptomator)$"
-          "float, title:^(RuneLite)$"
-          "float, title:^(Lutris)$"
-          "float, title:^(satty)$"
-          "move 850 360, title:^(RuneLite)$"
-          "size 830 600, title:^(RuneLite)$"
-          "size 1200 600, title:^(satty)$"
-          " fullscreen, title:^(cs2)$"
+          "float, title:^(Media viewer)$"
+          "workspace 5, class:(VencordDesktop)"
+          "workspace 5, class:(Cider)"
         ];
       };
     };
     extraConfig = ''
-      workspace = 5, rounding:false, gapsin:0, gapsout:0, border:false, monitor:HDMI-A-1
-
-      # WINDOW RULES
-      windowrulev2 = workspace 5,class:(VencordDesktop)
-      windowrulev2 = workspace 5,class:(Cider)
-      windowrulev2 = immediate, class:^(steam_app_252950)$
-      windowrulev2 = immediate, class:^(steam_app_1245620)$
-
-      windowrule = float, file_progress
-      windowrule = float, confirm
-      windowrule = float, dialog
-      windowrule = float, waypaper
-      windowrule = float, download
-      windowrule = float, notification
-      windowrule = float, error
-      windowrule = float, splash
-      windowrule = float, confirmreset
-      windowrule = float, title:Open File
-      windowrule = float, title:branchdialog
-      windowrule = float, feh
-      windowrule = float, pavucontrol
-      windowrule = float, file-roller
-      windowrule = fullscreen, wlogout
-      windowrule = float, title:wlogout
-      windowrule = fullscreen, title:wlogout
-      windowrule = idleinhibit focus, mpv
-      windowrule = idleinhibit fullscreen, firefox
-      windowrule = float, title:^(Media viewer)$
-      windowrule = float, title:^(Volume Control)$
-      windowrule = size 800 600, title:^(Volume Control)$
-      windowrule = float, title:^(Picture-in-Picture)$
-      windowrule = float, title:^(Firefox — Sharing Indicator)$
-      layerrule = noanim, rofi
-
       # MISC BINDINGS
-      bind = SUPER, Return, exec, alacritty
+      bind = SUPER, Return, exec, foot
       bind = SUPER, D, exec, killall rofi || rofi -show drun
       bind = SUPER, B, exec, firefox
       bind = SUPER, Z, exec, slurp | grim -g - - | wl-copy
       bind = SUPER, C, exec, hyprpicker -a | --autocopy
+      bind = SUPER SHIFT, E, exit
 
       # WINDOWS MANAGEMENT
       bind = SUPER, Q, killactive,
-      bind = SUPER SHIFT, E, exec, wlogout
       bind = SUPER, F, fullscreen,
       bind = SUPER, Space, togglefloating,
-      bind = SUPER, P, pseudo, # dwindle
-      bind = SUPER, S, togglesplit, # dwindle
+      bind = SUPER, S, togglesplit,
 
       # FOCUS WINDOWS
       bind = SUPER, H, movefocus, l

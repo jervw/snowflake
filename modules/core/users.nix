@@ -22,4 +22,6 @@
     };
     users.root.hashedPassword = "!"; # disable root password
   };
+
+  services.getty.autologinUser = user;
 }

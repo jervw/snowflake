@@ -3,12 +3,13 @@ inputs: let
   system = "x86_64-linux";
   user = "jervw";
 
-  secureMod = inputs.lanzaboote.nixosModules.lanzaboote;
-  homeMod = inputs.home-manager.nixosModules.home-manager;
-  wslMod = inputs.nixos-wsl.nixosModules.wsl;
-  diskoMod = inputs.disko.nixosModules.disko;
-  agenixMod = inputs.agenix.nixosModules.age;
-  hyprlandMod = inputs.hyprland.homeManagerModules.default;
+  lanzaboote = inputs.lanzaboote.nixosModules.lanzaboote;
+  hm = inputs.home-manager.nixosModules.home-manager;
+  wsl = inputs.nixos-wsl.nixosModules.wsl;
+  disko = inputs.disko.nixosModules.disko;
+  hyprland = inputs.hyprland.homeManagerModules.default;
+  hyprlock = inputs.hyprlock.homeManagerModules.default;
+  hypridle = inputs.hypridle.homeManagerModules.default;
 in {
   # Desktop
   loki = nixosSystem {
@@ -16,18 +17,20 @@ in {
     specialArgs = {inherit user inputs;};
     modules = [
       ./loki
-      secureMod
-      homeMod
-      agenixMod
+      hm
+      lanzaboote
       {
         home-manager = {
           useGlobalPkgs = true;
           useUserPackages = true;
           extraSpecialArgs = {inherit user inputs;};
           users.${user} = {
+            _module.args.theme = import ../theme;
             imports = [
               ./loki/home.nix
-              hyprlandMod
+              hyprland
+              hyprlock
+              hypridle
             ];
           };
         };
@@ -41,8 +44,7 @@ in {
     specialArgs = {inherit user inputs;};
     modules = [
       ./thor
-      homeMod
-      agenixMod
+      hm
       {
         home-manager = {
           useGlobalPkgs = true;
@@ -64,9 +66,8 @@ in {
     specialArgs = {inherit user inputs;};
     modules = [
       ./vidar
-      homeMod
-      agenixMod
-      wslMod
+      hm
+      wsl
       {
         home-manager = {
           useGlobalPkgs = true;
@@ -88,7 +89,7 @@ in {
     specialArgs = {inherit user inputs;};
     modules = [
       ./huginn
-      diskoMod
+      disko
     ];
   };
 

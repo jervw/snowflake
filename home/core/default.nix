@@ -11,6 +11,7 @@
   home.packages = with pkgs; [
     dconf
     bat
+    btop
     xdg-utils
     rustup
     eza
@@ -21,5 +22,6 @@
     fzf
     nix-search-cli
     any-nix-shell
+    yazi
   ];
 }

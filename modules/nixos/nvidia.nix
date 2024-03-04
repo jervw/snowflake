@@ -5,6 +5,9 @@
 }: {
   services.xserver.videoDrivers = ["nvidia"];
 
+  # Needed for nvidia-open to fix issues with hibernation
+  boot.kernelParams = ["nvidia.NVreg_PreserveVideoMemoryAllocations=1"];
+
   hardware = {
     opengl = {
       enable = true;
@@ -18,10 +21,14 @@
     };
     nvidia = {
       package = config.boot.kernelPackages.nvidiaPackages.beta;
-      open = true; # better but breaks VA-API driver on FF
+      open = false; # better but breaks VA-API driver on FF
       powerManagement.enable = true;
       modesetting.enable = true;
     };
+  };
+
+  virtualisation.docker = {
+    enableNvidia = true;
   };
 
   environment = {
