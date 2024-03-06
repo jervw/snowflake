@@ -11,7 +11,6 @@
   ];
 
   boot = {
-    # kernelPackages = pkgs.linuxPackages_xanmod_latest; # Switch back when stable NVIDIA Drivers arrive
     kernelPackages = pkgs.linuxPackages_latest;
     loader = {
       systemd-boot.enable = lib.mkForce false; # Let Lanzaboote handle this

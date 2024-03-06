@@ -9,6 +9,7 @@
       font-awesome
       corefonts
       (nerdfonts.override {fonts = ["JetBrainsMono"];})
+      (google-fonts.override {fonts = ["Inter"];})
     ];
   };
 }

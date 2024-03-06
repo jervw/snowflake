@@ -30,7 +30,7 @@
       };
 
       colors = with theme.colors; {
-        alpha = 0.8;
+        alpha = 0.9;
         foreground = fg1;
         background = bg1;
         regular0 = black;

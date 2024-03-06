@@ -30,7 +30,6 @@ _: {
       set render-loading true
       set render-loading-fg "#1a1b26"
       set render-loading-bg "#c0caf5"
-      set recolor
       set recolor-lightcolor "#1a1b26"
       set recolor-darkcolor "#c0caf5"
     '';

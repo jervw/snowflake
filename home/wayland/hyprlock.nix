@@ -1,15 +1,21 @@
-_: {
+{
+  config,
+  theme,
+  ...
+}: let
+  font_family = "Inter";
+in {
   programs.hyprlock = {
     enable = true;
 
     general.hide_cursor = false;
 
-    # backgrounds = [
-    #   {
-    #     monitor = "";
-    #     path = "${config.home.homeDirectory}/wall.png";
-    #   }
-    # ];
+    backgrounds = [
+      {
+        monitor = "";
+        path = "${config.home.homeDirectory}/.setup/wallpapers/lock.png";
+      }
+    ];
 
     input-fields = [
       {
@@ -22,7 +28,12 @@ _: {
 
         outline_thickness = 2;
 
+        outer_color = "rgb(${theme.colors.bg1})";
+        inner_color = "rgb(${theme.colors.bg2})";
+        font_color = "rgb(${theme.colors.fg1})";
+
         fade_on_empty = false;
+        placeholder_text = ''<span font_family="${font_family}" foreground="##${theme.colors.fg1}">Password...</span>'';
 
         dots_spacing = 0.3;
         dots_center = true;
@@ -33,7 +44,7 @@ _: {
       {
         monitor = "";
         text = "$TIME";
-        font_family = "Inter";
+        inherit font_family;
         font_size = 50;
 
         position = {
