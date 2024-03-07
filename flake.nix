@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    impermanence.url = "github:nix-community/impermanence";
 
     ssh-keys = {
       url = "https://github.com/jervw.keys";

@@ -1,4 +1,4 @@
-_: {
+{pkgs, ...}: {
   imports = [
     ../theme/dracula.nix
     ./alacritty.nix
@@ -11,6 +11,22 @@ _: {
     ./zathura.nix
   ];
 
-  home.packages = [
+  home.packages = with pkgs; [
+    gnome.file-roller
+    gnome.nautilus
+    loupe
+    networkmanagerapplet
+    feh
+    vscode-fhs
+    playerctl
+    pavucontrol
+    qbittorrent
+    vesktop
+    obs-studio
+    vial
+    lutris
+    heroic
+    steam
+    (callPackage ../../pkgs/cider2 {})
   ];
 }

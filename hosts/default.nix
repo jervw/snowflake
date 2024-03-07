@@ -4,12 +4,22 @@ inputs: let
   user = "jervw";
 
   lanzaboote = inputs.lanzaboote.nixosModules.lanzaboote;
-  hm = inputs.home-manager.nixosModules.home-manager;
+  home = inputs.home-manager.nixosModules.home-manager;
   wsl = inputs.nixos-wsl.nixosModules.wsl;
   disko = inputs.disko.nixosModules.disko;
-  hyprland = inputs.hyprland.homeManagerModules.default;
-  hyprlock = inputs.hyprlock.homeManagerModules.default;
-  hypridle = inputs.hypridle.homeManagerModules.default;
+
+  # Reusable home-manager configuration. WIP figure out better way
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    extraSpecialArgs = {inherit user inputs;};
+    users.${user} = {
+      _module.args.theme = import ../theme;
+      imports = [
+        ../home # For now it installs all packages under home, figure out better way
+      ];
+    };
+  };
 in {
   # Desktop
   loki = nixosSystem {
@@ -17,46 +27,20 @@ in {
     specialArgs = {inherit user inputs;};
     modules = [
       ./loki
-      hm
+      home
       lanzaboote
-      {
-        home-manager = {
-          useGlobalPkgs = true;
-          useUserPackages = true;
-          extraSpecialArgs = {inherit user inputs;};
-          users.${user} = {
-            _module.args.theme = import ../theme;
-            imports = [
-              ./loki/home.nix
-              hyprland
-              hyprlock
-              hypridle
-            ];
-          };
-        };
-      }
+      {inherit home-manager;}
     ];
   };
 
-  # Home server
+  # HomeLab server
   thor = nixosSystem {
     inherit system;
     specialArgs = {inherit user inputs;};
     modules = [
       ./thor
-      hm
-      {
-        home-manager = {
-          useGlobalPkgs = true;
-          useUserPackages = true;
-          extraSpecialArgs = {inherit user inputs;};
-          users.${user} = {
-            imports = [
-              ./thor/home.nix
-            ];
-          };
-        };
-      }
+      home
+      {inherit home-manager;}
     ];
   };
 
@@ -66,20 +50,9 @@ in {
     specialArgs = {inherit user inputs;};
     modules = [
       ./vidar
-      hm
+      home
       wsl
-      {
-        home-manager = {
-          useGlobalPkgs = true;
-          useUserPackages = true;
-          extraSpecialArgs = {inherit user inputs;};
-          users.${user} = {
-            imports = [
-              ./vidar/home.nix
-            ];
-          };
-        };
-      }
+      {inherit home-manager;}
     ];
   };
 

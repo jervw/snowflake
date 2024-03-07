@@ -24,5 +24,8 @@
     ];
   };
 
+  # allow users to mount fuse filesystems with allow_other
+  programs.fuse.userAllowOther = true;
+
   system.stateVersion = "23.11";
 }
