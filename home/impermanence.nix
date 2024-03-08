@@ -22,13 +22,16 @@ in {
         "vids"
         "other"
       ]
-      ++ forEach ["syncthing" "VencordDesktop" "obs-studio" "Signal"] (
+      ++ forEach ["fish" "syncthing" "VencordDesktop" "obs-studio" "Signal"] (
         x: ".config/${x}"
       )
       ++ forEach ["nix" "mozilla"] (
         x: ".cache/${x}"
       )
-      ++ forEach ["direnv" "keyrings"] (x: ".local/share/${x}")
+      ++ forEach ["fish" "direnv" "keyrings"] (x: ".local/share/${x}")
       ++ [".ssh" ".mozilla"];
+    files = [
+      ".lock.png"
+    ];
   };
 }

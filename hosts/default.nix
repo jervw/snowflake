@@ -28,6 +28,7 @@ in {
     modules = [
       ./loki
       home
+      disko
       lanzaboote
       {inherit home-manager;}
     ];

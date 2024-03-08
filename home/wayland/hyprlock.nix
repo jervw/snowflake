@@ -13,7 +13,7 @@ in {
     backgrounds = [
       {
         monitor = "";
-        path = "${config.home.homeDirectory}/.setup/wallpapers/lock.png";
+        path = "${config.home.homeDirectory}/.lock.png";
       }
     ];
 

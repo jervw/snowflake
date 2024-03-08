@@ -9,7 +9,7 @@
     defaultUserShell = pkgs.fish;
     users.${user} = {
       isNormalUser = true;
-      initialPassword = user;
+      hashedPasswordFile = "/persist/secrets/jervw";
       extraGroups = [
         "networkmanager"
         "wheel"
@@ -20,6 +20,7 @@
         "media"
       ];
     };
+    users.root.hashedPassword = "!"; # disable root password
   };
 
   services.getty.autologinUser = user;

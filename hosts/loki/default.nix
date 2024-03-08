@@ -4,6 +4,7 @@
   ...
 }: {
   imports = [
+  (import ./disko.nix { device = "/dev/nvme1n1"; })
     ./hardware-configuration.nix
     ../../modules/nixos
     ../../modules/core
@@ -13,16 +14,16 @@
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
     loader = {
-      systemd-boot.enable = lib.mkForce false; # Let Lanzaboote handle this
+      systemd-boot.enable = true; # Let Lanzaboote handle this
       efi.canTouchEfiVariables = true;
     };
     lanzaboote = {
-      enable = true;
+      enable = false;
       pkiBundle = "/etc/secureboot";
     };
     initrd.systemd = {
-      enable = true;
-      enableTpm2 = true;
+      enable = false;
+      enableTpm2 = false;
     };
   };
 
