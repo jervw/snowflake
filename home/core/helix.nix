@@ -7,6 +7,16 @@
   programs.helix = {
     enable = true;
     # package = inputs.helix.packages.${pkgs.system}.default;
+
+    extraPackages = with pkgs; [
+      nodePackages.bash-language-server
+      nodePackages.typescript-language-server
+      vscode-langservers-extracted
+      marksman
+      clang-tools
+      rust-analyzer
+    ];
+
     defaultEditor = true;
     settings = {
       theme = "nightfox_transparent";
@@ -42,12 +52,12 @@
         A-h = "goto_previous_buffer";
         X = ["extend_line_up" "extend_to_line_bounds"];
         A-x = "extend_to_line_bounds";
+        "0" = "goto_line_start";
+        "$" = "goto_line_end";
       };
       keys.select = {
         X = ["extend_line_up" "extend_to_line_bounds"];
         A-x = "extend_to_line_bounds";
-        "0" = "goto_line_start";
-        "$" = "goto_line_end";
       };
     };
 
@@ -82,7 +92,6 @@
             command = "clippy";
           };
         };
-
         vscode-css-language-server = {
           command = "${nodePackages.vscode-css-languageserver-bin}/bin/css-languageserver";
           args = ["--stdio"];

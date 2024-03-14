@@ -9,7 +9,7 @@
     defaultUserShell = pkgs.fish;
     users.${user} = {
       isNormalUser = true;
-      hashedPasswordFile = "/persist/secrets/jervw";
+      hashedPasswordFile = "/nix/persist/secrets/jervw";
       extraGroups = [
         "networkmanager"
         "wheel"

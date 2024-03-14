@@ -1,25 +1,29 @@
-_: {
+{inputs, ...}: {
+  imports = [
+    inputs.nh.nixosModules.default
+  ];
+
+  nh = {
+    enable = true;
+    clean.enable = true;
+    clean.extraArgs = "--keep-since 4d --keep 3";
+  };
+
   nixpkgs = {
     config = {
       allowUnfree = true;
     };
   };
 
-  # faster rebuilding
+  # set flake location
+  environment.variables = {FLAKE = "/nix/persist/system";};
+
+  # tldr
   documentation = {
-    enable = true;
-    doc.enable = false;
-    man.enable = true;
-    dev.enable = false;
+    enable = false;
   };
 
   nix = {
-    gc = {
-      automatic = true;
-      dates = "daily";
-      options = "--delete-older-than 2d";
-    };
-
     daemonCPUSchedPolicy = "idle";
     daemonIOSchedClass = "idle";
 

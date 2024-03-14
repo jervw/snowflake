@@ -10,7 +10,7 @@ in {
     inputs.impermanence.nixosModules.home-manager.impermanence
   ];
 
-  home.persistence."/persist/home/${user}" = {
+  home.persistence."/nix/persist/home/${user}" = {
     allowOther = true;
     directories =
       [
@@ -22,14 +22,14 @@ in {
         "vids"
         "other"
       ]
-      ++ forEach ["fish" "syncthing" "VencordDesktop" "obs-studio" "Signal"] (
+      ++ forEach ["Yubico" "ags" "waypaper" "Cider" "fish" "syncthing" "vesktop" "obs-studio" "Signal"] (
         x: ".config/${x}"
       )
-      ++ forEach ["nix" "mozilla"] (
+      ++ forEach ["nix" "mozilla" "ags"] (
         x: ".cache/${x}"
       )
-      ++ forEach ["fish" "direnv" "keyrings"] (x: ".local/share/${x}")
-      ++ [".ssh" ".mozilla"];
+      ++ forEach ["Steam" "fish" "direnv" "keyrings"] (x: ".local/share/${x}")
+      ++ [".ssh" ".gnupg" ".mozilla"];
     files = [
       ".lock.png"
     ];

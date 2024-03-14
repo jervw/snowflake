@@ -1,15 +1,21 @@
-{user, ...}: {
+_: {
   security = {
     rtkit.enable = true;
     polkit.enable = true;
     pam = {
       services = {
-        login.u2fAuth = true;
+        # login.u2fAuth = true;
         sudo.u2fAuth = true;
         hyprlock = {};
       };
+      u2f = {
+        enable = true;
+        cue = true;
+      };
     };
   };
+
+  programs.yubikey-touch-detector.enable = true;
 
   boot.kernel.sysctl = {
     # The Magic SysRq key is a key combo that allows users connected to the

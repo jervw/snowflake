@@ -15,7 +15,7 @@
 in {
   # screen idle
   services.hypridle = {
-    enable = false;
+    enable = true;
     beforeSleepCmd = "${pkgs.systemd}/bin/loginctl lock-session";
     lockCmd = lib.getExe config.programs.hyprlock.package;
 

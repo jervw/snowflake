@@ -1,5 +1,10 @@
-{user, ...}: {
+{
+  inputs,
+  user,
+  ...
+}: {
   imports = [
+    inputs.nixos-wsl.nixosModules.wsl
     ../../modules/core
   ];
 
@@ -11,6 +16,4 @@
     defaultUser = user;
     startMenuLaunchers = true;
   };
-
-  networking.hostName = "vidar";
 }

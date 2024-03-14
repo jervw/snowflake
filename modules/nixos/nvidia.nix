@@ -21,7 +21,7 @@
     };
     nvidia = {
       package = config.boot.kernelPackages.nvidiaPackages.beta;
-      open = false; # better but breaks VA-API driver on FF
+      open = true; # better but breaks VA-API driver on FF
       powerManagement.enable = true;
       modesetting.enable = true;
     };

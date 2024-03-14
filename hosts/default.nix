@@ -3,10 +3,7 @@ inputs: let
   system = "x86_64-linux";
   user = "jervw";
 
-  lanzaboote = inputs.lanzaboote.nixosModules.lanzaboote;
-  home = inputs.home-manager.nixosModules.home-manager;
-  wsl = inputs.nixos-wsl.nixosModules.wsl;
-  disko = inputs.disko.nixosModules.disko;
+  homeModule = inputs.home-manager.nixosModules.home-manager;
 
   # Reusable home-manager configuration. WIP figure out better way
   home-manager = {
@@ -16,7 +13,7 @@ inputs: let
     users.${user} = {
       _module.args.theme = import ../theme;
       imports = [
-        ../home # For now it installs all packages under home, figure out better way
+        ../home # For now it installs all packages under home/default.nix, figure out an better way
       ];
     };
   };
@@ -26,11 +23,10 @@ in {
     inherit system;
     specialArgs = {inherit user inputs;};
     modules = [
-      ./loki
-      home
-      disko
-      lanzaboote
+      {networking.hostName = "loki";}
       {inherit home-manager;}
+      homeModule
+      ./loki
     ];
   };
 
@@ -39,9 +35,10 @@ in {
     inherit system;
     specialArgs = {inherit user inputs;};
     modules = [
-      ./thor
-      home
+      {networking.hostName = "thor";}
       {inherit home-manager;}
+      homeModule
+      ./thor
     ];
   };
 
@@ -50,22 +47,22 @@ in {
     inherit system;
     specialArgs = {inherit user inputs;};
     modules = [
-      ./vidar
-      home
-      wsl
+      {networking.hostName = "vidar";}
       {inherit home-manager;}
+      homeModule
+      ./vidar
     ];
   };
 
-  # Hezner VPS
-  huginn = nixosSystem {
-    inherit system;
-    specialArgs = {inherit user inputs;};
-    modules = [
-      ./huginn
-      disko
-    ];
-  };
+  # # Hezner VPS
+  # huginn = nixosSystem {
+  #   inherit system;
+  #   specialArgs = {inherit user inputs;};
+  #   modules = [
+  #     {networking.hostName = "huginn";}
+  #     ./huginn
+  #   ];
+  # };
 
   # Add more hosts here..
 }

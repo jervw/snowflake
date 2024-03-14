@@ -1,4 +1,4 @@
-{pkgs, ...}: let
+_: let
   eth = "enp4s0";
 in {
   imports = [
@@ -21,7 +21,6 @@ in {
   };
 
   networking = {
-    hostName = "thor";
     hostId = "7f6f07cd";
     firewall.enable = false; # TODO enable later
 

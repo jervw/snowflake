@@ -1,22 +1,23 @@
 {
-  description = "NixOS configuration";
+  description = "jervw's NixOS configurations";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     impermanence.url = "github:nix-community/impermanence";
 
-    ssh-keys = {
-      url = "https://github.com/jervw.keys";
-      flake = false;
-    };
-
-    lanzaboote = {
-      url = "github:nix-community/lanzaboote/v0.3.0";
+    agenix = {
+      url = "github:ryantm/agenix";
+      inputs.darwin.follows = "";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    matugen = {
-      url = "github:InioX/matugen/module";
+    ags = {
+      url = "github:Aylur/ags";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    helix = {
+      url = "github:helix-editor/helix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -25,24 +26,8 @@
       inputs.nixpkgs.follows = "";
     };
 
-    nixos-wsl = {
-      url = "github:nix-community/NixOS-WSL";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    disko = {
-      url = "github:nix-community/disko";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    agenix = {
-      url = "github:ryantm/agenix";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.darwin.follows = "";
-    };
-
-    helix = {
-      url = "github:helix-editor/helix";
+    hypridle = {
+      url = "github:hyprwm/hypridle";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -56,9 +41,24 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hypridle = {
-      url = "github:hyprwm/hypridle";
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote/v0.3.0";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nh = {
+      url = "github:viperML/nh";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nixos-wsl = {
+      url = "github:nix-community/NixOS-WSL";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    ssh-keys = {
+      url = "https://github.com/jervw.keys";
+      flake = false;
     };
   };
 

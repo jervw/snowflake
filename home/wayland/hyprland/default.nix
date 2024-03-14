@@ -1,6 +1,16 @@
 _: let
+  term = "foot";
   mod = "SUPER";
-  modshift = "${mod}SHIFT";
+
+  workspaces = builtins.concatLists (builtins.genList (
+      x: let
+        ws = toString (x + 1);
+      in [
+        "${mod}, ${ws}, workspace, ${ws}"
+        "${mod} SHIFT, ${ws}, movetoworkspacesilent, ${ws}"
+      ]
+    )
+    5);
 in {
   wayland.windowManager.hyprland = {
     enable = true;
@@ -13,11 +23,9 @@ in {
       ];
     };
     settings = {
-      "$mod" = "SUPER";
-
       exec-once = [
-        "systemctl --user import-environment"
-        "xrandr --output DP-1 --primary"
+        "nm-applet"
+        "ags"
         "waypaper --restore"
         "hyprlock"
       ];
@@ -28,11 +36,11 @@ in {
       ];
 
       workspace = [
-        "1, monitor:DP-1"
+        "1, monitor:DP-1, default:true"
         "2, monitor:DP-1"
         "3, monitor:DP-1"
         "4, monitor:DP-1"
-        "5, rounding:false, gapsin:0, gapsout:0, border:false, monitor:HDMI-A-1"
+        "5, monitor:HDMI-A-1, rounding:false, gapsin:0, gapsout:0, border:false, default:true"
       ];
 
       general = {
@@ -60,7 +68,7 @@ in {
         animate_manual_resizes = true;
         mouse_move_enables_dpms = true;
         enable_swallow = true;
-        swallow_regex = "^(foot)$";
+        swallow_regex = "^(${term})$";
       };
 
       decoration = {
@@ -76,7 +84,6 @@ in {
         shadow_offset = "2 2";
         shadow_range = 4;
         shadow_render_power = 2;
-        "col.shadow" = "0x66000000";
       };
 
       animations = {
@@ -95,86 +102,68 @@ in {
           "fadeDim, 1, 10, smoothIn"
           "workspaces, 1, 6, default"
         ];
-
-        layerrule = [
-          "blur, rofi"
-          "noanim, rofi"
-        ];
-
-        windowrulev2 = [
-          "noshadow, floating:0"
-          "float, title:^(Volume Control)$"
-          "float, class:feh"
-          "float, class:waypaper"
-          "float, title:^(Picture in picture)$"
-          "float, title:^(Steam)$"
-          "float, title:^(Friends List)$"
-          "float, title:^(Media viewer)$"
-          "workspace 5, class:(VencordDesktop)"
-          "workspace 5, class:(Cider)"
-        ];
       };
+
+      layerrule = [
+        "blur, rofi"
+        "noanim, rofi"
+      ];
+
+      windowrulev2 = [
+        "noshadow, floating:0"
+        "float, title:^(Volume Control)$"
+        "float, class:feh"
+        "float, class:waypaper"
+        "float, title:^(Picture in picture)$"
+        "float, title:^(Steam)$"
+        "float, title:^(Friends List)$"
+        "float, title:^(Media viewer)$"
+        "workspace 5, class:(VencordDesktop)"
+        "workspace 5, class:(Cider)"
+      ];
+
+      bind =
+        [
+          "${mod}, Return, exec, ${term}"
+          # "${mod}, D, exec, killall rofi || rofi -show drun"
+          "${mod}, D, exec, ags -t launcher"
+          "${mod}, Tab, exec, ags -t overview"
+          "${mod}, X, exec, ${term} yazi"
+          "${mod}, B, exec, firefox"
+          "${mod}, Z, exec, slurp | grim -g - | wl-copy"
+          "${mod}, C, exec, hyprpicker -a | --autocopy"
+          "${mod} SHIFT, E, exit"
+
+          "${mod}, Q, killactive"
+          "${mod}, F, fullscreen"
+          "${mod}, Space, togglefloating"
+          "${mod}, S, togglesplit"
+
+          "${mod}, H, movefocus, l"
+          "${mod}, L, movefocus, r"
+          "${mod}, K, movefocus, u"
+          "${mod}, J, movefocus, d"
+
+          "${mod} SHIFT, H, movewindow, l"
+          "${mod} SHIFT, L, movewindow, r"
+          "${mod} SHIFT, K, movewindow, u"
+          "${mod} SHIFT, J, movewindow, d"
+
+          "${mod} CTRL, H, resizeactive, -30 0"
+          "${mod} CTRL, L, resizeactive, 30 0"
+          "${mod} CTRL, K, resizeactive, 0 -30"
+          "${mod} CTRL, J, resizeactive, 0 l0"
+
+          "${mod}, g, togglegroup"
+          "${mod}, tab, changegroupactive"
+          "${mod}, t, togglespecialworkspace"
+          "${mod} SHIFT, t, movetoworkspace, special"
+        ]
+        ++ workspaces;
+      bindm = [
+        "${mod}, mouse:272, movewindow"
+        "${mod}, mouse:273, resizewindow"
+      ];
     };
-    extraConfig = ''
-      # MISC BINDINGS
-      bind = SUPER, Return, exec, foot
-      bind = SUPER, D, exec, killall rofi || rofi -show drun
-      bind = SUPER, B, exec, firefox
-      bind = SUPER, Z, exec, slurp | grim -g - - | wl-copy
-      bind = SUPER, C, exec, hyprpicker -a | --autocopy
-      bind = SUPER SHIFT, E, exit
-
-      # WINDOWS MANAGEMENT
-      bind = SUPER, Q, killactive,
-      bind = SUPER, F, fullscreen,
-      bind = SUPER, Space, togglefloating,
-      bind = SUPER, S, togglesplit,
-
-      # FOCUS WINDOWS
-      bind = SUPER, H, movefocus, l
-      bind = SUPER, L, movefocus, r
-      bind = SUPER, K, movefocus, u
-      bind = SUPER, J, movefocus, d
-
-      # MOVE WINDOWS
-      bind = SUPER SHIFT, H, movewindow, l
-      bind = SUPER SHIFT, L, movewindow, r
-      bind = SUPER SHIFT, K, movewindow, u
-      bind = SUPER SHIFT, J, movewindow, d
-
-      # RESIZE WINDOWS
-      bind = SUPER CTRL, H, resizeactive, -30 0
-      bind = SUPER CTRL, L, resizeactive, 30 0
-      bind = SUPER CTRL, K, resizeactive, 0 -30
-      bind = SUPER CTRL, J, resizeactive, 0 l0
-
-      # TABBED LAYOUT
-      bind= SUPER, g, togglegroup
-      bind= SUPER, tab, changegroupactive
-
-      # SPECIAL (SCRATCHPAD)
-      bind = SUPER, t, togglespecialworkspace
-      bind = SUPER SHIFT, t, movetoworkspace, special
-
-      # SWITCH
-      bind = SUPER, 1, workspace, 1
-      bind = SUPER, 2, workspace, 2
-      bind = SUPER, 3, workspace, 3
-      bind = SUPER, 4, workspace, 4
-      bind = SUPER, 5, workspace, 5
-
-      # MOVE
-      bind = SUPER SHIFT, 1, movetoworkspacesilent, 1
-      bind = SUPER SHIFT, 2, movetoworkspacesilent, 2
-      bind = SUPER SHIFT, 3, movetoworkspacesilent, 3
-      bind = SUPER SHIFT, 4, movetoworkspacesilent, 4
-      bind = SUPER SHIFT, 5, movetoworkspacesilent, 5
-
-      # MOUSE
-      bindm = SUPER, mouse:272, movewindow
-      bindm = SUPER, mouse:273, resizewindow
-      bind = SUPER, mouse_down, workspace, e+1
-      bind = SUPER, mouse_up, workspace, e-1
-    '';
   };
 }

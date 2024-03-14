@@ -5,9 +5,9 @@
     inputs.hypridle.homeManagerModules.default
 
     ./hyprland
+    ./ags.nix
     ./hypridle.nix
     ./hyprlock.nix
-    ./waybar.nix
     ./wlsunset.nix
   ];
 }

@@ -4,7 +4,6 @@
     interactiveShellInit = ''
       any-nix-shell fish --info-right | source
       set fish_greeting # Disable greeting
-      direnv hook fish | source
 
       function twitch
         kill -9 $(ps -o ppid -p $fish_pid)

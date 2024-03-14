@@ -6,6 +6,7 @@
     ./tmux.nix
     ./direnv.nix
     ./zellij.nix
+    ./zoxide.nix
   ];
 
   home.packages = with pkgs; [
@@ -20,7 +21,6 @@
     rclone
     fd
     fzf
-    nix-search-cli
     any-nix-shell
     yazi
   ];

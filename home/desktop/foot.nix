@@ -26,6 +26,7 @@
 
       cursor = {
         style = "beam";
+        color = "dfdfe0 dfdfe0";
         beam-thickness = 1;
       };
 

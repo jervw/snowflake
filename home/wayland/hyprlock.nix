@@ -14,12 +14,15 @@ in {
       {
         monitor = "";
         path = "${config.home.homeDirectory}/.lock.png";
+        blur_passes = 2;
+        blur_size = 2;
+        vibrancy_darkness = 0.1;
       }
     ];
 
     input-fields = [
       {
-        monitor = "DP-1";
+        monitor = "";
 
         size = {
           width = 300;
@@ -28,14 +31,15 @@ in {
 
         outline_thickness = 2;
 
-        outer_color = "rgb(${theme.colors.bg1})";
-        inner_color = "rgb(${theme.colors.bg2})";
-        font_color = "rgb(${theme.colors.fg1})";
+        outer_color = "rgba(40,40,40,0.0)";
+        inner_color = "rgba(200, 200, 200, 0.8)";
+        font_color = "rgba(10, 10, 10, 0.8)";
 
         fade_on_empty = false;
-        placeholder_text = ''<span font_family="${font_family}" foreground="##${theme.colors.fg1}">Password...</span>'';
+        placeholder_text = "Password...";
 
-        dots_spacing = 0.3;
+        dots_size = 0.33;
+        dots_spacing = 0.15;
         dots_center = true;
       }
     ];
@@ -45,11 +49,11 @@ in {
         monitor = "";
         text = "$TIME";
         inherit font_family;
-        font_size = 50;
+        font_size = 75;
 
         position = {
           x = 0;
-          y = 80;
+          y = 100;
         };
 
         valign = "center";

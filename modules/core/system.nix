@@ -2,12 +2,6 @@
   time.timeZone = "Europe/Helsinki";
   i18n.defaultLocale = "en_US.UTF-8";
 
-  system.activationScripts.diff = ''
-    if [[ -e /run/current-system ]]; then
-      ${pkgs.nix}/bin/nix store diff-closures /run/current-system "$systemConfig"
-    fi
-  '';
-
   environment = {
     systemPackages = with pkgs; [
       git
@@ -20,7 +14,12 @@
       file
       ffmpeg
       libnotify
+      tpm2-tss
     ];
+  };
+
+  services.udev = {
+    packages = with pkgs; [yubikey-personalization vial];
   };
 
   # allow users to mount fuse filesystems with allow_other
