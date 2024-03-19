@@ -1,12 +1,13 @@
 {
   imports = [
     ./adguard.nix
+    ./audiobookshelf.nix
     ./caddy.nix
-    ./plex.nix
+    ./homarr.nix
     ./media-services.nix
     ./overseerr.nix
-    ./audiobookshelf.nix
-    ./homarr.nix
+    ./plex.nix
+    ./tautulli.nix
   ];
 
   users.groups.media = {};
