@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   imports = [
-    ../theme/dracula.nix
+    # ../theme/dracula.nix
     ./firefox.nix
     ./foot.nix
     ./mpv.nix

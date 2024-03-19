@@ -1,13 +1,10 @@
 {
   pkgs,
-  inputs,
   lib,
   ...
 }: {
   programs.helix = {
     enable = true;
-    # package = inputs.helix.packages.${pkgs.system}.default;
-
     extraPackages = with pkgs; [
       nodePackages.bash-language-server
       nodePackages.typescript-language-server
@@ -27,6 +24,11 @@
         color-modes = true;
         true-color = true;
         undercurl = true;
+        smart-tab.enable = false;
+        whitespace.characters = {
+          tab = "→";
+          newline = "⏎";
+        };
         cursor-shape = {
           insert = "bar";
           normal = "block";

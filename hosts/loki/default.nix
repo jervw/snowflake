@@ -5,10 +5,13 @@
 }: {
   imports = [
     ./hardware-configuration.nix
-    ../../modules/nixos
+
     ../../modules/core
-    ../../modules/services
+    ../../modules/nixos
     ../../modules/virtualisation
+
+    ../../modules/network/networkmanager.nix
+    ../../modules/network/tailscale.nix
   ];
 
   boot = {
@@ -19,16 +22,10 @@
     };
   };
 
-  networking = {
-    networkmanager.enable = true;
-    firewall.checkReversePath = "loose";
-  };
-
   # Services
   services = {
     gnome.gnome-keyring.enable = true;
-    gvfs.enable = true;
-
     fstrim.enable = true;
+    gvfs.enable = true;
   };
 }

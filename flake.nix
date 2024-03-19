@@ -5,6 +5,11 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     impermanence.url = "github:nix-community/impermanence";
 
+    flake-parts = {
+      url = "github:hercules-ci/flake-parts";
+      inputs.nixpkgs-lib.follows = "nixpkgs";
+    };
+
     agenix = {
       url = "github:ryantm/agenix";
       inputs.darwin.follows = "";
@@ -62,24 +67,27 @@
     };
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    ...
-  } @ inputs: let
-    system = "x86_64-linux";
-    pkgs = import nixpkgs {
-      inherit system;
-    };
-  in {
-    devShells.${system}.default = pkgs.mkShell {
-      packages = with pkgs; [
-        alejandra
-        yaml-language-server
-      ];
-    };
+  outputs = inputs:
+    inputs.flake-parts.lib.mkFlake {inherit inputs;} {
+      systems = ["x86_64-linux"];
 
-    formatter.${system} = pkgs.alejandra;
-    nixosConfigurations = import ./hosts inputs;
-  };
+      imports = [
+        ./home/profiles
+        ./hosts
+      ];
+
+      perSystem = {
+        config,
+        pkgs,
+        ...
+      }: {
+        devShells.default = pkgs.mkShell {
+          packages = with pkgs; [
+            alejandra
+          ];
+        };
+
+        formatter = pkgs.alejandra;
+      };
+    };
 }

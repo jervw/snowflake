@@ -84,6 +84,7 @@ in {
         shadow_offset = "2 2";
         shadow_range = 4;
         shadow_render_power = 2;
+        "col.shadow" = "rgba(292c3cee)";
       };
 
       animations = {
@@ -105,8 +106,10 @@ in {
       };
 
       layerrule = [
-        "blur, rofi"
-        "noanim, rofi"
+        "blur, bar1"
+        "blur, ^(gtk-layer-shell)$"
+        "ignorezero, bar1"
+        "ignorezero, ^(gtk-layer-shell)$"
       ];
 
       windowrulev2 = [
@@ -125,7 +128,6 @@ in {
       bind =
         [
           "${mod}, Return, exec, ${term}"
-          # "${mod}, D, exec, killall rofi || rofi -show drun"
           "${mod}, D, exec, ags -t launcher"
           "${mod}, Tab, exec, ags -t overview"
           "${mod}, X, exec, ${term} yazi"

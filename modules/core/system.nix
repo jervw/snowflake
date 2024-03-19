@@ -1,4 +1,12 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
+  imports = [
+    inputs.home-manager.nixosModules.default
+  ];
+
   time.timeZone = "Europe/Helsinki";
   i18n.defaultLocale = "en_US.UTF-8";
 
@@ -15,7 +23,13 @@
       ffmpeg
       libnotify
       tpm2-tss
+      sunshine
     ];
+  };
+
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
   };
 
   services.udev = {

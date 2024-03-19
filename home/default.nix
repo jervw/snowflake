@@ -1,11 +1,4 @@
 {user, ...}: {
-  imports = [
-    ./core
-    ./desktop
-    ./wayland
-    ./impermanence.nix
-  ];
-
   home = {
     username = user;
     homeDirectory = "/home/${user}";

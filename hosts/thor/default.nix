@@ -1,11 +1,20 @@
-_: let
+{
+  self,
+  user,
+  inputs,
+  ...
+}: let
   eth = "enp4s0";
 in {
   imports = [
+    inputs.agenix.nixosModules.default
     ./hardware-configuration.nix
-    ./services
+
     ../../modules/core
+    ../../modules/server
     ../../modules/virtualisation
+
+    ../../modules/network/tailscale.nix
   ];
 
   boot = {
@@ -18,6 +27,12 @@ in {
       forceImportRoot = false;
       extraPools = ["zpool"];
     };
+  };
+
+  age.secrets.cloudflare = {
+    file = "${self}/secrets/cloudflare.age";
+    owner = user;
+    group = "users";
   };
 
   networking = {

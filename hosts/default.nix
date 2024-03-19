@@ -1,68 +1,46 @@
-inputs: let
-  inherit (inputs.nixpkgs.lib) nixosSystem;
-  system = "x86_64-linux";
-  user = "jervw";
+{
+  self,
+  inputs,
+  homeImports,
+  ...
+}: {
+  flake.nixosConfigurations = let
+    inherit (inputs.nixpkgs.lib) nixosSystem;
+    specialArgs = {inherit user inputs self;};
+    user = "jervw";
+  in {
+    # Desktop
+    loki = nixosSystem {
+      inherit specialArgs;
+      modules = [
+        ./loki
+        {networking.hostName = "loki";}
 
-  homeModule = inputs.home-manager.nixosModules.home-manager;
-
-  # Reusable home-manager configuration. WIP figure out better way
-  home-manager = {
-    useGlobalPkgs = true;
-    useUserPackages = true;
-    extraSpecialArgs = {inherit user inputs;};
-    users.${user} = {
-      _module.args.theme = import ../theme;
-      imports = [
-        ../home # For now it installs all packages under home/default.nix, figure out an better way
+        {
+          home-manager = {
+            users.${user}.imports = homeImports.loki;
+            extraSpecialArgs = specialArgs;
+          };
+        }
       ];
     };
-  };
-in {
-  # Desktop
-  loki = nixosSystem {
-    inherit system;
-    specialArgs = {inherit user inputs;};
-    modules = [
-      {networking.hostName = "loki";}
-      {inherit home-manager;}
-      homeModule
-      ./loki
-    ];
-  };
 
-  # HomeLab server
-  thor = nixosSystem {
-    inherit system;
-    specialArgs = {inherit user inputs;};
-    modules = [
-      {networking.hostName = "thor";}
-      {inherit home-manager;}
-      homeModule
-      ./thor
-    ];
+    # HomeLab server
+    thor = nixosSystem {
+      inherit specialArgs;
+      modules = [
+        ./thor
+        {networking.hostName = "thor";}
+
+        {
+          home-manager = {
+            users.${user}.imports = homeImports.thor;
+            extraSpecialArgs = specialArgs;
+          };
+        }
+      ];
+    };
+
+    # Add more hosts here..
   };
-
-  # Generic WSL host
-  vidar = nixosSystem {
-    inherit system;
-    specialArgs = {inherit user inputs;};
-    modules = [
-      {networking.hostName = "vidar";}
-      {inherit home-manager;}
-      homeModule
-      ./vidar
-    ];
-  };
-
-  # # Hezner VPS
-  # huginn = nixosSystem {
-  #   inherit system;
-  #   specialArgs = {inherit user inputs;};
-  #   modules = [
-  #     {networking.hostName = "huginn";}
-  #     ./huginn
-  #   ];
-  # };
-
-  # Add more hosts here..
 }

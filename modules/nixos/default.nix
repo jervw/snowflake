@@ -4,5 +4,7 @@ _: {
     ./wayland.nix
     ./impermanence.nix
     ./boot.nix
+    ./pipewire.nix
+    ./greetd.nix
   ];
 }
