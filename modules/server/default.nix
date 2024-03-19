@@ -3,6 +3,7 @@
     ./adguard.nix
     ./audiobookshelf.nix
     ./caddy.nix
+    ./downloads.nix
     ./flaresolverr.nix
     ./homarr.nix
     ./media-services.nix

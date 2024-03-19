@@ -56,7 +56,6 @@
         "security.ssl.require_safe_negotiation" = true;
 
         # Extra
-        "browser.fixup.domainsuffixwhitelist.asgard" = true;
         "browser.urlbar.trimHttps" = true;
         "browser.tabs.tabmanager.enabled" = false;
         "browser.fullscreen.autohide" = false;
