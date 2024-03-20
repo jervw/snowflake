@@ -13,8 +13,8 @@
     loki = nixosSystem {
       inherit specialArgs;
       modules = [
-        ./loki
         {networking.hostName = "loki";}
+        ./loki
 
         {
           home-manager = {
@@ -29,8 +29,8 @@
     thor = nixosSystem {
       inherit specialArgs;
       modules = [
-        ./thor
         {networking.hostName = "thor";}
+        ./thor
 
         {
           home-manager = {
@@ -38,6 +38,31 @@
             extraSpecialArgs = specialArgs;
           };
         }
+      ];
+    };
+
+    # Generic WSL
+    vidar = nixosSystem {
+      inherit specialArgs;
+      modules = [
+        {networking.hostName = "vidar";}
+        ./vidar
+
+        {
+          home-manager = {
+            users.${user}.imports = homeImports.vidar;
+            extraSpecialArgs = specialArgs;
+          };
+        }
+      ];
+    };
+
+    # Hezner VPS
+    huginn = nixosSystem {
+      inherit specialArgs;
+      modules = [
+        {networking.hostName = "huginn";}
+        ./huginn
       ];
     };
 
