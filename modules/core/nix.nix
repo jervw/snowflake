@@ -1,14 +1,4 @@
-{inputs, ...}: {
-  imports = [
-    inputs.nh.nixosModules.default
-  ];
-
-  nh = {
-    enable = true;
-    clean.enable = true;
-    clean.extraArgs = "--keep-since 4d --keep 3";
-  };
-
+_: {
   nixpkgs = {
     config = {
       allowUnfree = true;
@@ -24,6 +14,12 @@
   };
 
   nix = {
+    gc = {
+      automatic = true;
+      dates = "daily";
+      options = "--delete-older-than 2d";
+    };
+
     daemonCPUSchedPolicy = "idle";
     daemonIOSchedClass = "idle";
 

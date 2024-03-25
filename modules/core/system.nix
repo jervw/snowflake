@@ -20,10 +20,8 @@
       zip
       zfs
       file
-      ffmpeg
-      libnotify
       tpm2-tss
-      sunshine
+      nh
     ];
   };
 

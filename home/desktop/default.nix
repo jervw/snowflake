@@ -22,6 +22,8 @@
     signal-desktop
     vial
     steam
+    ffmpeg
+    libnotify
     (callPackage ../../pkgs/cider2 {})
   ];
 }
