@@ -23,5 +23,6 @@
     fzf
     any-nix-shell
     yazi
+    lazygit
   ];
 }

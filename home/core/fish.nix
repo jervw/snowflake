@@ -17,6 +17,7 @@
       nvim = "hx";
       nano = "hx";
       yz = "yazi";
+      lg = "lazygit";
       ls = "eza --icons";
       tree = "eza --tree --icons";
       whereami = "curl ipinfo.io/city";
