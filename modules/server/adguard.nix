@@ -1,5 +1,5 @@
 {
-  services.caddy.virtualHosts."adguard.jervw.dev".extraConfig = ''
+  services.caddy.virtualHosts."dns.jervw.dev".extraConfig = ''
     reverse_proxy http://thor:3000
     import cloudflare
   '';
