@@ -21,11 +21,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    helix = {
-      url = "github:helix-editor/helix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "";
@@ -48,11 +43,6 @@
 
     lanzaboote = {
       url = "github:nix-community/lanzaboote/v0.3.0";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    nh = {
-      url = "github:viperML/nh";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

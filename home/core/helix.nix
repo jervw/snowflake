@@ -5,6 +5,7 @@
 }: {
   programs.helix = {
     enable = true;
+
     extraPackages = with pkgs; [
       nodePackages.bash-language-server
       nodePackages.typescript-language-server
@@ -107,6 +108,7 @@
     file.".config/helix/themes/nightfox_transparent.toml".text = ''
       inherits = "nightfox"
       "ui.background" = {}
+      "ui.virtual.jump-label" = { fg = "red", modifiers = ["bold"] }
     '';
   };
 }
