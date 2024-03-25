@@ -22,7 +22,7 @@
     };
 
     signing = {
-      key = "2A19308BA17F69683BB4FF821E3FCE4BF382E951";
+      key = "56C25B5B20756352B4B0E17EF188371747DA5895";
       signByDefault = true;
     };
   };
