@@ -1,25 +1,18 @@
-{
-  modulesPath,
-  lib,
-  ...
-}: {
+{...}: {
   imports = [
-    (modulesPath + "/installer/scan/not-detected.nix")
-    (modulesPath + "/profiles/qemu-guest.nix")
+    ./hardware-configuration.nix
+    # ./homeserver.nix
     ../../modules/core
   ];
 
-  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-
-  boot.loader.grub = {
-    efiSupport = true;
-    efiInstallAsRemovable = true;
-  };
-
-  networking = {
-    firewall = {
+  boot.loader = {
+    grub = {
       enable = true;
-      allowedTCPPorts = [80 443];
+      efiSupport = true;
+      efiInstallAsRemovable = true;
+      device = "/dev/sda";
     };
   };
+
+  networking.networkmanager.enable = true;
 }
