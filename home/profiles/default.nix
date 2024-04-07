@@ -14,6 +14,10 @@
       ../.
       ./thor
     ];
+    vidar = [
+      ../.
+      ./vidar
+    ];
   };
 
   inherit (inputs.home-manager.lib) homeManagerConfiguration;
