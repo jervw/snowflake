@@ -6,7 +6,7 @@
     ./caddy.nix
     ./downloads.nix
     ./flaresolverr.nix
-    ./homarr.nix
+    ./dashy.nix
     ./media-services.nix
     ./overseerr.nix
     ./plex.nix
