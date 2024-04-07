@@ -1,5 +1,6 @@
 {
   imports = [
+    ./monitoring
     ./adguard.nix
     ./audiobookshelf.nix
     ./caddy.nix
