@@ -1,4 +1,4 @@
-_: let
+{pkgs, ...}: let
   term = "foot";
   mod = "SUPER";
 
@@ -25,6 +25,7 @@ in {
     settings = {
       exec-once = [
         "nm-applet"
+        "$HOME/.local/share/other/bitwarden-fix.sh"
         "ags"
         "waypaper --restore"
         "hyprlock"
@@ -114,6 +115,7 @@ in {
 
       windowrulev2 = [
         "noshadow, floating:0"
+        "suppressevent maximize, class:^(firefox)$"
         "float, title:^(Volume Control)$"
         "float, class:feh"
         "float, class:waypaper"
@@ -168,4 +170,5 @@ in {
       ];
     };
   };
+  xdg.dataFile."other/bitwarden-fix.sh".source = import ./bitwarden-fix.nix pkgs;
 }
