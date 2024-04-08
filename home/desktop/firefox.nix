@@ -21,6 +21,9 @@
         "browser.toolbars.bookmarks.visibility" = "never";
         "geo.enabled" = false;
 
+        # Allow syncing browser config to Firefox Sync
+        "services.sync.prefs.dangerously_allow_arbitrary" = true;
+
         # Stuff to make nvidia-vaapi-driver work
         # https://github.com/elFarto/nvidia-vaapi-driver
         "gfx.webrender.all" = true;
