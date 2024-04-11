@@ -134,7 +134,8 @@ in {
           "${mod}, Tab, exec, ags -t overview"
           "${mod}, X, exec, ${term} yazi"
           "${mod}, B, exec, firefox"
-          "${mod}, Z, exec, slurp | grim -g - | wl-copy"
+          "${mod}, Z, exec, grimblast --notify --cursor copysave area"
+          "${mod} CTRL, Z, exec, grimblast --notify --cursor copysave output"
           "${mod}, C, exec, hyprpicker -a | --autocopy"
           "${mod} SHIFT, E, exit"
 

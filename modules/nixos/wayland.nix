@@ -12,13 +12,10 @@
       XDG_CURRENT_DESKTOP = "Hyprland";
       XDG_SESSION_TYPE = "wayland";
       XDG_SESSION_DESKTOP = "Hyprland";
-
-      DIRENV_LOG_FORMAT = "";
     };
 
     systemPackages = with pkgs; [
-      grim
-      slurp
+      grimblast
       wl-clipboard
       wlr-randr
       swww
