@@ -5,6 +5,7 @@
     ./helix.nix
     ./tmux.nix
     ./direnv.nix
+    ./yazi.nix
     ./zellij.nix
     ./zoxide.nix
   ];
@@ -22,7 +23,6 @@
     fd
     fzf
     any-nix-shell
-    yazi
     lazygit
   ];
 }

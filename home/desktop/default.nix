@@ -23,6 +23,8 @@
     vial
     steam
     ffmpeg
+    ffmpegthumbnailer
+    poppler
     libnotify
     (callPackage ../../pkgs/cider2 {})
   ];

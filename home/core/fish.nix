@@ -4,19 +4,12 @@
     interactiveShellInit = ''
       any-nix-shell fish --info-right | source
       set fish_greeting # Disable greeting
-
-      function twitch
-        kill -9 $(ps -o ppid -p $fish_pid)
-        nohup streamlink -p mpv --quiet --twitch-low-latency twitch.tv/"$argv" best &
-        nohup chatterino -c "$argv" &>/dev/null
-      end
     '';
 
     shellAliases = {
       doas = "sudo";
       nvim = "hx";
       nano = "hx";
-      yz = "yazi";
       lg = "lazygit";
       ls = "eza --icons";
       tree = "eza --tree --icons";
