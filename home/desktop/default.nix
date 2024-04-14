@@ -9,7 +9,6 @@
   ];
 
   home.packages = with pkgs; [
-    gnome.seahorse
     xfce.thunar
     loupe
     networkmanagerapplet

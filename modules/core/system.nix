@@ -22,6 +22,8 @@
       file
       tpm2-tss
       nh
+      jq
+      unar
     ];
   };
 

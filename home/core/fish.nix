@@ -10,6 +10,7 @@
       doas = "sudo";
       nvim = "hx";
       nano = "hx";
+      c = "z";
       lg = "lazygit";
       ls = "eza --icons";
       tree = "eza --tree --icons";
