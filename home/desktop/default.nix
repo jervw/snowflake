@@ -9,7 +9,7 @@
   ];
 
   home.packages = with pkgs; [
-    xfce.thunar
+    gnome.nautilus
     loupe
     networkmanagerapplet
     feh
@@ -25,6 +25,9 @@
     ffmpegthumbnailer
     poppler
     libnotify
+    tomato-c
+    gh
+    plex-mpv-shim
     (callPackage ../../pkgs/cider2 {})
   ];
 }

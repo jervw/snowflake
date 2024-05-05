@@ -26,6 +26,11 @@
       inputs.nixpkgs.follows = "";
     };
 
+    helix = {
+      url = "github:helix-editor/helix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     hypridle = {
       url = "github:hyprwm/hypridle";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -75,6 +80,7 @@
           packages = with pkgs; [
             alejandra
           ];
+          DIRENV_LOG_FORMAT = "";
         };
 
         formatter = pkgs.alejandra;

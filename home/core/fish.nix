@@ -3,13 +3,10 @@
     enable = true;
     interactiveShellInit = ''
       any-nix-shell fish --info-right | source
-      set fish_greeting # Disable greeting
+      set fish_greeting
     '';
 
     shellAliases = {
-      doas = "sudo";
-      nvim = "hx";
-      nano = "hx";
       c = "z";
       lg = "lazygit";
       ls = "eza --icons";

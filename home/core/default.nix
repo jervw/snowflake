@@ -2,7 +2,6 @@
   imports = [
     ./git.nix
     ./fish.nix
-    ./helix.nix
     ./direnv.nix
     ./yazi.nix
     ./zellij.nix
@@ -10,6 +9,8 @@
   ];
 
   home.packages = with pkgs; [
+    amp
+    dconf
     bat
     btop
     xdg-utils

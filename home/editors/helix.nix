@@ -1,10 +1,13 @@
 {
   pkgs,
   lib,
+  inputs,
   ...
 }: {
   programs.helix = {
     enable = true;
+    package = inputs.helix.packages.${pkgs.system}.default;
+    defaultEditor = true;
 
     extraPackages = with pkgs; [
       nodePackages.bash-language-server
@@ -15,7 +18,6 @@
       rust-analyzer
     ];
 
-    defaultEditor = true;
     settings = {
       theme = "nightfox_transparent";
       editor = {
@@ -108,7 +110,7 @@
     file.".config/helix/themes/nightfox_transparent.toml".text = ''
       inherits = "nightfox"
       "ui.background" = {}
-      "ui.virtual.jump-label" = { fg = "red", modifiers = ["bold"] }
+      # "ui.virtual.jump-label" = { fg = "red", modifiers = ["bold"] }
     '';
   };
 }
