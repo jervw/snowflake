@@ -3,6 +3,7 @@
     # ../theme/dracula.nix
     ./firefox.nix
     ./foot.nix
+    ./fuzzel.nix
     ./mpv.nix
     ./xdg.nix
     ./zathura.nix
