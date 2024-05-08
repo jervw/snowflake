@@ -4,7 +4,7 @@
     ../../editors
     ../../desktop
     ../../wayland
-    ../../theme/dracula.nix
+    ../../theme
 
     ../../impermanence.nix
   ];
