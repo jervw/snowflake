@@ -25,23 +25,22 @@ in {
     settings = {
       exec-once = [
         "nm-applet"
-        "$HOME/.local/share/other/bitwarden-fix.sh"
-        "ags"
+        "$HOME/.local/share/scripts/bitwarden-fix.sh"
         "waypaper --restore"
         "hyprlock"
       ];
 
       monitor = [
         ",highrr,auto,1"
-        "HDMI-A-1,1920x1080@60,0x0,1,transform,3"
+        "HDMI-A-1,1920x1080@60,0x0,1"
       ];
 
       workspace = [
-        "1, monitor:DP-1, default:true"
-        "2, monitor:DP-1"
+        "1, monitor:HDMI-A-1, rounding:false, gapsin:0, gapsout:0, border:false, default:true"
+        "2, monitor:DP-1, default:true"
         "3, monitor:DP-1"
         "4, monitor:DP-1"
-        "5, monitor:HDMI-A-1, rounding:false, gapsin:0, gapsout:0, border:false, default:true"
+        "5, monitor:DP-1"
       ];
 
       general = {
@@ -107,10 +106,7 @@ in {
       };
 
       layerrule = [
-        "blur, bar1"
-        "blur, ^(gtk-layer-shell)$"
-        "ignorezero, bar1"
-        "ignorezero, ^(gtk-layer-shell)$"
+        "noanim, class:fuzzel"
       ];
 
       windowrulev2 = [
@@ -130,8 +126,7 @@ in {
       bind =
         [
           "${mod}, Return, exec, ${term}"
-          "${mod}, D, exec, ags -t launcher"
-          "${mod}, Tab, exec, ags -t overview"
+          "${mod}, D, exec, fuzzel"
           "${mod}, X, exec, ${term} yazi"
           "${mod}, B, exec, firefox"
           "${mod}, Z, exec, grimblast --notify --cursor copysave area"
@@ -171,5 +166,5 @@ in {
       ];
     };
   };
-  xdg.dataFile."other/bitwarden-fix.sh".source = import ./bitwarden-fix.nix pkgs;
+  xdg.dataFile."scripts/bitwarden-fix.sh".source = import ./bitwarden-fix.nix pkgs;
 }

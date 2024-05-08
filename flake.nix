@@ -26,13 +26,9 @@
       inputs.nixpkgs.follows = "";
     };
 
-    helix = {
-      url = "github:helix-editor/helix";
+    hyprlock = {
+      url = "github:hyprwm/hyprlock";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    hyprland = {
-      url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     };
 
     lanzaboote = {
@@ -43,6 +39,16 @@
     nixos-wsl = {
       url = "github:nix-community/NixOS-WSL";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    matugen = {
+      url = "github:InioX/matugen/module";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    firefox-gnome-theme = {
+      url = "github:rafaelmardojai/firefox-gnome-theme";
+      flake = false;
     };
 
     ssh-keys = {
