@@ -4,7 +4,6 @@
 {
   config,
   lib,
-  pkgs,
   modulesPath,
   ...
 }: {
@@ -24,6 +23,11 @@
 
   fileSystems."/mnt/extra" = {
     device = "/dev/disk/by-label/MEDIA";
+    fsType = "ext4";
+  };
+
+  fileSystems."/mnt/monero" = {
+    device = "/dev/disk/by-label/MONERO";
     fsType = "ext4";
   };
 

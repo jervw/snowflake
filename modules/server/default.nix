@@ -8,6 +8,7 @@
     ./flaresolverr.nix
     ./redlib.nix
     ./media-services.nix
+    ./monero.nix
     ./overseerr.nix
     ./plex.nix
     ./tautulli.nix
