@@ -21,6 +21,10 @@
       ss = "status";
     };
 
+    lfs = {
+      enable = true;
+    };
+
     signing = {
       key = "56C25B5B20756352B4B0E17EF188371747DA5895";
       signByDefault = true;
