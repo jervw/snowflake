@@ -37,8 +37,7 @@ in {
 
   networking = {
     hostId = "7f6f07cd";
-    firewall.enable = false; # TODO enable later
-
+    nftables.enable = true;
     interfaces.${eth}.ipv4.addresses = [
       {
         address = "192.168.50.140";
