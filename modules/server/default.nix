@@ -6,6 +6,7 @@
     ./caddy.nix
     ./downloads.nix
     ./flaresolverr.nix
+    ./immich.nix
     ./redlib.nix
     ./media-services.nix
     ./monero.nix
