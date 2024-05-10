@@ -1,12 +1,10 @@
 {
   pkgs,
   lib,
-  inputs,
   ...
 }: {
   programs.helix = {
     enable = true;
-    package = inputs.helix.packages.${pkgs.system}.default;
     defaultEditor = true;
 
     extraPackages = with pkgs; [
@@ -19,7 +17,7 @@
     ];
 
     settings = {
-      theme = "nightfox_transparent";
+      theme = "zed_onedark_transparent";
       editor = {
         line-number = "relative";
         bufferline = "always";
@@ -107,10 +105,10 @@
 
   home = {
     # make background transparent
-    file.".config/helix/themes/nightfox_transparent.toml".text = ''
-      inherits = "nightfox"
+    file.".config/helix/themes/zed_onedark_transparent.toml".text = ''
+      inherits = "zed_onedark"
       "ui.background" = {}
-      # "ui.virtual.jump-label" = { fg = "red", modifiers = ["bold"] }
+      "ui.virtual.jump-label" = { fg = "yellow", modifiers = ["bold"] }
     '';
   };
 }
