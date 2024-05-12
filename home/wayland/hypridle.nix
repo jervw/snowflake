@@ -1,29 +1,28 @@
 {
-  pkgs,
   lib,
   config,
   ...
 }: let
-  suspendScript = pkgs.writeShellScript "suspend-script" ''
-    ${pkgs.pipewire}/bin/pw-cli i all 2>&1 | ${pkgs.ripgrep}/bin/rg running -q
-    # only suspend if audio isn't running
-    if [ $? == 1 ]; then
-      ${pkgs.systemd}/bin/loginctl lock-session
-      ${pkgs.hyprland}/bin/hyprctl dispatch dpms
-    fi
-  '';
+  inherit (lib) getExe getExe';
 in {
-  # screen idle
   services.hypridle = {
     enable = true;
     settings = {
-      beforeSleepCmd = "${pkgs.systemd}/bin/loginctl lock-session";
-      lockCmd = lib.getExe config.programs.hyprlock.package;
+      general = {
+        after_sleep_cmd = "${getExe' config.wayland.windowManager.hyprland.package "hyprctl"} dispatch dpms on";
+        ignore_dbus_inhibit = false;
+        lock_cmd = "${getExe config.programs.hyprlock.package}";
+      };
 
-      listeners = [
+      listener = [
         {
           timeout = 300;
-          onTimeout = suspendScript.outPath;
+          on-timeout = "${getExe config.programs.hyprlock.package}";
+        }
+        {
+          timeout = 600;
+          on-timeout = "${getExe' config.wayland.windowManager.hyprland.package "hyprctl"} dispatch dpms off";
+          on-resume = "${getExe' config.wayland.windowManager.hyprland.package "hyprctl"} dispatch dpms on";
         }
       ];
     };
