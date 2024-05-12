@@ -1,6 +1,5 @@
 {pkgs, ...}: {
   imports = [
-    # ../theme/dracula.nix
     ./firefox.nix
     ./foot.nix
     ./fuzzel.nix
@@ -19,6 +18,7 @@
     pavucontrol
     vesktop
     obs-studio
+    obsidian
     signal-desktop
     vial
     steam
@@ -27,8 +27,7 @@
     poppler
     libnotify
     tomato-c
-    gh
-    plex-mpv-shim
+    mpd
     (callPackage ../../pkgs/cider2 {})
   ];
 }
