@@ -7,25 +7,20 @@ in {
     settings = {
       general.hide_cursor = false;
 
-      backgrounds = [
+      background = [
         {
           monitor = "";
-          path = "${config.home.homeDirectory}/.lock.png";
+          path = "~/.wall.png";
           blur_passes = 2;
           blur_size = 2;
           vibrancy_darkness = 0.1;
         }
       ];
 
-      input-fields = [
+      input-field = [
         {
           monitor = "";
-
-          size = {
-            width = 300;
-            height = 50;
-          };
-
+          size = "300, 50";
           outline_thickness = 2;
 
           outer_color = "rgba(40,40,40,0.0)";
@@ -41,18 +36,13 @@ in {
         }
       ];
 
-      labels = [
+      label = [
         {
           monitor = "";
           text = "$TIME";
           inherit font_family;
           font_size = 75;
-
-          position = {
-            x = 0;
-            y = 100;
-          };
-
+          position = "0, 100";
           valign = "center";
           halign = "center";
         }
