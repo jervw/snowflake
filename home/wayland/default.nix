@@ -8,4 +8,9 @@
     ./waybar.nix
     ./wlsunset.nix
   ];
+
+  services = {
+    swaync.enable = true;
+    swayosd.enable = true;
+  };
 }

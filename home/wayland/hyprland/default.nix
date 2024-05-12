@@ -26,7 +26,7 @@ in {
       exec-once = [
         "nm-applet"
         "$HOME/.local/share/scripts/bitwarden-fix.sh"
-        "waypaper --restore"
+        "waypaper --restore &"
         "hyprlock"
       ];
 
@@ -47,6 +47,7 @@ in {
         gaps_in = 10;
         gaps_out = 10;
         border_size = 0;
+        # default_cursor_monitor = "DP-1";
       };
 
       dwindle = {
@@ -106,7 +107,7 @@ in {
       };
 
       layerrule = [
-        "noanim, class:fuzzel"
+        "noanim, launcher"
       ];
 
       windowrulev2 = [
@@ -119,14 +120,14 @@ in {
         "float, title:^(Steam)$"
         "float, title:^(Friends List)$"
         "float, title:^(Media viewer)$"
-        "workspace 5, class:(VencordDesktop)"
-        "workspace 5, class:(Cider)"
+        "workspace 1, class:(VencordDesktop)"
+        "workspace 1, class:(Cider)"
       ];
 
       bind =
         [
           "${mod}, Return, exec, ${term}"
-          "${mod}, D, exec, fuzzel"
+          "${mod}, D, exec, killall fuzzel || fuzzel"
           "${mod}, X, exec, ${term} yazi"
           "${mod}, B, exec, firefox"
           "${mod}, Z, exec, grimblast --notify --cursor copysave area"
@@ -163,6 +164,20 @@ in {
       bindm = [
         "${mod}, mouse:272, movewindow"
         "${mod}, mouse:273, resizewindow"
+      ];
+
+      bindr = [
+        "${mod}, SUPER_L, exec, killall fuzzel || fuzzel"
+      ];
+      bindl = [
+        ", XF86AudioPlay, exec, playerctl play-pause"
+        ", XF86AudioPrev, exec, playerctl previous"
+        ", XF86AudioNext, exec, playerctl next"
+      ];
+
+      bindle = [
+        ", XF86AudioRaiseVolume, exec, swayosd-client --output-volume raise --max-volume 120"
+        ", XF86AudioLowerVolume, exec, swayosd-client --output-volume lower --max-volume 120"
       ];
     };
   };

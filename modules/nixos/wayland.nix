@@ -1,4 +1,5 @@
 {pkgs, ...}: {
+  programs.hyprland.enable = true;
   environment = {
     sessionVariables = {
       MOZ_ENABLE_WAYLAND = "1";
@@ -32,7 +33,6 @@
     config.common.default = "*";
     extraPortals = with pkgs; [
       xdg-desktop-portal-gtk
-      xdg-desktop-portal-hyprland
     ];
   };
 }

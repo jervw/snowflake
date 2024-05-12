@@ -22,10 +22,10 @@ in {
         "vids"
         "other"
       ]
-      ++ forEach ["Yubico" "ags" "waypaper" "sh.cider.electron" "Cider" "fish" "syncthing" "vesktop" "obs-studio" "Signal"] (
+      ++ forEach ["Yubico" "waypaper" "sh.cider.electron" "Cider" "fish" "vesktop" "obs-studio" "Signal"] (
         x: ".config/${x}"
       )
-      ++ forEach ["nix" "mozilla" "ags"] (
+      ++ forEach ["nix" "mozilla"] (
         x: ".cache/${x}"
       )
       ++ forEach ["Steam" "fish" "direnv" "keyrings"] (x: ".local/share/${x}")
