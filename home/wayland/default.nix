@@ -1,7 +1,5 @@
-{inputs, ...}: {
+_: {
   imports = [
-    inputs.hyprlock.homeManagerModules.default
-
     ./hyprland
     ./hypridle.nix
     ./hyprlock.nix
