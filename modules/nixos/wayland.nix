@@ -20,7 +20,6 @@
       wl-clipboard
       wlr-randr
       swww
-      waypaper
       hyprpicker
       xorg.xeyes
       xorg.xrandr

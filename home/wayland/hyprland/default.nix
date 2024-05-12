@@ -26,7 +26,6 @@ in {
       exec-once = [
         "nm-applet"
         "$HOME/.local/share/scripts/bitwarden-fix.sh"
-        "waypaper --restore &"
         "hyprlock"
       ];
 
@@ -115,7 +114,6 @@ in {
         "suppressevent maximize, class:^(firefox)$"
         "float, title:^(Volume Control)$"
         "float, class:feh"
-        "float, class:waypaper"
         "float, title:^(Picture in picture)$"
         "float, title:^(Steam)$"
         "float, title:^(Friends List)$"

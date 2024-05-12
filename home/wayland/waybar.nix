@@ -76,7 +76,7 @@ _: {
 
         "custom/launcher" = {
           format = "";
-          on-click = "waypaper";
+          on-click = "fuzzel";
           tooltip = "false";
         };
 
