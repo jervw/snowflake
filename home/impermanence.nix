@@ -20,9 +20,10 @@ in {
         "docs"
         "pics"
         "vids"
+        "sync"
         "other"
       ]
-      ++ forEach ["Yubico" "sh.cider.electron" "fish" "vesktop" "obs-studio"] (
+      ++ forEach ["Yubico" "sh.cider.electron" "syncthing" "fish" "vesktop" "obs-studio"] (
         x: ".config/${x}"
       )
       ++ forEach ["nix" "mozilla"] (

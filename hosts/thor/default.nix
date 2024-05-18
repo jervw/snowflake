@@ -15,6 +15,7 @@ in {
     ../../modules/virtualisation
 
     ../../modules/network/tailscale.nix
+    ../../modules/network/syncthing.nix
   ];
 
   boot = {

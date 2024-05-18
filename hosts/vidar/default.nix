@@ -7,6 +7,7 @@
   imports = [
     inputs.nixos-wsl.nixosModules.wsl
     ../../modules/core
+    ../../modules/network/syncthing.nix
   ];
 
   wsl = {
