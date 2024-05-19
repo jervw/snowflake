@@ -22,8 +22,9 @@ in {
         "vids"
         "sync"
         "other"
+        ".dots"
       ]
-      ++ forEach ["Yubico" "sh.cider.electron" "syncthing" "fish" "vesktop" "obs-studio"] (
+      ++ forEach ["rclone" "Yubico" "sh.cider.electron" "syncthing" "fish" "vesktop" "obs-studio"] (
         x: ".config/${x}"
       )
       ++ forEach ["nix" "mozilla"] (
@@ -32,7 +33,6 @@ in {
       ++ forEach ["Steam" "fish" "direnv" "keyrings"] (x: ".local/share/${x}")
       ++ [".ssh" ".gnupg" ".mozilla"];
     files = [
-      ".lock.png"
       ".wall.png"
     ];
   };
