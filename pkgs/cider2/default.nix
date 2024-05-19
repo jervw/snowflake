@@ -12,11 +12,7 @@
   sources = {
     x86_64-linux = {
       url = "https://r2.jervw.dev/Cider-${version}.AppImage";
-      hash = "sha256-V8vO+6vKB80q1GV4ng5HY2SvnC4Ob1yK1Gf0NZJ79nw=";
-    };
-    x86_64-darwin = {
-      url = "https://r2.jervw.dev/Cider2-x64.dmg";
-      hash = "";
+      hash = "sha256-PSOJYaxEGahqX/7XIKkAiObqHwuAu6YI7CF/qc9DOZU=";
     };
   };
 
@@ -34,6 +30,4 @@
     sourceProvenance = with lib.sourceTypes; [binaryNativeCode];
   };
 in
-  if stdenv.isDarwin
-  then callPackage ./darwin.nix {inherit pname version src meta;}
-  else callPackage ./linux.nix {inherit pname version src meta;}
+  callPackage ./linux.nix {inherit pname version src meta;}
