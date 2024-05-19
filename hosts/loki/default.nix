@@ -9,9 +9,7 @@
     ../../modules/core
     ../../modules/nixos
     ../../modules/virtualisation
-
-    ../../modules/network/networkmanager.nix
-    ../../modules/network/tailscale.nix
+    ../../modules/network
   ];
 
   boot = {
