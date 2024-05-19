@@ -6,7 +6,7 @@ _: {
   };
 
   # set flake location
-  environment.variables = {FLAKE = "/nix/persist/system";};
+  environment.variables = {FLAKE = "/home/jervw/.dots";};
 
   # tldr
   documentation = {
