@@ -16,11 +16,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    ags = {
-      url = "github:Aylur/ags";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -33,11 +28,6 @@
 
     nixos-wsl = {
       url = "github:nix-community/NixOS-WSL";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    matugen = {
-      url = "github:InioX/matugen/module";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
