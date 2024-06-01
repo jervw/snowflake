@@ -41,12 +41,12 @@ in {
     nftables.enable = true;
     interfaces.${eth}.ipv4.addresses = [
       {
-        address = "192.168.50.140";
-        prefixLength = 24;
+        address = "10.0.0.2";
+        prefixLength = 28;
       }
     ];
     defaultGateway = {
-      address = "192.168.50.1";
+      address = "10.0.0.1";
       interface = eth;
     };
     nameservers = ["127.0.0.1" "1.1.1.1"];
