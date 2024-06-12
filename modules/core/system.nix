@@ -5,6 +5,7 @@
 }: {
   imports = [
     inputs.home-manager.nixosModules.default
+    inputs.chaotic.nixosModules.default
   ];
 
   time.timeZone = "Europe/Helsinki";

@@ -13,12 +13,14 @@
   ];
 
   boot = {
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_cachyos;
     loader = {
       systemd-boot.enable = lib.mkForce false; # Let Lanzaboote handle this
       efi.canTouchEfiVariables = true;
     };
   };
+
+  programs.gamemode.enable = true;
 
   # Services
   services = {
