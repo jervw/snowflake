@@ -5,8 +5,10 @@
 }: {
   services.xserver.videoDrivers = ["nvidia"];
 
-  # Needed for nvidia-open to fix issues with hibernation
-  boot.kernelParams = ["nvidia.NVreg_PreserveVideoMemoryAllocations=1"];
+  # This is required in kernel 6.9 to make wayland play nicely
+  boot.kernelParams = [
+    "nvidia-drm.fbdev=1"
+  ];
 
   hardware = {
     opengl = {
@@ -21,7 +23,7 @@
     };
     nvidia = {
       package = config.boot.kernelPackages.nvidiaPackages.beta;
-      open = true; # better but breaks VA-API driver on FF
+      open = true;
       powerManagement.enable = true;
       modesetting.enable = true;
     };
@@ -33,10 +35,8 @@
 
   environment = {
     sessionVariables = {
-      MOZ_DISABLE_RDD_SANDBOX = "1";
       NVD_BACKEND = "direct";
       GBM_BACKEND = "nvidia-drm";
-      WLR_NO_HARDWARE_CURSORS = "1";
       LIBVA_DRIVER_NAME = "nvidia";
       __GLX_VENDOR_LIBRARY_NAME = "nvidia";
     };

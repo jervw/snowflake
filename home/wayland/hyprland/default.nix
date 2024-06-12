@@ -31,7 +31,7 @@ in {
 
       monitor = [
         ",highrr,auto,1"
-        "HDMI-A-1,1920x1080@60,0x0,1"
+        "HDMI-A-1,preferred,auto-left,1"
       ];
 
       workspace = [
@@ -46,7 +46,7 @@ in {
         gaps_in = 10;
         gaps_out = 10;
         border_size = 0;
-        # default_cursor_monitor = "DP-1";
+        allow_tearing = true;
       };
 
       dwindle = {
@@ -61,6 +61,10 @@ in {
         force_no_accel = true;
       };
 
+      cursor = {
+        default_monitor = "DP-1";
+      };
+
       misc = {
         disable_autoreload = true;
         disable_hyprland_logo = true;
@@ -69,6 +73,7 @@ in {
         mouse_move_enables_dpms = true;
         enable_swallow = true;
         swallow_regex = "^(${term})$";
+        vrr = 2;
       };
 
       decoration = {
@@ -125,7 +130,7 @@ in {
       bind =
         [
           "${mod}, Return, exec, ${term}"
-          "${mod}, D, exec, killall fuzzel || fuzzel"
+          #"${mod}, D, exec, " TBD
           "${mod}, X, exec, ${term} yazi"
           "${mod}, B, exec, firefox"
           "${mod}, Z, exec, grimblast --notify --cursor copysave area"

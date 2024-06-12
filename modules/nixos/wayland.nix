@@ -1,14 +1,20 @@
-{pkgs, ...}: {
-  programs.hyprland.enable = true;
+{
+  pkgs,
+  inputs,
+  ...
+}: {
+  programs.hyprland = {
+    enable = true;
+    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+  };
   environment = {
     sessionVariables = {
-      MOZ_ENABLE_WAYLAND = "1";
       EGL_PLATFORM = "wayland";
       NIXOS_OZONE_WL = "1";
 
-      WLR_DRM_DEVICES = "/dev/dri/card1:/dev/dri/card0";
-      WLR_BACKEND = "vulkan";
-      WLR_RENDERER = "vulkan";
+      # These two crash Hyprland 0.40 for some reason
+      # WLR_BACKEND = "vulkan";
+      # WLR_RENDERER = "vulkan";
 
       XDG_CURRENT_DESKTOP = "Hyprland";
       XDG_SESSION_TYPE = "wayland";
