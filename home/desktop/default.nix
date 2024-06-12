@@ -23,8 +23,6 @@
     vial
     steam
     ffmpeg
-    ffmpegthumbnailer
-    poppler
     libnotify
     tomato-c
     mpd
