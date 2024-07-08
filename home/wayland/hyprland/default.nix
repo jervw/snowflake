@@ -46,7 +46,6 @@ in {
         gaps_in = 10;
         gaps_out = 10;
         border_size = 0;
-        allow_tearing = true;
       };
 
       dwindle = {
@@ -73,7 +72,6 @@ in {
         mouse_move_enables_dpms = true;
         enable_swallow = true;
         swallow_regex = "^(${term})$";
-        vrr = 2;
       };
 
       decoration = {

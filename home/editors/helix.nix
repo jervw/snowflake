@@ -10,7 +10,6 @@
     extraPackages = with pkgs; [
       nodePackages.bash-language-server
       nodePackages.typescript-language-server
-      vscode-langservers-extracted
       marksman
       clang-tools
       rust-analyzer
@@ -94,10 +93,6 @@
           config.check = {
             command = "clippy";
           };
-        };
-        vscode-css-language-server = {
-          command = "${nodePackages.vscode-css-languageserver-bin}/bin/css-languageserver";
-          args = ["--stdio"];
         };
       };
     };

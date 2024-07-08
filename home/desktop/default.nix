@@ -26,6 +26,7 @@
     libnotify
     tomato-c
     mpd
+    chatterino2
     (callPackage ../../pkgs/cider2 {})
   ];
 }
