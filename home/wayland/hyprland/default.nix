@@ -24,8 +24,6 @@ in {
     };
     settings = {
       exec-once = [
-        "nm-applet"
-        "$HOME/.local/share/scripts/bitwarden-fix.sh"
         "hyprlock"
       ];
 
@@ -72,6 +70,7 @@ in {
         mouse_move_enables_dpms = true;
         enable_swallow = true;
         swallow_regex = "^(${term})$";
+        vfr = false;
       };
 
       decoration = {
@@ -128,7 +127,7 @@ in {
       bind =
         [
           "${mod}, Return, exec, ${term}"
-          #"${mod}, D, exec, " TBD
+          "${mod}, D, exec, killall fuzzel || fuzzel"
           "${mod}, X, exec, ${term} yazi"
           "${mod}, B, exec, firefox"
           "${mod}, Z, exec, grimblast --notify --cursor copysave area"
@@ -166,21 +165,15 @@ in {
         "${mod}, mouse:272, movewindow"
         "${mod}, mouse:273, resizewindow"
       ];
-
-      bindr = [
-        "${mod}, SUPER_L, exec, killall fuzzel || fuzzel"
-      ];
       bindl = [
         ", XF86AudioPlay, exec, playerctl play-pause"
         ", XF86AudioPrev, exec, playerctl previous"
         ", XF86AudioNext, exec, playerctl next"
       ];
-
       bindle = [
         ", XF86AudioRaiseVolume, exec, swayosd-client --output-volume raise --max-volume 120"
         ", XF86AudioLowerVolume, exec, swayosd-client --output-volume lower --max-volume 120"
       ];
     };
   };
-  xdg.dataFile."scripts/bitwarden-fix.sh".source = import ./bitwarden-fix.nix pkgs;
 }
