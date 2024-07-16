@@ -1,6 +1,8 @@
 _: {
   programs.lazygit = {
     enable = true;
-    settings = {};
+    settings = {
+      gui.expandFocusedSidePanel = true;
+    };
   };
 }
