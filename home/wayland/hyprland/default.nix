@@ -59,7 +59,7 @@ in {
       };
 
       cursor = {
-        default_monitor = "DP-1";
+        no_hardware_cursors = true;
       };
 
       misc = {
