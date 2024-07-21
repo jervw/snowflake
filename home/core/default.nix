@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   imports = [
     ./git.nix
+    ./fastfetch.nix
     ./fish.nix
     ./direnv.nix
     ./lazygit.nix
@@ -15,8 +16,9 @@
     bat
     btop
     xdg-utils
+    gh
     eza
-    pfetch
+    fastfetch
     ripgrep
     rclone
     fd
