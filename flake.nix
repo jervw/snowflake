@@ -51,6 +51,7 @@
       imports = [
         ./home/profiles
         ./hosts
+        ./pkgs
       ];
 
       perSystem = {

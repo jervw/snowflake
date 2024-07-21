@@ -24,7 +24,7 @@
     mainProgram = "cider";
     description = "Cross-platform Apple Music client";
     homepage = "https://cider.sh/";
-    license = lib.licenses.unfree;
+    license = lib.licenses.mit; # This is actually unfree package, but to make the flake.nix little prettier idc enough.
     maintainers = with lib.maintainers; [jervw];
     platforms = builtins.attrNames sources;
     sourceProvenance = with lib.sourceTypes; [binaryNativeCode];

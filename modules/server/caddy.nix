@@ -1,11 +1,12 @@
 {
   pkgs,
   config,
+  self,
   ...
 }: {
   services.caddy = {
     enable = true;
-    package = pkgs.callPackage ../../pkgs/caddy-custom {
+    package = self.packages.${pkgs.system}.caddy-custom {
       plugins = [
         "github.com/caddy-dns/cloudflare"
       ];

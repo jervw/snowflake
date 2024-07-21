@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  self,
+  ...
+}: {
   imports = [
     ./firefox.nix
     ./foot.nix
@@ -27,6 +31,6 @@
     mpd
     chatterino2
     plex-desktop
-    (callPackage ../../pkgs/cider2 {})
+    self.packages.${pkgs.system}.cider2
   ];
 }
