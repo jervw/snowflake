@@ -30,7 +30,7 @@ in {
       ++ forEach ["nix" "mozilla"] (
         x: ".cache/${x}"
       )
-      ++ forEach ["Steam" "fish" "direnv" "keyrings" "chatterino"] (x: ".local/share/${x}")
+      ++ forEach ["Steam" "fish" "direnv" "keyrings" "chatterino" "gh"] (x: ".local/share/${x}")
       ++ [".ssh" ".gnupg" ".mozilla"];
     files = [
       ".wall.png"
