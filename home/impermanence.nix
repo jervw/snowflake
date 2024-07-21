@@ -24,7 +24,7 @@ in {
         "other"
         ".dots"
       ]
-      ++ forEach ["rclone" "Yubico" "sh.cider.electron" "syncthing" "fish" "vesktop" "obs-studio"] (
+      ++ forEach ["rclone" "Yubico" "sh.cider.electron" "syncthing" "fish" "vesktop" "obs-studio" "gh"] (
         x: ".config/${x}"
       )
       ++ forEach ["nix" "mozilla"] (

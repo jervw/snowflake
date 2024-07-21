@@ -9,9 +9,8 @@
   ];
 
   home.packages = with pkgs; [
-    gnome.nautilus
+    nautilus
     loupe
-    networkmanagerapplet
     feh
     vscode-fhs
     playerctl
@@ -27,6 +26,7 @@
     tomato-c
     mpd
     chatterino2
+    plex-desktop
     (callPackage ../../pkgs/cider2 {})
   ];
 }

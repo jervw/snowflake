@@ -1,4 +1,4 @@
-{pkgs, ...}: let
+_: let
   term = "foot";
   mod = "SUPER";
 

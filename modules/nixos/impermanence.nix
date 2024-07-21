@@ -13,6 +13,7 @@ in {
       [
         "/tmp"
         "/var/log"
+        "/var/tmp"
         "/var/db/sudo"
       ]
       ++ forEach ["nixos" "NetworkManager" "nix" "ssh" "secureboot"] (x: "/etc/${x}")

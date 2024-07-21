@@ -4,7 +4,7 @@
   ];
 
   boot = {
-    kernelParams = ["quiet" "splash" "rd.systemd.show_status=false" "rd.udev.log_level=3" "udev.log_priority=3"];
+    kernelParams = ["quiet" "splash"];
     consoleLogLevel = 0;
 
     lanzaboote = {
@@ -20,9 +20,7 @@
       };
     };
     loader = {
-      timeout = 1;
+      timeout = 4;
     };
   };
-
-  systemd.watchdog.rebootTime = "0";
 }
