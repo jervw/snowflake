@@ -1,10 +1,12 @@
 {
   pkgs,
   lib,
+  inputs,
   ...
 }: {
   programs.helix = {
     enable = true;
+    package = inputs.helix.packages."x86_64-linux".default;
     defaultEditor = true;
 
     extraPackages = with pkgs; [
@@ -25,6 +27,8 @@
         true-color = true;
         undercurl = true;
         smart-tab.enable = false;
+        end-of-line-diagnostics = "hint";
+        inline-diagnostics.cursor-line = "warning";
         whitespace.characters = {
           tab = "→";
           newline = "⏎";
