@@ -15,8 +15,10 @@
     };
   };
 
-  home.packages = with pkgs; [
-    fishPlugins.autopair
-    fishPlugins.fzf
+  home.packages = with pkgs.fishPlugins; [
+    hydro
+    autopair
+    fzf
+    done
   ];
 }
