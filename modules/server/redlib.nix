@@ -4,9 +4,8 @@
     import cloudflare
   '';
 
-  services.libreddit = {
+  services.redlib = {
     enable = true;
-    package = pkgs.redlib;
     openFirewall = true;
     port = 8081;
   };
