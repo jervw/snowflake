@@ -43,6 +43,11 @@
       flake = false;
     };
 
+    nixos-cosmic = {
+      url = "github:lilyinstarlight/nixos-cosmic";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     ssh-keys = {
       url = "https://github.com/jervw.keys";
       flake = false;

@@ -1,9 +1,11 @@
 {
   pkgs,
   lib,
+  inputs,
   ...
 }: {
   imports = [
+    inputs.nixos-cosmic.nixosModules.default
     ./hardware-configuration.nix
 
     ../../modules/core
@@ -19,6 +21,8 @@
       efi.canTouchEfiVariables = true;
     };
   };
+
+  services.desktopManager.cosmic.enable = true;
 
   programs.gamemode.enable = true;
 
