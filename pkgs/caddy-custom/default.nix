@@ -30,4 +30,9 @@ with pkgs;
       mv caddy $out/bin
       runHook postInstall
     '';
+
+    meta = {
+      mainProgram = "caddy";
+      maintainers = with lib.maintainers; [jervw];
+    };
   }
