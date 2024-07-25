@@ -6,11 +6,7 @@
 }: {
   services.caddy = {
     enable = true;
-    package = self.packages.${pkgs.system}.caddy-custom {
-      plugins = [
-        "github.com/caddy-dns/cloudflare"
-      ];
-    };
+    package = self.packages.${pkgs.system}.caddy-custom;
     extraConfig = ''
       (cloudflare) {
           tls {

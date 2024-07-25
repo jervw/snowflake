@@ -25,6 +25,7 @@ in {
     settings = {
       exec-once = [
         "hyprlock"
+        "xrandr --output DP-1 --primary"
       ];
 
       monitor = [
@@ -60,6 +61,7 @@ in {
 
       cursor = {
         no_hardware_cursors = true;
+        # allow_dumb_copy = true;
       };
 
       misc = {
@@ -72,6 +74,10 @@ in {
         swallow_regex = "^(${term})$";
         vfr = false;
       };
+
+      # experimental = {
+      #   explicit_sync = true;
+      # };
 
       decoration = {
         rounding = 12;
