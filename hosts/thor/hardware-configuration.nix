@@ -26,11 +26,6 @@
     fsType = "ext4";
   };
 
-  fileSystems."/mnt/monero" = {
-    device = "/dev/disk/by-label/MONERO";
-    fsType = "ext4";
-  };
-
   fileSystems."/boot" = {
     device = "/dev/disk/by-uuid/BCB8-5788";
     fsType = "vfat";
