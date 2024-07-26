@@ -3,6 +3,7 @@
     enable = true;
     interactiveShellInit = ''
       any-nix-shell fish --info-right | source
+      fzf_configure_bindings
       set fish_greeting
     '';
 
