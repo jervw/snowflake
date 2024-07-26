@@ -1,4 +1,4 @@
-_: let
+{pkgs, ...}: let
   term = "foot";
   mod = "SUPER";
 
@@ -25,7 +25,7 @@ in {
     settings = {
       exec-once = [
         "hyprlock"
-        "xrandr --output DP-1 --primary"
+        "${pkgs.xorg.xrandr}/bin/xrandr --output DP-1 --primary"
       ];
 
       monitor = [
