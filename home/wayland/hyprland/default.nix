@@ -1,13 +1,11 @@
 {pkgs, ...}: let
   term = "foot";
-  mod = "SUPER";
-
   workspaces = builtins.concatLists (builtins.genList (
       x: let
         ws = toString (x + 1);
       in [
-        "${mod}, ${ws}, workspace, ${ws}"
-        "${mod} SHIFT, ${ws}, movetoworkspacesilent, ${ws}"
+        "$MOD, ${ws}, workspace, ${ws}"
+        "$MOD SHIFT, ${ws}, movetoworkspacesilent, ${ws}"
       ]
     )
     5);
@@ -15,14 +13,18 @@ in {
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
+    plugins = [
+      pkgs.hyprlandPlugins.hyprspace
+    ];
     systemd = {
       variables = ["--all"];
       extraCommands = [
-        "systemctl --user stop graphical-session.target"
         "systemctl --user start hyprland-session.target"
       ];
     };
+
     settings = {
+      "$MOD" = "SUPER";
       exec-once = [
         "hyprlock"
         "${pkgs.xorg.xrandr}/bin/xrandr --output DP-1 --primary"
@@ -127,49 +129,52 @@ in {
         "float, title:^(Friends List)$"
         "float, title:^(Media viewer)$"
         "workspace 1, class:(VencordDesktop)"
-        "workspace 1, class:(Cider)"
+        "workspace special, class:(Cider)"
       ];
 
       bind =
         [
-          "${mod}, Return, exec, ${term}"
-          "${mod}, D, exec, killall fuzzel || fuzzel"
-          "${mod}, X, exec, ${term} yazi"
-          "${mod}, B, exec, firefox"
-          "${mod}, Z, exec, grimblast --notify --cursor copysave area"
-          "${mod} CTRL, Z, exec, grimblast --notify --cursor copysave output"
-          "${mod}, C, exec, hyprpicker -a | --autocopy"
-          "${mod} SHIFT, E, exit"
+          "$MOD, Return, exec, ${term}"
+          "$MOD, D, exec, killall fuzzel || fuzzel"
+          "$MOD, X, exec, ${term} yazi"
+          "$MOD, B, exec, firefox"
+          "$MOD, Z, exec, grimblast --notify --cursor copysave area"
+          "$MOD CTRL, Z, exec, grimblast --notify --cursor copysave output"
+          "$MOD, C, exec, hyprpicker -a | --autocopy"
+          "$MOD SHIFT, E, exit"
 
-          "${mod}, Q, killactive"
-          "${mod}, F, fullscreen"
-          "${mod}, Space, togglefloating"
-          "${mod}, S, togglesplit"
+          "$MOD, Q, killactive"
+          "$MOD, F, fullscreen"
+          "$MOD, Space, togglefloating"
+          "$MOD, S, togglesplit"
 
-          "${mod}, H, movefocus, l"
-          "${mod}, L, movefocus, r"
-          "${mod}, K, movefocus, u"
-          "${mod}, J, movefocus, d"
+          "$MOD, H, movefocus, l"
+          "$MOD, L, movefocus, r"
+          "$MOD, K, movefocus, u"
+          "$MOD, J, movefocus, d"
 
-          "${mod} SHIFT, H, movewindow, l"
-          "${mod} SHIFT, L, movewindow, r"
-          "${mod} SHIFT, K, movewindow, u"
-          "${mod} SHIFT, J, movewindow, d"
+          "$MOD SHIFT, H, movewindow, l"
+          "$MOD SHIFT, L, movewindow, r"
+          "$MOD SHIFT, K, movewindow, u"
+          "$MOD SHIFT, J, movewindow, d"
 
-          "${mod} CTRL, H, resizeactive, -30 0"
-          "${mod} CTRL, L, resizeactive, 30 0"
-          "${mod} CTRL, K, resizeactive, 0 -30"
-          "${mod} CTRL, J, resizeactive, 0 l0"
+          "$MOD CTRL, H, resizeactive, -30 0"
+          "$MOD CTRL, L, resizeactive, 30 0"
+          "$MOD CTRL, K, resizeactive, 0 -30"
+          "$MOD CTRL, J, resizeactive, 0 30"
 
-          "${mod}, g, togglegroup"
-          "${mod}, tab, changegroupactive"
-          "${mod}, t, togglespecialworkspace"
-          "${mod} SHIFT, t, movetoworkspace, special"
+          "ALT,Tab, changegroupactive"
+          "$MOD, G, togglegroup"
+          "$MOD, T, togglespecialworkspace"
+          "$MOD SHIFT, T, movetoworkspacesilent, special"
+
+          "$MOD, Tab, overview:toggle"
         ]
         ++ workspaces;
+
       bindm = [
-        "${mod}, mouse:272, movewindow"
-        "${mod}, mouse:273, resizewindow"
+        "$MOD, mouse:272, movewindow"
+        "$MOD, mouse:273, resizewindow"
       ];
       bindl = [
         ", XF86AudioPlay, exec, playerctl play-pause"
