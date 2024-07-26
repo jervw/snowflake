@@ -847,7 +847,8 @@
         "nixos-cosmic": "nixos-cosmic",
         "nixos-wsl": "nixos-wsl",
         "nixpkgs": "nixpkgs_3",
-        "ssh-keys": "ssh-keys"
+        "ssh-keys": "ssh-keys",
+        "tailray": "tailray"
       }
     },
     "rust-overlay": {
@@ -999,6 +1000,26 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
+        "type": "github"
+      }
+    },
+    "tailray": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1721562678,
+        "narHash": "sha256-xyYdmxHtoWXqbmJPd0Gf7AYl6Uh+25u8oT5/9Cr0JTU=",
+        "owner": "NotAShelf",
+        "repo": "tailray",
+        "rev": "fc87440670258725a35a3c39fccf48b957cb77e1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NotAShelf",
+        "repo": "tailray",
         "type": "github"
       }
     },
