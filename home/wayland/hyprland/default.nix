@@ -26,8 +26,9 @@ in {
     settings = {
       "$MOD" = "SUPER";
       exec-once = [
-        "hyprlock"
-        "${pkgs.xorg.xrandr}/bin/xrandr --output DP-1 --primary"
+        #"hyprlock" // FIX, causing issues when booting
+        "sleep 3 && xrandr --output DP-1 --primary"
+        "wpaperd -d"
       ];
 
       monitor = [

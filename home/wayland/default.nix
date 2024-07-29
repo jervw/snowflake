@@ -3,13 +3,13 @@ _: {
     ./hyprland
     ./hypridle.nix
     ./hyprlock.nix
-    ./hyprpaper.nix
+    ./swaync.nix
     ./waybar.nix
     ./wlsunset.nix
+    ./wpaperd.nix
   ];
 
   services = {
-    swaync.enable = true;
     swayosd.enable = true;
   };
 }
