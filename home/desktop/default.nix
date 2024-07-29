@@ -25,6 +25,7 @@
     signal-desktop
     vial
     steam
+    lutris
     ffmpeg
     libnotify
     tomato-c
