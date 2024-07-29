@@ -22,6 +22,7 @@ in {
         "vids"
         "sync"
         "other"
+        "Games" # TODO make this lowercase somehow
         ".dots"
       ]
       ++ forEach ["dconf" "rclone" "Yubico" "sh.cider.electron" "syncthing" "fish" "vesktop" "obs-studio" "gh"] (
