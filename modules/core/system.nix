@@ -37,6 +37,10 @@
     packages = with pkgs; [yubikey-personalization vial];
   };
 
+  systemd.extraConfig = ''
+    DefaultTimeoutStopSec=10s
+  '';
+
   # allow users to mount fuse filesystems with allow_other
   programs.fuse.userAllowOther = true;
 
