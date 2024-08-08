@@ -8,6 +8,7 @@ _: {
       };
       any = {
         path = "/home/jervw/.dots/wallpapers";
+        group = 1;
         apply-shadow = true;
       };
     };
