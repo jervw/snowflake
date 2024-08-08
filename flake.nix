@@ -4,7 +4,6 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     impermanence.url = "github:nix-community/impermanence";
-    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
 
     flake-parts = {

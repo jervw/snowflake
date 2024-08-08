@@ -26,10 +26,10 @@
       powerManagement.enable = true;
       modesetting.enable = true;
     };
-  };
 
-  virtualisation.docker = {
-    enableNvidia = true;
+    nvidia-container-toolkit = {
+      enable = true;
+    };
   };
 
   environment = {
