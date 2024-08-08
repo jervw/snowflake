@@ -14,7 +14,6 @@
       nodePackages.bash-language-server
       gopls
       markdown-oxide
-      nil
     ];
 
     settings = {
@@ -64,19 +63,20 @@
     };
 
     languages = {
-      language = with pkgs; [
+      language = [
         {
           name = "nix";
           auto-format = true;
+          language-servers = ["nixd"];
           formatter = {
-            command = lib.getExe alejandra;
+            command = lib.getExe pkgs.alejandra;
             args = ["-q"];
           };
         }
         {
           name = "rust";
           auto-format = true;
-          formatter.command = lib.getExe rustfmt;
+          formatter.command = lib.getExe pkgs.rustfmt;
         }
         {
           name = "c";
@@ -102,6 +102,9 @@
           config.check = {
             command = "clippy";
           };
+        };
+        nixd = {
+          command = "${pkgs.nixd}/bin/nixd";
         };
         pyright = {
           command = "${pkgs.pyright}/bin/pyright-langserver";
