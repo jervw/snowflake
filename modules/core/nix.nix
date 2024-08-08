@@ -20,13 +20,16 @@ _: {
       options = "--delete-older-than 2d";
     };
 
+    optimise = {
+      automatic = true;
+    };
+
     daemonCPUSchedPolicy = "idle";
     daemonIOSchedClass = "idle";
 
     settings = {
       extra-experimental-features = ["flakes" "nix-command" "recursive-nix"];
       warn-dirty = false;
-      auto-optimise-store = true;
       builders-use-substitutes = true;
       keep-outputs = true;
       allowed-users = ["@wheel"];
