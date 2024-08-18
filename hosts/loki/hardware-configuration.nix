@@ -12,6 +12,7 @@
   boot.initrd.kernelModules = [];
   boot.kernelModules = ["kvm-amd"];
   boot.extraModulePackages = [];
+  boot.initrd.luks.devices."nixos".device = "/dev/disk/by-uuid/34df0c89-c590-4d2e-9ddf-76f98ca17dd5";
 
   fileSystems."/" = {
     device = "none";
@@ -22,9 +23,9 @@
   fileSystems."/nix" = {
     device = "/dev/disk/by-uuid/43c25427-ccf6-4382-8bb4-c247f817e7ed";
     fsType = "ext4";
+    neededForBoot = true;
+    options = ["noatime"];
   };
-
-  boot.initrd.luks.devices."nixos".device = "/dev/disk/by-uuid/34df0c89-c590-4d2e-9ddf-76f98ca17dd5";
 
   fileSystems."/boot" = {
     device = "/dev/disk/by-uuid/6694-9D4D";
