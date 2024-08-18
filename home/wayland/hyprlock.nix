@@ -10,7 +10,7 @@ in {
       background = [
         {
           monitor = "";
-          path = "~/.wall.png";
+          path = "~/pics/walls/cyber.png";
           blur_passes = 2;
           blur_size = 2;
           vibrancy_darkness = 0.1;
