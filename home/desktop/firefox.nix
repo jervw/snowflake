@@ -1,13 +1,16 @@
 {inputs, ...}: {
-  home.file."firefox-gnome-theme" = {
-    target = ".mozilla/firefox/default/chrome/firefox-gnome-theme";
-    source = inputs.firefox-gnome-theme;
-  };
   programs.firefox = {
     enable = true;
-
     profiles.default = {
       settings = {
+        "network.http.pipelining" = true;
+        "network.http.proxy.pipelining" = true;
+        "network.http.pipelining.maxrequests" = 10;
+        "nglayout.initialpaint.delay" = 0;
+        "nglayout.initialpaint.delay_in_oopif" = 0;
+        "browser.startup.preXulSkeletonUI" = false;
+        "content.notify.interval" = 100000;
+
         "browser.send_pings" = false;
         "browser.urlbar.speculativeConnect.enabled" = false;
         "dom.event.clipboardevents.enabled" = true;
@@ -33,10 +36,14 @@
         "toolkit.telemetry.enabled" = false;
         "toolkit.telemetry.unified" = false;
         "toolkit.telemetry.server" = "";
+        "toolkit.telemetry.updatePing.enabled" = false;
 
+        # Disable bloat
         "browser.newtabpage.activity-stream.feeds.discoverystreamfeed" = false;
         "browser.newtabpage.activity-stream.feeds.section.topstories" = false;
+        "browser.newtabpage.activity-stream.section.highlights.includePocket" = false;
         "browser.newtabpage.activity-stream.showSponsored" = false;
+        "extensions.pocket.enabled" = false;
 
         # Disable JS in PDFs
         "pdfjs.enableScripting" = false;
@@ -67,6 +74,7 @@
         "gnomeTheme.bookmarksToolbarUnderTabs" = true;
         "gnomeTheme.normalWidthTabs" = false;
         "gnomeTheme.tabsAsHeaderbar" = false;
+        "gnomeTheme.hideWebrtcIndicator" = true;
       };
       userChrome = ''
         @import "firefox-gnome-theme/userChrome.css";
@@ -75,5 +83,10 @@
         @import "firefox-gnome-theme/userContent.css";
       '';
     };
+  };
+
+  home.file."firefox-gnome-theme" = {
+    target = ".mozilla/firefox/default/chrome/firefox-gnome-theme";
+    source = inputs.firefox-gnome-theme;
   };
 }
