@@ -18,6 +18,7 @@
   };
 
   nix = {
+    package = pkgs.lix;
     optimise = {
       automatic = true;
     };
