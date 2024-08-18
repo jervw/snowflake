@@ -7,7 +7,6 @@
     ./lazygit.nix
     ./yazi.nix
     ./zellij.nix
-    ./zoxide.nix
   ];
 
   home.packages = with pkgs; [

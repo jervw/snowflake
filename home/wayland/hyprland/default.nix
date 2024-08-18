@@ -125,8 +125,6 @@ in {
         "float, title:^(Volume Control)$"
         "float, class:feh"
         "float, title:^(Picture in picture)$"
-        "float, title:^(Steam)$"
-        "float, title:^(Friends List)$"
         "float, title:^(Media viewer)$"
         "workspace 1, class:(VencordDesktop)"
         "workspace special, class:(Cider)"

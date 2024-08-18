@@ -41,7 +41,6 @@
     };
     systemPackages = with pkgs; [
       vulkan-loader
-      # vulkan-validation-layers
       vulkan-tools
       libva
       libva-utils

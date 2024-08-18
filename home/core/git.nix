@@ -15,12 +15,6 @@
       push.autoSetupRemote = true;
     };
 
-    aliases = {
-      fuck = "commit --amend --no-edit";
-      s = "status --short";
-      ss = "status";
-    };
-
     lfs = {
       enable = true;
     };
