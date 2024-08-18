@@ -1,7 +1,6 @@
 {
   imports = [
     ../../core
-    ../../editors
     ../../services
     ../../desktop
     ../../wayland
