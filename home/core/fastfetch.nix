@@ -9,7 +9,7 @@ _: {
 
       display = {
         separator = "";
-        keyWidth = 12;
+        key.width = 12;
       };
 
       modules = [
