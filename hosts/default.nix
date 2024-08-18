@@ -57,15 +57,6 @@
       ];
     };
 
-    # Hezner VPS
-    huginn = nixosSystem {
-      inherit specialArgs;
-      modules = [
-        {networking.hostName = "huginn";}
-        ./huginn
-      ];
-    };
-
     # Add more hosts here..
   };
 }

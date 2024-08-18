@@ -1,18 +1,18 @@
 {
-  services.caddy = {
-    virtualHosts."radarr.jervw.dev".extraConfig = ''
+  services.caddy.virtualHosts = {
+    "radarr.jervw.dev".extraConfig = ''
       reverse_proxy http://thor:7878
       import cloudflare
     '';
-    virtualHosts."sonarr.jervw.dev".extraConfig = ''
+    "sonarr.jervw.dev".extraConfig = ''
       reverse_proxy http://thor:8989
       import cloudflare
     '';
-    virtualHosts."prowlarr.jervw.dev".extraConfig = ''
+    "prowlarr.jervw.dev".extraConfig = ''
       reverse_proxy http://thor:9696
       import cloudflare
     '';
-    virtualHosts."bazarr.jervw.dev".extraConfig = ''
+    "bazarr.jervw.dev".extraConfig = ''
       reverse_proxy http://thor:6767
       import cloudflare
     '';

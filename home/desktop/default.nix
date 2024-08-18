@@ -24,7 +24,6 @@
     obsidian
     signal-desktop
     vial
-    steam
     lutris
     ffmpeg
     libnotify
@@ -32,6 +31,7 @@
     mpd
     chatterino2
     plex-desktop
+    zed-editor
     self.packages.${pkgs.system}.cider2
   ];
 }

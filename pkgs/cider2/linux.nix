@@ -12,7 +12,6 @@
     inherit name src;
   };
 in
-  # Does not work on Nvidia currently (line 26)
   appimageTools.wrapType2 {
     inherit name src meta;
 
@@ -21,6 +20,7 @@ in
 
       source '${makeWrapper}/nix-support/setup-hook'
 
+      # TODO Does not work
       # wrapProgram "$out/bin/${pname}" \
       #   --add-flags "\''${NIXOS_OZONE_WL:+\''${WAYLAND_DISPLAY:+--ozone-platform-hint=auto --enable-features=WaylandWindowDecorations}}" \
       #   --add-flags '--disable-seccomp-filter-sandbox'

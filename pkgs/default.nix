@@ -1,11 +1,7 @@
 {
   systems = ["x86_64-linux"];
 
-  perSystem = {
-    pkgs,
-    inputs',
-    ...
-  }: {
+  perSystem = {pkgs, ...}: {
     packages = {
       caddy-custom = pkgs.callPackage ./caddy-custom {
         plugins = [

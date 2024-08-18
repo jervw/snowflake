@@ -14,7 +14,7 @@ in {
     enable = true;
     xwayland.enable = true;
     plugins = [
-      pkgs.hyprlandPlugins.hyprspace
+      # pkgs.hyprlandPlugins.hyprspace
     ];
     systemd = {
       variables = ["--all"];
@@ -55,6 +55,10 @@ in {
         preserve_split = true;
       };
 
+      render = {
+        explicit_sync = 0;
+      };
+
       input = {
         kb_layout = "us,fi";
         kb_options = "grp:alt_shift_toggle";
@@ -64,7 +68,6 @@ in {
 
       cursor = {
         no_hardware_cursors = true;
-        # allow_dumb_copy = true;
       };
 
       misc = {
@@ -77,10 +80,6 @@ in {
         swallow_regex = "^(${term})$";
         vfr = false;
       };
-
-      # experimental = {
-      #   explicit_sync = true;
-      # };
 
       decoration = {
         rounding = 12;
@@ -169,7 +168,7 @@ in {
           "$MOD, T, togglespecialworkspace"
           "$MOD SHIFT, T, movetoworkspacesilent, special"
 
-          "$MOD, Tab, overview:toggle"
+          # "$MOD, Tab, overview:toggle"
         ]
         ++ workspaces;
 

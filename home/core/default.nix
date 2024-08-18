@@ -11,7 +11,6 @@
   ];
 
   home.packages = with pkgs; [
-    amp
     dconf
     bat
     btop

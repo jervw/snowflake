@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+_: {
   services.caddy.virtualHosts."redlib.jervw.dev".extraConfig = ''
     reverse_proxy http://thor:8081
     import cloudflare

@@ -1,4 +1,4 @@
-{config, ...}: let
+_: let
   font_family = "Inter";
 in {
   programs.hyprlock = {

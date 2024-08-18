@@ -12,8 +12,8 @@ in {
 
     ../../modules/core
     ../../modules/server
-    ../../modules/virtualisation
 
+    ../../modules/virtualisation/docker.nix
     ../../modules/network/tailscale.nix
     ../../modules/network/syncthing.nix
   ];

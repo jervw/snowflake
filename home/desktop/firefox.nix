@@ -25,9 +25,6 @@
         "browser.toolbars.bookmarks.visibility" = "never";
         "geo.enabled" = false;
 
-        # Allow syncing browser config to Firefox Sync
-        "services.sync.prefs.dangerously_allow_arbitrary" = true;
-
         # Disable telemetry
         "browser.newtabpage.activity-stream.feeds.telemetry" = false;
         "browser.ping-centre.telemetry" = false;

@@ -1,11 +1,9 @@
 {
   pkgs,
   lib,
-  inputs,
   ...
 }: {
   imports = [
-    inputs.nixos-cosmic.nixosModules.default
     ./hardware-configuration.nix
 
     ../../modules/core
@@ -13,6 +11,14 @@
     ../../modules/virtualisation
     ../../modules/network
   ];
+
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true;
+    dedicatedServer.openFirewall = true;
+    localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
+    extraCompatPackages = [pkgs.proton-ge-bin];
+  };
 
   boot = {
     kernelPackages = pkgs.linuxPackages_cachyos;
@@ -22,14 +28,9 @@
     };
   };
 
-  services.desktopManager.cosmic.enable = true;
-
-  programs.gamemode.enable = true;
-
   # Services
   services = {
     gnome.gnome-keyring.enable = true;
-    fstrim.enable = true;
     gvfs.enable = true;
   };
 }

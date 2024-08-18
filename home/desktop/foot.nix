@@ -7,8 +7,11 @@ _: {
         term = "xterm-256color";
         font = "JetBrainsMono Nerd Font Mono:size=13";
         pad = "10x10 center";
-        notify = "notify-send -a \${app-id} -i \${app-id} \${title} \${body}";
         selection-target = "clipboard";
+      };
+
+      desktop-notifications = {
+        command = "notify-send -a \${app-id} -i \${app-id} \${title} \${body}";
       };
 
       scrollback = {
@@ -27,6 +30,7 @@ _: {
       cursor = {
         style = "beam";
         color = "dfdfe0 dfdfe0";
+        blink = "yes";
         beam-thickness = 1;
       };
 

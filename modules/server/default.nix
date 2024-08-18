@@ -9,14 +9,17 @@
     ./immich.nix
     ./redlib.nix
     ./media-services.nix
-    ./monero.nix
     ./overseerr.nix
     ./plex.nix
     ./tautulli.nix
   ];
 
-  users.groups.media = {};
-  users.users.plex.extraGroups = ["media"];
-  users.users.radarr.extraGroups = ["media"];
-  users.users.sonarr.extraGroups = ["media"];
+  users = {
+    groups.media = {};
+    users = {
+      plex.extraGroups = ["media"];
+      radarr.extraGroups = ["media"];
+      sonarr.extraGroups = ["media"];
+    };
+  };
 }

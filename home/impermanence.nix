@@ -22,19 +22,16 @@ in {
         "vids"
         "sync"
         "other"
-        "Games" # TODO make this lowercase somehow
+        "games"
         ".dots"
       ]
-      ++ forEach ["dconf" "rclone" "Yubico" "sh.cider.electron" "syncthing" "fish" "vesktop" "obs-studio" "gh"] (
+      ++ forEach ["dconf" "rclone" "Yubico" "sh.cider.electron" "syncthing" "fish" "vesktop" "obs-studio" "gh" "zed"] (
         x: ".config/${x}"
       )
-      ++ forEach ["nix" "mozilla"] (
+      ++ forEach ["nix" "mozilla" "lutris"] (
         x: ".cache/${x}"
       )
-      ++ forEach ["Steam" "fish" "direnv" "keyrings" "chatterino" "gh"] (x: ".local/share/${x}")
+      ++ forEach ["Steam" "fish" "direnv" "keyrings" "chatterino" "gh" "lutris"] (x: ".local/share/${x}")
       ++ [".ssh" ".gnupg" ".mozilla"];
-    files = [
-      ".wall.png"
-    ];
   };
 }
