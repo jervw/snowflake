@@ -36,6 +36,11 @@ in {
         modules = homeImports.thor;
         inherit pkgs extraSpecialArgs;
       };
+
+      vidar = homeManagerConfiguration {
+        modules = homeImports.vidar;
+        inherit pkgs extraSpecialArgs;
+      };
     };
   };
 }

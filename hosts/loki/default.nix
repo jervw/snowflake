@@ -1,8 +1,4 @@
-{
-  pkgs,
-  lib,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ./hardware-configuration.nix
 
@@ -10,19 +6,13 @@
     ../../modules/nixos
     ../../modules/virtualisation
     ../../modules/network
+    ../../modules/services
   ];
 
   boot = {
     kernelPackages = pkgs.linuxPackages_cachyos;
-    loader = {
-      systemd-boot.enable = lib.mkForce false; # Let Lanzaboote handle this
-      efi.canTouchEfiVariables = true;
-    };
-  };
-
-  # Services
-  services = {
-    gnome.gnome-keyring.enable = true;
-    gvfs.enable = true;
+    # loader = {
+    #   efi.canTouchEfiVariables = true;
+    # };
   };
 }
