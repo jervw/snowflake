@@ -1,6 +1,7 @@
 {
   self,
   user,
+  lib,
   inputs,
   ...
 }: let
@@ -12,10 +13,9 @@ in {
 
     ../../modules/core
     ../../modules/server
+    ../../modules/network
 
     ../../modules/virtualisation/docker.nix
-    ../../modules/network/tailscale.nix
-    ../../modules/network/syncthing.nix
   ];
 
   boot = {
@@ -37,6 +37,7 @@ in {
   };
 
   networking = {
+    networkmanager.enable = lib.mkForce false;
     hostId = "7f6f07cd";
     nftables.enable = true;
     interfaces.${eth}.ipv4.addresses = [

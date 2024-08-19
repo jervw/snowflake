@@ -4,6 +4,7 @@
     ./fastfetch.nix
     ./fish.nix
     ./direnv.nix
+    ./helix.nix
     ./lazygit.nix
     ./yazi.nix
     ./zellij.nix

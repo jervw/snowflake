@@ -30,7 +30,7 @@ in {
       ++ forEach ["nix" "mozilla" "lutris"] (
         x: ".cache/${x}"
       )
-      ++ forEach ["fish" "direnv" "keyrings" "chatterino" "gh" "lutris"] (x: ".local/share/${x}")
+      ++ forEach ["fish" "direnv" "keyrings" "chatterino" "gh" "lutris" "PrismLauncher"] (x: ".local/share/${x}")
       ++ [".ssh" ".gnupg" ".mozilla"];
   };
 }

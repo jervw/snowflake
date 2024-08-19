@@ -27,7 +27,7 @@
     daemonIOSchedClass = "idle";
 
     settings = {
-      extra-experimental-features = ["flakes" "nix-command" "recursive-nix"];
+      extra-experimental-features = ["flakes" "nix-command"];
       warn-dirty = false;
       builders-use-substitutes = true;
       keep-outputs = true;

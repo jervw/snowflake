@@ -4,9 +4,8 @@ _: {
     polkit.enable = true;
     pam = {
       services = {
-        # login.u2fAuth = true;
         sudo.u2fAuth = true;
-        hyprlock = {};
+        hyprlock.text = "auth include login";
       };
       u2f = {
         enable = true;
@@ -17,6 +16,7 @@ _: {
 
   programs.yubikey-touch-detector.enable = true;
 
+  # Security tweaks stolen from @hlissner
   boot.kernel.sysctl = {
     # The Magic SysRq key is a key combo that allows users connected to the
     # system console of a Linux kernel to perform some low-level commands.

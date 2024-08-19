@@ -1,13 +1,4 @@
-{
-  pkgs,
-  inputs,
-  ...
-}: {
-  imports = [
-    inputs.home-manager.nixosModules.default
-    inputs.chaotic.nixosModules.default
-  ];
-
+{pkgs, ...}: {
   time.timeZone = "Europe/Helsinki";
   i18n.defaultLocale = "en_US.UTF-8";
 
@@ -41,7 +32,7 @@
     DefaultTimeoutStopSec=10s
   '';
 
-  # allow users to mount fuse filesystems with allow_other
+  # allow others to mount fuse filesystems (hm-impermanence)
   programs.fuse.userAllowOther = true;
 
   system.stateVersion = "23.11";

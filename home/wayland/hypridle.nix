@@ -1,28 +1,34 @@
 {
+  pkgs,
   lib,
   config,
   ...
 }: let
-  inherit (lib) getExe getExe';
+  suspendScript = pkgs.writeShellScript "suspend-script" ''
+    ${lib.getExe pkgs.playerctl} -a status | ${lib.getExe pkgs.ripgrep} Playing -q
+    if [ $? == 1 ]; then
+      ${pkgs.systemd}/bin/systemctl suspend
+    fi
+  '';
+  timeout = 300;
 in {
   services.hypridle = {
     enable = true;
     settings = {
       general = {
-        after_sleep_cmd = "${getExe' config.wayland.windowManager.hyprland.package "hyprctl"} dispatch dpms on";
-        ignore_dbus_inhibit = false;
-        lock_cmd = "${getExe config.programs.hyprlock.package}";
+        lock_cmd = lib.getExe config.programs.hyprlock.package;
+        before_sleep_cmd = "${pkgs.systemd}/bin/loginctl lock-session";
       };
 
       listener = [
         {
-          timeout = 300;
-          on-timeout = "${getExe config.programs.hyprlock.package}";
+          inherit timeout;
+          on-timeout = "hyprctl dispatch dpms off";
+          on-resume = "hyprctl dispatch dpms on";
         }
         {
-          timeout = 600;
-          on-timeout = "${getExe' config.wayland.windowManager.hyprland.package "hyprctl"} dispatch dpms off";
-          on-resume = "${getExe' config.wayland.windowManager.hyprland.package "hyprctl"} dispatch dpms on";
+          timeout = timeout + 10;
+          on-timeout = suspendScript.outPath;
         }
       ];
     };

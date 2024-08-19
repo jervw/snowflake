@@ -5,7 +5,10 @@ in {
     enable = true;
 
     settings = {
-      general.hide_cursor = false;
+      general = {
+        disable_loading_bar = true;
+        hide_cursor = false;
+      };
 
       background = [
         {
@@ -19,7 +22,7 @@ in {
 
       input-field = [
         {
-          monitor = "";
+          monitor = "DP-1";
           size = "300, 50";
           outline_thickness = 2;
 

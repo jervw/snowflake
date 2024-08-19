@@ -13,6 +13,7 @@
   home.packages = with pkgs; [
     nautilus
     loupe
+    celluloid
     playerctl
     pavucontrol
     vesktop
@@ -24,6 +25,8 @@
     tomato-c
     mpd
     plex-desktop
+    prismlauncher
+    openjdk22
     zed-editor
     self.packages.${pkgs.system}.cider2
   ];
