@@ -1,14 +1,11 @@
-{
-  pkgs,
-  user,
-  ...
-}: {
+{pkgs, ...}: {
   programs.fish.enable = true;
 
-  users = {
-    defaultUserShell = pkgs.fish;
-    users.${user} = {
+  users.users = {
+    root.hashedPassword = "!"; # disable root password
+    jervw = {
       isNormalUser = true;
+      shell = pkgs.fish;
       hashedPasswordFile = "/nix/persist/secrets/jervw";
       extraGroups = [
         "networkmanager"
@@ -20,8 +17,5 @@
         "media"
       ];
     };
-    users.root.hashedPassword = "!"; # disable root password
   };
-
-  services.getty.autologinUser = user;
 }
