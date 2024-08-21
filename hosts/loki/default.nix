@@ -9,10 +9,6 @@
     ../../modules/services
   ];
 
-  boot = {
-    kernelPackages = pkgs.linuxPackages_cachyos;
-    # loader = {
-    #   efi.canTouchEfiVariables = true;
-    # };
-  };
+  programs.nix-ld.enable = true;
+  boot.kernelPackages = pkgs.linuxPackages_cachyos;
 }
