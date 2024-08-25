@@ -5,7 +5,7 @@ in {
   networking.firewall.allowedUDPPorts = [22000 21027];
 
   services.syncthing = {
-    enable = true;
+    enable = false;
     inherit user;
     dataDir = "/home/${user}";
     guiAddress = "0.0.0.0:8384";
