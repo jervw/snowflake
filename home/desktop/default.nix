@@ -19,11 +19,11 @@
     vesktop
     obs-studio
     vial
-    lutris
     ffmpeg
     libnotify
     tomato-c
     mpd
+    steam-run
     plex-desktop
     prismlauncher
     openjdk22
