@@ -14,7 +14,7 @@ in {
     enable = true;
     xwayland.enable = true;
     plugins = [
-      # pkgs.hyprlandPlugins.hyprspace
+      pkgs.hyprlandPlugins.hyprspace
     ];
     systemd = {
       variables = ["--all"];
@@ -26,9 +26,9 @@ in {
     settings = {
       "$MOD" = "SUPER";
       exec-once = [
-        #"hyprlock" // FIX, causing issues when booting
-        "sleep 3 && xrandr --output DP-1 --primary"
-        "wpaperd -d"
+        # "hyprlock" // FIX, causing issues when booting
+        "sleep 2 && xrandr --output DP-1 --primary"
+        "sleep 2 && wpaperd -d"
       ];
 
       monitor = [
@@ -56,7 +56,7 @@ in {
       };
 
       render = {
-        explicit_sync = 0;
+        explicit_sync = 1;
       };
 
       input = {
@@ -64,6 +64,7 @@ in {
         kb_options = "grp:alt_shift_toggle";
         follow_mouse = 1;
         force_no_accel = true;
+        repeat_delay = 200;
       };
 
       cursor = {
@@ -78,7 +79,6 @@ in {
         mouse_move_enables_dpms = true;
         enable_swallow = true;
         swallow_regex = "^(${term})$";
-        vfr = false;
       };
 
       decoration = {
@@ -86,7 +86,7 @@ in {
         blur = {
           enabled = true;
           size = 5;
-          passes = 3;
+          passes = 2;
         };
 
         drop_shadow = true;
@@ -112,10 +112,13 @@ in {
           "fade, 1, 10, smoothIn"
           "fadeDim, 1, 10, smoothIn"
           "workspaces, 1, 6, default"
+          "specialWorkspace, 1, 6, default, slidefadevert -10%"
         ];
       };
 
       layerrule = [
+        "blur, waybar"
+        "blur, launcher"
         "noanim, launcher"
       ];
 
@@ -156,19 +159,21 @@ in {
           "$MOD SHIFT, K, movewindow, u"
           "$MOD SHIFT, J, movewindow, d"
 
-          "$MOD CTRL, H, resizeactive, -30 0"
-          "$MOD CTRL, L, resizeactive, 30 0"
-          "$MOD CTRL, K, resizeactive, 0 -30"
-          "$MOD CTRL, J, resizeactive, 0 30"
-
           "ALT,Tab, changegroupactive"
           "$MOD, G, togglegroup"
           "$MOD, T, togglespecialworkspace"
           "$MOD SHIFT, T, movetoworkspacesilent, special"
 
-          # "$MOD, Tab, overview:toggle"
+          "$MOD, Tab, overview:toggle"
         ]
         ++ workspaces;
+
+      binde = [
+        "$MOD CTRL, H, resizeactive, -50 0"
+        "$MOD CTRL, L, resizeactive, 50 0"
+        "$MOD CTRL, K, resizeactive, 0 -50"
+        "$MOD CTRL, J, resizeactive, 0 50"
+      ];
 
       bindm = [
         "$MOD, mouse:272, movewindow"
