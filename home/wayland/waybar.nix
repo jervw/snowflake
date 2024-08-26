@@ -229,7 +229,8 @@ _: {
         padding: 0 0 0 10px;
       }
       #custom-nixos {
-        margin: 0;
+        margin: 0 -10px 0 5px;
+        padding: 0;
         font-size: 36px;
       }
 
@@ -255,6 +256,7 @@ _: {
       #custom-notification,
       #tray {
         padding: 0px 12px 0px;
+        font-size: 24px;
       }
 
       #clock {
@@ -266,9 +268,9 @@ _: {
       #custom-reboot,
       #custom-logout,
       #custom-shutdown {
-        padding: 0 13px 0 8px;
-        margin-left: 4px;
-        font-size: 18px;
+        padding: 0 10px 0 10px;
+        margin-right: 5px;
+        font-size: 24px;
       }
 
       #custom-notification,
@@ -290,13 +292,14 @@ _: {
       }
 
       #workspaces {
-        margin: 2px;
+        margin: 0;
+        padding: 10px
       }
 
       #workspaces button {
         padding: 0px 3px;
         margin: 0px 3px;
-        border-radius: 12px;
+        border-radius: 16px;
         background-color: #3b3b3b;
         min-width: 15px;
         min-height: 12px;
