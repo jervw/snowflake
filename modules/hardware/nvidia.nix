@@ -5,7 +5,6 @@
 }: {
   services.xserver.videoDrivers = ["nvidia"];
 
-  # This is required in kernel 6.9 to make wayland play nicely
   boot.kernelParams = [
     "nvidia-drm.fbdev=1"
   ];
@@ -21,7 +20,7 @@
       ];
     };
     nvidia = {
-      package = config.boot.kernelPackages.nvidiaPackages.beta;
+      package = config.boot.kernelPackages.nvidiaPackages.latest;
       open = true;
       powerManagement.enable = true;
       modesetting.enable = true;
