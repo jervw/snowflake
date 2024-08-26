@@ -1,4 +1,4 @@
-_: let
+{self, ...}: let
   font_family = "Inter";
 in {
   programs.hyprlock = {
@@ -13,7 +13,7 @@ in {
       background = [
         {
           monitor = "";
-          path = "~/pics/walls/cyber.png";
+          path = "${self}/wallpapers/cyber.png";
           blur_passes = 2;
           blur_size = 2;
           vibrancy_darkness = 0.1;

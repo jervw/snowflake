@@ -1,4 +1,4 @@
-_: {
+{self, ...}: {
   programs.wpaperd = {
     enable = true;
     settings = {
@@ -7,7 +7,7 @@ _: {
         mode = "center";
       };
       any = {
-        path = "/home/jervw/.dots/wallpapers";
+        path = "${self}/wallpapers";
         group = 1;
         apply-shadow = true;
       };
