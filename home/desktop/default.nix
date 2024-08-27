@@ -6,6 +6,7 @@
   imports = [
     ./firefox.nix
     ./foot.nix
+    ./freetube.nix
     ./fuzzel.nix
     ./xdg.nix
   ];
@@ -14,6 +15,7 @@
     nautilus
     loupe
     celluloid
+    freetube
     playerctl
     pavucontrol
     vesktop
