@@ -27,10 +27,10 @@ in {
       ++ forEach ["dconf" "rclone" "Yubico" "sh.cider.electron" "syncthing" "fish" "vesktop" "obs-studio" "gh" "zed"] (
         x: ".config/${x}"
       )
-      ++ forEach ["nix" "mozilla"] (
+      ++ forEach ["nix" "mozilla" "zen"] (
         x: ".cache/${x}"
       )
       ++ forEach ["fish" "direnv" "keyrings" "plex" "PrismLauncher"] (x: ".local/share/${x}")
-      ++ [".ssh" ".gnupg" ".mozilla"];
+      ++ [".ssh" ".gnupg" ".mozilla" ".zen"];
   };
 }

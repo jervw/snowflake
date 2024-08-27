@@ -1,6 +1,7 @@
 {
   pkgs,
   self,
+  inputs,
   ...
 }: {
   imports = [
@@ -30,6 +31,7 @@
     prismlauncher
     openjdk22
     zed-editor
+    inputs.zen-browser.packages."${system}".default
     self.packages.${pkgs.system}.cider2
   ];
 }

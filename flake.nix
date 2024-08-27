@@ -6,6 +6,8 @@
     impermanence.url = "github:nix-community/impermanence";
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
 
+    zen-browser.url = "github:MarceColl/zen-browser-flake";
+
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs";
