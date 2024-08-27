@@ -1,10 +1,13 @@
 _: {
   programs.fastfetch = {
     enable = true;
-
     settings = {
       logo = {
         type = "small";
+        padding = {
+          top = 1;
+          right = 3;
+        };
       };
 
       display = {
@@ -68,18 +71,6 @@ _: {
           key = " memory";
           type = "memory";
           keyColor = "35";
-        }
-        {
-          key = "󰩟 network";
-          type = "localip";
-          format = "{1} ({4})";
-          keyColor = "36";
-        }
-        {
-          key = " colors";
-          type = "colors";
-          symbol = "circle";
-          keyColor = "39";
         }
       ];
     };
