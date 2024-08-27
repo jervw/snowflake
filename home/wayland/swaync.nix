@@ -63,6 +63,5 @@
         };
       };
     };
-    style = builtins.readFile ./style.css;
   };
 }
