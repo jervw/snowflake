@@ -117,7 +117,6 @@ in {
       };
 
       layerrule = [
-        "blur, waybar"
         "blur, launcher"
         "noanim, launcher"
       ];
