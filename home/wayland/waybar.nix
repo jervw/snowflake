@@ -197,6 +197,7 @@ _: {
     };
 
     style = ''
+      @define-color background rgba(40,44,52,0.5);
       @define-color accent #2362ba;
       * {
         font-family: "Noto Sans", "JetBrainsMono Nerd Font Mono";
@@ -214,17 +215,17 @@ _: {
         background: none;
       }
       .modules-left {
-        background: rgba(0,0,0,0.3);
+        background: @background;
         border-radius: 0 0 15px 0;
         padding: 0 10px 0 0;
       }
       .modules-center {
-        background: rgba(0,0,0,0.3);
+        background: @background;
         border-radius: 0 0 15px 15px;
         padding: 0 20px;
       }
       .modules-right {
-        background: rgba(0,0,0,0.3);
+        background: @background;
         border-radius: 0 0 0 15px;
         padding: 0 0 0 10px;
       }
@@ -300,7 +301,7 @@ _: {
         padding: 0px 3px;
         margin: 0px 3px;
         border-radius: 16px;
-        background-color: #3b3b3b;
+        background-color: #3b3b3b;;
         min-width: 15px;
         min-height: 12px;
         transition: all 200ms ease-in-out;
