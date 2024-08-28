@@ -7,6 +7,7 @@
   imports = [
     ./firefox.nix
     ./foot.nix
+    ./zathura.nix
     ./freetube.nix
     ./fuzzel.nix
     ./xdg.nix
