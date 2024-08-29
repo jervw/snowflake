@@ -1,5 +1,5 @@
 _: let
-  browser = "firefox.desktop";
+  browser = "zen.desktop";
   file-manager = "org.gnome.Nautilus.desktop";
   doc-viewer = "org.pwmt.zathura.desktop";
   image-viewer = "org.gnome.Loupe.desktop";
