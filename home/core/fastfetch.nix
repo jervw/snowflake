@@ -28,13 +28,18 @@ _: {
           keyColor = "33";
         }
         {
-          key = "󰟾 distro";
+          key = " distro";
           type = "os";
           keyColor = "34";
           format = "{3}";
         }
         {
-          key = " kernel";
+          key = " pkgs";
+          type = "packages";
+          keyColor = "32";
+        }
+        {
+          key = " kernel";
           type = "kernel";
           keyColor = "35";
         }
@@ -52,25 +57,19 @@ _: {
         {
           key = " shell";
           type = "shell";
-          keyColor = "32";
+          keyColor = "33";
           format = "{1}";
         }
         {
           key = "󰍛 cpu";
           type = "cpu";
           showPeCoreCount = true;
-          keyColor = "33";
-        }
-        {
-          key = "󰉉 disk";
-          type = "disk";
-          folders = "/";
           keyColor = "34";
         }
         {
           key = " memory";
           type = "memory";
-          keyColor = "35";
+          keyColor = "32";
         }
       ];
     };
