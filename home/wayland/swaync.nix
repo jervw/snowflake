@@ -3,14 +3,14 @@
     enable = true;
     settings = {
       positionX = "right";
-      positionY = "top";
+      positionY = "right";
       layer = "overlay";
       control-center-layer = "overlay";
       layer-shell = true;
       cssPriority = "application";
-      control-center-positionX = "center";
+      control-center-positionX = "right";
       control-center-positionY = "top";
-      control-center-margin-top = 0;
+      control-center-margin-top = 5;
       control-center-margin-bottom = 0;
       control-center-margin-right = 0;
       control-center-margin-left = 0;

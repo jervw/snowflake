@@ -8,8 +8,6 @@
       };
       any = {
         path = "${self}/wallpapers";
-        group = 1;
-        apply-shadow = true;
       };
     };
   };

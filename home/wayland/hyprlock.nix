@@ -13,8 +13,8 @@ in {
       background = [
         {
           monitor = "";
-          path = "${self}/wallpapers/cyber.png";
-          blur_passes = 2;
+          path = "${self}/wallpapers/scandinavia-fog.png";
+          blur_passes = 3;
           blur_size = 2;
           vibrancy_darkness = 0.1;
         }

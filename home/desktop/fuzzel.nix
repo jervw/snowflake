@@ -3,17 +3,21 @@
     enable = true;
     settings = {
       main = {
-        font = "JetBrainsMono Nerd Font Mono";
+        # font = "JetBrainsMono Nerd Font Mono";
+        font = "Noto Sans";
         terminal = "${pkgs.foot}/bin/foot";
         layer = "overlay";
       };
       colors = {
-        background = "303030dd";
-        text = "ffffffdd";
-        match = "#3584E4dd";
-        selection = "e0e0e0dd";
-        selection-match = "#3584E4dd";
-        border = "303030ff";
+        background = "282c34cc";
+        text = "ffffffcc";
+        match = "#3584E4cc";
+        selection = "e0e0e0cc";
+        selection-match = "#3584E4cc";
+        border = "282c34cc";
+      };
+      border = {
+        radius = 15;
       };
     };
   };

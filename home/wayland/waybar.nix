@@ -27,6 +27,7 @@ _: {
           icon = true;
           icon-size = 18;
           rewrite = {
+            "(.*)Zen Browser" = "Zen Browser";
             "(.*)Mozilla Firefox" = "Mozilla Firefox";
           };
         };
@@ -52,17 +53,17 @@ _: {
           ];
         };
         "custom/shutdown" = {
-          format = "<span color='#ff5e5e'></span>";
+          format = "";
           on-click = "systemctl poweroff";
           tooltip = false;
         };
         "custom/reboot" = {
-          format = "<span color='#79b4fc'>󰑓</span>";
+          format = "󰑓";
           on-click = "systemctl reboot";
           tooltip = false;
         };
         "custom/logout" = {
-          format = "<span color='#63c773'>󰍃</span>";
+          format = "󰍃";
           on-click = "hyprctl dispatch exit";
           tooltip = false;
         };
@@ -150,7 +151,7 @@ _: {
         "temperature" = {
           interval = 1;
           hwmon-path = ["/sys/class/hwmon/hwmon0/temp1_input" "/sys/class/hwmon/hwmon1/temp1_input" "/sys/class/hwmon/hwmon2/temp1_input" "/sys/class/hwmon/hwmon3/temp1_input"];
-          format = "<span color='#7AA2F7'> {temperatureC}°C  </span>";
+          format = "{temperatureC} °C  ";
           tooltip-format = "Core Temp: {temperatureC}°C ";
         };
         "custom/nixos" = {
@@ -180,7 +181,7 @@ _: {
         };
         "clock" = {
           format = "{:%H:%M}";
-          format-alt = "{:%A, %B %d, %Y (%R)}";
+          format-alt = "{:%A, %B %d, %Y}";
           tooltip-format = "<tt><small>{calendar}</small></tt>";
           calendar = {
             "mode" = "month";
@@ -197,18 +198,27 @@ _: {
     };
 
     style = ''
-      @define-color background rgba(40,44,52,0.5);
-      @define-color accent #2362ba;
+      @define-color background rgba(40, 44, 52, 0.5);
+      @define-color foreground rgba(221, 221, 221, 1);
+      @define-color accent rgba(127, 182, 225, 1);
+      @define-color tooltip rgba(0, 0, 0, 0.2);
+      @define-color hover rgba(40, 44, 52, 0.5);
+      @define-color red rgba(208, 114, 119, 1);
+      @define-color green rgba(161, 193, 129, 1);
+      @define-color blue rgba(115, 173, 233, 1);
+      @define-color yellow rgba(223, 193, 132, 1);
+      @define-color purple rgba(180, 119, 207, 1);
+
       * {
         font-family: "Noto Sans", "JetBrainsMono Nerd Font Mono";
         font-size: 16px;
         font-weight: 600;
-        color: #DDDDDD;
+        color: @foreground;
         min-height: 0px;
         min-width: 0px;
       }
       tooltip {
-        background-color: rgba(0,0,0,0.2);
+        background-color: @tooltip;
         text-shadow: none;
       }
       #waybar {
@@ -230,11 +240,10 @@ _: {
         padding: 0 0 0 10px;
       }
       #custom-nixos {
-        margin: 0 -10px 0 5px;
+        margin: 0 -10px 0 10px;
         padding: 0;
         font-size: 36px;
       }
-
       #window {
         opacity: 100;
         transition: opacity 1s ease-in-out
@@ -274,6 +283,16 @@ _: {
         font-size: 24px;
       }
 
+      #custom-reboot {
+        color: @blue;
+      }
+      #custom-logout {
+        color: @green;
+      }
+      #custom-shutdown {
+        color: @red;
+      }
+
       #custom-notification,
       #cpu,
       #network,
@@ -289,7 +308,7 @@ _: {
       #temperature:hover,
       #pulseaudio:hover {
         transition: background-color 200ms;
-        background-color: rgba(255,255,255,0.2);
+        background-color: @hover;
       }
 
       #workspaces {
@@ -301,7 +320,7 @@ _: {
         padding: 0px 3px;
         margin: 0px 3px;
         border-radius: 16px;
-        background-color: #3b3b3b;;
+        background-color: @accent;
         min-width: 15px;
         min-height: 12px;
         transition: all 200ms ease-in-out;
@@ -310,54 +329,42 @@ _: {
 
       #workspaces button.active {
         min-width: 35px;
-        opacity: 1;
+        opacity: 0.8;
       }
 
       #workspaces button.urgent {
-        background-color: #f25e37;
+        background-color: @red;
         opacity: 1;
       }
 
       #cpu,
       #network,
       #custom-notifications,
-      #disk,
+      #temperature,
       #memory,
       #pulseaudio {
         padding: 0px 6px 0px 3px;
       }
 
       #memory {
-        color: shade(#cca0e4, 0.8);
-      }
-
-      #disk {
-        color: shade(#7aa2f7, 0.8);
+        color: @yellow;
       }
 
       #cpu {
-        color: shade(#a6e3a1, 0.8);
+        color: @blue;
       }
 
       #network {
-        color: #a6e3a1;
+        color: @green;
+      }
+
+      #temperature {
+        color: @purple;
       }
 
       #network.disabled,
       #network.disconnected {
-        color: #d78787;
-      }
-      @keyframes blink {
-        to {
-          background-color: alpha(red, 0.6);
-          color: @foreground;
-        }
-      }
-      @keyframes blink-blue {
-        to {
-          background-color: alpha(#7aa2f7, 0.6);
-          color: @foreground;
-        }
+        color: @red;
       }
     '';
   };

@@ -26,7 +26,7 @@ in {
     settings = {
       "$MOD" = "SUPER";
       exec-once = [
-        # "hyprlock" // FIX, causing issues when booting
+        "hyprlock"
         "sleep 2 && xrandr --output DP-1 --primary"
         "sleep 2 && wpaperd -d"
       ];
@@ -82,7 +82,7 @@ in {
       };
 
       decoration = {
-        rounding = 12;
+        rounding = 15;
         blur = {
           enabled = true;
           size = 5;
@@ -117,15 +117,17 @@ in {
       };
 
       layerrule = [
+        "ignorezero, waybar"
+        "blur, waybar"
+        "ignorezero, launcher"
         "blur, launcher"
         "noanim, launcher"
       ];
 
       windowrulev2 = [
         "noshadow, floating:0"
-        "suppressevent maximize, class:^(firefox)$"
+        "suppressevent maximize, class:^(zen-alpha)$"
         "float, title:^(Volume Control)$"
-        "float, class:feh"
         "float, class:mpv"
         "float, title:^(Picture in picture)$"
         "workspace 1, class:(VencordDesktop)"
@@ -137,7 +139,7 @@ in {
           "$MOD, Return, exec, ${term}"
           "$MOD, D, exec, killall fuzzel || fuzzel"
           "$MOD, X, exec, ${term} yazi"
-          "$MOD, B, exec, firefox"
+          "$MOD, B, exec, zen"
           "$MOD, Z, exec, grimblast --notify --cursor copysave area"
           "$MOD CTRL, Z, exec, grimblast --notify --cursor copysave output"
           "$MOD, C, exec, hyprpicker -a | --autocopy"
