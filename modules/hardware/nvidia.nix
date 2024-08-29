@@ -7,6 +7,7 @@
 
   boot.kernelParams = [
     "nvidia-drm.fbdev=1"
+    "nvidia.NVreg_PreserveVideoMemoryAllocations=1"
   ];
 
   hardware = {
