@@ -1,4 +1,12 @@
-_: {
+{pkgs, ...}: {
+  services.plex-mpv-shim = {
+    enable = true;
+    settings = {
+      mpv_ext = true;
+      mpv_ext_no_ovr = true;
+      fullscreen = false;
+    };
+  };
   programs.mpv = {
     enable = true;
     bindings = {
@@ -10,6 +18,12 @@ _: {
     config = {
       gpu-context = "wayland";
       save-position-on-quit = true;
+      ytdl-format = "bestvideo+bestaudio";
     };
+    scripts = with pkgs.mpvScripts; [
+      uosc # UI
+      thumbfast # Thumbnails
+      acompressor # ffmpeg audio compress
+    ];
   };
 }

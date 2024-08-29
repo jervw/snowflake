@@ -126,8 +126,8 @@ in {
         "suppressevent maximize, class:^(firefox)$"
         "float, title:^(Volume Control)$"
         "float, class:feh"
+        "float, class:mpv"
         "float, title:^(Picture in picture)$"
-        "float, title:^(Media viewer)$"
         "workspace 1, class:(VencordDesktop)"
         "workspace special, class:(Cider)"
       ];

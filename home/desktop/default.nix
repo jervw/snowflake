@@ -7,16 +7,17 @@
   imports = [
     ./firefox.nix
     ./foot.nix
-    ./zathura.nix
+    ./mpv.nix
     ./freetube.nix
     ./fuzzel.nix
     ./xdg.nix
+    ./zathura.nix
   ];
 
   home.packages = with pkgs; [
     nautilus
+    seahorse
     loupe
-    celluloid
     freetube
     playerctl
     pavucontrol
@@ -28,7 +29,6 @@
     tomato-c
     mpd
     steam-run
-    plex-desktop
     prismlauncher
     openjdk22
     zed-editor

@@ -12,7 +12,6 @@
       ls = "eza --icons";
       tree = "eza --tree --icons";
       whereami = "curl ipinfo.io/city";
-      mpv = "celluloid";
     };
   };
 
