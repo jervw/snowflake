@@ -2,10 +2,11 @@ _: {
   programs.freetube = {
     enable = true;
     settings = {
+      defaultInvidiousInstance = "https://invidious.nerdvpn.de";
       quickBookmarkTargetPlaylistId = "favorites";
       checkForUpdates = false;
       checkForBlogPosts = false;
-      barColor = true;
+      barColor = false;
       baseTheme = "black";
       mainColor = "Red";
       expandSideBar = true;
