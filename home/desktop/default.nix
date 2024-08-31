@@ -29,7 +29,8 @@
     tomato-c
     mpd
     steam-run
-    prismlauncher
+    # prismlauncher
+    (prismlauncher.override {withWaylandGLFW = true;})
     openjdk22
     zed-editor
     inputs.zen-browser.packages."${system}".default
