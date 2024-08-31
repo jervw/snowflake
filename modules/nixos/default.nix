@@ -6,5 +6,6 @@ _: {
     ./boot.nix
     ./pipewire.nix
     ./greetd.nix
+    ./gaming.nix
   ];
 }
