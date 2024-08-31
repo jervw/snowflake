@@ -37,7 +37,7 @@
         "title"
         "mpris"
         "notifications"
-        "dnd"
+        "volume"
       ];
       widget-config = {
         inhibitors = {
@@ -50,18 +50,18 @@
           clear-all-button = true;
           button-text = "Clear All";
         };
-        dnd = {
-          text = "Do Not Disturb";
-        };
-        label = {
-          max-lines = 5;
-          text = "Label Text";
-        };
         mpris = {
           image-size = 64;
           image-radius = 50;
         };
+        volume = {
+          label = "juu";
+          show-per-app = true;
+          show-per-app-icon = true;
+          show-per-app-label = true;
+        };
       };
     };
+    style = builtins.readFile ./style.css;
   };
 }
