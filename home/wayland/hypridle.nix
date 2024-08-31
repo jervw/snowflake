@@ -4,6 +4,7 @@
   config,
   ...
 }: let
+  # TODO Add actual suspend when NVIDIA fixes their shit
   suspendScript = pkgs.writeShellScript "suspend-script" ''
     ${lib.getExe pkgs.playerctl} -a status | ${lib.getExe pkgs.ripgrep} Playing -q
     if [ $? == 1 ]; then

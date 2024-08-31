@@ -15,6 +15,7 @@ in {
     ../../modules/server
     ../../modules/network
 
+    ../../modules/hardware/nvidia.nix
     ../../modules/virtualisation/docker.nix
   ];
 
@@ -35,6 +36,9 @@ in {
     owner = user;
     group = "users";
   };
+
+  # Do not use open source kernel modules as it has no support for GTX970
+  hardware.nvidia.open = lib.mkForce false;
 
   networking = {
     networkmanager.enable = lib.mkForce false;
