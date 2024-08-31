@@ -45,8 +45,8 @@ in {
       ];
 
       general = {
-        gaps_in = 10;
-        gaps_out = 10;
+        gaps_in = 15;
+        gaps_out = 15;
         border_size = 0;
       };
 
@@ -57,6 +57,7 @@ in {
 
       render = {
         explicit_sync = 1;
+        direct_scanout = true;
       };
 
       input = {
@@ -79,6 +80,7 @@ in {
         mouse_move_enables_dpms = true;
         enable_swallow = true;
         swallow_regex = "^(${term})$";
+        vrr = 1;
       };
 
       decoration = {
