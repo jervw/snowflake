@@ -12,24 +12,37 @@
   boot.initrd.kernelModules = [];
   boot.kernelModules = ["kvm-amd"];
   boot.extraModulePackages = [];
-  boot.initrd.luks.devices."nixos".device = "/dev/disk/by-uuid/34df0c89-c590-4d2e-9ddf-76f98ca17dd5";
+  boot.initrd.luks.devices."enc".device = "/dev/disk/by-uuid/a30e0cd2-299f-4608-829e-4db96aaa923e";
 
   fileSystems."/" = {
     device = "none";
     fsType = "tmpfs";
-    options = ["defaults" "size=8G" "mode=755"];
+    options = ["defaults" "size=25%" "mode=0755"];
   };
 
   fileSystems."/nix" = {
-    device = "/dev/disk/by-uuid/43c25427-ccf6-4382-8bb4-c247f817e7ed";
-    fsType = "ext4";
+    device = "/dev/disk/by-uuid/3de0220e-012e-490b-aaf1-d26aa151b57c";
+    fsType = "btrfs";
+    options = ["subvol=nix" "compress=zstd" "noatime"];
+  };
+
+  fileSystems."/persist" = {
+    device = "/dev/disk/by-uuid/3de0220e-012e-490b-aaf1-d26aa151b57c";
+    fsType = "btrfs";
+    options = ["subvol=persist" "compress=zstd" "noatime"];
     neededForBoot = true;
-    options = ["noatime"];
   };
 
   fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/6694-9D4D";
+    device = "/dev/disk/by-uuid/2A2E-ED11";
     fsType = "vfat";
+  };
+
+  fileSystems."/home/jervw/.steam" = {
+    device = "/persist/steam/.steam";
+    fsType = "none";
+    options = ["bind"];
+    noCheck = true;
   };
 
   services.fstrim.enable = true;
