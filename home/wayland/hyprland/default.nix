@@ -48,6 +48,7 @@ in {
         gaps_in = 15;
         gaps_out = 15;
         border_size = 0;
+        allow_tearing = true;
       };
 
       dwindle = {
