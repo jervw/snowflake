@@ -1,6 +1,9 @@
 let
-  loki = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBVFad93QGHi8zi7AxA80mx2MsY+00EeJmvEwXNGUs//";
+  jervw = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBDbHGOAvDf6oXvhsHFiSQjn8m0tSP7JP2XJUNI2JDnm ";
+  loki = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAID7Xm5sE+PbatmSLaX5PT89S956tclHqvc9NUuzzCmeF";
   thor = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIM/pd5zQYAXuve8QVj6947m/OTfj3O36Czx6/GUpD1BN";
+  systems = [loki thor];
 in {
-  "cloudflare.age".publicKeys = [loki thor];
+  "jervw.age".publicKeys = [jervw] ++ systems;
+  "cloudflare.age".publicKeys = [jervw] ++ systems;
 }
