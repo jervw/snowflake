@@ -3,7 +3,11 @@
   user,
   ...
 }: {
-  environment.systemPackages = with pkgs; [docker-compose distrobox];
+  environment.systemPackages = with pkgs; [
+    docker-compose
+    distrobox
+    ctop
+  ];
 
   virtualisation.oci-containers.backend = "docker";
   virtualisation.docker = {
