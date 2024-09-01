@@ -4,6 +4,5 @@ let
   thor = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIM/pd5zQYAXuve8QVj6947m/OTfj3O36Czx6/GUpD1BN";
   systems = [loki thor];
 in {
-  "jervw.age".publicKeys = [jervw] ++ systems;
   "cloudflare.age".publicKeys = [jervw] ++ systems;
 }
