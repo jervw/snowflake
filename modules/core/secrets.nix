@@ -1,5 +1,13 @@
-{self, ...}: {
+{
+  self,
+  inputs,
+  ...
+}: {
+  imports = [
+    inputs.agenix.nixosModules.default
+  ];
+
   age.secrets = {
-    jervw.file = "${self}/secrets/jervw.age";
+    cloudflare.file = "${self}/secrets/cloudflare.age";
   };
 }

@@ -1,14 +1,7 @@
-{
-  self,
-  user,
-  lib,
-  inputs,
-  ...
-}: let
+{lib, ...}: let
   eth = "enp4s0";
 in {
   imports = [
-    inputs.agenix.nixosModules.default
     ./hardware-configuration.nix
 
     ../../modules/core
@@ -29,12 +22,6 @@ in {
       forceImportRoot = false;
       extraPools = ["zpool"];
     };
-  };
-
-  age.secrets.cloudflare = {
-    file = "${self}/secrets/cloudflare.age";
-    owner = user;
-    group = "users";
   };
 
   # Do not use open source kernel modules as it has no support for GTX970
