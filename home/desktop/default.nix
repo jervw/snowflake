@@ -5,7 +5,6 @@
   ...
 }: {
   imports = [
-    ./firefox.nix
     ./foot.nix
     ./mpv.nix
     ./freetube.nix
@@ -29,10 +28,9 @@
     tomato-c
     mpd
     steam-run
-    # prismlauncher
-    (prismlauncher.override {withWaylandGLFW = true;})
     openjdk22
     zed-editor
+    (prismlauncher.override {withWaylandGLFW = true;})
     inputs.zen-browser.packages."${system}".default
     self.packages.${pkgs.system}.cider2
   ];

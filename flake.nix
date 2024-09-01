@@ -6,7 +6,10 @@
     impermanence.url = "github:nix-community/impermanence";
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
 
-    zen-browser.url = "github:MarceColl/zen-browser-flake";
+    zen-browser = {
+      url = "github:MarceColl/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
@@ -37,11 +40,6 @@
     helix = {
       url = "github:helix-editor/helix";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    firefox-gnome-theme = {
-      url = "github:rafaelmardojai/firefox-gnome-theme";
-      flake = false;
     };
 
     ssh-keys = {
