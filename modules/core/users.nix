@@ -6,7 +6,7 @@
     jervw = {
       isNormalUser = true;
       shell = pkgs.fish;
-      hashedPasswordFile = "/nix/persist/secrets/jervw";
+      hashedPasswordFile = "/persist/secrets/jervw";
       extraGroups = [
         "networkmanager"
         "wheel"
