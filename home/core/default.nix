@@ -17,7 +17,7 @@
     xdg-utils
     gh
     eza
-    fastfetch
+    ncdu
     ripgrep
     rclone
     fd

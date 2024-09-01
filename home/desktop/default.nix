@@ -17,7 +17,6 @@
     nautilus
     seahorse
     loupe
-    freetube
     playerctl
     pavucontrol
     vesktop
@@ -27,7 +26,6 @@
     libnotify
     tomato-c
     mpd
-    steam-run
     openjdk22
     zed-editor
     (prismlauncher.override {withWaylandGLFW = true;})
