@@ -1,4 +1,8 @@
-{lib, ...}: let
+{
+  lib,
+  pkgs,
+  ...
+}: let
   eth = "enp4s0";
 in {
   imports = [
@@ -23,6 +27,8 @@ in {
       extraPools = ["zpool"];
     };
   };
+
+  environment.defaultPackages = with pkgs; [borgbackup];
 
   # Do not use open source kernel modules as it has no support for GTX970
   hardware.nvidia.open = lib.mkForce false;
