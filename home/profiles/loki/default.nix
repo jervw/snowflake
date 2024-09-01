@@ -4,7 +4,5 @@
     ../../desktop
     ../../wayland
     ../../theme
-
-    ../../impermanence.nix
   ];
 }
