@@ -5,8 +5,6 @@
 }: {
   services.borgbackup.jobs = let
     excludes = [
-      "steam"
-      "secrets"
       ".cache"
       "*/cache2"
       "*/Cache"
@@ -30,10 +28,10 @@
       startAt = "daily";
     };
   in {
-    loki-persisted =
+    loki-home =
       borgJob "${config.system.name}/persist"
       // rec {
-        paths = "/persist";
+        paths = "/persist/home";
         exclude = map (x: paths + "/" + x) excludes;
       };
   };
