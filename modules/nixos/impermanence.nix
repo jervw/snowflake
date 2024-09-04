@@ -34,7 +34,7 @@ in {
           ".dots"
           ".zen"
         ]
-        ++ forEach ["dconf" "rclone" "Yubico" "sh.cider.electron" "syncthing" "fish" "vesktop" "obs-studio" "github-copilot" "zed"] (
+        ++ forEach ["dconf" "rclone" "Yubico" "sh.cider.electron" "syncthing" "fish" "vesktop" "obs-studio" "github-copilot" "zed" "gh"] (
           x: ".config/${x}"
         )
         ++ forEach ["nix" "zen"] (
@@ -42,9 +42,18 @@ in {
         )
         ++ forEach ["fish" "direnv" "PrismLauncher" "zed"] (x: ".local/share/${x}")
         ++ [
-          { directory = ".ssh"; mode = "0700"; }
-          { directory = ".gnupg"; mode = "0700"; }
-          { directory = ".local/share/keyrings"; mode = "0700"; }
+          {
+            directory = ".ssh";
+            mode = "0700";
+          }
+          {
+            directory = ".gnupg";
+            mode = "0700";
+          }
+          {
+            directory = ".local/share/keyrings";
+            mode = "0700";
+          }
         ];
     };
   };
