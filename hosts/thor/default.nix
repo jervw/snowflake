@@ -47,6 +47,6 @@ in {
       address = "10.0.0.1";
       interface = eth;
     };
-    nameservers = ["127.0.0.1" "1.1.1.1"];
+    nameservers = ["9.9.9.9" "1.1.1.1"];
   };
 }
