@@ -26,6 +26,7 @@
       repo = "jervw@10.0.0.2:/mnt/storage/Backups/${name}";
       compression = "auto,zstd";
       startAt = "daily";
+      persistentTimer = true;
     };
   in {
     loki-home =
