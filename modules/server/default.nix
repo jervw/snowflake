@@ -4,9 +4,9 @@
     ./adguard.nix
     ./audiobookshelf.nix
     ./caddy.nix
+    ./containers.nix
     ./downloads.nix
     ./flaresolverr.nix
-    ./immich.nix
     ./redlib.nix
     ./media-services.nix
     ./overseerr.nix
