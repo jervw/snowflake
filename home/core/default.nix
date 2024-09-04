@@ -16,6 +16,7 @@
     btop
     xdg-utils
     gh
+    gh-markdown-preview
     eza
     ncdu
     ripgrep
