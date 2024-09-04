@@ -1,6 +1,6 @@
 {
   # Other out of tree services which do not have NixOS modules
-  services.caddy.caddy.virtualHosts = {
+  services.caddy.virtualHosts = {
     # Immich
     "media.jervw.dev".extraConfig = ''
       reverse_proxy http://thor:2283
