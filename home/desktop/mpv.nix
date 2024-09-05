@@ -22,7 +22,6 @@
     };
     scripts = with pkgs.mpvScripts; [
       uosc # UI
-      thumbfast # Thumbnails
       acompressor # ffmpeg audio compress
     ];
   };
