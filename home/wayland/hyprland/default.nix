@@ -37,7 +37,7 @@ in {
       ];
 
       workspace = [
-        "1, monitor:HDMI-A-1, rounding:false, gapsin:0, gapsout:0, border:false, default:true"
+        "1, monitor:HDMI-A-1, gapsin:2, gapsout:5, border:false, default:true"
         "2, monitor:DP-1, default:true"
         "3, monitor:DP-1"
         "4, monitor:DP-1"
@@ -45,8 +45,8 @@ in {
       ];
 
       general = {
-        gaps_in = 15;
-        gaps_out = 15;
+        gaps_in = 12;
+        gaps_out = 10;
         border_size = 0;
         allow_tearing = true;
       };
