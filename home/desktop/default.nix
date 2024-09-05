@@ -28,7 +28,7 @@
     mpd
     openjdk22
     zed-editor
-    (prismlauncher.override {withWaylandGLFW = true;})
+    prismlauncher
     inputs.zen-browser.packages."${system}".default
     self.packages.${pkgs.system}.cider2
   ];
