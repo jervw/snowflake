@@ -3,7 +3,6 @@
     enable = true;
     settings = {
       main = {
-        # font = "JetBrainsMono Nerd Font Mono";
         font = "Noto Sans";
         terminal = "${pkgs.foot}/bin/foot";
         layer = "overlay";
