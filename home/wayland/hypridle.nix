@@ -8,7 +8,8 @@
   suspendScript = pkgs.writeShellScript "suspend-script" ''
     ${lib.getExe pkgs.playerctl} -a status | ${lib.getExe pkgs.ripgrep} Playing -q
     if [ $? == 1 ]; then
-      "${lib.getExe' config.wayland.windowManager.hyprland.package "hyprctl"} dispatch dpms on";
+      ${pkgs.systemd}/bin/loginctl lock-session
+      ${config.wayland.windowManager.hyprland.package}/bin/hyprctl --instance 0 dispatch dpms off
     fi
   '';
   timeout = 300;
@@ -25,7 +26,6 @@ in {
         {
           inherit timeout;
           on-timeout = suspendScript.outPath;
-          on-resume = "hyprctl dispatch dpms on";
         }
       ];
     };
