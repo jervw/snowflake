@@ -12,11 +12,6 @@ _: {
     flake = "/home/jervw/.dots";
   };
 
-  # tldr
-  documentation = {
-    enable = false;
-  };
-
   nix = {
     optimise = {
       automatic = true;
