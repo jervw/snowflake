@@ -86,7 +86,7 @@ _: {
 
         "tray" = {
           spacing = 8;
-          icon-size = 15;
+          icon-size = 18;
         };
         "group/scroll" = {
           orientation = "horizontal";
