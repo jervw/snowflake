@@ -5,10 +5,10 @@
   ...
 }: {
   imports = [
+    ./anyrun.nix
     ./foot.nix
     ./mpv.nix
     ./freetube.nix
-    ./fuzzel.nix
     ./xdg.nix
     ./zathura.nix
   ];

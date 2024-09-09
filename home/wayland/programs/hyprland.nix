@@ -122,9 +122,9 @@ in {
       layerrule = [
         "ignorezero, waybar"
         "blur, waybar"
-        "ignorezero, launcher"
-        "blur, launcher"
-        "noanim, launcher"
+        "noanim, anyrun"
+        "ignorezero, anyrun"
+        "blur, anyrun"
       ];
 
       windowrulev2 = [
@@ -140,7 +140,6 @@ in {
       bind =
         [
           "$MOD, Return, exec, ${term}"
-          "$MOD, D, exec, killall fuzzel || fuzzel"
           "$MOD, X, exec, ${term} yazi"
           "$MOD, B, exec, zen"
           "$MOD, Z, exec, grimblast --notify --cursor copysave area"
@@ -178,7 +177,9 @@ in {
         "$MOD CTRL, K, resizeactive, 0 -50"
         "$MOD CTRL, J, resizeactive, 0 50"
       ];
-
+      bindr = [
+        "$MOD, SUPER_L, exec, pkill anyrun || anyrun"
+      ];
       bindm = [
         "$MOD, mouse:272, movewindow"
         "$MOD, mouse:273, resizewindow"

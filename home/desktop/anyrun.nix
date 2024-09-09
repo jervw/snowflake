@@ -1,14 +1,8 @@
 {
   inputs,
   pkgs,
-  lib,
   ...
-}: let
-  compileSCSS = name: source: "${pkgs.runCommandLocal name {} ''
-    mkdir -p $out
-    ${lib.getExe pkgs.sassc} -t expanded '${source}' > $out/${name}.css
-  ''}/${name}.css";
-in {
+}: {
   imports = [inputs.anyrun.homeManagerModules.default];
 
   programs.anyrun = {
@@ -16,45 +10,90 @@ in {
     config = {
       plugins = with inputs.anyrun.packages.${pkgs.system}; [
         applications
-        dictionary
         websearch
+        shell
+        rink
       ];
-      width = {fraction = 0.3;};
+      width = {fraction = 0.2;};
       hideIcons = false;
       ignoreExclusiveZones = false;
       layer = "overlay";
-      hidePluginInfo = false;
+      hidePluginInfo = true;
       closeOnClick = false;
       showResultsImmediately = false;
     };
-    extraCss = builtins.readFile (compileSCSS "style" ./style.scss);
     extraConfigFiles = {
-      "dictionary.ron".text = ''
-        Config(
-          prefix: ":def",
-        )
-      '';
       "applications.ron".text = ''
         Config(
           desktop_actions: false,
           max_entries: 10,
         )
       '';
+      "shell.ron".text = ''
+        Config(
+          prefix: ":sh",
+          shell: None,
+        )
+      '';
       "websearch.ron".text = ''
         Config(
-          prefix: "?",
+          prefix: "/",
           engines: [
             Custom(
-              name: "SearXNG",
-              url: "100.121.201.47:8100/search?q={}",
+              name: "Kagi",
+              url: "kagi.com/search?q={}",
             ),
             Custom(
-              name: "nix packages",
+              name: "Nix packages",
               url: "search.nixos.org/packages?query={}&channel=unstable",
             ),
           ],
         )
       '';
     };
+    extraCss = ''
+      * {
+        all: unset;
+        transition: 150ms ease-out;
+        color: #fff;
+        font-family: "Noto Sans", "JetBrainsMono Nerd Font Mono";
+        font-size: 1.2rem;
+      }
+
+      #window,
+      #match,
+      #entry,
+      #plugin,
+      #main {
+        background: transparent;
+      }
+
+      #main {
+        margin-top: 0.5rem;
+      }
+
+      #match {
+        padding: 3px;
+        border-radius: 12px;
+      }
+
+      #match:hover,
+      #match:selected {
+        background: #7FB6E1;
+        padding: 0.6rem;
+      }
+
+      entry#entry {
+        border-color: transparent;
+        margin-top: 0.5rem;
+      }
+
+      box#main {
+        background: rgba(40, 44, 52, 0.5);
+        border: 2px solid #7FB6E1;
+        border-radius: 12px;
+        padding: 0.3rem;
+      }
+    '';
   };
 }
