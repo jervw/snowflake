@@ -22,7 +22,7 @@ in {
 
       input-field = [
         {
-          monitor = "DP-1";
+          monitor = "";
           size = "300, 50";
           outline_thickness = 2;
 

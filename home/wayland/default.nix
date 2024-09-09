@@ -1,15 +1,7 @@
 _: {
   imports = [
     ./hyprland
-    ./hypridle.nix
-    ./hyprlock.nix
-    ./swaync.nix
-    ./waybar.nix
-    ./wlsunset.nix
-    ./wpaperd.nix
+    ./programs
+    ./services
   ];
-
-  services = {
-    swayosd.enable = true;
-  };
 }

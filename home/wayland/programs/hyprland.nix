@@ -13,8 +13,8 @@ in {
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
-    plugins = [
-      pkgs.hyprlandPlugins.hyprspace
+    plugins = with pkgs; [
+      hyprlandPlugins.hyprspace
     ];
     systemd = {
       variables = ["--all"];
