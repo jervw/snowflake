@@ -198,7 +198,7 @@ _: {
     };
 
     style = ''
-      @define-color background rgba(40, 44, 52, 0.5);
+      @define-color background rgba(40, 44, 52, 0.7);
       @define-color foreground rgba(221, 221, 221, 1);
       @define-color accent rgba(127, 182, 225, 1);
       @define-color tooltip rgba(0, 0, 0, 0.2);

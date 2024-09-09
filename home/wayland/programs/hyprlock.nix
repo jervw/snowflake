@@ -14,7 +14,7 @@ in {
         {
           monitor = "";
           path = "${self}/wallpapers/scandinavia-fog.png";
-          blur_passes = 3;
+          blur_passes = 4;
           blur_size = 2;
           vibrancy_darkness = 0.1;
         }
