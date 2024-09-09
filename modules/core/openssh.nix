@@ -13,6 +13,7 @@
       PubkeyAuthOptions = "none";
       StreamLocalBindUnlink = "yes";
       GatewayPorts = "clientspecified";
+      LogLevel = "VERBOSE";
     };
     hostKeys = [
       {

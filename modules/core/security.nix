@@ -16,6 +16,15 @@ _: {
 
   programs.yubikey-touch-detector.enable = true;
 
+  services.fail2ban = {
+    enable = true;
+    bantime = "2h";
+    ignoreIP = [
+      "192.168.0.0/16"
+      "10.0.0.0/28"
+    ];
+  };
+
   # Security tweaks stolen from @hlissner
   boot.kernel.sysctl = {
     # The Magic SysRq key is a key combo that allows users connected to the
