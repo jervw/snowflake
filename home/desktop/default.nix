@@ -14,21 +14,22 @@
   ];
 
   home.packages = with pkgs; [
-    nautilus
-    seahorse
-    loupe
-    playerctl
-    pavucontrol
-    vesktop
-    obs-studio
-    vial
     ffmpeg
+    fractal
     libnotify
-    tomato-c
+    loupe
     mpd
+    nautilus
+    obs-studio
     openjdk22
-    zed-editor
+    pavucontrol
+    playerctl
     prismlauncher
+    seahorse
+    tomato-c
+    vesktop
+    vial
+    zed-editor
     inputs.zen-browser.packages."${system}".default
     self.packages.${pkgs.system}.cider2
   ];
