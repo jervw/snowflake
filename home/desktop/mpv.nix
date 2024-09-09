@@ -2,8 +2,8 @@
   services.plex-mpv-shim = {
     enable = true;
     settings = {
-      # mpv_ext = true;
-      # mpv_ext_no_ovr = true;
+      mpv_ext = true;
+      mpv_ext_no_ovr = true;
       fullscreen = false;
     };
   };
@@ -16,8 +16,6 @@
       "ALT+-" = "add video-zoom -0.1";
     };
     config = {
-      gpu-context = "wayland";
-      save-position-on-quit = true;
       ytdl-format = "bestvideo+bestaudio";
     };
     scripts = with pkgs.mpvScripts; [
