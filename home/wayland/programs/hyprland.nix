@@ -140,6 +140,7 @@ in {
       bind =
         [
           "$MOD, Return, exec, ${term}"
+          "$MOD, D, exec, pkill anyrun || anyrun"
           "$MOD, X, exec, ${term} yazi"
           "$MOD, B, exec, zen"
           "$MOD, Z, exec, grimblast --notify --cursor copysave area"
@@ -176,9 +177,6 @@ in {
         "$MOD CTRL, L, resizeactive, 50 0"
         "$MOD CTRL, K, resizeactive, 0 -50"
         "$MOD CTRL, J, resizeactive, 0 50"
-      ];
-      bindr = [
-        "$MOD, SUPER_L, exec, pkill anyrun || anyrun"
       ];
       bindm = [
         "$MOD, mouse:272, movewindow"
