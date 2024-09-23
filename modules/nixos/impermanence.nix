@@ -18,7 +18,7 @@ in {
         "/var/db/sudo"
       ]
       ++ forEach ["nixos" "NetworkManager" "nix" "ssh" "secureboot"] (x: "/etc/${x}")
-      ++ forEach ["tailscale" "bluetooth" "nixos" "pipewire" "libvirt"] (x: "/var/lib/${x}");
+      ++ forEach ["tailscale" "bluetooth" "nixos" "pipewire" "libvirt" "docker"] (x: "/var/lib/${x}");
     files = ["/etc/machine-id"];
     users.${user} = {
       directories =

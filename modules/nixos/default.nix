@@ -3,9 +3,10 @@ _: {
     ./fonts.nix
     ./wayland.nix
     ./impermanence.nix
-    ./boot.nix
+    ./lanzaboote.nix
     ./pipewire.nix
     ./greetd.nix
     ./gaming.nix
+    ./quiet.nix
   ];
 }

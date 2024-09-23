@@ -1,12 +1,4 @@
-{
-  inputs,
-  lib,
-  ...
-}: {
-  imports = [
-    inputs.lanzaboote.nixosModules.lanzaboote
-  ];
-
+_: {
   boot = {
     plymouth = {
       enable = true;
@@ -21,14 +13,6 @@
       "udev.log_priority=3"
     ];
     consoleLogLevel = 0;
-
-    lanzaboote = {
-      enable = true;
-      pkiBundle = "/etc/secureboot";
-    };
-
-    loader.systemd-boot.enable = lib.mkForce false; # Let Lanzaboote handle this
-
     initrd = {
       verbose = false;
       systemd = {
