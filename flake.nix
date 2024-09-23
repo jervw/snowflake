@@ -3,13 +3,14 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixos-hardware.url = "github:nixos/nixos-hardware";
     impermanence.url = "github:nix-community/impermanence";
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     anyrun.url = "github:Kirottu/anyrun";
     helix.url = "github:helix-editor/helix";
 
     zen-browser = {
-      url = "github:MarceColl/zen-browser-flake";
+      url = "github:jervw/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

@@ -41,6 +41,21 @@
       ];
     };
 
+    fenrir = nixosSystem {
+      inherit specialArgs;
+      modules = [
+        {networking.hostName = "fenrir";}
+        ./fenrir
+
+        {
+          home-manager = {
+            users.${user}.imports = homeImports.fenrir;
+            extraSpecialArgs = specialArgs;
+          };
+        }
+      ];
+    };
+
     # Generic WSL
     vidar = nixosSystem {
       inherit specialArgs;

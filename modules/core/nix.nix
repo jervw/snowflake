@@ -33,6 +33,7 @@ _: {
         "https://nix-community.cachix.org"
         "https://helix.cachix.org"
         "https://nyx.chaotic.cx"
+        "https://cache.soopy.moe"
       ];
       trusted-public-keys = [
         "anyrun.cachix.org-1:pqBobmOjI7nKlsUMV25u9QHa9btJK65/C8vnO3p346s="
@@ -40,6 +41,7 @@ _: {
         "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
         "helix.cachix.org-1:ejp9KQpR1FBI2onstMQ34yogDm4OgU2ru6lIwPvuCVs="
         "chaotic-nyx.cachix.org-1:HfnXSw4pj95iI/n17rIDy40agHj12WfF+Gqk6SonIT8="
+        "cache.soopy.moe-1:0RZVsQeR+GOh0VQI9rvnHz55nVXkFardDqfm4+afjPo="
       ];
     };
   };

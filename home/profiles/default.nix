@@ -14,6 +14,10 @@
       ../.
       ./thor
     ];
+    fenrir = [
+      ../.
+      ./fenrir
+    ];
     vidar = [
       ../.
       ./vidar
@@ -34,6 +38,11 @@ in {
 
       thor = homeManagerConfiguration {
         modules = homeImports.thor;
+        inherit pkgs extraSpecialArgs;
+      };
+
+      fenrir = homeManagerConfiguration {
+        modules = homeImports.fenrir;
         inherit pkgs extraSpecialArgs;
       };
 
