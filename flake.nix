@@ -8,6 +8,7 @@
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     anyrun.url = "github:Kirottu/anyrun";
     helix.url = "github:helix-editor/helix";
+    treefmt-nix.url = "github:numtide/treefmt-nix";
 
     zen-browser = {
       url = "github:fufexan/zen-browser-flake";
@@ -22,6 +23,11 @@
     agenix = {
       url = "github:ryantm/agenix";
       inputs.darwin.follows = "";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    deploy-rs = {
+      url = "github:philtaken/deploy-rs";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -51,18 +57,33 @@
       systems = ["x86_64-linux"];
 
       imports = [
+        inputs.treefmt-nix.flakeModule
         ./hosts
         ./pkgs
+        ./deploy.nix
       ];
 
-      perSystem = {pkgs, ...}: {
+      perSystem = {
+        pkgs,
+        config,
+        ...
+      }: {
         devShells.default = pkgs.mkShell {
           packages = with pkgs; [
             alejandra
           ];
         };
 
-        formatter = pkgs.alejandra;
+        treefmt = {
+          projectRootFile = "flake.nix";
+          programs = {
+            alejandra.enable = true;
+            stylua.enable = true;
+            deadnix.enable = true;
+          };
+        };
+
+        formatter = config.treefmt.build.wrapper;
       };
     };
 }
