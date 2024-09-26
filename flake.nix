@@ -10,7 +10,7 @@
     helix.url = "github:helix-editor/helix";
 
     zen-browser = {
-      url = "github:jervw/zen-browser-flake";
+      url = "github:fufexan/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
