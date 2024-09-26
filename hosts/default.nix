@@ -1,12 +1,12 @@
 {
   self,
   inputs,
-  homeImports,
   ...
 }: {
   flake.nixosConfigurations = let
     inherit (inputs.nixpkgs.lib) nixosSystem;
     specialArgs = {inherit user inputs self;};
+    homeImports = import "${self}/home/profiles";
     user = "jervw";
   in {
     # Desktop
