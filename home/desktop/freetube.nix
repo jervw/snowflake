@@ -2,7 +2,7 @@ _: {
   programs.freetube = {
     enable = true;
     settings = {
-      defaultInvidiousInstance = "https://invidious.nerdvpn.de";
+      defaultInvidiousInstance = "https://iv.jervw.dev/";
       quickBookmarkTargetPlaylistId = "favorites";
       checkForUpdates = false;
       checkForBlogPosts = false;
