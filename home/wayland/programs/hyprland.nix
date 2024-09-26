@@ -28,7 +28,7 @@ in {
       exec-once = [
         "hyprlock"
         "sleep 2 && xrandr --output DP-1 --primary"
-        "sleep 2 && wpaperd -d"
+        "wpaperd -d"
       ];
 
       monitor = [
@@ -64,8 +64,6 @@ in {
       input = {
         kb_layout = "us,fi";
         kb_options = "grp:alt_shift_toggle";
-        follow_mouse = 1;
-        force_no_accel = true;
         repeat_delay = 200;
       };
 
