@@ -14,6 +14,7 @@
   ];
 
   home.packages = with pkgs; [
+    calibre
     ffmpeg
     fractal
     libnotify
@@ -30,9 +31,6 @@
     vesktop
     vial
     zed-editor
-    (calibre.override {
-      unrarSupport = true;
-    })
     inputs.zen-browser.packages."${system}".default
     self.packages.${pkgs.system}.cider2
   ];

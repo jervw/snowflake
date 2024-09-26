@@ -1,12 +1,12 @@
 {
   pkgs,
   config,
-  self,
+  inputs,
   ...
 }: {
   services.caddy = {
     enable = true;
-    package = self.packages.${pkgs.system}.caddy-custom;
+    package = inputs.cloudflare-caddy.packages."${pkgs.system}".cloudflare-caddy;
     extraConfig = ''
       (cloudflare) {
           tls {
