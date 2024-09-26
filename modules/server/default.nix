@@ -9,6 +9,7 @@
     ./flaresolverr.nix
     ./redlib.nix
     ./media-services.nix
+    ./invidious.nix
     ./overseerr.nix
     ./plex.nix
     ./tautulli.nix

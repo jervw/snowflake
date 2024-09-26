@@ -6,7 +6,6 @@ _: {
 
   services.redlib = {
     enable = true;
-    openFirewall = true;
     port = 8081;
   };
 }
