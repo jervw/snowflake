@@ -34,7 +34,7 @@ in {
           ".dots"
           ".zen"
         ]
-        ++ forEach ["dconf" "rclone" "Yubico" "sh.cider.electron" "syncthing" "fish" "vesktop" "obs-studio" "github-copilot" "zed" "gh"] (
+        ++ forEach ["dconf" "rclone" "Yubico" "sh.cider.electron" "syncthing" "fish" "vesktop" "obs-studio" "github-copilot" "zed" "gh" "FreeTube"] (
           x: ".config/${x}"
         )
         ++ forEach ["nix" "zen"] (
