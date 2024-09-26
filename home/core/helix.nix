@@ -17,7 +17,7 @@
     ];
 
     settings = {
-      theme = "zed_onedark_transparent";
+      theme = "zed_onedark";
       editor = {
         line-number = "relative";
         bufferline = "always";
@@ -137,10 +137,4 @@
       };
     };
   };
-
-  home.file.".config/helix/themes/zed_onedark_transparent.toml".text = ''
-    inherits = "zed_onedark"
-    "ui.background" = {}
-    "ui.virtual.jump-label" = { fg = "yellow", bg = "faint-gray", modifiers = ["bold" ] }
-  '';
 }

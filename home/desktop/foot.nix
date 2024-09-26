@@ -34,7 +34,7 @@ _: {
       };
 
       colors = {
-        alpha = 0.7;
+        alpha = 0.8;
         foreground = "abb2bf";
         background = "282c34";
         regular0 = "2c323c";
