@@ -24,8 +24,14 @@
     useUserPackages = true;
   };
 
-  services.udev = {
-    packages = with pkgs; [yubikey-personalization vial];
+  services = {
+    logind = {
+      powerKey = "ignore";
+      powerKeyLongPress = "poweroff";
+    };
+    udev = {
+      packages = with pkgs; [vial];
+    };
   };
 
   systemd.extraConfig = ''
