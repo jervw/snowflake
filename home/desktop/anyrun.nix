@@ -47,6 +47,10 @@
               name: "Nix packages",
               url: "search.nixos.org/packages?query={}&channel=unstable",
             ),
+            Custom(
+              name: "Nix options",
+              url: "search.nixos.org/options?query={}&channel=unstable",
+            ),
           ],
         )
       '';
