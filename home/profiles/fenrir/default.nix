@@ -31,6 +31,11 @@
       natural_scroll = true;
     };
 
+    bind = [
+      ", XF86LaunchA, overview:toggle"
+      ", XF86LaunchB, overview:toggle"
+    ];
+
     bindle = [
       ", XF86MonBrightnessUp, exec, swayosd-client --device=acpi_video0 --brightness raise"
       ", XF86MonBrightnessDown, exec, swayosd-client --device=acpi_video0 --brightness lower"
