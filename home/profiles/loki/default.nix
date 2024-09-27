@@ -7,6 +7,17 @@
   ];
 
   wayland.windowManager.hyprland.settings = {
+    monitor = [
+      ",highrr,auto,1"
+      "HDMI-A-1,preferred,auto-left,1"
+    ];
+    workspace = [
+      "1, monitor:HDMI-A-1, gapsin:2, gapsout:5, border:false, default:true"
+      "2, monitor:DP-1, default:true"
+      "3, monitor:DP-1"
+      "4, monitor:DP-1"
+      "5, monitor:DP-1"
+    ];
     input = {
       force_no_accel = true;
     };
