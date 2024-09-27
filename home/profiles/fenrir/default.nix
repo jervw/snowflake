@@ -36,6 +36,16 @@
       workspace_swipe_min_fingers = true; # min 3 fingers by default
     };
 
+    bind = [
+      ", XF86Launch1, exec, hyprctl --batch '\
+        keyword animations:enabled 0;\
+        keyword decoration:drop_shadow 0;\
+        keyword decoration:blur:enabled 0;\
+        keyword general:border_size 1;\
+        keyword decoration:rounding 0'"
+      ", XF86Launch2, exec, hyprctl reload"
+    ];
+
     bindle = [
       ", XF86MonBrightnessUp, exec, swayosd-client --device=acpi_video0 --brightness raise"
       ", XF86MonBrightnessDown, exec, swayosd-client --device=acpi_video0 --brightness lower"
