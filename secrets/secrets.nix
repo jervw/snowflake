@@ -6,4 +6,5 @@ let
   systems = [loki thor fenrir];
 in {
   "cloudflare.age".publicKeys = [jervw] ++ systems;
+  "tailscale.age".publicKeys = systems;
 }
