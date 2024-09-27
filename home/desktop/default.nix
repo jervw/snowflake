@@ -25,6 +25,7 @@
     openjdk22
     pavucontrol
     playerctl
+    brillo
     prismlauncher
     seahorse
     tomato-c
