@@ -16,7 +16,6 @@
   };
 
   home.packages = with pkgs.fishPlugins; [
-    hydro
     autopair
     fzf-fish
   ];
