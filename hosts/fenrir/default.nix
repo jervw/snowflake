@@ -6,6 +6,8 @@
     ../../modules/nixos/fonts.nix
     ../../modules/nixos/quiet.nix
     ../../modules/nixos/pipewire.nix
+    ../../modules/nixos/greetd.nix
+    ../../modules/nixos/wayland.nix
 
     ../../modules/core
     ../../modules/network
