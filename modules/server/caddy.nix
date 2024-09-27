@@ -2,6 +2,7 @@
   pkgs,
   config,
   inputs,
+  self,
   ...
 }: {
   services.caddy = {
@@ -15,6 +16,7 @@
         }
     '';
   };
+
   age.secrets.cloudflare.file = "${self}/secrets/cloudflare.age";
 
   systemd.services.caddy.serviceConfig = {
