@@ -14,6 +14,9 @@
     ../../modules/services
   ];
 
+  # Suspend is broken on T2-Macs since Sonoma
+  services.logind.lidSwitch = "ignore";
+
   boot.loader = {
     efi.efiSysMountPoint = "/boot";
     efi.canTouchEfiVariables = true;
