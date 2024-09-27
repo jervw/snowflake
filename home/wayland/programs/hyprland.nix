@@ -188,8 +188,6 @@ in {
       bindle = [
         ", XF86AudioRaiseVolume, exec, swayosd-client --output-volume raise --max-volume 120"
         ", XF86AudioLowerVolume, exec, swayosd-client --output-volume lower --max-volume 120"
-        ", XF86MonBrightnessUp, exec, swayosd-client --brightness raise"
-        ", XF86MonBrightnessDown, exec, swayosd-client --brightness lower"
       ];
     };
   };

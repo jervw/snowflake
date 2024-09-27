@@ -30,5 +30,12 @@
       clickfinger_behavior = true;
       natural_scroll = true;
     };
+
+    bindle = [
+      ", XF86MonBrightnessUp, exec, swayosd-client --device=acpi_video0 --brightness raise"
+      ", XF86MonBrightnessDown, exec, swayosd-client --device=acpi_video0 --brightness lower"
+      ", XF86KbdBrightnessUp, exec, swayosd-client --device=apple::kbd_backlight --brightness raise"
+      ", XF86KbdBrightnessDown, exec, swayosd-client --device=apple::kbd_backlight --brightness lower"
+    ];
   };
 }
