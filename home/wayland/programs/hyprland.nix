@@ -184,6 +184,7 @@ in {
         ", XF86AudioPlay, exec, playerctl play-pause"
         ", XF86AudioPrev, exec, playerctl previous"
         ", XF86AudioNext, exec, playerctl next"
+        ", XF86AudioMute, exec, swayosd-client --output-volume mute-toggle"
       ];
       bindle = [
         ", XF86AudioRaiseVolume, exec, swayosd-client --output-volume raise --max-volume 120"
