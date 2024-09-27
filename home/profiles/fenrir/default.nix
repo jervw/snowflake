@@ -31,10 +31,10 @@
       natural_scroll = true;
     };
 
-    bind = [
-      ", XF86LaunchA, overview:toggle"
-      ", XF86LaunchB, overview:toggle"
-    ];
+    gestures = {
+      workspace_swipe = true;
+      workspace_swipe_min_fingers = true; # min 3 fingers by default
+    };
 
     bindle = [
       ", XF86MonBrightnessUp, exec, swayosd-client --device=acpi_video0 --brightness raise"

@@ -1,4 +1,4 @@
-{pkgs, ...}: let
+_: let
   term = "foot";
   workspaces = builtins.concatLists (builtins.genList (
       x: let
@@ -13,9 +13,6 @@ in {
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
-    plugins = with pkgs; [
-      hyprlandPlugins.hyprspace
-    ];
     systemd = {
       variables = ["--all"];
       extraCommands = [
@@ -27,21 +24,7 @@ in {
       "$MOD" = "SUPER";
       exec-once = [
         "hyprlock"
-        "sleep 2 && xrandr --output DP-1 --primary"
         "wpaperd -d"
-      ];
-
-      monitor = [
-        ",highrr,auto,1"
-        "HDMI-A-1,preferred,auto-left,1"
-      ];
-
-      workspace = [
-        "1, monitor:HDMI-A-1, gapsin:2, gapsout:5, border:false, default:true"
-        "2, monitor:DP-1, default:true"
-        "3, monitor:DP-1"
-        "4, monitor:DP-1"
-        "5, monitor:DP-1"
       ];
 
       general = {
@@ -165,8 +148,6 @@ in {
           "$MOD, G, togglegroup"
           "$MOD, T, togglespecialworkspace"
           "$MOD SHIFT, T, movetoworkspacesilent, special"
-
-          "$MOD, Tab, overview:toggle"
         ]
         ++ workspaces;
 
