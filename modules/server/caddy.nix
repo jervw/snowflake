@@ -15,6 +15,7 @@
         }
     '';
   };
+  age.secrets.cloudflare.file = "${self}/secrets/cloudflare.age";
 
   systemd.services.caddy.serviceConfig = {
     LoadCredential = "CLOUDFLARE_API_TOKEN:${config.age.secrets.cloudflare.path}";
