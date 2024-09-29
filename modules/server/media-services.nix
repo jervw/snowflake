@@ -19,9 +19,21 @@
   };
 
   services = {
-    radarr.enable = true;
-    sonarr.enable = true;
-    prowlarr.enable = true;
-    bazarr.enable = true;
+    radarr = {
+      enable = true;
+      openFirewall = true;
+    };
+    sonarr = {
+      enable = true;
+      openFirewall = true;
+    };
+    prowlarr = {
+      enable = true;
+      openFirewall = true;
+    };
+    bazarr = {
+      enable = true;
+      openFirewall = true;
+    };
   };
 }
