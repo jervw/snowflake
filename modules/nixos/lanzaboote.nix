@@ -15,5 +15,7 @@
       enable = true;
       pkiBundle = "/etc/secureboot";
     };
+
+    initrd.systemd.tpm2.enable = true;
   };
 }

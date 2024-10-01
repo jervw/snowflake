@@ -15,10 +15,7 @@ _: {
     consoleLogLevel = 0;
     initrd = {
       verbose = false;
-      systemd = {
-        enable = true;
-        enableTpm2 = true;
-      };
+      systemd.enable = true;
     };
     loader = {
       timeout = 4;
