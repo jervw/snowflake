@@ -10,6 +10,7 @@
     ./redlib.nix
     ./media-services.nix
     ./invidious.nix
+    ./immich.nix
     ./overseerr.nix
     ./plex.nix
     ./tautulli.nix
