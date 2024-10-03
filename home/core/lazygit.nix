@@ -3,6 +3,7 @@ _: {
     enable = true;
     settings = {
       disableStartupPopups = true;
+      notARepository = "quit";
     };
   };
 }
