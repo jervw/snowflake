@@ -37,7 +37,8 @@
     };
 
     home-manager = {
-      url = "github:nix-community/home-manager";
+      # url = "github:nix-community/home-manager";
+      url = "github:karaolidis/home-manager/syncthing-declarative";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
