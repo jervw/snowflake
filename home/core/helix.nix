@@ -14,6 +14,7 @@
       nodePackages.bash-language-server
       gopls
       markdown-oxide
+      clippy
     ];
 
     settings = {
@@ -26,7 +27,7 @@
         true-color = true;
         undercurl = true;
         smart-tab.enable = false;
-        lsp.display-inlay-hints = true;
+        lsp.display-inlay-hints = false;
         end-of-line-diagnostics = "hint";
         inline-diagnostics.cursor-line = "warning";
         whitespace.characters = {
