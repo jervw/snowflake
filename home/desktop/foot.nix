@@ -5,8 +5,13 @@ _: {
       main = {
         term = "xterm-256color";
         font = "JetBrainsMono Nerd Font Mono:size=13";
-        pad = "10x10 center";
+        pad = "8x8 center";
         selection-target = "clipboard";
+      };
+
+      bell = {
+        urgent = true;
+        visual = true;
       };
 
       desktop-notifications = {
