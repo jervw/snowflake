@@ -26,6 +26,8 @@ in {
     settings = {
       any = {
         path = "${self}/wallpapers";
+        duration = "30m";
+        mode = "center";
       };
       default.sorting.groupedrandom = {
         group = 1;
