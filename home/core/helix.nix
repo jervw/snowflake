@@ -77,7 +77,6 @@
         {
           name = "rust";
           auto-format = true;
-          formatter.command = lib.getExe pkgs.rustfmt;
         }
         {
           name = "c";
