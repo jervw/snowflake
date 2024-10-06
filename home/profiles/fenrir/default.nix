@@ -6,7 +6,10 @@
     ../../theme
   ];
 
-  programs.hyprlock.settings.general.fractional_scaling = 1; # WARN NOT RELEASED YET
+  programs = {
+    hyprlock.settings.general.fractional_scaling = 1; # WARN NOT RELEASED YET
+    foot.settings.main.dpi-aware = true;
+  };
 
   # Workaround to fix issue with cursor scaling on HIDPI
   home.pointerCursor.gtk.enable = lib.mkForce false;
