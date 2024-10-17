@@ -88,6 +88,13 @@
           language-servers = ["pyright" "ruff"];
           auto-format = true;
         }
+        {
+          name = "typescript";
+          shebangs = ["deno"];
+          roots = ["deno.json" "deno.jsonc" "package.json"];
+          auto-format = true;
+          language-servers = ["deno-lsp"];
+        }
       ];
 
       # LSP's
@@ -133,6 +140,25 @@
         vscode-css-language-server = {
           command = "${pkgs.nodePackages.vscode-langservers-extracted}/bin/vscode-css-language-server";
           args = ["--stdio"];
+        };
+        deno-lsp = {
+          command = "${pkgs.deno}/bin/deno";
+          args = ["lsp"];
+          config.deno = {
+            enable = true;
+            unstable = true;
+            suggest.imports.hosts = {
+              "https://deno.land" = true;
+            };
+            inlayHints = {
+              parameterNames.enabled = "all";
+              parameterTypes.enabled = true;
+              variableTypes.enabled = true;
+              propertyDeclarationTypes.enabled = true;
+              functionLikeReturnTypes.enabled = true;
+              enumMemberValues.enabled = true;
+            };
+          };
         };
       };
     };
