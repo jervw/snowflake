@@ -6,5 +6,9 @@
       reverse_proxy http://thor:8095
       import cloudflare
     '';
+    "lol.jervw.dev".extraConfig = ''
+      reverse_proxy http://0.0.0.0:8099
+      import cloudflare
+    '';
   };
 }

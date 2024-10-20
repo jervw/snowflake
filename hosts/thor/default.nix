@@ -33,6 +33,8 @@ in {
   # Do not use open source kernel modules as it has no support for GTX970
   hardware.nvidia.open = lib.mkForce false;
 
+  networking.firewall.allowedTCPPorts = [443];
+
   networking = {
     networkmanager.enable = lib.mkForce false;
     hostId = "7f6f07cd";
