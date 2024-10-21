@@ -20,13 +20,13 @@ in
 
       source '${makeWrapper}/nix-support/setup-hook'
 
-      # TODO Does not work
-      # wrapProgram "$out/bin/${pname}" \
-      #   --add-flags "\''${NIXOS_OZONE_WL:+\''${WAYLAND_DISPLAY:+--ozone-platform-hint=auto --enable-features=WaylandWindowDecorations}}" \
-      #   --add-flags '--disable-seccomp-filter-sandbox'
+      wrapProgram "$out/bin/${pname}" \
+        --add-flags "\''${NIXOS_OZONE_WL:+\''${WAYLAND_DISPLAY:+--ozone-platform-hint=auto --enable-features=WaylandWindowDecorations}}" \
+        --add-flags '--disable-seccomp-filter-sandbox'
 
-      install -m 444 -D '${extracted}/usr/share/icons/hicolor/512x512/apps/${pname}.png' \
-        "$out/share/icons/hicolor/512x512/apps/${pname}.png"
+      # TODO Icons missing from root
+      # install -m 444 -D '${extracted}/usr/share/icons/hicolor/512x512/apps/${pname}.png' \
+      #   "$out/share/icons/hicolor/512x512/apps/${pname}.png"
 
       install -m 444 -D '${extracted}/${pname}.desktop' \
         "$out/share/applications/${pname}.desktop"
