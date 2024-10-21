@@ -11,6 +11,11 @@
         ".envrc"
       ];
 
+      aliases = {
+        s = "status";
+        last = "log -1 HEAD";
+      };
+
       extraConfig = {
         init = {defaultBranch = "main";};
         push.autoSetupRemote = true;
