@@ -1,4 +1,9 @@
-_: {
+{
+  config,
+  inputs,
+  lib,
+  ...
+}: {
   nixpkgs = {
     config = {
       allowUnfree = true;
@@ -14,11 +19,16 @@ _: {
     };
   };
 
-  nix = {
-    optimise = {
-      automatic = true;
-    };
+  nix = let
+    flakeInputs = lib.filterAttrs (_: v: lib.isType "flake" v) inputs;
+  in {
+    # pin the registry to avoid downloading and evaling a new nixpkgs version every time
+    registry = lib.mapAttrs (_: v: {flake = v;}) flakeInputs;
 
+    # set the path for channels compat
+    nixPath = lib.mapAttrsToList (key: _: "${key}=flake:${key}") config.nix.registry;
+
+    optimise.automatic = true;
     daemonCPUSchedPolicy = "idle";
     daemonIOSchedClass = "idle";
 
