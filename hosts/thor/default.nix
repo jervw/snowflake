@@ -12,7 +12,6 @@ in {
     ../../modules/server
     ../../modules/network
 
-    ../../modules/hardware/nvidia.nix
     ../../modules/virtualisation/docker.nix
   ];
 
@@ -29,11 +28,6 @@ in {
   };
 
   environment.defaultPackages = with pkgs; [borgbackup];
-
-  # Do not use open source kernel modules as it has no support for GTX970
-  hardware.nvidia.open = lib.mkForce false;
-
-  networking.firewall.allowedTCPPorts = [443];
 
   networking = {
     networkmanager.enable = lib.mkForce false;
