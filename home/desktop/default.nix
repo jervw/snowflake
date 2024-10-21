@@ -11,14 +11,15 @@
     ./freetube.nix
     ./xdg.nix
     ./zathura.nix
+    ./zed.nix
   ];
 
   home.packages = with pkgs; [
-    calibre
+    # calibre # TODO Build failure
     ffmpeg
     fractal
     libnotify
-    loupe
+    feh
     mpd
     nautilus
     obs-studio
