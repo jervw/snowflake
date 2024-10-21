@@ -1,8 +1,11 @@
 {
   self,
   config,
+  lib,
   ...
-}: {
+}: let
+  hostName = config.networking.hostName;
+in {
   networking.firewall = {
     trustedInterfaces = ["tailscale0"];
     checkReversePath = "loose";
@@ -13,5 +16,9 @@
     enable = true;
     authKeyFile = config.age.secrets.tailscale.path;
     openFirewall = true;
+    extraUpFlags = lib.optionals (hostName == "thor") [
+      "--accept-dns=false"
+      "--ssh"
+    ];
   };
 }
