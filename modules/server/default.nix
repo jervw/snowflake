@@ -8,6 +8,7 @@
     ./downloads.nix
     ./flaresolverr.nix
     ./redlib.nix
+    ./samba.nix
     ./media-services.nix
     ./invidious.nix
     ./immich.nix
