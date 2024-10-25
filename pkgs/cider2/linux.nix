@@ -20,9 +20,10 @@ in
 
       source '${makeWrapper}/nix-support/setup-hook'
 
-      wrapProgram "$out/bin/${pname}" \
-        --add-flags "\''${NIXOS_OZONE_WL:+\''${WAYLAND_DISPLAY:+--ozone-platform-hint=auto --enable-features=WaylandWindowDecorations}}" \
-        --add-flags '--disable-seccomp-filter-sandbox'
+      # FIX
+      # wrapProgram "$out/bin/${pname}" \
+      #   --add-flags "\''${NIXOS_OZONE_WL:+\''${WAYLAND_DISPLAY:+--ozone-platform-hint=auto --enable-features=WaylandWindowDecorations}}" \
+      #   --add-flags '--disable-seccomp-filter-sandbox'
 
       # TODO Icons missing from root
       # install -m 444 -D '${extracted}/usr/share/icons/hicolor/512x512/apps/${pname}.png' \
