@@ -24,7 +24,7 @@ in {
       "$MOD" = "SUPER";
       exec-once = [
         "hyprlock"
-        "wpaperd -d"
+        "sleep 3 && wpaperd -d"
       ];
 
       general = {

@@ -7,8 +7,7 @@
   ];
 
   programs = {
-    hyprlock.settings.general.fractional_scaling = 1; # WARN NOT RELEASED YET
-    foot.settings.main.dpi-aware = true;
+    hyprlock.settings.general.fractional_scaling = 1;
   };
 
   # Workaround to fix issue with cursor scaling on HIDPI
@@ -38,16 +37,6 @@
       workspace_swipe = true;
       workspace_swipe_min_fingers = true; # min 3 fingers by default
     };
-
-    bind = [
-      ", XF86Launch1, exec, hyprctl --batch '\
-        keyword animations:enabled 0;\
-        keyword decoration:drop_shadow 0;\
-        keyword decoration:blur:enabled 0;\
-        keyword general:border_size 1;\
-        keyword decoration:rounding 0'"
-      ", XF86Launch2, exec, hyprctl reload"
-    ];
 
     bindle = [
       ", XF86MonBrightnessUp, exec, swayosd-client --device=acpi_video0 --brightness raise"
