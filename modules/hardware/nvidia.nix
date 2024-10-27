@@ -21,7 +21,7 @@
       ];
     };
     nvidia = {
-      package = config.boot.kernelPackages.nvidiaPackages.latest;
+      package = config.boot.kernelPackages.nvidiaPackages.beta;
       open = true;
       powerManagement.enable = true;
       modesetting.enable = true;
