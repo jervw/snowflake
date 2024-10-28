@@ -47,10 +47,7 @@ _: {
         };
         "group/stuff" = {
           orientation = "horizontal";
-          modules = [
-            "clock"
-            "hyprland/workspaces"
-          ];
+          modules = ["hyprland/workspaces"];
         };
         "custom/shutdown" = {
           format = "";
@@ -210,7 +207,7 @@ _: {
       @define-color purple rgba(180, 119, 207, 1);
 
       * {
-        font-family: "Noto Sans", "JetBrainsMono Nerd Font Mono";
+        font-family: "Noto Sans", "JetBrainsMono Nerd Font Propo";
         font-size: 16px;
         font-weight: 600;
         color: @foreground;
@@ -242,7 +239,7 @@ _: {
       #custom-nixos {
         margin: 0 -10px 0 10px;
         padding: 0;
-        font-size: 36px;
+        font-size: 24px;
       }
       #window {
         opacity: 100;
@@ -272,7 +269,6 @@ _: {
       #clock {
         padding: 0;
         margin: 0;
-        font-size: 18px;
       }
 
       #custom-reboot,
