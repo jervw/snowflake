@@ -17,7 +17,6 @@
     };
     config = {
       ytdl-format = "bestvideo+bestaudio";
-      sub-scale = 0.6;
     };
     scripts = with pkgs.mpvScripts; [
       uosc # UI
