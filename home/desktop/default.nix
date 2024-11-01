@@ -15,9 +15,8 @@
   ];
 
   home.packages = with pkgs; [
-    # calibre # TODO Build failure
     ffmpeg
-    fractal
+    # fractal
     libnotify
     feh
     mpd
