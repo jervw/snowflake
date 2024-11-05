@@ -1,11 +1,9 @@
 {pkgs, ...}: {
-  programs.fish.enable = true;
-
   users.users = {
     root.hashedPassword = "!"; # disable root password
     jervw = {
       isNormalUser = true;
-      shell = pkgs.fish;
+      shell = pkgs.nushell;
       hashedPasswordFile = "/persist/secrets/jervw";
       extraGroups = [
         "networkmanager"
