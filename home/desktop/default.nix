@@ -22,7 +22,7 @@
     mpd
     nautilus
     obs-studio
-    openjdk22
+    openjdk
     pavucontrol
     playerctl
     brillo
