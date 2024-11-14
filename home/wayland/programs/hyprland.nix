@@ -72,13 +72,12 @@ in {
           size = 5;
           passes = 2;
         };
-
-        drop_shadow = true;
-        shadow_ignore_window = true;
-        shadow_offset = "2 2";
-        shadow_range = 4;
-        shadow_render_power = 2;
-        "col.shadow" = "rgba(292c3cee)";
+        shadow = {
+          enabled = true;
+          range = 4;
+          offset = "2 2";
+          color = "rgba(292c3cee)";
+        };
       };
 
       animations = {
