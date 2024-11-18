@@ -16,7 +16,8 @@
 
   home.packages = with pkgs; [
     ffmpeg
-    # fractal
+    fractal
+    protonmail-desktop
     libnotify
     feh
     mpd
