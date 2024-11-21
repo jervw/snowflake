@@ -21,6 +21,6 @@
     rclone
     fd
     fzf
-    nix-your-shell
+    any-nix-shell
   ];
 }
