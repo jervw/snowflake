@@ -84,7 +84,7 @@
           projectRootFile = "flake.nix";
           programs = {
             alejandra.enable = true;
-            stylua.enable = true;
+            statix.enable = true;
             deadnix.enable = true;
           };
         };
