@@ -4,7 +4,7 @@
   lib,
   ...
 }: let
-  hostName = config.networking.hostName;
+  inherit (config.networking) hostName;
 in {
   networking.firewall = {
     trustedInterfaces = ["tailscale0"];
