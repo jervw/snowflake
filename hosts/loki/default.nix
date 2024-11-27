@@ -1,11 +1,5 @@
-{
-  pkgs,
-  inputs,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
-    inputs.chaotic.nixosModules.default
-
     ./hardware-configuration.nix
 
     ../../modules/core
@@ -20,6 +14,5 @@
 
   programs.nix-ld.enable = true;
 
-  boot.kernelPackages = pkgs.linuxPackages_cachyos;
-  chaotic.scx.enable = true; # by default uses scx_rustland scheduler
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 }

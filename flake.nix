@@ -5,7 +5,6 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixos-hardware.url = "github:nixos/nixos-hardware";
     impermanence.url = "github:nix-community/impermanence";
-    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     anyrun.url = "github:Kirottu/anyrun";
     helix.url = "github:helix-editor/helix";
     treefmt-nix.url = "github:numtide/treefmt-nix";
