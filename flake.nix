@@ -2,15 +2,17 @@
   description = "jervw's NixOS configurations";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixos-hardware.url = "github:nixos/nixos-hardware";
-    impermanence.url = "github:nix-community/impermanence";
     anyrun.url = "github:Kirottu/anyrun";
     helix.url = "github:helix-editor/helix";
+    impermanence.url = "github:nix-community/impermanence";
+    nixcord.url = "github:kaylorben/nixcord";
+    nixos-hardware.url = "github:nixos/nixos-hardware";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     treefmt-nix.url = "github:numtide/treefmt-nix";
 
-    zen-browser = {
-      url = "github:fufexan/zen-browser-flake";
+    agenix = {
+      url = "github:ryantm/agenix";
+      inputs.darwin.follows = "";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -19,20 +21,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    flake-parts = {
-      url = "github:hercules-ci/flake-parts";
-      inputs.nixpkgs-lib.follows = "nixpkgs";
-    };
-
-    agenix = {
-      url = "github:ryantm/agenix";
-      inputs.darwin.follows = "";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     deploy-rs = {
       url = "github:philtaken/deploy-rs";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    flake-parts = {
+      url = "github:hercules-ci/flake-parts";
+      inputs.nixpkgs-lib.follows = "nixpkgs";
     };
 
     home-manager = {
@@ -53,6 +49,11 @@
     ssh-keys = {
       url = "https://github.com/jervw.keys";
       flake = false;
+    };
+
+    zen-browser = {
+      url = "github:fufexan/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
