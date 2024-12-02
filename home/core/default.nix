@@ -14,6 +14,7 @@
     dconf
     bat
     btop
+    cloneit
     xdg-utils
     eza
     ncdu
