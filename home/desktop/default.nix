@@ -33,6 +33,8 @@
     vesktop
     vial
     zed-editor
+    networkmanagerapplet
+    qbittorrent-enhanced
     inputs.zen-browser.packages."${system}".default
     self.packages.${pkgs.system}.cider2
   ];

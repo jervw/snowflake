@@ -25,6 +25,7 @@ in {
       exec-once = [
         "hyprlock"
         "sleep 3 && wpaperd -d"
+        "nm-applet"
       ];
 
       general = {
