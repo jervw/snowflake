@@ -7,7 +7,7 @@
       noto-fonts-emoji
       font-awesome
       corefonts
-      (nerdfonts.override {fonts = ["JetBrainsMono"];})
+      nerd-fonts.jetbrains-mono
       (google-fonts.override {fonts = ["Inter"];})
     ];
   };
