@@ -28,7 +28,6 @@ _: {
           icon-size = 18;
           rewrite = {
             "(.*)Zen Browser" = "Zen Browser";
-            "(.*)Mozilla Firefox" = "Mozilla Firefox";
           };
         };
         "group/powermenu" = {
@@ -88,6 +87,7 @@ _: {
         "group/scroll" = {
           orientation = "horizontal";
           modules = [
+            "battery"
             "pulseaudio"
             "clock"
           ];
@@ -191,6 +191,11 @@ _: {
             };
           };
         };
+        "battery" = {
+          format = "{capacity}% {icon}";
+          format-icons = ["" "" "" "" ""];
+          max-length = 25;
+        };
       };
     };
 
@@ -237,7 +242,7 @@ _: {
         padding: 0 0 0 10px;
       }
       #custom-nixos {
-        margin: 0 -10px 0 10px;
+        margin-left: 10px;
         padding: 0;
         font-size: 24px;
       }
@@ -292,6 +297,7 @@ _: {
       #custom-notification,
       #cpu,
       #network,
+      #battery,
       #pulseaudio {
         margin-top: 2px;
         margin-bottom: 2px;
@@ -301,6 +307,7 @@ _: {
       #cpu:hover,
       #memory:hover,
       #network:hover,
+      #battery:hover,
       #temperature:hover,
       #pulseaudio:hover {
         transition: background-color 200ms;
@@ -309,7 +316,7 @@ _: {
 
       #workspaces {
         margin: 0;
-        padding: 10px
+        padding: 10px 10px 10px 0;
       }
 
       #workspaces button {
@@ -335,6 +342,7 @@ _: {
 
       #cpu,
       #network,
+      #battery,
       #custom-notifications,
       #temperature,
       #memory,
