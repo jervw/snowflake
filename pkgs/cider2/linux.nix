@@ -6,18 +6,14 @@
   appimageTools,
   makeWrapper,
 }: let
-  name = "${pname}-${version}";
-
   extracted = appimageTools.extractType2 {
-    inherit name src;
+    inherit pname src version;
   };
 in
   appimageTools.wrapType2 {
-    inherit name src meta;
+    inherit pname version src meta;
 
     extraInstallCommands = ''
-      mv "$out/bin/${name}" "$out/bin/${pname}"
-
       source '${makeWrapper}/nix-support/setup-hook'
 
       # FIX
