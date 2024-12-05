@@ -1,9 +1,5 @@
-{
-  lib,
-  pkgs,
-  ...
-}: let
-  eth = "enp4s0";
+{lib, ...}: let
+  interface = "enp4s0";
 in {
   imports = [
     ./hardware-configuration.nix
@@ -27,21 +23,19 @@ in {
     };
   };
 
-  environment.defaultPackages = with pkgs; [borgbackup];
-
   networking = {
     networkmanager.enable = lib.mkForce false;
     hostId = "7f6f07cd";
     nftables.enable = true;
-    interfaces.${eth}.ipv4.addresses = [
+    interfaces.${interface}.ipv4.addresses = [
       {
-        address = "10.0.0.2";
-        prefixLength = 28;
+        address = "192.168.10.2";
+        prefixLength = 24;
       }
     ];
     defaultGateway = {
-      address = "10.0.0.1";
-      interface = eth;
+      address = "192.168.10.1";
+      inherit interface;
     };
     nameservers = ["9.9.9.9" "1.1.1.1"];
   };
