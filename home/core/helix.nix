@@ -39,10 +39,6 @@
           normal = "block";
           select = "underline";
         };
-        statusline = {
-          left = ["mode" "spacer" "version-control" "file-name" "file-modification-indicator"];
-          right = ["spinner" "diagnostics" "file-encoding" "file-type" "position"];
-        };
         indent-guides.render = true;
         gutters.line-numbers.min-width = 1;
       };
