@@ -5,7 +5,6 @@
     anyrun.url = "github:Kirottu/anyrun";
     helix.url = "github:helix-editor/helix";
     impermanence.url = "github:nix-community/impermanence";
-    nixcord.url = "github:kaylorben/nixcord";
     nixos-hardware.url = "github:nixos/nixos-hardware";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     treefmt-nix.url = "github:numtide/treefmt-nix";
