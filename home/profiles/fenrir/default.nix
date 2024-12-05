@@ -33,6 +33,9 @@
       natural_scroll = true;
     };
 
+    animations.enabled = lib.mkForce false;
+    decoration.blur.enabled = lib.mkForce false;
+
     gestures = {
       workspace_swipe = true;
       workspace_swipe_min_fingers = true; # min 3 fingers by default
