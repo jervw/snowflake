@@ -145,7 +145,7 @@ in {
           "$MOD SHIFT, K, movewindow, u"
           "$MOD SHIFT, J, movewindow, d"
 
-          "ALT,Tab, changegroupactive"
+          "$MOD, Tab, changegroupactive"
           "$MOD, G, togglegroup"
           "$MOD, T, togglespecialworkspace"
           "$MOD SHIFT, T, movetoworkspacesilent, special"
