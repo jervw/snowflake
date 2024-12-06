@@ -1,5 +1,8 @@
 _: let
   term = "foot";
+  active_color = "0xff7fb6e1";
+  inactive_color = "0x00000000";
+
   workspaces = builtins.concatLists (builtins.genList (
       x: let
         ws = toString (x + 1);
@@ -31,8 +34,23 @@ in {
       general = {
         gaps_in = 12;
         gaps_out = 10;
-        border_size = 0;
         allow_tearing = true;
+        border_size = 3;
+        "col.active_border" = active_color;
+        "col.inactive_border" = inactive_color;
+      };
+
+      group = {
+        "col.border_active" = active_color;
+        "col.border_inactive" = inactive_color;
+
+        groupbar = {
+          height = 20;
+          font_size = 12;
+          text_color = "0xffDDDDDD";
+          "col.active" = active_color;
+          "col.inactive" = "0x807fb6e1";
+        };
       };
 
       dwindle = {
@@ -56,6 +74,7 @@ in {
       };
 
       misc = {
+        font_family = "Noto Sans";
         disable_autoreload = true;
         disable_hyprland_logo = true;
         disable_splash_rendering = true;
@@ -90,14 +109,11 @@ in {
           "smoothIn, 0.25, 1, 0.5, 1"
         ];
         animation = [
-          "windows, 1, 5, overshot, slide"
-          "windowsOut, 1, 4, smoothOut, slide"
+          "windows, 1, 5, default"
+          "windowsOut, 1, 4, default"
           "windowsMove, 1, 4, default"
-          "border, 1, 10, default"
-          "fade, 1, 10, smoothIn"
-          "fadeDim, 1, 10, smoothIn"
+          "border, 0"
           "workspaces, 1, 6, default"
-          "specialWorkspace, 1, 6, default, slidefadevert -10%"
         ];
       };
 
