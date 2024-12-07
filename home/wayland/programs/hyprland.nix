@@ -132,7 +132,7 @@ in {
         "float, class:mpv"
         "float, title:^(Picture in picture)$"
         "workspace 1, class:(VencordDesktop)"
-        "workspace special, class:(Cider)"
+        "workspace special, class:(cider)"
       ];
 
       bind =
