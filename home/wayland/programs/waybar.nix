@@ -197,6 +197,23 @@ _: {
           max-length = 25;
         };
       };
+      secondary = {
+        layer = "top";
+        position = "top";
+        output = "HDMI-A-1";
+        modules-center = [
+          "mpris"
+        ];
+        "mpris" = {
+          player = "cider";
+          format = "{status_icon} {artist} - {title}";
+          status-icons = {
+            "playing" = "";
+            "paused" = "";
+            "stopped" = "";
+          };
+        };
+      };
     };
 
     style = ''
