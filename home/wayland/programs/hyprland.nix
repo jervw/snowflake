@@ -60,17 +60,16 @@ in {
 
       render = {
         explicit_sync = 1;
-        direct_scanout = true;
+      };
+
+      opengl = {
+        nvidia_anti_flicker = false;
       };
 
       input = {
         kb_layout = "us,fi";
         kb_options = "grp:alt_shift_toggle";
         repeat_delay = 200;
-      };
-
-      cursor = {
-        no_hardware_cursors = true;
       };
 
       misc = {
