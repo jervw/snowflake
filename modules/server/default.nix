@@ -5,6 +5,7 @@
     ./caddy.nix
     ./downloads.nix
     ./flaresolverr.nix
+    ./glance.nix
     ./redlib.nix
     ./media-services.nix
     ./invidious.nix

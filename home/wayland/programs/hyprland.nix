@@ -128,6 +128,7 @@ in {
         "noshadow, floating:0"
         "suppressevent maximize, class:^(zen-alpha)$"
         "float, title:^(Volume Control)$"
+        "stayfocused, title:^(Syncthing Tray)$"
         "float, class:mpv"
         "float, title:^(Picture in picture)$"
         "workspace 1, class:(VencordDesktop)"

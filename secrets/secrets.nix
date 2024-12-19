@@ -7,4 +7,5 @@ let
 in {
   "cloudflare.age".publicKeys = [jervw] ++ systems;
   "tailscale.age".publicKeys = systems;
+  "reddit.age".publicKeys = [jervw] ++ systems;
 }
