@@ -1,6 +1,6 @@
 _: {
   imports = [
-    ./backup.nix
+    # ./backup.nix
     ./gnome-services.nix
   ];
 }
