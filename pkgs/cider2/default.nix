@@ -5,14 +5,14 @@
   stdenv,
 }: let
   pname = "Cider";
-  version = "11-27-2024";
+  version = "12-19-2024";
 
   # Packages are not public domain.
   # Buy Cider from https://cidercollective.itch.io/cider
   sources = {
     x86_64-linux = {
       url = "https://r2.jervw.dev/${pname}-Linux-${version}.AppImage";
-      hash = "sha256-OClHCLjvCuib5Umq15dW0cP8jQCMWIynYz5YpLfpXNE=";
+      hash = "sha256-SrZxSFQ6sy4y1lZAOzNhinQ7E5rTOva/x3z+CJUZrdY=";
     };
   };
 
