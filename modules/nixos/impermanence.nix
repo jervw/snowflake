@@ -35,13 +35,14 @@ in {
           ".dots"
           ".zen"
         ]
-        ++ forEach ["dconf" "rclone" "Yubico" "sh.cider.genten" "syncthing" "fish" "vesktop" "obs-studio" "github-copilot" "zed" "gh" "FreeTube"] (
+        ++ forEach ["dconf" "rclone" "cosmic" "sh.cider.genten" "fish" "vesktop" "obs-studio" "github-copilot" "zed" "gh" "FreeTube"] (
           x: ".config/${x}"
         )
         ++ forEach ["nix" "zen"] (
           x: ".cache/${x}"
         )
         ++ forEach ["fish" "fractal" "direnv" "PrismLauncher" "zed"] (x: ".local/share/${x}")
+        ++ forEach ["syncthing" "cosmic-comp"] (x: ".local/state/${x}")
         ++ [
           {
             directory = ".ssh";
