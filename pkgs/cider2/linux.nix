@@ -16,10 +16,9 @@ in
     extraInstallCommands = ''
       source '${makeWrapper}/nix-support/setup-hook'
 
-      # FIX
-      # wrapProgram "$out/bin/${pname}" \
-      #   --add-flags "\''${NIXOS_OZONE_WL:+\''${WAYLAND_DISPLAY:+--ozone-platform-hint=auto --enable-features=WaylandWindowDecorations}}" \
-      #   --add-flags '--disable-seccomp-filter-sandbox'
+      wrapProgram "$out/bin/${pname}" \
+        --add-flags "\''${NIXOS_OZONE_WL:+\''${WAYLAND_DISPLAY:+--ozone-platform-hint=auto --enable-features=WaylandWindowDecorations}}" \
+        --add-flags '--disable-seccomp-filter-sandbox --ignore-gpu-blocklist --enable-gpu-rasterization --enable-gpu --enable-features=Vulkan,UseSkiaRenderer,VaapiVideoDecoder,CanvasOopRasterization,VaapiVideoEncoder,RawDraw --disable-features=UseChromeOSDirectVideoDecoder --enable-zero-copy --enable-oop-rasterization --enable-raw-draw --enable-accelerated-mjpeg-decode --enable-accelerated-video --enable-native-gpu-memory-buffers'
 
       # TODO Icons missing from root
       # install -m 444 -D '${extracted}/usr/share/icons/hicolor/512x512/apps/${pname}.png' \
