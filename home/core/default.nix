@@ -6,6 +6,7 @@
     ./direnv.nix
     ./helix.nix
     ./lazygit.nix
+    ./syncthing.nix
     ./yazi.nix
     ./zellij.nix
   ];

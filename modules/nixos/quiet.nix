@@ -6,6 +6,7 @@ _: {
     kernelParams = [
       "quiet"
       "splash"
+      "bgrt_disable"
       "boot.shell_on_fail"
       "loglevel=3"
       "rd.systemd.show_status=false"

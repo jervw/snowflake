@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   imports = [
     ./hardware-configuration.nix
 
@@ -10,9 +14,6 @@
     ../../modules/services
   ];
 
-  networking.firewall.allowedTCPPorts = [10767]; # Cider2 RPC
-
-  programs.nix-ld.enable = true;
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
 }
