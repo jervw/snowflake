@@ -7,6 +7,7 @@
   imports = [
     ./anyrun.nix
     ./foot.nix
+    ./ghostty.nix
     ./mpv.nix
     ./freetube.nix
     ./xdg.nix

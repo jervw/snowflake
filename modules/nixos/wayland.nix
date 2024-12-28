@@ -15,7 +15,6 @@
       grimblast
       wl-clipboard
       wlr-randr
-      swww
       hyprpicker
       xorg.xeyes
       xorg.xrandr
@@ -31,14 +30,6 @@
       extraPortals = with pkgs; [
         xdg-desktop-portal-gtk
       ];
-    };
-    terminal-exec = {
-      enable = true;
-      settings = {
-        default = [
-          "org.codeberg.dnkl.foot.desktop"
-        ];
-      };
     };
   };
 }

@@ -1,8 +1,4 @@
-{
-  pkgs,
-  inputs,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ./hardware-configuration.nix
 
@@ -13,7 +9,6 @@
     ../../modules/hardware
     ../../modules/services
   ];
-
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
 }

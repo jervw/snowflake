@@ -1,5 +1,5 @@
 _: let
-  term = "foot";
+  term = "ghostty";
   active_color = "0xff7fb6e1";
   inactive_color = "0x00000000";
 
@@ -138,8 +138,9 @@ in {
       bind =
         [
           "$MOD, Return, exec, ${term}"
+          "$MOD, X, exec, ghostty"
           "$MOD, D, exec, pkill anyrun || anyrun"
-          "$MOD, X, exec, ${term} yazi"
+          "$MOD, V, exec, ${term} yazi"
           "$MOD, B, exec, zen"
           "$MOD, Z, exec, grimblast --notify --cursor copysave area"
           "$MOD CTRL, Z, exec, grimblast --notify --cursor copysave output"
