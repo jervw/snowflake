@@ -10,12 +10,15 @@
     };
   };
 
-  programs.nh = {
-    enable = true;
-    flake = "/home/jervw/.dots";
-    clean = {
+  programs = {
+    command-not-found.enable = false;
+    nh = {
       enable = true;
-      extraArgs = "--keep-since 4d --keep 3";
+      flake = "/home/jervw/.dots";
+      clean = {
+        enable = true;
+        extraArgs = "--keep-since 4d --keep 3";
+      };
     };
   };
 
