@@ -138,7 +138,6 @@ in {
       bind =
         [
           "$MOD, Return, exec, ${term}"
-          "$MOD, X, exec, ghostty"
           "$MOD, D, exec, pkill anyrun || anyrun"
           "$MOD, V, exec, ${term} yazi"
           "$MOD, B, exec, zen"
