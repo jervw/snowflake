@@ -5,10 +5,18 @@
 }: {
   services.xserver.videoDrivers = ["nvidia"];
 
-  boot.kernelParams = [
-    "nvidia-drm.fbdev=1"
-    "nvidia.NVreg_PreserveVideoMemoryAllocations=1"
-  ];
+  boot = {
+    kernelParams = [
+      "nvidia-drm.fbdev=1"
+    ];
+    kernelModules = [
+      "nvidia"
+      "nvidia_modeset"
+      "nvidia_uvm"
+      "nvidia_drm"
+      "i2c-nvidia_gpu"
+    ];
+  };
 
   hardware = {
     graphics = {
@@ -25,6 +33,7 @@
       open = true;
       powerManagement.enable = true;
       modesetting.enable = true;
+      nvidiaSettings = true;
     };
 
     nvidia-container-toolkit = {
@@ -41,11 +50,14 @@
     };
     systemPackages = with pkgs; [
       vulkan-loader
+      vdpauinfo
       vulkan-tools
       libva
       libva-utils
       glxinfo
       egl-wayland
+      libglvnd
+      libGL
     ];
   };
 }
