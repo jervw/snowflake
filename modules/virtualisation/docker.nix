@@ -6,7 +6,7 @@
   environment.systemPackages = with pkgs; [
     docker-compose
     distrobox
-    ctop
+    lazydocker
   ];
 
   virtualisation.oci-containers.backend = "docker";
