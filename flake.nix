@@ -9,10 +9,6 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     treefmt-nix.url = "github:numtide/treefmt-nix";
 
-    # TODO Remove when upstreamed
-    ghostty.url = "github:ghostty-org/ghostty";
-    ghostty-hm.url = "github:clo4/ghostty-hm-module";
-
     agenix = {
       url = "github:ryantm/agenix";
       inputs.darwin.follows = "";
