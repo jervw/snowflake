@@ -5,7 +5,7 @@
   '';
 
   services.immich = {
-    enable = true;
+    enable = false; # TODO Build failure
     mediaLocation = "/mnt/storage/Immich-Library";
     group = "media";
     port = 2995;
