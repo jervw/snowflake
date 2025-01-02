@@ -31,8 +31,7 @@
     };
 
     lanzaboote = {
-      # TODO use fork temporariry for crane override
-      url = "github:clemenscodes/lanzaboote/";
+      url = "github:nix-community/lanzaboote";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
