@@ -43,26 +43,6 @@
         "type": "github"
       }
     },
-    "cloudflare-caddy": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1726992470,
-        "narHash": "sha256-sFe6PVPvjMzr1Ly2CUvNCiq5JUQ5gEnquJaRxnyulSk=",
-        "owner": "burmudar",
-        "repo": "nix-cloudflare-caddy",
-        "rev": "64ce4b12c1bff3eae0b7621152f1e9b2a8edf170",
-        "type": "github"
-      },
-      "original": {
-        "owner": "burmudar",
-        "repo": "nix-cloudflare-caddy",
-        "type": "github"
-      }
-    },
     "crane": {
       "locked": {
         "lastModified": 1727974419,
@@ -552,7 +532,6 @@
       "inputs": {
         "agenix": "agenix",
         "anyrun": "anyrun",
-        "cloudflare-caddy": "cloudflare-caddy",
         "deploy-rs": "deploy-rs",
         "flake-parts": "flake-parts_2",
         "helix": "helix",

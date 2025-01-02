@@ -15,11 +15,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    cloudflare-caddy = {
-      url = "github:burmudar/nix-cloudflare-caddy";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     deploy-rs = {
       url = "github:philtaken/deploy-rs";
       inputs.nixpkgs.follows = "nixpkgs";
