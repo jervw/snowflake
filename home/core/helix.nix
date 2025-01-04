@@ -44,8 +44,6 @@
       };
       keys.normal = {
         C-q = ":bclose";
-        A-l = "goto_next_buffer";
-        A-h = "goto_previous_buffer";
         X = ["extend_line_up" "extend_to_line_bounds"];
         A-x = "extend_to_line_bounds";
         "0" = "goto_line_start";
