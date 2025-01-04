@@ -17,7 +17,7 @@
       flake = "/home/jervw/.dots";
       clean = {
         enable = true;
-        extraArgs = "--keep-since 4d --keep 3";
+        extraArgs = "--keep-since 1d --keep 3";
       };
     };
   };
