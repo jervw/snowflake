@@ -1,50 +1,61 @@
-_: let
-  browser = "zen.desktop";
-  file-manager = "org.gnome.Nautilus.desktop";
-  doc-viewer = "org.pwmt.zathura.desktop";
-  image-viewer = "org.gnome.Loupe.desktop";
-  torrent = "org.qbittorrent.qBittorrent.desktop";
+{
+  pkgs,
+  config,
+  ...
+}: let
+  # Applications
+  browser = ["zen"];
+  editor = ["Helix"];
+  fileManager = ["yazi"];
+  imageViewer = ["feh"];
+  mediaPlayer = ["mpv"];
+  torrentClient = ["org.qbittorrent.qBittorrent"];
+
+  # Stolen from @fufexan
+  xdgAssociations = type: program: list:
+    builtins.listToAttrs (map (e: {
+        name = "${type}/${e}";
+        value = program;
+      })
+      list);
+
+  image = xdgAssociations "image" imageViewer ["png" "svg" "jpeg" "gif" ".svg"];
+  video = xdgAssociations "video" mediaPlayer ["mp4" "avi" "mkv" "webm" "mov"];
+  audio = xdgAssociations "audio" mediaPlayer ["mp3" "flac" "wav" "aac"];
+  browserTypes =
+    (xdgAssociations "application" browser [
+      "pdf"
+      "x-extension-htm"
+      "x-extension-html"
+      "x-extension-shtml"
+      "x-extension-xht"
+      "x-extension-xhtml"
+      "xhtml+xml"
+    ])
+    // (xdgAssociations "x-scheme-handler" browser [
+      "about"
+      "chrome"
+      "ftp"
+      "http"
+      "https"
+      "unknown"
+    ]);
+
+  defaultApplications = builtins.mapAttrs (_: v: (map (e: "${e}.desktop") v)) ({
+      "text/html" = browser;
+      "text/plain" = editor;
+      "inode/directory" = fileManager;
+      "x-scheme-handler/magnet" = torrentClient;
+    }
+    // image
+    // video
+    // audio
+    // browserTypes);
 in {
   xdg = {
-    mimeApps = rec {
+    mimeApps = {
       enable = true;
-      associations.added = defaultApplications;
-      defaultApplications = {
-        "inode/directory" = file-manager;
-
-        "x-scheme-handler/http" = browser;
-        "x-scheme-handler/https" = browser;
-        "application/xhtml+xml" = browser;
-        "text/html" = browser;
-
-        "x-scheme-handler/magnet" = torrent;
-        "application/pdf" = doc-viewer;
-
-        "image/jpeg" = image-viewer;
-        "image/bmp" = image-viewer;
-        "image/gif" = image-viewer;
-        "image/jpg" = image-viewer;
-        "image/pjpeg" = image-viewer;
-        "image/png" = image-viewer;
-        "image/tiff" = image-viewer;
-        "image/webp" = image-viewer;
-        "image/x-bmp" = image-viewer;
-        "image/x-gray" = image-viewer;
-        "image/x-icb" = image-viewer;
-        "image/x-ico" = image-viewer;
-        "image/x-png" = image-viewer;
-        "image/x-portable-anymap" = image-viewer;
-        "image/x-portable-bitmap" = image-viewer;
-        "image/x-portable-graymap" = image-viewer;
-        "image/x-portable-pixmap" = image-viewer;
-        "image/x-xbitmap" = image-viewer;
-        "image/x-xpixmap" = image-viewer;
-        "image/x-pcx" = image-viewer;
-        "image/svg+xml" = image-viewer;
-        "image/svg+xml-compressed" = image-viewer;
-        "image/vnd.wap.wbmp" = image-viewer;
-        "image/x-icns" = image-viewer;
-      };
+      inherit defaultApplications;
     };
     userDirs = {
       enable = true;
@@ -56,6 +67,16 @@ in {
       desktop = "$HOME/other";
       publicShare = "$HOME/other";
       templates = "$HOME/other";
+      extraConfig = {
+        XDG_SCREENSHOTS_DIR = "${config.xdg.userDirs.pictures}/Screenshots";
+      };
     };
   };
+  home.packages = [
+    # used by `gio open` and xdp-gtk
+    (pkgs.writeShellScriptBin "xdg-terminal-exec" ''
+      ghostty "$@"
+    '')
+    pkgs.xdg-utils
+  ];
 }
