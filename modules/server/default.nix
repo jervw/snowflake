@@ -8,7 +8,6 @@
     ./glance.nix
     ./redlib.nix
     ./media-services.nix
-    ./invidious.nix
     ./immich.nix
     ./jellyfin.nix
     ./jellyseerr.nix
