@@ -56,22 +56,6 @@
       ];
     };
 
-    # Generic WSL
-    vidar = nixosSystem {
-      inherit specialArgs;
-      modules = [
-        {networking.hostName = "vidar";}
-        ./vidar
-
-        {
-          home-manager = {
-            users.${user}.imports = homeImports.vidar;
-            extraSpecialArgs = specialArgs;
-          };
-        }
-      ];
-    };
-
     # Add more hosts here..
   };
 }
