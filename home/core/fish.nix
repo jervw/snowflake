@@ -16,8 +16,12 @@
     };
   };
 
-  home.packages = with pkgs.fishPlugins; [
-    autopair
-    fzf-fish
+  home.packages = with pkgs; [
+    any-nix-shell
+    eza
+    bat
+    fzf
+    fishPlugins.autopair
+    fishPlugins.fzf-fish
   ];
 }

@@ -13,6 +13,7 @@
   ];
 
   home.packages = with pkgs; [
+    dconf
     ffmpeg
     fractal
     libnotify
@@ -29,6 +30,7 @@
     vial
     networkmanagerapplet
     qbittorrent-enhanced
+    xdg-utils
     inputs.zen-browser.packages."${system}".default
     self.packages.${pkgs.system}.cider2
   ];

@@ -12,17 +12,13 @@
   ];
 
   home.packages = with pkgs; [
-    dconf
-    bat
     btop
     cloneit
-    xdg-utils
-    eza
     ncdu
     ripgrep
     rclone
+    tldr
+    aria2
     fd
-    fzf
-    any-nix-shell
   ];
 }
