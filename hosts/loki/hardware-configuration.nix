@@ -8,7 +8,7 @@
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
-  boot.initrd.availableKernelModules = ["nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod"];
+  boot.initrd.availableKernelModules = ["nvme" "xhci_pci" "usbhid" "usb_storage" "sd_mod"];
   boot.initrd.kernelModules = [];
   boot.kernelModules = ["kvm-amd"];
   boot.extraModulePackages = [];
@@ -24,6 +24,12 @@
       device = "/dev/disk/by-label/nixos";
       fsType = "btrfs";
       options = ["subvol=home" "noatime" "compress=zstd"];
+    };
+
+    "/mnt/storage" = {
+      device = "/dev/disk/by-label/storage";
+      fsType = "ext4";
+      options = ["noatime" "nofail"];
     };
 
     "/boot" = {
