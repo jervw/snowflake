@@ -35,6 +35,7 @@
       settings = {
         editor = "hx";
         prompt = "enabled";
+        git_protocol = "ssh";
       };
       extensions = with pkgs; [
         gh-eco
