@@ -4,6 +4,8 @@
     bindings = {
       "ALT+k" = "add sub-scale +0.1";
       "ALT+j" = "add sub-scale -0.1";
+      "ALT+h" = "add sub-delay +0.05";
+      "ALT+l" = "add sub-delay -0.05";
       "ALT+=" = "add video-zoom +0.1";
       "ALT+-" = "add video-zoom -0.1";
     };
