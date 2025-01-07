@@ -31,6 +31,7 @@
     networkmanagerapplet
     qbittorrent-enhanced
     xdg-utils
+    protonmail-bridge-gui
     inputs.zen-browser.packages."${system}".default
     self.packages.${pkgs.system}.cider2
   ];

@@ -29,6 +29,7 @@ in {
         "hyprlock"
         "sleep 3 && wpaperd -d"
         "nm-applet"
+        "protonmail-bridge-gui"
       ];
 
       general = {
