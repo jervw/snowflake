@@ -12,6 +12,15 @@ _: {
         settings.cue = true;
       };
     };
+    sudo = {
+      enable = true;
+      execWheelOnly = true;
+      extraConfig = ''
+        Defaults lecture = never
+        Defaults pwfeedback
+        Defaults timestamp_timeout = 60
+      '';
+    };
   };
 
   programs.yubikey-touch-detector.enable = true;
