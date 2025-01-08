@@ -1,5 +1,10 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   imports = [
+    inputs.chaotic.nixosModules.default
     ./hardware-configuration.nix
 
     ../../modules/core
@@ -16,6 +21,8 @@
       efi.canTouchEfiVariables = true;
     };
 
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_cachyos;
   };
+
+  services.scx.enable = true; # by default uses scx_rustland scheduler
 }
