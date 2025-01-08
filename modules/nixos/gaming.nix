@@ -29,6 +29,12 @@ in {
     extraCompatPackages = [pkgs.proton-ge-bin];
   };
 
+  environment.systemPackages = [pkgs.lutris pkgs.heroic];
+
+  programs.gamescope = {
+    enable = true;
+  };
+
   # TODO Add GPU overclocking when there is a easy way to do it on Wayland + NVIDIA
   programs.gamemode = {
     enable = true;
