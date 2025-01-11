@@ -7,6 +7,8 @@ _: {
       confirm-close-surface = false;
       auto-update = "off";
 
+      font-size = 13;
+
       # Both improve startup time
       gtk-single-instance = true;
       gtk-adwaita = false;
