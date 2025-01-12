@@ -8,6 +8,7 @@
     ./anyrun.nix
     ./ghostty.nix
     ./mpv.nix
+    ./stylix.nix
     ./xdg.nix
     ./zed.nix
   ];

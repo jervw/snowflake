@@ -3,7 +3,6 @@
     ../../core
     ../../desktop
     ../../wayland
-    ../../theme
   ];
 
   programs = {

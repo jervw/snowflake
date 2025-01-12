@@ -1,9 +1,9 @@
 _: {
   imports = [
-    ./fonts.nix
     ./wayland.nix
     ./pipewire.nix
     ./greetd.nix
+    ./stylix.nix
     ./gaming.nix
     ./quiet.nix
   ];

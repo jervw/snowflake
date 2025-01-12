@@ -16,7 +16,6 @@
     ];
 
     settings = {
-      theme = "zed_onedark";
       editor = {
         line-number = "relative";
         bufferline = "always";

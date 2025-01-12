@@ -1,7 +1,5 @@
 _: let
   term = "ghostty";
-  active_color = "0xff7fb6e1";
-  inactive_color = "0x00000000";
 
   workspaces = builtins.concatLists (builtins.genList (
       x: let
@@ -27,9 +25,7 @@ in {
       "$MOD" = "SUPER";
       exec-once = [
         "hyprlock"
-        "sleep 3 && wpaperd -d"
         "nm-applet"
-        "protonmail-bridge-gui"
       ];
 
       general = {
@@ -37,20 +33,13 @@ in {
         gaps_out = 10;
         allow_tearing = true;
         border_size = 3;
-        "col.active_border" = active_color;
-        "col.inactive_border" = inactive_color;
       };
 
       group = {
-        "col.border_active" = active_color;
-        "col.border_inactive" = inactive_color;
 
         groupbar = {
           height = 20;
           font_size = 12;
-          text_color = "0xffDDDDDD";
-          "col.active" = active_color;
-          "col.inactive" = "0x807fb6e1";
         };
       };
 
@@ -97,7 +86,6 @@ in {
           enabled = true;
           range = 4;
           offset = "2 2";
-          color = "rgba(292c3cee)";
         };
       };
 

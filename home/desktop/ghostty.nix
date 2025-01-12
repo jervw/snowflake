@@ -3,14 +3,11 @@ _: {
     enable = true;
     settings = {
       window-decoration = false;
-      background-opacity = 0.8;
       confirm-close-surface = false;
       auto-update = "off";
 
-      font-size = 13;
-
       # Both improve startup time
-      gtk-single-instance = true;
+      gtk-single-instance = false; # FIX causing issues
       gtk-adwaita = false;
 
       keybind = [

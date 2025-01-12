@@ -1,4 +1,6 @@
-_: {
+{config, ...}: let
+  colors = config.lib.stylix.colors.withHashtag;
+in {
   programs.waybar = {
     enable = true;
     systemd = {
@@ -153,7 +155,7 @@ _: {
         };
         "custom/nixos" = {
           on-click = "fuzzel";
-          format = "<span color='#7FB6E1'> </span>";
+          format = "<span color='${colors.base0D}'> </span>";
           tooltip = false;
         };
         "custom/notification" = {
@@ -187,7 +189,7 @@ _: {
             "on-scroll" = 1;
             "on-click-right" = "mode";
             "format" = {
-              "today" = "<span color='#a6e3a1'><b><u>{}</u></b></span>";
+              "today" = "<span color='${colors.base0D}'><b><u>{}</u></b></span>";
             };
           };
         };
@@ -217,16 +219,16 @@ _: {
     };
 
     style = ''
-      @define-color background rgba(40, 44, 52, 0.7);
-      @define-color foreground rgba(221, 221, 221, 1);
-      @define-color accent rgba(127, 182, 225, 1);
-      @define-color tooltip rgba(0, 0, 0, 0.2);
-      @define-color hover rgba(40, 44, 52, 0.5);
-      @define-color red rgba(208, 114, 119, 1);
-      @define-color green rgba(161, 193, 129, 1);
-      @define-color blue rgba(115, 173, 233, 1);
-      @define-color yellow rgba(223, 193, 132, 1);
-      @define-color purple rgba(180, 119, 207, 1);
+      @define-color background ${colors.base00};
+      @define-color foreground ${colors.base05};
+      @define-color accent ${colors.base0D};
+      @define-color tooltip ${colors.base00};
+      @define-color hover ${colors.base00};
+      @define-color red ${colors.base08};
+      @define-color green ${colors.base0B};
+      @define-color blue ${colors.base0D};
+      @define-color yellow ${colors.base0A};
+      @define-color purple ${colors.base0E};
 
       * {
         font-family: "Noto Sans", "JetBrainsMono Nerd Font Propo";
@@ -237,24 +239,24 @@ _: {
         min-width: 0px;
       }
       tooltip {
-        background-color: @tooltip;
+        background-color: alpha(@tooltip, 0.2);
         text-shadow: none;
       }
       #waybar {
         background: none;
       }
       .modules-left {
-        background: @background;
+        background: alpha(@background, 0.7);
         border-radius: 0 0 15px 0;
         padding: 0 10px 0 0;
       }
       .modules-center {
-        background: @background;
+        background: alpha(@background, 0.7);
         border-radius: 0 0 15px 15px;
         padding: 0 20px;
       }
       .modules-right {
-        background: @background;
+        background: alpha(@background, 0.7);
         border-radius: 0 0 0 15px;
         padding: 0 0 0 10px;
       }
@@ -328,7 +330,7 @@ _: {
       #temperature:hover,
       #pulseaudio:hover {
         transition: background-color 200ms;
-        background-color: @hover;
+        background-color: alpha(@hover, 0.5);
       }
 
       #workspaces {

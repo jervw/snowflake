@@ -13,13 +13,6 @@ _: {
         inline_completion_provider = "copilot";
       };
       vim_mode = true;
-      ui_font_size = 18;
-      buffer_font_size = 16;
-      theme = {
-        mode = "system";
-        light = "One Dark";
-        dark = "One Dark";
-      };
     };
   };
 }
