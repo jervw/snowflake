@@ -5,7 +5,7 @@
   ...
 }: {
   imports = [
-    ./anyrun.nix
+    ./fuzzel.nix
     ./ghostty.nix
     ./mpv.nix
     ./stylix.nix
