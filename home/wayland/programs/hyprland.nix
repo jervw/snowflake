@@ -14,12 +14,6 @@ in {
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
-    systemd = {
-      variables = ["--all"];
-      extraCommands = [
-        "systemctl --user start hyprland-session.target"
-      ];
-    };
 
     settings = {
       "$MOD" = "SUPER";
@@ -36,7 +30,6 @@ in {
       };
 
       group = {
-
         groupbar = {
           height = 20;
           font_size = 12;
@@ -108,9 +101,9 @@ in {
       layerrule = [
         "ignorezero, waybar"
         "blur, waybar"
-        "noanim, anyrun"
-        "ignorezero, anyrun"
-        "blur, anyrun"
+        "noanim, launcher"
+        "ignorezero, launcher"
+        "blur, launcher"
       ];
 
       windowrulev2 = [
@@ -127,7 +120,7 @@ in {
       bind =
         [
           "$MOD, Return, exec, ${term}"
-          "$MOD, D, exec, pkill anyrun || anyrun"
+          "$MOD, D, exec, pkill fuzzel || fuzzel"
           "$MOD, V, exec, ${term} yazi"
           "$MOD, B, exec, zen"
           "$MOD, Z, exec, grimblast --notify --cursor copysave area"
