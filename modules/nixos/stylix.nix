@@ -11,7 +11,7 @@
 
   stylix = {
     enable = true;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/twilight.yaml";
     image = "${self}/wallpapers/lock.png";
     polarity = "dark";
     fonts = {
