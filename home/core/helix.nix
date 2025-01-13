@@ -40,7 +40,7 @@
         gutters.line-numbers.min-width = 1;
       };
       keys.normal = {
-        C-q = ":bclose";
+        C-w.x = ":bc";
         X = ["extend_line_up" "extend_to_line_bounds"];
         A-x = "extend_to_line_bounds";
         "0" = "goto_line_start";
