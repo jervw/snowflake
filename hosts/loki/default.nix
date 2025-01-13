@@ -8,11 +8,11 @@
     ./hardware-configuration.nix
 
     ../../modules/core
-    ../../modules/nixos
-    ../../modules/virtualisation
-    ../../modules/network
+    ../../modules/extra
     ../../modules/hardware
+    ../../modules/network
     ../../modules/services
+    ../../modules/virtualisation
   ];
 
   boot = {

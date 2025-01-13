@@ -3,11 +3,11 @@
     inputs.nixos-hardware.nixosModules.apple-t2
     ./hardware-configuration.nix
 
-    ../../modules/nixos/fonts.nix
-    ../../modules/nixos/quiet.nix
-    ../../modules/nixos/pipewire.nix
-    ../../modules/nixos/greetd.nix
-    ../../modules/nixos/wayland.nix
+    ../../modules/extra/stylix.nix
+    ../../modules/extra/quiet.nix
+    ../../modules/extra/pipewire.nix
+    ../../modules/extra/greetd.nix
+    ../../modules/extra/wayland.nix
 
     ../../modules/core
     ../../modules/network
