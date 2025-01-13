@@ -57,10 +57,7 @@
         ...
       }: {
         devShells.default = pkgs.mkShell {
-          packages = with pkgs; [
-            alejandra
-            deploy-rs
-          ];
+          packages = [pkgs.alejandra pkgs.deploy-rs];
         };
 
         treefmt = {
