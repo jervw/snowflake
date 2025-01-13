@@ -2,7 +2,8 @@
   imports = [
     ../../core
     ../../desktop
-    ../../wayland
+    ../../programs
+    ../../services
   ];
 
   programs = {
