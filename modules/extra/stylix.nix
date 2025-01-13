@@ -49,6 +49,10 @@
 
   fonts = {
     enableDefaultPackages = false;
-    packages = [pkgs.noto-fonts-emoji pkgs.font-awesome];
+    packages = with pkgs; [
+      noto-fonts-emoji
+      noto-fonts-cjk-sans
+      font-awesome
+    ];
   };
 }
