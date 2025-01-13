@@ -34,7 +34,11 @@
     };
 
     animations.enabled = lib.mkForce false;
-    decoration.blur.enabled = lib.mkForce false;
+
+    decoration = {
+      blur.enabled = lib.mkForce false;
+      shadow.enabled = lib.mkForce false;
+    };
 
     gestures = {
       workspace_swipe = true;
