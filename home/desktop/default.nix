@@ -16,7 +16,6 @@
   home.packages = with pkgs; [
     dconf
     ffmpeg
-    fractal
     libnotify
     feh
     nautilus
@@ -33,6 +32,6 @@
     qbittorrent-enhanced
     xdg-utils
     inputs.zen-browser.packages."${system}".default
-    self.packages.${pkgs.system}.cider2
+    self.packages.${system}.cider2
   ];
 }
