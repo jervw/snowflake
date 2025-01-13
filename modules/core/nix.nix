@@ -38,6 +38,9 @@
     # set the path for channels compat
     nixPath = lib.mapAttrsToList (key: _: "${key}=flake:${key}") config.nix.registry;
 
+    # remove channel functionality (nix-shell will stil work thanks to above)
+    channel.enable = false;
+
     optimise.automatic = true;
     daemonCPUSchedPolicy = "idle";
     daemonIOSchedClass = "idle";
