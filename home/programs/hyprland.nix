@@ -117,6 +117,10 @@ in {
         "workspace special, class:(cider)"
       ];
 
+      binds = {
+        movefocus_cycles_fullscreen = false;
+      };
+
       bind =
         [
           "$MOD, Return, exec, ${term}"
