@@ -9,8 +9,8 @@
 
     # Zero-conf packages
     extraPackages = with pkgs; [
-      nodePackages.bash-language-server
       gopls
+      marksman
       markdown-oxide
       clippy
     ];
@@ -46,6 +46,9 @@
         "0" = "goto_line_start";
         "$" = "goto_line_end";
       };
+      keys.normal.space = {
+        c = ":lsp-workspace-command";
+      };
       keys.select = {
         X = ["extend_line_up" "extend_to_line_bounds"];
         A-x = "extend_to_line_bounds";
@@ -71,6 +74,10 @@
           name = "python";
           language-servers = ["pyright" "ruff"];
           auto-format = true;
+        }
+        {
+          name = "markdown";
+          language-servers = ["markdown-oxide" "marksman"];
         }
         {
           name = "typescript";
