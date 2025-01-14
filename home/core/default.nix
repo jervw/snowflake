@@ -19,7 +19,6 @@
     ripgrep
     rclone
     tldr
-    aria2
     fd
   ];
 }

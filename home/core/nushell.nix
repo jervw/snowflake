@@ -1,4 +1,6 @@
 {pkgs, ...}: {
+  home.sessionVariables."SHELL" = "${pkgs.nushell}/bin/nu";
+
   programs = {
     nushell = {
       enable = true;
@@ -9,6 +11,10 @@
         tree = "eza --tree --icons";
         whereami = "curl ipinfo.io/city";
       };
+      extraConfig = ''
+        $env.config.buffer_editor = "hx"
+        $env.config.show_banner = false
+      '';
       plugins = [pkgs.nushellPlugins.highlight];
     };
 
