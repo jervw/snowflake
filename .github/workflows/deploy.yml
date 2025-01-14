@@ -51,4 +51,4 @@ jobs:
     - name: Build and deploy
       run: |
         set -euxo pipefail
-        nix run github:serokell/deploy-rs --skip-checks --hostname=${{ matrix.machine }}
+        nix run github:serokell/deploy-rs -- --skip-checks --hostname=${{ matrix.machine }}
