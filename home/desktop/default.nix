@@ -9,6 +9,7 @@
     ./ghostty.nix
     ./mpv.nix
     ./stylix.nix
+    ./zathura.nix
     ./xdg.nix
     ./zed.nix
   ];
