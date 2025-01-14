@@ -5,6 +5,7 @@
     ./fish.nix
     ./direnv.nix
     ./helix.nix
+    ./nushell.nix
     ./lazygit.nix
     ./syncthing.nix
     ./yazi.nix

@@ -1,9 +1,8 @@
 {pkgs, ...}: {
-  programs.fish.enable = true;
   users.users = {
     jervw = {
       isNormalUser = true;
-      shell = pkgs.fish;
+      shell = pkgs.nushell;
       extraGroups = [
         "networkmanager"
         "wheel"
