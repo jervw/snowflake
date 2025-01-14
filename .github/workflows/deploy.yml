@@ -7,8 +7,19 @@ on:
   workflow_dispatch:
 
 jobs:
+  check:
+    permissions:
+      id-token: "write"
+      contents: "read"
+    name: Check Nix Flake Inputs
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Check Nix flake inputs
+        uses: DeterminateSystems/flake-checker-action@main
+
   deploy:
-    needs: [check-flake]
+    needs: [check]
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
 
