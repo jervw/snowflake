@@ -1,0 +1,17 @@
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  check-flake:
+    permissions:
+      id-token: "write"
+      contents: "read"
+    name: Check Nix Flake Inputs
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Check Nix flake inputs
+        uses: DeterminateSystems/flake-checker-action@main

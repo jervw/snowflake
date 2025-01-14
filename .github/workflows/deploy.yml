@@ -4,12 +4,14 @@ on:
   push:
     branches:
       - "main"
+  check_suite:
+    types: [completed]
   workflow_dispatch:
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/main' && github.event.check_suite.conclusion == 'success'
 
     strategy:
       matrix:
