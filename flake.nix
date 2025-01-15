@@ -46,10 +46,9 @@
       systems = ["x86_64-linux"];
 
       imports = [
-        inputs.treefmt-nix.flakeModule
+        ./modules/flake
         ./hosts
         ./pkgs
-        ./deploy.nix
       ];
 
       perSystem = {
