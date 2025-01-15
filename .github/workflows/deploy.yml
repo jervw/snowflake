@@ -42,6 +42,9 @@ jobs:
     - name: Install Nix
       uses: DeterminateSystems/nix-installer-action@main
 
+    - name: "Setup Nix Cache"
+      uses: DeterminateSystems/magic-nix-cache-action@main
+
     - name: Add machine(s) to known hosts
       id: ssh-known-hosts
       run: |
