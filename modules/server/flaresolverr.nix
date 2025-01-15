@@ -1,4 +1,4 @@
-{
+_: {
   virtualisation.oci-containers.containers.flaresolverr = {
     image = "ghcr.io/flaresolverr/flaresolverr";
     ports = [
