@@ -56,6 +56,7 @@
         "https://cache.nixos.org?priority=10"
         "https://nyx.chaotic.cx"
         "https://cache.soopy.moe"
+        "https://jervw.cachix.org"
       ];
       trusted-substituters = [
         "https://cache.soopy.moe"
@@ -64,6 +65,7 @@
         "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
         "chaotic-nyx.cachix.org-1:HfnXSw4pj95iI/n17rIDy40agHj12WfF+Gqk6SonIT8="
         "cache.soopy.moe-1:0RZVsQeR+GOh0VQI9rvnHz55nVXkFardDqfm4+afjPo="
+        "jervw.cachix.org-1:RGhqW5Z0oES8ptL7fNwDnPU//I1pAoiQjarWhPGBTfE="
       ];
     };
   };
