@@ -18,7 +18,7 @@
         swtpm.enable = true;
         runAsRoot = true;
       };
-      onBoot = "ignore";
+      onBoot = "start";
       onShutdown = "shutdown";
       extraConfig = ''
         uri_default = "qemu:///system"
