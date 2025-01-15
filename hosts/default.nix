@@ -41,6 +41,7 @@
       ];
     };
 
+    # Laptop
     fenrir = nixosSystem {
       inherit specialArgs;
       modules = [
