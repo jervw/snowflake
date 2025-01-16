@@ -6,7 +6,6 @@
     ./helix.nix
     ./nushell.nix
     ./lazygit.nix
-    ./syncthing.nix
     ./yazi.nix
     ./zellij.nix
   ];
@@ -19,5 +18,6 @@
     rclone
     tldr
     fd
+    zoxide
   ];
 }

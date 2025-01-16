@@ -3,6 +3,7 @@ _: {
     ./hypridle.nix
     ./swaync.nix
     ./wlsunset.nix
+    ./syncthing.nix
   ];
 
   services = {
