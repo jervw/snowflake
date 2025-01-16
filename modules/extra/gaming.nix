@@ -29,7 +29,15 @@ in {
     extraCompatPackages = [pkgs.proton-ge-bin];
   };
 
-  environment.systemPackages = [pkgs.lutris pkgs.heroic];
+  environment.systemPackages = with pkgs; [
+    # Launchers
+    lutris
+    heroic
+
+    # Emulators
+    rpcs3
+    shadps4
+  ];
 
   programs.gamescope = {
     enable = true;
