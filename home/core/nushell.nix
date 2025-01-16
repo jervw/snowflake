@@ -14,6 +14,13 @@
       extraConfig = ''
         $env.config.buffer_editor = "hx"
         $env.config.show_banner = false
+
+        # Fish completer
+        let fish_completer = {|spans|
+          ${pkgs.fish}/bin/fish --command $'complete "--do-complete=($spans | str join " ")"'
+          | from tsv --flexible --noheaders --no-infer
+          | rename value description
+        }
       '';
       plugins = [pkgs.nushellPlugins.highlight];
     };
@@ -27,6 +34,7 @@
     carapace = {
       enable = true;
     };
+
     # Prompt
     starship = {
       enable = true;
