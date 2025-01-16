@@ -20,6 +20,7 @@
     libnotify
     feh
     nautilus
+    obsidian
     obs-studio
     openjdk
     pavucontrol
