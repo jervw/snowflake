@@ -25,7 +25,6 @@
     pavucontrol
     playerctl
     prismlauncher
-    seahorse
     tomato-c
     vesktop
     vial
