@@ -5,7 +5,7 @@
 
     ../../modules/extra/stylix.nix
     ../../modules/extra/quiet.nix
-    ../../modules/extra/greetd.nix
+    ../../modules/extra/sddm.nix
     ../../modules/extra/wayland.nix
 
     ../../modules/core

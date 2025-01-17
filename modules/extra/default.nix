@@ -1,7 +1,7 @@
 _: {
   imports = [
     ./wayland.nix
-    ./greetd.nix
+    ./sddm.nix
     ./stylix.nix
     ./gaming.nix
     ./quiet.nix

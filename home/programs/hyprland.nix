@@ -18,7 +18,6 @@ in {
     settings = {
       "$MOD" = "SUPER";
       exec-once = [
-        "hyprlock"
         "nm-applet"
       ];
 
