@@ -2,8 +2,9 @@ _: {
   imports = [
     ./hypridle.nix
     ./swaync.nix
-    ./wlsunset.nix
+    ./trayscale.nix
     ./syncthing.nix
+    ./wlsunset.nix
   ];
 
   services = {
