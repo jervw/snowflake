@@ -59,15 +59,11 @@ in {
       };
 
       misc = {
-        font_family = "Noto Sans";
         disable_autoreload = true;
         disable_hyprland_logo = true;
         disable_splash_rendering = true;
         animate_manual_resizes = true;
-        mouse_move_enables_dpms = true;
         key_press_enables_dpms = true;
-        enable_swallow = true;
-        swallow_regex = "^(${term})$";
         vrr = 1;
       };
 
@@ -128,11 +124,13 @@ in {
         [
           "$MOD, Return, exec, ${term}"
           "$MOD, D, exec, pkill fuzzel || fuzzel"
-          "$MOD, V, exec, ${term} yazi"
+          "$MOD, V, exec, ${term} -e yazi"
           "$MOD, B, exec, zen"
           "$MOD, Z, exec, grimblast --notify --cursor copysave area"
           "$MOD CTRL, Z, exec, grimblast --notify --cursor copysave output"
-          "$MOD, C, exec, hyprpicker -a | --autocopy"
+          "$MOD, C, exec, clipman pick --tool=CUSTOM --tool-args='fuzzel -d'"
+          "$MOD, M, exec, bemoji -t"
+          "$MOD, P, exec, hyprpicker -a | --autocopy"
           "$MOD SHIFT, E, exit"
 
           "$MOD, Q, killactive"
