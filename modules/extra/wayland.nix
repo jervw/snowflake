@@ -18,6 +18,7 @@
     systemPackages = with pkgs; [
       grimblast
       wl-clipboard
+      wtype
       wlr-randr
       hyprpicker
       xorg.xeyes

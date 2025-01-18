@@ -15,6 +15,7 @@
   ];
 
   home.packages = with pkgs; [
+    bemoji
     dconf
     ffmpeg
     libnotify
@@ -32,6 +33,7 @@
     networkmanagerapplet
     qbittorrent-enhanced
     xdg-utils
+    nodejs
     inputs.zen-browser.packages."${system}".default
     self.packages.${system}.cider2
   ];
