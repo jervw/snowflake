@@ -7,7 +7,6 @@
   programs.helix = {
     enable = true;
     package = inputs.helix.packages."${pkgs.system}".default;
-    defaultEditor = true;
 
     # Zero-conf packages
     extraPackages = with pkgs; [

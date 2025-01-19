@@ -1,5 +1,8 @@
 {pkgs, ...}: {
-  home.sessionVariables."SHELL" = "${pkgs.nushell}/bin/nu";
+  home.sessionVariables = {
+    SHELL = "nu";
+    EDITOR = "hx";
+  };
 
   programs = {
     nushell = {
