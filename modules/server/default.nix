@@ -7,6 +7,7 @@
     ./flaresolverr.nix
     ./glance.nix
     ./redlib.nix
+    ./nfs-server.nix
     ./media-services.nix
     ./immich.nix
     ./jellyfin.nix
