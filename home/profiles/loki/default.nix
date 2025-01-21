@@ -8,7 +8,7 @@
 
   wayland.windowManager.hyprland.settings = {
     exec-once = [
-      "sleep 5 && xrandr --output DP-1 --primary"
+      "xrandr --output DP-1 --primary"
     ];
     monitor = [
       ",highrr,auto,1"
@@ -21,6 +21,9 @@
       "4, monitor:DP-1"
       "5, monitor:DP-1"
     ];
+    cursor = {
+      default_monitor = "DP-1";
+    };
     input = {
       force_no_accel = true;
     };
