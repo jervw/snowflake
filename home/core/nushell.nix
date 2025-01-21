@@ -1,7 +1,6 @@
 {pkgs, ...}: {
   home.sessionVariables = {
     SHELL = "nu";
-    EDITOR = "hx";
   };
 
   programs = {
@@ -16,6 +15,7 @@
       };
       extraConfig = ''
         $env.config.buffer_editor = "hx"
+        $env.EDITOR = "hx"
         $env.config.show_banner = false
 
         # Fish completer

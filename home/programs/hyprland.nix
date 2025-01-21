@@ -22,7 +22,9 @@ in {
     settings = {
       "$MOD" = "SUPER";
       exec-once = [
+        "hyprlock"
         "nm-applet"
+        "eval $(gnome-keyring-daemon --start --components=secrets)"
       ];
 
       general = {
