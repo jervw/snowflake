@@ -44,8 +44,6 @@
         C-w.x = ":bc";
         X = ["extend_line_up" "extend_to_line_bounds"];
         A-x = "extend_to_line_bounds";
-        "0" = "goto_line_start";
-        "$" = "goto_line_end";
       };
       keys.normal.space = {
         c = ":lsp-workspace-command";
