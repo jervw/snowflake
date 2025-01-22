@@ -20,7 +20,8 @@
     ffmpeg
     libnotify
     feh
-    nautilus
+    xfce.thunar
+    xfce.thunar-archive-plugin
     obsidian
     obs-studio
     openjdk
