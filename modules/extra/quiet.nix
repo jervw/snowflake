@@ -1,7 +1,7 @@
 _: {
   boot = {
     plymouth = {
-      enable = true;
+      enable = false; # TODO re-enable when nvidia framebuffer rescales properly
     };
     kernelParams = [
       "quiet"
