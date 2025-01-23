@@ -36,7 +36,7 @@ in {
 
     # Emulators
     rpcs3
-    shadps4
+    # shadps4
   ];
 
   programs.gamescope = {
