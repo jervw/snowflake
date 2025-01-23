@@ -1,6 +1,11 @@
-_: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   programs.ghostty = {
     enable = true;
+    package = inputs.ghostty.packages.${pkgs.system}.default;
     settings = {
       window-decoration = false;
       confirm-close-surface = false;
@@ -13,6 +18,7 @@ _: {
       keybind = [
         # Tabs
         "ctrl+t=new_tab"
+        "ctrl+w=close_tab"
         "ctrl+shift+h=previous_tab"
         "ctrl+shift+l=next_tab"
 

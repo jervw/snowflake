@@ -7,6 +7,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     treefmt-nix.url = "github:numtide/treefmt-nix";
     stylix.url = "github:danth/stylix";
+    ghostty.url = "github:ghostty-org/ghostty";
 
     agenix = {
       url = "github:ryantm/agenix";
