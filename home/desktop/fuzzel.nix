@@ -1,9 +1,9 @@
-{pkgs, ...}: {
+_: {
   programs.fuzzel = {
     enable = true;
     settings = {
       main = {
-        terminal = "${pkgs.ghostty}/bin/ghostty -e";
+        terminal = "ghostty -e";
         layer = "overlay";
       };
       border = {
