@@ -109,12 +109,11 @@ in {
 
       windowrulev2 = [
         "noshadow, floating:0"
-        "suppressevent maximize, class:^(zen-alpha)$"
+        "suppressevent maximize, class:^(zen)$"
         "float, title:^(Volume Control)$"
-        "stayfocused, title:^(Syncthing Tray)$"
         "float, class:mpv"
         "float, title:^(Picture in picture)$"
-        "workspace 1, class:(VencordDesktop)"
+        "workspace 1, class:(vesktop)"
         "workspace special, class:(cider)"
       ];
 
