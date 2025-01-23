@@ -16,6 +16,7 @@
       efi.canTouchEfiVariables = true;
     };
 
-    kernelPackages = pkgs.linuxPackages_latest;
+    # TODO Wait until packages are fixed
+    # kernelPackages = pkgs.linuxPackages_latest;
   };
 }
