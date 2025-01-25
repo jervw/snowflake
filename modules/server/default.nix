@@ -1,7 +1,8 @@
-{
+_: {
   imports = [
     ./adguard.nix
     ./audiobookshelf.nix
+    ./beszel-hub.nix
     ./caddy.nix
     ./downloads.nix
     ./flaresolverr.nix

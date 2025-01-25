@@ -33,6 +33,11 @@
                     {
                       links = [
                         {
+                          title = "Beszel";
+                          icon = "si:caddy";
+                          url = "https://monitor.jervw.dev";
+                        }
+                        {
                           title = "Plex";
                           icon = "si:plex";
                           url = "https://plex.jervw.dev";

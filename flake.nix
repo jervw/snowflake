@@ -48,6 +48,7 @@
       imports = [
         ./modules/flake
         ./hosts
+        ./lib
         ./pkgs
       ];
 
