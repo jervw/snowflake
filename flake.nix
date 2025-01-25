@@ -2,7 +2,7 @@
   description = "jervw's NixOS configurations";
 
   inputs = {
-    helix.url = "github:jervw/helix";
+    helix.url = "github:helix-editor/helix";
     nixos-hardware.url = "github:nixos/nixos-hardware";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     treefmt-nix.url = "github:numtide/treefmt-nix";
