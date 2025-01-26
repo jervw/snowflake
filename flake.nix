@@ -8,6 +8,7 @@
     treefmt-nix.url = "github:numtide/treefmt-nix";
     stylix.url = "github:danth/stylix";
     ghostty.url = "github:ghostty-org/ghostty";
+    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
 
     agenix = {
       url = "github:ryantm/agenix";

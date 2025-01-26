@@ -1,5 +1,10 @@
-_: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   imports = [
+    inputs.chaotic.nixosModules.default
     ./hardware-configuration.nix
 
     ../../modules/core
@@ -16,7 +21,6 @@ _: {
       efi.canTouchEfiVariables = true;
     };
 
-    # TODO Wait until packages are fixed
-    # kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_cachyos;
   };
 }
