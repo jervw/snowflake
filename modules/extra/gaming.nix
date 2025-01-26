@@ -39,15 +39,20 @@
       enable = true;
       enableRenice = true;
       settings = let
+        primaryMonitor = "DP-1";
         hyprctl = "${config.programs.hyprland.package}/bin/hyprctl";
         gamemodeStart = pkgs.writeShellScript "gamemode-start-script" ''
           ${pkgs.libnotify}/bin/notify-send 'GameMode started'
+
+          # Set Xwayland primary monitor
+          ${pkgs.xorg.xrandr}/bin/xrandr --output ${primaryMonitor} --primary
+
+          # Disable Hyprland bling bling
           ${hyprctl} --instance 0 --batch "\
               keyword animations:enabled 0;\
               keyword decoration:drop_shadow 0;\
               keyword decoration:blur:enabled 0;\
               keyword general:border_size 1;\
-              keyword monitor HDMI-A-1, disable;\
               keyword decoration:rounding 0"
         '';
 

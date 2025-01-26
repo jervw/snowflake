@@ -7,9 +7,6 @@
   ];
 
   wayland.windowManager.hyprland.settings = {
-    exec-once = [
-      "xrandr --output DP-1 --primary"
-    ];
     monitor = [
       ",highrr,auto,1"
       "HDMI-A-1,preferred,auto-left,1"
