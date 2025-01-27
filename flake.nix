@@ -3,6 +3,7 @@
 
   inputs = {
     helix.url = "github:helix-editor/helix";
+    hyprland.url = "github:hyprwm/Hyprland";
     nixos-hardware.url = "github:nixos/nixos-hardware";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     treefmt-nix.url = "github:numtide/treefmt-nix";

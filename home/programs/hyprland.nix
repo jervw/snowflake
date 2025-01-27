@@ -69,8 +69,11 @@ in {
         vrr = 1;
       };
 
+      ecosystem.no_update_news = true;
+
       decoration = {
         rounding = 15;
+        rounding_power = 4.0;
         blur = {
           enabled = true;
           size = 5;
