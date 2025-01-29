@@ -109,7 +109,7 @@
                 {
                   type = "search";
                   search-engine = "https://kagi.com/search?q={QUERY}";
-                  autofocus = true;
+                  autofocus = false;
                 }
                 {
                   type = "group";
