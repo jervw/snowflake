@@ -13,8 +13,11 @@
 ## :spiral_notepad: Features
 
 - Multi-config repo, with configs for **servers**, **laptop**, and **desktop**
+- Opt-in impermanence
+- Full-disk encryption and Secure Boot
 - Wayland config for Hyprland with an NVIDIA GPU
 - Agenix for secrets management
+- System-wide styling via [stylix](https://github.com/danth/stylix)
 - Linted and styled with [alejandra](https://github.com/kamadorueda/alejandra), [deadnix](https://github.com/astro/deadnix), and [statix](https://github.com/nerdypepper/statix)
 
 
