@@ -18,9 +18,7 @@
         # Config
         $env.config.buffer_editor = "hx"
         $env.config.show_banner = false
-        $env.config.rm.always_trash = true
         $env.config.highlight_resolved_externals = true
-
 
         # Fish completer
         let fish_completer = {|spans|
