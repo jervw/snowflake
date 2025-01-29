@@ -2,6 +2,7 @@
   pkgs,
   self,
   config,
+  user,
   lib,
   ...
 }: let
@@ -17,6 +18,7 @@ in {
     enable = true;
     authKeyFile = config.age.secrets.tailscale.path;
     openFirewall = true;
+    extraSetFlags = ["--operator=${user}"];
     extraUpFlags = lib.optionals (hostName == "thor") [
       "--accept-dns=false"
       "--ssh"
