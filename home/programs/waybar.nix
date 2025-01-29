@@ -114,15 +114,15 @@ in {
           format-bluetooth = "{volume}% {icon}";
           format-muted = "󰝟 ";
           format-icons = {
-            "headphones" = "  ";
-            "handsfree" = "  ";
-            "headset" = "  ";
-            "phone" = "  ";
-            "portable" = "  ";
-            "car" = "  ";
+            "headphones" = " ";
+            "handsfree" = " ";
+            "headset" = " ";
+            "phone" = " ";
+            "portable" = " ";
+            "car" = " ";
             "default" = [
-              "  "
-              "  "
+              " "
+              " "
             ];
           };
           on-click = "pavucontrol";
@@ -130,10 +130,10 @@ in {
         };
         "network" = {
           interval = 2;
-          format-wifi = "   {bandwidthDownBits}";
-          format-ethernet = " 󰈀  {bandwidthDownBits}";
+          format-wifi = " {bandwidthDownBits} ";
+          format-ethernet = " {bandwidthDownBits} 󰈀";
           format-disconnected = "󰈂";
-          format-linked = "";
+          format-linked = " ";
           tooltip-format = "{ipaddr}";
           tooltip-format-wifi = "{essid} ({signalStrength}%)   \n{ipaddr} | {frequency} MHz{icon} \n {bandwidthDownBits}  {bandwidthUpBits} ";
           tooltip-format-ethernet = "{ifname} 󰈀 \n{ipaddr} | {frequency} MHz{icon} \n󰈀 {bandwidthDownBits}  {bandwidthUpBits} ";
@@ -145,12 +145,12 @@ in {
         };
         "cpu" = {
           interval = 1;
-          format = "{usage}%  ";
+          format = "{usage}% ";
         };
         "temperature" = {
           interval = 1;
           hwmon-path = ["/sys/class/hwmon/hwmon0/temp1_input" "/sys/class/hwmon/hwmon1/temp1_input" "/sys/class/hwmon/hwmon2/temp1_input" "/sys/class/hwmon/hwmon3/temp1_input"];
-          format = "{temperatureC} °C  ";
+          format = "{temperatureC} °C ";
           tooltip-format = "Core Temp: {temperatureC}°C ";
         };
         "custom/nixos" = {
