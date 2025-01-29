@@ -4,28 +4,32 @@
   boot.kernelModules = ["kvm-amd"];
   boot.extraModulePackages = [];
 
+  boot.initrd.luks.devices."nixos".device = "/dev/disk/by-uuid/301b7699-29d4-4bc3-907d-418a3d126b4a";
+
   fileSystems = {
     "/" = {
-      device = "/dev/disk/by-label/nixos";
-      fsType = "btrfs";
-      options = ["subvol=root" "noatime" "compress=zstd"];
+      device = "none";
+      fsType = "tmpfs";
+      options = ["defaults" "size=25%" "mode=0755"];
     };
 
-    "/home" = {
-      device = "/dev/disk/by-label/nixos";
+    "/nix" = {
+      device = "/dev/disk/by-label/NIXOS";
       fsType = "btrfs";
-      options = ["subvol=home" "noatime" "compress=zstd"];
+      options = ["subvol=nix" "compress=zstd" "noatime"];
     };
 
-    "/mnt/storage" = {
-      device = "/dev/disk/by-label/storage";
-      fsType = "ext4";
-      options = ["noatime" "nofail"];
+    "/persist" = {
+      device = "/dev/disk/by-label/NIXOS";
+      fsType = "btrfs";
+      options = ["subvol=persist" "compress=zstd" "noatime"];
+      neededForBoot = true;
     };
 
     "/boot" = {
-      device = "/dev/disk/by-label/efi";
+      device = "/dev/disk/by-label/BOOT";
       fsType = "vfat";
+      options = ["fmask=0022" "dmask=0022"];
     };
   };
 
