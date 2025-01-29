@@ -1,12 +1,10 @@
 {
   pkgs,
-  inputs,
   lib,
   ...
 }: {
   programs.helix = {
     enable = true;
-    package = inputs.helix.packages."${pkgs.system}".default;
 
     # Zero-conf packages
     extraPackages = with pkgs; [
