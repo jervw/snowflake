@@ -26,6 +26,12 @@
       neededForBoot = true;
     };
 
+    "/mnt/storage" = {
+      device = "/dev/disk/by-label/storage";
+      fsType = "ext4";
+      options = ["noatime" "nofail"];
+    };
+
     "/boot" = {
       device = "/dev/disk/by-label/boot";
       fsType = "vfat";
