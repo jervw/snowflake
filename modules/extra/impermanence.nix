@@ -41,8 +41,8 @@ in {
         ++ forEach ["nix" "zen"] (
           x: ".cache/${x}"
         )
-        ++ forEach ["direnv" "PrismLauncher" "zed"] (x: ".local/share/${x}")
-        ++ forEach ["syncthing"] (x: ".local/state/${x}")
+        ++ forEach ["direnv" "PrismLauncher" "zed" "Steam"] (x: ".local/share/${x}")
+        ++ forEach ["syncthing" "wireplumber"] (x: ".local/state/${x}")
         ++ [
           {
             directory = ".ssh";
