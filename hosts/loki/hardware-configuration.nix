@@ -14,20 +14,20 @@
     };
 
     "/nix" = {
-      device = "/dev/disk/by-label/NIXOS";
+      device = "/dev/disk/by-label/nixos";
       fsType = "btrfs";
       options = ["subvol=nix" "compress=zstd" "noatime"];
     };
 
     "/persist" = {
-      device = "/dev/disk/by-label/NIXOS";
+      device = "/dev/disk/by-label/nixos";
       fsType = "btrfs";
       options = ["subvol=persist" "compress=zstd" "noatime"];
       neededForBoot = true;
     };
 
     "/boot" = {
-      device = "/dev/disk/by-label/BOOT";
+      device = "/dev/disk/by-label/boot";
       fsType = "vfat";
       options = ["fmask=0022" "dmask=0022"];
     };
