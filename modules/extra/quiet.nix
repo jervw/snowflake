@@ -19,6 +19,9 @@ _: {
     loader = {
       timeout = 4;
       systemd-boot.configurationLimit = 5;
+      systemd-boot = {
+        consoleMode = "max";
+      };
     };
   };
 }

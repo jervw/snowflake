@@ -20,7 +20,9 @@
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
     };
-
     kernelPackages = pkgs.linuxPackages_cachyos;
+
+    # Forcing primary monitor to match the secondary resolution at KMS to avoid broken plymouth scaling.
+    kernelParams = ["video=DP-1:1920x1080@60"];
   };
 }
