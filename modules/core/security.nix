@@ -12,14 +12,11 @@ _: {
         settings.cue = true;
       };
     };
-    sudo = {
+    sudo.enable = false;
+    sudo-rs = {
       enable = true;
+      wheelNeedsPassword = false;
       execWheelOnly = true;
-      extraConfig = ''
-        Defaults lecture = never
-        Defaults pwfeedback
-        Defaults timestamp_timeout = 60
-      '';
     };
   };
 
