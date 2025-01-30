@@ -1,5 +1,6 @@
 {
   inputs,
+  pkgs,
   lib,
   ...
 }: {
@@ -16,4 +17,8 @@
 
     initrd.systemd.tpm2.enable = true;
   };
+
+  systemd.tpm2.enable = true;
+
+  environment.systemPackages = [pkgs.tpm2-tss];
 }
