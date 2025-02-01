@@ -6,6 +6,9 @@
         name = config.programs.git.userName;
         email = config.programs.git.userEmail;
       };
+      ui = {
+        default-command = "log";
+      };
     };
   };
 }
