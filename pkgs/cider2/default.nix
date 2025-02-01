@@ -5,7 +5,7 @@
   stdenv,
 }: let
   pname = "Cider";
-  version = "01-13-2025";
+  version = "02-01-2025";
 
   # Packages are not public domain.
   # Buy Cider from https://cidercollective.itch.io/cider
