@@ -50,7 +50,7 @@
       warn-dirty = false;
       builders-use-substitutes = true;
       keep-outputs = true;
-      allowed-users = ["@wheel"];
+      allowed-users = ["@wheel" "code-server"];
       trusted-users = ["root" "@wheel"];
       substituters = [
         "https://cache.nixos.org?priority=10"
