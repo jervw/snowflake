@@ -16,10 +16,11 @@
 
   home.packages = with pkgs; [
     bemoji
+    ciano
     dconf
     ffmpeg
     libnotify
-    feh
+    imv
     xfce.thunar
     xfce.thunar-archive-plugin
     obsidian

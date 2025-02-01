@@ -7,7 +7,7 @@
   browser = ["zen"];
   editor = ["Helix"];
   fileManager = ["yazi"];
-  imageViewer = ["feh"];
+  imageViewer = ["imv"];
   mediaPlayer = ["mpv"];
   torrentClient = ["org.qbittorrent.qBittorrent"];
 
