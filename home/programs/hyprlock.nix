@@ -15,7 +15,6 @@ _: {
       };
 
       input-field = {
-        size = "300, 50";
         outline_thickness = 2;
 
         fade_on_empty = false;
@@ -29,7 +28,7 @@ _: {
       label = {
         text = "$TIME";
         font_size = 75;
-        position = "0, 100";
+        position = "0, 200";
         valign = "center";
         halign = "center";
       };
