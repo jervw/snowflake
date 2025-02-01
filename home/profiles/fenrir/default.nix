@@ -6,10 +6,6 @@
     ../../services
   ];
 
-  programs = {
-    hyprlock.settings.general.fractional_scaling = 1;
-  };
-
   # Workaround to fix issue with cursor scaling on HIDPI
   home.pointerCursor.gtk.enable = lib.mkForce false;
 
