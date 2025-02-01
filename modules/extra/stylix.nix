@@ -2,7 +2,6 @@
   inputs,
   config,
   pkgs,
-  self,
   ...
 }: {
   imports = [
@@ -12,7 +11,10 @@
   stylix = {
     enable = true;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/twilight.yaml";
-    image = "${self}/wallpapers/lock.png";
+    image = pkgs.fetchurl {
+      url = "https://r2.jervw.dev/lock.png";
+      sha256 = "sha256-aO5WlhP4ktnyTlzvJpj79MC5es73Vwb8DYrvgBiw4s4=";
+    };
     polarity = "dark";
     fonts = {
       sizes = {
