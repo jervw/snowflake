@@ -7,7 +7,7 @@ concurrency: build
 jobs:
   build-images:
     name: "Build ISO Image"
-    if: github.repository == 'jervw/nixos-config'
+    if: github.repository == 'jervw/snowflake'
     runs-on: ubuntu-latest
     strategy:
       matrix:
