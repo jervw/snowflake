@@ -83,7 +83,6 @@
           name = "typescript";
           shebangs = ["deno"];
           roots = ["deno.json" "deno.jsonc" "package.json"];
-          auto-format = true;
           language-servers = ["deno-lsp"];
         }
       ];
