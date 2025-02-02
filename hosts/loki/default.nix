@@ -13,6 +13,8 @@
     ../../modules/network
     ../../modules/services
     ../../modules/virtualisation
+
+    ../../modules/network/nfs.nix
   ];
 
   boot = {
