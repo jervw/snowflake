@@ -4,7 +4,6 @@
     ./fastfetch.nix
     ./direnv.nix
     ./helix.nix
-    ./jujutsu.nix
     ./nushell.nix
     ./lazygit.nix
     ./yazi.nix
