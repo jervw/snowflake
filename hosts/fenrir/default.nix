@@ -11,6 +11,8 @@
     ../../modules/core
     ../../modules/network
     ../../modules/services
+
+    ../../modules/hardware/bluetooth.nix
   ];
 
   # Suspend is broken on T2-Macs since Sonoma
