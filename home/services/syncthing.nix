@@ -6,7 +6,7 @@
       devices = {
         # Desktop
         loki = {
-          id = "5JQOQEZ-EW42SJV-VZOA4TN-LAPYPYY-QDSRR6T-DTP3BC6-ZQGYTIH-YTTPVQQ";
+          id = "BDUDP4Q-HUNQ4YK-HTGNC5K-PHXJMDT-LW6YXBX-ALGJRFB-RTRTQ33-B6RSYAI";
           autoAcceptFolders = true;
         };
         # Server
