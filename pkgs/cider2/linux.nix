@@ -31,5 +31,7 @@ in
     '';
 
     multiArch = false;
-    extraPkgs = appimageTools.defaultFhsEnvArgs.multiPkgs;
+    extraPkgs = pkgs:
+      [pkgs.libnotify]
+      ++ appimageTools.defaultFhsEnvArgs.multiPkgs pkgs;
   }
