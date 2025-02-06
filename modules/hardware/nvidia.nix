@@ -6,15 +6,10 @@
   services.xserver.videoDrivers = ["nvidia"];
 
   boot = {
-    kernelParams = [
-      "nvidia-drm.fbdev=1"
-    ];
-    initrd.kernelModules = [
+    kernelModules = [
       "nvidia"
       "nvidia_modeset"
       "nvidia_drm"
-    ];
-    kernelModules = [
       "nvidia_uvm" # Can be loaded later since it's only needed for CUDA
     ];
   };
