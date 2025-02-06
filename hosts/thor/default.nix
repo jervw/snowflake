@@ -1,6 +1,8 @@
-{lib, ...}: let
-  interface = "enp4s0";
-in {
+{
+  lib,
+  inputs,
+  ...
+}: {
   imports = [
     ./hardware-configuration.nix
 
@@ -23,7 +25,21 @@ in {
     };
   };
 
-  networking = {
+  system.autoUpgrade = {
+    enable = true;
+    flake = inputs.self.outPath;
+    flags = [
+      "--update-input"
+      "nixpkgs"
+      "--print-build-logs"
+    ];
+    dates = "06:00";
+    randomizedDelaySec = "45min";
+  };
+
+  networking = let
+    interface = "enp4s0";
+  in {
     networkmanager.enable = lib.mkForce false;
     hostId = "7f6f07cd";
     nftables.enable = true;
