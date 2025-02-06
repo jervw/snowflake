@@ -1,18 +1,13 @@
-{
-  pkgs,
-  inputs,
-  ...
-}: {
+_: {
   programs.ghostty = {
     enable = true;
-    package = inputs.ghostty.packages.${pkgs.system}.default;
     settings = {
       window-decoration = false;
       confirm-close-surface = false;
       auto-update = "off";
 
       # Both improve startup time
-      gtk-single-instance = false; # FIX causing issues
+      gtk-single-instance = true; # FIX causing issues
       gtk-adwaita = false;
 
       keybind = [

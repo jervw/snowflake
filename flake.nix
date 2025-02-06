@@ -2,13 +2,11 @@
   description = "jervw's NixOS configurations";
 
   inputs = {
-    hyprland.url = "github:hyprwm/Hyprland";
     impermanence.url = "github:nix-community/impermanence";
     nixos-hardware.url = "github:nixos/nixos-hardware";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     treefmt-nix.url = "github:numtide/treefmt-nix";
     stylix.url = "github:danth/stylix";
-    ghostty.url = "github:ghostty-org/ghostty";
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
 
     agenix = {
