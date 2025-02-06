@@ -4,7 +4,7 @@
   config,
   ...
 }:
-lib.mkIf (config.services.tailscale.enable) {
+lib.mkIf config.services.tailscale.enable {
   # NAS through Tailscale
   environment.systemPackages = with pkgs; [nfs-utils];
   boot.initrd = {
