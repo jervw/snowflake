@@ -19,10 +19,16 @@ _: {
     ./tautulli.nix
   ];
 
-  services.caddy.virtualHosts."dawarich.jervw.dev".extraConfig = ''
-    reverse_proxy http://127.0.0.1:3011
-    import cloudflare
-  '';
+  services.caddy.virtualHosts = {
+    "dawarich.jervw.dev".extraConfig = ''
+      reverse_proxy http://127.0.0.1:3011
+      import cloudflare
+    '';
+    "hoarder.jervw.dev".extraConfig = ''
+      reverse_proxy http://127.0.0.1:3020
+      import cloudflare
+    '';
+  };
 
   users = {
     groups.media = {};
