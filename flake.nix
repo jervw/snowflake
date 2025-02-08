@@ -41,7 +41,8 @@
     };
 
     zen-browser = {
-      url = "github:omarcresp/zen-browser-flake";
+      # url = "github:omarcresp/zen-browser-flake";
+      url = "github:leonhazen/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
