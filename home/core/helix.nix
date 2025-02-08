@@ -40,18 +40,21 @@
         gutters.line-numbers.min-width = 1;
       };
       keys.normal = {
-        "L" = ":bnext";
-        "H" = ":bprev";
+        S-h = "goto_previous_buffer";
+        S-l = "goto_next_buffer";
+        A-w = "move_next_sub_word_start";
+        A-b = "move_prev_sub_word_start";
+        A-e = "move_next_sub_word_end";
+        A-E = "move_prev_sub_word_end";
         C-w.x = ":bc";
-        X = ["extend_line_up" "extend_to_line_bounds"];
-        A-x = "extend_to_line_bounds";
+        X = "extend_line_above";
       };
       keys.normal.space = {
         c = ":lsp-workspace-command";
+        o = ":sh gh repo view --web";
       };
       keys.select = {
-        X = ["extend_line_up" "extend_to_line_bounds"];
-        A-x = "extend_to_line_bounds";
+        X = "extend_line_above";
       };
     };
 
