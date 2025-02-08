@@ -35,13 +35,13 @@ in {
           ".dots"
           ".zen"
         ]
-        ++ forEach ["dconf" "rclone" "sh.cider.genten" "nushell" "vesktop" "obs-studio" "github-copilot" "zed" "gh"] (
+        ++ forEach ["dconf" "heroic" "obsidian" "rclone" "sh.cider.genten" "nushell" "vesktop" "obs-studio" "github-copilot" "zed" "gh"] (
           x: ".config/${x}"
         )
         ++ forEach ["nix" "zen"] (
           x: ".cache/${x}"
         )
-        ++ forEach ["direnv" "PrismLauncher" "zed" "Steam" "zoxide"] (x: ".local/share/${x}")
+        ++ forEach ["direnv" "PrismLauncher" "zed" "Steam" "zoxide" "Trash"] (x: ".local/share/${x}")
         ++ forEach ["syncthing"] (x: ".local/state/${x}")
         ++ [
           {
