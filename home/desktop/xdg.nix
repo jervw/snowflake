@@ -9,6 +9,7 @@
   fileManager = ["yazi"];
   imageViewer = ["imv"];
   mediaPlayer = ["mpv"];
+  docView = ["zathura"];
   torrentClient = ["org.qbittorrent.qBittorrent"];
 
   # Stolen from @fufexan
@@ -22,9 +23,9 @@
   image = xdgAssociations "image" imageViewer ["png" "svg" "jpeg" "gif" ".svg"];
   video = xdgAssociations "video" mediaPlayer ["mp4" "avi" "mkv" "webm" "mov"];
   audio = xdgAssociations "audio" mediaPlayer ["mp3" "flac" "wav" "aac"];
+  document = xdgAssociations "documents" docView ["pdf"];
   browserTypes =
     (xdgAssociations "application" browser [
-      "pdf"
       "x-extension-htm"
       "x-extension-html"
       "x-extension-shtml"
@@ -50,6 +51,7 @@
     // image
     // video
     // audio
+    // document
     // browserTypes);
 in {
   xdg = {
