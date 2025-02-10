@@ -27,6 +27,10 @@
         lsp.display-inlay-hints = false;
         end-of-line-diagnostics = "hint";
         inline-diagnostics.cursor-line = "warning";
+        soft-wrap = {
+          enable = true;
+          max-wrap = 25;
+        };
         whitespace.characters = {
           tab = "→";
           newline = "⏎";
