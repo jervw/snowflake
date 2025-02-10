@@ -12,8 +12,8 @@
     enable = true;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/twilight.yaml";
     image = pkgs.fetchurl {
-      url = "https://r2.jervw.dev/lock.png";
-      sha256 = "sha256-aO5WlhP4ktnyTlzvJpj79MC5es73Vwb8DYrvgBiw4s4=";
+      url = "https://r2.jervw.dev/wallhaven-zmmkkv.png";
+      sha256 = "sha256-0inPCzg8mQSd8P/dsuUh1qy+KRmHcD7hWQXptoLFQRE=";
     };
     polarity = "dark";
     fonts = {
