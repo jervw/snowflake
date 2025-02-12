@@ -10,7 +10,7 @@
 
   stylix = {
     enable = true;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/twilight.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/decaf.yaml";
     image = pkgs.fetchurl {
       url = "https://r2.jervw.dev/wallhaven-zmmkkv.png";
       sha256 = "sha256-0inPCzg8mQSd8P/dsuUh1qy+KRmHcD7hWQXptoLFQRE=";
