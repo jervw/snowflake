@@ -12,8 +12,8 @@ _: {
     ./nfs-server.nix
     ./media-services.nix
     ./immich.nix
-    ./jellyfin.nix
-    ./jellyseerr.nix
+    # ./jellyfin.nix
+    # ./jellyseerr.nix
     ./overseerr.nix
     ./plex.nix
     ./tautulli.nix
