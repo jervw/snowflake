@@ -27,12 +27,6 @@
           | from tsv --flexible --noheaders --no-infer
           | rename value description
         }
-
-        # Shorthand for 'nix shell nixpkgs#<package>' to temporarily install a package
-        def nsh [...packages: string] {
-          let pkgs = ($packages | each {|p| $"nixpkgs#($p)"})
-          ^nix shell ...$pkgs
-        }
       '';
       plugins = [pkgs.nushellPlugins.highlight];
     };
