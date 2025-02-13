@@ -10,7 +10,6 @@
     extraPackages = with pkgs; [
       gopls
       marksman
-      markdown-oxide
       clippy
     ];
 
@@ -67,7 +66,7 @@
         {
           name = "nix";
           auto-format = true;
-          language-servers = ["nixd"];
+          language-servers = ["nixd" "harper"];
           formatter = {
             command = lib.getExe pkgs.alejandra;
             args = ["-q"];
@@ -75,27 +74,37 @@
         }
         {
           name = "rust";
+          language-servers = ["rust-analyzer" "harper"];
           auto-format = true;
         }
         {
           name = "python";
-          language-servers = ["pyright" "ruff"];
+          language-servers = ["pyright" "ruff" "harper"];
           auto-format = true;
         }
         {
           name = "markdown";
-          language-servers = ["markdown-oxide" "marksman"];
+          language-servers = ["marksman" "harper"];
         }
         {
           name = "typescript";
           shebangs = ["deno"];
           roots = ["deno.json" "deno.jsonc" "package.json"];
-          language-servers = ["deno-lsp"];
+          language-servers = ["deno-lsp" "harper"];
+          auto-format = true;
         }
       ];
 
       # LSP's
       language-server = {
+        harper = {
+          command = "${pkgs.harper}/bin/harper-ls";
+          args = ["--stdio"];
+        };
+        # mpls = {
+        #   # command = lib.getExe self.packages.${pkgs.system}.mpls;
+        #   args = ["--dark-mode" "--enable-emoji"];
+        # };
         clangd = {
           command = "${pkgs.clang-tools}/bin/clangd";
           clangd.fallbackFlags = ["-std=c++2b"];
