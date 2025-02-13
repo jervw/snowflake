@@ -32,10 +32,10 @@
   nix = let
     flakeInputs = lib.filterAttrs (_: v: lib.isType "flake" v) inputs;
   in {
-    # pin the registry to avoid downloading and evaling a new nixpkgs version every time
+    # Pin the registry to avoid downloading and evaluating a new nixpkgs version every time
     registry = lib.mapAttrs (_: v: {flake = v;}) flakeInputs;
 
-    # set the path for channels compat
+    # set the path for channels
     nixPath = lib.mapAttrsToList (key: _: "${key}=flake:${key}") config.nix.registry;
 
     # remove channel functionality (nix-shell will stil work thanks to above)
@@ -55,9 +55,8 @@
       substituters = [
         "https://cache.nixos.org?priority=10"
         "https://nyx.chaotic.cx"
+        "https://nix-community.cachix.org"
         "https://cache.soopy.moe"
-        "https://hyprland.cachix.org"
-        "https://helix.cachix.org"
       ];
       trusted-substituters = [
         "https://cache.soopy.moe"
@@ -65,9 +64,8 @@
       trusted-public-keys = [
         "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
         "chaotic-nyx.cachix.org-1:HfnXSw4pj95iI/n17rIDy40agHj12WfF+Gqk6SonIT8="
+        "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
         "cache.soopy.moe-1:0RZVsQeR+GOh0VQI9rvnHz55nVXkFardDqfm4+afjPo="
-        "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
-        "helix.cachix.org-1:ejp9KQpR1FBI2onstMQ34yogDm4OgU2ru6lIwPvuCVs="
       ];
     };
   };
