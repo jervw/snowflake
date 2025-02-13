@@ -21,8 +21,6 @@
     ffmpeg
     libnotify
     imv
-    xfce.thunar
-    xfce.thunar-archive-plugin
     obsidian
     obs-studio
     openjdk
