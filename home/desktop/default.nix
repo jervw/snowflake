@@ -17,6 +17,7 @@
 
   home.packages = with pkgs; [
     bemoji
+    cartridges
     dconf
     ffmpeg
     libnotify
@@ -25,6 +26,7 @@
     obs-studio
     openjdk
     pavucontrol
+    mission-center
     playerctl
     prismlauncher
     tomato-c

@@ -129,6 +129,7 @@ in {
 
       bind =
         [
+          # Programs
           "$MOD, Return, exec, ${term}"
           "$MOD, D, exec, pkill fuzzel || fuzzel"
           "$MOD, V, exec, ${term} -e yazi"
@@ -137,24 +138,30 @@ in {
           "$MOD CTRL, Z, exec, grimblast --notify --cursor copysave output"
           "$MOD, C, exec, clipman pick --tool=CUSTOM --tool-args='fuzzel -d'"
           "$MOD, M, exec, bemoji -t"
+          "$MOD, M, exec, bemoji -t"
           "$MOD, P, exec, hyprpicker -a | --autocopy"
-          "$MOD SHIFT, E, exit"
+          "$MOD, Escape, exec, missioncenter"
 
+          # Essential
+          "$MOD SHIFT, E, exit"
           "$MOD, Q, killactive"
           "$MOD, F, fullscreen"
           "$MOD, Space, togglefloating"
           "$MOD, S, togglesplit"
 
+          # Move window focus
           "$MOD, H, movefocus, l"
           "$MOD, L, movefocus, r"
           "$MOD, K, movefocus, u"
           "$MOD, J, movefocus, d"
 
+          # Move windows
           "$MOD SHIFT, H, movewindow, l"
           "$MOD SHIFT, L, movewindow, r"
           "$MOD SHIFT, K, movewindow, u"
           "$MOD SHIFT, J, movewindow, d"
 
+          # Misc
           "$MOD, Tab, changegroupactive"
           "$MOD, G, togglegroup"
           "$MOD, T, togglespecialworkspace"
