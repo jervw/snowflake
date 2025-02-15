@@ -15,6 +15,7 @@
     ../../modules/virtualisation
 
     ../../modules/network/nfs.nix
+    ../../modules/services/ollama.nix
   ];
 
   boot = {
