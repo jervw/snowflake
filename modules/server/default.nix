@@ -12,7 +12,7 @@ _: {
     ./nfs-server.nix
     ./media-services.nix
     ./immich.nix
-    # ./jellyfin.nix
+    ./jellyfin.nix
     # ./jellyseerr.nix
     ./overseerr.nix
     ./plex.nix
