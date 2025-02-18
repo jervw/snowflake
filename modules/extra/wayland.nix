@@ -4,11 +4,6 @@
     withUWSM = true;
   };
 
-  programs.thunar = {
-    enable = true;
-    plugins = with pkgs.xfce; [thunar-archive-plugin thunar-volman];
-  };
-
   environment = {
     sessionVariables = {
       EGL_PLATFORM = "wayland";

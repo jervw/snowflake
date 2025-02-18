@@ -19,6 +19,7 @@
     bemoji
     cartridges
     dconf
+    dolphin
     ffmpeg
     libnotify
     imv
