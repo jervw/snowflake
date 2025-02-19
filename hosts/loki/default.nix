@@ -9,11 +9,11 @@
 
     ../../modules/core
     ../../modules/extra
-    ../../modules/hardware
     ../../modules/network
     ../../modules/services
     ../../modules/virtualisation
 
+    ../../modules/hardware/nvidia.nix
     ../../modules/network/nfs.nix
     ../../modules/services/ollama.nix
   ];
