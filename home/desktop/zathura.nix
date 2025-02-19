@@ -1,6 +1,9 @@
 _: {
   programs.zathura = {
     enable = true;
+    mappings = {
+      "<A-a>" = "recolor";
+    };
     options = {
       selection-notification = true;
       selection-clipboard = "clipboard";
