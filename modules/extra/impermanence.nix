@@ -50,6 +50,7 @@ in {
           "FreeTube"
           "smartcat"
           "harper-ls"
+          "Beeper"
         ] (
           x: ".config/${x}"
         )
