@@ -120,7 +120,7 @@ in {
         "pin, class:^(zen)$, title:^(Picture-in-Picture)$"
         "size 800 450, class:^(zen)$, title:^(Picture-in-Picture)$"
         "workspace 1, class:(vesktop)"
-        "workspace special, class:(cider)"
+        "workspace special, class:(Cider)"
       ];
 
       binds = {
