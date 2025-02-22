@@ -13,7 +13,7 @@ _: {
     ./nfs-server.nix
     ./media-services.nix
     ./immich.nix
-    ./overseerr.nix
+    ./jellyseerr.nix
     ./plex.nix
     ./tautulli.nix
   ];
