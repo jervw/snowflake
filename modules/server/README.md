@@ -9,9 +9,8 @@
 | qBittorrent    | `8080`  |      | :white_check_mark: | [dl.jervw.dev](https://dl.jervw.dev)             |
 | Flaresolverr   | `8191`  |      | :x:                | localhost                                        |
 | Glance         | `5678`  |      | :white_check_mark: | [home.jervw.dev](https://home.jervw.dev)         |
+| Hoarder        | `3020`  |      | :white_check_mark: | [hoarder.jervw.dev](https://hoarder.jervw.dev)   |
 | Immich         | `2995`  |      | :white_check_mark: | [media.jervw.dev](https://media.jervw.dev)       |
-| Jellyfin       | `8096`  |      | :white_check_mark: | [watch.jervw.dev](https://watch.jervw.dev)       |
-| Jellyseerr     | `5056`  |      | :white_check_mark: | [seerr2.jervw.dev](https://seerr2.jervw.dev)     |
 | Bazarr         | `6767`  |      | :white_check_mark: | [bazarr.jervw.dev](https://bazarr.jervw.dev)     |
 | Prowlarr       | `9696`  |      | :white_check_mark: | [prowlarr.jervw.dev](https://prowlarr.jervw.dev) |
 | Radarr         | `7878`  |      | :white_check_mark: | [radarr.jervw.dev](https://radarr.jervw.dev)     |
