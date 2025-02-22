@@ -12,8 +12,8 @@
     enable = true;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/decaf.yaml";
     image = pkgs.fetchurl {
-      url = "https://r2.jervw.dev/wallhaven-7p8y99.png";
-      sha256 = "sha256-XKopfBzySwdfIRZz/BhRZ2AwDRgK4kvg8/4iL7gmVrU=";
+      url = "https://r2.jervw.dev/wallhaven-9mg5zd.png";
+      sha256 = "60b6a9522d22c452c9b20cb17b875cd6fdfd1fb7ae5b1a1087031e1ba791353a";
     };
     polarity = "dark";
     fonts = {
