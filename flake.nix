@@ -52,7 +52,7 @@
       systems = ["x86_64-linux"];
 
       imports = [
-        ./modules/flake
+        ./flake
         ./hosts
         ./lib
         ./pkgs
