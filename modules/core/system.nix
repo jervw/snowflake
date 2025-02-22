@@ -16,6 +16,8 @@
       nh
       jq
       unar
+      nix-index
+      comma
     ];
   };
 
