@@ -8,6 +8,7 @@ _: {
     ./downloads.nix
     ./flaresolverr.nix
     ./glance.nix
+    ./homepage.nix
     ./redlib.nix
     ./nfs-server.nix
     ./media-services.nix
