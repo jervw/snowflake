@@ -583,6 +583,26 @@
         "type": "github"
       }
     },
+    "nix-index": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1740281615,
+        "narHash": "sha256-dZWcbAQ1sF8oVv+zjSKkPVY0ebwENQEkz5vc6muXbKY=",
+        "owner": "nix-community",
+        "repo": "nix-index-database",
+        "rev": "465792533d03e6bb9dc849d58ab9d5e31fac9023",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "nix-index-database",
+        "type": "github"
+      }
+    },
     "nixos-hardware": {
       "locked": {
         "lastModified": 1739798439,
@@ -714,6 +734,7 @@
         "home-manager": "home-manager_3",
         "impermanence": "impermanence",
         "lanzaboote": "lanzaboote",
+        "nix-index": "nix-index",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_2",
         "ssh-keys": "ssh-keys",
@@ -976,15 +997,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1739069493,
-        "narHash": "sha256-/vNJJdzEyziUUSlForltBv3TlSsw+M+ds/l1Galr5r4=",
-        "owner": "leonhazen",
+        "lastModified": 1739205561,
+        "narHash": "sha256-n3YRCaaNjHuaS61IMmqC+TRJAG8bGTY9e8CltXT6c4M=",
+        "owner": "omarcresp",
         "repo": "zen-browser-flake",
-        "rev": "618e4d78fc2a1a0a6930689f22eb500f060c429d",
+        "rev": "ddd50f3a24901209063a9cba5e860888a51e1880",
         "type": "github"
       },
       "original": {
-        "owner": "leonhazen",
+        "owner": "omarcresp",
         "repo": "zen-browser-flake",
         "type": "github"
       }

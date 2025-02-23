@@ -35,14 +35,18 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nix-index = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     ssh-keys = {
       url = "https://github.com/jervw.keys";
       flake = false;
     };
 
     zen-browser = {
-      # url = "github:omarcresp/zen-browser-flake";
-      url = "github:leonhazen/zen-browser-flake";
+      url = "github:omarcresp/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

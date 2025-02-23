@@ -27,6 +27,7 @@
         extraArgs = "--keep-since 1d --keep 3";
       };
     };
+    nix-index-database.comma.enable = true;
   };
 
   nix = let
