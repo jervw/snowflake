@@ -28,8 +28,8 @@
 
     "/mnt/storage" = {
       device = "/dev/disk/by-label/storage";
-      fsType = "ext4";
-      options = ["noatime" "nofail"];
+      fsType = "btrfs";
+      options = ["compress=zstd" "noatime" "nofail"];
     };
 
     "/boot" = {
