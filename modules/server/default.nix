@@ -4,7 +4,6 @@ _: {
     ./audiobookshelf.nix
     ./beszel-hub.nix
     ./caddy.nix
-    ./code-server.nix
     ./downloads.nix
     ./flaresolverr.nix
     ./glance.nix
