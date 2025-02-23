@@ -11,6 +11,7 @@
     ../../modules/network
 
     ../../modules/virtualisation/docker.nix
+    ../../modules/services/comin.nix
   ];
 
   boot = {
