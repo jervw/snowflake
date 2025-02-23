@@ -1,6 +1,6 @@
 _: {
   programs.zed-editor = {
-    enable = true;
+    enable = false;
     userSettings = {
       assistant = {
         default_model = {
