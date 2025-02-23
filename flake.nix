@@ -15,8 +15,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    deploy-rs = {
-      url = "github:philtaken/deploy-rs";
+    comin = {
+      url = "github:nlewo/comin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
