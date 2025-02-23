@@ -101,10 +101,10 @@
           command = "${pkgs.harper}/bin/harper-ls";
           args = ["--stdio"];
         };
-        # mpls = {
-        #   # command = lib.getExe self.packages.${pkgs.system}.mpls;
-        #   args = ["--dark-mode" "--enable-emoji"];
-        # };
+        mpls = {
+          command = lib.getExe pkgs.mpls;
+          args = ["--dark-mode" "--enable-emoji"];
+        };
         clangd = {
           command = "${pkgs.clang-tools}/bin/clangd";
           clangd.fallbackFlags = ["-std=c++2b"];
@@ -141,18 +141,6 @@
         ruff = {
           command = "${pkgs.ruff}/bin/ruff";
           args = ["server"];
-        };
-        vscode-html-language-server = {
-          command = "${pkgs.nodePackages.vscode-langservers-extracted}/bin/vscode-html-language-server";
-          args = ["--stdio"];
-        };
-        vscode-json-language-server = {
-          command = "${pkgs.nodePackages.vscode-langservers-extracted}/bin/vscode-json-language-server";
-          args = ["--stdio"];
-        };
-        vscode-css-language-server = {
-          command = "${pkgs.nodePackages.vscode-langservers-extracted}/bin/vscode-css-language-server";
-          args = ["--stdio"];
         };
         deno-lsp = {
           command = "${pkgs.deno}/bin/deno";
