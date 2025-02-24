@@ -1,8 +1,5 @@
-{pkgs, ...}: {
+_: {
   services = {
-    dbus.packages = with pkgs; [
-      gnome-settings-daemon
-    ];
     gnome.gnome-keyring.enable = true;
   };
 
