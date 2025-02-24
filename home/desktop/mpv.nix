@@ -8,6 +8,8 @@
       "ALT+l" = "add sub-delay -0.05";
       "ALT+=" = "add video-zoom +0.1";
       "ALT+-" = "add video-zoom -0.1";
+      "WHEEL_RIGHT" = "add sub-scale -0.01";
+      "WHEEL_LEFT" = "add sub-scale +0.01";
     };
     scripts = with pkgs.mpvScripts; [
       uosc # UI
