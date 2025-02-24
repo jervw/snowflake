@@ -84,7 +84,7 @@
         }
         {
           name = "markdown";
-          language-servers = ["marksman" "harper"];
+          language-servers = ["marksman" "harper" "mpls"];
         }
         {
           name = "typescript";
