@@ -20,7 +20,7 @@
     bemoji
     cartridges
     dconf
-    dolphin
+    kdePackages.dolphin
     ffmpeg
     libnotify
     imv
