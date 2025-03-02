@@ -56,7 +56,7 @@ in {
 
       input = {
         kb_layout = "us,fi";
-        kb_options = "grp:alt_shift_toggle";
+        kb_options = "caps:none,grp:alt_shift_toggle";
         repeat_delay = 200;
       };
 
