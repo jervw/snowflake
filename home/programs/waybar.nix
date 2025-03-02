@@ -48,7 +48,10 @@ in {
         };
         "group/stuff" = {
           orientation = "horizontal";
-          modules = ["hyprland/workspaces"];
+          modules = [
+            "niri/workspaces"
+            "hyprland/workspaces"
+          ];
         };
         "custom/shutdown" = {
           format = "";
