@@ -3,11 +3,6 @@
 <img width="72" src="https://files.artturin.com/files/nixoscolorful.svg"></img> <br>
   jervw's dotfiles
 </h1>
-<img src=""></img>
-<p>
-  Screenshot updated: <b>TODO</b>
-</p>
-
 </div>
 
 ## :spiral_notepad: Features
