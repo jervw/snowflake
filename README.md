@@ -20,7 +20,6 @@
 - System-wide styling via [stylix](https://github.com/danth/stylix)
 - Linted and styled with [alejandra](https://github.com/kamadorueda/alejandra), [deadnix](https://github.com/astro/deadnix), and [statix](https://github.com/nerdypepper/statix)
 
-
 ## :bulb: Acknowledgments
 
 #### people who've inspired me and have stolen stuff from
