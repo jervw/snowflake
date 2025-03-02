@@ -18,7 +18,6 @@
   home.packages = with pkgs; [
     beeper
     bemoji
-    cartridges
     dconf
     kdePackages.dolphin
     ffmpeg

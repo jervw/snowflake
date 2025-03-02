@@ -13,6 +13,7 @@
     shadps4
 
     # Misc
+    cartridges
     gpu-screen-recorder-gtk
   ];
 
