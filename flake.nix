@@ -56,7 +56,7 @@
       systems = ["x86_64-linux"];
 
       imports = [
-        ./flake
+        inputs.treefmt-nix.flakeModule
         ./hosts
         ./lib
         ./pkgs
