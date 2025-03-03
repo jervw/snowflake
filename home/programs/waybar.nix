@@ -49,7 +49,6 @@ in {
         "group/stuff" = {
           orientation = "horizontal";
           modules = [
-            "niri/workspaces"
             "hyprland/workspaces"
           ];
         };
