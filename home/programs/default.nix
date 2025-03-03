@@ -1,8 +1,8 @@
 _: {
   imports = [
-    ./hyprland.nix
-    ./hyprlock.nix
+    ./hyprland
     ./niri
+    ./hyprlock.nix
     ./waybar.nix
   ];
 }
