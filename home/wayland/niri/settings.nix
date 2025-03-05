@@ -1,10 +1,11 @@
-_: let
+{pkgs, ...}: let
   mkCommand = command: {
     command = [command];
   };
 in {
   programs.niri = {
     enable = true;
+    package = pkgs.niri;
     settings = {
       environment = {
         DISPLAY = ":0";
