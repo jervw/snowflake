@@ -5,19 +5,19 @@ in {
     enable = true;
     systemd = {
       enable = true;
-      target = "hyprland-session.target";
+      target = "graphical-session.target";
     };
     settings = {
       main = {
         layer = "top";
         position = "top";
-        output = "!HDMI-A-1";
         modules-left = [
           "group/powermenu"
-          "group/stuff"
+          "group/workspace-container"
         ];
         modules-center = [
           "hyprland/window"
+          "niri/window"
         ];
         modules-right = [
           "tray"
@@ -25,6 +25,14 @@ in {
           "group/hardware"
         ];
         "hyprland/window" = {
+          format = "{}";
+          icon = true;
+          icon-size = 18;
+          rewrite = {
+            "(.*)Zen Browser" = "Zen Browser";
+          };
+        };
+        "niri/window" = {
           format = "{}";
           icon = true;
           icon-size = 18;
@@ -46,10 +54,11 @@ in {
             "custom/logout"
           ];
         };
-        "group/stuff" = {
+        "group/workspace-container" = {
           orientation = "horizontal";
           modules = [
             "hyprland/workspaces"
+            "niri/workspaces"
           ];
         };
         "custom/shutdown" = {
@@ -83,7 +92,15 @@ in {
             sort-by-number = true;
           };
         };
-
+        "niri/workspaces" = {
+          format = "{icon}";
+          format-icons = {
+            urgent = "";
+            active = "";
+            default = "";
+            sort-by-number = true;
+          };
+        };
         "tray" = {
           spacing = 8;
           icon-size = 18;
@@ -199,23 +216,6 @@ in {
           format = "{capacity}% {icon}";
           format-icons = ["" "" "" "" ""];
           max-length = 25;
-        };
-      };
-      secondary = {
-        layer = "top";
-        position = "top";
-        output = "HDMI-A-1";
-        modules-center = [
-          "mpris"
-        ];
-        "mpris" = {
-          player = "cider";
-          format = "{status_icon} {artist} - {title}";
-          status-icons = {
-            "playing" = "";
-            "paused" = "";
-            "stopped" = "";
-          };
         };
       };
     };

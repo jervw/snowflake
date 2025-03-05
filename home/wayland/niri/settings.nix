@@ -13,7 +13,6 @@ in {
 
       spawn-at-startup = [
         (mkCommand "hyprlock")
-        (mkCommand "waybar")
         (mkCommand "nm-applet")
         (mkCommand "xwayland-satellite")
       ];
@@ -22,7 +21,7 @@ in {
         keyboard = {
           xkb = {
             layout = "us,fi";
-            options = "grp:alft_shift_toggle";
+            options = "grp:alt_shift_toggle";
           };
           repeat-delay = 200;
         };
@@ -45,9 +44,6 @@ in {
             y = 0;
           };
         };
-      };
-
-      layout = {
       };
 
       prefer-no-csd = true;
