@@ -7,7 +7,7 @@
   services.greetd = let
     session = {
       inherit user;
-      command = "${lib.getExe config.programs.hyprland.package} &> /dev/null";
+      command = "${config.programs.niri.package}/bin/niri-session &> /dev/null";
     };
   in {
     enable = true;
@@ -18,5 +18,19 @@
     };
   };
 
-  security.pam.services.greetd.enableGnomeKeyring = true;
+  specialisation = {
+    hyprland.configuration = {
+      services.greetd = let
+        session = {
+          inherit user;
+          command = "${lib.getExe config.programs.hyprland.package} &> /dev/null";
+        };
+      in {
+        settings = {
+          default_session = lib.mkForce session;
+          initial_session = lib.mkForce session;
+        };
+      };
+    };
+  };
 }
