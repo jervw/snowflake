@@ -67,15 +67,7 @@
         ./pkgs
       ];
 
-      perSystem = {
-        pkgs,
-        config,
-        ...
-      }: {
-        devShells.default = pkgs.mkShell {
-          packages = [pkgs.alejandra pkgs.deploy-rs];
-        };
-
+      perSystem = {config, ...}: {
         treefmt = {
           projectRootFile = "flake.nix";
           programs = {
