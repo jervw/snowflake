@@ -19,7 +19,7 @@
     beeper
     bemoji
     dconf
-    kdePackages.dolphin
+    nautilus
     ffmpeg
     libnotify
     imv
