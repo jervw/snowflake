@@ -10,6 +10,7 @@
     if [ $? == 1 ]; then
       ${pkgs.systemd}/bin/loginctl lock-session
       ${config.wayland.windowManager.hyprland.package}/bin/hyprctl --instance 0 dispatch dpms off
+      ${config.programs.niri.package}/bin/niri msg action power-off-monitors
     fi
   '';
   timeout = 300;
