@@ -9,6 +9,7 @@
       shellAliases = {
         y = "yazi";
         lg = "lazygit";
+        cd = "z";
         whereami = "curl ipinfo.io/city";
       };
       extraConfig = ''
