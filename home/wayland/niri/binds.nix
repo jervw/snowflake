@@ -20,10 +20,10 @@ _: {
     "Mod+K".action.focus-window-or-workspace-up = {};
 
     # Resize column and window height
-    "Mod+Minus".action.set-column-width = "-5%";
-    "Mod+Equal".action.set-column-width = "+5%";
-    "Mod+Shift+Minus".action.set-window-height = "-5%";
-    "Mod+Shift+Equal".action.set-window-height = "+5%";
+    "Mod+Ctrl+H".action.set-column-width = "-5%";
+    "Mod+Ctrl+L".action.set-column-width = "+5%";
+    "Mod+Ctrl+K".action.set-window-height = "+5%";
+    "Mod+Ctrl+J".action.set-window-height = "-5%";
 
     # Move columns
     "Mod+Shift+H".action.move-column-left-or-to-monitor-left = {};
@@ -69,6 +69,11 @@ _: {
     };
     "Mod+WheelScrollRight".action.focus-column-right = {};
     "Mod+WheelScrollLeft".action.focus-column-left = {};
+
+    # Media controls
+    "XF86AudioRaiseVolume".action.spawn = ["swayosd-client" "--output-volume" "raise"];
+    "XF86AudioLowerVolume".action.spawn = ["swayosd-client" "--output-volume" "lower"];
+    "XF86AudioMute".action.spawn = ["swayosd-client" "--output-volume" "mute-toggle"];
 
     # Misc
     "Mod+Shift+BracketLeft".action.consume-window-into-column = {};
