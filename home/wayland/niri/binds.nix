@@ -23,14 +23,14 @@ in {
   programs.niri.settings.binds =
     {
       # Programs
-      "Mod+Return".action.spawn = "ghostty";
-      "Mod+Escape".action.spawn = "missioncenter";
-      "Mod+D".action.spawn = "fuzzel";
-      "Mod+B".action.spawn = "zen";
-      "Mod+N".action.spawn = "${term} -e yazi";
-      "Mod+I".action.spawn = "clipman pick --tool=CUSTOM --tool-args='fuzzel -d'";
-      "Mod+Y".action.spawn = "uuctl";
-      "Mod+M".action.spawn = "bemoji -t";
+      "Mod+Return".action.spawn = ["ghostty"];
+      "Mod+Escape".action.spawn = ["missioncenter"];
+      "Mod+D".action.spawn = ["fuzzel"];
+      "Mod+B".action.spawn = ["zen"];
+      "Mod+Y".action.spawn = ["uuctl"];
+      "Mod+M".action.spawn = ["bemoji" "-t"];
+      "Mod+N".action.spawn = [term "-e" "yazi"];
+      "Mod+I".action.spawn = ["clipman" "pick" "--tool=CUSTOM" "--tool-args=fuzzel -d"];
 
       # Essential
       "Mod+Q".action.close-window = {};
