@@ -1,4 +1,4 @@
-{...}: let
+_: let
   mkMatchRule = {
     appId,
     title ? "",
@@ -32,7 +32,7 @@
 
   floatingRules = builtins.map (appId:
     mkMatchRule {
-      appId = appId;
+      inherit appId;
       openFloating = true;
     })
   openFloatingAppIds;
