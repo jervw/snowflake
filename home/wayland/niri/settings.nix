@@ -31,22 +31,6 @@ in {
         warp-mouse-to-focus = true;
       };
 
-      outputs = {
-        "DP-1" = {
-          mode = {
-            width = 2560;
-            height = 1440;
-            refresh = 164.999;
-          };
-        };
-        "HDMI-A-1" = {
-          position = {
-            x = 2560;
-            y = 0;
-          };
-        };
-      };
-
       prefer-no-csd = true;
       hotkey-overlay.skip-at-startup = true;
     };

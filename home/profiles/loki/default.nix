@@ -6,6 +6,25 @@
     ../../services
   ];
 
+  programs.niri.settings = {
+    input.mouse.accel-profile = "flat";
+    outputs = {
+      "DP-1" = {
+        mode = {
+          width = 2560;
+          height = 1440;
+          refresh = 164.999;
+        };
+      };
+      "HDMI-A-1" = {
+        position = {
+          x = 2560;
+          y = 0;
+        };
+      };
+    };
+  };
+
   wayland.windowManager.hyprland.settings = {
     monitor = [
       ",highrr,auto,1"
