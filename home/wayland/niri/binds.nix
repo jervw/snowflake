@@ -27,7 +27,7 @@ in {
       "Mod+Escape".action.spawn = "missioncenter";
       "Mod+D".action.spawn = "fuzzel";
       "Mod+B".action.spawn = "zen";
-      "Mod+V".action.spawn = "${term} -e yazi";
+      "Mod+N".action.spawn = "${term} -e yazi";
       "Mod+I".action.spawn = "clipman pick --tool=CUSTOM --tool-args='fuzzel -d'";
       "Mod+Y".action.spawn = "uuctl";
       "Mod+M".action.spawn = "bemoji -t";
