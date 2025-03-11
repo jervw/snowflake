@@ -9,6 +9,13 @@
   # Workaround to fix issue with cursor scaling on HIDPI
   home.pointerCursor.gtk.enable = lib.mkForce false;
 
+  programs.niri.settings.binds = {
+    "XF86MonBrightnessUp".action.spawn = ["swayosd-client" "--device=acpi_video0" "--brightness" "raise"];
+    "XF86MonBrightnessDown".action.spawn = ["swayosd-client" "--device=acpi_video0" "--brightness" "lower"];
+    "XF86KbdBrightnessUp".action.spawn = ["swayosd-client" "--device=apple::kbd_backlight" "--brightness" "raise"];
+    "XF86KbdBrightnessDown".action.spawn = ["swayosd-client" "--device=apple::kbd_backlight" "--brightness" "lower"];
+  };
+
   wayland.windowManager.hyprland.settings = let
     accelpoints = "0.5 0.000 0.053 0.115 0.189 0.280 0.391 0.525 0.687 0.880 1.108 1.375 1.684 2.040 2.446 2.905 3.422 4.000 4.643 5.355 6.139";
   in {
