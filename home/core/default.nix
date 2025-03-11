@@ -7,7 +7,6 @@
     ./nushell.nix
     ./lazygit.nix
     ./yazi.nix
-    ./zellij.nix
     ./zoxide.nix
   ];
 
