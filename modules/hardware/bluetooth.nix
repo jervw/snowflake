@@ -1,7 +1,7 @@
 {pkgs, ...}: {
-  services.blueman.enable = true;
+  services.blueman.enable = false;
   hardware.bluetooth = {
-    enable = true;
+    enable = false;
     package = pkgs.bluez5-experimental;
     settings = {
       General = {
