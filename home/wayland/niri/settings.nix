@@ -22,7 +22,7 @@ in {
         keyboard = {
           xkb = {
             layout = "us,fi";
-            options = "grp:alt_shift_toggle";
+            options = "caps:none,grp:alt_shift_toggle";
           };
           repeat-delay = 200;
         };
