@@ -14,6 +14,11 @@
           id = "J4JVFCR-ND6TGKN-AKRJ3LA-XUYAYLI-RPQBZO4-OWLILPZ-2LFJH5V-5VWNOQM";
           autoAcceptFolders = true;
         };
+        # Laptop
+        fenrir = {
+          id = "DQVGT7E-XUBOX5G-WSAXS5R-TSTBGGF-32RLEVK-F73VZZP-5IMMIEO-E6FAHAT";
+          autoAcceptFolders = true;
+        };
         # Phone
         tyr = {
           id = "LF4JYTN-K6OF2N4-JTVUKTU-F5W65QQ-KBAZGXU-46HWVEO-P3VYVGY-SXYKMAM";
