@@ -8,7 +8,7 @@
     remotes = [
       {
         name = "origin";
-        url = "https://github.com/jervw/snowflake.git";
+        url = "https://codeberg.org/jervw/snowflake.git";
         branches.main.name = "main";
       }
     ];
