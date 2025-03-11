@@ -58,8 +58,11 @@ in {
       "Mod+Shift+K".action.move-column-to-workspace-up = {};
       "Mod+Shift+J".action.move-column-to-workspace-down = {};
 
+      # Move between monitors
+      "Mod+Tab".action.focus-monitor-next = {};
+      "Mod+Shift+Tab".action.focus-monitor-previous = {};
+
       # Floating
-      "Mod+Tab".action.switch-focus-between-floating-and-tiling = {};
       "Mod+Space".action.toggle-window-floating = {};
 
       # Column manipulation
