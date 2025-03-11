@@ -101,6 +101,9 @@ in {
             sort-by-number = true;
           };
         };
+        "niri/language" = {
+          format = "{short}";
+        };
         "tray" = {
           spacing = 8;
           icon-size = 18;
@@ -109,6 +112,7 @@ in {
           orientation = "horizontal";
           modules = [
             "battery"
+            "niri/language"
             "pulseaudio"
             "clock"
           ];
@@ -367,6 +371,7 @@ in {
       #custom-notifications,
       #temperature,
       #memory,
+      #language,
       #pulseaudio {
         padding: 0px 6px 0px 3px;
       }
