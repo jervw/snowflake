@@ -4,6 +4,7 @@
   perSystem = {pkgs, ...}: {
     packages = {
       cider2 = pkgs.callPackage ./cider2 {};
+      beeper-beta = pkgs.callPackage ./beeper-beta {};
     };
   };
 }

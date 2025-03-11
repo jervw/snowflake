@@ -16,7 +16,6 @@
   ];
 
   home.packages = with pkgs; [
-    beeper
     bemoji
     dconf
     nautilus
@@ -39,5 +38,6 @@
     nodejs
     inputs.zen-browser.packages."${system}".default
     self.packages.${system}.cider2
+    self.packages.${system}.beeper-beta
   ];
 }
