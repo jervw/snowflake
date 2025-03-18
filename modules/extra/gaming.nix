@@ -13,6 +13,7 @@
     shadps4
 
     # Misc
+    r2modman
     cartridges
     gpu-screen-recorder-gtk
   ];
