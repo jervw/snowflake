@@ -16,6 +16,7 @@
   ];
 
   home.packages = with pkgs; [
+    calibre
     bemoji
     dconf
     nautilus
