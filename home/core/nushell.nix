@@ -29,7 +29,7 @@
           | rename value description
         }
       '';
-      plugins = [pkgs.nushellPlugins.highlight];
+      # plugins = [pkgs.nushellPlugins.highlight];
     };
 
     # Nix-your-shell
