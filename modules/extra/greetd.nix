@@ -7,7 +7,7 @@
   services.greetd = let
     session = {
       inherit user;
-      command = "${config.programs.niri.package}/bin/niri-session &> /dev/null";
+      command = "${lib.getExe config.programs.hyprland.package} &> /dev/null";
     };
   in {
     enable = true;
@@ -19,11 +19,11 @@
   };
 
   specialisation = {
-    hyprland.configuration = {
+    niri.configuration = {
       services.greetd = let
         session = {
           inherit user;
-          command = "${lib.getExe config.programs.hyprland.package} &> /dev/null";
+          command = "${config.programs.niri.package}/bin/niri-session &> /dev/null";
         };
       in {
         settings = {
