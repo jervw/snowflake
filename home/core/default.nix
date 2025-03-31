@@ -2,9 +2,10 @@
   imports = [
     ./git.nix
     ./fastfetch.nix
+    ./fish.nix
     ./direnv.nix
     ./helix.nix
-    ./nushell.nix
+    # ./nushell.nix
     ./lazygit.nix
     ./yazi.nix
     ./zoxide.nix
