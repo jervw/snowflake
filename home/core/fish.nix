@@ -1,15 +1,12 @@
 {pkgs, ...}: {
-  home = {
-    sessionVariables.SHELL = "fish";
-    packages = with pkgs; [
-      any-nix-shell
-      eza
-      bat
-      fzf
-      fishPlugins.autopair
-      fishPlugins.fzf-fish
-    ];
-  };
+  home.packages = with pkgs; [
+    any-nix-shell
+    eza
+    bat
+    fzf
+    fishPlugins.autopair
+    fishPlugins.fzf-fish
+  ];
 
   programs = {
     fish = {
