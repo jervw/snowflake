@@ -1,12 +1,14 @@
 {
   pkgs,
   config,
+  inputs,
   ...
 }: {
   environment.systemPackages = with pkgs; [
     # Launchers
     lutris
     heroic
+    bottles
 
     # Emulators
     rpcs3
@@ -16,6 +18,8 @@
     r2modman
     cartridges
     gpu-screen-recorder-gtk
+
+    inputs.nix-gaming.packages.${pkgs.system}.wine-ge
   ];
 
   programs = {
