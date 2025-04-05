@@ -57,7 +57,7 @@ in {
         ++ forEach ["nix" "zen"] (
           x: ".cache/${x}"
         )
-        ++ forEach ["direnv" "PrismLauncher" "zed" "Steam" "zoxide" "Trash" "cartridges" "bottles" "lutris"] (x: ".local/share/${x}")
+        ++ forEach ["direnv" "PrismLauncher" "zed" "Steam" "fish" "zoxide" "Trash" "cartridges" "bottles" "lutris"] (x: ".local/share/${x}")
         ++ forEach ["syncthing"] (x: ".local/state/${x}")
         ++ [
           {
