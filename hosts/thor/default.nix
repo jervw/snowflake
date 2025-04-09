@@ -30,12 +30,12 @@
     nftables.enable = true;
     interfaces.${interface}.ipv4.addresses = [
       {
-        address = "192.168.10.2";
-        prefixLength = 24;
+        address = "10.0.0.3";
+        prefixLength = 26;
       }
     ];
     defaultGateway = {
-      address = "192.168.10.1";
+      address = "10.0.0.1";
       inherit interface;
     };
     nameservers = ["9.9.9.9" "1.1.1.1"];
