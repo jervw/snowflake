@@ -6,6 +6,7 @@
     fzf
     fishPlugins.autopair
     fishPlugins.fzf-fish
+    fishPlugins.puffer
   ];
 
   programs = {
