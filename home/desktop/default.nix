@@ -10,6 +10,7 @@
     ./ghostty.nix
     ./mpv.nix
     ./stylix.nix
+    ./vesktop.nix
     ./zathura.nix
     ./xdg.nix
     ./zed.nix
@@ -31,7 +32,6 @@
     playerctl
     prismlauncher
     tomato-c
-    vesktop
     vial
     networkmanagerapplet
     qbittorrent-enhanced
