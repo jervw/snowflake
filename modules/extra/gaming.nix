@@ -11,7 +11,7 @@
     bottles
 
     # Emulators
-    rpcs3
+    # rpcs3
     shadps4
 
     # Misc
