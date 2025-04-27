@@ -32,6 +32,7 @@ in {
           "vids"
           "sync"
           "other"
+          "games"
           ".dots"
           ".zen"
         ]
