@@ -1,5 +1,5 @@
 # Packages
 
-| Name         | Description                                                 |
+| Name | Description |
 | ------------ | ----------------------------------------------------------- |
-| cider2       | Cross-platform Apple Music client.                          |
+| cider2 | Cross-platform Apple Music client. |
