@@ -3,7 +3,7 @@ _: {
     enable = true;
     settings = {
       main = {
-        terminal = "ghostty -e";
+        terminal = "foot -e";
         layer = "overlay";
       };
       border = {

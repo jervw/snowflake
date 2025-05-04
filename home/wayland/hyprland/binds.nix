@@ -1,5 +1,5 @@
 _: let
-  term = "ghostty";
+  term = "foot";
   workspaces = builtins.concatLists (builtins.genList (
       x: let
         ws = toString (x + 1);

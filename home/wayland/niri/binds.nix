@@ -1,5 +1,5 @@
 _: let
-  term = "ghostty";
+  term = "foot";
   workspaceBinds = count:
     builtins.listToAttrs (
       builtins.concatMap (
@@ -23,7 +23,7 @@ in {
   programs.niri.settings.binds =
     {
       # Programs
-      "Mod+Return".action.spawn = ["ghostty"];
+      "Mod+Return".action.spawn = [term];
       "Mod+Escape".action.spawn = ["missioncenter"];
       "Mod+D".action.spawn = ["fuzzel"];
       "Mod+B".action.spawn = ["zen"];
