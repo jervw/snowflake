@@ -5,6 +5,7 @@
   ...
 }: {
   imports = [
+    ./foot.nix
     ./freetube.nix
     ./fuzzel.nix
     ./ghostty.nix
