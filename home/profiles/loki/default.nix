@@ -1,10 +1,12 @@
-{
+{pkgs, ...}: {
   imports = [
     ../../core
     ../../desktop
     ../../wayland
     ../../services
   ];
+
+  home.packages = [pkgs.bitwig-studio];
 
   programs.niri.settings = {
     input.mouse.accel-profile = "flat";
