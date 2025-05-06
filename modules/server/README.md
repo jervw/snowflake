@@ -15,6 +15,7 @@
 | Prowlarr | `9696` | | :white_check_mark: | [prowlarr.jervw.dev](https://prowlarr.jervw.dev) |
 | Radarr | `7878` | | :white_check_mark: | [radarr.jervw.dev](https://radarr.jervw.dev) |
 | Sonarr | `8989` | | :white_check_mark: | [sonarr.jervw.dev](https://sonarr.jervw.dev) |
+| Speedtest| `8095` | | :white_check_mark: | [speedtest.jervw.dev](https://speedtest.jervw.dev) |
 | Jellyseerr | `5055` | | :white_check_mark: | [seerr.jervw.dev](https://seerr.jervw.dev) |
 | Plex | `32400` | | :white_check_mark: | [plex.jervw.dev](https://plex.jervw.dev) |
 | Redlib | `8081` | | :white_check_mark: | [redlib.jervw.dev](https://redlib.jervw.dev) |
