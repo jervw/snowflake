@@ -66,8 +66,9 @@ _: {
       rounding_power = 4.0;
       blur = {
         enabled = true;
-        size = 5;
+        size = 8;
         passes = 2;
+        noise = 0.02;
       };
       shadow = {
         enabled = true;
