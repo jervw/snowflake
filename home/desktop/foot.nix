@@ -25,7 +25,7 @@ _: {
       cursor = {
         style = "beam";
         blink = "yes";
-        beam-thickness = 1;
+        beam-thickness = 1.5;
       };
     };
   };
