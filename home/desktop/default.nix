@@ -20,6 +20,7 @@
   home.packages = with pkgs; [
     calibre
     bemoji
+    beeper
     dconf
     nautilus
     ffmpeg
