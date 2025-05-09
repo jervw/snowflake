@@ -11,15 +11,13 @@
     bottles
 
     # Emulators
-    # rpcs3
+    rpcs3
     shadps4
 
     # Misc
     r2modman
     cartridges
     gpu-screen-recorder-gtk
-
-    inputs.nix-gaming.packages.${pkgs.system}.wine-ge
   ];
 
   programs = {
