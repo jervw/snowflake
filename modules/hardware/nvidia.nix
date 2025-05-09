@@ -18,6 +18,7 @@
     graphics = {
       enable = true;
       enable32Bit = true;
+      extraPackages = [pkgs.libvdpau-va-gl];
     };
     nvidia = {
       package = config.boot.kernelPackages.nvidiaPackages.beta;
