@@ -4,6 +4,7 @@
     ../../desktop
     ../../wayland
     ../../services
+    ../../services/quickshell
   ];
 
   home.packages = [pkgs.bitwig-studio];
