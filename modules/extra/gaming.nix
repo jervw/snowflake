@@ -16,6 +16,7 @@
 
     # Misc
     r2modman
+    mangohud
     cartridges
     gpu-screen-recorder-gtk
   ];
