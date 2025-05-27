@@ -7,13 +7,6 @@
   nixpkgs = {
     config = {
       allowUnfree = true;
-      # TODO Not cool Sonarr
-      permittedInsecurePackages = [
-        "aspnetcore-runtime-6.0.36"
-        "aspnetcore-runtime-wrapped-6.0.36"
-        "dotnet-sdk-6.0.428"
-        "dotnet-sdk-wrapped-6.0.428"
-      ];
     };
   };
 
