@@ -1,6 +1,7 @@
 {
   pkgs,
   lib,
+  self,
   ...
 }: {
   programs.helix = {
@@ -120,13 +121,13 @@
         };
         nixd = {
           command = "${pkgs.nixd}/bin/nixd";
-          # BUG This should work to get the options from home-manager NixOS module but doesn't due to some upstream Nix bug
-          # config.options = let
-          #   options = "(builtins.getFlake \"${self}\").nixosConfigurations.loki.options";
-          # in {
-          #   nixos.expr = options;
-          #   home-manager.expr = options + ".home-manager.users.type.getSubOptions []";
-          # };
+          args = ["--inlay-hints=true"];
+          config.nixd.options = let
+            options = "(builtins.getFlake \"${self}\").nixosConfigurations.loki.options";
+          in {
+            nixos.expr = options;
+            home-manager.expr = options + ".home-manager.users.type.getSubOptions []";
+          };
         };
         pyright = {
           command = "${pkgs.pyright}/bin/pyright-langserver";
