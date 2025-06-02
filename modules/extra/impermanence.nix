@@ -59,6 +59,7 @@ in {
           x: ".cache/${x}"
         )
         ++ forEach [
+          "Anki2"
           "direnv"
           "PrismLauncher"
           "zed"

@@ -18,6 +18,7 @@
   ];
 
   home.packages = with pkgs; [
+    anki-bin
     calibre
     bemoji
     beeper
