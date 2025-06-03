@@ -1,10 +1,6 @@
 {pkgs, ...}: {
   time.timeZone = "Europe/Helsinki";
-
-  i18n = {
-    defaultLocale = "en_US.UTF-8";
-    extraLocales = ["ja_JP.UTF-8"];
-  };
+  i18n.defaultLocale = "en_US.UTF-8";
 
   environment = {
     systemPackages = with pkgs; [
