@@ -3,7 +3,7 @@
 
   perSystem = {pkgs, ...}: {
     packages = {
-      cider2 = pkgs.callPackage ./cider2 {};
+      cider = pkgs.callPackage ./cider {};
     };
   };
 }

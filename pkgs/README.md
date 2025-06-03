@@ -2,4 +2,4 @@
 
 | Name | Description |
 | ------------ | ----------------------------------------------------------- |
-| cider2 | Cross-platform Apple Music client. |
+| cider | Cross-platform Apple Music client. |
