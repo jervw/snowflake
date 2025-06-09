@@ -15,6 +15,7 @@
   home.packages = with pkgs; [
     aria2
     btop
+    caligula
     cloneit
     ncdu
     ripgrep
