@@ -62,6 +62,9 @@ in {
       "Mod+Tab".action.focus-monitor-next = {};
       "Mod+Shift+Tab".action.focus-monitor-previous = {};
 
+      # Toggle overview
+      "Mod+Backspace".action.toggle-overview = {};
+
       # Floating
       "Mod+Space".action.toggle-window-floating = {};
 

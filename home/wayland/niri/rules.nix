@@ -20,7 +20,7 @@ _: let
     baseRule // floatingRule;
 
   openFloatingAppIds = [
-    "^(pwvucontrol)"
+    "org.pulseaudio.pavucontrol"
     "^(Volume Control)"
     "^(dialog)"
     "^(file_progress)"
@@ -91,5 +91,14 @@ _: let
     }
   ];
 in {
-  programs.niri.settings.window-rules = windowRules ++ floatingRules;
+  programs.niri.settings = {
+    window-rules = windowRules ++ floatingRules;
+    layer-rules = [
+      {
+        matches = [{namespace = "^hyprpaper$";}];
+        # TODO this niri flake settings module is not up to date as below does not exist
+        # place-within-backdrop = true;
+      }
+    ];
+  };
 }
