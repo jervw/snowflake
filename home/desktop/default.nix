@@ -23,7 +23,7 @@
     bemoji
     beeper
     dconf
-    nautilus
+    dolphin
     ffmpeg
     libnotify
     imv
