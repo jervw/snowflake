@@ -31,6 +31,7 @@
     obs-studio
     openjdk
     pavucontrol
+    normcap
     mission-center
     playerctl
     prismlauncher
