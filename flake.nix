@@ -1,6 +1,4 @@
 {
-  description = "jervw's NixOS configurations";
-
   inputs = {
     impermanence.url = "github:nix-community/impermanence";
     nixos-hardware.url = "github:nixos/nixos-hardware";
@@ -20,9 +18,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    flake-parts = {
-      url = "github:hercules-ci/flake-parts";
-      inputs.nixpkgs-lib.follows = "nixpkgs";
+    snowfall-lib = {
+      url = "github:snowfallorg/lib";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     home-manager = {
@@ -62,29 +60,25 @@
   };
 
   outputs = inputs:
-    inputs.flake-parts.lib.mkFlake {inherit inputs;} {
-      systems = ["x86_64-linux"];
+    inputs.snowfall-lib.mkFlake {
+      inherit inputs;
+      src = ./.;
 
-      imports = [
-        inputs.treefmt-nix.flakeModule
-        ./hosts
-        ./lib
-        ./pkgs
-      ];
-
-      perSystem = {config, ...}: {
-        treefmt = {
-          projectRootFile = "flake.nix";
-          programs = {
-            alejandra.enable = true;
-            statix.enable = true;
-            deadnix.enable = true;
-            mdformat.enable = true;
-            yamlfmt.enable = true;
-          };
+      snowfall = {
+        namespace = "snowflake";
+        meta = {
+          name = "snowflake";
+          title = "Snowflake";
         };
-
-        formatter = config.treefmt.build.wrapper;
       };
+
+      channels-config = {
+        allowUnfree = true;
+      };
+
+      systems.modules.nixos = with inputs; [
+      ];
+      homes.modules = with inputs; [
+      ];
     };
 }
