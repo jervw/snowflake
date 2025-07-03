@@ -12,6 +12,9 @@ in {
     name = mkOpt str "jervw" "The name to use for the user account.";
     fullName = mkOpt str "Jere Vuola" "The full name of the user.";
     email = mkOpt str "jervw@pm.me" "The email of the user.";
+    initialPassword =
+      mkOpt str "password"
+      "The initial password to use when the user is first created.";
     extraGroups = mkOpt (listOf str) [] "Groups for the user to be assigned.";
     extraOptions = mkOpt attrs {} (mdDoc "Extra options passed to `users.users.<name>`.");
   };
