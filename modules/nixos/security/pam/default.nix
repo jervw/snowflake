@@ -31,5 +31,8 @@ in {
         }
       ];
     };
+
+    # TODO Move to hardware/yubikey/default.nix
+    programs.yubikey-touch-detector.enable = true;
   };
 }
