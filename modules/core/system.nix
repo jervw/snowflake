@@ -15,17 +15,4 @@
       unar
     ];
   };
-
-  home-manager = {
-    useGlobalPkgs = true;
-    useUserPackages = true;
-  };
-
-  services = {
-    udev = {
-      packages = with pkgs; [vial];
-    };
-  };
-
-  system.stateVersion = "24.05";
 }
