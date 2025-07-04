@@ -9,7 +9,7 @@
 
   cfg = config.${namespace}.hardware.qmk;
 in {
-  options.${namespace}.hardware.cpu.qmk = {
+  options.${namespace}.hardware.qmk = {
     enable = lib.mkEnableOption "support for QMK (Vial)";
   };
 

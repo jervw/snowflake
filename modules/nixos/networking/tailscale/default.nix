@@ -8,7 +8,7 @@
   inherit (lib.${namespace}) mkOpt;
   inherit (config.${namespace}) user;
 
-  cfg = config.${namespace}.services.tailscale;
+  cfg = config.${namespace}.networking.tailscale;
 in {
   options.${namespace}.networking.tailscale = with types; {
     enable = lib.mkEnableOption "Tailscale";
