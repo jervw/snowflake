@@ -27,7 +27,7 @@ _: {
       import cloudflare
     '';
     "speedtest.jervw.dev".extraConfig = ''
-      reverse_proxy http://127.0.0.1:8095
+      reverse_proxy http://thor:8095
       import cloudflare
     '';
   };
