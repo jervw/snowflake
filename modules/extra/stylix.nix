@@ -53,6 +53,7 @@
     enableDefaultPackages = false;
     packages = with pkgs; [
       jetbrains-mono
+      noto-fonts
       noto-fonts-emoji
       noto-fonts-cjk-sans
       font-awesome
