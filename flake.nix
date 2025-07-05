@@ -81,8 +81,8 @@
         agenix.nixosModules.default
         chaotic.nixosModules.default
         comin.nixosModules.comin
-
         home-manager.nixosModules.default
+        lanzaboote.nixosModules.lanzaboote
         nix-index.nixosModules.nix-index
       ];
       homes.modules = with inputs; [
