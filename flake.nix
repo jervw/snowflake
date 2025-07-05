@@ -62,6 +62,7 @@
   outputs = inputs:
     inputs.snowfall-lib.mkFlake {
       inherit inputs;
+
       src = ./.;
 
       snowfall = {
@@ -77,6 +78,12 @@
       };
 
       systems.modules.nixos = with inputs; [
+        agenix.nixosModules.default
+        chaotic.nixosModules.default
+        comin.nixosModules.comin
+
+        home-manager.nixosModules.default
+        nix-index.nixosModules.nix-index
       ];
       homes.modules = with inputs; [
       ];
