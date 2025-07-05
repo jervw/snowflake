@@ -1,7 +1,6 @@
 {
   pkgs,
   self,
-  inputs,
   ...
 }: {
   imports = [
@@ -15,6 +14,7 @@
     ./zathura.nix
     ./xdg.nix
     ./zed.nix
+    ./zen-browser.nix
   ];
 
   home.packages = with pkgs; [
@@ -41,7 +41,6 @@
     qbittorrent-enhanced
     xdg-utils
     nodejs
-    inputs.zen-browser.packages."${system}".default
     self.packages.${system}.cider
   ];
 }
