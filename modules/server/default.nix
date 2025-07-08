@@ -30,6 +30,14 @@ _: {
       reverse_proxy http://thor:8095
       import cloudflare
     '';
+    "todo.jervw.dev".extraConfig = ''
+      reverse_proxy http://thor:3002
+      import cloudflare
+    '';
+    # "track.jervw.dev".extraConfig = ''
+    #   reverse_proxy http://thor:8095
+    #   import cloudflare
+    # '';
   };
 
   users = {
