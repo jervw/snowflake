@@ -21,3 +21,4 @@
 | Redlib | `8081` | | :white_check_mark: | [redlib.jervw.dev](https://redlib.jervw.dev) |
 | Tautulli | `8181` | | :white_check_mark: | [tautulli.jervw.dev](https://tautulli.jervw.dev) |
 | Tududi | `3002` | | :white_check_mark: | [todo.jervw.dev](https://todo.jervw.dev) |
+| Yamtrack | `8001` | | :white_check_mark: | [track.jervw.dev](https://track.jervw.dev) |
