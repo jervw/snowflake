@@ -2,17 +2,16 @@ _: {
   programs.zed-editor = {
     enable = true;
     userSettings = {
-      assistant = {
+      agent = {
+        play_sound_when_agent_done = true;
         default_model = {
-          provider = "copilot_chat";
-          model = "gpt-4o";
+          model = "qwen2.5-coder:7b";
+          provider = "ollama";
         };
         version = "2";
       };
-      features = {
-        inline_completion_provider = "copilot";
-      };
-      vim_mode = true;
+      helix_mode = true;
+      relative_line_numbers = true;
     };
   };
 }
