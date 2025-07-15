@@ -58,7 +58,7 @@
     - [x] audiobookshelf.nix
     - [ ] beszel-hub.nix
     - [ ] caddy.nix
-    - [ ] downloads.nix
+    - [x] downloads.nix
     - [ ] flaresolverr.nix
     - [x] glance.nix
     - [x] immich.nix
