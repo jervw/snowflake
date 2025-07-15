@@ -61,7 +61,6 @@
     - [ ] downloads.nix
     - [ ] flaresolverr.nix
     - [x] glance.nix
-    - [ ] homepage.nix
     - [x] immich.nix
     - [x] jellyseerr.nix
     - [ ] media-services.nix

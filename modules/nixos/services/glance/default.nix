@@ -192,7 +192,7 @@ in {
       };
 
       services.caddy.virtualHosts."${cfg.host}".extraConfig = ''
-        reverse_proxy http://thor:8000
+        reverse_proxy http://thor:5678
         import cloudflare
       '';
     };
