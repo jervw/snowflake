@@ -51,5 +51,12 @@ in {
         '';
       };
     };
+    users = {
+      users = {
+        radarr.extraGroups = ["media"];
+        sonarr.extraGroups = ["media"];
+        bazarr.extraGroups = ["media"];
+      };
+    };
   };
 }

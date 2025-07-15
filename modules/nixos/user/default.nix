@@ -20,6 +20,7 @@ in {
   };
 
   config = {
+    users.groups.media = {}; # Used for some services on a server system
     users.users.${cfg.name} =
       {
         inherit (cfg) name initialPassword;

@@ -29,5 +29,7 @@ in {
         import cloudflare
       '';
     };
+
+    users.users.plex.extraGroups = ["media"];
   };
 }
