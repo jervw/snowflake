@@ -7,7 +7,7 @@
   inherit (lib) mkEnableOption mkIf mkOption;
   cfg = config.${namespace}.services.immich;
 in {
-  options.${namespace}.services.comin = {
+  options.${namespace}.services.immich = {
     enable = mkEnableOption "Enable Immich service";
     host = mkOption {
       type = lib.types.str;
