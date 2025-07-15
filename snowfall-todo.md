@@ -57,7 +57,7 @@
     - [x] adguard.nix
     - [x] audiobookshelf.nix
     - [x] beszel-hub.nix
-    - [ ] caddy.nix
+    - [x] caddy.nix
     - [x] downloads.nix
     - [x] flaresolverr.nix
     - [x] glance.nix
