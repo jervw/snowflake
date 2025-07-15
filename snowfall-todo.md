@@ -63,7 +63,7 @@
     - [x] glance.nix
     - [x] immich.nix
     - [x] jellyseerr.nix
-    - [ ] media-services.nix
+    - [x] media-services.nix
     - [ ] nfs-server.nix
     - [x] plex.nix
     - [x] redlib.nix
