@@ -66,7 +66,7 @@
     - [ ] jellyseerr.nix
     - [ ] media-services.nix
     - [ ] nfs-server.nix
-    - [ ] plex.nix
+    - [x] plex.nix
     - [ ] redlib.nix
     - [ ] tautulli.nix
     - [ ] Use OCI-containers for some of the docker compose services
