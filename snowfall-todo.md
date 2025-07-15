@@ -55,7 +55,7 @@
 - [ ] modules
   - [ ] server
     - [x] adguard.nix
-    - [ ] audiobookshelf.nix
+    - [x] audiobookshelf.nix
     - [ ] beszel-hub.nix
     - [ ] caddy.nix
     - [ ] downloads.nix
