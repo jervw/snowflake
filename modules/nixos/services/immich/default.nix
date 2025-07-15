@@ -28,7 +28,7 @@ in {
         host = "0.0.0.0";
         port = 2995;
       };
-      services.caddy.virtualHosts."${cfg.host}".extraConfig = ''
+      caddy.virtualHosts."${cfg.host}".extraConfig = ''
         reverse_proxy http://thor:2995
         import cloudflare
       '';

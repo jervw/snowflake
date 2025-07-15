@@ -24,7 +24,7 @@ in {
         enable = true;
         openFirewall = true;
       };
-      services.caddy.virtualHosts."${cfg.host}".extraConfig = ''
+      caddy.virtualHosts."${cfg.host}".extraConfig = ''
         reverse_proxy http://thor:5055
         import cloudflare
       '';

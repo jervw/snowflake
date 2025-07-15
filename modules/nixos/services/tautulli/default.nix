@@ -21,7 +21,7 @@ in {
   config = mkIf cfg.enable {
     services = {
       tautulli.enable = true;
-      services.caddy.virtualHosts."${cfg.host}".extraConfig = ''
+      caddy.virtualHosts."${cfg.host}".extraConfig = ''
         reverse_proxy http://thor:8181
         import cloudflare
       '';
