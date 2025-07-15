@@ -62,7 +62,7 @@
     - [ ] flaresolverr.nix
     - [ ] glance.nix
     - [ ] homepage.nix
-    - [ ] immich.nix
+    - [x] immich.nix
     - [ ] jellyseerr.nix
     - [ ] media-services.nix
     - [ ] nfs-server.nix
