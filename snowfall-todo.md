@@ -64,7 +64,7 @@
     - [x] immich.nix
     - [x] jellyseerr.nix
     - [x] media-services.nix
-    - [ ] nfs-server.nix
+    - [x] nfs-server.nix
     - [x] plex.nix
     - [x] redlib.nix
     - [x] tautulli.nix
