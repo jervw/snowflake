@@ -68,7 +68,7 @@
     - [ ] nfs-server.nix
     - [x] plex.nix
     - [ ] redlib.nix
-    - [ ] tautulli.nix
+    - [x] tautulli.nix
     - [ ] Use OCI-containers for some of the docker compose services
   - [ ] extra
     - [x] quiet.nix
