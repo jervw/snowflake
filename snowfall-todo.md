@@ -59,7 +59,7 @@
     - [x] beszel-hub.nix
     - [ ] caddy.nix
     - [x] downloads.nix
-    - [ ] flaresolverr.nix
+    - [x] flaresolverr.nix
     - [x] glance.nix
     - [x] immich.nix
     - [x] jellyseerr.nix
