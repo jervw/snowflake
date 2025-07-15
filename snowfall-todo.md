@@ -60,7 +60,7 @@
     - [ ] caddy.nix
     - [ ] downloads.nix
     - [ ] flaresolverr.nix
-    - [ ] glance.nix
+    - [x] glance.nix
     - [ ] homepage.nix
     - [x] immich.nix
     - [ ] jellyseerr.nix
