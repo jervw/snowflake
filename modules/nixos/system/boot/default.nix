@@ -25,6 +25,8 @@ in {
       ]
       ++ lib.optionals cfg.secureBoot [sbctl tpm2-tss];
 
+    systemd.tpm2.enable = cfg.secureboot;
+
     boot = {
       kernelParams =
         lib.optionals cfg.plymouth ["quiet" "bgrt_disable"]
@@ -41,7 +43,7 @@ in {
       initrd = {
         systemd = {
           enable = true;
-          tpm2.enable = !cfg.secureboot;
+          tpm2.enable = cfg.secureboot;
           network.wait-online.enable = false;
         };
         verbose = !cfg.silentBoot;
