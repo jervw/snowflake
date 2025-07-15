@@ -46,7 +46,7 @@ in {
 
       host = mkOption {
         type = types.str;
-        default = "127.0.0.1";
+        default = "0.0.0.0";
         description = "HTTP server listen address.";
       };
 
@@ -108,6 +108,11 @@ in {
           User = "root";
         };
       };
+
+      services.caddy.virtualHosts."monitor.jervw.dev".extraConfig = ''
+        reverse_proxy http://thor:${cfg.server.port}
+        import cloudflare
+      '';
 
       networking.firewall = mkIf cfg.server.openFirewall {
         allowedTCPPorts = [cfg.server.port];

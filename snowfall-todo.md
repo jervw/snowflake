@@ -56,7 +56,7 @@
   - [ ] server
     - [x] adguard.nix
     - [x] audiobookshelf.nix
-    - [ ] beszel-hub.nix
+    - [x] beszel-hub.nix
     - [ ] caddy.nix
     - [x] downloads.nix
     - [ ] flaresolverr.nix
