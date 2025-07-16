@@ -53,7 +53,7 @@
 ## NixOS
 
 - [ ] modules
-  - [ ] server
+  - [x] server
     - [x] adguard.nix
     - [x] audiobookshelf.nix
     - [x] beszel-hub.nix
@@ -69,6 +69,16 @@
     - [x] redlib.nix
     - [x] tautulli.nix
     - [ ] Use OCI-containers for some of the docker compose services
+      - [x] hoarder/karakeep (new nixos service)
+      - [ ] speedtest-tracker
+      - [ ] tududi
+      - [ ] profilarr
+      - [ ] sparky-fitness
+      - [ ] yamtrack
+      - [ ] unpackerr?
+      - [ ] nixpkgs-webhook?
+      - [ ] freegames-webhook?
+      - [ ] vpn stack?
   - [ ] extra
     - [x] quiet.nix
     - [x] lanzaboote.nix
