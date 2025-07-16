@@ -82,7 +82,7 @@
   - [ ] extra
     - [x] quiet.nix
     - [x] lanzaboote.nix
-    - [ ] gaming.nix
+    - [x] gaming.nix
     - [ ] greetd.nix
     - [ ] impermamence.nix
     - [ ] stylix.nix
