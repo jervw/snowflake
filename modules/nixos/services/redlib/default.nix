@@ -2,7 +2,7 @@
   config,
   lib,
   namespace,
-  self,
+  inputs,
   ...
 }: let
   inherit (lib) mkEnableOption mkIf mkOption;
@@ -19,8 +19,9 @@ in {
 
   # TODO: Add port configuration
 
-  config = mkIf cfg.enable {
-    services = {
+  config = {
+    age.secrets.reddit.file = "${inputs.self}/secrets/reddit.age"; # FIXME whats wrong with this not evaluating inside cfg.enable??
+    services = mkIf cfg.enable {
       redlib = {
         enable = true;
         port = 8081;
@@ -31,19 +32,17 @@ in {
         };
       };
 
-      age.secrets.reddit.file = "${self}/secrets/reddit.age";
-
-      # Used for REDLIB_DEFAULT_SUBSCRIPTIONS, I prefer to keep my subs private
-      systemd.services.redlib = {
-        serviceConfig = {
-          EnvironmentFile = [config.age.secrets.reddit.path];
-        };
-      };
-
       caddy.virtualHosts."${cfg.host}".extraConfig = ''
         reverse_proxy http://thor:8081
         import cloudflare
       '';
+    };
+
+    # Used for REDLIB_DEFAULT_SUBSCRIPTIONS, I prefer to keep my subs private
+    systemd.services.redlib = {
+      serviceConfig = {
+        EnvironmentFile = [config.age.secrets.reddit.path];
+      };
     };
   };
 }

@@ -13,7 +13,8 @@ in {
     enable = mkEnableOption "Whether to enable OpenSSH";
   };
 
-  config = mkIf cfg.enable {
+  config = {
+    # FIXME: For now forcefully enable OpenSSH because Agenix requires it to pass `nix flake check` before having any systems configured unless age.identityPaths is set
     services.openssh = {
       enable = true;
       settings = {
