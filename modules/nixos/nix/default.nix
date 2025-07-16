@@ -7,8 +7,6 @@
   inherit (lib) mkDefault;
   user = config.${namespace}.user;
 in {
-  options.${namespace}.nix = {};
-
   config = {
     programs = {
       command-not-found.enable = false;
