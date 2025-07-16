@@ -4,10 +4,10 @@
   namespace,
   ...
 }: let
-  cfg = config.${namespace}.security.kernel;
+  cfg = config.${namespace}.security.hardening;
 in {
-  options.${namespace}.security.kernel = {
-    enable = lib.mkEnableOption "kernel hardeding";
+  options.${namespace}.security.hardening = {
+    enable = lib.mkEnableOption "Kernel hardening";
   };
 
   config = lib.mkIf cfg.enable {
