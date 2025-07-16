@@ -87,3 +87,4 @@
 
 ## Other
 - [ ] secrets
+- [ ] treefmt-nix
