@@ -7,11 +7,11 @@
     - [ ] default.nix
     - [ ] direnv.nix
     - [ ] fastfetch.nix
-    - [ ] fish.nix
+    - [x] fish.nix
     - [ ] git.nix
     - [x] helix.nix
     - [ ] lazygit.nix
-    - [ ] nushell.nix
+    - [x] nushell.nix
     - [ ] syncthing.nix
     - [ ] yazi.nix
     - [ ] zellij.nix

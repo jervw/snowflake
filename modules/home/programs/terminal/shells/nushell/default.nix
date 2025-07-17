@@ -1,21 +1,22 @@
-{pkgs, ...}: {
-  home.sessionVariables = {
-    SHELL = "nu";
+{
+  config,
+  lib,
+  namespace,
+  pkgs,
+  ...
+}: let
+  inherit (lib) mkEnableOption mkIf;
+
+  cfg = config.${namespace}.programs.terminal.shell.nushell;
+in {
+  options.${namespace}.programs.terminal.shell.nushell = {
+    enable = mkEnableOption "Enable Nushell shell";
   };
 
-  programs = {
-    nushell = {
+  config = mkIf cfg.enable {
+    programs.nushell = {
       enable = true;
-      shellAliases = {
-        y = "yazi";
-        lg = "lazygit";
-        cd = "z";
-        whereami = "curl ipinfo.io/city";
-      };
       extraConfig = ''
-        # Variables
-        $env.EDITOR = "hx"
-
         # Config
         $env.config.buffer_editor = "hx"
         $env.config.show_banner = false
@@ -29,16 +30,9 @@
           | rename value description
         }
       '';
-      # plugins = [pkgs.nushellPlugins.highlight];
     };
 
-    # Nix-your-shell
-    nix-your-shell.enable = true;
-
-    # Completions
-    carapace.enable = true;
-
-    # Prompt
-    starship.enable = true;
+    programs.nix-your-shell.enable = true;
+    programs.carapace.enable = true;
   };
 }
