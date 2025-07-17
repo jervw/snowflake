@@ -40,7 +40,7 @@
     - [x] swaync.nix
     - [ ] syncthing.nix
     - [x] trayscale.nix
-    - [ ] wlsunset.nix
+    - [x] wlsunset.nix
   - [ ] wayland
     - [ ] default.nix
     - [ ] hyprland
