@@ -25,7 +25,7 @@
     - [ ] stylix.nix
     - [ ] vesktop.nix
     - [ ] xdg.nix
-    - [ ] zathura.nix
+    - [x] zathura.nix
     - [ ] zed.nix
   - [ ] profiles (somehow)
     - [ ] loki
