@@ -15,14 +15,12 @@ in {
 
   config = mkIf cfg.enable {
     snowflake = {
-      programs = {
-        hardware = {
-          audio = mkDefault enabled;
-        };
+      hardware = {
+        audio = mkDefault enabled;
+      };
 
-        security = {
-          keyring = mkDefault enabled;
-        };
+      security = {
+        keyring = mkDefault enabled;
       };
     };
   };
