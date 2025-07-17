@@ -18,7 +18,7 @@
   - [ ] desktop
     - [ ] default.nix
     - [ ] foot.nix
-    - [ ] freetube.nix
+    - [x] freetube.nix
     - [ ] fuzzel.nix
     - [ ] ghostty.nix
     - [ ] mpv.nix
