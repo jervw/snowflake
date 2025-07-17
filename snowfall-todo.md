@@ -33,7 +33,7 @@
     - [ ] thor
   - [ ] services
     - [ ] syncthing.nix
-    - [ ] clipman.nix
+    - [x] clipman.nix
     - [ ] default.nix
     - [ ] hypridle.nix
     - [ ] quickshell
