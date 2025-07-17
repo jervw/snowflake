@@ -39,7 +39,7 @@
     - [x] quickshell
     - [x] swaync.nix
     - [ ] syncthing.nix
-    - [ ] trayscale.nix
+    - [x] trayscale.nix
     - [ ] wlsunset.nix
   - [ ] wayland
     - [ ] default.nix
