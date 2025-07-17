@@ -10,7 +10,7 @@
     - [x] fish.nix
     - [ ] git.nix
     - [x] helix.nix
-    - [ ] lazygit.nix
+    - [x] lazygit.nix
     - [x] nushell.nix
     - [ ] syncthing.nix
     - [x] yazi.nix
