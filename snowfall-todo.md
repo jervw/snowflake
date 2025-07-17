@@ -19,7 +19,7 @@
     - [ ] default.nix
     - [ ] foot.nix
     - [x] freetube.nix
-    - [ ] fuzzel.nix
+    - [x] fuzzel.nix
     - [ ] ghostty.nix
     - [x] mpv.nix
     - [ ] stylix.nix
