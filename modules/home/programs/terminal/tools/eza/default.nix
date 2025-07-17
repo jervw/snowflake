@@ -22,5 +22,11 @@ in {
         "--header"
       ];
     };
+
+    home.shellAliases = {
+      lg = "lazygit";
+      ls = "eza --icons";
+      tree = "eza --tree --icons";
+    };
   };
 }
