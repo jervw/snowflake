@@ -9,7 +9,7 @@
     - [ ] fastfetch.nix
     - [ ] fish.nix
     - [ ] git.nix
-    - [ ] helix.nix
+    - [x] helix.nix
     - [ ] lazygit.nix
     - [ ] nushell.nix
     - [ ] syncthing.nix
