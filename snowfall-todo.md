@@ -44,7 +44,7 @@
   - [ ] wayland
     - [ ] default.nix
     - [ ] hyprland
-    - [ ] hyprlock.nix
+    - [x] hyprlock.nix
     - [ ] niri
     - [ ] waybar.nix
 
