@@ -20,7 +20,7 @@
     - [x] foot.nix
     - [x] freetube.nix
     - [x] fuzzel.nix
-    - [ ] ghostty.nix
+    - [x] ghostty.nix
     - [x] mpv.nix
     - [ ] stylix.nix
     - [ ] vesktop.nix
