@@ -1,11 +1,9 @@
-{pkgs, ...}: let
+_: let
   mkCommand = command: {
     command = [command];
   };
 in {
   programs.niri = {
-    enable = true;
-    package = pkgs.niri;
     settings = {
       environment = {
         DISPLAY = ":0";
@@ -14,7 +12,6 @@ in {
 
       spawn-at-startup = [
         (mkCommand "hyprlock")
-        (mkCommand "nm-applet")
         (mkCommand "xwayland-satellite")
       ];
 
