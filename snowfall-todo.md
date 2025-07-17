@@ -3,8 +3,8 @@
 ## Home-manager
 - [ ] Home-manager modules
   - [ ] default.nix
-  - [ ] core
-    - [ ] default.nix
+  - [x] core
+    - [x] default.nix
     - [x] direnv.nix
     - [x] fastfetch.nix
     - [x] fish.nix
