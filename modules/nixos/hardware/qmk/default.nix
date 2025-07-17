@@ -14,9 +14,10 @@ in {
   };
 
   config = mkIf cfg.enable {
+    environment.systemPackages = [pkgs.vial];
     services = {
       udev = {
-        packages = with pkgs; [vial];
+        packages = [pkgs.vial];
       };
     };
   };
