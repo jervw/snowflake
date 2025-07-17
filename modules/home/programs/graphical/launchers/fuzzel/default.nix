@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  pkgs,
   namespace,
   ...
 }: let
@@ -13,6 +14,18 @@ in {
   };
 
   config = mkIf cfg.enable {
+    home.packages = [pkgs.bemoji];
+
+    snowflake = {
+      programs = {
+        graphical = {
+          addons = {
+            clipman.enable = true;
+          };
+        };
+      };
+    };
+
     programs.fuzzel = {
       enable = true;
       settings = {
