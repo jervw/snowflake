@@ -36,7 +36,7 @@
     - [x] clipman.nix
     - [ ] default.nix
     - [ ] hypridle.nix
-    - [ ] quickshell
+    - [x] quickshell
     - [ ] swaync.nix
     - [ ] syncthing.nix
     - [ ] trayscale.nix
