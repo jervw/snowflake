@@ -2,7 +2,6 @@
   config,
   lib,
   namespace,
-  pkgs,
   ...
 }: let
   inherit (lib) mkDefault mkEnableOption mkIf;
@@ -15,21 +14,6 @@ in {
   };
 
   config = mkIf cfg.enable {
-    environment.systemPackages = with pkgs; [
-      # Launchers
-      lutris
-      heroic
-      cartridges
-
-      # Emulators
-      rpcs3
-      shadps4
-
-      # Misc
-      r2modman
-      mangohud
-    ];
-
     # Some platform optimization that Steam Deck also uses
     boot.kernel.sysctl = {
       # 20-shed.conf
