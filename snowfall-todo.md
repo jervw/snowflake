@@ -12,7 +12,6 @@
     - [x] helix.nix
     - [x] lazygit.nix
     - [x] nushell.nix
-    - [ ] syncthing.nix
     - [x] yazi.nix
     - [x] zellij.nix
     - [x] zoxide.nix
@@ -33,6 +32,7 @@
     - [ ] fenrir
     - [ ] thor
   - [ ] services
+    - [ ] syncthing.nix
     - [ ] clipman.nix
     - [ ] default.nix
     - [ ] hypridle.nix
