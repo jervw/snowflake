@@ -37,7 +37,7 @@
     - [ ] default.nix
     - [x] hypridle.nix
     - [x] quickshell
-    - [ ] swaync.nix
+    - [x] swaync.nix
     - [ ] syncthing.nix
     - [ ] trayscale.nix
     - [ ] wlsunset.nix
