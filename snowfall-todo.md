@@ -45,7 +45,7 @@
     - [ ] hyprland
     - [x] hyprlock.nix
     - [ ] niri
-    - [ ] waybar.nix
+    - [x] waybar.nix
 
 
 
