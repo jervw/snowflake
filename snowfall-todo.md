@@ -6,15 +6,15 @@
   - [ ] core
     - [ ] default.nix
     - [ ] direnv.nix
-    - [ ] fastfetch.nix
+    - [x] fastfetch.nix
     - [x] fish.nix
     - [ ] git.nix
     - [x] helix.nix
     - [ ] lazygit.nix
     - [x] nushell.nix
     - [ ] syncthing.nix
-    - [ ] yazi.nix
-    - [ ] zellij.nix
+    - [x] yazi.nix
+    - [x] zellij.nix
     - [ ] zoxide.nix
   - [ ] desktop
     - [ ] default.nix
