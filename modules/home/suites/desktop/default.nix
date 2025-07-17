@@ -1,0 +1,56 @@
+{
+  config,
+  lib,
+  pkgs,
+  namespace,
+  ...
+}: let
+  inherit (lib) mkIf mkDefault;
+  inherit (lib.${namespace}) enabled;
+
+  cfg = config.${namespace}.suites.desktop;
+in {
+  options.${namespace}.suites.desktop = {
+    enable = lib.mkEnableOption "desktop applications";
+  };
+
+  config = mkIf cfg.enable {
+    home.packages = with pkgs; [
+      anki-bin
+      calibre
+      beeper
+      nautilus
+      ffmpeg
+      imv
+      obsidian
+      normcap
+      mission-center
+      playerctl
+      tomato-c
+      qbittorrent-enhanced
+      fontpreview
+      pkgs.${namespace}.cider
+    ];
+
+    snowflake = {
+      programs = {
+        addons = {
+          trayscale = mkDefault enabled;
+          vesktop-fix = mkDefault enabled;
+        };
+        apps = {
+          freetube = mkDefault enabled;
+          mpv = mkDefault enabled;
+          obs = mkDefault enabled;
+          zathura = mkDefault enabled;
+        };
+        editors = {
+          zed = mkDefault enabled;
+        };
+        emulators = {
+          foot = mkDefault enabled;
+        };
+      };
+    };
+  };
+}

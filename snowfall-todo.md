@@ -16,7 +16,7 @@
     - [x] zellij.nix
     - [x] zoxide.nix
   - [ ] desktop
-    - [ ] default.nix
+    - [x] default.nix
     - [x] foot.nix
     - [x] freetube.nix
     - [x] fuzzel.nix
