@@ -26,7 +26,7 @@
     - [ ] vesktop.nix
     - [ ] xdg.nix
     - [x] zathura.nix
-    - [ ] zed.nix
+    - [x] zed.nix
   - [ ] profiles (somehow)
     - [ ] loki
     - [ ] fenrir
