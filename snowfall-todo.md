@@ -42,7 +42,7 @@
     - [x] wlsunset.nix
   - [ ] wayland
     - [ ] default.nix
-    - [ ] hyprland
+    - [x] hyprland
     - [x] hyprlock.nix
     - [ ] niri
     - [x] waybar.nix
