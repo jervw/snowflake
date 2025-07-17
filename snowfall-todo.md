@@ -8,7 +8,7 @@
     - [x] direnv.nix
     - [x] fastfetch.nix
     - [x] fish.nix
-    - [ ] git.nix
+    - [x] git.nix
     - [x] helix.nix
     - [x] lazygit.nix
     - [x] nushell.nix
