@@ -5,7 +5,7 @@
   - [ ] default.nix
   - [ ] core
     - [ ] default.nix
-    - [ ] direnv.nix
+    - [x] direnv.nix
     - [x] fastfetch.nix
     - [x] fish.nix
     - [ ] git.nix
