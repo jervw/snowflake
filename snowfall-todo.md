@@ -35,7 +35,7 @@
     - [ ] syncthing.nix
     - [x] clipman.nix
     - [ ] default.nix
-    - [ ] hypridle.nix
+    - [x] hypridle.nix
     - [x] quickshell
     - [ ] swaync.nix
     - [ ] syncthing.nix
