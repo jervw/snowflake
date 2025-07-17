@@ -23,7 +23,7 @@
     - [x] ghostty.nix
     - [x] mpv.nix
     - [ ] stylix.nix
-    - [ ] vesktop.nix
+    - [x] vesktop.nix
     - [ ] xdg.nix
     - [x] zathura.nix
     - [x] zed.nix
