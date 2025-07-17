@@ -15,7 +15,7 @@
     - [ ] syncthing.nix
     - [x] yazi.nix
     - [x] zellij.nix
-    - [ ] zoxide.nix
+    - [x] zoxide.nix
   - [ ] desktop
     - [ ] default.nix
     - [ ] foot.nix

@@ -29,7 +29,6 @@ in {
         y = "${getExe pkgs.yazi}";
         lg = "${getExe pkgs.lazygit}";
         ls = "${getExe pkgs.eza} --icons";
-        cd = "${getExe pkgs.zoxide}";
         tree = "${getExe pkgs.eza} --tree --icons";
         whereami = "${getExe pkgs.curl} ipinfo.io/city";
         myip = "${getExe pkgs.curl} ifconfig.me";
