@@ -32,13 +32,12 @@
     - [ ] fenrir
     - [ ] thor
   - [ ] services
-    - [ ] syncthing.nix
     - [x] clipman.nix
     - [ ] default.nix
     - [x] hypridle.nix
     - [x] quickshell
     - [x] swaync.nix
-    - [ ] syncthing.nix
+    - [x] syncthing.nix
     - [x] trayscale.nix
     - [x] wlsunset.nix
   - [ ] wayland
