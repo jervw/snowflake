@@ -21,7 +21,7 @@
     - [x] freetube.nix
     - [ ] fuzzel.nix
     - [ ] ghostty.nix
-    - [ ] mpv.nix
+    - [x] mpv.nix
     - [ ] stylix.nix
     - [ ] vesktop.nix
     - [ ] xdg.nix
