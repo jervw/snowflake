@@ -40,8 +40,8 @@
     - [x] syncthing.nix
     - [x] trayscale.nix
     - [x] wlsunset.nix
-  - [ ] wayland
-    - [ ] default.nix
+  - [x] wayland
+    - [x] default.nix
     - [x] hyprland
     - [x] hyprlock.nix
     - [x] niri
