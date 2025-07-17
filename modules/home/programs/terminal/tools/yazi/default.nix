@@ -32,5 +32,8 @@ in {
         };
       };
     };
+    home.shellAliases = {
+      y = "yazi";
+    };
   };
 }
