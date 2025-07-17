@@ -17,7 +17,7 @@
     - [x] zoxide.nix
   - [ ] desktop
     - [ ] default.nix
-    - [ ] foot.nix
+    - [x] foot.nix
     - [x] freetube.nix
     - [x] fuzzel.nix
     - [ ] ghostty.nix
