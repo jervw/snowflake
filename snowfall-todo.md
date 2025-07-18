@@ -51,7 +51,7 @@
 
 ## NixOS
 
-- [ ] modules
+- [x] modules
   - [x] server
     - [x] adguard.nix
     - [x] audiobookshelf.nix
@@ -96,4 +96,3 @@
 
 ## Other
 - [x] secrets
-- [ ] treefmt-nix

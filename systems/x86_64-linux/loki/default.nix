@@ -1,28 +1,63 @@
 {
-  # Snowfall Lib provides a customized `lib` instance with access to your flake's library
-  # as well as the libraries available from your flake's inputs.
-  # An instance of `pkgs` with your overlays and packages applied is also available.
+  lib,
   pkgs,
-  # You also have access to your flake's inputs.
-  # Additional metadata is provided by Snowfall Lib.
-  namespace, # The namespace used for your flake, defaulting to "internal" if not set.
-  system, # The system architecture for this host (eg. `x86_64-linux`).
-  target, # The Snowfall Lib target for this system (eg. `x86_64-iso`).
-  format, # A normalized name for the system target (eg. `iso`).
-  virtual, # A boolean to determine whether this system is a virtual target using nixos-generators.
-  systems, # An attribute map of your defined hosts.
-  # All other arguments come from the system system.
-  config,
+  namespace,
   ...
-}: {
+}: let
+  inherit (lib.${namespace}) enabled;
+in {
   imports = [./hardware.nix];
 
-  boot = {
-    loader = {
-      systemd-boot.enable = true;
-      efi.canTouchEfiVariables = true;
+  boot.kernelPackages = pkgs.linuxPackages_cachyos-lto;
+
+  snowflake = {
+    hardware = {
+      cpu.amd = enabled;
+      nvidia = enabled;
+      qmk = enabled;
+      ssd = enabled;
     };
-    kernelPackages = pkgs.linuxPackages_cachyos-lto;
+    networking = {
+      nfs = enabled;
+      tailscale = enabled;
+    };
+
+    programs.graphical.wm.hyprland = enabled;
+
+    security = {
+      hardening = enabled;
+    };
+
+    services = {
+      ollama = {
+        enabled = true;
+        modelsPath = "/mnt/storage/ollama-models";
+      };
+      logind = enabled;
+    };
+
+    suites = {
+      core = enabled;
+      desktop = enabled;
+      gaming = enabled;
+    };
+
+    system = {
+      boot = {
+        enable = true;
+        plymouth = true;
+        secureBoot = true;
+        silentBoot = true;
+      };
+      impermamence = enabled;
+    };
+
+    theme.stylix = enabled;
+
+    virtualisation = {
+      docker = enabled;
+      qemu = enabled;
+    };
   };
 
   system.stateVersion = "24.05";
