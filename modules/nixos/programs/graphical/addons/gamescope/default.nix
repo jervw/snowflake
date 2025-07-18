@@ -4,9 +4,9 @@
   namespace,
   ...
 }: let
-  cfg = config.${namespace}.programs.gamescope;
+  cfg = config.${namespace}.programs.graphical.addons.gamescope;
 in {
-  options.${namespace}.programs.gamescope = {
+  options.${namespace}.programs.graphical.addons.gamescope = {
     enable = lib.mkEnableOption "Enable Gamescope";
   };
 

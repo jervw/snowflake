@@ -7,7 +7,7 @@
 }: let
   inherit (lib.${namespace}) mkOpt;
 
-  cfg = config.${namespace}.programs.gamemode;
+  cfg = config.${namespace}.programs.graphical.addons.gamemode;
 
   defaultStartScript = ''
     ${lib.getExe' pkgs.libnotify "notify-send"} 'GameMode started'
@@ -17,7 +17,7 @@
     ${lib.getExe' pkgs.libnotify "notify-send"} 'GameMode ended'
   '';
 in {
-  options.${namespace}.programs.gamemode = {
+  options.${namespace}.programs.graphical.addons.gamemode = {
     enable = lib.mkEnableOption "gamemode";
     endscript = mkOpt (with lib.types; nullOr str) null "The script to run when disabling gamemode.";
     startscript = mkOpt (with lib.types; nullOr str) null "The script to run when enabling gamemode.";

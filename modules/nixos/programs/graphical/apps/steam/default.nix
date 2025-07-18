@@ -7,9 +7,9 @@
 }: let
   inherit (lib) mkIf;
 
-  cfg = config.${namespace}.programs.steam;
+  cfg = config.${namespace}.programs.graphical.apps.steam;
 in {
-  options.${namespace}.programs.steam = {
+  options.${namespace}.programs.graphical.apps.steam = {
     enable = lib.mkEnableOption "Enable Steam";
   };
 

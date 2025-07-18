@@ -7,11 +7,9 @@
 }: let
   inherit (lib) mkIf;
 
-  # TODO: Namespace category maybe little off, move somewhere else?
-
-  cfg = config.${namespace}.programs.ntsync;
+  cfg = config.${namespace}.programs.graphical.addons.ntsync;
 in {
-  options.${namespace}.programs.ntsync = {
+  options.${namespace}.programs.graphical.addons.ntsync = {
     enable = lib.mkEnableOption "Enable ntsync support";
   };
 
