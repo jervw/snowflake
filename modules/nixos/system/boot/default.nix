@@ -25,7 +25,7 @@ in {
       ]
       ++ lib.optionals cfg.secureBoot [sbctl tpm2-tss];
 
-    systemd.tpm2.enable = cfg.secureboot;
+    systemd.tpm2.enable = cfg.secureBoot;
 
     boot = {
       kernelParams =
@@ -43,7 +43,7 @@ in {
       initrd = {
         systemd = {
           enable = true;
-          tpm2.enable = cfg.secureboot;
+          tpm2.enable = cfg.secureBoot;
           network.wait-online.enable = false;
         };
         verbose = !cfg.silentBoot;
@@ -55,13 +55,10 @@ in {
       };
 
       loader = {
-        efi = {
-          canTouchEfiVariables = true;
-          efiSysMountPoint = "/boot";
-        };
+        efi.canTouchEfiVariables = true;
 
         systemd-boot = {
-          enable = !cfg.secureBoot;
+          enable = lib.mkForce (!cfg.secureBoot);
           configurationLimit = 5;
           consoleMode = "max";
           editor = false;
