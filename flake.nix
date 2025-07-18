@@ -84,6 +84,7 @@
         home-manager.nixosModules.default
         lanzaboote.nixosModules.lanzaboote
         nix-index.nixosModules.nix-index
+        stylix.nixosModules.stylix
       ];
       homes.modules = with inputs; [
       ];

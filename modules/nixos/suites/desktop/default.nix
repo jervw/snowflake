@@ -18,9 +18,11 @@ in {
       hardware = {
         audio = mkDefault enabled;
       };
-
       security = {
         keyring = mkDefault enabled;
+      };
+      system = {
+        fonts = mkDefault enabled;
       };
     };
   };

@@ -22,7 +22,7 @@
     - [x] fuzzel.nix
     - [x] ghostty.nix
     - [x] mpv.nix
-    - [ ] stylix.nix
+    - [x] stylix.nix
     - [x] vesktop.nix
     - [ ] xdg.nix
     - [x] zathura.nix
@@ -84,7 +84,7 @@
     - [x] gaming.nix
     - [ ] greetd.nix
     - [ ] impermamence.nix
-    - [ ] stylix.nix
+    - [x] stylix.nix
     - [ ] wayland.nix
   - [x] hardware
   - [x] network
