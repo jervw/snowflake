@@ -82,7 +82,7 @@
     - [x] quiet.nix
     - [x] lanzaboote.nix
     - [x] gaming.nix
-    - [ ] greetd.nix
+    - [x] greetd.nix
     - [ ] impermamence.nix
     - [x] stylix.nix
     - [ ] wayland.nix
