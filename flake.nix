@@ -82,10 +82,12 @@
         chaotic.nixosModules.default
         comin.nixosModules.comin
         home-manager.nixosModules.default
+        impermanence.nixosModule
         lanzaboote.nixosModules.lanzaboote
         nix-index.nixosModules.nix-index
         stylix.nixosModules.stylix
       ];
+
       homes.modules = with inputs; [
         niri.homeModules.niri
         stylix.homeModules.stylix

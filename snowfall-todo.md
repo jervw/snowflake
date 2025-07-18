@@ -1,4 +1,4 @@
-# Snowfall-lib progession
+# Snowfall-lib progression
 
 ## Home-manager
 - [x] Home-manager modules
@@ -78,12 +78,12 @@
       - [ ] nixpkgs-webhook?
       - [ ] freegames-webhook?
       - [ ] vpn stack?
-  - [ ] extra
+  - [x] extra
     - [x] quiet.nix
     - [x] lanzaboote.nix
     - [x] gaming.nix
     - [x] greetd.nix
-    - [ ] impermamence.nix
+    - [x] impermamence.nix
     - [x] stylix.nix
     - [x] wayland.nix
   - [x] hardware
@@ -95,5 +95,5 @@
 
 
 ## Other
-- [ ] secrets
+- [x] secrets
 - [ ] treefmt-nix
