@@ -15,7 +15,10 @@ in {
       cpu.amd = enabled;
       nvidia = enabled;
       qmk = enabled;
-      ssd = enabled;
+      storage = {
+        extra = true;
+        ssd = true;
+      };
     };
     networking = {
       nfs = enabled;

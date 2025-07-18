@@ -31,7 +31,7 @@ in {
   snowflake = {
     hardware = {
       cpu.intel = enabled;
-      ssd = enabled;
+      storage.ssd = true;
     };
     networking = {
       nfs = enabled;

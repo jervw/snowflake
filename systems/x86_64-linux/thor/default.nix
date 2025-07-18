@@ -42,7 +42,10 @@ in {
   snowflake = {
     hardware = {
       cpu.intel = enabled;
-      ssd = enabled;
+      storage = {
+        ssd = true;
+        extra = true;
+      };
     };
     networking = {
       nfs = enabled;
