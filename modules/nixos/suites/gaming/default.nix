@@ -34,10 +34,16 @@ in {
 
     snowflake = {
       programs = {
-        steam = mkDefault enabled;
-        gamemode = mkDefault enabled;
-        gamescope = mkDefault enabled;
-        ntsync = mkDefault enabled;
+        graphical = {
+          addons = {
+            gamemode = mkDefault enabled;
+            gamescope = mkDefault enabled;
+            ntsync = mkDefault enabled;
+          };
+          apps = {
+            steam = mkDefault enabled;
+          };
+        };
       };
     };
   };
