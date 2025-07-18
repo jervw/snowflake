@@ -54,9 +54,5 @@ in {
         time = mkDefault enabled;
       };
     };
-
-    programs.fish = {
-      enable = true;
-    };
   };
 }

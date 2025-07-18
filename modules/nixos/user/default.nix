@@ -20,6 +20,7 @@ in {
   };
 
   config = {
+    programs.fish.enable = true; # TODO: Enable elsewhere
     users.groups.media = {}; # Used for some services on a server system
     users.users.${cfg.name} =
       {
@@ -41,6 +42,9 @@ in {
 
         group = "users";
         isNormalUser = true;
+
+        shell = pkgs.fish;
+
         description = cfg.fullName;
       }
       // cfg.extraOptions;
