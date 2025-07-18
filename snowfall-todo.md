@@ -1,7 +1,7 @@
 # Snowfall-lib progession
 
 ## Home-manager
-- [ ] Home-manager modules
+- [x] Home-manager modules
   - [x] default.nix
   - [x] core
     - [x] default.nix
@@ -15,7 +15,7 @@
     - [x] yazi.nix
     - [x] zellij.nix
     - [x] zoxide.nix
-  - [ ] desktop
+  - [x] desktop
     - [x] default.nix
     - [x] foot.nix
     - [x] freetube.nix
@@ -27,10 +27,10 @@
     - [x] xdg.nix
     - [x] zathura.nix
     - [x] zed.nix
-  - [ ] profiles (somehow)
-    - [ ] loki
-    - [ ] fenrir
-    - [ ] thor
+  - [x] profiles (somehow)
+    - [x] loki
+    - [x] fenrir
+    - [x] thor
   - [x] services
     - [x] clipman.nix
     - [x] default.nix

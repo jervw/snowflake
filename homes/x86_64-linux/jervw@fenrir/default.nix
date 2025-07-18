@@ -1,12 +1,41 @@
-{lib, ...}: {
-  imports = [
-    ../../core
-    ../../desktop
-    ../../wayland
-    ../../services
-  ];
+{
+  config,
+  lib,
+  namespace,
+  ...
+}: let
+  inherit (lib.${namespace}) enabled;
+in {
+  snowflake = {
+    user = {
+      enable = true;
+      inherit (config.snowfallorg.user) name;
+    };
 
-  # Workaround to fix issue with cursor scaling on HIDPI
+    programs = {
+      graphical.wm.niri = enabled;
+    };
+
+    services = {
+      syncthing = enabled;
+    };
+
+    system = {
+      xdg = enabled;
+    };
+
+    suites = {
+      core = enabled;
+      desktop = enabled;
+      wayland = enabled;
+    };
+
+    theme = {
+      stylix = enabled;
+    };
+  };
+
+  # Work around to fix issue with cursor scaling on HIDPI
   home.pointerCursor.gtk.enable = lib.mkForce false;
 
   programs.niri.settings.binds = {
@@ -45,7 +74,7 @@
 
     gestures = {
       workspace_swipe = true;
-      workspace_swipe_min_fingers = true; # min 3 fingers by default
+      workspace_swipe_min_fingers = true; # minimum 3 fingers by default
     };
 
     bindle = [

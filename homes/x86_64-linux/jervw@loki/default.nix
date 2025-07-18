@@ -1,14 +1,42 @@
-{pkgs, ...}: {
-  imports = [
-    ../../core
-    ../../desktop
-    ../../wayland
-    ../../services
-    ../../services/quickshell
-  ];
+{
+  config,
+  lib,
+  namespace,
+  ...
+}: let
+  inherit (lib.${namespace}) enabled;
+in {
+  snowflake = {
+    user = {
+      enable = true;
+      inherit (config.snowfallorg.user) name;
+    };
 
-  home.packages = [pkgs.bitwig-studio];
+    programs = {
+      graphical.wm.hyprland = enabled;
+    };
 
+    services = {
+      syncthing = enabled;
+    };
+
+    system = {
+      xdg = enabled;
+    };
+
+    suites = {
+      core = enabled;
+      desktop = enabled;
+      gaming = enabled;
+      wayland = enabled;
+    };
+
+    theme = {
+      stylix = enabled;
+    };
+  };
+
+  #
   programs.niri.settings = {
     input.mouse.accel-profile = "flat";
     outputs = {
