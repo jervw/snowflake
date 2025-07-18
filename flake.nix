@@ -54,7 +54,7 @@
     };
 
     zen-browser = {
-      url = "github:omarcresp/zen-browser-flake";
+      url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -87,6 +87,8 @@
         stylix.nixosModules.stylix
       ];
       homes.modules = with inputs; [
+        niri.homeModules.niri
+        zen-browser.homeModules.beta
       ];
     };
 }

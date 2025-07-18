@@ -37,6 +37,9 @@ in {
           trayscale = mkDefault enabled;
           vesktop-fix = mkDefault enabled;
         };
+        browsers = {
+          zen = mkDefault enabled;
+        };
         apps = {
           freetube = mkDefault enabled;
           mpv = mkDefault enabled;
