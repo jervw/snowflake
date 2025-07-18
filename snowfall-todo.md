@@ -2,7 +2,7 @@
 
 ## Home-manager
 - [ ] Home-manager modules
-  - [ ] default.nix
+  - [x] default.nix
   - [x] core
     - [x] default.nix
     - [x] direnv.nix
@@ -24,16 +24,16 @@
     - [x] mpv.nix
     - [x] stylix.nix
     - [x] vesktop.nix
-    - [ ] xdg.nix
+    - [x] xdg.nix
     - [x] zathura.nix
     - [x] zed.nix
   - [ ] profiles (somehow)
     - [ ] loki
     - [ ] fenrir
     - [ ] thor
-  - [ ] services
+  - [x] services
     - [x] clipman.nix
-    - [ ] default.nix
+    - [x] default.nix
     - [x] hypridle.nix
     - [x] quickshell
     - [x] swaync.nix
