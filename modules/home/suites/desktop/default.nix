@@ -21,7 +21,6 @@ in {
       beeper
       nautilus
       ffmpeg
-      imv
       obsidian
       normcap
       mission-center
@@ -42,6 +41,7 @@ in {
           freetube = mkDefault enabled;
           mpv = mkDefault enabled;
           obs = mkDefault enabled;
+          imv = mkDefault enabled;
           zathura = mkDefault enabled;
         };
         editors = {
