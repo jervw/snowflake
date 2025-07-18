@@ -88,6 +88,7 @@
       ];
       homes.modules = with inputs; [
         niri.homeModules.niri
+        stylix.homeModules.stylix
         zen-browser.homeModules.beta
       ];
     };

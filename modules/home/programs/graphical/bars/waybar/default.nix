@@ -6,11 +6,11 @@
 }: let
   inherit (lib) mkIf;
 
-  cfg = config.${namespace}.programs.graphical.bars.quickshell;
+  cfg = config.${namespace}.programs.graphical.bars.waybar;
 in {
   # TODO: Add monitor options
-  options.${namespace}.programs.graphical.bars.quickshell = {
-    enable = lib.mkEnableOption "Enable quickshell";
+  options.${namespace}.programs.graphical.bars.waybar = {
+    enable = lib.mkEnableOption "Enable waybar";
   };
 
   config = mkIf cfg.enable (

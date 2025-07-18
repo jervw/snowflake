@@ -29,19 +29,21 @@ in {
 
     snowflake = {
       programs = {
-        addons = {
-          hypridle = mkDefault enabled;
-          hyprlock = mkDefault enabled;
-          nmapplet = mkDefault enabled;
-          swaync = mkDefault enabled;
-          swayosd = mkDefault enabled;
-          wlsunset = mkDefault enabled;
-        };
-        bars = {
-          waybar = mkDefault enabled;
-        };
-        launchers = {
-          fuzzel = mkDefault enabled;
+        graphical = {
+          addons = {
+            hypridle = mkDefault enabled;
+            hyprlock = mkDefault enabled;
+            nmapplet = mkDefault enabled;
+            swaync = mkDefault enabled;
+            swayosd = mkDefault enabled;
+            wlsunset = mkDefault enabled;
+          };
+          bars = {
+            waybar = mkDefault enabled;
+          };
+          launchers = {
+            fuzzel = mkDefault enabled;
+          };
         };
       };
     };

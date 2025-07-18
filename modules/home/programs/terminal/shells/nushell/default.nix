@@ -7,9 +7,9 @@
 }: let
   inherit (lib) mkEnableOption mkIf;
 
-  cfg = config.${namespace}.programs.terminal.shell.nushell;
+  cfg = config.${namespace}.programs.terminal.shells.nushell;
 in {
-  options.${namespace}.programs.terminal.shell.nushell = {
+  options.${namespace}.programs.terminal.shells.nushell = {
     enable = mkEnableOption "Enable Nushell shell";
   };
 

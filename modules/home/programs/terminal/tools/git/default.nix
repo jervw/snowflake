@@ -24,7 +24,7 @@ in {
     programs.git = {
       enable = true;
 
-      inherit (cfg) includes userName userEmail;
+      inherit (cfg) userName userEmail;
 
       ignores = [
         ".direnv/"
@@ -46,10 +46,6 @@ in {
 
       lfs = {
         enable = true;
-      };
-
-      rebase = {
-        autoStash = true;
       };
 
       signing = {

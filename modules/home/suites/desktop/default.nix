@@ -33,25 +33,27 @@ in {
 
     snowflake = {
       programs = {
-        addons = {
-          trayscale = mkDefault enabled;
-          vesktop-fix = mkDefault enabled;
-        };
-        browsers = {
-          zen = mkDefault enabled;
-        };
-        apps = {
-          freetube = mkDefault enabled;
-          mpv = mkDefault enabled;
-          obs = mkDefault enabled;
-          imv = mkDefault enabled;
-          zathura = mkDefault enabled;
-        };
-        editors = {
-          zed = mkDefault enabled;
-        };
-        emulators = {
-          foot = mkDefault enabled;
+        graphical = {
+          addons = {
+            trayscale = mkDefault enabled;
+            vesktop-fix = mkDefault enabled;
+          };
+          browsers = {
+            zen = mkDefault enabled;
+          };
+          apps = {
+            freetube = mkDefault enabled;
+            mpv = mkDefault enabled;
+            obs = mkDefault enabled;
+            imv = mkDefault enabled;
+            zathura = mkDefault enabled;
+          };
+          editors = {
+            zed = mkDefault enabled;
+          };
+          emulators = {
+            foot = mkDefault enabled;
+          };
         };
       };
     };
