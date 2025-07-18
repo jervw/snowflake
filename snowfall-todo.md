@@ -85,13 +85,13 @@
     - [x] greetd.nix
     - [ ] impermamence.nix
     - [x] stylix.nix
-    - [ ] wayland.nix
+    - [x] wayland.nix
   - [x] hardware
   - [x] network
   - [x] services
   - [x] virtualisation
-  - [ ] core
-    - [ ] system.nix
+  - [x] core
+    - [x] system.nix
 
 
 ## Other
