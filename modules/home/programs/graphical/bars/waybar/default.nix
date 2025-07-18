@@ -8,6 +8,7 @@
 
   cfg = config.${namespace}.programs.graphical.bars.quickshell;
 in {
+  # TODO: Add monitor options
   options.${namespace}.programs.graphical.bars.quickshell = {
     enable = lib.mkEnableOption "Enable quickshell";
   };

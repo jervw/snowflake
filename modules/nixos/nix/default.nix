@@ -22,6 +22,9 @@ in {
     };
 
     documentation = {
+      doc.enable = false;
+      info.enable = false;
+
       man.generateCaches = mkDefault true;
 
       nixos = {
