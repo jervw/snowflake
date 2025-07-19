@@ -33,9 +33,17 @@ in {
 
     services = {
       ollama = {
-        enabled = true;
+        enable = true;
         modelsPath = "/mnt/storage/ollama-models";
       };
+
+      beszel = {
+        enable = true;
+        settings = {
+          publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIATu4vxaEbexuZV4jI5slmE0WMC2Tevux6zC0I8EPVm5";
+        };
+      };
+
       logind = enabled;
     };
 

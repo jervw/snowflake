@@ -35,7 +35,7 @@ in {
 
       openFirewall = mkOption {
         type = types.bool;
-        default = false;
+        default = true;
         description = "Whether to open the agent port in the firewall.";
       };
     };
@@ -58,7 +58,7 @@ in {
 
       openFirewall = mkOption {
         type = types.bool;
-        default = false;
+        default = true;
         description = "Whether to open the configured port in the firewall.";
       };
     };
@@ -110,7 +110,7 @@ in {
       };
 
       services.caddy.virtualHosts."monitor.jervw.dev".extraConfig = ''
-        reverse_proxy http://thor:${cfg.server.port}
+        reverse_proxy http://thor:${toString cfg.server.port}
         import cloudflare
       '';
 
