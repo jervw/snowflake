@@ -12,7 +12,7 @@ in {
       command-not-found.enable = false;
       nh = {
         enable = true;
-        # flake = "${user.home}/.dots"; // TODO Add it
+        flake = "/home/${user.name}/.dots";
         clean = {
           enable = true;
           extraArgs = "--keep-since 1d --keep 3";
