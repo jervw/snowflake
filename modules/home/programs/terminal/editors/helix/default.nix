@@ -17,6 +17,7 @@ in {
   config = mkIf cfg.enable {
     programs.helix = {
       enable = true;
+      defaultEditor = true;
 
       # Zero-conf packages
       extraPackages = with pkgs; [

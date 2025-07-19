@@ -25,7 +25,7 @@ in {
     users.groups.media = {}; # Used for some services on a server system
     users.users.${cfg.name} =
       {
-        inherit (cfg) name initialPassword;
+        inherit (cfg) name;
 
         extraGroups =
           [
@@ -42,10 +42,9 @@ in {
           ++ cfg.extraGroups;
 
         group = "users";
+        hashedPasswordFile = "/persist/password";
         isNormalUser = true;
-
         shell = pkgs.fish;
-
         description = cfg.fullName;
       }
       // cfg.extraOptions;
