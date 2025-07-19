@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  inputs,
   namespace,
   ...
 }: let
@@ -34,6 +35,7 @@ in {
       networkmanager.unmanaged = ["tailscale0"];
     };
 
+    age.secrets.tailscale.file = "${inputs.self}/secrets/tailscale.age";
     services.tailscale = {
       enable = true;
       authKeyFile = config.age.secrets.tailscale.path;

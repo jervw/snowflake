@@ -7,6 +7,7 @@
   inherit (lib) types mkIf mkOption;
 
   cfg = config.${namespace}.programs.graphical.display-managers.greetd;
+  user = config.${namespace}.user;
 in {
   options.${namespace}.programs.graphical.display-managers.greetd = {
     enable = lib.mkEnableOption "Enable greetd login-manager";
@@ -20,7 +21,7 @@ in {
   config = mkIf (cfg.enable && cfg.command != null) {
     services.greetd = let
       session = {
-        user = config.snowfallorg.user.name;
+        user = user.name;
         command = cfg.command;
       };
     in {

@@ -28,7 +28,7 @@ in {
         ++ forEach ["tailscale" "bluetooth" "nixos" "pipewire" "libvirt" "docker"] (x: "/var/lib/${x}")
         ++ forEach ["coredump" "timers"] (x: "/var/lib/systemd/${x}");
       files = ["/etc/machine-id"];
-      users.${user} = {
+      users.${user.name} = {
         directories =
           [
             "download"

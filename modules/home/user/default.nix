@@ -34,7 +34,6 @@ in {
       };
 
       username = cfg.name;
-      stateVersion = lib.mkDefault (osConfig.system.stateVersion or "24.05");
     };
     programs.home-manager = enabled;
   };
