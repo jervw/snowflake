@@ -68,11 +68,10 @@ in {
           "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
           "cache.soopy.moe-1:0RZVsQeR+GOh0VQI9rvnHz55nVXkFardDqfm4+afjPo="
         ];
-
-        generateNixPathFromInputs = true;
-        generateRegistryFromInputs = true;
-        linkInputs = true;
       };
+      generateNixPathFromInputs = true;
+      generateRegistryFromInputs = true;
+      linkInputs = true;
     };
   };
 }
