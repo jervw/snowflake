@@ -1,16 +1,11 @@
 {
   config,
   lib,
-  namespace,
   pkgs,
+  namespace,
   ...
 }: let
-  inherit
-    (lib)
-    mkEnableOption
-    mkIf
-    types
-    ;
+  inherit (lib) mkEnableOption mkIf types;
 
   inherit (lib.${namespace}) mkOpt;
 
@@ -24,48 +19,25 @@ in {
       package = mkOpt types.package pkgs.dracula-theme "The package to use for the cursor theme.";
       size = mkOpt types.int 16 "The size of the cursor.";
     };
+    icon = {
+      name = mkOpt types.str "Adwaita" "The name of the icon theme to apply.";
+      package = mkOpt types.package pkgs.adwaita-icon-theme "The package to use for the icon theme.";
+    };
   };
 
-  # TODO: Move most of these to home-manager module
+  # TODO: fix this shit
   config = mkIf cfg.enable {
-    stylix = {
-      enable = true;
-      base16Scheme = "${pkgs.base16-schemes}/share/themes/${cfg.theme}.yaml";
-      cursor = cfg.cursor;
+    # stylix = {
+    #   enable = true;
+    #   base16Scheme = "${pkgs.base16-schemes}/share/themes/${cfg.theme}.yaml";
 
-      # TODO: Add to module options
-      image = pkgs.fetchurl {
-        url = "https://r2.jervw.dev/wallhaven-9mg5zd.png";
-        sha256 = "60b6a9522d22c452c9b20cb17b875cd6fdfd1fb7ae5b1a1087031e1ba791353a";
-      };
-      polarity = "dark";
+    #   # TODO: Add to module options
+    #   image = pkgs.fetchurl {
+    #     url = "https://r2.jervw.dev/wallhaven-9mg5zd.png";
+    #     sha256 = "60b6a9522d22c452c9b20cb17b875cd6fdfd1fb7ae5b1a1087031e1ba791353a";
+    #   };
 
-      fonts = {
-        sizes = {
-          terminal = 13;
-          desktop = 12;
-          popups = 12;
-        };
-
-        serif = {
-          package = pkgs.google-fonts.override {fonts = ["Inter"];};
-          name = "Inter";
-        };
-
-        monospace = {
-          package = pkgs.nerd-fonts.jetbrains-mono;
-          name = "JetBrainsMono Nerd Font Propo";
-        };
-
-        sansSerif = config.stylix.fonts.serif;
-        emoji = config.stylix.fonts.monospace;
-      };
-
-      opacity = {
-        desktop = 1.0;
-        terminal = 0.8;
-        popups = 0.8;
-      };
-    };
+    #   polarity = "dark";
+    # };
   };
 }
