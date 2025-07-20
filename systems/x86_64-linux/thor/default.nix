@@ -8,8 +8,6 @@
 in {
   imports = [./hardware.nix];
 
-  boot.kernelPackages = pkgs.linuxPackages_cachyos-server;
-
   # TODO: zfs module
   boot = {
     supportedFilesystems = ["zfs"];
