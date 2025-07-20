@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  inputs,
   namespace,
   ...
 }: let
@@ -20,7 +21,7 @@ in {
 
     programs.niri = {
       enable = true;
-      package = pkgs.niri;
+      package = inputs.niri.${pkgs.system}.niri-unstable;
     };
   };
 }
