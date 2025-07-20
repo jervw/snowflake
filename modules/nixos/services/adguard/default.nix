@@ -14,15 +14,22 @@ in {
       default = "dns.jervw.dev";
       description = "Reverse proxy host name for the AdGuard Home service";
     };
+    port = mkOption {
+      type = lib.types.number;
+      default = 3000;
+    };
   };
-
-  # TODO: Add port configuration
 
   config = mkIf cfg.enable {
     services = {
-      adguardhome.enable = true;
+      adguardhome = {
+        enable = true;
+        openFirewall = true;
+        port = cfg.port;
+      };
+
       caddy.virtualHosts."${cfg.host}".extraConfig = ''
-        reverse_proxy http://thor:3000
+        reverse_proxy http://thor:${toString cfg.port}
         import cloudflare
       '';
     };

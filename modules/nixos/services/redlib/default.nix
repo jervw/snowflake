@@ -15,16 +15,18 @@ in {
       default = "redlib.jervw.dev";
       description = "Reverse proxy host name for the Redlib service";
     };
+    port = mkOption {
+      type = lib.types.number;
+      default = 8081;
+    };
   };
 
-  # TODO: Add port configuration
-
   config = {
-    age.secrets.reddit.file = "${inputs.self}/secrets/reddit.age"; # FIXME whats wrong with this not evaluating inside cfg.enable??
+    age.secrets.reddit.file = "${inputs.self}/secrets/reddit.age"; # TODO: FIX whats wrong with this not evaluating inside cfg.enable??
     services = mkIf cfg.enable {
       redlib = {
         enable = true;
-        port = 8081;
+        port = cfg.port;
         settings = {
           REDLIB_DEFAULT_SHOW_NSFW = "on";
           REDLIB_DEFAULT_USE_HLS = "on";
@@ -33,7 +35,7 @@ in {
       };
 
       caddy.virtualHosts."${cfg.host}".extraConfig = ''
-        reverse_proxy http://thor:8081
+        reverse_proxy http://thor:${toString cfg.port}
         import cloudflare
       '';
     };

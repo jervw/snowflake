@@ -14,15 +14,21 @@ in {
       default = "shelf.jervw.dev";
       description = "Reverse proxy host name for the Audiobookshelf service";
     };
+    port = mkOption {
+      type = lib.types.number;
+      default = 8000;
+    };
   };
-
-  # TODO: Add port configuration
 
   config = mkIf cfg.enable {
     services = {
-      audiobookshelf.enable = true;
+      audiobookshelf = {
+        enable = true;
+        openFirewall = true;
+        port = cfg.port;
+      };
       caddy.virtualHosts."${cfg.host}".extraConfig = ''
-        reverse_proxy http://thor:8000
+        reverse_proxy http://thor:${toString cfg.port}
         import cloudflare
       '';
     };

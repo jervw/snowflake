@@ -16,7 +16,7 @@ in {
     };
   };
 
-  # TODO: Add port configuration
+  # NOTE: Plex module does not allow changing port.
 
   config = mkIf cfg.enable {
     services = {

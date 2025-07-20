@@ -9,7 +9,6 @@
 in {
   options.${namespace}.services.speedtest-tracker = {
     enable = mkEnableOption "Enable speedtest-tracker service";
-
     host = mkOption {
       type = lib.types.str;
       default = "speedtest.jervw.dev";
@@ -19,7 +18,6 @@ in {
       type = lib.types.number;
       default = 8095;
     };
-
     dataDir = mkOption {
       type = lib.types.path;
       default = "/var/lib/speedtest-tracker";

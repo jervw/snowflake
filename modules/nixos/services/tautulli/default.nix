@@ -14,15 +14,17 @@ in {
       default = "tautulli.jervw.dev";
       description = "Reverse proxy host name for the Tautulli service";
     };
+    port = mkOption {
+      type = lib.types.number;
+      default = 8181;
+    };
   };
-
-  # TODO: Add port configuration
 
   config = mkIf cfg.enable {
     services = {
       tautulli.enable = true;
       caddy.virtualHosts."${cfg.host}".extraConfig = ''
-        reverse_proxy http://thor:8181
+        reverse_proxy http://thor:${toString cfg.port}
         import cloudflare
       '';
     };

@@ -4,21 +4,21 @@
   namespace,
   ...
 }: let
-  inherit (lib) mkEnableOption mkIf;
+  inherit (lib) mkEnableOption mkIf mkOption;
   cfg = config.${namespace}.services.flaresolverr;
 in {
   options.${namespace}.services.flaresolverr = {
     enable = mkEnableOption "Enable Flaresolverr service";
+    port = mkOption {
+      type = lib.types.number;
+      default = 8191;
+    };
   };
-
-  # TODO: Add port configuration
 
   config = mkIf cfg.enable {
     virtualisation.oci-containers.containers.flaresolverr = {
       image = "ghcr.io/flaresolverr/flaresolverr";
-      ports = [
-        "8191:8191"
-      ];
+      ports = ["${toString cfg.port}:8191"];
       environment = {
         LOG_LEVEL = "info";
         TZ = "Europe/Helsinki";

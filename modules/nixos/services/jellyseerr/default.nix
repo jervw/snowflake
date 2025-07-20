@@ -14,18 +14,21 @@ in {
       default = "seerr.jervw.dev";
       description = "Reverse proxy host name for the Jellyseerr service";
     };
+    port = mkOption {
+      type = lib.types.number;
+      default = 5055;
+    };
   };
-
-  # TODO: Add port configuration
 
   config = mkIf cfg.enable {
     services = {
       jellyseerr = {
         enable = true;
         openFirewall = true;
+        port = cfg.port;
       };
       caddy.virtualHosts."${cfg.host}".extraConfig = ''
-        reverse_proxy http://thor:5055
+        reverse_proxy http://thor:${toString cfg.port}
         import cloudflare
       '';
     };

@@ -14,9 +14,11 @@ in {
       default = "home.jervw.dev";
       description = "Reverse proxy host name for the Glance service";
     };
+    port = mkOption {
+      type = lib.types.number;
+      default = 5678;
+    };
   };
-
-  # TODO: Add port configuration
 
   config = mkIf cfg.enable {
     services = {
@@ -26,7 +28,7 @@ in {
         settings = {
           server = {
             host = "0.0.0.0";
-            port = 5678;
+            port = cfg.port;
           };
           branding = {
             logo-text = "DASH";
@@ -192,7 +194,7 @@ in {
       };
 
       caddy.virtualHosts."${cfg.host}".extraConfig = ''
-        reverse_proxy http://thor:5678
+        reverse_proxy http://thor:${toString cfg.port}
         import cloudflare
       '';
     };

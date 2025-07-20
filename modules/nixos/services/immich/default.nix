@@ -14,9 +14,11 @@ in {
       default = "media.jervw.dev";
       description = "Reverse proxy host name for the Immich service";
     };
+    port = mkOption {
+      type = lib.types.number;
+      default = 2995;
+    };
   };
-
-  # TODO: Add port configuration
 
   config = mkIf cfg.enable {
     services = {
@@ -26,10 +28,10 @@ in {
         mediaLocation = "/mnt/storage/Immich-Library";
         group = "media";
         host = "0.0.0.0";
-        port = 2995;
+        port = cfg.port;
       };
       caddy.virtualHosts."${cfg.host}".extraConfig = ''
-        reverse_proxy http://thor:2995
+        reverse_proxy http://thor:${toString cfg.port}
         import cloudflare
       '';
     };

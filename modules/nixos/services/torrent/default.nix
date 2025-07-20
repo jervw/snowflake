@@ -16,7 +16,6 @@ in {
     };
   };
 
-  # TODO: Add port configuration
   # TODO: Move to OCI-container, or seek an alternative with VPN isolation
 
   config = mkIf cfg.enable {
