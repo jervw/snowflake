@@ -25,7 +25,7 @@ in {
         };
 
         focus-follows-mouse.enable = true;
-        warp-mouse-to-focus = true;
+        warp-mouse-to-focus.enable = true;
       };
 
       prefer-no-csd = true;
