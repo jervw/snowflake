@@ -30,6 +30,7 @@ in {
         mediarr = mkDefault enabled;
         nfs-server = mkDefault enabled;
         plex = mkDefault enabled;
+        profilarr = mkDefault enabled;
         redlib = mkDefault enabled;
         tautulli = mkDefault enabled;
         torrent = mkDefault enabled;
