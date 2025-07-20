@@ -46,7 +46,6 @@ in {
       };
     };
     networking = {
-      nfs = enabled;
       tailscale = enabled;
     };
 
