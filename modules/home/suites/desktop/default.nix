@@ -46,6 +46,7 @@ in {
             mpv = mkDefault enabled;
             obs = mkDefault enabled;
             imv = mkDefault enabled;
+            rmpc = mkDefault enabled;
             zathura = mkDefault enabled;
           };
           editors = {
@@ -56,7 +57,6 @@ in {
           };
         };
       };
-      services.mpd = mkDefault enabled;
     };
   };
 }
