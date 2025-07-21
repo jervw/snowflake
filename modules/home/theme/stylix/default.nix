@@ -73,6 +73,7 @@ in {
 
       targets = {
         waybar.enable = false;
+        zen-browser.profileNames = ["default"];
       };
     };
   };
