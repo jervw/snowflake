@@ -67,6 +67,7 @@ in {
           )
           ++ forEach [
             "Anki2"
+            "atuin"
             "direnv"
             "PrismLauncher"
             "zed"
