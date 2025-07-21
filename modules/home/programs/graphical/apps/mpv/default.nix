@@ -37,12 +37,22 @@ in {
       ];
     };
 
-    services.plex-mpv-shim = {
-      enable = true;
-      settings = {
-        mpv_ext = true;
-        mpv_ext_no_ovr = true;
-        fullscreen = false;
+    services = {
+      plex-mpv-shim = {
+        enable = true;
+        settings = {
+          mpv_ext = true;
+          mpv_ext_no_ovr = true;
+          fullscreen = false;
+        };
+      };
+      jellyfin-mpv-shim = {
+        enable = true;
+        settings = {
+          mpv_ext = true;
+          mpv_ext_no_ovr = true;
+          fullscreen = false;
+        };
       };
     };
   };
