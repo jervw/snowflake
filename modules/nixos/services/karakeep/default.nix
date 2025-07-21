@@ -25,6 +25,7 @@ in {
     services = {
       karakeep = {
         enable = true;
+        environmentFile = config.age.secrets.openai-karakeep.path;
         extraEnvironment = {
           PORT = "${toString cfg.port}";
           CRAWLER_FULL_PAGE_SCREENSHOT = "true";
@@ -39,6 +40,5 @@ in {
     };
 
     age.secrets.openai-karakeep.file = "${inputs.self}/secrets/openai-karakeep.age";
-    systemd.services.karakeep.serviceConfig.EnvironmentFile = config.age.secrets.openai-karakeep.path;
   };
 }
