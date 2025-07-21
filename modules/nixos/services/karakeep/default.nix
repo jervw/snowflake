@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  inputs,
   namespace,
   ...
 }: let
@@ -36,5 +37,8 @@ in {
         import cloudflare
       '';
     };
+
+    age.secrets.openai-karakeep.file = "${inputs.self}/secrets/openai-karakeep.age";
+    systemd.services.karakeep.serviceConfig.EnvironmentFile = config.age.secrets.openai-karakeep.path;
   };
 }
