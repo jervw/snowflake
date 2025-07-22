@@ -34,10 +34,6 @@ _: {
       preserve_split = true;
     };
 
-    render = {
-      explicit_sync = 1;
-    };
-
     opengl = {
       nvidia_anti_flicker = false;
     };
