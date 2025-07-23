@@ -27,6 +27,18 @@ in {
         openFirewall = true;
         settings = {
           web.port = cfg.port;
+          endpoints = [
+            {
+              name = "test";
+              url = "https://google.com";
+              interval = "5m";
+              conditions = [
+                "[STATUS] == 200"
+                "[BODY].status == UP"
+                "[RESPONSE_TIME] < 300"
+              ];
+            }
+          ];
         };
       };
 
