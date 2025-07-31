@@ -18,6 +18,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    disko = {
+      url = "github:nix-community/disko/latest";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     snowfall-lib = {
       url = "github:snowfallorg/lib";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -81,6 +86,7 @@
         agenix.nixosModules.default
         chaotic.nixosModules.default
         comin.nixosModules.comin
+        disko.nixosModules.disko
         home-manager.nixosModules.default
         impermanence.nixosModule
         lanzaboote.nixosModules.lanzaboote
