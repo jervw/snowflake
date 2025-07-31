@@ -17,6 +17,8 @@ in {
       enable = true;
       daemon.enable = true;
 
+      flags = ["--disable-up-arrow"];
+
       settings = {
         enter_accept = true;
         filter_mode = "workspace";
