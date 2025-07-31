@@ -46,7 +46,13 @@ in {
       };
     };
     networking = {
-      tailscale = enabled;
+      tailscale = {
+        enable = true;
+        extraUpFlags = [
+          "--accept-dns=false"
+          "--ssh"
+        ];
+      };
     };
 
     security = {
