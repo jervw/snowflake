@@ -7,11 +7,11 @@
 in {
   imports = [./disks.nix];
 
-  boot.initrd.availableKernelModules = ["xhci_pci" "virtio_pci" "virtio_scsi" "usbhid" "sr_mod"];
+  boot.initrd.availableKernelModules = ["virtio_scsi" "sr_mod"];
 
   snowflake = {
     networking = {
-      # tailscale = enabled;
+      tailscale = enabled;
     };
 
     security = {
@@ -19,6 +19,7 @@ in {
     };
 
     services = {
+      comin = enabled;
     };
 
     suites = {
