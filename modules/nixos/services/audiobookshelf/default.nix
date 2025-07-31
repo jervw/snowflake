@@ -25,6 +25,7 @@ in {
       audiobookshelf = {
         enable = true;
         openFirewall = true;
+        host = "0.0.0.0";
         port = cfg.port;
       };
       caddy.virtualHosts."${cfg.host}".extraConfig = ''

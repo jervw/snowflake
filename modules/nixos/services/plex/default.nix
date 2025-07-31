@@ -5,7 +5,7 @@
   ...
 }: let
   inherit (lib) mkEnableOption mkIf mkOption;
-  cfg = config.${namespace}.services.audiobookshelf;
+  cfg = config.${namespace}.services.plex;
 in {
   options.${namespace}.services.plex = {
     enable = mkEnableOption "Enable Plex service";
