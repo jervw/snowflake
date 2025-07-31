@@ -21,6 +21,7 @@ in {
         adguard = mkDefault enabled;
         audiobookshelf = mkDefault enabled;
         caddy = mkDefault enabled;
+        externals = mkDefault enabled;
         flaresolverr = mkDefault enabled;
         gatus = mkDefault enabled;
         glance = mkDefault enabled;
@@ -36,7 +37,6 @@ in {
         redlib = mkDefault enabled;
         speedtest-tracker = mkDefault enabled;
         tautulli = mkDefault enabled;
-        torrent = mkDefault enabled;
       };
     };
   };
