@@ -8,7 +8,7 @@
 | qBittorrent | `8080` | | :white_check_mark: | [dl.jervw.dev](https://dl.jervw.dev) |
 | Flaresolverr | `8191` | | :x: | localhost |
 | Glance | `5678` | | :white_check_mark: | [home.jervw.dev](https://home.jervw.dev) |
-| Hoarder | `3020` | | :white_check_mark: | [hoarder.jervw.dev](https://hoarder.jervw.dev) |
+| Karakeep | `3020` | | :white_check_mark: | [save.jervw.dev](https://save.jervw.dev) |
 | Homepage | `8082` | | :x: | localhost |
 | Immich | `2995` | | :white_check_mark: | [media.jervw.dev](https://media.jervw.dev) |
 | Bazarr | `6767` | | :white_check_mark: | [bazarr.jervw.dev](https://bazarr.jervw.dev) |
