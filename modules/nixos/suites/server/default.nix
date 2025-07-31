@@ -23,7 +23,6 @@ in {
         caddy = mkDefault enabled;
         externals = mkDefault enabled;
         flaresolverr = mkDefault enabled;
-        gatus = mkDefault enabled;
         glance = mkDefault enabled;
         immich = mkDefault enabled;
         jellyfin = mkDefault enabled;
