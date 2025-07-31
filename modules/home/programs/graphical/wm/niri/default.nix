@@ -15,7 +15,7 @@ in {
     enable = mkEnableOption "Enable niri";
   };
 
-  imports = mkIf cfg.enable (lib.snowfall.fs.get-non-default-nix-files ./.);
+  # imports = mkIf cfg.enable (lib.snowfall.fs.get-non-default-nix-files ./.);
 
   config = mkIf cfg.enable {
     home.packages = [pkgs.xwayland-satellite];
