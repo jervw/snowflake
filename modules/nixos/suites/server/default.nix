@@ -34,6 +34,7 @@ in {
         plex = mkDefault enabled;
         profilarr = mkDefault enabled;
         redlib = mkDefault enabled;
+        speedtest-tracker = mkDefault enabled;
         tautulli = mkDefault enabled;
         torrent = mkDefault enabled;
       };
