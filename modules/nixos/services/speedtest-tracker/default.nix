@@ -30,8 +30,8 @@ in {
       image = "lscr.io/linuxserver/speedtest-tracker:latest";
       ports = ["${toString cfg.port}:80"];
       environment = {
-        PUID = 1000;
-        PGID = 1000;
+        PUID = "1000";
+        PGID = "1000";
         APP_NAME = "Koti13";
         APP_KEY = "base64:7VRM1BvGFOEboilhlmaapxmsWmIaP0cXEuz0g59+VRo="; # Not that secret to be a secret
         APP_URL = "https://${cfg.host}";
