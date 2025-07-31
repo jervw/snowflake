@@ -29,12 +29,38 @@ in {
           web.port = cfg.port;
           endpoints = [
             {
-              name = "test";
-              url = "https://google.com";
-              interval = "5m";
+              name = "AdGuardHome";
+              url = "https://dns.jervw.dev";
+              interval = "1m";
               conditions = [
                 "[STATUS] == 200"
-                "[BODY].status == UP"
+                "[RESPONSE_TIME] < 300"
+              ];
+            }
+            {
+              name = "Audiobookshelf";
+              url = "https://shelf.jervw.dev";
+              interval = "1m";
+              conditions = [
+                "[STATUS] == 200"
+                "[RESPONSE_TIME] < 300"
+              ];
+            }
+            {
+              name = "qBittorrent";
+              url = "https://dl.jervw.dev";
+              interval = "1m";
+              conditions = [
+                "[STATUS] == 200"
+                "[RESPONSE_TIME] < 300"
+              ];
+            }
+            {
+              name = "qBittorrent";
+              url = "https://dl.jervw.dev";
+              interval = "1m";
+              conditions = [
+                "[STATUS] == 200"
                 "[RESPONSE_TIME] < 300"
               ];
             }
