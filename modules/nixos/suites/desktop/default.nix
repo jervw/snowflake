@@ -25,5 +25,7 @@ in {
         fonts = mkDefault enabled;
       };
     };
+
+    services.gvfs.enable = true;
   };
 }
