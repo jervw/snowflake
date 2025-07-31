@@ -49,6 +49,8 @@ in {
         verbose = !cfg.silentBoot;
       };
 
+      consoleLogLevel = lib.mkDefault 0;
+
       lanzaboote = mkIf cfg.secureBoot {
         enable = true;
         pkiBundle = "/etc/secureboot";
