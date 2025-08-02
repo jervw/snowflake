@@ -29,6 +29,7 @@ in {
     services = {
       comin = enabled;
       monitoring = {
+        enable = true;
         grafana = {
           enable = true;
           scrapeTargets = [
