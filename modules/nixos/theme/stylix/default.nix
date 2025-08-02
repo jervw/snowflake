@@ -25,19 +25,20 @@ in {
     };
   };
 
-  # TODO: fix this shit
   config = mkIf cfg.enable {
-    # stylix = {
-    #   enable = true;
-    #   base16Scheme = "${pkgs.base16-schemes}/share/themes/${cfg.theme}.yaml";
+    stylix = {
+      enable = true;
+      base16Scheme = "${pkgs.base16-schemes}/share/themes/${cfg.theme}.yaml";
+      homeManagerIntegration.autoImport = false;
+      homeManagerIntegration.followSystem = false;
 
-    #   # TODO: Add to module options
-    #   image = pkgs.fetchurl {
-    #     url = "https://r2.jervw.dev/wallhaven-9mg5zd.png";
-    #     sha256 = "60b6a9522d22c452c9b20cb17b875cd6fdfd1fb7ae5b1a1087031e1ba791353a";
-    #   };
+      # TODO: Add to module options
+      image = pkgs.fetchurl {
+        url = "https://r2.jervw.dev/wallhaven-9mg5zd.png";
+        sha256 = "60b6a9522d22c452c9b20cb17b875cd6fdfd1fb7ae5b1a1087031e1ba791353a";
+      };
 
-    #   polarity = "dark";
-    # };
+      polarity = "dark";
+    };
   };
 }
