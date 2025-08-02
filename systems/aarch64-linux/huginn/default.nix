@@ -26,6 +26,7 @@ in {
 
     services = {
       comin = enabled;
+      monitoring.grafana = enabled;
     };
 
     suites = {
