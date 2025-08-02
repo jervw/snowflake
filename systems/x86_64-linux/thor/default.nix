@@ -1,6 +1,5 @@
 {
   lib,
-  pkgs,
   namespace,
   ...
 }: let
@@ -68,6 +67,7 @@ in {
       };
       comin = enabled;
       logind = enabled;
+      monitoring = enabled;
     };
 
     suites = {

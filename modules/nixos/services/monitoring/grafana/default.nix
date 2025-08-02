@@ -19,6 +19,11 @@ in {
       type = lib.types.number;
       default = 2400;
     };
+    scrapeTargets = mkOption {
+      type = lib.types.listOf lib.types.str;
+      default = [];
+      description = "List of Prometheus scrape targets";
+    };
   };
 
   config = mkIf cfg.enable {
@@ -34,6 +39,23 @@ in {
           };
         };
       };
+
+      prometheus = {
+        enable = true;
+        scrapeConfigs = [
+          {
+            job_name = "node_exporters";
+            static_configs = [
+              {targets = cfg.scrapeTargets;}
+            ];
+          }
+        ];
+      };
+
+      # loki = {
+      #   enable = true;
+      # };
+
       caddy.virtualHosts."${cfg.host}".extraConfig = ''
         reverse_proxy http://${hostname}:${toString cfg.port}
         import cloudflare

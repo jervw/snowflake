@@ -26,7 +26,17 @@ in {
 
     services = {
       comin = enabled;
-      monitoring.grafana = enabled;
+      monitoring = {
+        grafana = {
+          enable = true;
+          scrapeTargets = [
+            "huginn:9100"
+            "loki:9100"
+            "thor:9100"
+            "fenrir:9100"
+          ];
+        };
+      };
     };
 
     suites = {
