@@ -27,7 +27,7 @@ in {
     networking = {
       firewall = {
         allowedUDPPorts = [config.services.tailscale.port];
-        allowedTCPPorts = [5900];
+        allowedTCPPorts = [];
         trustedInterfaces = [config.services.tailscale.interfaceName];
         checkReversePath = "loose";
       };
