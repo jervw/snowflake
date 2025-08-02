@@ -9,6 +9,8 @@ in {
 
   boot.initrd.availableKernelModules = ["virtio_scsi" "sr_mod"];
 
+  services.openssh.openFirewall = lib.mkForce false;
+
   snowflake = {
     networking = {
       tailscale = {
