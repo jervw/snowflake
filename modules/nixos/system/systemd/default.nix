@@ -13,8 +13,8 @@ in {
   };
 
   config = mkIf cfg.enable {
-    systemd.extraConfig = ''
-      DefaultTimeoutStopSec=10s
-    '';
+    systemd.settings.Manager = {
+      DefaultTimeoutStopSec = "10s";
+    };
   };
 }
