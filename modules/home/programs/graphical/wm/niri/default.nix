@@ -2,8 +2,6 @@
   config,
   lib,
   pkgs,
-  inputs,
-  system,
   namespace,
   ...
 }: let
@@ -21,11 +19,8 @@ in {
     home.packages = [pkgs.xwayland-satellite];
 
     programs.niri = {
-      enable = cfg.enable;
-      package =
-        if cfg.enable
-        then inputs.niri.packages.${system}.niri-unstable
-        else null;
+      enable = true;
+      package = pkgs.niri-unstable;
     };
   };
 }
