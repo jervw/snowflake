@@ -44,6 +44,8 @@ in {
         };
       };
 
+      monitoring = enabled;
+
       logind = enabled;
     };
 
