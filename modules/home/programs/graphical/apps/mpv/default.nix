@@ -46,12 +46,6 @@ in {
           fullscreen = false;
         };
       };
-      jellyfin-mpv-shim = {
-        enable = true;
-        settings = {
-          fullscreen = false;
-        };
-      };
     };
   };
 }
