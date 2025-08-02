@@ -91,12 +91,12 @@
         home-manager.nixosModules.default
         impermanence.nixosModule
         lanzaboote.nixosModules.lanzaboote
+        niri.nixosModules.niri
         nix-index.nixosModules.nix-index
         stylix.nixosModules.stylix
       ];
 
       homes.modules = with inputs; [
-        niri.homeModules.niri
         stylix.homeModules.stylix
         zen-browser.homeModules.twilight
       ];
