@@ -4,7 +4,7 @@
   namespace,
   ...
 }: let
-  inherit (lib) mkIf mkForce;
+  inherit (lib) mkIf;
 
   cfg = config.${namespace}.system.locale;
 in {
@@ -13,11 +13,6 @@ in {
   };
 
   config = mkIf cfg.enable {
-    console = {
-      font = "Lat2-Terminus16";
-      keyMap = mkForce "us";
-    };
-
     environment.variables = {
       LOCALE_ARCHIVE = "/run/current-system/sw/lib/locale/locale-archive";
     };
