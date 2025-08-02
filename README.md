@@ -28,4 +28,5 @@
   <a href="https://github.com/Mic92">Mic92</a> •
   <a href="https://github.com/viperml">ViperML </a> •
   <a href="https://github.com/hlissner">Hlissner</a>
+  <a href="https://github.com/khaneliman">Khaneliman</a>
 </p>
