@@ -7,26 +7,6 @@
 in {
   imports = [./hardware.nix];
 
-  # TODO: Make static ip configuration module
-  networking = let
-    interface = "enp4s0";
-  in {
-    networkmanager.enable = lib.mkForce false;
-    hostId = "7f6f07cd";
-    nftables.enable = true;
-    interfaces.${interface}.ipv4.addresses = [
-      {
-        address = "10.0.0.3";
-        prefixLength = 26;
-      }
-    ];
-    defaultGateway = {
-      address = "10.0.0.1";
-      inherit interface;
-    };
-    nameservers = ["9.9.9.9" "1.1.1.1"];
-  };
-
   snowflake = {
     hardware = {
       cpu.intel = enabled;
@@ -37,6 +17,13 @@ in {
       };
     };
     networking = {
+      static-ip = {
+        enable = true;
+        adapter = "enp4s0";
+        addresses = ["10.0.0.3/26"];
+        gateways = ["10.0.0.1"];
+        dns = ["9.9.9.9" "1.1.1.1"];
+      };
       tailscale = {
         enable = true;
         extraUpFlags = [
