@@ -232,7 +232,8 @@ in {
                     }
                     {
                       type = "custom-api";
-                      cache = "3h";
+                      title = "Bible Verse";
+                      cache = "24h";
                       url = "https://bible-api.com/data/web/random";
                       template = ''
                         <p class="size-h2 color-highlight">{{ .JSON.String "random_verse.book" }} {{ .JSON.String "random_verse.chapter" }}:{{ .JSON.String "random_verse.verse" }}</p>
