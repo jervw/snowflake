@@ -65,7 +65,7 @@ in {
                             }
                             {
                               title = "Karakeep";
-                              icon = "sh:karakeep";
+                              icon = "di:karakeep";
                               url = "https://save.jervw.dev";
                             }
                           ];
@@ -91,7 +91,7 @@ in {
                             }
                             {
                               title = "Bazarr";
-                              icon = "sh:bazarr";
+                              icon = "di:bazarr";
                               url = "https://bazarr.jervw.dev";
                             }
                             {
