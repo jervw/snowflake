@@ -5,7 +5,7 @@
   namespace,
   ...
 }: let
-  inherit (lib) mkIf mkDefault mkEnableOption;
+  inherit (lib) mkIf mkDefault mkForce mkEnableOption;
   inherit (lib.${namespace}) enabled;
 
   cfg = config.${namespace}.suites.core;
@@ -31,6 +31,8 @@ in {
         unzip
       ];
     };
+
+    networking.nftables.enable = mkForce true;
 
     snowflake = {
       security = {
