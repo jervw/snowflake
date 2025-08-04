@@ -16,8 +16,8 @@ in {
       static-ip = {
         enable = true;
         adapter = "enp1s0";
-        addresses = ["65.21.48.78/32" "2a01:4f9:c010:e754::/64"];
-        gateways = ["172.31.1.1 " "fe80::1"];
+        ip = "65.21.48.78/32";
+        gateway = "172.31.1.1";
         dns = ["1.1.1.1" "1.0.0.1"];
       };
       tailscale = {

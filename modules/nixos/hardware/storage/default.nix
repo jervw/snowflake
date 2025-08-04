@@ -24,9 +24,6 @@ in {
     # TODO: Maybe someday make pools configurable
     # Enable ZFS support
     (mkIf cfg.zfs {
-      # Requires networking.hostId for some reason
-      networking.hostId = builtins.substring 0 8 (builtins.hashString "md5" config.networking.hostName);
-
       boot = {
         supportedFilesystems = {
           zfs = mkDefault true;

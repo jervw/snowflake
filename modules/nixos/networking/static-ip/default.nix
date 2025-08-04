@@ -6,26 +6,30 @@
 }: let
   inherit (lib) mkEnableOption mkIf mkOption types;
   cfg = config.${namespace}.networking.static-ip;
+
+  parsedAddr = let
+    parts = lib.strings.splitString "/" cfg.ip;
+    address = builtins.elemAt parts 0;
+    cidr = builtins.elemAt parts 1;
+  in {
+    inherit address;
+    prefixLength = lib.toInt cidr;
+  };
 in {
   options.${namespace}.networking.static-ip = {
-    enable = mkEnableOption "Enable static IP configuration";
-
+    enable = mkEnableOption "Enable static IPv4 configuration";
     adapter = mkOption {
       type = types.str;
       description = "The name of the network adapter (e.g. enp4s0)";
     };
-
-    addresses = mkOption {
-      type = types.listOf types.str;
-      description = "Static IP addresses with CIDR notation, e.g., [ '10.0.0.3/26', 'fd00::1/64' ]";
+    ip = mkOption {
+      type = types.str;
+      description = "Static IP address with CIDR notation, e.g. 10.0.0.3/26";
     };
-
-    gateways = mkOption {
-      type = types.listOf types.str;
-      default = [];
-      description = "List of default gateway IP addresses";
+    gateway = mkOption {
+      type = types.str;
+      description = "Default gateway IP address";
     };
-
     dns = mkOption {
       type = types.listOf types.str;
       default = ["1.1.1.1" "8.8.8.8"];
@@ -33,20 +37,28 @@ in {
     };
   };
 
+  # TODO Add IPv6 support
+
   config = mkIf cfg.enable {
     networking = {
       networkmanager.enable = lib.mkForce false;
       useDHCP = lib.mkForce false;
-    };
 
-    systemd.network = {
-      enable = true;
-      networks."10-${cfg.adapter}" = {
-        matchConfig.Name = cfg.adapter;
-        address = cfg.addresses;
-        gateway = cfg.gateways;
-        dns = cfg.dns;
+      hostId = builtins.substring 0 8 (builtins.hashString "md5" config.networking.hostName);
+
+      interfaces.${cfg.adapter}.ipv4.addresses = [
+        {
+          address = parsedAddr.address;
+          prefixLength = parsedAddr.prefixLength;
+        }
+      ];
+
+      defaultGateway = {
+        address = cfg.gateway;
+        interface = cfg.adapter;
       };
+
+      nameservers = cfg.dns;
     };
   };
 }

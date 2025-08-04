@@ -20,8 +20,8 @@ in {
       static-ip = {
         enable = true;
         adapter = "enp4s0";
-        addresses = ["10.0.0.3/26"];
-        gateways = ["10.0.0.1"];
+        ip = "10.0.0.3/26";
+        gateway = "10.0.0.1";
         dns = ["9.9.9.9" "1.1.1.1"];
       };
       tailscale = {
