@@ -17,7 +17,6 @@ in {
     snowflake = {
       networking.fail2ban = mkDefault enabled;
       services = {
-        beszel.server = mkDefault enabled;
         adguard = mkDefault enabled;
         audiobookshelf = mkDefault enabled;
         caddy = mkDefault enabled;
