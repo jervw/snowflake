@@ -28,6 +28,7 @@ in {
 
     services = {
       comin = enabled;
+      caddy = enabled;
       monitoring = {
         enable = true;
         grafana = {
