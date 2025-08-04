@@ -36,6 +36,7 @@ in {
             domain = cfg.host;
             http_addr = "0.0.0.0";
             http_port = cfg.port;
+            root_url = "https://${cfg.host}";
           };
         };
         provision.datasources.settings.datasources = [
