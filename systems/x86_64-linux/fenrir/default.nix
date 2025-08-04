@@ -44,7 +44,9 @@ in {
       hardening = enabled;
     };
 
-    services = {};
+    services = {
+      monitoring = enabled;
+    };
 
     suites = {
       core = enabled;
