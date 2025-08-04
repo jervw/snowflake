@@ -43,61 +43,125 @@ in {
                   size = "small";
                   widgets = [
                     {
-                      type = "calendar";
-                    }
-                    {
                       type = "bookmarks";
                       groups = [
                         {
+                          title = "Media Servers";
+                          color = "250 100 100";
                           links = [
                             {
-                              title = "Beszel";
-                              icon = "si:caddy";
-                              url = "https://monitor.jervw.dev";
-                            }
-                            {
-                              title = "Plex";
-                              icon = "si:plex";
-                              url = "https://plex.jervw.dev";
-                            }
-                            {
                               title = "Jellyfin";
-                              icon = "si:jellyfin";
+                              icon = "sh:jellyfin";
                               url = "https://watch.jervw.dev";
                             }
                             {
+                              title = "Plex";
+                              icon = "sh:plex";
+                              url = "https://plex.jervw.dev";
+                            }
+                            {
+                              title = "Tautulli";
+                              icon = "sh:tautulli";
+                              url = "https://tautulli.jervw.dev";
+                            }
+                            {
                               title = "Immich";
-                              icon = "si:immich";
+                              icon = "sh:immich";
                               url = "https://media.jervw.dev";
                             }
-                            {
-                              title = "Audiobookshelf";
-                              icon = "si:audiobookshelf";
-                              url = "https://shelf.jervw.dev";
-                            }
+                          ];
+                        }
+
+                        {
+                          title = "Media Automation";
+                          color = "100 150 250";
+                          links = [
                             {
                               title = "Sonarr";
-                              icon = "si:sonarr";
+                              icon = "sh:sonarr";
                               url = "https://sonarr.jervw.dev";
                             }
                             {
                               title = "Radarr";
-                              icon = "si:radarr";
+                              icon = "sh:radarr";
                               url = "https://radarr.jervw.dev";
                             }
                             {
+                              title = "Bazarr";
+                              icon = "sh:bazarr";
+                              url = "https://bazarr.jervw.dev";
+                            }
+                            {
+                              title = "Prowlarr";
+                              icon = "sh:prowlarr";
+                              url = "https://prowlarr.jervw.dev";
+                            }
+                          ];
+                        }
+
+                        {
+                          title = "Download Tools";
+                          color = "150 150 150";
+                          links = [
+                            {
                               title = "qBittorrent";
-                              icon = "si:qbittorrent";
+                              icon = "sh:qbittorrent";
                               url = "https://dl.jervw.dev";
                             }
                             {
-                              title = "AdGuard Home";
-                              icon = "si:adguard";
-                              url = "https://dns.jervw.dev";
+                              title = "Profilarr";
+                              icon = "di:profilarr";
+                              url = "https://profilarr.jervw.dev";
+                            }
+                          ];
+                        }
+
+                        {
+                          title = "Monitoring & Networking";
+                          color = "50 200 150";
+                          links = [
+                            {
+                              title = "Grafana";
+                              icon = "sh:grafana";
+                              url = "https://monitor.jervw.dev";
                             }
                             {
+                              title = "Speedtest Tracker";
+                              icon = "sh:speedtest-tracker";
+                              url = "https://speedtest.jervw.dev";
+                            }
+                            {
+                              title = "AdGuard Home";
+                              icon = "sh:adguard-home";
+                              url = "https://dns.jervw.dev";
+                            }
+                          ];
+                        }
+
+                        {
+                          title = "Library & Content";
+                          color = "255 200 50";
+                          links = [
+                            {
+                              title = "Audiobookshelf";
+                              icon = "sh:audiobookshelf";
+                              url = "https://shelf.jervw.dev";
+                            }
+                            {
+                              title = "Karakeep";
+                              icon = "sh:karakeep";
+                              url = "https://save.jervw.dev";
+                            }
+                          ];
+                        }
+
+                        {
+                          title = "Alternative Frontends";
+                          color = "200 100 200";
+                          links = [
+                            {
                               title = "Redlib";
-                              icon = "si:reddit";
+                              icon = "sh:reddit";
                               url = "https://redlib.jervw.dev";
                             }
                           ];
