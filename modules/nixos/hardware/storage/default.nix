@@ -12,12 +12,27 @@
 in {
   options.${namespace}.hardware.storage = {
     ssd = mkBoolOpt false "Whether or not to enable support for SSD storage devices.";
-    extra = mkBoolOpt false "support for extra storage devices";
+    zfs = mkBoolOpt false "Whether or not to enable support for ZFS filesystem.";
+    extra = mkBoolOpt false "Whether or not to enable support for extra filesystems.";
   };
 
   config = mkMerge [
     (mkIf cfg.ssd {
       services.fstrim.enable = mkDefault true;
+    })
+
+    # TODO: Maybe someday make pools configurable
+    # Enable ZFS support
+    (mkIf cfg.zfs {
+      boot = {
+        supportedFilesystems = {
+          zfs = mkDefault true;
+        };
+        zfs = {
+          forceImportRoot = false;
+          extraPools = ["zpool"];
+        };
+      };
     })
 
     # Extra storage tools

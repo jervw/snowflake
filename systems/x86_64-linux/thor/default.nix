@@ -7,15 +7,6 @@
 in {
   imports = [./hardware.nix];
 
-  # TODO: zfs module
-  boot = {
-    supportedFilesystems = ["zfs"];
-    zfs = {
-      forceImportRoot = false;
-      extraPools = ["zpool"];
-    };
-  };
-
   # TODO: Make static ip configuration module
   networking = let
     interface = "enp4s0";
@@ -41,6 +32,7 @@ in {
       cpu.intel = enabled;
       storage = {
         ssd = true;
+        zfs = true;
         extra = true;
       };
     };
