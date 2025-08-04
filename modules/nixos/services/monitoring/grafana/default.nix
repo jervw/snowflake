@@ -66,7 +66,6 @@ in {
 
       caddy.virtualHosts."${cfg.host}".extraConfig = ''
         reverse_proxy http://${hostname}:${toString cfg.port}
-        import cloudflare
       '';
     };
   };

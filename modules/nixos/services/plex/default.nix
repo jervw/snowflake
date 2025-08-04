@@ -26,7 +26,6 @@ in {
       };
       caddy.virtualHosts."${cfg.host}".extraConfig = ''
         reverse_proxy http://thor:32400
-        import cloudflare
       '';
     };
 
