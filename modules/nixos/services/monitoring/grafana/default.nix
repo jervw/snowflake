@@ -12,7 +12,7 @@ in {
     enable = mkEnableOption "Enable Grafana service";
     host = mkOption {
       type = lib.types.str;
-      default = "metrics.jervw.dev";
+      default = "monitor.jervw.dev";
       description = "Reverse proxy host name for the Grafana service";
     };
     port = mkOption {
