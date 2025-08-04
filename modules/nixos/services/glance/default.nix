@@ -75,9 +75,9 @@ in {
                           title = "Media Automation";
                           links = [
                             {
-                              title = "Jellyfin";
-                              icon = "sh:jellyfin";
-                              url = "https://watch.jervw.dev";
+                              title = "Jellyseerr";
+                              icon = "sh:jellyseerr";
+                              url = "https://seerr.jervw.dev";
                             }
                             {
                               title = "Sonarr";
