@@ -47,35 +47,38 @@ in {
                       groups = [
                         {
                           title = "Media Servers";
-                          color = "250 100 100";
                           links = [
-                            {
-                              title = "Jellyfin";
-                              icon = "sh:jellyfin";
-                              url = "https://watch.jervw.dev";
-                            }
                             {
                               title = "Plex";
                               icon = "sh:plex";
                               url = "https://plex.jervw.dev";
                             }
                             {
-                              title = "Tautulli";
-                              icon = "sh:tautulli";
-                              url = "https://tautulli.jervw.dev";
-                            }
-                            {
                               title = "Immich";
                               icon = "sh:immich";
                               url = "https://media.jervw.dev";
+                            }
+                            {
+                              title = "Audiobookshelf";
+                              icon = "sh:audiobookshelf";
+                              url = "https://shelf.jervw.dev";
+                            }
+                            {
+                              title = "Karakeep";
+                              icon = "sh:karakeep";
+                              url = "https://save.jervw.dev";
                             }
                           ];
                         }
 
                         {
                           title = "Media Automation";
-                          color = "100 150 250";
                           links = [
+                            {
+                              title = "Jellyfin";
+                              icon = "sh:jellyfin";
+                              url = "https://watch.jervw.dev";
+                            }
                             {
                               title = "Sonarr";
                               icon = "sh:sonarr";
@@ -100,25 +103,7 @@ in {
                         }
 
                         {
-                          title = "Download Tools";
-                          color = "150 150 150";
-                          links = [
-                            {
-                              title = "qBittorrent";
-                              icon = "sh:qbittorrent";
-                              url = "https://dl.jervw.dev";
-                            }
-                            {
-                              title = "Profilarr";
-                              icon = "di:profilarr";
-                              url = "https://profilarr.jervw.dev";
-                            }
-                          ];
-                        }
-
-                        {
                           title = "Monitoring & Networking";
-                          color = "50 200 150";
                           links = [
                             {
                               title = "Grafana";
@@ -131,34 +116,30 @@ in {
                               url = "https://speedtest.jervw.dev";
                             }
                             {
+                              title = "Tautulli";
+                              icon = "sh:tautulli";
+                              url = "https://tautulli.jervw.dev";
+                            }
+                            {
                               title = "AdGuard Home";
                               icon = "sh:adguard-home";
                               url = "https://dns.jervw.dev";
                             }
                           ];
                         }
-
                         {
-                          title = "Library & Content";
-                          color = "255 200 50";
+                          title = "Misc";
                           links = [
                             {
-                              title = "Audiobookshelf";
-                              icon = "sh:audiobookshelf";
-                              url = "https://shelf.jervw.dev";
+                              title = "qBittorrent";
+                              icon = "sh:qbittorrent";
+                              url = "https://dl.jervw.dev";
                             }
                             {
-                              title = "Karakeep";
-                              icon = "sh:karakeep";
-                              url = "https://save.jervw.dev";
+                              title = "Profilarr";
+                              icon = "di:profilarr";
+                              url = "https://profilarr.jervw.dev";
                             }
-                          ];
-                        }
-
-                        {
-                          title = "Alternative Frontends";
-                          color = "200 100 200";
-                          links = [
                             {
                               title = "Redlib";
                               icon = "sh:reddit";
