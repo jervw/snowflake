@@ -155,13 +155,14 @@ in {
                       channels = [
                         "xqc"
                         "theprimeagen"
-                        "loltyler1"
+                        "Ottomated"
+                        "Distortion2"
+                        "stableronaldo"
+                        "pelaajatcom"
                         "sodapoppin"
+                        "Geoguessr"
+                        "Arky"
                         "erobb221"
-                        "caseoh_"
-                        "Mizkif"
-                        "Emiru"
-                        "KaiCenat"
                       ];
                     }
                   ];
