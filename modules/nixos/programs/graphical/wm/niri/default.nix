@@ -12,13 +12,6 @@ in {
   };
 
   config = mkIf cfg.enable {
-    programs = {
-      hyprland = {
-        enable = true;
-        withUWSM = true;
-      };
-    };
-
     snowflake = {
       programs = {
         graphical = {
