@@ -24,6 +24,8 @@ in {
     };
   };
 
+  hardware.apple-t2.kernelChannel = "latest";
+
   boot.loader = {
     efi.efiSysMountPoint = "/boot";
   };
