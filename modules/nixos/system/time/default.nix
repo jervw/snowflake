@@ -14,10 +14,10 @@ in {
 
   config = mkIf cfg.enable {
     networking.timeServers = [
-      "time1.google.com"
-      "time2.google.com"
-      "time3.google.com"
-      "time4.google.com"
+      "0.fi.pool.ntp.org"
+      "1.fi.pool.ntp.org"
+      "2.fi.pool.ntp.org"
+      "3.fi.pool.ntp.org"
     ];
 
     services.chrony = {
