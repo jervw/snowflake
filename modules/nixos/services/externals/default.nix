@@ -15,7 +15,7 @@ in {
     services.caddy.virtualHosts = {
       # QBitTorrent
       "dl.jervw.dev".extraConfig = ''
-        reverse_proxy http://thor:8080
+        reverse_proxy http://thor:8089
       '';
 
       # YamTrack
