@@ -47,7 +47,9 @@ in {
     };
 
     services = {
-      monitoring = enabled;
+      monitoring = {
+        node = enabled;
+      };
     };
 
     suites = {

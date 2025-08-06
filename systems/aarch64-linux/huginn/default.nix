@@ -37,15 +37,14 @@ in {
       comin = enabled;
       caddy = enabled;
       monitoring = {
-        enable = true;
+        node = enabled;
         grafana = {
           enable = true;
-          scrapeTargets = [
-            "huginn:9100"
-            "loki:9100"
-            "thor:9100"
-            "fenrir:9100"
-          ];
+          scrapeTargets = {
+            node = ["huginn" "loki" "thor" "fenrir"];
+            zfs = ["thor"];
+            cadvisor = ["thor"];
+          };
         };
       };
     };

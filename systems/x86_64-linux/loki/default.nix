@@ -37,7 +37,9 @@ in {
         modelsPath = "/mnt/storage/ollama-models";
       };
 
-      monitoring = enabled;
+      monitoring = {
+        node = enabled;
+      };
       logind = enabled;
     };
 

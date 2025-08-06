@@ -40,7 +40,11 @@ in {
     services = {
       comin = enabled;
       logind = enabled;
-      monitoring = enabled;
+      monitoring = {
+        node = enabled;
+        zfs = enabled;
+        cadvisor = enabled;
+      };
     };
 
     suites = {

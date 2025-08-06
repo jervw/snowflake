@@ -4,25 +4,52 @@
   namespace,
   ...
 }: let
-  inherit (lib) mkEnableOption mkIf mkOption;
+  inherit (lib) mkEnableOption mkIf mkOption types mapAttrsToList;
+
   cfg = config.${namespace}.services.monitoring.grafana;
   hostname = config.networking.hostName;
+
+  exporterPorts = {
+    node = config.services.prometheus.exporters.node.port;
+    zfs = config.services.prometheus.exporters.zfs.port;
+    blackbox = config.services.prometheus.exporters.blackbox.port;
+    cadvisor = config.services.cadvisor.port;
+  };
+
+  # Dynamically build scrapeConfigs from targets and ports
+  scrapeConfigs =
+    mapAttrsToList (
+      jobName: hosts: let
+        port = exporterPorts.${jobName}
+        or (throw "Unknown or unsupported exporter '${jobName}'. Add it to exporterPorts.");
+      in {
+        job_name = jobName;
+        static_configs = [
+          {targets = map (host: "${host}:${toString port}") hosts;}
+        ];
+      }
+    )
+    cfg.scrapeTargets;
 in {
   options.${namespace}.services.monitoring.grafana = {
-    enable = mkEnableOption "Enable Grafana service";
+    enable = mkEnableOption "Enable Grafana and Prometheus monitoring stack";
+
     host = mkOption {
-      type = lib.types.str;
+      type = types.str;
       default = "monitor.jervw.dev";
       description = "Reverse proxy host name for the Grafana service";
     };
+
     port = mkOption {
-      type = lib.types.number;
+      type = types.port;
       default = 2400;
+      description = "Local port Grafana listens on";
     };
+
     scrapeTargets = mkOption {
-      type = lib.types.listOf lib.types.str;
-      default = [];
-      description = "List of Prometheus scrape targets";
+      type = types.attrsOf (types.listOf types.str);
+      default = {};
+      description = "Map of Prometheus exporter job names to list of hosts";
     };
   };
 
@@ -51,19 +78,8 @@ in {
 
       prometheus = {
         enable = true;
-        scrapeConfigs = [
-          {
-            job_name = "node_exporters";
-            static_configs = [
-              {targets = cfg.scrapeTargets;}
-            ];
-          }
-        ];
+        inherit scrapeConfigs;
       };
-
-      # loki = {
-      #   enable = true;
-      # };
 
       caddy.virtualHosts."${cfg.host}".extraConfig = ''
         reverse_proxy http://${hostname}:${toString cfg.port}
