@@ -14,15 +14,14 @@ in {
 
   config = mkIf cfg.enable {
     networking.timeServers = [
-      "0.fi.pool.ntp.org"
-      "1.fi.pool.ntp.org"
-      "2.fi.pool.ntp.org"
-      "3.fi.pool.ntp.org"
+      "0.fi.pool.ntp.org iburst offline"
+      "1.fi.pool.ntp.org iburst"
+      "2.fi.pool.ntp.org iburst"
+      "3.fi.pool.ntp.org iburst"
     ];
 
     services.chrony = {
       enable = true;
-      enableNTS = true;
     };
 
     # Make sure we can resolve the timeservers
