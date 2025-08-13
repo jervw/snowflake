@@ -26,6 +26,10 @@ in {
       };
     };
 
-    services.gvfs.enable = true;
+    services = {
+      gvfs = mkDefault enabled;
+      power-profiles-daemon = mkDefault enabled;
+      upower = mkDefault enabled;
+    };
   };
 }
