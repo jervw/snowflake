@@ -47,9 +47,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    quickshell = {
-      url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
-      inputs.nixpkgs.follows = "nixpkgs";
+    quickshell-config = {
+      url = "git+ssh://git@github.com/NeuronActivation/panel.git";
+      flake = false;
     };
 
     ssh-keys = {
