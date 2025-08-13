@@ -153,6 +153,10 @@ in {
               };
             };
           };
+          qmlls = {
+            command = "${pkgs.kdePackages.qtdeclarative}/bin/qmlls";
+            args = ["-E"];
+          };
           ruff = {
             command = "${pkgs.ruff}/bin/ruff";
             args = ["server"];
