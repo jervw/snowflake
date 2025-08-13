@@ -13,7 +13,10 @@ in {
     };
 
     programs = {
-      graphical.wm.hyprland = enabled;
+      graphical = {
+        wm.hyprland = enabled;
+        bars.quickshell = enabled;
+      };
     };
 
     services = {
