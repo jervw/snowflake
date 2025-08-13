@@ -27,16 +27,26 @@ in {
 
     services.xserver.videoDrivers = ["nvidia"];
 
-    environment.systemPackages = with pkgs; [
-      # Mesa
-      mesa
+    environment = {
+      systemPackages = with pkgs; [
+        # Mesa
+        mesa
 
-      # Vulkan
-      vulkan-tools
-      vulkan-loader
-      vulkan-validation-layers
-      vulkan-extension-layer
-    ];
+        # Vulkan
+        vulkan-tools
+        vulkan-loader
+        vulkan-validation-layers
+        vulkan-extension-layer
+
+        libva
+        libva-utils
+      ];
+      sessionVariables = {
+        NVD_BACKEND = "direct";
+        GBM_BACKEND = "nvidia-drm";
+        LIBVA_DRIVER_NAME = "nvidia";
+      };
+    };
 
     hardware = {
       nvidia = {
@@ -55,7 +65,7 @@ in {
 
       graphics = {
         enable = true;
-        extraPackages = with pkgs; [nvidia-vaapi-driver];
+        extraPackages = with pkgs; [libvdpau-va-gl nvidia-vaapi-driver];
       };
     };
 
