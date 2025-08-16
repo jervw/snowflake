@@ -1,5 +1,9 @@
-_: let
-  term = "foot";
+{
+  config,
+  namespace,
+  ...
+}: let
+  defaults = config.${namespace}.programs.defaults;
   workspaceBinds = count:
     builtins.listToAttrs (
       builtins.concatMap (
@@ -23,13 +27,12 @@ in {
   programs.niri.settings.binds =
     {
       # Programs
-      "Mod+Return".action.spawn = [term];
-      "Mod+Escape".action.spawn = ["missioncenter"];
-      "Mod+D".action.spawn = ["fuzzel"];
-      "Mod+B".action.spawn = ["zen"];
+      "Mod+Return".action.spawn = [defaults.terminal];
+      "Mod+D".action.spawn = [defaults.launcher];
+      "Mod+B".action.spawn = [defaults.browser];
       "Mod+Y".action.spawn = ["uuctl"];
       "Mod+M".action.spawn = ["bemoji" "-t"];
-      "Mod+N".action.spawn = [term "-e" "yazi"];
+      "Mod+N".action.spawn = [defaults.terminal "-e" "yazi"];
       "Mod+I".action.spawn = ["clipman" "pick" "--tool=CUSTOM" "--tool-args=fuzzel -d"];
 
       # Essential

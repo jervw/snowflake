@@ -1,5 +1,9 @@
-_: let
-  term = "foot";
+{
+  config,
+  namespace,
+  ...
+}: let
+  defaults = config.${namespace}.programs.defaults;
   workspaces = builtins.concatLists (builtins.genList (
       x: let
         ws = toString (x + 1);
@@ -21,17 +25,16 @@ in {
     bind =
       [
         # Programs
-        "$MOD, Return, exec, ${term}"
-        "$MOD, D, exec, pkill fuzzel || fuzzel"
-        "$MOD, V, exec, ${term} -e yazi"
-        "$MOD, B, exec, zen"
+        "$MOD, Return, exec, ${defaults.terminal}"
+        "$MOD, D, exec, ${defaults.launcher}"
+        "$MOD, V, exec, ${defaults.terminal} -e yazi"
+        "$MOD, B, exec, ${defaults.browser}"
         "$MOD, Z, exec, grimblast --notify copysave area"
         "$MOD CTRL, Z, exec, grimblast --notify copysave output"
         "$MOD, C, exec, clipman pick --tool=CUSTOM --tool-args='fuzzel -d'"
         "$MOD, M, exec, bemoji -t"
         "$MOD, Y, exec, uuctl"
         "$MOD, P, exec, hyprpicker -a | --autocopy"
-        "$MOD, Escape, exec, missioncenter"
 
         # Essential
         "$MOD SHIFT, E, exit"

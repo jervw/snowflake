@@ -30,7 +30,7 @@ in {
         settings = {
           general = {
             before_sleep_cmd = "${pkgs.systemd}/bin/loginctl lock-session";
-            lock_cmd = lib.getExe config.programs.hyprlock.package;
+            lock_cmd = config.${namespace}.programs.defaults.lock;
             ignore_dbus_inhibit = false;
           };
           listener = [
