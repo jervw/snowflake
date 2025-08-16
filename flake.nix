@@ -48,7 +48,7 @@
     };
 
     quickshell-config = {
-      url = "git+ssh://git@github.com/NeuronActivation/panel.git";
+      url = "git+ssh://git@github.com/NeuronActivation/shell.git";
       flake = false;
     };
 
