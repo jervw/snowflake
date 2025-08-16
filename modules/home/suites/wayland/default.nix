@@ -33,7 +33,6 @@ in {
           addons = {
             hypridle = mkDefault enabled;
             hyprlock = mkDefault enabled;
-            nmapplet = mkDefault enabled;
             swaync = mkDefault enabled;
             swayosd = mkDefault enabled;
             wlsunset = mkDefault enabled;
