@@ -7,6 +7,7 @@
   ...
 }: let
   inherit (lib) mkIf;
+  inherit (lib.${namespace}) disabled;
 
   cfg = config.${namespace}.programs.graphical.bars.quickshell;
 in {
@@ -32,6 +33,30 @@ in {
       configs.default = inputs.quickshell-config;
       activeConfig = "default";
       systemd.enable = true;
+    };
+
+    services.hyprpaper.enable = lib.mkForce false;
+
+    snowflake = {
+      programs = {
+        defaults = {
+          launcher = "qs ipc call globalIPC toggleLauncher";
+          lock = "qs ipc call globalIPC toggleLock";
+        };
+        graphical = {
+          addons = {
+            hyprlock = disabled;
+            swaync = disabled;
+          };
+          bars = {
+            waybar = disabled;
+          };
+          launchers = {
+            # Dont disable even when using quickshell as launcher, as some other software still depend on fuzzel like bemoji and clipman
+            # fuzzel = disabled;
+          };
+        };
+      };
     };
   };
 }
