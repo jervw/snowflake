@@ -23,7 +23,6 @@ in {
       ffmpeg
       obsidian
       normcap
-      mission-center
       playerctl
       tomato-c
       qbittorrent-enhanced
