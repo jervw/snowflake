@@ -1,4 +1,8 @@
-_: let
+{
+  namespace,
+  config,
+  ...
+}: let
   mkCommand = command: {
     command = [command];
   };
@@ -11,7 +15,7 @@ in {
       };
 
       spawn-at-startup = [
-        (mkCommand "hyprlock")
+        (mkCommand config.${namespace}.programs.defaults.lock)
         (mkCommand "xwayland-satellite")
       ];
 

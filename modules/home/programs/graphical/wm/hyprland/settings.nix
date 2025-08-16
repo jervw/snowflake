@@ -1,4 +1,8 @@
-_: {
+{
+  namespace,
+  config,
+  ...
+}: {
   wayland.windowManager.hyprland.settings = {
     env = [
       "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
@@ -10,7 +14,7 @@ _: {
     ];
 
     exec-once = [
-      "hyprlock"
+      config.${namespace}.programs.defaults.lock
       "nm-applet"
       "eval $(gnome-keyring-daemon --start --components=secrets)"
     ];
