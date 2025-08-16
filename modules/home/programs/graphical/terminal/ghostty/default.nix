@@ -6,9 +6,9 @@
 }: let
   inherit (lib) mkIf;
 
-  cfg = config.${namespace}.programs.graphical.emulators.ghostty;
+  cfg = config.${namespace}.programs.graphical.terminal.ghostty;
 in {
-  options.${namespace}.programs.graphical.emulators.ghostty = {
+  options.${namespace}.programs.graphical.terminal.ghostty = {
     enable = lib.mkEnableOption "Enable ghostty";
   };
 

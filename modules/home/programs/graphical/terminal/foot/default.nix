@@ -6,9 +6,9 @@
 }: let
   inherit (lib) mkIf;
 
-  cfg = config.${namespace}.programs.graphical.emulators.foot;
+  cfg = config.${namespace}.programs.graphical.terminal.foot;
 in {
-  options.${namespace}.programs.graphical.emulators.foot = {
+  options.${namespace}.programs.graphical.terminal.foot = {
     enable = lib.mkEnableOption "Enable foot";
   };
 

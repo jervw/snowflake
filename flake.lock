@@ -660,11 +660,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1754725699,
-        "narHash": "sha256-iAcj9T/Y+3DBy2J0N+yF9XQQQ8IEb5swLFzs23CdP88=",
+        "lastModified": 1755027561,
+        "narHash": "sha256-IVft239Bc8p8Dtvf7UAACMG5P3ZV+3/aO28gXpGtMXI=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "85dbfc7aaf52ecb755f87e577ddbe6dbbdbc1054",
+        "rev": "005433b926e16227259a1843015b5b2b7f7d1fc3",
         "type": "github"
       },
       "original": {
@@ -744,17 +744,17 @@
     "quickshell-config": {
       "flake": false,
       "locked": {
-        "lastModified": 1755027104,
-        "narHash": "sha256-iGooG48w7mjbHTj+jI7/ewgZcwNIGwaqlA8/Mpw3DaQ=",
+        "lastModified": 1755163823,
+        "narHash": "sha256-czpri+0xy2kaVu8GhPlWJ0eL7gtAnL41VpsfgBcupTk=",
         "ref": "refs/heads/main",
-        "rev": "fe8f4460de522fc45c72ca0acbb108549dbb46ad",
-        "revCount": 6,
+        "rev": "fde9b9505e5c28f3810e1b03b515bef7da9da8ce",
+        "revCount": 12,
         "type": "git",
-        "url": "ssh://git@github.com/NeuronActivation/panel.git"
+        "url": "ssh://git@github.com/NeuronActivation/shell.git"
       },
       "original": {
         "type": "git",
-        "url": "ssh://git@github.com/NeuronActivation/panel.git"
+        "url": "ssh://git@github.com/NeuronActivation/shell.git"
       }
     },
     "root": {

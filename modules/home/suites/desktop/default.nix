@@ -50,7 +50,7 @@ in {
           editors = {
             zed = mkDefault enabled;
           };
-          emulators = {
+          terminal = {
             foot = mkDefault enabled;
           };
         };
