@@ -52,6 +52,7 @@ in {
             "nushell"
             "vesktop"
             "obs-studio"
+            "NeuronActivationShell"
             "github-copilot"
             "zed"
             "gh"
