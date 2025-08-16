@@ -81,8 +81,6 @@
         allowUnfree = true;
       };
 
-      overlays = [inputs.niri.overlays.niri];
-
       systems.modules.nixos = with inputs; [
         agenix.nixosModules.default
         chaotic.nixosModules.default
