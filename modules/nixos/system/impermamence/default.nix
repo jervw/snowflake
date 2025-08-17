@@ -80,7 +80,7 @@ in {
             "bottles"
             "lutris"
           ] (x: ".local/share/${x}")
-          ++ forEach ["syncthing"] (x: ".local/state/${x}")
+          ++ forEach ["syncthing" "wireplumber"] (x: ".local/state/${x}")
           ++ [
             {
               directory = ".ssh";
