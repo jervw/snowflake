@@ -27,7 +27,7 @@ in {
         # Misc
         r2modman
         protontricks
-        protonup-qt
+        protonplus
         mangohud
       ]
       ++ lib.optionals cfg.enableEmulators [
