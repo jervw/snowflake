@@ -10,9 +10,9 @@
   cfg = config.${namespace}.system.xdg;
 
   # Applications
-  browser = ["zen"];
+  browser = ["zen-twilight"];
   editor = ["Helix"];
-  fileManager = ["nautilus" "yazi"];
+  fileManager = ["thunar"];
   imageViewer = ["imv"];
   mediaPlayer = ["mpv"];
   docView = ["zathura"];
@@ -74,6 +74,13 @@ in {
       mimeApps = {
         enable = true;
         inherit defaultApplications;
+      };
+
+      terminal-exec = {
+        enable = true;
+        settings = {
+          default = ["foot.desktop"];
+        };
       };
 
       userDirs = {
