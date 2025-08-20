@@ -17,7 +17,7 @@ in {
       enable = true;
       settings = {
         main = {
-          term = "xterm-256color";
+          term = "foot";
           pad = "8x8 center";
           selection-target = "clipboard";
         };
