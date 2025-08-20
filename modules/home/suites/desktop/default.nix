@@ -19,7 +19,6 @@ in {
       anki-bin
       calibre
       beeper
-      nautilus
       ffmpeg
       obsidian
       normcap
