@@ -15,6 +15,9 @@ in {
 
   config = mkIf cfg.enable {
     snowflake = {
+      programs.graphical.apps = {
+        thunar = mkDefault enabled;
+      };
       hardware = {
         audio = mkDefault enabled;
       };
