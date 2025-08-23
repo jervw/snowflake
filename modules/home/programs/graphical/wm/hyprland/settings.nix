@@ -14,8 +14,7 @@
     ];
 
     exec-once = [
-      config.${namespace}.programs.defaults.lock
-      "nm-applet"
+      # config.${namespace}.programs.defaults.lock
       "eval $(gnome-keyring-daemon --start --components=secrets)"
     ];
 

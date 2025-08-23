@@ -17,7 +17,7 @@ in {
 
   config = mkIf cfg.enable {
     home = {
-      packages = with pkgs; [cava wallust];
+      packages = with pkgs; [cava matugen];
       sessionVariables.QML2_IMPORT_PATH = lib.concatStringsSep ":" [
         "${pkgs.quickshell}/lib/qt-6/qml"
         "${pkgs.kdePackages.qtbase}/lib/qt-6/qml"
@@ -30,7 +30,7 @@ in {
 
     programs.quickshell = {
       enable = true;
-      configs.default = inputs.quickshell-config;
+      configs.default = inputs.noctalia-shell;
       activeConfig = "default";
       systemd.enable = true;
     };
@@ -40,8 +40,8 @@ in {
     snowflake = {
       programs = {
         defaults = {
-          launcher = "qs ipc call globalIPC toggleLauncher";
-          lock = "qs ipc call globalIPC toggleLock";
+          launcher = "qs ipc call appLauncher toggle";
+          lock = "qs ipc call lockScreen toggle";
         };
         graphical = {
           addons = {

@@ -47,8 +47,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    quickshell-config = {
-      url = "git+ssh://git@github.com/NeuronActivation/shell.git";
+    noctalia-shell = {
+      url = "github:noctalia-dev/noctalia-shell";
       flake = false;
     };
 
