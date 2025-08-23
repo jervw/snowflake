@@ -23,6 +23,11 @@ in {
         reverse_proxy http://thor:8001
       '';
 
+      # Tasks-md
+      "todo.jervw.dev".extraConfig = ''
+        reverse_proxy http://thor:8075
+      '';
+
       # Sparky-fitness
       "fit.jervw.dev".extraConfig = ''
         reverse_proxy http://thor:3004
