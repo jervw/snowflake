@@ -40,7 +40,7 @@ in {
     snowflake = {
       programs = {
         defaults = {
-          launcher = "qs ipc call appLauncher toggle";
+          launcher = "qs ipc call launcher toggle";
           lock = "qs ipc call lockScreen toggle";
         };
         graphical = {
