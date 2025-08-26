@@ -52,7 +52,7 @@ in {
             "nushell"
             "vesktop"
             "obs-studio"
-            "Noctalia"
+            "noctalia"
             "github-copilot"
             "zed"
             "gh"
