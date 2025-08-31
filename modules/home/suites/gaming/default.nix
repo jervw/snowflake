@@ -34,7 +34,7 @@ in {
         # Emulators
         rpcs3
         shadps4
-        azahar
+        # azahar
       ];
   };
 }

@@ -66,7 +66,7 @@ in {
 
         open = mkDefault true;
         nvidiaSettings = true;
-        nvidiaPersistenced = true;
+        nvidiaPersistenced = false; # TODO, Enable when no build failure
       };
 
       graphics = {
