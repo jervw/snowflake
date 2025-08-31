@@ -30,7 +30,7 @@ in {
       enable = true;
       base16Scheme = "${pkgs.base16-schemes}/share/themes/${cfg.theme}.yaml";
       homeManagerIntegration.autoImport = false;
-      homeManagerIntegration.followSystem = false;
+      # homeManagerIntegration.followSystem = false;
 
       # TODO: Add to module options
       image = pkgs.fetchurl {
