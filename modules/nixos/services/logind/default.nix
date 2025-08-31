@@ -15,9 +15,13 @@ in {
   config = mkIf cfg.enable {
     services = {
       logind = {
-        powerKey = "ignore";
-        powerKeyLongPress = "poweroff";
-        killUserProcesses = true;
+        settings = {
+          Login = {
+            HandlePowerKey = "ignore";
+            HandlePowerKeyLongPress = "poweroff";
+            KillUserProcesses = true;
+          };
+        };
       };
     };
   };

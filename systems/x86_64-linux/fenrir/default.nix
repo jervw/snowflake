@@ -12,7 +12,7 @@ in {
   ];
 
   # Suspend is broken on T2-Macs since Sonoma
-  services.logind.lidSwitch = "ignore";
+  services.logind.settings.Login.HandleLidSwitch = "ignore";
 
   hardware.apple-t2.kernelChannel = "latest";
 
