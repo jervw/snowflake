@@ -16,12 +16,11 @@ in
     extraInstallCommands = ''
       source '${makeWrapper}/nix-support/setup-hook'
 
-      # wrapProgram "$out/bin/${pname}" \
-      #   --add-flags "\''${NIXOS_OZONE_WL:+\''${WAYLAND_DISPLAY:+--ozone-platform=wayland --enable-features=WaylandWindowDecorations}}" \
-      #   --add-flags '--disable-seccomp-filter-sandbox --enable-features=WebRTCPipeWireCapturer,UsingChromeOSDirectVideoDecoder' \
-      #   --add-flags '--enable-zero-copy --enable-gpu-rasterization --enable-oop-rasterization'
+      wrapProgram "$out/bin/${pname}" \
+        --add-flags "\$\{NIXOS_OZONE_WL:+\$\{WAYLAND_DISPLAY:+--ozone-platform-hint=auto --enable-features=WaylandWindowDecorations --enable-wayland-ime=true\}\}" \
+        --add-flags "--no-sandbox --disable-gpu-sandbox"
 
-      install -m 444 -D '${extracted}/cider.png' \
+      install -m 444 -D '${extracted}/Cider.png' \
         "$out/share/icons/hicolor/512x512/apps/cider.png"
 
       install -m 444 -D '${extracted}/${pname}.desktop' \
