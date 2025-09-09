@@ -17,7 +17,7 @@ in {
 
   config = mkIf cfg.enable {
     home = {
-      packages = with pkgs; [cava matugen ddcutil];
+      packages = with pkgs; [cava matugen];
       sessionVariables.QML2_IMPORT_PATH = lib.concatStringsSep ":" [
         "${pkgs.quickshell}/lib/qt-6/qml"
         "${pkgs.kdePackages.qtbase}/lib/qt-6/qml"
