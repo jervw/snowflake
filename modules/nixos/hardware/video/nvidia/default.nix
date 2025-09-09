@@ -6,7 +6,7 @@
   ...
 }: let
   inherit (lib) mkDefault mkIf versionOlder;
-  cfg = config.${namespace}.hardware.nvidia;
+  cfg = config.${namespace}.hardware.video.nvidia;
 
   # use the latest possible nvidia package
   nvStable = config.boot.kernelPackages.nvidiaPackages.stable.version;
@@ -17,7 +17,7 @@
     then config.boot.kernelPackages.nvidiaPackages.stable
     else config.boot.kernelPackages.nvidiaPackages.beta;
 in {
-  options.${namespace}.hardware.nvidia = {
+  options.${namespace}.hardware.video.nvidia = {
     enable = lib.mkEnableOption "support for nvidia";
     enableCudaSupport = lib.mkEnableOption "support for cuda";
   };

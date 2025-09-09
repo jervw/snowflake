@@ -14,12 +14,15 @@ in {
   snowflake = {
     hardware = {
       cpu.amd = enabled;
-      nvidia = enabled;
-      qmk = enabled;
+      video = {
+        nvidia = enabled;
+        i2c = enabled;
+      };
       storage = {
         extra = true;
         ssd = true;
       };
+      qmk = enabled;
     };
     networking = {
       nfs = enabled;
