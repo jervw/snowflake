@@ -17,6 +17,7 @@ in {
     snowflake = {
       programs.graphical.apps = {
         thunar = mkDefault enabled;
+        gpu-screen-recorder = mkDefault enabled;
       };
       hardware = {
         audio = mkDefault enabled;
