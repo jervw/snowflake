@@ -16,10 +16,10 @@ in {
   config = mkIf cfg.enable {
     boot = {
       blacklistedKernelModules = ["k10temp"];
-      # extraModulePackages = [config.boot.kernelPackages.zenpower];
+      extraModulePackages = [config.boot.kernelPackages.zenpower];
       kernelModules = [
         "kvm-amd"
-        # "zenpower"
+        "zenpower"
       ];
 
       kernelParams = ["amd_pstate=active"];
