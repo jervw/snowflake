@@ -76,8 +76,8 @@ in {
             "fish"
             "zoxide"
             "Terraria"
+            "NexusMods.App"
             "cartridges"
-            "bottles"
             "lutris"
           ] (x: ".local/share/${x}")
           ++ forEach ["syncthing" "wireplumber"] (x: ".local/state/${x}")
