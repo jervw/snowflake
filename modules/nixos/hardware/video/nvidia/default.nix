@@ -48,9 +48,6 @@ in {
         MOZ_DISABLE_RDD_SANDBOX = "1";
 
         GBM_BACKEND = "nvidia-drm";
-
-        # BUG TODO Nvidia 580 caused regression with GTK4 apps not closing properly. This should fix it
-        GSK_RENDERER = "ngl";
       };
     };
 
