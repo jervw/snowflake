@@ -1,7 +1,6 @@
 {
   config,
   lib,
-  pkgs,
   namespace,
   ...
 }: let
@@ -17,18 +16,6 @@ in {
   imports = lib.snowfall.fs.get-non-default-nix-files ./.;
 
   config = mkIf cfg.enable {
-    # TODO move to a suite
-    home.packages = with pkgs; [
-      grimblast
-      wl-clipboard
-      wtype
-      wlr-randr
-      hyprpicker
-      xorg.xeyes
-      xorg.xrandr
-      xclip
-    ];
-
     services.hyprpolkitagent = enabled;
 
     wayland.windowManager.hyprland = {
