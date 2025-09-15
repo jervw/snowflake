@@ -31,7 +31,6 @@ in {
         enable = true;
 
         options = {
-          warningsAreErrors = false; # TODO Make it true?
           splitBuild = true;
         };
       };
