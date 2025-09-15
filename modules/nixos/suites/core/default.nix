@@ -36,6 +36,11 @@ in {
     networking.nftables.enable = mkForce true;
 
     snowflake = {
+      programs = {
+        terminal = {
+          shells.fish = mkDefault enabled;
+        };
+      };
       security = {
         gpg = mkDefault enabled;
         sudo = mkDefault enabled;

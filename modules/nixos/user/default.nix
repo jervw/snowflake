@@ -1,13 +1,12 @@
 {
   config,
   lib,
-  pkgs,
   namespace,
   ...
 }:
 with lib;
 with lib.${namespace}; let
-  cfg = config.${namespace}.user;
+  user = config.${namespace}.user;
 in {
   options.${namespace}.user = with lib.types; {
     name = mkOpt str "jervw" "The name to use for the user account.";
@@ -21,11 +20,10 @@ in {
   };
 
   config = {
-    programs.fish.enable = true; # TODO: Enable elsewhere
     users.groups.media = {}; # Used for some services on a server system
-    users.users.${cfg.name} =
+    users.users.${user.name} =
       {
-        inherit (cfg) name;
+        inherit (user) name;
 
         extraGroups =
           [
@@ -39,14 +37,13 @@ in {
             "power"
             "nix"
           ]
-          ++ cfg.extraGroups;
+          ++ user.extraGroups;
 
         group = "users";
         hashedPasswordFile = "/persist/password";
         isNormalUser = true;
-        shell = pkgs.fish;
-        description = cfg.fullName;
+        description = user.fullName;
       }
-      // cfg.extraOptions;
+      // user.extraOptions;
   };
 }
