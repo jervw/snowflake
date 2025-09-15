@@ -15,7 +15,6 @@ in {
 
   config = mkIf cfg.enable {
     snowflake = {
-      networking.fail2ban = mkDefault enabled;
       services = {
         adguard = mkDefault enabled;
         audiobookshelf = mkDefault enabled;

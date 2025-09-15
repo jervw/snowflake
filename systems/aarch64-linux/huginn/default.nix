@@ -13,6 +13,7 @@ in {
 
   snowflake = {
     networking = {
+      fail2ban = enabled;
       static-ip = {
         enable = true;
         adapter = "enp1s0";
