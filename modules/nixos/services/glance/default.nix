@@ -29,6 +29,7 @@ in {
           server = {
             host = "0.0.0.0";
             port = cfg.port;
+            proxied = true;
           };
           branding = {
             logo-text = "DASH";
