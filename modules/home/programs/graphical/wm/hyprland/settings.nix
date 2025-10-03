@@ -42,8 +42,8 @@
     };
 
     input = {
-      kb_layout = "us,fi";
-      kb_options = "caps:none,grp:alt_shift_toggle";
+      kb_layout = "us";
+      kb_options = "caps:none";
       repeat_delay = 200;
     };
 

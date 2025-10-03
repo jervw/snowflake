@@ -22,8 +22,8 @@ in {
       input = {
         keyboard = {
           xkb = {
-            layout = "us,fi";
-            options = "caps:none,grp:alt_shift_toggle";
+            layout = "us";
+            options = "caps:none";
           };
           repeat-delay = 200;
         };

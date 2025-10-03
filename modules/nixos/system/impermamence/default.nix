@@ -60,6 +60,7 @@ in {
             "smartcat"
             "harper-ls"
             "BeeperTexts"
+            "fcitx5"
           ] (
             x: ".config/${x}"
           )
