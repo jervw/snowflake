@@ -16,21 +16,25 @@ in {
       # QBitTorrent
       "dl.jervw.dev".extraConfig = ''
         reverse_proxy http://thor:8089
+        import cloudflare
       '';
 
       # YamTrack
       "track.jervw.dev".extraConfig = ''
         reverse_proxy http://thor:8001
+        import cloudflare
       '';
 
       # Tasks-md
       "todo.jervw.dev".extraConfig = ''
         reverse_proxy http://thor:8075
+        import cloudflare
       '';
 
       # Sparky-fitness
       "fit.jervw.dev".extraConfig = ''
         reverse_proxy http://thor:3004
+        import cloudflare
       '';
     };
   };

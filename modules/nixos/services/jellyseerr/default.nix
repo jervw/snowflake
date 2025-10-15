@@ -29,6 +29,7 @@ in {
       };
       caddy.virtualHosts."${cfg.host}".extraConfig = ''
         reverse_proxy http://thor:${toString cfg.port}
+        import cloudflare
       '';
     };
   };

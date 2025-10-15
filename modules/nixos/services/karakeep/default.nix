@@ -26,6 +26,7 @@ in {
       karakeep = {
         enable = true;
         environmentFile = config.age.secrets.openai-karakeep.path;
+        meilisearch.enable = false;
         extraEnvironment = {
           PORT = "${toString cfg.port}";
           CRAWLER_FULL_PAGE_SCREENSHOT = "true";
@@ -35,6 +36,7 @@ in {
       };
       caddy.virtualHosts."${cfg.host}".extraConfig = ''
         reverse_proxy http://thor:${toString cfg.port}
+        import cloudflare
       '';
     };
 
