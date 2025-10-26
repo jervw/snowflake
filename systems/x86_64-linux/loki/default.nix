@@ -8,7 +8,8 @@
 in {
   imports = [./hardware.nix];
 
-  boot.kernelPackages = pkgs.linuxPackages_cachyos-lto;
+  # boot.kernelPackages = pkgs.linuxPackages_cachyos-lto;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   snowflake = {
     hardware = {
@@ -28,6 +29,7 @@ in {
       tailscale = enabled;
     };
 
+    # programs.graphical.wm.niri = enabled;
     programs.graphical.wm.hyprland = enabled;
 
     security = {
@@ -37,7 +39,6 @@ in {
     services = {
       ollama = {
         enable = true;
-        modelsPath = "/mnt/storage/ollama-models";
       };
 
       monitoring = {
@@ -56,10 +57,9 @@ in {
       boot = {
         enable = true;
         plymouth = true;
-        secureBoot = true;
+        secureBoot = false;
         silentBoot = true;
       };
-      impermamence = enabled;
     };
 
     theme.stylix = enabled;
