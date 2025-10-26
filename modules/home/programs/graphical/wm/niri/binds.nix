@@ -1,6 +1,7 @@
 {
   config,
   namespace,
+  lib,
   ...
 }: let
   defaults = config.${namespace}.programs.defaults;
@@ -23,14 +24,16 @@
       ) (builtins.genList (x: x) count)
     );
   workspaces = workspaceBinds 9;
+
+  cmdToArgv = cmd: lib.splitString " " cmd;
 in {
   programs.niri.settings.binds =
     {
       # Programs
-      "Mod+Return".action.spawn = [defaults.terminal];
-      "Mod+D".action.spawn = [defaults.launcher];
-      "Mod+B".action.spawn = [defaults.browser];
-      "Mod+Y".action.spawn = ["uuctl"];
+      "Mod+Return".action.spawn = defaults.terminal;
+      "Mod+D".action.spawn = cmdToArgv defaults.launcher;
+      "Mod+B".action.spawn = defaults.browser;
+      "Mod+Y".action.spawn = "uuctl";
       "Mod+M".action.spawn = ["bemoji" "-t"];
       "Mod+N".action.spawn = [defaults.terminal "-e" "yazi"];
       "Mod+I".action.spawn = ["clipman" "pick" "--tool=CUSTOM" "--tool-args=fuzzel -d"];
