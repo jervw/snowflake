@@ -12,6 +12,8 @@ in {
   };
 
   config = mkIf cfg.enable {
+    services.noctalia-shell.enable = true;
+
     snowflake = {
       programs = {
         graphical = {

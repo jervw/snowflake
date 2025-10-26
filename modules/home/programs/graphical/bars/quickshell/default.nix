@@ -16,23 +16,11 @@ in {
   };
 
   config = mkIf cfg.enable {
-    home = {
-      packages = with pkgs; [cava matugen];
-      sessionVariables.QML2_IMPORT_PATH = lib.concatStringsSep ":" [
-        "${pkgs.quickshell}/lib/qt-6/qml"
-        "${pkgs.kdePackages.qtbase}/lib/qt-6/qml"
-        "${pkgs.kdePackages.qtgraphs}/lib/qt-6/qml"
-        "${pkgs.kdePackages.qtdeclarative}/lib/qt-6/qml"
-        "${pkgs.kdePackages.qt5compat}/lib/qt-6/qml"
-        "${pkgs.kdePackages.qtmultimedia}/lib/qt-6/qml"
-      ];
-    };
+    home.packages = with pkgs; [inputs.noctalia.packages.${system}.default];
 
-    programs.quickshell = {
+    programs.noctalia-shell = {
       enable = true;
-      configs.default = inputs.noctalia-shell;
-      activeConfig = "default";
-      systemd.enable = true;
+      settings = {};
     };
 
     services.hyprpaper.enable = lib.mkForce false;
@@ -40,8 +28,8 @@ in {
     snowflake = {
       programs = {
         defaults = {
-          launcher = "qs ipc call launcher toggle";
-          lock = "qs ipc call lockScreen toggle";
+          launcher = "noctalia-shell ipc call launcher toggle";
+          lock = "noctalia-shell ipc call lockScreen lock";
         };
         graphical = {
           addons = {

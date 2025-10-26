@@ -47,9 +47,15 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    noctalia-shell = {
+    quickshell = {
+      url = "github:outfoxxed/quickshell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    noctalia = {
       url = "github:noctalia-dev/noctalia-shell";
-      flake = false;
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.quickshell.follows = "quickshell";
     };
 
     ssh-keys = {
@@ -94,12 +100,14 @@
         lanzaboote.nixosModules.lanzaboote
         nix-index.nixosModules.nix-index
         stylix.nixosModules.stylix
+        noctalia.nixosModules.default
       ];
 
       homes.modules = with inputs; [
         niri.homeModules.niri
         stylix.homeModules.stylix
         zen-browser.homeModules.twilight
+        noctalia.homeModules.default
       ];
     };
 }
