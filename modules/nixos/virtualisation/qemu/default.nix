@@ -26,7 +26,6 @@ in {
       libvirtd = {
         enable = true;
         qemu = {
-          ovmf = enabled;
           swtpm = enabled;
           runAsRoot = true;
         };
