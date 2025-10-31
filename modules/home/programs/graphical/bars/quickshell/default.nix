@@ -16,10 +16,9 @@ in {
   };
 
   config = mkIf cfg.enable {
-    home.packages = with pkgs; [inputs.noctalia.packages.${system}.default];
-
     programs.noctalia-shell = {
       enable = true;
+      package = inputs.noctalia.packages.${pkgs.system}.default;
       settings = {};
     };
 
