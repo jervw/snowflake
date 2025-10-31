@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  pkgs,
   namespace,
   ...
 }: let
@@ -11,10 +12,14 @@ in {
     enable = lib.mkEnableOption "Enable Niri";
   };
 
-  config = mkIf cfg.enable {
+  config = {
     services.noctalia-shell.enable = true;
+    programs.niri = {
+      enable = cfg.enable;
+      package = pkgs.niri;
+    };
 
-    snowflake = {
+    snowflake = mkIf cfg.enable {
       programs = {
         graphical = {
           display-managers = {

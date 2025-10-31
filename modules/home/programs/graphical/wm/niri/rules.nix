@@ -1,4 +1,13 @@
-_: let
+{
+  config,
+  lib,
+  namespace,
+  ...
+}: let
+  inherit (lib) mkIf;
+
+  cfg = config.${namespace}.programs.graphical.wm.niri;
+
   mkMatchRule = {
     appId,
     title ? "",
@@ -58,9 +67,7 @@ _: let
     }
     {
       matches = [
-        {
-          is-window-cast-target = true;
-        }
+        {is-window-cast-target = true;}
       ];
     }
     {
@@ -90,15 +97,16 @@ _: let
       };
     }
   ];
-in {
-  programs.niri.settings = {
-    window-rules = windowRules ++ floatingRules;
-    layer-rules = [
-      {
-        matches = [{namespace = "^hyprpaper$";}];
-        # TODO this niri flake settings module is not up to date as below does not exist
-        # place-within-backdrop = true;
-      }
-    ];
-  };
-}
+in
+  mkIf cfg.enable {
+    programs.niri.settings = {
+      window-rules = windowRules ++ floatingRules;
+      layer-rules = [
+        {
+          matches = [{namespace = "^hyprpaper$";}];
+          # TODO this niri flake settings module is not up to date as below does not exist
+          # place-within-backdrop = true;
+        }
+      ];
+    };
+  }

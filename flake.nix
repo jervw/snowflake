@@ -101,10 +101,10 @@
         nix-index.nixosModules.nix-index
         stylix.nixosModules.stylix
         noctalia.nixosModules.default
+        niri.nixosModules.niri
       ];
 
       homes.modules = with inputs; [
-        niri.homeModules.niri
         stylix.homeModules.stylix
         zen-browser.homeModules.twilight
         noctalia.homeModules.default
