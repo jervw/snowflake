@@ -32,16 +32,10 @@ in {
         graphical = {
           addons = {
             hypridle = mkDefault enabled;
-            hyprlock = mkDefault enabled;
-            swaync = mkDefault enabled;
-            swayosd = mkDefault enabled;
             wlsunset = mkDefault enabled;
           };
           bars = {
-            waybar = mkDefault enabled;
-          };
-          launchers = {
-            fuzzel = mkDefault enabled;
+            quickshell = mkDefault enabled;
           };
         };
       };
