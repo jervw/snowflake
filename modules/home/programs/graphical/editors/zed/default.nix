@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  pkgs,
   namespace,
   ...
 }: let
@@ -26,6 +27,29 @@ in {
         };
         helix_mode = true;
         relative_line_numbers = true;
+
+        hour_format = "hour24";
+        auto_update = false;
+
+        node = {
+          path = lib.getExe pkgs.nodejs;
+          npm_path = lib.getExe' pkgs.nodejs "npm";
+        };
+
+        lsp = {
+          rust-analyzer = {
+            binary = {
+              path = lib.getExe pkgs.rust-analyzer;
+              path_lookup = true;
+            };
+          };
+
+          nix = {
+            binary = {
+              path_lookup = true;
+            };
+          };
+        };
       };
     };
   };
