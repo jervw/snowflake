@@ -52,8 +52,6 @@ in {
           urAccepted = -1;
         };
       };
-
-      extraOptions = ["--no-default-folder"];
     };
   };
 }
