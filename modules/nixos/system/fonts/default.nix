@@ -19,7 +19,7 @@ in {
       packages = with pkgs; [
         jetbrains-mono
         noto-fonts
-        noto-fonts-emoji
+        noto-fonts-color-emoji
         noto-fonts-cjk-sans
         font-awesome
         material-symbols
