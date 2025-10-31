@@ -95,7 +95,6 @@
         chaotic.nixosModules.default
         comin.nixosModules.comin
         disko.nixosModules.disko
-        home-manager.nixosModules.default
         impermanence.nixosModule
         lanzaboote.nixosModules.lanzaboote
         nix-index.nixosModules.nix-index
