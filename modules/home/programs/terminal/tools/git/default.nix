@@ -37,10 +37,8 @@ in {
           l = "lg";
         };
 
-        extraConfig = {
-          init = {defaultBranch = "main";};
-          push.autoSetupRemote = true;
-        };
+        init.defaultBranch = "main";
+        push.autoSetupRemote = true;
       };
 
       ignores = [
