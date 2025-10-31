@@ -15,7 +15,6 @@ in {
     programs = {
       graphical = {
         wm.hyprland = enabled;
-        bars.quickshell = enabled;
       };
     };
 

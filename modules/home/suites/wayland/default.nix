@@ -35,7 +35,7 @@ in {
             wlsunset = mkDefault enabled;
           };
           bars = {
-            quickshell = mkDefault enabled;
+            noctalia = mkDefault enabled;
           };
         };
       };
