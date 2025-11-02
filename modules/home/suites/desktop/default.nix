@@ -26,7 +26,7 @@ in {
       tomato-c
       qbittorrent-enhanced
       fontpreview
-      pkgs.${namespace}.cider
+      cider-2
     ];
 
     snowflake = {
