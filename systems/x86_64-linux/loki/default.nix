@@ -62,7 +62,9 @@ in {
       };
     };
 
-    theme.stylix = enabled;
+    theme = {
+      catppuccin = enabled;
+    };
 
     virtualisation = {
       docker = enabled;

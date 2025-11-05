@@ -1,9 +1,9 @@
 {
   inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     impermanence.url = "github:nix-community/impermanence";
     nixos-hardware.url = "github:nixos/nixos-hardware";
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    stylix.url = "github:danth/stylix";
+    catppuccin.url = "github:catppuccin/nix";
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     helix.url = "github:helix-editor/helix";
 
@@ -93,19 +93,19 @@
 
       systems.modules.nixos = with inputs; [
         agenix.nixosModules.default
+        catppuccin.nixosModules.catppuccin
         chaotic.nixosModules.default
         comin.nixosModules.comin
         disko.nixosModules.disko
         impermanence.nixosModule
         lanzaboote.nixosModules.lanzaboote
         nix-index.nixosModules.nix-index
-        stylix.nixosModules.stylix
         noctalia.nixosModules.default
         niri.nixosModules.niri
       ];
 
       homes.modules = with inputs; [
-        stylix.homeModules.stylix
+        catppuccin.homeModules.catppuccin
         zen-browser.homeModules.twilight
         noctalia.homeModules.default
       ];

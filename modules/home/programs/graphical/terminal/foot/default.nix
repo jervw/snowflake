@@ -18,6 +18,7 @@ in {
       settings = {
         main = {
           term = "foot";
+          font = "JetBrainsMono Nerd Font Propo:size=13";
           pad = "8x8 center";
           selection-target = "clipboard";
         };

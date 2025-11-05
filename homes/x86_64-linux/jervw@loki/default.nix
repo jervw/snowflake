@@ -32,10 +32,6 @@ in {
       gaming = enabled;
       wayland = enabled;
     };
-
-    theme = {
-      stylix = enabled;
-    };
   };
 
   #

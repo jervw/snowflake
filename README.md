@@ -12,7 +12,7 @@
 - Full-disk encryption and Secure Boot
 - Wayland config for Hyprland with an NVIDIA GPU
 - Agenix for secrets management
-- System-wide styling via [stylix](https://github.com/danth/stylix)
+- System-wide styling via [Catppuccin](https://github.com/catppuccin/nix)
 - Linted and styled with [alejandra](https://github.com/kamadorueda/alejandra), [deadnix](https://github.com/astro/deadnix), and [statix](https://github.com/nerdypepper/statix)
 
 ## :bulb: Acknowledgments

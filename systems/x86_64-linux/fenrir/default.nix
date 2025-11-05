@@ -54,8 +54,6 @@ in {
         silentBoot = true;
       };
     };
-
-    theme.stylix = enabled;
   };
 
   system.stateVersion = "24.05";

@@ -29,10 +29,6 @@ in {
       desktop = enabled;
       wayland = enabled;
     };
-
-    theme = {
-      stylix = enabled;
-    };
   };
 
   # Work around to fix issue with cursor scaling on HIDPI
