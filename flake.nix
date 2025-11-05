@@ -5,6 +5,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     stylix.url = "github:danth/stylix";
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+    helix.url = "github:helix-editor/helix";
 
     agenix = {
       url = "github:ryantm/agenix";

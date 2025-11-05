@@ -17,6 +17,7 @@ in {
   config = mkIf cfg.enable {
     programs.helix = {
       enable = true;
+      package = inputs.helix.packages.${pkgs.stdenv.hostPlatform.system}.default;
       defaultEditor = true;
 
       # Zero-conf packages
@@ -39,6 +40,7 @@ in {
           lsp.display-inlay-hints = false;
           end-of-line-diagnostics = "hint";
           inline-diagnostics.cursor-line = "warning";
+          rainbow-brackets = true;
           soft-wrap = {
             enable = true;
             max-wrap = 25;
