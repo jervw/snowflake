@@ -20,7 +20,7 @@ in {
         devices = {
           # Desktop
           loki = {
-            id = "BDUDP4Q-HUNQ4YK-HTGNC5K-PHXJMDT-LW6YXBX-ALGJRFB-RTRTQ33-B6RSYAI";
+            id = "KL2VBOX-JSTIUP4-LVUCM7U-OJTGN4L-VJMYKCI-3AY3RAA-MIAN6EW-YCAAUQC";
             autoAcceptFolders = true;
           };
           # Server
