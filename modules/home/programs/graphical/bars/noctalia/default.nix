@@ -9,6 +9,7 @@
   inherit (lib) mkIf;
 
   cfg = config.${namespace}.programs.graphical.bars.noctalia;
+  defaults = config.${namespace}.programs.defaults;
 in {
   options.${namespace}.programs.graphical.bars.noctalia = {
     enable = lib.mkEnableOption "Enable Noctalia";
@@ -17,10 +18,11 @@ in {
   config = mkIf cfg.enable {
     programs.noctalia-shell = {
       enable = true;
-      package = inputs.noctalia.packages.${pkgs.system}.default;
+      package = inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default;
+      systemd.enable = true;
       settings = {
         bar = {
-          density = "compact";
+          density = "comfortable";
           position = "top";
           showCapsule = true;
           floating = true;
@@ -60,9 +62,17 @@ in {
             ];
           };
         };
-        colorSchemes.predefinedScheme = "Monochrome";
         general = {
           avatarImage = "/home/jervw/.face";
+        };
+        wallpaper = {
+          directory = "/home/jervw/pics/wallpapers";
+          defaultWallpaper = "/home/jervw/pics/wallpapers/default.png";
+          randomEnabled = true;
+          randomIntervalSec = 1800;
+        };
+        appLauncher = {
+          terminalCommand = "${defaults.terminal} -e";
         };
         location = {
           name = "Helsinki, Finland";

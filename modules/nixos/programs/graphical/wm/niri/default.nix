@@ -13,7 +13,6 @@ in {
   };
 
   config = {
-    services.noctalia-shell.enable = true;
     programs.niri = {
       enable = cfg.enable;
       package = pkgs.niri;

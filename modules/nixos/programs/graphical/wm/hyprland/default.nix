@@ -19,8 +19,6 @@ in {
       };
     };
 
-    services.noctalia-shell.enable = true;
-
     snowflake = {
       programs = {
         graphical = {

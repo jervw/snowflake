@@ -49,7 +49,8 @@
     };
 
     noctalia = {
-      url = "github:noctalia-dev/noctalia-shell";
+      # url = "github:noctalia-dev/noctalia-shell";
+      url = "github:bokicoder/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.quickshell.follows = "quickshell";
     };
@@ -94,7 +95,6 @@
         impermanence.nixosModule
         lanzaboote.nixosModules.lanzaboote
         nix-index.nixosModules.nix-index
-        noctalia.nixosModules.default
         niri.nixosModules.niri
       ];
 
