@@ -13,11 +13,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    comin = {
-      url = "github:nlewo/comin";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     disko = {
       url = "github:nix-community/disko/latest";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -95,7 +90,6 @@
         agenix.nixosModules.default
         catppuccin.nixosModules.catppuccin
         chaotic.nixosModules.default
-        comin.nixosModules.comin
         disko.nixosModules.disko
         impermanence.nixosModule
         lanzaboote.nixosModules.lanzaboote

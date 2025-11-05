@@ -38,7 +38,6 @@ in {
     };
 
     services = {
-      comin = enabled;
       logind = enabled;
       monitoring = {
         node = enabled;

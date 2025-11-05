@@ -35,7 +35,6 @@ in {
     };
 
     services = {
-      comin = enabled;
       caddy = enabled;
       monitoring = {
         node = enabled;
