@@ -39,11 +39,6 @@ in {
 
     services = {
       logind = enabled;
-      monitoring = {
-        node = enabled;
-        zfs = enabled;
-        cadvisor = enabled;
-      };
     };
 
     suites = {

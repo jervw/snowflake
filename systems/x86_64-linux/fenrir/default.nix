@@ -36,12 +36,6 @@ in {
       hardening = enabled;
     };
 
-    services = {
-      monitoring = {
-        node = enabled;
-      };
-    };
-
     suites = {
       core = enabled;
       desktop = enabled;

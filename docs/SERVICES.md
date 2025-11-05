@@ -7,7 +7,6 @@
 | qBittorrent | `8089` | | :white_check_mark: | [dl.jervw.dev](https://dl.jervw.dev) |
 | Flaresolverr | `8191` | | :x: | localhost |
 | Glance | `5678` | | :white_check_mark: | [home.jervw.dev](https://home.jervw.dev) |
-| Grafana | `8090` | | :white_check_mark: | [monitor.jervw.dev](https://monitor.jervw.dev) |
 | Karakeep | `3020` | | :white_check_mark: | [save.jervw.dev](https://save.jervw.dev) |
 | Homepage | `8082` | | :x: | localhost |
 | Immich | `2995` | | :white_check_mark: | [media.jervw.dev](https://media.jervw.dev) |

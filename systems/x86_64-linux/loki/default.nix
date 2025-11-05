@@ -40,10 +40,6 @@ in {
       ollama = {
         enable = true;
       };
-
-      monitoring = {
-        node = enabled;
-      };
       logind = enabled;
     };
 
