@@ -17,6 +17,7 @@ in {
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
       anki-bin
+      memento
       calibre
       beeper
       ffmpeg
