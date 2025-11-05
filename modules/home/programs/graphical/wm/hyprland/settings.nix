@@ -1,8 +1,4 @@
-{
-  namespace,
-  config,
-  ...
-}: {
+_: {
   wayland.windowManager.hyprland.settings = {
     env = [
       "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
@@ -13,10 +9,7 @@
       "NIXOS_OZONE_WL,1"
     ];
 
-    exec-once = [
-      # config.${namespace}.programs.defaults.lock
-      "eval $(gnome-keyring-daemon --start --components=secrets)"
-    ];
+    exec-once = [];
 
     general = {
       gaps_in = 12;

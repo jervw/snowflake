@@ -25,7 +25,8 @@ in {
     bind =
       [
         # Programs
-        "$MOD, Return, exec, ${defaults.terminal}"
+        "$MOD, Return, exec, ${defaults.terminal} +new-window"
+        "$MOD, Tab, global, com.mitchellh.ghostty:LOGO+Tab"
         "$MOD, D, exec, ${defaults.launcher}"
         "$MOD, V, exec, ${defaults.terminal} -e yazi"
         "$MOD, B, exec, ${defaults.browser}"
@@ -56,8 +57,6 @@ in {
         "$MOD SHIFT, J, movewindow, d"
 
         # Misc
-        "$MOD, Tab, changegroupactive"
-        "$MOD, G, togglegroup"
         "$MOD, T, togglespecialworkspace"
         "$MOD SHIFT, T, movetoworkspacesilent, special"
       ]

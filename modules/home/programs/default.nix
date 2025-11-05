@@ -9,7 +9,7 @@ in {
   options.${namespace}.programs.defaults = {
     terminal = mkOption {
       type = types.str;
-      default = "foot";
+      default = "ghostty";
       description = "Default terminal emulator launch command";
     };
 

@@ -15,14 +15,13 @@ in {
   config = mkIf cfg.enable {
     programs.ghostty = {
       enable = true;
+      systemd.enable = true;
       settings = {
         window-decoration = false;
         confirm-close-surface = false;
+        quit-after-last-window-closed = false;
         auto-update = "off";
-
-        # Both improve startup time
-        gtk-single-instance = true; # FIX causing issues
-        gtk-adwaita = false;
+        quick-terminal-position = "center";
 
         keybind = [
           # Tabs
@@ -31,25 +30,26 @@ in {
           "ctrl+shift+h=previous_tab"
           "ctrl+shift+l=next_tab"
 
-          # Split -- New
-          "ctrl+s>h=new_split:left"
-          "ctrl+s>j=new_split:down"
-          "ctrl+s>k=new_split:up"
-          "ctrl+s>l=new_split:right"
+          # Split - New
+          "ctrl+shift+s>h=new_split:left"
+          "ctrl+shift+s>j=new_split:down"
+          "ctrl+shift+s>k=new_split:up"
+          "ctrl+shift+s>l=new_split:right"
 
-          # Split -- Move
+          # Split - Move
           "alt+h=goto_split:left"
           "alt+j=goto_split:bottom"
           "alt+k=goto_split:top"
           "alt+l=goto_split:right"
 
-          # Split -- Resize
+          # Split - Resize
           "alt+ctrl+h=resize_split:left,20"
           "alt+ctrl+j=resize_split:down,20"
           "alt+ctrl+k=resize_split:up,20"
           "alt+ctrl+l=resize_split:right,20"
 
           # Misc
+          "global:super+tab=toggle_quick_terminal"
           "alt+q=close_surface"
           "ctrl+shift+r=reload_config"
         ];
