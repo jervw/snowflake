@@ -30,11 +30,12 @@ in {
           "ctrl+shift+h=previous_tab"
           "ctrl+shift+l=next_tab"
 
-          # Split - New
-          "ctrl+shift+s>h=new_split:left"
-          "ctrl+shift+s>j=new_split:down"
-          "ctrl+shift+s>k=new_split:up"
-          "ctrl+shift+s>l=new_split:right"
+          # Split - New # NOTE: key 's' would be better but conflicts with Helix
+          "ctrl+a>h=new_split:left"
+          "ctrl+a>j=new_split:down"
+          "ctrl+a>k=new_split:up"
+          "ctrl+a>l=new_split:right"
+          "ctrl+a>w=close_surface"
 
           # Split - Move
           "alt+h=goto_split:left"
