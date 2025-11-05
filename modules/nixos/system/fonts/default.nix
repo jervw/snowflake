@@ -17,6 +17,7 @@ in {
     fonts = {
       enableDefaultPackages = false;
       packages = with pkgs; [
+        nerd-fonts.jetbrains-mono
         jetbrains-mono
         noto-fonts
         noto-fonts-color-emoji
