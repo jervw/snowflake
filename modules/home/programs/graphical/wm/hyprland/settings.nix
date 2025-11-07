@@ -12,10 +12,10 @@ _: {
     exec-once = [];
 
     general = {
-      gaps_in = 12;
-      gaps_out = 10;
+      gaps_in = 10;
+      gaps_out = 8;
       allow_tearing = true;
-      border_size = 3;
+      border_size = 0;
     };
 
     group = {
@@ -58,8 +58,11 @@ _: {
     decoration = {
       rounding = 15;
       rounding_power = 4.0;
+      dim_inactive = true;
+      dim_strength = 0.2;
+
       blur = {
-        enabled = true;
+        enabled = false;
         size = 8;
         passes = 2;
         noise = 0.02;
