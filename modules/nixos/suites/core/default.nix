@@ -24,7 +24,7 @@ in {
         aria2
         file
         jq
-        dust
+        dua
 
         # archiving
         unar

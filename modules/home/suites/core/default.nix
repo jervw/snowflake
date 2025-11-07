@@ -19,7 +19,6 @@ in {
       btop
       caligula
       cloneit
-      ncdu
       ripgrep
       rclone
       tldr
