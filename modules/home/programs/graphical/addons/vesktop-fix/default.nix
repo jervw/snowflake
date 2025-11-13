@@ -24,21 +24,21 @@ in {
 
         # attempt to enable hardware acceleration
         # FIXME: not working on Electron yet?
-        # "--enable-features=AcceleratedVideoDecodeLinuxGL"
-        # "--enable-features=AcceleratedVideoDecodeLinuxZeroCopyGL"
-        # "--enable-features=VaapiOnNvidiaGPUs"
-        # "--enable-features=VaapiIgnoreDriverChecks"
+        "--enable-features=AcceleratedVideoDecodeLinuxGL"
+        "--enable-features=AcceleratedVideoDecodeLinuxZeroCopyGL"
+        "--enable-features=VaapiOnNvidiaGPUs"
+        "--enable-features=VaapiIgnoreDriverChecks"
       ];
       joinedArgs = lib.concatStringsSep " " commandLineArgs;
 
-      # override for electron 36
-      electronVer = "36.0.0-beta.6";
-      electronPkg = pkgs.electron_35-bin.overrideAttrs {
-        pname = "electron_36-bin";
+      # override for electron 40
+      electronVer = "40.0.0-alpha.4";
+      electronPkg = pkgs.electron_39-bin.overrideAttrs {
+        pname = "electron_40-bin";
         version = electronVer;
         src = pkgs.fetchurl {
           url = "https://github.com/electron/electron/releases/download/v${electronVer}/electron-v${electronVer}-linux-x64.zip";
-          sha256 = "sha256-HHKIa4DYobTogRmbdw/hk4fY8+9tbyJ+IjsUknLztAE=";
+          sha256 = "sha256-3sK7SnvH0DYTlzK56UtgeF263V2lwzdcUkOTzVSxcfQ=";
         };
       };
     in {
