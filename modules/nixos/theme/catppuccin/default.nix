@@ -6,9 +6,6 @@
   ...
 }: let
   inherit (lib) mkEnableOption mkIf;
-  accent = config.catppuccin.accent;
-  flavor = config.catppuccin.flavor;
-
   cfg = config.${namespace}.theme.catppuccin;
 in {
   options.${namespace}.theme.catppuccin = {
@@ -31,6 +28,7 @@ in {
     snowfallorg.users.${config.${namespace}.user.name}.home.config = {
       catppuccin = {
         enable = true;
+        cursors.enable = true;
         kvantum.enable = true;
       };
 
@@ -57,9 +55,9 @@ in {
 
       home.pointerCursor = {
         gtk.enable = true;
-        name = "Catppuccin-Mocha-Light-Cursors";
-        package = pkgs.catppuccin-cursors.mochaLight;
-        size = 16;
+        # name = "Catppuccin-Mocha-Light-Cursors";
+        # package = pkgs.catppuccin-cursors.mochaLight;
+        size = 24;
       };
 
       qt = {

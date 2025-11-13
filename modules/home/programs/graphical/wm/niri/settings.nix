@@ -1,10 +1,12 @@
 {
   config,
   lib,
+  pkgs,
   namespace,
   ...
 }: let
   inherit (lib) mkIf;
+  inherit (config.catppuccin) cursors;
   cfg = config.${namespace}.programs.graphical.wm.niri;
 
   mkCommand = command: {
@@ -15,14 +17,19 @@ in
     programs.niri = {
       settings = {
         environment = {
-          DISPLAY = ":0";
           NIXOS_OZONE_WL = "1";
         };
 
-        spawn-at-startup = [
-          (mkCommand config.${namespace}.programs.defaults.lock)
-          (mkCommand "xwayland-satellite")
-        ];
+        debug = {
+          honor-xdg-activation-with-invalid-serial = [];
+        };
+
+        spawn-at-startup = [];
+
+        cursor = {
+          theme = "catppuccin-${cursors.flavor}-${cursors.accent}-cursors";
+          size = config.home.pointerCursor.size;
+        };
 
         input = {
           keyboard = {
@@ -35,6 +42,11 @@ in
 
           focus-follows-mouse.enable = true;
           warp-mouse-to-focus.enable = true;
+        };
+
+        xwayland-satellite = {
+          enable = true;
+          path = lib.getExe pkgs.xwayland-satellite;
         };
 
         prefer-no-csd = true;

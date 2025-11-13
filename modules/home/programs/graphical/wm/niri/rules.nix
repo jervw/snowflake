@@ -103,9 +103,8 @@ in
       window-rules = windowRules ++ floatingRules;
       layer-rules = [
         {
-          matches = [{namespace = "^hyprpaper$";}];
-          # TODO this niri flake settings module is not up to date as below does not exist
-          # place-within-backdrop = true;
+          matches = [{namespace = "^noctalia-overview*";}];
+          place-within-backdrop = true;
         }
       ];
     };

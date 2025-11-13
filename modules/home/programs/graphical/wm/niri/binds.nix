@@ -36,13 +36,10 @@ in
     programs.niri.settings.binds =
       {
         # Programs
-        "Mod+Return".action.spawn = defaults.terminal;
+        "Mod+Return".action.spawn = [defaults.terminal "+new-window"];
         "Mod+D".action.spawn = cmdToArgv defaults.launcher;
         "Mod+B".action.spawn = defaults.browser;
-        "Mod+Y".action.spawn = "uuctl";
-        "Mod+M".action.spawn = ["bemoji" "-t"];
         "Mod+N".action.spawn = [defaults.terminal "-e" "yazi"];
-        "Mod+I".action.spawn = ["clipman" "pick" "--tool=CUSTOM" "--tool-args=fuzzel -d"];
 
         # Essential
         "Mod+Q".action.close-window = {};
@@ -90,21 +87,33 @@ in
         "Mod+V".action.expand-column-to-available-width = {};
 
         # Mouse bindings
-        "Mod+WheelScrollDown" = {
-          action.focus-workspace-down = {};
-          cooldown-ms = 150;
-        };
         "Mod+WheelScrollUp" = {
           action.focus-workspace-up = {};
           cooldown-ms = 150;
         };
-        "Mod+WheelScrollRight".action.focus-column-right = {};
-        "Mod+WheelScrollLeft".action.focus-column-left = {};
+        "Mod+WheelScrollRight" = {
+          action.focus-column-right = {};
+          cooldown-ms = 150;
+        };
+        "Mod+WheelScrollDown" = {
+          action.focus-workspace-down = {};
+          cooldown-ms = 150;
+        };
+        "Mod+WheelScrollLeft" = {
+          action.focus-column-left = {};
+          cooldown-ms = 150;
+        };
+
+        # Logitech mouse gesture button
+        "F13".action.focus-workspace-up = {};
+        "F14".action.focus-monitor-right = {};
+        "F15".action.focus-workspace-down = {};
+        "F16".action.focus-monitor-left = {};
 
         # Media controls
-        "XF86AudioRaiseVolume".action.spawn = ["swayosd-client" "--output-volume" "raise"];
-        "XF86AudioLowerVolume".action.spawn = ["swayosd-client" "--output-volume" "lower"];
-        "XF86AudioMute".action.spawn = ["swayosd-client" "--output-volume" "mute-toggle"];
+        "XF86AudioPlay".action.spawn = ["playerctl" "play-pause"];
+        "XF86AudioPrev".action.spawn = ["playerctl" "previous"];
+        "XF86AudioNext".action.spawn = ["playerctl" "next"];
 
         # Misc
         "Mod+Shift+BracketLeft".action.consume-window-into-column = {};
