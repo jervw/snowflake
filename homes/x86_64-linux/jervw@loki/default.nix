@@ -14,7 +14,8 @@ in {
 
     programs = {
       graphical = {
-        wm.hyprland = enabled;
+        # wm.hyprland = enabled;
+        wm.niri = enabled;
         terminal.ghostty = enabled;
       };
     };
