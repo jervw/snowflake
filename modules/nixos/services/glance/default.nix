@@ -107,11 +107,6 @@ in {
                           title = "Monitoring & Networking";
                           links = [
                             {
-                              title = "Grafana";
-                              icon = "sh:grafana";
-                              url = "https://monitor.jervw.dev";
-                            }
-                            {
                               title = "Speedtest Tracker";
                               icon = "sh:speedtest-tracker";
                               url = "https://speedtest.jervw.dev";
