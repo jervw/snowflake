@@ -29,8 +29,8 @@ in {
       tailscale = enabled;
     };
 
-    # programs.graphical.wm.niri = enabled;
-    programs.graphical.wm.hyprland = enabled;
+    programs.graphical.wm.niri = enabled;
+    # programs.graphical.wm.hyprland = enabled;
 
     security = {
       hardening = enabled;
