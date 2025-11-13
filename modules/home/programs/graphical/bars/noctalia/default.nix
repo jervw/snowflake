@@ -21,11 +21,18 @@ in {
       package = inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default;
       systemd.enable = true;
       settings = {
+        general = {
+          avatarImage = "/home/jervw/.face";
+        };
+        ui = {
+          settingsPanelAttachToBar = true;
+        };
         bar = {
           density = "comfortable";
           position = "top";
           showCapsule = true;
           floating = true;
+          outerCorners = false;
           marginVertical = 0.25;
           marginHorizontal = 0.50;
           widgets = {
@@ -46,6 +53,7 @@ in {
             right = [
               {
                 id = "Tray";
+                drawerEnabled = false;
               }
               {
                 id = "NotificationHistory";
@@ -62,9 +70,6 @@ in {
             ];
           };
         };
-        general = {
-          avatarImage = "/home/jervw/.face";
-        };
         wallpaper = {
           directory = "/home/jervw/pics/wallpapers";
           defaultWallpaper = "/home/jervw/pics/wallpapers/default.png";
@@ -74,9 +79,7 @@ in {
         appLauncher = {
           terminalCommand = "${defaults.terminal} -e";
         };
-        location = {
-          name = "Helsinki, Finland";
-        };
+        location .name = "Helsinki, Finland";
         dock.enabled = false;
       };
     };
