@@ -79,8 +79,8 @@ in {
       ", XF86AudioMute, exec, swayosd-client --output-volume mute-toggle"
     ];
     bindle = [
-      ", XF86AudioRaiseVolume, exec, swayosd-client --output-volume raise --max-volume 120"
-      ", XF86AudioLowerVolume, exec, swayosd-client --output-volume lower --max-volume 120"
+      # ", XF86AudioRaiseVolume, exec, swayosd-client --output-volume raise --max-volume 120"
+      # ", XF86AudioLowerVolume, exec, swayosd-client --output-volume lower --max-volume 120"
     ];
   };
 }

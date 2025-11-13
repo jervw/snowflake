@@ -12,8 +12,8 @@ _: {
     exec-once = [];
 
     general = {
-      gaps_in = 10;
-      gaps_out = 8;
+      gaps_in = 8;
+      gaps_out = 12;
       allow_tearing = true;
       border_size = 0;
     };
