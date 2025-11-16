@@ -4,7 +4,7 @@
   namespace,
   ...
 }: let
-  inherit (lib) mkDefault;
+  inherit (lib) mkForce;
   user = config.${namespace}.user;
 in {
   config = {
@@ -25,7 +25,7 @@ in {
       doc.enable = false;
       info.enable = false;
 
-      man.generateCaches = mkDefault true;
+      man.generateCaches = mkForce false;
 
       nixos = {
         enable = true;
