@@ -34,8 +34,7 @@ in {
         # Emulators
         rpcs3
         shadps4
-        nexusmods-app
-        # azahar
+        azahar
       ];
   };
 }

@@ -31,8 +31,11 @@ in {
     suites = {
       core = enabled;
       desktop = enabled;
-      gaming = enabled;
       wayland = enabled;
+      gaming = {
+        enable = true;
+        enableEmulators = false;
+      };
     };
   };
 
