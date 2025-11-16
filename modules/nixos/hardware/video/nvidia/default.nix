@@ -63,7 +63,7 @@ in {
 
         open = mkDefault true;
         nvidiaSettings = true;
-        nvidiaPersistenced = true;
+        nvidiaPersistenced = false;
       };
 
       graphics = {
