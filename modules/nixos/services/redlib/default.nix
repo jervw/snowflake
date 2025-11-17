@@ -1,12 +1,26 @@
 {
   config,
   lib,
+  pkgs,
   namespace,
   inputs,
   ...
 }: let
   inherit (lib) mkEnableOption mkIf mkOption;
   cfg = config.${namespace}.services.redlib;
+
+  redlib-latest = pkgs.redlib.overrideAttrs (old: {
+    version = "0.36.0-latest";
+
+    src = pkgs.fetchFromGitHub {
+      owner = "redlib-org";
+      repo = "redlib";
+      rev = "2dc6b5f3c0db1f8e78a74048ba4550ba6202cb55";
+      hash = "";
+    };
+
+    cargoHash = "";
+  });
 in {
   options.${namespace}.services.redlib = {
     enable = mkEnableOption "Enable Redlib service";
@@ -26,6 +40,7 @@ in {
     services = mkIf cfg.enable {
       redlib = {
         enable = true;
+        package = redlib-latest;
         port = cfg.port;
         settings = {
           REDLIB_DEFAULT_SHOW_NSFW = "on";
