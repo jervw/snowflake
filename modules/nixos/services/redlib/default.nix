@@ -8,18 +8,21 @@
 }: let
   inherit (lib) mkEnableOption mkIf mkOption;
   cfg = config.${namespace}.services.redlib;
-
-  redlib-latest = pkgs.redlib.overrideAttrs (old: {
-    version = "0.36.0-latest";
-
+  redlib-git = pkgs.redlib.overrideAttrs (old: let
     src = pkgs.fetchFromGitHub {
       owner = "redlib-org";
       repo = "redlib";
       rev = "2dc6b5f3c0db1f8e78a74048ba4550ba6202cb55";
-      hash = "";
+      hash = "sha256-Di3ZZZ4UqR00ud6MdrnJGUngdd/RSC1uNKlsmTdUx2k=";
     };
-
-    cargoHash = "";
+  in {
+    version = "git";
+    inherit src;
+    doCheck = false;
+    cargoDeps = pkgs.rustPlatform.fetchCargoVendor {
+      inherit src;
+      hash = "sha256-VLXRnSICpMOj/4ebhNSwWH9cwAGTz44kQW6Fa02nwIs=";
+    };
   });
 in {
   options.${namespace}.services.redlib = {
@@ -34,13 +37,12 @@ in {
       default = 8081;
     };
   };
-
   config = {
     age.secrets.reddit.file = "${inputs.self}/secrets/reddit.age"; # TODO: FIX whats wrong with this not evaluating inside cfg.enable??
     services = mkIf cfg.enable {
       redlib = {
         enable = true;
-        package = redlib-latest;
+        package = redlib-git;
         port = cfg.port;
         settings = {
           REDLIB_DEFAULT_SHOW_NSFW = "on";
@@ -48,13 +50,11 @@ in {
           REDLIB_DEFAULT_HIDE_HLS_NOTIFICATION = "on";
         };
       };
-
       caddy.virtualHosts."${cfg.host}".extraConfig = ''
         reverse_proxy http://thor:${toString cfg.port}
         import cloudflare
       '';
     };
-
     # Used for REDLIB_DEFAULT_SUBSCRIPTIONS, I prefer to keep my subs private
     systemd.services.redlib = {
       serviceConfig = {
