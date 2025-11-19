@@ -16,7 +16,7 @@ in {
     };
     port = mkOption {
       type = lib.types.number;
-      default = 8083;
+      default = 8231;
     };
   };
 

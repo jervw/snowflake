@@ -4,6 +4,7 @@
 | -------------- | ------- | ---- | ------------------ | ------------------------------------------------ |
 | AdGuardHome | `3000` | `53` | :white_check_mark: | [dns.jervw.dev](https://dns.jervw.dev) |
 | Audiobookshelf | `8000` | | :white_check_mark: | [shelf.jervw.dev](https://shelf.jervw.dev) |
+| Calibre-web | `8231` | | :white_check_mark: | [calibre.jervw.dev](https://calibre.jervw.dev) |
 | qBittorrent | `8089` | | :white_check_mark: | [dl.jervw.dev](https://dl.jervw.dev) |
 | Flaresolverr | `8191` | | :x: | localhost |
 | Glance | `5678` | | :white_check_mark: | [home.jervw.dev](https://home.jervw.dev) |
