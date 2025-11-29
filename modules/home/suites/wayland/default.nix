@@ -31,7 +31,7 @@ in {
       programs = {
         graphical = {
           addons = {
-            hypridle = mkDefault enabled;
+            # hypridle = mkDefault enabled;
             wlsunset = mkDefault enabled;
           };
           bars = {
