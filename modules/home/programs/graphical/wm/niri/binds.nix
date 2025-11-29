@@ -104,11 +104,10 @@ in
           cooldown-ms = 150;
         };
 
-        # Logitech mouse gesture button
-        "F13".action.focus-workspace-up = {};
-        "F14".action.focus-monitor-right = {};
-        "F15".action.focus-workspace-down = {};
-        "F16".action.focus-monitor-left = {};
+        # Dynamic screencast
+        "Mod+Y".action.set-dynamic-cast-window = {};
+        "Mod+Shift+Y".action.set-dynamic-cast-monitor = {};
+        "Mod+U".action.clear-dynamic-cast-target = {};
 
         # Media controls
         "XF86AudioPlay".action.spawn = ["playerctl" "play-pause"];

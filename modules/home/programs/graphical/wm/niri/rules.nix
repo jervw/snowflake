@@ -59,6 +59,26 @@
       clip-to-geometry = true;
       draw-border-with-background = false;
     }
+    # Indicate screencasted windows with red colors.
+    {
+      matches = [
+        {is-window-cast-target = true;}
+      ];
+      focus-ring = {
+        active.color = "#f38ba8";
+        inactive.color = "#7d0d2d";
+      };
+      border = {
+        inactive.color = "#7d0d2d";
+      };
+      shadow = {
+        color = "#7d0d2d70";
+      };
+      tab-indicator = {
+        active.color = "#f38ba8";
+        inactive.color = "#7d0d2d";
+      };
+    }
     {
       matches = [
         {is-floating = true;}
