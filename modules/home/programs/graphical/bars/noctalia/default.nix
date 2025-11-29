@@ -27,6 +27,16 @@ in {
         ui = {
           settingsPanelAttachToBar = true;
         };
+        audio = {
+          volumeOverdrive = true;
+        };
+        sessionMenu = {
+          enableCountdown = false;
+        };
+        brightness = {
+          enableDdcSupport = true;
+        };
+
         bar = {
           density = "comfortable";
           position = "top";
@@ -71,6 +81,7 @@ in {
           };
         };
         wallpaper = {
+          overviewEnabled = true;
           directory = "/home/jervw/pics/wallpapers";
           defaultWallpaper = "/home/jervw/pics/wallpapers/default.png";
           randomEnabled = true;
