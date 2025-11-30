@@ -66,6 +66,9 @@ in {
                 drawerEnabled = false;
               }
               {
+                id = "VPN";
+              }
+              {
                 id = "NotificationHistory";
               }
               {
