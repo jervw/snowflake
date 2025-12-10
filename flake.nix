@@ -79,9 +79,6 @@
 
       channels-config = {
         allowUnfree = true;
-        permittedInsecurePackages = [
-          "electron_36-bin-36.0.0-beta.6" # Vesktop TODO: Remove
-        ];
       };
 
       systems.modules.nixos = with inputs; [
