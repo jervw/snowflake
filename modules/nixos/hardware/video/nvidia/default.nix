@@ -68,7 +68,7 @@ in {
 
       graphics = {
         enable = true;
-        extraPackages = with pkgs; [libvdpau-va-gl nvidia-vaapi-driver];
+        extraPackages = with pkgs; [nvidia-vaapi-driver];
       };
     };
 
