@@ -4,7 +4,6 @@
     impermanence.url = "github:nix-community/impermanence";
     nixos-hardware.url = "github:nixos/nixos-hardware";
     catppuccin.url = "github:catppuccin/nix";
-    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     helix.url = "github:helix-editor/helix";
 
     agenix = {
@@ -88,7 +87,6 @@
       systems.modules.nixos = with inputs; [
         agenix.nixosModules.default
         catppuccin.nixosModules.catppuccin
-        chaotic.nixosModules.default
         disko.nixosModules.disko
         impermanence.nixosModule
         lanzaboote.nixosModules.lanzaboote
