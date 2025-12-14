@@ -9,6 +9,5 @@ let
 in {
   "cloudflare.age".publicKeys = [jervw] ++ systems;
   "tailscale.age".publicKeys = [jervw] ++ systems;
-  "reddit.age".publicKeys = [jervw] ++ systems;
   "openai-karakeep.age".publicKeys = [jervw] ++ systems;
 }

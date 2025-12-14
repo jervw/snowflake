@@ -19,5 +19,4 @@
 | Jellyseerr | `5055` | | :white_check_mark: | [seerr.jervw.dev](https://seerr.jervw.dev) |
 | Plex | `32400` | | :white_check_mark: | [plex.jervw.dev](https://plex.jervw.dev) |
 | Profilarr | `6868` | | :white_check_mark: | [plex.jervw.dev](https://profilarr.jervw.dev) |
-| Redlib | `8081` | | :white_check_mark: | [redlib.jervw.dev](https://redlib.jervw.dev) |
 | Tautulli | `8181` | | :white_check_mark: | [tautulli.jervw.dev](https://tautulli.jervw.dev) |
