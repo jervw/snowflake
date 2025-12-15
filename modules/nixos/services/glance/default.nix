@@ -136,11 +136,6 @@ in {
                               icon = "di:profilarr";
                               url = "https://profilarr.jervw.dev";
                             }
-                            {
-                              title = "Redlib";
-                              icon = "sh:reddit";
-                              url = "https://redlib.jervw.dev";
-                            }
                           ];
                         }
                       ];
