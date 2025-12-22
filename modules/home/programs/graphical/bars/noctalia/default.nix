@@ -36,6 +36,9 @@ in {
         brightness = {
           enableDdcSupport = true;
         };
+        network = {
+          wifiEnabled = false;
+        };
 
         bar = {
           density = "comfortable";
@@ -66,6 +69,11 @@ in {
                 drawerEnabled = false;
               }
               {
+                id = "plugin:privacy-indicator";
+                hideInactive = true;
+                removeMargins = true;
+              }
+              {
                 id = "VPN";
               }
               {
@@ -79,6 +87,10 @@ in {
               }
               {
                 id = "ControlCenter";
+                useDistroLogo = true;
+                colorizeDistroLogo = true;
+                colorizeSystemIcon = "primary";
+                enableColorization = true;
               }
             ];
           };
