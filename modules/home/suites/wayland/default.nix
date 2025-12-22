@@ -10,7 +10,7 @@
 
   cfg = config.${namespace}.suites.wayland;
 in {
-  # This suite is mainly used for Wayland setups without a session/shell like Hyprland or Sway.
+  # This suite is mainly used for Wayland setups without a session/shell like Hyprland or Niri.
   options.${namespace}.suites.wayland = {
     enable = lib.mkEnableOption "wayland applications ";
   };
@@ -31,7 +31,7 @@ in {
       programs = {
         graphical = {
           addons = {
-            # hypridle = mkDefault enabled;
+            hypridle = mkDefault enabled;
             wlsunset = mkDefault enabled;
           };
           bars = {
