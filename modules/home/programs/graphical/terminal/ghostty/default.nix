@@ -18,6 +18,7 @@ in {
       systemd.enable = true;
       settings = {
         window-decoration = false;
+        window-inherit-working-directory = false;
         confirm-close-surface = false;
         quit-after-last-window-closed = false;
         auto-update = "off";
