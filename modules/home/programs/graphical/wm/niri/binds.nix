@@ -31,6 +31,7 @@
   workspaces = workspaceBinds 9;
 
   cmdToArgv = cmd: lib.splitString " " cmd;
+  noctaliaIpc = args: ["noctalia-shell" "ipc" "call"] ++ args;
 in
   mkIf cfg.enable {
     programs.niri.settings.binds =
@@ -110,9 +111,11 @@ in
         "Mod+U".action.clear-dynamic-cast-target = {};
 
         # Media controls
-        "XF86AudioPlay".action.spawn = ["playerctl" "play-pause"];
-        "XF86AudioPrev".action.spawn = ["playerctl" "previous"];
-        "XF86AudioNext".action.spawn = ["playerctl" "next"];
+        "XF86AudioPlay".action.spawn = noctaliaIpc ["media" "playPause"];
+        "XF86AudioPrev".action.spawn = noctaliaIpc ["media" "previous"];
+        "XF86AudioNext".action.spawn = noctaliaIpc ["media" "next"];
+        "XF86AudioRaiseVolume".action.spawn = noctaliaIpc ["volume" "increase"];
+        "XF86AudioLowerVolume".action.spawn = noctaliaIpc ["volume" "decrease"];
 
         # Misc
         "Mod+Shift+BracketLeft".action.consume-window-into-column = {};
