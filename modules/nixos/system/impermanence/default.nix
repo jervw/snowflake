@@ -6,11 +6,11 @@
 }: let
   inherit (lib) mkIf forEach;
 
-  cfg = config.${namespace}.system.impermamence;
+  cfg = config.${namespace}.system.impermanence;
   user = config.${namespace}.user;
 in {
-  options.${namespace}.system.impermamence = {
-    enable = lib.mkEnableOption "Enable impermamence";
+  options.${namespace}.system.impermanence = {
+    enable = lib.mkEnableOption "Enable impermanence";
   };
 
   # TODO: Make something cool with this
@@ -64,7 +64,7 @@ in {
           ] (
             x: ".config/${x}"
           )
-          ++ forEach ["nix" "zen"] (
+          ++ forEach ["nix" "zen" "noctalia"] (
             x: ".cache/${x}"
           )
           ++ forEach [
@@ -76,7 +76,6 @@ in {
             "Steam"
             "fish"
             "zoxide"
-            "Terraria"
             "NexusMods.App"
             "cartridges"
             "lutris"
