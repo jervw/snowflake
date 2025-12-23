@@ -5,6 +5,7 @@
     nixos-hardware.url = "github:nixos/nixos-hardware";
     catppuccin.url = "github:catppuccin/nix";
     helix.url = "github:helix-editor/helix";
+    cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
 
     agenix = {
       url = "github:ryantm/agenix";
@@ -80,6 +81,10 @@
       channels-config = {
         allowUnfree = true;
       };
+
+      overlays = with inputs; [
+        cachyos-kernel.overlays.default # TODO: Change to "pinned" when release branch gets updated
+      ];
 
       systems.modules.nixos = with inputs; [
         agenix.nixosModules.default

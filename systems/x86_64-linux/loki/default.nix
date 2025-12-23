@@ -9,6 +9,7 @@ in {
   imports = [./hardware.nix];
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
+  # boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-bore-lto;
 
   snowflake = {
     hardware = {
@@ -55,6 +56,7 @@ in {
         secureBoot = false;
         silentBoot = true;
       };
+      impermanence = enabled;
     };
 
     theme = {
