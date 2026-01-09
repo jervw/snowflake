@@ -27,6 +27,8 @@ in {
       qbittorrent-enhanced
       fontpreview
       cider-2
+      vesktop
+      nicotine-plus
     ];
 
     snowflake = {
@@ -34,7 +36,6 @@ in {
         graphical = {
           addons = {
             trayscale = mkDefault enabled;
-            vesktop-fix = mkDefault enabled;
           };
           browsers = {
             zen = mkDefault enabled;
