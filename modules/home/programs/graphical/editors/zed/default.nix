@@ -23,7 +23,6 @@ in {
             model = "qwen2.5-coder:7b";
             provider = "ollama";
           };
-          version = "2";
         };
         helix_mode = true;
         relative_line_numbers = true;
