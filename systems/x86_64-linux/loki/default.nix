@@ -8,8 +8,7 @@
 in {
   imports = [./hardware.nix];
 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-  # boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-bore-lto;
+  boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-bore;
 
   snowflake = {
     hardware = {
