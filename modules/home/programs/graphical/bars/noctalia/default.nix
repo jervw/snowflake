@@ -25,19 +25,19 @@ in {
           avatarImage = "/home/jervw/.face";
         };
         ui = {
+          fontDefault = "JetBrainsMono Nerd Font";
+          fontFixed = "JetBrainsMono Nerd Font";
           settingsPanelAttachToBar = true;
         };
         audio = {
           volumeOverdrive = true;
         };
         sessionMenu = {
+          largeButtonsStyle = true;
           enableCountdown = false;
         };
         brightness = {
           enableDdcSupport = true;
-        };
-        network = {
-          wifiEnabled = false;
         };
 
         bar = {
@@ -84,6 +84,7 @@ in {
               }
               {
                 id = "Clock";
+                usePrimaryColor = true;
               }
               {
                 id = "ControlCenter";
