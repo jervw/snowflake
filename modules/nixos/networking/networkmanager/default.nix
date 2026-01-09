@@ -15,7 +15,6 @@ in {
       networkmanager = {
         enable = true;
       };
-      wireless.enable = false; # You can still use Wi-Fi through NetworkManager
     };
 
     systemd.services.NetworkManager-wait-online.enable = lib.mkForce false;
