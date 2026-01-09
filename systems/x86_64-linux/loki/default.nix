@@ -28,8 +28,14 @@ in {
       tailscale = enabled;
     };
 
-    programs.graphical.wm.niri = enabled;
-    # programs.graphical.wm.hyprland = enabled;
+    programs = {
+      graphical = {
+        wm = {
+          niri = enabled;
+          hyprland = enabled;
+        };
+      };
+    };
 
     security = {
       hardening = enabled;
@@ -52,7 +58,7 @@ in {
       boot = {
         enable = true;
         plymouth = true;
-        secureBoot = false;
+        secureBoot = true;
         silentBoot = true;
       };
       impermanence = enabled;
