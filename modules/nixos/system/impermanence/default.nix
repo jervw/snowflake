@@ -23,6 +23,7 @@ in {
           "/var/log"
           "/var/tmp"
           "/var/db/sudo"
+          "/var/cache/tuigreet" # remember last session
         ]
         ++ forEach ["NetworkManager" "nix" "ssh" "secureboot"] (x: "/etc/${x}")
         ++ forEach ["tailscale" "bluetooth" "nixos" "pipewire" "libvirt" "docker"] (x: "/var/lib/${x}")
