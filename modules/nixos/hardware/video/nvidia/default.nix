@@ -24,6 +24,7 @@ in {
 
   config = mkIf cfg.enable {
     boot.blacklistedKernelModules = ["nouveau"];
+    boot.kernelParams = ["nvidia.NVreg_TemporaryFilePath=/var/tmp"];
 
     services.xserver.videoDrivers = ["nvidia"];
 
