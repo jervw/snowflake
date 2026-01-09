@@ -83,7 +83,7 @@
       };
 
       overlays = with inputs; [
-        cachyos-kernel.overlays.default # TODO: Change to "pinned" when release branch gets updated
+        cachyos-kernel.overlays.pinned # TODO: Change to "pinned" when release branch gets updated
       ];
 
       systems.modules.nixos = with inputs; [
