@@ -12,24 +12,13 @@ in {
   };
 
   config = mkIf cfg.enable {
-    programs = {
-      hyprland = {
-        enable = true;
-        withUWSM = true;
-      };
+    programs.hyprland = {
+      enable = true;
+      withUWSM = true;
     };
 
-    snowflake = {
-      programs = {
-        graphical = {
-          display-managers = {
-            greetd = {
-              enable = true;
-              command = "${lib.getExe config.programs.hyprland.package} &> /dev/null";
-            };
-          };
-        };
-      };
-    };
+    ${namespace}.programs.graphical.display-managers.greetd.sessions = [
+      "start-hyprland &> /dev/null"
+    ];
   };
 }

@@ -18,17 +18,8 @@ in {
       package = pkgs.niri;
     };
 
-    snowflake = mkIf cfg.enable {
-      programs = {
-        graphical = {
-          display-managers = {
-            greetd = {
-              enable = true;
-              command = "${config.programs.niri.package}/bin/niri-session &> /dev/null";
-            };
-          };
-        };
-      };
-    };
+    ${namespace}.programs.graphical.display-managers.greetd.sessions = mkIf cfg.enable [
+      "niri-session &> /dev/null"
+    ];
   };
 }
