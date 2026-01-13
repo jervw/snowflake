@@ -3,7 +3,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     impermanence.url = "github:nix-community/impermanence";
     nixos-hardware.url = "github:nixos/nixos-hardware";
-    catppuccin.url = "github:catppuccin/nix";
+    treefmt-nix.url = "github:numtide/treefmt-nix";
     helix.url = "github:helix-editor/helix";
     cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
 
@@ -18,14 +18,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    snowfall-lib = {
-      url = "github:snowfallorg/lib";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
+    flake-parts = {
+      url = "github:hercules-ci/flake-parts";
+      inputs.nixpkgs-lib.follows = "nixpkgs";
     };
 
     lanzaboote = {
@@ -33,13 +28,24 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nix-index = {
-      url = "github:nix-community/nix-index-database";
+    hjem = {
+      url = "github:feel-co/hjem";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    hjem-rum = {
+      url = "github:snugnug/hjem-rum";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.hjem.follows = "hjem";
     };
 
     niri = {
       url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nix-index = {
+      url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -63,43 +69,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-
   outputs = inputs:
-    inputs.snowfall-lib.mkFlake {
-      inherit inputs;
-
-      src = ./.;
-
-      snowfall = {
-        namespace = "snowflake";
-        meta = {
-          name = "snowflake";
-          title = "Snowflake";
-        };
-      };
-
-      channels-config = {
-        allowUnfree = true;
-      };
-
-      overlays = with inputs; [
-        cachyos-kernel.overlays.pinned # TODO: Change to "pinned" when release branch gets updated
-      ];
-
-      systems.modules.nixos = with inputs; [
-        agenix.nixosModules.default
-        catppuccin.nixosModules.catppuccin
-        disko.nixosModules.disko
-        impermanence.nixosModule
-        lanzaboote.nixosModules.lanzaboote
-        nix-index.nixosModules.nix-index
-        niri.nixosModules.niri
-      ];
-
-      homes.modules = with inputs; [
-        catppuccin.homeModules.catppuccin
-        zen-browser.homeModules.twilight
-        noctalia.homeModules.default
+    inputs.flake-parts.lib.mkFlake {inherit inputs;} {
+      systems = ["x86_64-linux"];
+      imports = [
+        ./flake
+        ./hosts
+        ./lib
       ];
     };
 }

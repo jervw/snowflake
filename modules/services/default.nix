@@ -1,0 +1,23 @@
+{
+  imports = [
+    ./adguard
+    ./audiobookshelf
+    ./caddy
+    ./calibre-web
+    ./externals
+    ./flaresolverr
+    ./glance
+    ./immich
+    ./jellyseerr
+    ./karakeep
+    ./logind
+    ./mediarr
+    ./nfs-server
+    ./ollama
+    ./plex
+    ./profilarr
+    ./speedtest-tracker
+    ./ssh
+    ./tautulli
+  ];
+}
