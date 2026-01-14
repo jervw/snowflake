@@ -25,7 +25,7 @@ in {
       adguardhome = {
         enable = true;
         openFirewall = true;
-        port = cfg.port;
+        inherit (cfg) port;
       };
 
       caddy.virtualHosts."${cfg.host}".extraConfig = ''

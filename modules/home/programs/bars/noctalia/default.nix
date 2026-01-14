@@ -9,7 +9,7 @@
   inherit (lib) mkIf;
 
   cfg = config.${namespace}.programs.bars.noctalia;
-  defaults = config.${namespace}.programs.defaults;
+  inherit (config.${namespace}.programs) defaults;
 in {
   options.${namespace}.programs.bars.noctalia = {
     enable = lib.mkEnableOption "Enable Noctalia";

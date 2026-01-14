@@ -5,7 +5,7 @@
   ...
 }: let
   inherit (lib) mkForce;
-  user = config.${namespace}.user;
+  inherit (config.${namespace}) user;
 in {
   config = {
     programs = {

@@ -26,7 +26,7 @@ in {
         enable = true;
         openFirewall = true;
         host = "0.0.0.0";
-        port = cfg.port;
+        inherit (cfg) port;
       };
       caddy.virtualHosts."${cfg.host}".extraConfig = ''
         reverse_proxy http://thor:${toString cfg.port}

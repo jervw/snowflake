@@ -5,9 +5,7 @@
   inputs,
   ...
 }: let
-  inherit (lib) mkEnableOption mkIf;
-
-  cfg = config.${namespace}.services.ssh;
+  inherit (lib) mkEnableOption;
 in {
   options.${namespace}.services.ssh = {
     enable = mkEnableOption "Whether to enable OpenSSH";

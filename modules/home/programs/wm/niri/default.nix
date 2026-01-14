@@ -2,8 +2,7 @@
   lib,
   namespace,
   ...
-}: let
-in {
+}: {
   options.${namespace}.programs.wm.niri = {
     enable = lib.mkEnableOption "Enable niri";
   };

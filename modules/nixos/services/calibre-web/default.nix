@@ -27,7 +27,7 @@ in {
         openFirewall = true;
         listen = {
           ip = "0.0.0.0";
-          port = cfg.port;
+          inherit (cfg) port;
         };
         options = {
           calibreLibrary = "/mnt/storage/NAS/Books/Books/Books-Jervw";

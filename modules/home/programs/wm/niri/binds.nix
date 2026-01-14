@@ -7,7 +7,7 @@
   inherit (lib) mkIf;
 
   cfg = config.${namespace}.programs.wm.niri;
-  defaults = config.${namespace}.programs.defaults;
+  inherit (config.${namespace}.programs) defaults;
 
   workspaceBinds = count:
     builtins.listToAttrs (

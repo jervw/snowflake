@@ -7,7 +7,7 @@
   inherit (lib) mkIf forEach;
 
   cfg = config.${namespace}.system.impermanence;
-  user = config.${namespace}.user;
+  inherit (config.${namespace}) user;
 in {
   options.${namespace}.system.impermanence = {
     enable = lib.mkEnableOption "Enable impermanence";

@@ -14,7 +14,7 @@ in {
 
   config = {
     programs.niri = {
-      enable = cfg.enable;
+      inherit (cfg) enable;
       package = pkgs.niri-unstable;
     };
 

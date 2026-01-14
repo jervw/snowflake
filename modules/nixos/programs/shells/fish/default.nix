@@ -8,7 +8,7 @@
   inherit (lib) mkIf;
 
   cfg = config.${namespace}.programs.shells.fish;
-  user = config.${namespace}.user;
+  inherit (config.${namespace}) user;
 in {
   options.${namespace}.programs.shells.fish = {
     enable = lib.mkEnableOption "Enable Fish shell";

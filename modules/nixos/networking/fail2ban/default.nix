@@ -21,7 +21,7 @@ in {
     services.fail2ban = {
       enable = true;
       bantime = "2h";
-      ignoreIP = cfg.ignoreIP;
+      inherit (cfg) ignoreIP;
     };
   };
 }

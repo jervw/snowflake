@@ -7,7 +7,7 @@
   inherit (lib) mkIf;
 
   cfg = config.${namespace}.programs.wm.hyprland;
-  defaults = config.${namespace}.programs.defaults;
+  inherit (config.${namespace}.programs) defaults;
   workspaces = builtins.concatLists (builtins.genList (
       x: let
         ws = toString (x + 1);

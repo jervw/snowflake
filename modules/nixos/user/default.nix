@@ -6,7 +6,7 @@
 }:
 with lib;
 with lib.${namespace}; let
-  user = config.${namespace}.user;
+  inherit (config.${namespace}) user;
 in {
   options.${namespace}.user = with lib.types; {
     name = mkOpt str "jervw" "The name to use for the user account.";

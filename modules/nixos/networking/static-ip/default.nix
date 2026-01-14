@@ -36,7 +36,7 @@
     else [cfg.gateway];
   ipv4Gateway = builtins.head (builtins.filter (gw: !isIPv6 gw) gatewayList);
   ipv6Gateway = let
-    v6Gateways = builtins.filter (gw: isIPv6 gw) gatewayList;
+    v6Gateways = builtins.filter isIPv6 gatewayList;
   in
     if builtins.length v6Gateways > 0
     then builtins.head v6Gateways
@@ -83,15 +83,15 @@ in {
       interfaces.${cfg.adapter} = {
         ipv4.addresses =
           map (ip: {
-            address = ip.address;
-            prefixLength = ip.prefixLength;
+            inherit (ip) address;
+            inherit (ip) prefixLength;
           })
           ipv4Addrs;
 
         ipv6.addresses =
           map (ip: {
-            address = ip.address;
-            prefixLength = ip.prefixLength;
+            inherit (ip) address;
+            inherit (ip) prefixLength;
           })
           ipv6Addrs;
       };

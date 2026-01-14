@@ -28,7 +28,7 @@ in {
         settings = {
           server = {
             host = "0.0.0.0";
-            port = cfg.port;
+            inherit (cfg) port;
             proxied = true;
           };
           branding = {

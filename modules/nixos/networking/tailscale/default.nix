@@ -40,7 +40,7 @@ in {
       enable = true;
       authKeyFile = config.age.secrets.tailscale.path;
       extraSetFlags = ["--operator=${user.name}"];
-      extraUpFlags = cfg.extraUpFlags;
+      inherit (cfg) extraUpFlags;
       extraDaemonFlags = ["--no-logs-no-support"];
     };
   };

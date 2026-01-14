@@ -25,7 +25,7 @@ in {
       jellyseerr = {
         enable = true;
         openFirewall = true;
-        port = cfg.port;
+        inherit (cfg) port;
       };
       caddy.virtualHosts."${cfg.host}".extraConfig = ''
         reverse_proxy http://thor:${toString cfg.port}
