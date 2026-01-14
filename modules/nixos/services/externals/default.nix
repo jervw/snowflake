@@ -18,6 +18,11 @@ in {
         reverse_proxy http://thor:8089
         import cloudflare
       '';
+      # Booklore
+      "books.jervw.dev".extraConfig = ''
+        reverse_proxy http://thor:6060
+        import cloudflare
+      '';
 
       # YamTrack
       "track.jervw.dev".extraConfig = ''
