@@ -31,8 +31,5 @@ in {
         }
       '';
     };
-
-    programs.nix-your-shell.enable = true;
-    programs.carapace.enable = true;
   };
 }

@@ -23,7 +23,6 @@ in {
       rclone
       tldr
       fd
-      nix-du
     ];
 
     snowflake = {
@@ -40,6 +39,7 @@ in {
           fastfetch = mkDefault enabled;
           gh = mkDefault enabled;
           lazygit = mkDefault enabled;
+          nix-your-shell = mkDefault enabled;
           yazi = mkDefault enabled;
           bat = mkDefault enabled;
           eza = mkDefault enabled;
