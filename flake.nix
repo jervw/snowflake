@@ -12,11 +12,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    disko = {
-      url = "github:nix-community/disko/latest";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     snowfall-lib = {
       url = "github:snowfallorg/lib";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -82,12 +77,11 @@
       };
 
       overlays = with inputs; [
-        cachyos-kernel.overlays.pinned # TODO: Change to "pinned" when release branch gets updated
+        cachyos-kernel.overlays.pinned
       ];
 
       systems.modules.nixos = with inputs; [
         agenix.nixosModules.default
-        disko.nixosModules.disko
         impermanence.nixosModule
         lanzaboote.nixosModules.lanzaboote
         nix-index.nixosModules.nix-index
