@@ -109,7 +109,6 @@ in {
           gtk = true;
           helix = true;
           qt = true;
-          true = true;
           zenBrowser = true;
         };
       };
