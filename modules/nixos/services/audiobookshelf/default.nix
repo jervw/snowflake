@@ -26,6 +26,7 @@ in {
         enable = true;
         openFirewall = true;
         host = "0.0.0.0";
+        group = "media";
         inherit (cfg) port;
       };
       caddy.virtualHosts."${cfg.host}".extraConfig = ''
