@@ -23,9 +23,10 @@ in {
           "/var/log"
           "/var/tmp"
           "/var/db/sudo"
+          "/var/lib/sbctl"
           "/var/cache/tuigreet" # remember last session
         ]
-        ++ forEach ["NetworkManager" "nix" "ssh" "secureboot"] (x: "/etc/${x}")
+        ++ forEach ["NetworkManager" "nix" "ssh"] (x: "/etc/${x}")
         ++ forEach ["tailscale" "bluetooth" "nixos" "pipewire" "libvirt" "docker"] (x: "/var/lib/${x}")
         ++ forEach ["coredump" "timers"] (x: "/var/lib/systemd/${x}");
       files = ["/etc/machine-id"];
@@ -58,10 +59,10 @@ in {
             "zed"
             "gh"
             "FreeTube"
-            "smartcat"
             "harper-ls"
             "BeeperTexts"
             "fcitx5"
+            "qt6ct"
           ] (
             x: ".config/${x}"
           )
@@ -76,8 +77,6 @@ in {
             "zed"
             "Steam"
             "fish"
-            "zoxide"
-            "NexusMods.App"
             "cartridges"
             "lutris"
           ] (x: ".local/share/${x}")
