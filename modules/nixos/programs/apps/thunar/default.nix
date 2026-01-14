@@ -14,6 +14,7 @@ in {
   };
 
   config = mkIf cfg.enable {
+    environment.systemPackages = [pkgs.file-roller];
     programs.thunar = {
       enable = true;
       plugins = with pkgs; [

@@ -27,11 +27,13 @@ in {
     gtk = {
       enable = true;
       colorScheme = "dark";
-      #font = {}; # TODO
       theme = {
         name = "adw-gtk3";
         package = pkgs.adw-gtk3;
       };
+
+      # We disable GTK4 theming to allow Noctalia to theme it
+      gtk4.enable = false;
 
       iconTheme = {
         name = "Papirus";

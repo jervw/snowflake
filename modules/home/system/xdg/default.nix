@@ -17,6 +17,7 @@
   mediaPlayer = ["mpv"];
   docView = ["zathura"];
   torrentClient = ["org.qbittorrent.qBittorrent"];
+  archiveManager = ["org.gnome.FileRoller"];
 
   # Stolen from @fufexan
   xdgAssociations = type: program: list:
@@ -30,6 +31,17 @@
   video = xdgAssociations "video" mediaPlayer ["mp4" "avi" "mkv" "webm" "mov"];
   audio = xdgAssociations "audio" mediaPlayer ["mp3" "flac" "wav" "aac"];
   document = xdgAssociations "documents" docView ["pdf"];
+  archive = xdgAssociations "application" archiveManager [
+    "zip"
+    "x-tar"
+    "x-compressed-tar"
+    "gzip"
+    "x-bzip"
+    "x-bzip2"
+    "x-7z-compressed"
+    "x-rar"
+    "x-xz"
+  ];
   browserTypes =
     (xdgAssociations "application" browser [
       "x-extension-htm"
@@ -58,9 +70,9 @@
     // video
     // audio
     // document
+    // archive
     // browserTypes);
 in {
-  # NOTE: Can test with `, ashpd-demo`
   options.${namespace}.system.xdg = {
     enable = mkEnableOption "xdg";
   };
