@@ -38,21 +38,11 @@ in {
 
     nix = {
       channel.enable = false;
-
-      optimise = {
-        automatic = true;
-        dates = ["04:00"];
-      };
-
-      # Low priority builds to preserve system resources
-      daemonCPUSchedPolicy = "batch";
-      daemonIOSchedClass = "idle";
-      daemonIOSchedPriority = 7;
-
       settings = {
         extra-experimental-features = ["flakes" "nix-command"];
         warn-dirty = false;
         keep-outputs = true;
+        auto-optimise-store = true;
         allowed-users = ["@wheel"];
         trusted-users = ["root" "@wheel"];
         substituters = [
