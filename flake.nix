@@ -4,6 +4,7 @@
     impermanence.url = "github:nix-community/impermanence";
     nixos-hardware.url = "github:nixos/nixos-hardware";
     helix.url = "github:helix-editor/helix";
+    treefmt-nix.url = "github:numtide/treefmt-nix";
     cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
 
     agenix = {
@@ -93,5 +94,18 @@
         zen-browser.homeModules.twilight
         noctalia.homeModules.default
       ];
+
+      # Other generic outputs
+      outputs-builder = channels: {
+        formatter = inputs.treefmt-nix.lib.mkWrapper channels.nixpkgs {
+          projectRootFile = "flake.nix";
+          programs = {
+            alejandra.enable = true;
+            statix.enable = true;
+            deadnix.enable = true;
+            mdformat.enable = true;
+          };
+        };
+      };
     };
 }
