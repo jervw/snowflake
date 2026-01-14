@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  pkgs,
   namespace,
   ...
 }: let
@@ -14,6 +15,7 @@ in {
     programs.gnupg.agent = {
       enable = true;
       enableSSHSupport = true;
+      pinentryPackage = lib.mkDefault pkgs.pinentry-tty;
     };
   };
 }
