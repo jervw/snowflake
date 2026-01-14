@@ -15,7 +15,7 @@ in {
   config = {
     programs.niri = {
       enable = cfg.enable;
-      package = pkgs.niri;
+      package = pkgs.niri-unstable;
     };
 
     ${namespace}.programs.display-managers.greetd.sessions = mkIf cfg.enable [

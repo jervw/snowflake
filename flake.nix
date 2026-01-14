@@ -78,6 +78,7 @@
 
       overlays = with inputs; [
         cachyos-kernel.overlays.pinned
+        niri.overlays.niri
       ];
 
       systems.modules.nixos = with inputs; [
