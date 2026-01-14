@@ -3,7 +3,6 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     impermanence.url = "github:nix-community/impermanence";
     nixos-hardware.url = "github:nixos/nixos-hardware";
-    catppuccin.url = "github:catppuccin/nix";
     helix.url = "github:helix-editor/helix";
     cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
 
@@ -88,7 +87,6 @@
 
       systems.modules.nixos = with inputs; [
         agenix.nixosModules.default
-        catppuccin.nixosModules.catppuccin
         disko.nixosModules.disko
         impermanence.nixosModule
         lanzaboote.nixosModules.lanzaboote
@@ -97,7 +95,6 @@
       ];
 
       homes.modules = with inputs; [
-        catppuccin.homeModules.catppuccin
         zen-browser.homeModules.twilight
         noctalia.homeModules.default
       ];
