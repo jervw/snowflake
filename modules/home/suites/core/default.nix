@@ -28,28 +28,24 @@ in {
 
     snowflake = {
       programs = {
-        terminal = {
-          editors = {
-            helix = mkDefault enabled;
-          };
-          shells = {
-            fish = mkDefault enabled;
-          };
-          tools = {
-            atuin = mkDefault enabled;
-            direnv = mkDefault enabled;
-            fastfetch = mkDefault enabled;
-            gh = mkDefault enabled;
-            lazygit = mkDefault enabled;
-            yazi = mkDefault enabled;
-            zoxide = mkDefault enabled;
-            bat = mkDefault enabled;
-            eza = mkDefault enabled;
-            fzf = mkDefault enabled;
-            git = mkDefault enabled;
-            starship = mkDefault enabled;
-            zellij = mkDefault enabled;
-          };
+        editors = {
+          helix = mkDefault enabled;
+        };
+        shells = {
+          fish = mkDefault enabled;
+        };
+        tools = {
+          atuin = mkDefault enabled;
+          direnv = mkDefault enabled;
+          fastfetch = mkDefault enabled;
+          gh = mkDefault enabled;
+          lazygit = mkDefault enabled;
+          yazi = mkDefault enabled;
+          bat = mkDefault enabled;
+          eza = mkDefault enabled;
+          git = mkDefault enabled;
+          starship = mkDefault enabled;
+          zellij = mkDefault enabled;
         };
       };
     };

@@ -16,13 +16,11 @@ in {
   config = mkIf cfg.enable {
     snowflake = {
       programs = {
-        graphical = {
-          apps = {
-            thunar = mkDefault enabled;
-            gpu-screen-recorder = mkDefault enabled;
-          };
-          display-managers.greetd = mkDefault enabled;
+        apps = {
+          thunar = mkDefault enabled;
+          gpu-screen-recorder = mkDefault enabled;
         };
+        display-managers.greetd = mkDefault enabled;
       };
       hardware = {
         audio = mkDefault enabled;

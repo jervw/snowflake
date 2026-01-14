@@ -13,7 +13,7 @@ in {
     };
 
     programs = {
-      graphical.wm.niri = enabled;
+      wm.niri = enabled;
     };
 
     services = {

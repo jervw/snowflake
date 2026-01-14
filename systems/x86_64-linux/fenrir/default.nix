@@ -1,13 +1,11 @@
 {
   lib,
   namespace,
-  inputs,
   ...
 }: let
   inherit (lib.${namespace}) enabled;
 in {
   imports = [
-    inputs.nixos-hardware.nixosModules.apple-t2
     ./hardware.nix
   ];
 
@@ -28,7 +26,7 @@ in {
       tailscale = enabled;
     };
 
-    programs.graphical.wm.niri = enabled;
+    programs.wm.niri = enabled;
 
     security = {
       hardening = enabled;

@@ -68,6 +68,8 @@ in {
   config = mkIf cfg.enable {
     home.packages = [pkgs.gcr];
 
+    home.preferXdgDirectories = true;
+
     xdg = {
       enable = true;
 
@@ -103,7 +105,7 @@ in {
         xdgOpenUsePortal = true;
 
         config = {
-          hyprland = mkIf config.${namespace}.programs.graphical.wm.hyprland.enable {
+          hyprland = mkIf config.${namespace}.programs.wm.hyprland.enable {
             default = [
               "hyprland"
               "gtk"

@@ -29,14 +29,12 @@ in {
 
     snowflake = {
       programs = {
-        graphical = {
-          addons = {
-            hypridle = mkDefault enabled;
-            wlsunset = mkDefault enabled;
-          };
-          bars = {
-            noctalia = mkDefault enabled;
-          };
+        addons = {
+          hypridle = mkDefault enabled;
+          wlsunset = mkDefault enabled;
+        };
+        bars = {
+          noctalia = mkDefault enabled;
         };
       };
     };

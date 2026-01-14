@@ -37,9 +37,7 @@ in {
 
     snowflake = {
       programs = {
-        terminal = {
-          shells.fish = mkDefault enabled;
-        };
+        shells.fish = mkDefault enabled;
       };
       security = {
         gpg = mkDefault enabled;

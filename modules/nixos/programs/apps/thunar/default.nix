@@ -1,0 +1,28 @@
+{
+  config,
+  lib,
+  pkgs,
+  namespace,
+  ...
+}: let
+  inherit (lib) mkIf;
+
+  cfg = config.${namespace}.programs.apps.thunar;
+in {
+  options.${namespace}.programs.apps.thunar = {
+    enable = lib.mkEnableOption "Enable Thuanr";
+  };
+
+  config = mkIf cfg.enable {
+    programs.thunar = {
+      enable = true;
+      plugins = with pkgs; [
+        thunar-archive-plugin
+        thunar-volman
+      ];
+    };
+    services.tumbler = {
+      enable = true;
+    };
+  };
+}

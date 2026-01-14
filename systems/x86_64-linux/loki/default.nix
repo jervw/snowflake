@@ -29,11 +29,9 @@ in {
     };
 
     programs = {
-      graphical = {
-        wm = {
-          niri = enabled;
-          hyprland = enabled;
-        };
+      wm = {
+        niri = enabled;
+        hyprland = enabled;
       };
     };
 
@@ -62,10 +60,6 @@ in {
         silentBoot = true;
       };
       impermanence = enabled;
-    };
-
-    theme = {
-      catppuccin = enabled;
     };
 
     virtualisation = {

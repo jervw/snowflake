@@ -21,7 +21,6 @@ in {
       beeper
       ffmpeg
       obsidian
-      normcap
       playerctl
       tomato-c
       qbittorrent-enhanced
@@ -32,27 +31,26 @@ in {
     ];
 
     snowflake = {
+      theme.enable = true;
       programs = {
-        graphical = {
-          addons = {
-            trayscale = mkDefault enabled;
-          };
-          browsers = {
-            zen = mkDefault enabled;
-          };
-          apps = {
-            freetube = mkDefault enabled;
-            mpv = mkDefault enabled;
-            obs = mkDefault enabled;
-            imv = mkDefault enabled;
-            zathura = mkDefault enabled;
-          };
-          editors = {
-            zed = mkDefault enabled;
-          };
-          terminal = {
-            foot = mkDefault enabled;
-          };
+        addons = {
+          trayscale = mkDefault enabled;
+        };
+        browsers = {
+          zen = mkDefault enabled;
+        };
+        apps = {
+          freetube = mkDefault enabled;
+          mpv = mkDefault enabled;
+          obs = mkDefault enabled;
+          imv = mkDefault enabled;
+          zathura = mkDefault enabled;
+        };
+        editors = {
+          zed = mkDefault enabled;
+        };
+        term = {
+          ghostty = mkDefault enabled;
         };
       };
     };
