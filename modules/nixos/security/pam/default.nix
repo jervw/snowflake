@@ -13,15 +13,6 @@ in {
   config = lib.mkIf cfg.enable {
     security.pam = {
       sshAgentAuth.enable = true;
-      services = {
-        sudo.u2fAuth = true;
-        hyprlock.text = "auth include login";
-      };
-      u2f = {
-        enable = true;
-        settings.cue = true;
-      };
-
       loginLimits = [
         {
           domain = "*";
@@ -31,8 +22,5 @@ in {
         }
       ];
     };
-
-    # TODO Move to hardware/yubikey/default.nix
-    programs.yubikey-touch-detector.enable = true;
   };
 }
