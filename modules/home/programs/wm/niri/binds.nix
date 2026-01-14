@@ -73,7 +73,7 @@ in
         "Mod+Shift+Tab".action.focus-monitor-previous = {};
 
         # Toggle overview
-        "Mod+Backspace".action.toggle-overview = {};
+        "Mod+Escape".action.toggle-overview = {};
 
         # Floating
         "Mod+Space".action.toggle-window-floating = {};

@@ -12,14 +12,14 @@ in {
     enable = lib.mkEnableOption "Enable Niri";
   };
 
-  config = {
-    programs.niri = {
-      inherit (cfg) enable;
-      package = pkgs.niri-unstable;
-    };
+  # config = {
+  #   # programs.niri = {
+  #   #   inherit (cfg) enable;
+  #   #   package = pkgs.niri-unstable;
+  #   # };
 
-    ${namespace}.programs.display-managers.greetd.sessions = mkIf cfg.enable [
-      "niri-session &> /dev/null"
-    ];
-  };
+  #   # ${namespace}.programs.display-managers.greetd.sessions = mkIf cfg.enable [
+  #   #   "niri-session &> /dev/null"
+  #   # ];
+  # };
 }

@@ -14,10 +14,6 @@ in
   mkIf cfg.enable {
     programs.niri = {
       settings = {
-        environment = {
-          NIXOS_OZONE_WL = "1";
-        };
-
         debug = {
           honor-xdg-activation-with-invalid-serial = [];
         };

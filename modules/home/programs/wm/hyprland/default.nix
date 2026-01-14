@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  pkgs,
   namespace,
   ...
 }: let
@@ -25,6 +26,9 @@ in {
         enableXdgAutostart = true;
         variables = ["--all"];
       };
+      plugins = with pkgs.hyprlandPlugins; [
+        hyprexpo
+      ];
     };
   };
 }

@@ -93,6 +93,7 @@
       homes.modules = with inputs; [
         zen-browser.homeModules.twilight
         noctalia.homeModules.default
+        niri.homeModules.niri
       ];
 
       # Other generic outputs

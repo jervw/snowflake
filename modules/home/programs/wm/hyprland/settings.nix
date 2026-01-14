@@ -1,12 +1,10 @@
 _: {
   wayland.windowManager.hyprland.settings = {
     env = [
-      "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
       "EGL_PLATFORM,wayland"
       "XDG_CURRENT_DESKTOP,Hyprland"
       "XDG_SESSION_TYPE,wayland"
       "XDG_SESSION_DESKTOP,Hyprland"
-      "NIXOS_OZONE_WL,1"
     ];
 
     exec-once = [];
