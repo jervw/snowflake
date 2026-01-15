@@ -31,6 +31,7 @@ in {
         ++ forEach ["coredump" "timers"] (x: "/var/lib/systemd/${x}");
       files = ["/etc/machine-id"];
       users.${user.name} = {
+        files = [".config/ghostty/themes/noctalia"];
         directories =
           [
             "download"
