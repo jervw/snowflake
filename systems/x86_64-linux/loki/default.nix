@@ -10,6 +10,18 @@ in {
 
   boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-bore;
 
+  # Set correct resolution to TTY. Maybe NVIDIA BUG?
+  # Downside of this workaround is that now the secondary monitor is at wrong resolution.
+  systemd.services.fix-tty-resolution = {
+    after = ["multi-user.target"];
+    wantedBy = ["multi-user.target"];
+    serviceConfig = {
+      Type = "oneshot";
+      ExecStart = "${pkgs.fbset}/bin/fbset -xres 2560 -yres 1440";
+      RemainAfterExit = true;
+    };
+  };
+
   snowflake = {
     hardware = {
       cpu.amd = enabled;
