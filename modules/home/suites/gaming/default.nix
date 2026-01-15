@@ -22,7 +22,6 @@ in {
         prismlauncher
         lutris
         heroic
-        cartridges
 
         # Misc
         r2modman

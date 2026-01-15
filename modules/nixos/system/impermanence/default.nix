@@ -55,7 +55,6 @@ in {
             "vesktop"
             "obs-studio"
             "noctalia"
-            "github-copilot"
             "zed"
             "gh"
             "FreeTube"
@@ -77,7 +76,6 @@ in {
             "zed"
             "Steam"
             "fish"
-            "cartridges"
             "lutris"
           ] (x: ".local/share/${x}")
           ++ forEach ["syncthing" "wireplumber"] (x: ".local/state/${x}")
