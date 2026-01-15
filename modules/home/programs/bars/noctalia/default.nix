@@ -97,6 +97,7 @@ in {
         };
         appLauncher = {
           terminalCommand = "${defaults.terminal} -e";
+          enableClipboardHistory = true;
         };
         location .name = "Helsinki, Finland";
         dock.enabled = false;

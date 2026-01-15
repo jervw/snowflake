@@ -16,14 +16,6 @@ in {
   config = mkIf cfg.enable {
     home.packages = [pkgs.bemoji];
 
-    snowflake = {
-      programs = {
-        addons = {
-          clipman.enable = true;
-        };
-      };
-    };
-
     programs.fuzzel = {
       enable = true;
       settings = {
