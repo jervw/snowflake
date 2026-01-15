@@ -90,13 +90,6 @@ in {
         inherit defaultApplications;
       };
 
-      terminal-exec = {
-        enable = true;
-        settings = {
-          default = ["foot.desktop"];
-        };
-      };
-
       userDirs = {
         enable = true;
         documents = "$HOME/other";
