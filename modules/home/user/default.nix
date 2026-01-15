@@ -27,12 +27,12 @@ in {
       shellAliases = {
         whereami = "${getExe pkgs.curl} ipinfo.io/city";
         myip = "${getExe pkgs.curl} ifconfig.me";
-
         sl = "ls";
         flake = "nix flake";
       };
 
       username = cfg.name;
+      homeDirectory = "/home/${cfg.name}";
     };
     programs.home-manager = enabled;
   };
