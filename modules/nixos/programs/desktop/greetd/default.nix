@@ -7,9 +7,9 @@
 }: let
   inherit (lib) types mkIf mkOption;
 
-  cfg = config.${namespace}.programs.display-managers.greetd;
+  cfg = config.${namespace}.programs.desktop.greetd;
 in {
-  options.${namespace}.programs.display-managers.greetd = {
+  options.${namespace}.programs.desktop.greetd = {
     enable = lib.mkEnableOption "Enable greetd login-manager";
     sessions = mkOption {
       type = types.listOf types.str;

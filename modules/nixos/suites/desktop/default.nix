@@ -20,7 +20,6 @@ in {
           thunar = mkDefault enabled;
           gpu-screen-recorder = mkDefault enabled;
         };
-        display-managers.greetd = mkDefault enabled;
       };
       hardware = {
         audio = mkDefault enabled;
