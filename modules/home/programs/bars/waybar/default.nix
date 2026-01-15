@@ -8,7 +8,6 @@
 
   cfg = config.${namespace}.programs.bars.waybar;
 in {
-  # TODO: Add monitor options
   options.${namespace}.programs.bars.waybar = {
     enable = lib.mkEnableOption "Enable waybar";
   };

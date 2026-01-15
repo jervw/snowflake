@@ -11,8 +11,6 @@ in {
     enable = mkEnableOption "Enables Radarr, Sonarr, Prowlarr and Bazarr services";
   };
 
-  # TODO: Seperate options for each service?
-
   config = mkIf cfg.enable {
     services = {
       radarr = {
