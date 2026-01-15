@@ -87,7 +87,6 @@
         impermanence.nixosModule
         lanzaboote.nixosModules.lanzaboote
         nix-index.nixosModules.nix-index
-        niri.nixosModules.niri
       ];
 
       homes.modules = with inputs; [

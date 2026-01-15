@@ -26,8 +26,6 @@ in {
       tailscale = enabled;
     };
 
-    programs.wm.niri = enabled;
-
     security = {
       hardening = enabled;
     };
