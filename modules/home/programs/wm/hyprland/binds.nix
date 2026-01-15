@@ -65,6 +65,9 @@ in {
         # Misc
         "$MOD, T, togglespecialworkspace"
         "$MOD SHIFT, T, movetoworkspacesilent, special"
+
+        # Plugins
+        "$MOD, Escape, hyprexpo:expo, toggle"
       ]
       ++ workspaces;
 

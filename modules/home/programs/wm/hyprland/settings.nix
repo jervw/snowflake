@@ -87,5 +87,12 @@ _: {
         "workspaces, 1, 6, default"
       ];
     };
+
+    plugin = {
+      hyprexpo = {
+        columns = 2;
+        gap_size = 10;
+      };
+    };
   };
 }
