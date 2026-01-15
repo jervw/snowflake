@@ -31,7 +31,6 @@ in {
     programs = {
       wm = {
         niri = enabled;
-        hyprland = enabled;
       };
     };
 
