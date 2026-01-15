@@ -38,9 +38,6 @@ in {
         "$MOD, B, exec, ${defaults.browser}"
         "$MOD, Z, exec, grimblast --notify copysave area"
         "$MOD CTRL, Z, exec, grimblast --notify copysave output"
-        "$MOD, C, exec, clipman pick --tool=CUSTOM --tool-args='fuzzel -d'"
-        "$MOD, M, exec, bemoji -t"
-        "$MOD, Y, exec, uuctl"
         "$MOD, P, exec, hyprpicker -a | --autocopy"
 
         # Essential
