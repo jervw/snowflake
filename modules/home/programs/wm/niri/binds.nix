@@ -37,10 +37,10 @@ in
     programs.niri.settings.binds =
       {
         # Programs
-        "Mod+Return".action.spawn = [defaults.terminal "+new-window"];
+        "Mod+Return".action.spawn = cmdToArgv defaults.terminal;
         "Mod+D".action.spawn = cmdToArgv defaults.launcher;
-        "Mod+B".action.spawn = defaults.browser;
-        "Mod+N".action.spawn = [defaults.terminal "-e" "yazi"];
+        "Mod+B".action.spawn = cmdToArgv defaults.browser;
+        "Mod+N".action.spawn = (cmdToArgv defaults.terminal) ++ ["-e" "yazi"];
 
         # Essential
         "Mod+Q".action.close-window = {};

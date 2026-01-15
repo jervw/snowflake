@@ -12,6 +12,11 @@
 in {
   options.${namespace}.programs.wm.hyprland = {
     enable = mkEnableOption "Enable Hyprland";
+    uwsmEntry = lib.mkOption {
+      type = lib.types.nullOr lib.types.attrs;
+      default = null;
+      internal = true;
+    };
   };
 
   imports = lib.snowfall.fs.get-non-default-nix-files ./.;
@@ -22,13 +27,17 @@ in {
     wayland.windowManager.hyprland = {
       enable = true;
       xwayland.enable = true;
-      systemd = {
-        enableXdgAutostart = true;
-        variables = ["--all"];
-      };
+      systemd.enable = false; # uwsm should handle everything
       plugins = with pkgs.hyprlandPlugins; [
         hyprexpo
       ];
+    };
+
+    ${namespace}.programs.wm.hyprland.uwsmEntry = mkIf cfg.enable {
+      prettyName = "Hyprland";
+      comment = "Hyprland compositor managed by UWSM";
+      binPath = "${config.wayland.windowManager.hyprland.package}/bin/start-hyprland";
+      extraArgs = [];
     };
   };
 }

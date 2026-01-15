@@ -98,6 +98,8 @@ in {
         appLauncher = {
           terminalCommand = "${defaults.terminal} -e";
           enableClipboardHistory = true;
+          customLaunchPrefixEnabled = true;
+          customLaunchPrefix = "uwsm app --";
         };
         location .name = "Helsinki, Finland";
         dock.enabled = false;

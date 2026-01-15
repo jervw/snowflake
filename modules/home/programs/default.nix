@@ -9,25 +9,25 @@ in {
   options.${namespace}.programs.defaults = {
     terminal = mkOption {
       type = types.str;
-      default = "ghostty";
+      default = "ghostty +new-window";
       description = "Default terminal emulator launch command";
     };
 
     browser = mkOption {
       type = types.str;
-      default = "zen";
+      default = "uwsm app -- zen";
       description = "Default web browser launch command";
     };
 
     launcher = mkOption {
       type = types.str;
-      default = "pkill fuzzel || fuzzel";
+      default = "noctalia-shell ipc call launcher toggle";
       description = "Default launcher command";
     };
 
     lock = mkOption {
       type = types.str;
-      default = lib.getExe config.programs.hyprlock.package;
+      default = "noctalia-shell ipc call lockScreen lock";
       description = "Default lock command";
     };
   };
