@@ -22,7 +22,7 @@ in {
       systemd.enable = true;
       settings = {
         general = {
-          avatarImage = "/home/jervw/.face";
+          avatarImage = "/home/jervw/pics/.face";
         };
         ui = {
           fontDefault = "JetBrainsMono Nerd Font";
@@ -32,6 +32,10 @@ in {
         audio = {
           volumeOverdrive = true;
         };
+        network = {
+          wifiEnabled = false;
+        };
+
         sessionMenu = {
           largeButtonsStyle = true;
           enableCountdown = false;
@@ -105,7 +109,6 @@ in {
         dock.enabled = false;
 
         colorSchemes.useWallpaperColors = true;
-
         templates = {
           discord = true;
           ghostty = true;
