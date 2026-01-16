@@ -117,6 +117,12 @@ in
         "XF86AudioRaiseVolume".action.spawn = noctaliaIpc ["volume" "increase"];
         "XF86AudioLowerVolume".action.spawn = noctaliaIpc ["volume" "decrease"];
 
+        # Brightness controls
+        "XF86MonBrightnessUp".action.spawn = noctaliaIpc ["brightness" "increase"];
+        "XF86MonBrightnessDown".action.spawn = noctaliaIpc ["brightness" "decrease"];
+        # "XF86KbdBrightnessUp".action.spawn = ["swayosd-client" "--device=apple::kbd_backlight" "--brightness" "raise"];
+        # "XF86KbdBrightnessDown".action.spawn = ["swayosd-client" "--device=apple::kbd_backlight" "--brightness" "lower"];
+
         # Misc
         "Mod+Shift+BracketLeft".action.consume-window-into-column = {};
         "Mod+Shift+BracketRight".action.expel-window-from-column = {};
