@@ -13,24 +13,19 @@ in {
   };
 
   config = mkIf cfg.enable {
-    networking.timeServers = [
-      "0.fi.pool.ntp.org iburst offline"
-      "1.fi.pool.ntp.org iburst"
-      "2.fi.pool.ntp.org iburst"
-      "3.fi.pool.ntp.org iburst"
-    ];
-
-    services.chrony = {
+    services.timesyncd = {
       enable = true;
+      servers = [
+        "0.pool.ntp.org"
+        "1.pool.ntp.org"
+        "2.pool.ntp.org"
+      ];
     };
 
-    # Make sure we can resolve the timeservers
-    systemd.services.chronyd = {
-      after =
-        lib.optional config.services.resolved.enable "systemd-resolved.service"
-        ++ lib.optional config.services.dnsmasq.enable "dnsmasq.service";
-    };
+    # Ensure time sync happens before services that need it
+    systemd.services.timesyncd.wantedBy = ["sysinit.target"];
 
+    # Timezone
     time.timeZone = "Europe/Helsinki";
   };
 }
