@@ -17,6 +17,11 @@ in {
   };
 
   snowflake = {
+    programs = {
+      addons = {
+        chromium-policies = enabled;
+      };
+    };
     hardware = {
       cpu.intel = enabled;
       storage.ssd = true;
