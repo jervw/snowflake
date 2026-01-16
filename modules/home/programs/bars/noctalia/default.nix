@@ -78,6 +78,7 @@ in {
               {id = "NotificationHistory";}
               {id = "Network";}
               {id = "Volume";}
+              {id = "Battery";}
               {
                 id = "Clock";
                 usePrimaryColor = true;
