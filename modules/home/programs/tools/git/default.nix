@@ -16,7 +16,7 @@ in {
     userEmail = mkOpt types.str user.email "The email to configure git with.";
     signByDefault = mkOpt types.bool true "Whether to sign commits by default.";
     signingKey =
-      mkOpt types.str "56C25B5B20756352B4B0E17EF188371747DA5895"
+      mkOpt types.str "85406535C615A548"
       "The key ID to sign commits with.";
   };
 
