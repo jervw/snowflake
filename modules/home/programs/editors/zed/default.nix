@@ -16,6 +16,9 @@ in {
   config = mkIf cfg.enable {
     programs.zed-editor = {
       enable = true;
+      extraPackages = with pkgs; [
+        direnv
+      ];
       userSettings = {
         agent = {
           play_sound_when_agent_done = true;
