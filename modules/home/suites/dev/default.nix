@@ -5,8 +5,7 @@
   namespace,
   ...
 }: let
-  inherit (lib) mkIf mkDefault;
-  inherit (lib.${namespace}) enabled;
+  inherit (lib) mkIf;
 
   cfg = config.${namespace}.suites.dev;
 in {

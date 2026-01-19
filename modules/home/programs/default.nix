@@ -1,7 +1,6 @@
 {
   lib,
   namespace,
-  config,
   ...
 }: let
   inherit (lib) mkOption types;
