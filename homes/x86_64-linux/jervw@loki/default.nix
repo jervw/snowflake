@@ -31,6 +31,7 @@ in {
       core = enabled;
       desktop = enabled;
       wayland = enabled;
+      dev = enabled;
       gaming = {
         enable = true;
         enableEmulators = false;
