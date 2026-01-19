@@ -62,6 +62,7 @@ in {
         # Misc
         "$MOD, T, togglespecialworkspace"
         "$MOD SHIFT, T, movetoworkspacesilent, special"
+        "$MOD SHIFT, Escape, exec, ${noctaliaIpc ["sessionMenu" "toggle"]}"
 
         # Plugins
         "$MOD, Escape, hyprexpo:expo, toggle"
