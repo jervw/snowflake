@@ -16,6 +16,10 @@ in {
       enable = true;
       enableSSHSupport = true;
       pinentryPackage = lib.mkDefault pkgs.pinentry-tty;
+      settings = {
+        default-cache-ttl = 3600;
+        max-cache-ttl = 3600;
+      };
     };
   };
 }

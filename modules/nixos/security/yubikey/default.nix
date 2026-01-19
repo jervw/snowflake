@@ -12,8 +12,13 @@ in {
   };
 
   config = lib.mkIf cfg.enable {
-    services.udev.packages = [pkgs.yubikey-personalization];
-    environment.systemPackages = [pkgs.yubikey-manager];
+    services = {
+      pcscd.enable = true;
+      udev.packages = [pkgs.yubikey-personalization];
+    };
+
+    environment.systemPackages = [pkgs.yubikey-manager pkgs.yubico-pam];
+
     programs.yubikey-touch-detector.enable = true;
 
     security.pam = {

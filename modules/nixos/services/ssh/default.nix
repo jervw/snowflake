@@ -12,8 +12,22 @@ in {
   };
 
   config = {
-    # FIXME: For now forcefully enable OpenSSH because Agenix requires it to pass `nix flake check` before having any systems configured unless age.identityPaths is set
+    programs.ssh = {
+      startAgent = false; # Don't start, we're using gpg-agent
+
+      # Make regular SSH keys required for Agenix available
+      extraConfig = ''
+        AddKeysToAgent yes
+      '';
+    };
+
+    # Set SSH_AUTH_SOCK to use gpg-agent
+    environment.sessionVariables = {
+      SSH_AUTH_SOCK = "\${XDG_RUNTIME_DIR}/gnupg/S.gpg-agent.ssh";
+    };
+
     services.openssh = {
+      # FIXME: For now forcefully enable OpenSSH because Agenix requires it to pass `nix flake check` before having any systems configured unless age.identityPaths is set
       enable = true;
       settings = {
         KbdInteractiveAuthentication = false;

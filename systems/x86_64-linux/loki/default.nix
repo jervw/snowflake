@@ -42,6 +42,7 @@ in {
 
     security = {
       hardening = enabled;
+      yubikey = enabled;
     };
 
     services = {
