@@ -24,7 +24,6 @@ in {
           "/var/tmp"
           "/var/db/sudo"
           "/var/lib/sbctl"
-          "/var/cache/tuigreet" # remember last session
         ]
         ++ forEach ["NetworkManager" "nix" "ssh"] (x: "/etc/${x}")
         ++ forEach ["tailscale" "bluetooth" "nixos" "pipewire" "libvirt" "docker"] (x: "/var/lib/${x}")
@@ -53,6 +52,7 @@ in {
             "rclone"
             "sh.cider.genten"
             "nushell"
+            "BraveSoftware"
             "vesktop"
             "obs-studio"
             "noctalia"
@@ -74,6 +74,7 @@ in {
             "atuin"
             "direnv"
             "PrismLauncher"
+            "BraveSoftware"
             "zed"
             "Steam"
             "fish"
