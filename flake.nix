@@ -3,7 +3,6 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     impermanence.url = "github:nix-community/impermanence";
     nixos-hardware.url = "github:nixos/nixos-hardware";
-    helix.url = "github:helix-editor/helix";
     treefmt-nix.url = "github:numtide/treefmt-nix";
     cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
 
