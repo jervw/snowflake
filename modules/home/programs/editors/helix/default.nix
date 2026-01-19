@@ -12,19 +12,13 @@
 in {
   options.${namespace}.programs.editors.helix = {
     enable = mkEnableOption "Enable Helix editor";
+    withLsp = mkEnableOption "LSP support";
   };
 
   config = mkIf cfg.enable {
     programs.helix = {
       enable = true;
       defaultEditor = true;
-
-      # Zero-conf packages
-      extraPackages = with pkgs; [
-        gopls
-        marksman
-        clippy
-      ];
 
       settings = {
         theme = "noctalia";
@@ -77,7 +71,7 @@ in {
         };
       };
 
-      languages = {
+      languages = mkIf cfg.withLsp {
         language = [
           {
             name = "nix";
@@ -112,7 +106,7 @@ in {
         ];
 
         # LSP's
-        language-server = {
+        language-server = mkIf cfg.withLsp {
           harper = {
             command = "${pkgs.harper}/bin/harper-ls";
             args = ["--stdio"];
