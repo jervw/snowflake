@@ -13,6 +13,7 @@ in {
     };
 
     programs = {
+      browsers.brave = enabled;
       wm = {
         hyprland = enabled;
         niri = enabled;

@@ -23,6 +23,9 @@ in {
   };
 
   snowflake = {
+    programs = {
+      addons.chromium-policies = enabled;
+    };
     hardware = {
       cpu.amd = enabled;
       video = {
