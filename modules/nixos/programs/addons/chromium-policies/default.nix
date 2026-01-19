@@ -95,13 +95,15 @@ in {
         BackgroundModeEnabled = false;
         BrowserGuestModeEnabled = false;
         BrowserSignin = 0;
-        SyncDisabled = true;
 
         # Downloads
         AlwaysOpenPdfExternally = true;
 
         # Extensions
         ExtensionManifestV2Availability = 2;
+
+        # Misc
+        TranslateEnabled = false;
 
         # Data hygiene
         ClearBrowsingDataOnExitList = [
