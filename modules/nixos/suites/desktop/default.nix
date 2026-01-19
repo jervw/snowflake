@@ -2,6 +2,7 @@
   config,
   lib,
   namespace,
+  pkgs,
   ...
 }: let
   inherit (lib) mkDefault mkEnableOption mkIf;
@@ -34,6 +35,8 @@ in {
     };
 
     programs.dconf.enable = true;
+
+    programs.gnupg.agent.pinentryPackage = pkgs.pinentry-gnome3;
 
     services = {
       gvfs = mkDefault enabled;
