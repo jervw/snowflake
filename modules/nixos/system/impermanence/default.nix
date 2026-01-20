@@ -43,7 +43,7 @@ in {
             "other"
             "games"
             ".dots"
-            ".zen"
+            ".logseq"
           ]
           ++ forEach [
             "dconf"
@@ -57,7 +57,6 @@ in {
             "obs-studio"
             "noctalia"
             "zed"
-            "gh"
             "FreeTube"
             "harper-ls"
             "BeeperTexts"
@@ -67,7 +66,7 @@ in {
           ] (
             x: ".config/${x}"
           )
-          ++ forEach ["nix" "zen" "noctalia"] (
+          ++ forEach ["nix" "BraveSoftware" "noctalia"] (
             x: ".cache/${x}"
           )
           ++ forEach [
