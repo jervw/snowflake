@@ -36,7 +36,7 @@ in {
           trayscale = mkDefault enabled;
         };
         browsers = {
-          zen = mkDefault enabled;
+          brave = mkDefault enabled;
         };
         apps = {
           freetube = mkDefault enabled;

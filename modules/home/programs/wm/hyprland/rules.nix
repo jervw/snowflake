@@ -17,12 +17,11 @@ in {
     ];
 
     windowrule = [
-      # Bitwarden Extension
+      # Bitwarden
       "match:title ^(.*Bitwarden Password Manager.*)$, float on"
-
-      # Firefox/Zen
-      "match:title ^(Picture-in-Picture)$, float on"
-      "match:title ^(Picture-in-Picture)$, pin on"
+      "match:title ^(Picture in picture)$, float on"
+      "match:title ^(Picture in picture)$, pin on"
+      "match:title Bitwarden, float on"
 
       # MPV
       "match:class mpv, float on"

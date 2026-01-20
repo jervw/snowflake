@@ -115,7 +115,6 @@ in {
           gtk = true;
           helix = true;
           qt = true;
-          zenBrowser = true;
         };
       };
     };

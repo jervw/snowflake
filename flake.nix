@@ -51,11 +51,6 @@
       url = "https://github.com/jervw.keys";
       flake = false;
     };
-
-    zen-browser = {
-      url = "github:0xc000022070/zen-browser-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = inputs:
@@ -89,7 +84,6 @@
       ];
 
       homes.modules = with inputs; [
-        zen-browser.homeModules.twilight
         noctalia.homeModules.default
         niri.homeModules.niri
       ];

@@ -29,8 +29,6 @@
     baseRule // floatingRule;
 
   openFloatingAppIds = [
-    "org.pulseaudio.pavucontrol"
-    "^(Volume Control)"
     "^(dialog)"
     "^(file_progress)"
     "^(confirm)"
@@ -98,16 +96,7 @@
     }
     {
       matches = [
-        {
-          app-id = "firefox$";
-          title = "^Picture-in-Picture$";
-        }
-        {
-          app-id = "zen-.*$";
-          title = "^Picture-in-Picture$";
-        }
         {title = "^Picture in picture$";}
-        {title = "^Discord Popout$";}
       ];
       open-floating = true;
       default-floating-position = {

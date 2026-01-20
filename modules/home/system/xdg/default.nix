@@ -10,7 +10,7 @@
   cfg = config.${namespace}.system.xdg;
 
   # Applications
-  browser = ["zen-twilight"];
+  browser = ["brave-browser"];
   editor = ["Helix"];
   fileManager = ["thunar"];
   imageViewer = ["imv"];
