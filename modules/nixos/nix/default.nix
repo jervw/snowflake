@@ -48,10 +48,10 @@ in {
         substituters = [
           "https://cache.nixos.org"
           "https://nix-community.cachix.org"
-          "https://cache.garnix.io"
-          "https://niri.cachix.org"
-          "https://attic.xuyh0120.win/lantian"
-          "https://cache.soopy.moe"
+          "https://cache.garnix.io" # Garnix
+          "https://niri.cachix.org" # Niri
+          "https://attic.xuyh0120.win/lantian" # CachyOS kernels
+          "https://cache.soopy.moe" # Linux T2
         ];
         trusted-public-keys = [
           "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
