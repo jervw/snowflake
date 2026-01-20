@@ -83,11 +83,6 @@ in {
         BuiltinDnsClientEnabled = false;
 
         # Search provider
-        DefaultSearchProviderEnabled = true;
-        DefaultSearchProviderName = "Kagi";
-        DefaultSearchProviderSearchURL = "https://kagi.com/search?q={searchTerms}";
-        DefaultSearchProviderNewTabURL = "https://kagi.com";
-        DefaultSearchProviderSuggestURL = "https://kagi.com/api/autosuggest?q={searchTerms}";
         SearchSuggestEnabled = true;
 
         # Browser behavior
