@@ -96,7 +96,6 @@ in {
         wallpaper = {
           overviewEnabled = true;
           directory = "/home/jervw/pics/wallpapers";
-          defaultWallpaper = "/home/jervw/pics/wallpapers/default.png";
           randomEnabled = true;
           randomIntervalSec = 1800;
         };
