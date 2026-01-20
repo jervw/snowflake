@@ -20,14 +20,13 @@ in {
       calibre
       beeper
       ffmpeg
-      obsidian
       playerctl
       tomato-c
       qbittorrent-enhanced
       fontpreview
       cider-2
       vesktop
-      nicotine-plus
+      logseq
     ];
 
     snowflake = {
