@@ -100,7 +100,7 @@ in {
           randomIntervalSec = 1800;
         };
         appLauncher = {
-          terminalCommand = "${defaults.terminal} -e";
+          terminalCommand = "ghostty -e";
           enableClipboardHistory = true;
           customLaunchPrefixEnabled = true;
           customLaunchPrefix = "uwsm app --";
