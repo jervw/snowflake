@@ -18,6 +18,7 @@ in {
       systemd.enable = true;
       settings = {
         theme = "noctalia";
+        background-opacity = 0.9;
         window-decoration = false;
         window-inherit-working-directory = false;
         confirm-close-surface = false;
