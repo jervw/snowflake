@@ -40,8 +40,25 @@ in {
         };
 
         folders = {
+          # TODO remove sync directory, rename to obsidian and move to docs/obsidian
           "~/sync" = {
             id = "sync";
+            devices = builtins.attrNames config.services.syncthing.settings.devices;
+          };
+          "~/docs" = {
+            id = "docs";
+            devices = builtins.attrNames config.services.syncthing.settings.devices;
+          };
+          "~/music" = {
+            id = "music";
+            devices = builtins.attrNames config.services.syncthing.settings.devices;
+          };
+          "~/vids" = {
+            id = "vids";
+            devices = builtins.attrNames config.services.syncthing.settings.devices;
+          };
+          "~/other" = {
+            id = "other";
             devices = builtins.attrNames config.services.syncthing.settings.devices;
           };
         };
