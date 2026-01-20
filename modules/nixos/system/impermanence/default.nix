@@ -63,6 +63,7 @@ in {
             "BeeperTexts"
             "fcitx5"
             "qt6ct"
+            "Logseq"
           ] (
             x: ".config/${x}"
           )
