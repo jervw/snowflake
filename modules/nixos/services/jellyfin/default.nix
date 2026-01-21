@@ -5,7 +5,7 @@
   ...
 }: let
   inherit (lib) mkEnableOption mkIf mkOption;
-  cfg = config.${namespace}.services.audiobookshelf;
+  cfg = config.${namespace}.services.jellyfin;
 in {
   options.${namespace}.services.jellyfin = {
     enable = mkEnableOption "Enable Jellyfin service";
