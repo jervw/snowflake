@@ -29,15 +29,15 @@ in {
         reverse_proxy http://thor:8001
         import cloudflare
       '';
-      # Tasks-md
-      "todo.jervw.dev".extraConfig = ''
-        reverse_proxy http://thor:8075
-        import cloudflare
-      '';
 
       # Tubearchivist
       "tube.jervw.dev".extraConfig = ''
         reverse_proxy http://thor:8933
+        import cloudflare
+      '';
+      # Wallos
+      "wallos.jervw.dev".extraConfig = ''
+        reverse_proxy http://thor:8282
         import cloudflare
       '';
     };
