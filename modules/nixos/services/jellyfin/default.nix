@@ -14,6 +14,10 @@ in {
       default = "jellyfin.jervw.dev";
       description = "Reverse proxy host name for the Jellyfin service";
     };
+    port = mkOption {
+      type = lib.types.number;
+      default = 8096;
+    };
   };
 
   config = mkIf cfg.enable {
@@ -23,7 +27,7 @@ in {
         openFirewall = true;
       };
       caddy.virtualHosts."${cfg.host}".extraConfig = ''
-        reverse_proxy http://thor:8096
+        reverse_proxy http://thor:${toString cfg.port}
         import cloudflare
       '';
     };
