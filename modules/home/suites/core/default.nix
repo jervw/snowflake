@@ -34,7 +34,6 @@ in {
           fish = mkDefault enabled;
         };
         tools = {
-          atuin = mkDefault enabled;
           direnv = mkDefault enabled;
           fastfetch = mkDefault enabled;
           gh = mkDefault enabled;
