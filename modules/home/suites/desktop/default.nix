@@ -20,7 +20,6 @@ in {
       calibre
       beeper
       ffmpeg
-      playerctl
       tomato-c
       qbittorrent-enhanced
       fontpreview
@@ -44,9 +43,6 @@ in {
           obs = mkDefault enabled;
           imv = mkDefault enabled;
           zathura = mkDefault enabled;
-        };
-        editors = {
-          zed = mkDefault enabled;
         };
         term = {
           ghostty = mkDefault enabled;
