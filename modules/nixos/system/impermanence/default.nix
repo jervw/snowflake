@@ -4,19 +4,21 @@
   namespace,
   ...
 }: let
-  inherit (lib) mkIf forEach;
-
-  cfg = config.${namespace}.system.impermanence;
+  inherit (lib) mkIf mkEnableOption forEach;
   inherit (config.${namespace}) user;
+  cfg = config.${namespace}.system.impermanence;
+
+  # reduce duplication
+  mkDirs = prefix: dirs: forEach dirs (x: "${prefix}${x}");
 in {
   options.${namespace}.system.impermanence = {
-    enable = lib.mkEnableOption "Enable impermanence";
+    enable = mkEnableOption "impermanence";
   };
 
-  # TODO: Make something cool with this
   config = mkIf cfg.enable {
     environment.persistence."/persist" = {
       hideMounts = true;
+
       directories =
         [
           "/tmp"
@@ -25,12 +27,15 @@ in {
           "/var/db/sudo"
           "/var/lib/sbctl"
         ]
-        ++ forEach ["NetworkManager" "nix" "ssh"] (x: "/etc/${x}")
-        ++ forEach ["tailscale" "bluetooth" "nixos" "pipewire" "libvirt" "docker"] (x: "/var/lib/${x}")
-        ++ forEach ["coredump" "timers"] (x: "/var/lib/systemd/${x}");
+        ++ mkDirs "/etc/" ["NetworkManager" "nix" "ssh"]
+        ++ mkDirs "/var/lib/" ["tailscale" "bluetooth" "nixos" "pipewire" "libvirt" "docker"]
+        ++ mkDirs "/var/lib/systemd/" ["coredump" "timers"];
+
       files = ["/etc/machine-id"];
+
       users.${user.name} = {
         files = [".config/ghostty/themes/noctalia"];
+
         directories =
           [
             "download"
@@ -45,7 +50,7 @@ in {
             ".dots"
             ".logseq"
           ]
-          ++ forEach [
+          ++ mkDirs ".config/" [
             "dconf"
             "heroic"
             "obsidian"
@@ -63,13 +68,9 @@ in {
             "fcitx5"
             "qt6ct"
             "Logseq"
-          ] (
-            x: ".config/${x}"
-          )
-          ++ forEach ["nix" "BraveSoftware" "noctalia"] (
-            x: ".cache/${x}"
-          )
-          ++ forEach [
+          ]
+          ++ mkDirs ".cache/" ["nix" "BraveSoftware" "noctalia"]
+          ++ mkDirs ".local/share/" [
             "Anki2"
             "atuin"
             "direnv"
@@ -79,8 +80,8 @@ in {
             "Steam"
             "fish"
             "lutris"
-          ] (x: ".local/share/${x}")
-          ++ forEach ["syncthing" "wireplumber"] (x: ".local/state/${x}")
+          ]
+          ++ mkDirs ".local/state/" ["syncthing" "wireplumber"]
           ++ [
             {
               directory = ".ssh";
@@ -98,10 +99,10 @@ in {
       };
     };
 
-    systemd.tmpfiles.rules = [
-      "L /var/lib/NetworkManager/secret_key - - - - /persist/var/lib/NetworkManager/secret_key"
-      "L /var/lib/NetworkManager/seen-bssids - - - - /persist/var/lib/NetworkManager/seen-bssids"
-      "L /var/lib/NetworkManager/timestamps - - - - /persist/var/lib/NetworkManager/timestamps"
+    systemd.tmpfiles.rules = mkDirs "L /var/lib/NetworkManager/" [
+      "secret_key - - - - /persist/var/lib/NetworkManager/secret_key"
+      "seen-bssids - - - - /persist/var/lib/NetworkManager/seen-bssids"
+      "timestamps - - - - /persist/var/lib/NetworkManager/timestamps"
     ];
   };
 }
