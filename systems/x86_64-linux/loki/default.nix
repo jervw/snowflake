@@ -31,6 +31,7 @@ in {
       video = {
         nvidia = enabled;
         i2c = enabled;
+        lact = enabled;
       };
       storage = {
         extra = true;
