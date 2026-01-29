@@ -36,6 +36,7 @@ in {
         tools = {
           direnv = mkDefault enabled;
           fastfetch = mkDefault enabled;
+          fzf = mkDefault enabled;
           gh = mkDefault enabled;
           lazygit = mkDefault enabled;
           nix-your-shell = mkDefault enabled;

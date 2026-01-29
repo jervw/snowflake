@@ -7,9 +7,9 @@
 }: let
   inherit (lib) mkIf;
 
-  cfg = config.${namespace}.programs.terminal.tools.fzf;
+  cfg = config.${namespace}.programs.tools.fzf;
 in {
-  options.${namespace}.programs.terminal.tools.fzf = {
+  options.${namespace}.programs.tools.fzf = {
     enable = lib.mkEnableOption "Enable fzf";
   };
 
