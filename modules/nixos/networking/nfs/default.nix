@@ -20,9 +20,16 @@ in {
     };
 
     fileSystems."/mnt/share" = {
-      device = "thor:/mnt/storage/NAS";
+      device = "thor:/mnt/storage";
       fsType = "nfs";
-      options = ["rw" "noauto" "x-systemd.automount" "x-systemd.idle-timeout=600"];
+      options = [
+        "rw"
+        "noauto"
+        "x-systemd.automount"
+        "x-systemd.idle-timeout=600"
+        "_netdev"
+        "x-systemd.mount-timeout=10s" # Fail faster on shutdown
+      ];
     };
   };
 }
