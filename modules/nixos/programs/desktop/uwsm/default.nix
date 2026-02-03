@@ -36,10 +36,12 @@ in {
       inherit waylandCompositors;
     };
 
-    programs.fish.loginShellInit = mkIf cfg.autoStart ''
-      if test -z "$DISPLAY"; and test (tty) = "/dev/tty1"
-        exec uwsm start default
-      end
-    '';
+    # TODO: Workaround for https://github.com/NixOS/nixpkgs/issues/485123
+    services.displayManager.cosmic-greeter.enable = true;
+    # programs.fish.loginShellInit = mkIf cfg.autoStart ''
+    #   if test -z "$DISPLAY"; and test (tty) = "/dev/tty1"
+    #     exec uwsm start default
+    #   end
+    # '';
   };
 }
