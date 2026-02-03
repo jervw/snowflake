@@ -72,7 +72,6 @@ in {
           ++ mkDirs ".cache/" ["nix" "BraveSoftware" "noctalia"]
           ++ mkDirs ".local/share/" [
             "Anki2"
-            "atuin"
             "direnv"
             "PrismLauncher"
             "BraveSoftware"
