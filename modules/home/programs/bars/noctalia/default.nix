@@ -6,7 +6,7 @@
   namespace,
   ...
 }: let
-  inherit (lib) mkIf;
+  inherit (lib) mkIf mkForce;
 
   cfg = config.${namespace}.programs.bars.noctalia;
 in {
@@ -116,6 +116,12 @@ in {
           qt = true;
         };
       };
+    };
+
+    # Override programs to use noctalia colors
+    programs = {
+      helix.settings.theme = mkForce "noctalia";
+      ghostty.settings.theme = mkForce "noctalia";
     };
 
     snowflake = {

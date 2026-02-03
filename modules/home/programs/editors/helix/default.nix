@@ -21,7 +21,7 @@ in {
       defaultEditor = true;
 
       settings = {
-        theme = "noctalia";
+        theme = "zed_onedark";
         editor = {
           line-number = "relative";
           bufferline = "always";

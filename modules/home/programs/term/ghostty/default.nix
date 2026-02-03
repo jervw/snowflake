@@ -17,7 +17,7 @@ in {
       enable = true;
       systemd.enable = true;
       settings = {
-        theme = "noctalia";
+        theme = "Zenbones Dark";
         background-opacity = 0.9;
         window-decoration = false;
         window-inherit-working-directory = false;
