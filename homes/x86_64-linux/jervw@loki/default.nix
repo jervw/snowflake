@@ -17,6 +17,7 @@ in {
       wm = {
         hyprland = enabled;
         niri = enabled;
+        mango = enabled;
       };
     };
 

@@ -13,6 +13,7 @@
   uwsmEntries = {
     niri = hmUser.${namespace}.programs.wm.niri.uwsmEntry or null;
     hyprland = hmUser.${namespace}.programs.wm.hyprland.uwsmEntry or null;
+    mango = hmUser.${namespace}.programs.wm.mango.uwsmEntry or null;
   };
 
   # Filter out null entries

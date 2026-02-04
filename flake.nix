@@ -37,6 +37,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    mango = {
+      url = "github:DreamMaoMao/mango";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     quickshell = {
       url = "github:outfoxxed/quickshell";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -86,6 +91,7 @@
       homes.modules = with inputs; [
         noctalia.homeModules.default
         niri.homeModules.niri
+        mango.hmModules.mango
       ];
 
       # Other generic outputs
