@@ -17,8 +17,11 @@ in {
       enable = true;
       mappings = {
         "<A-a>" = "recolor";
+        "j" = "feedkeys <C-Down>";
+        "k" = "feedkeys <C-Up>";
       };
       options = {
+        font = "JetBrainsMono Nerd Font 13";
         selection-notification = true;
         selection-clipboard = "clipboard";
         adjust-open = "best-fit";
