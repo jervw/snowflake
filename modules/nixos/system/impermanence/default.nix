@@ -59,6 +59,7 @@ in {
             "nushell"
             "BraveSoftware"
             "vesktop"
+            "equibop"
             "obs-studio"
             "noctalia"
             "zed"

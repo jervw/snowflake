@@ -24,7 +24,7 @@ in {
       qbittorrent-enhanced
       fontpreview
       cider-2
-      vesktop
+      equibop
       logseq
     ];
 
