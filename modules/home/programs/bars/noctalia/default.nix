@@ -114,6 +114,9 @@ in {
           gtk = true;
           helix = true;
           qt = true;
+          yazi = true;
+          hyprtoolkit = true;
+          zathura = true;
         };
       };
     };
@@ -122,6 +125,7 @@ in {
     programs = {
       helix.settings.theme = mkForce "noctalia";
       ghostty.settings.theme = mkForce "noctalia";
+      zathura.extraConfig = "include noctaliarc";
     };
 
     snowflake = {
