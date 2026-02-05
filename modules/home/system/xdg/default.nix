@@ -101,7 +101,7 @@ in {
         publicShare = "$HOME/other";
         templates = "$HOME/other";
         extraConfig = {
-          XDG_SCREENSHOTS_DIR = "${config.xdg.userDirs.pictures}/Screenshots";
+          XDG_SCREENSHOTS = "${config.xdg.userDirs.pictures}/Screenshots";
         };
       };
 
