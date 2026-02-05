@@ -65,7 +65,7 @@ in {
         "$MOD SHIFT, Escape, exec, ${noctaliaIpc ["sessionMenu" "toggle"]}"
 
         # Plugins
-        # "$MOD, Escape, hyprexpo:expo, toggle"
+        "$MOD, Escape, hyprexpo:expo, toggle"
       ]
       ++ workspaces;
 

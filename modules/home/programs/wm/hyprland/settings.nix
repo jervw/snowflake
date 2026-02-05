@@ -88,11 +88,11 @@ _: {
       ];
     };
 
-    # plugin = {
-    #   hyprexpo = {
-    #     columns = 2;
-    #     gap_size = 10;
-    #   };
-    # };
+    plugin = {
+      hyprexpo = {
+        columns = 2;
+        gap_size = 10;
+      };
+    };
   };
 }

@@ -29,7 +29,7 @@ in {
       xwayland.enable = true;
       systemd.enable = false; # uwsm should handle everything
       plugins = with pkgs.hyprlandPlugins; [
-        # hyprexpo
+        hyprexpo
       ];
     };
 
