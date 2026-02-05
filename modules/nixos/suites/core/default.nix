@@ -17,6 +17,7 @@ in {
   config = mkIf cfg.enable {
     environment = {
       systemPackages = with pkgs; [
+        git
         curl
         killall
         lazyjournal
@@ -41,7 +42,7 @@ in {
       };
       security = {
         gpg = mkDefault enabled;
-        sudo = mkDefault enabled;
+        doas = mkDefault enabled;
         pam = mkDefault enabled;
       };
 
