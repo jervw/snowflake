@@ -41,7 +41,7 @@ in {
         "$MOD, P, exec, hyprpicker -a | --autocopy"
 
         # Essential
-        "$MOD SHIFT, E, exit"
+        "$MOD SHIFT, E, exec, ${noctaliaIpc ["sessionMenu" "toggle"]}"
         "$MOD, Q, killactive"
         "$MOD, F, fullscreen"
         "$MOD, Space, togglefloating"
@@ -62,7 +62,6 @@ in {
         # Misc
         "$MOD, T, togglespecialworkspace"
         "$MOD SHIFT, T, movetoworkspacesilent, special"
-        "$MOD SHIFT, Escape, exec, ${noctaliaIpc ["sessionMenu" "toggle"]}"
 
         # Plugins
         "$MOD, Escape, hyprexpo:expo, toggle"

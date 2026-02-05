@@ -47,7 +47,6 @@ in
         "Mod+Z".action.screenshot = {};
         "Mod+Shift+Z".action.screenshot-window = {};
         "Mod+Ctrl+Z".action.screenshot-screen = {};
-        "Mod+Shift+E".action.quit = {};
         "Mod+Shift+Slash".action.show-hotkey-overlay = {};
 
         # Move column focus
@@ -123,7 +122,7 @@ in
         # "XF86KbdBrightnessUp".action.spawn = ["swayosd-client" "--device=apple::kbd_backlight" "--brightness" "raise"];
         # "XF86KbdBrightnessDown".action.spawn = ["swayosd-client" "--device=apple::kbd_backlight" "--brightness" "lower"];
 
-        "Mod+Shift+Escape".action.spawn = noctaliaIpc ["sessionMenu" "toggle"];
+        "Mod+Shift+E".action.spawn = noctaliaIpc ["sessionMenu" "toggle"];
 
         # Misc
         "Mod+Shift+BracketLeft".action.consume-window-into-column = {};
