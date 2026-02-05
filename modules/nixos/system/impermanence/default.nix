@@ -53,7 +53,7 @@ in {
           ++ mkDirs ".config/" [
             "dconf"
             "heroic"
-            "obsidian"
+            "fractal"
             "rclone"
             "sh.cider.genten"
             "nushell"
