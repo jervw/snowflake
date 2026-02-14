@@ -34,7 +34,6 @@ in {
         "$MOD, Return, exec, ${defaults.terminal}"
         "$MOD, Tab, global, com.mitchellh.ghostty:LOGO+Tab"
         "$MOD, D, exec, ${defaults.launcher}"
-        "$MOD, Y, exec, ${defaults.terminal} -e yazi"
         "$MOD, B, exec, ${defaults.browser}"
         "$MOD, Z, exec, grimblast --notify copysave area"
         "$MOD CTRL, Z, exec, grimblast --notify copysave output"
