@@ -61,9 +61,6 @@ in {
           X = ["extend_line_up" "extend_to_line_bounds"];
           A-x = "extend_line_above";
         };
-        keys.insert = {
-          j = {k = "normal_mode";};
-        };
         keys.normal.space = {
           c = ":lsp-workspace-command";
           o = ":sh gh repo view --web";
