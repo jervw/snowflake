@@ -69,6 +69,9 @@ in {
                 drawerEnabled = false;
               }
               {
+                id = "plugin:tailscale";
+              }
+              {
                 id = "plugin:privacy-indicator";
                 hideInactive = true;
                 removeMargins = true;

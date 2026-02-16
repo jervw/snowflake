@@ -33,9 +33,6 @@ in {
     snowflake = {
       theme.enable = true;
       programs = {
-        addons = {
-          trayscale = mkDefault enabled;
-        };
         browsers = {
           brave = mkDefault enabled;
         };
