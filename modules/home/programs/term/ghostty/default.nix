@@ -2,11 +2,18 @@
   config,
   lib,
   namespace,
+  pkgs,
   ...
 }: let
   inherit (lib) mkIf;
-
   cfg = config.${namespace}.programs.term.ghostty;
+
+  ghosttyCursorShaders = pkgs.fetchFromGitHub {
+    owner = "sahaj-b";
+    repo = "ghostty-cursor-shaders";
+    rev = "4faa83e4b9306750fc8de64b38c6f53c57862db8";
+    hash = "sha256-ruhEqXnWRCYdX5mRczpY3rj1DTdxyY3BoN9pdlDOKrE=";
+  };
 in {
   options.${namespace}.programs.term.ghostty = {
     enable = lib.mkEnableOption "Enable ghostty";
@@ -25,6 +32,9 @@ in {
         quit-after-last-window-closed = false;
         auto-update = "off";
         quick-terminal-position = "center";
+
+        custom-shader-animation = "always";
+        custom-shader = "${ghosttyCursorShaders}/cursor_warp.glsl";
 
         keybind = [
           # Tabs

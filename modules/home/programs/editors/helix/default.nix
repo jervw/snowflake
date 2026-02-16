@@ -44,8 +44,8 @@ in {
           };
           cursor-shape = {
             insert = "bar";
-            normal = "block";
-            select = "underline";
+            normal = "underline";
+            select = "bar";
           };
           indent-guides.render = true;
           gutters.line-numbers.min-width = 1;
