@@ -22,8 +22,8 @@ in {
       wtype
       wlr-randr
       hyprpicker
-      xorg.xeyes
-      xorg.xrandr
+      xeyes
+      xrandr
       xclip
     ];
 
