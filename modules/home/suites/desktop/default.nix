@@ -23,7 +23,6 @@ in {
       tomato-c
       qbittorrent-enhanced
       fontpreview
-      cider-2
       tana
       equibop
       fractal
