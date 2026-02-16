@@ -21,6 +21,7 @@ in {
 
     programs.yazi = {
       enable = true;
+      shellWrapperName = "y";
       settings = {
         manager = {
           layout = [1 4 3];
@@ -31,9 +32,6 @@ in {
           show_symlink = true;
         };
       };
-    };
-    home.shellAliases = {
-      y = "yazi";
     };
   };
 }
