@@ -28,7 +28,7 @@ in {
           "/var/lib/sbctl"
         ]
         ++ mkDirs "/etc/" ["NetworkManager" "nix" "ssh"]
-        ++ mkDirs "/var/lib/" ["tailscale" "bluetooth" "nixos" "pipewire" "libvirt" "docker"]
+        ++ mkDirs "/var/lib/" ["tailscale" "bluetooth" "nixos" "pipewire" "libvirt" "docker" "flatpak"]
         ++ mkDirs "/var/lib/systemd/" ["coredump" "timers"];
 
       files = ["/etc/machine-id"];
@@ -49,13 +49,13 @@ in {
             "games"
             ".dots"
             ".logseq"
+            ".var/app" # flatpak app data
           ]
           ++ mkDirs ".config/" [
             "dconf"
             "heroic"
             "fractal"
             "rclone"
-            "sh.cider.genten"
             "nushell"
             "BraveSoftware"
             "vesktop"
@@ -80,6 +80,7 @@ in {
             "Steam"
             "fish"
             "lutris"
+            "flatpak"
           ]
           ++ mkDirs ".local/state/" ["syncthing" "wireplumber"]
           ++ [
