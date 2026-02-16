@@ -34,6 +34,9 @@ in {
         network = {
           wifiEnabled = false;
         };
+        nightLight = {
+          enabled = true;
+        };
 
         sessionMenu = {
           largeButtonsStyle = true;

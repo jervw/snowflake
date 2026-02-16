@@ -36,7 +36,6 @@ in {
       programs = {
         addons = {
           hypridle = mkDefault enabled;
-          wlsunset = mkDefault enabled;
         };
         bars = {
           noctalia = mkDefault enabled;
