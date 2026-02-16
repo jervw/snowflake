@@ -17,6 +17,8 @@ in {
     };
   };
 
+  imports = [./binds.nix];
+
   config = mkIf cfg.enable {
     wayland.windowManager.mango = {
       enable = true;
