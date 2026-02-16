@@ -10,14 +10,17 @@
   cfg = config.${namespace}.hardware.qmk;
 in {
   options.${namespace}.hardware.qmk = {
-    enable = lib.mkEnableOption "support for QMK (Vial)";
+    enable = lib.mkEnableOption "support for QMK";
   };
 
   config = mkIf cfg.enable {
-    environment.systemPackages = [pkgs.vial];
+    environment.systemPackages = with pkgs; [qmk via vial];
+
+    hardware.keyboard.qmk.enable = true;
+
     services = {
       udev = {
-        packages = [pkgs.vial];
+        packages = [pkgs.via pkgs.vial];
       };
     };
   };
