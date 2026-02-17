@@ -1,7 +1,6 @@
 {
   config,
   lib,
-  pkgs,
   namespace,
   ...
 }: let
@@ -14,10 +13,9 @@ in {
 
   config = mkIf cfg.enable {
     services.flatpak.enable = true;
-
     xdg.portal = {
       enable = true;
-      extraPortals = [pkgs.xdg-desktop-portal-gtk];
+      config.common.default = "*";
     };
   };
 }
