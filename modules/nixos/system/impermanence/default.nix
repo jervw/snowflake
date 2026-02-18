@@ -66,6 +66,7 @@ in {
             "FreeTube"
             "harper-ls"
             "BeeperTexts"
+            "Element"
             "fcitx5"
             "qt6ct"
             "Logseq"
