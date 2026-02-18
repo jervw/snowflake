@@ -26,7 +26,7 @@ in {
       fontpreview
       tana
       equibop
-      fractal
+      element-desktop
       logseq
     ];
 
