@@ -18,14 +18,16 @@ in {
   config = mkIf cfg.enable {
     programs.helix = {
       enable = true;
+      package = inputs.helix.packages.${pkgs.stdenv.hostPlatform.system}.default;
       defaultEditor = true;
 
       settings = {
         theme = "zed_onedark";
         editor = {
           line-number = "relative";
-          bufferline = "always";
           text-width = 100;
+          bufferline.render-mode = "always";
+          rounded-corners = true;
           color-modes = true;
           true-color = true;
           undercurl = true;
@@ -33,7 +35,15 @@ in {
           lsp.display-inlay-hints = false;
           end-of-line-diagnostics = "hint";
           inline-diagnostics.cursor-line = "warning";
-          # rainbow-brackets = true;
+          rainbow-brackets = true;
+          lsp = {
+            display-color-swatches = true;
+            color-swatches-string = "●";
+          };
+          cmdline = {
+            style = "popup";
+            show-icons = false;
+          };
           soft-wrap = {
             enable = true;
             max-wrap = 25;
