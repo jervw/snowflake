@@ -8,7 +8,8 @@
 in {
   imports = [./hardware.nix];
 
-  boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-bore;
+  # boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-bore;
+  boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest;
 
   # Set correct resolution to TTY. Maybe NVIDIA BUG?
   # Downside of this workaround is that now the secondary monitor is at wrong resolution.
