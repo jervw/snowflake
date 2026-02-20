@@ -61,8 +61,6 @@ in {
           gutters.line-numbers.min-width = 1;
         };
         keys.normal = {
-          S-h = "goto_previous_buffer";
-          S-l = "goto_next_buffer";
           A-w = "move_next_sub_word_start";
           A-b = "move_prev_sub_word_start";
           A-e = "move_next_sub_word_end";
