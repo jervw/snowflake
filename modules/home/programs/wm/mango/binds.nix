@@ -5,130 +5,98 @@
   ...
 }: let
   inherit (lib) mkIf;
-
   cfg = config.${namespace}.programs.wm.mango;
   inherit (config.${namespace}.programs) defaults;
-  workspaces = builtins.concatLists (builtins.genList (
+  workspaces = builtins.concatStringsSep "\n" (builtins.genList (
       x: let
         ws = toString (x + 1);
-      in [
-        "$MOD, ${ws}, workspace, ${ws}"
-        "$MOD SHIFT, ${ws}, movetoworkspacesilent, ${ws}"
-      ]
+      in ''
+        bind=SUPER,${ws},view,${ws},0
+        bind=SUPER+SHIFT,${ws},tag,${ws},0
+      ''
     )
     5);
-
   noctaliaIpc = args: "noctalia-shell ipc call ${lib.concatStringsSep " " args}";
 in {
-  # TODO: check whether empty space are allowed to make it more easier to read.
   wayland.windowManager.mango.settings = mkIf cfg.enable ''
-    # Key Bindings
-    # key name refer to `xev` or `wev` command output,
-    # mod keys name: super,ctrl,alt,shift,none
-    #
+    exec-once="dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=wlroots"
+    exec-once="uwsm finalize"
+    # Monitor rules
+    monitorrule=name:DP-1,width:2560,height:1440,refresh:165,x:1920,y:0
+    monitorrule=name:HDMI-A-1,width:1920,height:1080,refresh:60,x:0,y:0
 
     # Programs
-    bind=SUPER,Return,spawn,${defaults.terminal}
-    bind=SUPER,D,spawn,${defaults.terminal}
-    bind=SUPER,B,spawn,${defaults.browser}
-    bind=SUPER,Z,spawn,grimblast --notify copysave area
-    bind=SUPER+CTRL,Z,spawn,grimblast --notify copysave output
-    bind=SUPER,P,spawn,hyprpicker -a | --autocopy
-
+    bind=SUPER,Return,spawn,ghostty
+    bind=SUPER,D,spawn,${defaults.launcher}
+    bind=SUPER,B,spawn,brave
 
     # Essential
-    # bind=SUPER+SHIFT,e,spawn,${noctaliaIpc ["sessionMenu" "toggle"]}
-    bind=SUPER,q,killclient,
-    bind=SUPER+SHIFT,r,reload_config
+    bind=SUPER+SHIFT,E,spawn,${noctaliaIpc ["sessionMenu" "toggle"]}
+    bind=SUPER,Q,killclient
+    bind=SUPER,F,togglemaximizescreen
+    bind=SUPER+SHIFT,F,togglefakefullscreen
+    bind=SUPER,space,togglefloating,
+    bind=SUPER+SHIFT,R,reload_config
 
-
-    # Switch window focus
+    # Move window focus (vim)
+    bind=SUPER,H,focusdir,left
+    bind=SUPER,L,focusdir,right
+    bind=SUPER,K,focusdir,up
+    bind=SUPER,J,focusdir,down
     bind=SUPER,Tab,focusstack,next
-    bind=SUPER,h,focusdir,left
-    bind=SUPER,l,focusdir,right
-    bind=SUPER,k,focusdir,up
-    bind=SUPER,j,focusdir,down
 
-    # Swap windows
-    bind=SUPER+SHIFT,h,exchange_client,left
-    bind=SUPER+SHIFT,l,exchange_client,right
-    bind=SUPER+SHIFT,k,exchange_client,up
-    bind=SUPER+SHIFT,j,exchange_client,down
+    # Move windows (vim)
+    bind=SUPER+SHIFT,H,exchange_client,left
+    bind=SUPER+SHIFT,L,exchange_client,right
+    bind=SUPER+SHIFT,K,exchange_client,up
+    bind=SUPER+SHIFT,J,exchange_client,down
+
+    # Resize windows
+    bind=SUPER+CTRL,H,resizewin,-50,+0
+    bind=SUPER+CTRL,L,resizewin,+50,+0
+    bind=SUPER+CTRL,K,resizewin,+0,-50
+    bind=SUPER+CTRL,J,resizewin,+0,+50
+
+    # Move floating windows (vim)
+    bind=SUPER+ALT,H,movewin,-50,+0
+    bind=SUPER+ALT,L,movewin,+50,+0
+    bind=SUPER+ALT,K,movewin,+0,-50
+    bind=SUPER+ALT,J,movewin,+0,+50
+
+    # Scratchpad / overlay
+    bind=SUPER,T,toggle_scratchpad
+    bind=SUPER+SHIFT,T,minimized
+
+    # Overview
+    bind=SUPER,Escape,toggleoverview,
 
     # Misc
-    # bind=SUPER,Escape,toggleoverview,
+    # bind=SUPER,G,spawn,${noctaliaIpc ["wallpaper" "random"]}
+    bind=SUPER+SHIFT,G,toggleglobal,
+    bind=SUPER,I,minimized,
+    bind=SUPER+SHIFT,I,restore_minimized,
+    bind=SUPER,g,switch_layout,
 
+    # Tags (generated: SUPER,1-5 view / SUPER+SHIFT,1-5 move)
+    ${workspaces}
 
+    # Monitor focus
+    bind=SUPER,comma,focusmon,left
+    bind=SUPER,period,focusmon,right
 
-    # switch window focus
+    # Scroller layout
+    bind=SUPER,E,set_proportion,1.0
+    bind=SUPER+SHIFT,E,switch_proportion_preset,
 
-    # swap window
+    # Media keys
+    bind=NONE,XF86AudioPlay,spawn,${noctaliaIpc ["media" "playPause"]}
+    bind=NONE,XF86AudioPrev,spawn,${noctaliaIpc ["media" "previous"]}
+    bind=NONE,XF86AudioNext,spawn,${noctaliaIpc ["media" "next"]}
+    bind=NONE,XF86AudioRaiseVolume,spawn,${noctaliaIpc ["volume" "increase"]}
+    bind=NONE,XF86AudioLowerVolume,spawn,${noctaliaIpc ["volume" "decrease"]}
 
-    # switch window status
-    bind=SUPER,g,toggleglobal,
-    bind=ALT,backslash,togglefloating,
-    bind=ALT,a,togglemaximizescreen,
-    bind=ALT+SHIFT,f,togglefakefullscreen,
-    bind=SUPER,i,minimized,
-    bind=SUPER,o,toggleoverlay,
-    bind=SUPER+SHIFT,I,restore_minimized
-    bind=ALT,z,toggle_scratchpad
-
-    # movewin
-    bind=CTRL+SHIFT,Up,movewin,+0,-50
-    bind=CTRL+SHIFT,Down,movewin,+0,+50
-    bind=CTRL+SHIFT,Left,movewin,-50,+0
-    bind=CTRL+SHIFT,Right,movewin,+50,+0
-
-    # scroller layout
-    bind=ALT,e,set_proportion,1.0
-    bind=ALT,x,switch_proportion_preset,
-
-    # switch layout
-    bind=SUPER,n,switch_layout
-
-    # tag switch
-    bind=SUPER,Left,viewtoleft,0
-    bind=CTRL,Left,viewtoleft_have_client,0
-    bind=SUPER,Right,viewtoright,0
-    bind=CTRL,Right,viewtoright_have_client,0
-    bind=CTRL+SUPER,Left,tagtoleft,0
-    bind=CTRL+SUPER,Right,tagtoright,0
-
-    # Monitor switch
-    bind=SUPER+Alt,h,focusmon,left
-    bind=SUPER+Alt,l,focusmon,right
-
-    bind=Ctrl,1,view,1,0
-    bind=Ctrl,2,view,2,0
-    bind=Ctrl,3,view,3,0
-    bind=Ctrl,4,view,4,0
-    bind=Ctrl,5,view,5,0
-
-    # tag: move client to the tag and focus it
-    # tagsilent: move client to the tag and not focus it
-    # bind=Alt,1,tagsilent,1
-    bind=Alt,1,tag,1,0
-    bind=Alt,2,tag,2,0
-    bind=Alt,3,tag,3,0
-    bind=Alt,4,tag,4,0
-    bind=Alt,5,tag,5,0
-
-    # gaps
-    bind=ALT+SHIFT,X,incgaps,1
-    bind=ALT+SHIFT,Z,incgaps,-1
-    bind=ALT+SHIFT,R,togglegaps
-
-    # resizewin
-    bind=CTRL+ALT,Up,resizewin,+0,-50
-    bind=CTRL+ALT,Down,resizewin,+0,+50
-    bind=CTRL+ALT,Left,resizewin,-50,+0
-    bind=CTRL+ALT,Right,resizewin,+50,+0
-
-    # Mouse Button Bindings
-    # NONE mode key only work in ov mode
+    # Mouse
     mousebind=SUPER,btn_left,moveresize,curmove
     mousebind=SUPER,btn_right,moveresize,curresize
-
   '';
 }
