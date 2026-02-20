@@ -39,7 +39,7 @@ in {
         keybind = [
           # Tabs
           "ctrl+t=new_tab"
-          "ctrl+w=close_tab"
+          "ctrl+q=close_tab"
           "ctrl+shift+h=previous_tab"
           "ctrl+shift+l=next_tab"
 
