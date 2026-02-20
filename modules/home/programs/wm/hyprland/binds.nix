@@ -5,7 +5,6 @@
   ...
 }: let
   inherit (lib) mkIf;
-
   cfg = config.${namespace}.programs.wm.hyprland;
   inherit (config.${namespace}.programs) defaults;
   workspaces = builtins.concatLists (builtins.genList (
@@ -17,7 +16,6 @@
       ]
     )
     5);
-
   noctaliaIpc = args: "noctalia-shell ipc call ${lib.concatStringsSep " " args}";
 in {
   wayland.windowManager.hyprland.settings = mkIf cfg.enable {
@@ -61,7 +59,7 @@ in {
         # Misc
         "$MOD, T, togglespecialworkspace"
         "$MOD SHIFT, T, movetoworkspacesilent, special"
-
+        "$MOD, G, exec, ${noctaliaIpc ["wallpaper" "random"]}"
         # Plugins
         "$MOD, Escape, hyprexpo:expo, toggle"
       ]
