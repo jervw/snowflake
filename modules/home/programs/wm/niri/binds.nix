@@ -68,8 +68,8 @@ in
         "Mod+Shift+J".action.move-column-to-workspace-down = {};
 
         # Move between monitors
-        "Mod+Tab".action.focus-monitor-next = {};
-        "Mod+Shift+Tab".action.focus-monitor-previous = {};
+        "Mod+comma".action.focus-monitor-next = {};
+        "Mod+period".action.focus-monitor-previous = {};
 
         # Toggle overview
         "Mod+Escape".action.toggle-overview = {};
@@ -119,6 +119,7 @@ in
         # Brightness controls
         "XF86MonBrightnessUp".action.spawn = noctaliaIpc ["brightness" "increase"];
         "XF86MonBrightnessDown".action.spawn = noctaliaIpc ["brightness" "decrease"];
+        # TODO Add kbd brightness
         # "XF86KbdBrightnessUp".action.spawn = ["swayosd-client" "--device=apple::kbd_backlight" "--brightness" "raise"];
         # "XF86KbdBrightnessDown".action.spawn = ["swayosd-client" "--device=apple::kbd_backlight" "--brightness" "lower"];
 
