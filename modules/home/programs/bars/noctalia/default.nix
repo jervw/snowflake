@@ -41,6 +41,33 @@ in {
         sessionMenu = {
           largeButtonsStyle = true;
           enableCountdown = false;
+          powerOptions = [
+            {
+              action = "lock";
+              enabled = true;
+              keybind = "1";
+            }
+            {
+              action = "reboot";
+              enabled = true;
+              keybind = "2";
+            }
+            {
+              action = "logout";
+              enabled = true;
+              keybind = "3";
+            }
+            {
+              action = "shutdown";
+              enabled = true;
+              keybind = "4";
+            }
+            {
+              action = "rebootToUefi";
+              enabled = true;
+              keybind = "5";
+            }
+          ];
         };
         bar = {
           density = "comfortable";
@@ -90,8 +117,6 @@ in {
               }
               {
                 id = "ControlCenter";
-                useDistroLogo = true;
-                colorizeDistroLogo = true;
                 colorizeSystemIcon = "primary";
                 enableColorization = true;
               }
