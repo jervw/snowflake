@@ -39,7 +39,7 @@ in {
 
     programs.fish.loginShellInit = mkIf cfg.autoStart ''
       if test -z "$DISPLAY"; and test (tty) = "/dev/tty1"
-        exec uwsm start default
+        exec uwsm start -g -1 default
       end
     '';
   };
