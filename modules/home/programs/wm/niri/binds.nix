@@ -123,6 +123,7 @@ in
         # "XF86KbdBrightnessDown".action.spawn = ["swayosd-client" "--device=apple::kbd_backlight" "--brightness" "lower"];
 
         "Mod+Shift+E".action.spawn = noctaliaIpc ["sessionMenu" "toggle"];
+        "Mod+G".action.spawn = noctaliaIpc ["wallpaper" "random"];
 
         # Misc
         "Mod+Shift+BracketLeft".action.consume-window-into-column = {};
