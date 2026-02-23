@@ -148,6 +148,7 @@ in {
           yazi = true;
           hyprtoolkit = true;
           zathura = true;
+          zed = true;
         };
       };
     };
