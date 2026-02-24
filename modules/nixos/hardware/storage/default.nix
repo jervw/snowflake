@@ -33,6 +33,9 @@ in {
           extraPools = ["zpool"];
         };
       };
+      services.zfs = {
+        autoScrub.enable = true;
+      };
     })
 
     # Extra storage tools
