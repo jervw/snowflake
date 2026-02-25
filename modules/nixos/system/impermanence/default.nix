@@ -48,6 +48,7 @@ in {
             "other"
             "games"
             ".dots"
+            ".factorio"
             ".logseq"
             ".var/app" # flatpak app data
           ]
