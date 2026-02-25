@@ -15,6 +15,7 @@ in {
   config = mkIf cfg.enable {
     programs.zen-browser = {
       enable = true;
+      suppressXdgMigrationWarning = true;
       policies = {
         # Browser
         DisableAppUpdate = true;
