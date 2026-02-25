@@ -14,82 +14,72 @@ in {
   options.${namespace}.system.impermanence = {
     enable = mkEnableOption "impermanence";
   };
-
   config = mkIf cfg.enable {
     environment.persistence."/persist" = {
       hideMounts = true;
-
       directories =
         [
           "/tmp"
-          "/var/log"
-          "/var/tmp"
           "/var/db/sudo"
           "/var/lib/sbctl"
+          "/var/log"
+          "/var/tmp"
         ]
         ++ mkDirs "/etc/" ["NetworkManager" "nix" "ssh"]
-        ++ mkDirs "/var/lib/" ["tailscale" "bluetooth" "nixos" "pipewire" "libvirt" "docker" "flatpak"]
+        ++ mkDirs "/var/lib/" ["bluetooth" "docker" "flatpak" "libvirt" "nixos" "pipewire" "tailscale"]
         ++ mkDirs "/var/lib/systemd/" ["coredump" "timers"];
-
       files = ["/etc/machine-id"];
-
       users.${user.name} = {
         files = [".config/ghostty/themes/noctalia"];
-
         directories =
           [
-            "download"
-            "music"
-            "dev"
-            "docs"
-            "pics"
-            "vids"
-            "sync"
-            "other"
-            "games"
             ".dots"
             ".factorio"
             ".logseq"
-            ".var/app" # flatpak app data
+            ".var/app"
+            "dev"
+            "docs"
+            "download"
+            "games"
+            "music"
+            "other"
+            "pics"
+            "sync"
+            "vids"
           ]
+          ++ mkDirs ".cache/" ["nix" "noctalia"]
           ++ mkDirs ".config/" [
-            "dconf"
-            "heroic"
-            "fractal"
-            "rclone"
-            "nushell"
-            "BraveSoftware"
-            "vesktop"
-            "equibop"
-            "obs-studio"
-            "noctalia"
-            "zed"
-            "FreeTube"
-            "harper-ls"
             "BeeperTexts"
             "Element"
-            "fcitx5"
-            "qt6ct"
+            "FreeTube"
             "Logseq"
+            "dconf"
+            "equibop"
+            "fcitx5"
+            "fractal"
+            "harper-ls"
+            "heroic"
+            "noctalia"
+            "nushell"
+            "obs-studio"
+            "qt6ct"
+            "rclone"
+            "vesktop"
+            "zed"
+            "zen"
           ]
-          ++ mkDirs ".cache/" ["nix" "BraveSoftware" "noctalia"]
           ++ mkDirs ".local/share/" [
             "Anki2"
-            "direnv"
             "PrismLauncher"
-            "BraveSoftware"
-            "zed"
             "Steam"
+            "direnv"
             "fish"
-            "lutris"
             "flatpak"
+            "lutris"
+            "zed"
           ]
           ++ mkDirs ".local/state/" ["syncthing" "wireplumber"]
           ++ [
-            {
-              directory = ".ssh";
-              mode = "0700";
-            }
             {
               directory = ".gnupg";
               mode = "0700";
@@ -98,10 +88,13 @@ in {
               directory = ".local/share/keyrings";
               mode = "0700";
             }
+            {
+              directory = ".ssh";
+              mode = "0700";
+            }
           ];
       };
     };
-
     systemd.tmpfiles.rules = mkDirs "L /var/lib/NetworkManager/" [
       "secret_key - - - - /persist/var/lib/NetworkManager/secret_key"
       "seen-bssids - - - - /persist/var/lib/NetworkManager/seen-bssids"
