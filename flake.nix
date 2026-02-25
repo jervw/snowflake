@@ -97,13 +97,13 @@
         lanzaboote.nixosModules.lanzaboote
         nix-index.nixosModules.nix-index
         quadlet-nix.nixosModules.quadlet
-        zen-browser.homeModules.twilight
       ];
 
       homes.modules = with inputs; [
         noctalia.homeModules.default
         niri.homeModules.niri
         mango.hmModules.mango
+        zen-browser.homeModules.twilight
       ];
 
       # Other generic outputs
