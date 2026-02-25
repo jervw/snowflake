@@ -56,6 +56,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     ssh-keys = {
       url = "https://github.com/jervw.keys";
       flake = false;
@@ -90,6 +95,7 @@
         impermanence.nixosModule
         lanzaboote.nixosModules.lanzaboote
         nix-index.nixosModules.nix-index
+        zen-browser.homeModules.twilight
       ];
 
       homes.modules = with inputs; [

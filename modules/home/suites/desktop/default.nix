@@ -33,15 +33,13 @@ in {
     snowflake = {
       theme.enable = true;
       programs = {
-        browsers = {
-          brave = mkDefault enabled;
-        };
         apps = {
           freetube = mkDefault enabled;
           mpv = mkDefault enabled;
           obs = mkDefault enabled;
           imv = mkDefault enabled;
           zathura = mkDefault enabled;
+          zen = mkDefault enabled;
         };
         term = {
           ghostty = mkDefault enabled;

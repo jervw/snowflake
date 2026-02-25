@@ -26,7 +26,6 @@ in {
   snowflake = {
     programs = {
       apps.flatpak = enabled;
-      addons.chromium-policies = enabled;
     };
     hardware = {
       cpu.amd = enabled;

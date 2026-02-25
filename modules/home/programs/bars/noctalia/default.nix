@@ -149,6 +149,7 @@ in {
           hyprtoolkit = true;
           zathura = true;
           zed = true;
+          zenBrowser = true;
         };
       };
     };

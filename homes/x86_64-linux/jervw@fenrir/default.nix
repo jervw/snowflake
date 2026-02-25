@@ -14,8 +14,6 @@ in {
 
     programs = {
       wm.niri = enabled;
-      browsers.brave = enabled;
-      defaults.browser = "brave";
     };
 
     services = {
