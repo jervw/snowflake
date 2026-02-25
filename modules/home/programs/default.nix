@@ -14,7 +14,7 @@ in {
 
     browser = mkOption {
       type = types.str;
-      default = "uwsm app -- zen";
+      default = "uwsm app -- zen-twilight";
       description = "Default web browser launch command";
     };
 
