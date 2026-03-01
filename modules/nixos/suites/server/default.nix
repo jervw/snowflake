@@ -23,7 +23,6 @@ in {
         flaresolverr = mkDefault enabled;
         glance = mkDefault enabled;
         immich = mkDefault enabled;
-        jellyfin = mkDefault enabled;
         jellyseerr = mkDefault enabled;
         karakeep = mkDefault enabled;
         logind = mkDefault enabled;
