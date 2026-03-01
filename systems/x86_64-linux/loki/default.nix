@@ -51,9 +51,6 @@ in {
     };
 
     services = {
-      ollama = {
-        enable = true;
-      };
       logind = enabled;
     };
 
