@@ -25,7 +25,7 @@ in {
       doc.enable = false;
       info.enable = false;
 
-      man.generateCaches = mkForce false;
+      man.cache.enable = mkForce false;
 
       nixos = {
         enable = true;
