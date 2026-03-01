@@ -18,7 +18,7 @@ in {
     home.packages = with pkgs; [
       xdg-utils
       anki-bin
-      calibre
+      # calibre
       beeper
       ffmpeg
       tomato-c
