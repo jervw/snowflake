@@ -60,7 +60,7 @@ _: {
       dim_strength = 0.2;
 
       blur = {
-        enabled = false;
+        enabled = true;
         size = 8;
         passes = 2;
         noise = 0.02;
