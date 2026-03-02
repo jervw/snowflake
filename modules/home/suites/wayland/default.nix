@@ -35,7 +35,6 @@ in {
     snowflake = {
       programs = {
         addons = {
-          hypridle = mkDefault enabled;
         };
         bars = {
           noctalia = mkDefault enabled;

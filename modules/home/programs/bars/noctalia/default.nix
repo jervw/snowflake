@@ -37,6 +37,10 @@ in {
         nightLight = {
           enabled = true;
         };
+        idle = {
+          enabled = true;
+          suspendTimeout = 0; # Disable suspend
+        };
 
         sessionMenu = {
           largeButtonsStyle = true;
