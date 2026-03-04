@@ -66,7 +66,7 @@ in {
       "HDMI-A-1,preferred,auto-left,1"
     ];
     workspace = [
-      "1, monitor:HDMI-A-1, gapsin:5, gapsout:5, default:true"
+      "1, monitor:HDMI-A-1, gapsin:5, gapsout:5, layout:scrolling"
       "2, monitor:DP-1, default:true"
       "3, monitor:DP-1"
       "4, monitor:DP-1"
