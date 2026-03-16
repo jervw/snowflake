@@ -8,9 +8,6 @@
     helix.url = "github:gj1118/helix";
     quadlet-nix.url = "github:SEIAROTg/quadlet-nix";
 
-    # TEMP
-    nixpkgs-nvidia.url = "github:NixOS/nixpkgs/ab9ad415916a0fb89d1f539a9291d9737e95148e";
-
     agenix = {
       url = "github:ryantm/agenix";
       inputs.darwin.follows = "";

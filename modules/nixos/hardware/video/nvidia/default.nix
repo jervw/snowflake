@@ -2,7 +2,6 @@
   config,
   lib,
   pkgs,
-  inputs,
   namespace,
   ...
 }: let
@@ -55,16 +54,7 @@ in {
 
     hardware = {
       nvidia = {
-        package = let
-          nvidia-fixed-pkgs = import inputs.nixpkgs-nvidia {
-            system = "x86_64-linux";
-            config.allowUnfree = true;
-          };
-          fixedKernelPackages = nvidia-fixed-pkgs.linuxKernel.packagesFor config.boot.kernelPackages.kernel;
-        in
-          fixedKernelPackages.nvidiaPackages.beta;
-
-        # package = mkDefault nvidiaPackage;
+        package = mkDefault nvidiaPackage;
         modesetting.enable = mkDefault true;
 
         powerManagement = {
