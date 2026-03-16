@@ -21,7 +21,7 @@ in {
         # Launchers
         prismlauncher
         lutris
-        heroic
+        # FIX build fail heroic
 
         # Misc
         r2modman
