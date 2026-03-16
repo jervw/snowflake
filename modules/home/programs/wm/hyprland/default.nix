@@ -28,9 +28,9 @@ in {
       enable = true;
       xwayland.enable = true;
       systemd.enable = false; # uwsm should handle everything
-      plugins = with pkgs.hyprlandPlugins; [
-        hyprexpo
-      ];
+      # plugins = with pkgs.hyprlandPlugins; [
+      #   hyprexpo
+      # ];
     };
 
     ${namespace}.programs.wm.hyprland.uwsmEntry = mkIf cfg.enable {

@@ -60,8 +60,9 @@ in {
         "$MOD, T, togglespecialworkspace"
         "$MOD SHIFT, T, movetoworkspacesilent, special"
         "$MOD, G, exec, ${noctaliaIpc ["wallpaper" "random"]}"
-        # Plugins
-        "$MOD, Escape, hyprexpo:expo, toggle"
+
+        # # Plugins
+        # "$MOD, Escape, hyprexpo:expo, toggle"
       ]
       ++ workspaces;
 
