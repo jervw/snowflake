@@ -26,7 +26,7 @@ in {
       [
         pulsemixer
         pavucontrol
-        helvum
+        crosspipe
       ]
       ++ cfg.extra-packages;
 
