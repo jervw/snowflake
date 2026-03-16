@@ -5,17 +5,8 @@
   namespace,
   ...
 }: let
-  inherit (lib) mkDefault mkIf versionOlder;
+  inherit (lib) mkDefault mkIf;
   cfg = config.${namespace}.hardware.video.nvidia;
-
-  # use the latest possible nvidia package
-  nvStable = config.boot.kernelPackages.nvidiaPackages.stable.version;
-  nvBeta = config.boot.kernelPackages.nvidiaPackages.beta.version;
-
-  nvidiaPackage =
-    if (versionOlder nvBeta nvStable)
-    then config.boot.kernelPackages.nvidiaPackages.stable
-    else config.boot.kernelPackages.nvidiaPackages.beta;
 in {
   options.${namespace}.hardware.video.nvidia = {
     enable = lib.mkEnableOption "support for nvidia";
@@ -54,7 +45,7 @@ in {
 
     hardware = {
       nvidia = {
-        package = mkDefault nvidiaPackage;
+        package = config.boot.kernelPackages.nvidiaPackages.latest;
         modesetting.enable = mkDefault true;
 
         powerManagement = {
