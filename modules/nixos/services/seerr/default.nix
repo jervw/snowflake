@@ -5,14 +5,14 @@
   ...
 }: let
   inherit (lib) mkEnableOption mkIf mkOption;
-  cfg = config.${namespace}.services.jellyseerr;
+  cfg = config.${namespace}.services.seerr;
 in {
-  options.${namespace}.services.jellyseerr = {
-    enable = mkEnableOption "Enable Jellyseerr service";
+  options.${namespace}.services.seerr = {
+    enable = mkEnableOption "Enable Seerr service";
     host = mkOption {
       type = lib.types.str;
       default = "seerr.jervw.dev";
-      description = "Reverse proxy host name for the Jellyseerr service";
+      description = "Reverse proxy host name for the Seerr service";
     };
     port = mkOption {
       type = lib.types.number;
@@ -22,7 +22,7 @@ in {
 
   config = mkIf cfg.enable {
     services = {
-      jellyseerr = {
+      seerr = {
         enable = true;
         openFirewall = true;
         inherit (cfg) port;
