@@ -18,7 +18,6 @@ in {
     programs.noctalia-shell = {
       enable = true;
       package = inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default;
-      systemd.enable = true;
       settings = {
         general = {
           avatarImage = "/home/jervw/pics/.face";
@@ -104,6 +103,7 @@ in {
               }
               {
                 id = "plugin:tailscale";
+                taildropDownloadDir = "~/download";
               }
               {
                 id = "plugin:privacy-indicator";

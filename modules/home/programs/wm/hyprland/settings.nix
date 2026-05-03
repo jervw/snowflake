@@ -7,7 +7,9 @@ _: {
       "XDG_SESSION_DESKTOP,Hyprland"
     ];
 
-    exec-once = [];
+    exec-once = [
+      "noctalia-shell"
+    ];
 
     general = {
       gaps_in = 8;

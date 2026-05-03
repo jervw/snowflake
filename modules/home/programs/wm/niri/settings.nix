@@ -7,9 +7,9 @@
 }: let
   inherit (lib) mkIf;
   cfg = config.${namespace}.programs.wm.niri;
-  # mkCommand = command: {
-  #   command = [command];
-  # };
+  mkCommand = command: {
+    command = [command];
+  };
 in
   mkIf cfg.enable {
     programs.niri = {
@@ -18,7 +18,9 @@ in
           honor-xdg-activation-with-invalid-serial = [];
         };
 
-        spawn-at-startup = [];
+        spawn-at-startup = [
+          (mkCommand "noctalia-shell")
+        ];
 
         input = {
           keyboard = {
