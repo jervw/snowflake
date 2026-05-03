@@ -25,6 +25,8 @@ in {
     };
   };
 
+  # TODO Use Nixos module
+
   config = mkIf cfg.enable {
     virtualisation.oci-containers.containers.speedtest-tracker = {
       image = "lscr.io/linuxserver/speedtest-tracker:latest";
