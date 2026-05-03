@@ -7,7 +7,7 @@
 }: let
   inherit (lib) mkEnableOption;
 in {
-  options.${namespace}.services.ssh = {
+  options.${namespace}.networking.ssh = {
     enable = mkEnableOption "Whether to enable OpenSSH";
   };
 

@@ -48,11 +48,11 @@ in {
 
       services = {
         logind = mkDefault enabled;
-        ssh = mkDefault enabled;
       };
 
       networking = {
         networkmanager = mkDefault enabled;
+        ssh = mkDefault enabled;
       };
 
       system = {
