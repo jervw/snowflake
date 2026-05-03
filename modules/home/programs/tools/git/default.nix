@@ -53,6 +53,7 @@ in {
 
       signing = {
         key = cfg.signingKey;
+        format = null;
         inherit (cfg) signByDefault;
       };
     };

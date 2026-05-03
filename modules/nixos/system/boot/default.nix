@@ -20,7 +20,7 @@ in {
     environment.systemPackages = with pkgs;
       [
         efibootmgr
-        efitools
+        # efitools
         efivar
       ]
       ++ lib.optionals cfg.secureBoot [sbctl tpm2-tss];

@@ -24,10 +24,8 @@ in {
       tomato-c
       qbittorrent-enhanced
       fontpreview
-      tana
       equibop
       element-desktop
-      logseq
     ];
 
     snowflake = {

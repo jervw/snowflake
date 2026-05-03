@@ -20,8 +20,9 @@ in {
       [
         # Launchers
         prismlauncher
-        lutris
-        # FIX build fail heroic
+        # TODO Build failure
+        # lutris
+        heroic
 
         # Misc
         r2modman
