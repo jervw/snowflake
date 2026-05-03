@@ -30,11 +30,6 @@ in {
         import cloudflare
       '';
 
-      # Tubearchivist
-      "tube.jervw.dev".extraConfig = ''
-        reverse_proxy http://thor:8933
-        import cloudflare
-      '';
       # Wallos
       "wallos.jervw.dev".extraConfig = ''
         reverse_proxy http://thor:8282
