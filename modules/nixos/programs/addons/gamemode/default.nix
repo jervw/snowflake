@@ -23,7 +23,6 @@ in {
     startscript = mkOpt (with lib.types; nullOr str) null "The script to run when enabling gamemode.";
   };
 
-  # TODO: Add Hyprland scripts (to hyprland module somewhere)
   # TODO Add GPU overclocking when there is a easy way to do it on Wayland + NVIDIA
 
   config = let

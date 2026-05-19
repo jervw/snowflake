@@ -111,15 +111,6 @@ in {
         xdgOpenUsePortal = true;
 
         config = {
-          hyprland = mkIf config.${namespace}.programs.wm.hyprland.enable {
-            default = [
-              "hyprland"
-              "gtk"
-              "gnome"
-            ];
-            "org.freedesktop.impl.portal.Screencast" = "hyprland";
-            "org.freedesktop.impl.portal.Screenshot" = "hyprland";
-          };
           common = {
             default = [
               "gtk"
@@ -149,13 +140,11 @@ in {
           };
         };
 
-        extraPortals = with pkgs;
-          [
-            xdg-desktop-portal-gtk
-            xdg-desktop-portal-gnome
-            gnome-keyring
-          ]
-          ++ lib.optional config.wayland.windowManager.hyprland.enable xdg-desktop-portal-hyprland;
+        extraPortals = with pkgs; [
+          xdg-desktop-portal-gtk
+          xdg-desktop-portal-gnome
+          gnome-keyring
+        ];
       };
     };
   };
