@@ -71,6 +71,7 @@ in {
           ++ mkDirs ".local/share/" [
             "Anki2"
             "PrismLauncher"
+            "helix"
             "Steam"
             "direnv"
             "fish"
