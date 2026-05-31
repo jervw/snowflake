@@ -12,7 +12,6 @@
   # Collect all compositor uwsm entries from home-manager
   uwsmEntries = {
     niri = hmUser.${namespace}.programs.wm.niri.uwsmEntry or null;
-    mango = hmUser.${namespace}.programs.wm.mango.uwsmEntry or null;
   };
 
   # Filter out null entries

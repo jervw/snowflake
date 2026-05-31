@@ -40,11 +40,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    mango = {
-      url = "github:DreamMaoMao/mango";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -100,7 +95,6 @@
       homes.modules = with inputs; [
         noctalia.homeModules.default
         niri.homeModules.niri
-        mango.hmModules.mango
         zen-browser.homeModules.twilight
       ];
 

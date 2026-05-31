@@ -4,7 +4,7 @@
   namespace,
   ...
 }: let
-  inherit (lib.${namespace}) enabled disabled;
+  inherit (lib.${namespace}) enabled;
 in {
   snowflake = {
     user = {
@@ -15,7 +15,6 @@ in {
     programs = {
       wm = {
         niri = enabled;
-        mango = disabled;
       };
     };
 
