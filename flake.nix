@@ -7,6 +7,7 @@
     cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
     helix.url = "github:gj1118/helix";
     quadlet-nix.url = "github:SEIAROTg/quadlet-nix";
+    ghostty.url = "github:ghostty-org/ghostty";
 
     agenix = {
       url = "github:ryantm/agenix";
