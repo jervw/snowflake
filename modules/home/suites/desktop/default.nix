@@ -32,7 +32,6 @@ in {
       theme.enable = true;
       programs = {
         apps = {
-          freetube = mkDefault enabled;
           mpv = mkDefault enabled;
           obs = mkDefault enabled;
           imv = mkDefault enabled;

@@ -34,8 +34,6 @@ in {
 
     snowflake = {
       programs = {
-        addons = {
-        };
         bars = {
           noctalia = mkDefault enabled;
         };
