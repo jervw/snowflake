@@ -45,6 +45,7 @@ in {
         auto-optimise-store = true;
         allowed-users = ["@wheel"];
         trusted-users = ["root" "@wheel"];
+        accept-flake-config = true;
         substituters = [
           "https://cache.nixos.org"
           "https://nix-community.cachix.org"
