@@ -20,14 +20,8 @@ in {
 
     launcher = mkOption {
       type = types.str;
-      default = "noctalia-shell ipc call launcher toggle";
+      default = "noctalia msg panel-toggle launcher";
       description = "Default launcher command";
-    };
-
-    lock = mkOption {
-      type = types.str;
-      default = "noctalia-shell ipc call lockScreen lock";
-      description = "Default lock command";
     };
   };
 }
