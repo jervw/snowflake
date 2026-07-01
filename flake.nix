@@ -5,6 +5,7 @@
     impermanence.url = "github:nix-community/impermanence";
     nixos-hardware.url = "github:nixos/nixos-hardware";
     treefmt-nix.url = "github:numtide/treefmt-nix";
+    nixcord.url = "github:FlameFlag/nixcord";
     helix.url = "github:gj1118/helix";
     quadlet-nix.url = "github:SEIAROTg/quadlet-nix";
     ghostty.url = "github:ghostty-org/ghostty";
@@ -84,6 +85,7 @@
       homes.modules = with inputs; [
         noctalia.homeModules.default
         niri.homeModules.niri
+        nixcord.homeModules.nixcord
       ];
 
       # Other generic outputs

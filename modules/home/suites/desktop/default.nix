@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  inputs,
   namespace,
   ...
 }: let
@@ -49,6 +50,7 @@ in {
           noctalia = mkDefault enabled;
         };
         apps = {
+          discord = mkDefault enabled;
           mpv = mkDefault enabled;
           obs = mkDefault enabled;
           imv = mkDefault enabled;
