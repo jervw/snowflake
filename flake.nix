@@ -32,7 +32,7 @@
     };
 
     niri = {
-      url = "github:sodiboo/niri-flake";
+      url = "github:epireyn/niri-flake/350668eca0bbc657bc5721e0a90f3707e269f021"; # TODO Dont pin, latest commit is just broken rn
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
