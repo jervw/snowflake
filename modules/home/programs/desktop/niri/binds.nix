@@ -6,7 +6,7 @@
 }: let
   inherit (lib) mkIf;
 
-  cfg = config.${namespace}.programs.wm.niri;
+  cfg = config.${namespace}.programs.desktop.niri;
   inherit (config.${namespace}.programs) defaults;
 
   workspaceBinds = count:
@@ -31,7 +31,7 @@
   workspaces = workspaceBinds 9;
 
   cmdToArgv = cmd: lib.splitString " " cmd;
-  noctaliaIpc = args: ["noctalia-shell" "ipc" "call"] ++ args;
+  noctaliaIpc = args: ["noctalia" "msg"] ++ args;
 in
   mkIf cfg.enable {
     programs.niri.settings.binds =
@@ -110,21 +110,18 @@ in
         "Mod+U".action.clear-dynamic-cast-target = {};
 
         # Media controls
-        "XF86AudioPlay".action.spawn = noctaliaIpc ["media" "playPause"];
+        "XF86AudioPlay".action.spawn = noctaliaIpc ["media" "toggle"];
         "XF86AudioPrev".action.spawn = noctaliaIpc ["media" "previous"];
         "XF86AudioNext".action.spawn = noctaliaIpc ["media" "next"];
-        "XF86AudioRaiseVolume".action.spawn = noctaliaIpc ["volume" "increase"];
-        "XF86AudioLowerVolume".action.spawn = noctaliaIpc ["volume" "decrease"];
+        "XF86AudioRaiseVolume".action.spawn = noctaliaIpc ["volume-up"];
+        "XF86AudioLowerVolume".action.spawn = noctaliaIpc ["volume-down"];
 
         # Brightness controls
-        "XF86MonBrightnessUp".action.spawn = noctaliaIpc ["brightness" "increase"];
-        "XF86MonBrightnessDown".action.spawn = noctaliaIpc ["brightness" "decrease"];
-        # TODO Add kbd brightness
-        # "XF86KbdBrightnessUp".action.spawn = ["swayosd-client" "--device=apple::kbd_backlight" "--brightness" "raise"];
-        # "XF86KbdBrightnessDown".action.spawn = ["swayosd-client" "--device=apple::kbd_backlight" "--brightness" "lower"];
+        "XF86MonBrightnessUp".action.spawn = noctaliaIpc ["brightness" "up"];
+        "XF86MonBrightnessDown".action.spawn = noctaliaIpc ["brightness" "down"];
 
-        "Mod+Shift+E".action.spawn = noctaliaIpc ["sessionMenu" "toggle"];
-        "Mod+G".action.spawn = noctaliaIpc ["wallpaper" "random"];
+        "Mod+Shift+E".action.spawn = noctaliaIpc ["panel-toggle" "session"];
+        "Mod+G".action.spawn = noctaliaIpc ["wallpaper-random"];
 
         # Misc
         "Mod+Shift+BracketLeft".action.consume-window-into-column = {};

@@ -5,9 +5,9 @@
   config,
   ...
 }: let
-  cfg = config.${namespace}.programs.wm.niri;
+  cfg = config.${namespace}.programs.desktop.niri;
 in {
-  options.${namespace}.programs.wm.niri = {
+  options.${namespace}.programs.desktop.niri = {
     enable = lib.mkEnableOption "Enable niri";
     uwsmEntry = lib.mkOption {
       type = lib.types.nullOr lib.types.attrs;
@@ -24,7 +24,7 @@ in {
       package = pkgs.niri-unstable;
     };
 
-    ${namespace}.programs.wm.niri.uwsmEntry = lib.mkIf cfg.enable {
+    ${namespace}.programs.desktop.niri.uwsmEntry = lib.mkIf cfg.enable {
       prettyName = "Niri";
       comment = "Niri compositor managed by UWSM";
       binPath = "${config.programs.niri.package}/bin/niri-session";

@@ -6,7 +6,7 @@
   ...
 }: let
   inherit (lib) mkIf;
-  cfg = config.${namespace}.programs.wm.niri;
+  cfg = config.${namespace}.programs.desktop.niri;
   mkCommand = command: {
     command = [command];
   };
@@ -19,7 +19,7 @@ in
         };
 
         spawn-at-startup = [
-          (mkCommand "noctalia-shell")
+          (mkCommand "noctalia")
         ];
 
         input = {

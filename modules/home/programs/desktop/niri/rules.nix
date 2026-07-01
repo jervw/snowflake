@@ -6,7 +6,7 @@
 }: let
   inherit (lib) mkIf;
 
-  cfg = config.${namespace}.programs.wm.niri;
+  cfg = config.${namespace}.programs.desktop.niri;
 
   mkMatchRule = {
     appId,
@@ -90,12 +90,6 @@
     }
     {
       matches = [
-        {app-id = "^(zen|firefox||zen-.*)$";}
-      ];
-      open-maximized = true;
-    }
-    {
-      matches = [
         {title = "^Picture in picture$";}
       ];
       open-floating = true;
@@ -112,7 +106,7 @@ in
       window-rules = windowRules ++ floatingRules;
       layer-rules = [
         {
-          matches = [{namespace = "^noctalia-overview*";}];
+          matches = [{namespace = "^noctalia-backdrop";}];
           place-within-backdrop = true;
         }
       ];
