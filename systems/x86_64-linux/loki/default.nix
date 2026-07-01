@@ -11,9 +11,6 @@ in {
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   snowflake = {
-    programs = {
-      apps.flatpak = enabled;
-    };
     hardware = {
       cpu.amd = enabled;
       video = {
