@@ -20,8 +20,7 @@ in {
       [
         # Launchers
         prismlauncher
-        # TODO Build failure
-        # lutris
+        lutris
         heroic
 
         # Misc
