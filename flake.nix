@@ -5,7 +5,6 @@
     impermanence.url = "github:nix-community/impermanence";
     nixos-hardware.url = "github:nixos/nixos-hardware";
     treefmt-nix.url = "github:numtide/treefmt-nix";
-    cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
     helix.url = "github:gj1118/helix";
     quadlet-nix.url = "github:SEIAROTg/quadlet-nix";
     ghostty.url = "github:ghostty-org/ghostty";
@@ -76,7 +75,6 @@
       };
 
       overlays = with inputs; [
-        cachyos-kernel.overlays.pinned
         niri.overlays.niri
       ];
 
