@@ -14,13 +14,6 @@ in
   mkIf cfg.enable {
     programs.niri = {
       settings = {
-        includes = [
-          {
-            path = "noctalia.kdl";
-            optional = true;
-          }
-        ];
-
         debug = {
           honor-xdg-activation-with-invalid-serial = [];
         };

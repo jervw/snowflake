@@ -73,6 +73,12 @@ in {
       helix.settings.theme = mkForce "noctalia";
       ghostty.settings.theme = mkForce "noctalia";
       zathura.extraConfig = "include noctaliarc";
+      niri.settings.includes = [
+        {
+          path = "noctalia.kdl";
+          optional = true;
+        }
+      ];
     };
   };
 }
