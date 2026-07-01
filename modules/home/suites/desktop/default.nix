@@ -16,6 +16,7 @@ in {
 
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
+      inputs.helium.packages.${pkgs.stdenv.hostPlatform.system}.default
       xdg-utils
       anki-bin
       cider-2
@@ -52,7 +53,6 @@ in {
           obs = mkDefault enabled;
           imv = mkDefault enabled;
           zathura = mkDefault enabled;
-          zen = mkDefault enabled;
         };
         term = {
           ghostty = mkDefault enabled;

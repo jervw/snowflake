@@ -40,8 +40,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    zen-browser = {
-      url = "github:0xc000022070/zen-browser-flake";
+    helium = {
+      url = "github:AlvaroParker/helium-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -84,7 +84,6 @@
       homes.modules = with inputs; [
         noctalia.homeModules.default
         niri.homeModules.niri
-        zen-browser.homeModules.twilight
       ];
 
       # Other generic outputs

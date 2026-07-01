@@ -59,6 +59,7 @@ in {
             "fractal"
             "harper-ls"
             "heroic"
+            "net.imput.helium"
             "noctalia"
             "nushell"
             "obs-studio"
@@ -66,7 +67,6 @@ in {
             "rclone"
             "vesktop"
             "zed"
-            "zen"
           ]
           ++ mkDirs ".local/share/" [
             "Anki2"
