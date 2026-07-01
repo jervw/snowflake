@@ -56,6 +56,11 @@
       };
       clip-to-geometry = true;
       draw-border-with-background = false;
+
+      background-effect = {
+        blur = true;
+        xray = false;
+      };
     }
     # Indicate screencasted windows with red colors.
     {

@@ -28,7 +28,10 @@ in {
           margin_ends = 14;
           start = ["launcher" "workspaces"];
           thickness = 36;
+          opacity = 0.84;
         };
+
+        backdrop.enabled = true;
 
         location.auto_locate = true;
 
