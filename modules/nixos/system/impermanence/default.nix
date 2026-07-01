@@ -26,16 +26,15 @@ in {
           "/var/tmp"
         ]
         ++ mkDirs "/etc/" ["NetworkManager" "nix" "ssh"]
-        ++ mkDirs "/var/lib/" ["bluetooth" "docker" "flatpak" "libvirt" "nixos" "pipewire" "tailscale"]
+        ++ mkDirs "/var/lib/" ["bluetooth" "docker" "libvirt" "nixos" "pipewire" "tailscale"]
         ++ mkDirs "/var/lib/systemd/" ["coredump" "timers"];
       files = ["/etc/machine-id"];
       users.${user.name} = {
-        files = [".config/ghostty/themes/noctalia"];
+        # files = [".config/ghostty/themes/noctalia"];
         directories =
           [
             ".dots"
             ".factorio"
-            ".logseq"
             ".var/app"
             "dev"
             "docs"
@@ -52,8 +51,8 @@ in {
             "BeeperTexts"
             "Element"
             "FreeTube"
-            "Logseq"
             "dconf"
+            "discordcanary"
             "equibop"
             "fcitx5"
             "fractal"
@@ -65,6 +64,7 @@ in {
             "obs-studio"
             "qt6ct"
             "rclone"
+            "sh.cider.genten"
             "vesktop"
             "zed"
           ]
@@ -75,11 +75,10 @@ in {
             "Steam"
             "direnv"
             "fish"
-            "flatpak"
             "lutris"
             "zed"
           ]
-          ++ mkDirs ".local/state/" ["syncthing" "wireplumber"]
+          ++ mkDirs ".local/state/" ["syncthing" "wireplumber" "noctalia"]
           ++ [
             {
               directory = ".gnupg";
