@@ -18,6 +18,7 @@ in {
     home.packages = with pkgs; [
       xdg-utils
       anki-bin
+      cider-2
       # calibre
       beeper
       ffmpeg
@@ -25,12 +26,27 @@ in {
       qbittorrent-enhanced
       fontpreview
       equibop
-      element-desktop
+
+      # Wayland stuff
+      grimblast
+      wl-clipboard
+      wtype
+      wlr-randr
+      xclip
     ];
+
+    home.sessionVariables = {
+      QT_WAYLAND_DISABLE_WINDOWDECORATION = 1;
+      NIXOS_OZONE_WL = 1;
+    };
 
     snowflake = {
       theme.enable = true;
       programs = {
+        desktop = {
+          niri = mkDefault enabled;
+          noctalia = mkDefault enabled;
+        };
         apps = {
           mpv = mkDefault enabled;
           obs = mkDefault enabled;

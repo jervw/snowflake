@@ -12,10 +12,6 @@ in {
       inherit (config.snowfallorg.user) name;
     };
 
-    programs = {
-      wm.niri = enabled;
-    };
-
     services = {
       syncthing = enabled;
     };
@@ -27,7 +23,6 @@ in {
     suites = {
       core = enabled;
       desktop = enabled;
-      wayland = enabled;
     };
   };
 

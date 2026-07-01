@@ -12,12 +12,6 @@ in {
       inherit (config.snowfallorg.user) name;
     };
 
-    programs = {
-      wm = {
-        niri = enabled;
-      };
-    };
-
     services = {
       syncthing = enabled;
     };
@@ -29,7 +23,6 @@ in {
     suites = {
       core = enabled;
       desktop = enabled;
-      wayland = enabled;
       dev = enabled;
       gaming = {
         enable = true;
@@ -38,7 +31,6 @@ in {
     };
   };
 
-  #
   programs.niri.settings = {
     input.mouse.accel-profile = "flat";
     outputs = {
