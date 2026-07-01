@@ -50,7 +50,7 @@ in {
 
           templates = {
             builtin_ids = ["btop" "gtk3" "gtk4" "ghostty" "helix" "niri" "qt"];
-            community_ids = ["zed" "discord" "papirus-icons" "yazi"];
+            community_ids = ["zathura" "zed" "discord" "papirus-icons" "yazi"];
           };
         };
 
