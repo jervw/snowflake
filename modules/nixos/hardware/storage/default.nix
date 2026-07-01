@@ -42,7 +42,6 @@ in {
     (mkIf cfg.extra {
       environment.systemPackages = with pkgs; [
         btrfs-progs
-        fuseiso
         nfs-utils
         ntfs3g
       ];
