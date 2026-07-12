@@ -28,6 +28,7 @@ in {
         logind = mkDefault enabled;
         mediarr = mkDefault enabled;
         nfs-server = mkDefault enabled;
+        paperless = mkDefault enabled;
         plex = mkDefault enabled;
         profilarr = mkDefault enabled;
         tautulli = mkDefault enabled;
