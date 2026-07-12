@@ -30,7 +30,6 @@ in {
         nfs-server = mkDefault enabled;
         plex = mkDefault enabled;
         profilarr = mkDefault enabled;
-        speedtest-tracker = mkDefault enabled;
         tautulli = mkDefault enabled;
       };
     };
