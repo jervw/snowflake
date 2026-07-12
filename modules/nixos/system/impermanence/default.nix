@@ -50,6 +50,7 @@ in {
           ++ mkDirs ".config/" [
             "BeeperTexts"
             "Element"
+            "Equicord"
             "FreeTube"
             "dconf"
             "discordcanary"
