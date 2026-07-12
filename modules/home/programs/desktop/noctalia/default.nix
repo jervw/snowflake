@@ -39,6 +39,26 @@ in {
           enabled = true;
         };
 
+        osd.kinds = {
+          media = false;
+        };
+
+        idle = {
+          behavior_order = ["lock" "screen-off"];
+          behavior = {
+            lock = {
+              enabled = true;
+              action = "lock";
+              timeout = 500.0;
+            };
+            screen-off = {
+              enabled = true;
+              action = "screen_off";
+              timeout = 600.0;
+            };
+          };
+        };
+
         shell = {
           avatar_path = "/home/jervw/pics/.face.jpg";
           font_family = "JetBrainsMono Nerd Font";
