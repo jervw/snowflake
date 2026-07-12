@@ -16,13 +16,9 @@ in {
   };
 
   config = mkIf cfg.enable {
-    virtualisation.oci-containers.containers.flaresolverr = {
-      image = "ghcr.io/flaresolverr/flaresolverr";
-      ports = ["${toString cfg.port}:8191"];
-      environment = {
-        LOG_LEVEL = "info";
-        TZ = "Europe/Helsinki";
-      };
+    services.flaresolverr = {
+      enable = true;
+      port = cfg.port;
     };
   };
 }
