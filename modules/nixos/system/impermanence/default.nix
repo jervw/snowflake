@@ -8,7 +8,6 @@
   inherit (config.${namespace}) user;
   cfg = config.${namespace}.system.impermanence;
 
-  # reduce duplication
   mkDirs = prefix: dirs: forEach dirs (x: "${prefix}${x}");
 in {
   options.${namespace}.system.impermanence = {
@@ -30,11 +29,9 @@ in {
         ++ mkDirs "/var/lib/systemd/" ["coredump" "timers"];
       files = ["/etc/machine-id"];
       users.${user.name} = {
-        # files = [".config/ghostty/themes/noctalia"];
         directories =
           [
             ".dots"
-            ".factorio"
             ".var/app"
             "dev"
             "docs"
@@ -43,7 +40,6 @@ in {
             "music"
             "other"
             "pics"
-            "sync"
             "vids"
           ]
           ++ mkDirs ".cache/" ["nix" "noctalia"]
@@ -62,6 +58,7 @@ in {
             "net.imput.helium"
             "noctalia"
             "nushell"
+            "obsidian"
             "obs-studio"
             "qt6ct"
             "rclone"
