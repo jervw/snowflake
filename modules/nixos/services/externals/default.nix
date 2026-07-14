@@ -35,6 +35,12 @@ in {
         reverse_proxy http://thor:8282
         import cloudflare
       '';
+
+      # Wallos
+      "obsidian.jervw.dev".extraConfig = ''
+        reverse_proxy http://thor:5984
+        import cloudflare
+      '';
     };
   };
 }
