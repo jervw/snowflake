@@ -6,19 +6,6 @@
 }: let
   inherit (lib) mkIf mkOption mkEnableOption types mapAttrs' nameValuePair filterAttrs;
   cfg = config.${namespace}.programs.desktop.uwsm;
-
-  hmUser = config.home-manager.users.jervw;
-
-  # Collect all compositor uwsm entries from home-manager
-  uwsmEntries = {
-    niri = hmUser.${namespace}.programs.desktop.niri.uwsmEntry or null;
-  };
-
-  # Filter out null entries
-  waylandCompositors = mapAttrs' (
-    name: entry:
-      nameValuePair name entry
-  ) (filterAttrs (_: entry: entry != null) uwsmEntries);
 in {
   options.${namespace}.programs.desktop.uwsm = {
     enable = mkEnableOption "uwsm";
@@ -32,7 +19,6 @@ in {
   config = mkIf cfg.enable {
     programs.uwsm = {
       enable = true;
-      inherit waylandCompositors;
     };
 
     programs.fish.loginShellInit = mkIf cfg.autoStart ''

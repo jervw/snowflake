@@ -22,12 +22,5 @@ in {
       enable = true;
       systemd.enable = false;
     };
-
-    # ${namespace}.programs.desktop.niri.uwsmEntry = {
-    #   prettyName = "Niri";
-    #   comment = "Niri compositor managed by UWSM";
-    #   binPath = "${config.programs.niri.package}/bin/niri-session";
-    #   extraArgs = [];
-    # };
   };
 }
