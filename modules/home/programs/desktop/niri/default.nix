@@ -1,7 +1,6 @@
 {
   lib,
   namespace,
-  pkgs,
   config,
   ...
 }: let
@@ -18,17 +17,17 @@ in {
 
   imports = lib.snowfall.fs.get-non-default-nix-files ./.;
 
-  config = {
-    programs.niri = {
-      inherit (cfg) enable;
-      package = pkgs.niri-unstable;
+  config = lib.mkIf cfg.enable {
+    wayland.windowManager.niri = {
+      enable = true;
+      systemd.enable = false;
     };
 
-    ${namespace}.programs.desktop.niri.uwsmEntry = lib.mkIf cfg.enable {
-      prettyName = "Niri";
-      comment = "Niri compositor managed by UWSM";
-      binPath = "${config.programs.niri.package}/bin/niri-session";
-      extraArgs = [];
-    };
+    # ${namespace}.programs.desktop.niri.uwsmEntry = {
+    #   prettyName = "Niri";
+    #   comment = "Niri compositor managed by UWSM";
+    #   binPath = "${config.programs.niri.package}/bin/niri-session";
+    #   extraArgs = [];
+    # };
   };
 }

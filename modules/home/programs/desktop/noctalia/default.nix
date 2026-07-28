@@ -94,16 +94,13 @@ in {
     };
 
     # Override programs to use noctalia colors
+    wayland.windowManager.niri.extraConfigEarly = ''
+      include "noctalia.kdl" optional=true
+    '';
     programs = {
       helix.settings.theme = mkForce "noctalia";
       ghostty.settings.theme = mkForce "noctalia";
       zathura.extraConfig = "include noctaliarc";
-      niri.settings.includes = [
-        {
-          path = "noctalia.kdl";
-          optional = true;
-        }
-      ];
     };
   };
 }

@@ -18,11 +18,11 @@
         in [
           {
             name = "Mod+${ws}";
-            value = {action.focus-workspace = num;};
+            value = {focus-workspace = num;};
           }
           {
             name = "Mod+Shift+${ws}";
-            value = {action.move-column-to-workspace = num;};
+            value = {move-column-to-workspace = num;};
           }
         ]
       ) (builtins.genList (x: x) count)
@@ -34,100 +34,101 @@
   noctaliaIpc = args: ["noctalia" "msg"] ++ args;
 in
   mkIf cfg.enable {
-    programs.niri.settings.binds =
+    wayland.windowManager.niri.settings.binds =
       {
         # Programs
-        "Mod+Return".action.spawn = cmdToArgv defaults.terminal;
-        "Mod+D".action.spawn = cmdToArgv defaults.launcher;
-        "Mod+B".action.spawn = cmdToArgv defaults.browser;
-        "Mod+N".action.spawn = (cmdToArgv defaults.terminal) ++ ["-e" "yazi"];
+        "Mod+Return" = {spawn = cmdToArgv defaults.terminal;};
+        "Mod+D" = {spawn = cmdToArgv defaults.launcher;};
+        "Mod+B" = {spawn = cmdToArgv defaults.browser;};
+        "Mod+N" = {spawn = (cmdToArgv defaults.terminal) ++ ["-e" "yazi"];};
 
         # Essential
-        "Mod+Q".action.close-window = {};
-        "Mod+Z".action.screenshot = {};
-        "Mod+Shift+Z".action.screenshot-window = {};
-        "Mod+Ctrl+Z".action.screenshot-screen = {};
-        "Mod+Shift+Slash".action.show-hotkey-overlay = {};
+        "Mod+Q" = {close-window = {};};
+        "Mod+Z" = {screenshot = {};};
+        "Mod+Shift+Z" = {screenshot-window = {};};
+        "Mod+Ctrl+Z" = {screenshot-screen = {};};
+        "Mod+Shift+Slash" = {show-hotkey-overlay = {};};
 
         # Move column focus
-        "Mod+H".action.focus-column-or-monitor-left = {};
-        "Mod+L".action.focus-column-or-monitor-right = {};
-        "Mod+J".action.focus-window-or-workspace-down = {};
-        "Mod+K".action.focus-window-or-workspace-up = {};
+        "Mod+H" = {focus-column-or-monitor-left = {};};
+        "Mod+L" = {focus-column-or-monitor-right = {};};
+        "Mod+J" = {focus-window-or-workspace-down = {};};
+        "Mod+K" = {focus-window-or-workspace-up = {};};
 
         # Resize column and window height
-        "Mod+Ctrl+H".action.set-column-width = "-5%";
-        "Mod+Ctrl+L".action.set-column-width = "+5%";
-        "Mod+Ctrl+K".action.set-window-height = "+5%";
-        "Mod+Ctrl+J".action.set-window-height = "-5%";
+        "Mod+Ctrl+H" = {set-column-width = "-5%";};
+        "Mod+Ctrl+L" = {set-column-width = "+5%";};
+        "Mod+Ctrl+K" = {set-window-height = "+5%";};
+        "Mod+Ctrl+J" = {set-window-height = "-5%";};
 
         # Move columns
-        "Mod+Shift+H".action.move-column-left-or-to-monitor-left = {};
-        "Mod+Shift+L".action.move-column-right-or-to-monitor-right = {};
-        "Mod+Shift+K".action.move-column-to-workspace-up = {};
-        "Mod+Shift+J".action.move-column-to-workspace-down = {};
+        "Mod+Shift+H" = {move-column-left-or-to-monitor-left = {};};
+        "Mod+Shift+L" = {move-column-right-or-to-monitor-right = {};};
+        "Mod+Shift+K" = {move-column-to-workspace-up = {};};
+        "Mod+Shift+J" = {move-column-to-workspace-down = {};};
 
         # Move between monitors
-        "Mod+comma".action.focus-monitor-next = {};
-        "Mod+period".action.focus-monitor-previous = {};
+        "Mod+comma" = {focus-monitor-next = {};};
+        "Mod+period" = {focus-monitor-previous = {};};
 
         # Toggle overview
-        "Mod+Escape".action.toggle-overview = {};
+        "Mod+Escape" = {toggle-overview = {};};
 
         # Floating
-        "Mod+Space".action.toggle-window-floating = {};
+        "Mod+Space" = {toggle-window-floating = {};};
 
         # Column manipulation
-        "Mod+R".action.switch-preset-column-width = {};
-        "Mod+Shift+R".action.switch-preset-window-height = {};
-        "Mod+Ctrl+R".action.reset-window-height = {};
-        "Mod+F".action.maximize-column = {};
-        "Mod+Shift+F".action.fullscreen-window = {};
-        "Mod+C".action.center-column = {};
-        "Mod+V".action.expand-column-to-available-width = {};
+        "Mod+R" = {switch-preset-column-width = {};};
+        "Mod+Shift+R" = {switch-preset-window-height = {};};
+        "Mod+Ctrl+R" = {reset-window-height = {};};
+        "Mod+F" = {maximize-column = {};};
+        "Mod+Shift+F" = {fullscreen-window = {};};
+        "Mod+C" = {center-column = {};};
+        "Mod+V" = {expand-column-to-available-width = {};};
 
-        # Mouse bindings
+        # Mouse bindings with cooldown
         "Mod+WheelScrollUp" = {
-          action.focus-workspace-up = {};
-          cooldown-ms = 150;
+          _props.cooldown-ms = 150;
+          focus-workspace-up = {};
         };
         "Mod+WheelScrollRight" = {
-          action.focus-column-right = {};
-          cooldown-ms = 150;
+          _props.cooldown-ms = 150;
+          focus-column-right = {};
         };
         "Mod+WheelScrollDown" = {
-          action.focus-workspace-down = {};
-          cooldown-ms = 150;
+          _props.cooldown-ms = 150;
+          focus-workspace-down = {};
         };
         "Mod+WheelScrollLeft" = {
-          action.focus-column-left = {};
-          cooldown-ms = 150;
+          _props.cooldown-ms = 150;
+          focus-column-left = {};
         };
 
         # Dynamic screencast
-        "Mod+Y".action.set-dynamic-cast-window = {};
-        "Mod+Shift+Y".action.set-dynamic-cast-monitor = {};
-        "Mod+U".action.clear-dynamic-cast-target = {};
+        "Mod+Y" = {set-dynamic-cast-window = {};};
+        "Mod+Shift+Y" = {set-dynamic-cast-monitor = {};};
+        "Mod+U" = {clear-dynamic-cast-target = {};};
 
         # Media controls
-        "XF86AudioPlay".action.spawn = noctaliaIpc ["media" "toggle"];
-        "XF86AudioPrev".action.spawn = noctaliaIpc ["media" "previous"];
-        "XF86AudioNext".action.spawn = noctaliaIpc ["media" "next"];
-        "XF86AudioRaiseVolume".action.spawn = noctaliaIpc ["volume-up"];
-        "XF86AudioLowerVolume".action.spawn = noctaliaIpc ["volume-down"];
+        "XF86AudioPlay" = {spawn = noctaliaIpc ["media" "toggle"];};
+        "XF86AudioPrev" = {spawn = noctaliaIpc ["media" "previous"];};
+        "XF86AudioNext" = {spawn = noctaliaIpc ["media" "next"];};
+        "XF86AudioRaiseVolume" = {spawn = noctaliaIpc ["volume-up"];};
+        "XF86AudioLowerVolume" = {spawn = noctaliaIpc ["volume-down"];};
 
         # Brightness controls
-        "XF86MonBrightnessUp".action.spawn = noctaliaIpc ["brightness" "up"];
-        "XF86MonBrightnessDown".action.spawn = noctaliaIpc ["brightness" "down"];
+        "XF86MonBrightnessUp" = {spawn = noctaliaIpc ["brightness" "up"];};
+        "XF86MonBrightnessDown" = {spawn = noctaliaIpc ["brightness" "down"];};
 
-        "Mod+Shift+E".action.spawn = noctaliaIpc ["panel-toggle" "session"];
-        "Mod+G".action.spawn = noctaliaIpc ["wallpaper-random"];
+        # Session and wallpaper
+        "Mod+Shift+E" = {spawn = noctaliaIpc ["panel-toggle" "session"];};
+        "Mod+G" = {spawn = noctaliaIpc ["wallpaper-random"];};
 
-        # Misc
-        "Mod+Shift+BracketLeft".action.consume-window-into-column = {};
-        "Mod+Shift+BracketRight".action.expel-window-from-column = {};
-        "Mod+BracketLeft".action.consume-or-expel-window-left = {};
-        "Mod+BracketRight".action.consume-or-expel-window-right = {};
+        # Window arrangement
+        "Mod+Shift+BracketLeft" = {consume-window-into-column = {};};
+        "Mod+Shift+BracketRight" = {expel-window-from-column = {};};
+        "Mod+BracketLeft" = {consume-or-expel-window-left = {};};
+        "Mod+BracketRight" = {consume-or-expel-window-right = {};};
       }
       // workspaces;
   }

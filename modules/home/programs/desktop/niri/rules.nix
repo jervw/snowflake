@@ -5,115 +5,84 @@
   ...
 }: let
   inherit (lib) mkIf;
-
   cfg = config.${namespace}.programs.desktop.niri;
 
-  mkMatchRule = {
-    appId,
-    title ? "",
-    openFloating ? false,
-  }: let
-    baseRule = {
-      matches = [
-        {
-          app-id = appId;
-          inherit title;
-        }
-      ];
+  # Default styling applied to all windows
+  defaultWindowStyle = {
+    draw-border-with-background = false;
+    geometry-corner-radius = [16.0 16.0 16.0 16.0];
+    clip-to-geometry = true;
+    background-effect = {
+      blur = true;
+      xray = false;
     };
-    floatingRule =
-      if openFloating
-      then {open-floating = true;}
-      else {};
-  in
-    baseRule // floatingRule;
+  };
 
-  openFloatingAppIds = [
-    "^(dialog)"
-    "^(file_progress)"
-    "^(confirm)"
-    "^(download)"
-    "^(error)"
-    "^(notification)"
-  ];
+  # Screencast indicator colors
+  screencastColor = {
+    active = "#f38ba8";
+    inactive = "#7d0d2d";
+  };
 
-  floatingRules = map (appId:
-    mkMatchRule {
-      inherit appId;
-      openFloating = true;
-    })
-  openFloatingAppIds;
-
-  windowRules = [
+  # Rules for specific window conditions
+  conditionRules = [
+    # Indicate screencasted windows
     {
-      geometry-corner-radius = let
-        radius = 16.0;
-      in {
-        bottom-left = radius;
-        bottom-right = radius;
-        top-left = radius;
-        top-right = radius;
-      };
-      clip-to-geometry = true;
-      draw-border-with-background = false;
-
-      background-effect = {
-        blur = true;
-        xray = false;
-      };
-    }
-    # Indicate screencasted windows with red colors.
-    {
-      matches = [
-        {is-window-cast-target = true;}
-      ];
+      match._props.is-window-cast-target = true;
       focus-ring = {
-        active.color = "#f38ba8";
-        inactive.color = "#7d0d2d";
+        active-color = screencastColor.active;
+        inactive-color = screencastColor.inactive;
       };
-      border = {
-        inactive.color = "#7d0d2d";
-      };
-      shadow = {
-        color = "#7d0d2d70";
-      };
+      border.inactive-color = screencastColor.inactive;
+      shadow.color = "${screencastColor.inactive}70";
       tab-indicator = {
-        active.color = "#f38ba8";
-        inactive.color = "#7d0d2d";
+        active-color = screencastColor.active;
+        inactive-color = screencastColor.inactive;
       };
     }
+
+    # Picture in picture window
     {
-      matches = [
-        {is-floating = true;}
-      ];
-      shadow.enable = true;
-    }
-    {
-      matches = [
-        {is-window-cast-target = true;}
-      ];
-    }
-    {
-      matches = [
-        {title = "^Picture in picture$";}
-      ];
+      match._props.title = "^Picture in picture$";
       open-floating = true;
-      default-floating-position = {
+      default-floating-position._props = {
+        relative-to = "top-right";
         x = 32;
         y = 32;
-        relative-to = "top-right";
       };
+    }
+  ];
+
+  # Auto-float these application dialogs
+  autoFloatApps = [
+    "dialog"
+    "file_progress"
+    "confirm"
+    "download"
+    "error"
+    "notification"
+  ];
+
+  floatingRules =
+    map (appId: {
+      match._props.app-id = "^(${appId})";
+      open-floating = true;
+    })
+    autoFloatApps;
+
+  allWindowRules = [defaultWindowStyle] ++ conditionRules ++ floatingRules;
+
+  layerRules = [
+    {
+      match._props.namespace = "^noctalia-backdrop";
+      place-within-backdrop = true;
     }
   ];
 in
   mkIf cfg.enable {
-    programs.niri.settings = {
-      window-rules = windowRules ++ floatingRules;
-      layer-rules = [
-        {
-          matches = [{namespace = "^noctalia-backdrop";}];
-          place-within-backdrop = true;
-        }
-      ];
+    wayland.windowManager.niri.settings = {
+      _children =
+        (map (rule: {window-rule = rule;}) allWindowRules)
+        ++ (map (rule: {layer-rule = rule;}) layerRules);
     };
   }

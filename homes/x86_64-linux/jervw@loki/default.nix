@@ -31,22 +31,26 @@ in {
     };
   };
 
-  programs.niri.settings = {
+  wayland.windowManager.niri.settings = {
     input.mouse.accel-profile = "flat";
-    outputs = {
-      "DP-1" = {
-        mode = {
-          width = 2560;
-          height = 1440;
-          refresh = 164.999;
+    _children = [
+      {
+        output = {
+          _args = ["DP-1"];
+          transform = "normal";
+          mode = "2560x1440@164.999";
         };
-      };
-      "HDMI-A-1" = {
-        position = {
-          x = 2560;
-          y = 0;
+      }
+      {
+        output = {
+          _args = ["HDMI-A-1"];
+          transform = "normal";
+          position._props = {
+            x = 2560;
+            y = 0;
+          };
         };
-      };
-    };
+      }
+    ];
   };
 }

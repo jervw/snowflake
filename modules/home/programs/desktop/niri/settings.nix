@@ -1,26 +1,24 @@
 {
   config,
   lib,
-  pkgs,
   namespace,
   ...
 }: let
   inherit (lib) mkIf;
   cfg = config.${namespace}.programs.desktop.niri;
-  mkCommand = command: {
-    command = [command];
-  };
 in
   mkIf cfg.enable {
-    programs.niri = {
+    wayland.windowManager.niri = {
       settings = {
-        debug = {
-          honor-xdg-activation-with-invalid-serial = [];
-        };
+        prefer-no-csd = {};
+        hotkey-overlay.skip-at-startup = {};
 
+        # TODO Maybe use full paths in the future.
         spawn-at-startup = [
-          (mkCommand "noctalia")
+          "noctalia"
         ];
+
+        screenshot-path = "~/pics/Screenshots/Screenshot-%Y%m%d-%H%M%S.png";
 
         input = {
           keyboard = {
@@ -31,17 +29,13 @@ in
             repeat-delay = 200;
           };
 
-          focus-follows-mouse.enable = true;
-          warp-mouse-to-focus.enable = true;
+          focus-follows-mouse = {};
+          warp-mouse-to-focus = {};
         };
 
-        xwayland-satellite = {
-          enable = true;
-          path = lib.getExe pkgs.xwayland-satellite;
+        debug = {
+          honor-xdg-activation-with-invalid-serial = {};
         };
-
-        prefer-no-csd = true;
-        hotkey-overlay.skip-at-startup = true;
       };
     };
   }

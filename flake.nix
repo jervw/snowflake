@@ -31,11 +31,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    niri = {
-      url = "github:epireyn/niri-flake/350668eca0bbc657bc5721e0a90f3707e269f021"; # TODO Dont pin, latest commit is just broken rn
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -71,10 +66,6 @@
         permittedInsecurePackages = ["electron-40.10.5" "pnpm-9.15.9"];
       };
 
-      overlays = with inputs; [
-        niri.overlays.niri
-      ];
-
       systems.modules.nixos = with inputs; [
         agenix.nixosModules.default
         impermanence.nixosModule
@@ -85,7 +76,6 @@
 
       homes.modules = with inputs; [
         noctalia.homeModules.default
-        niri.homeModules.niri
         nixcord.homeModules.nixcord
       ];
 
