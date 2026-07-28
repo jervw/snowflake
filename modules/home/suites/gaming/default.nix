@@ -20,7 +20,7 @@ in {
       [
         # Launchers
         prismlauncher
-        lutris
+        faugus-launcher
         heroic
 
         # Misc
