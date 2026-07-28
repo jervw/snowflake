@@ -68,7 +68,7 @@
 
       channels-config = {
         allowUnfree = true;
-        permittedInsecurePackages = ["electron-40.10.5"];
+        permittedInsecurePackages = ["electron-40.10.5" "pnpm-9.15.9"];
       };
 
       overlays = with inputs; [
