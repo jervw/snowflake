@@ -23,12 +23,15 @@ in {
       cider-2
       # calibre
       beeper
-      obsidian
       ffmpeg
       tomato-c
       qbittorrent-enhanced
       fontpreview
       equibop
+
+      # TODO Crashes on latest electron ver with harper plugin
+      # obsidian
+      (pkgs.obsidian.override {electron = pkgs.electron_40;})
 
       # Wayland stuff
       grimblast
