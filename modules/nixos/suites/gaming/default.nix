@@ -35,7 +35,6 @@ in {
     snowflake = {
       programs = {
         addons = {
-          gamemode = mkDefault enabled;
           gamescope = mkDefault enabled;
           ntsync = mkDefault enabled;
         };
