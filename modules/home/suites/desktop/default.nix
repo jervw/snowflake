@@ -23,6 +23,7 @@ in {
       cider-2
       # calibre
       beeper
+      feishin
       ffmpeg
       tomato-c
       qbittorrent-enhanced
