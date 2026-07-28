@@ -17,9 +17,8 @@ in {
       enable = true;
       discord = {
         equicord.enable = true;
-        branch = "canary";
         krisp.enable = true;
-        openASAR.enable = true;
+        openASAR.enable = false;
       };
     };
   };
