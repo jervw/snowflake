@@ -25,6 +25,8 @@ in {
       fd
     ];
 
+    programs.zed-editor.installRemoteServer = true;
+
     snowflake = {
       programs = {
         editors = {
