@@ -28,6 +28,7 @@ in {
         karakeep = mkDefault enabled;
         logind = mkDefault enabled;
         mediarr = mkDefault enabled;
+        navidrome = mkDefault enabled;
         nfs-server = mkDefault enabled;
         paperless = mkDefault enabled;
         plex = mkDefault enabled;

@@ -5,7 +5,7 @@
   ...
 }: let
   inherit (lib) mkEnableOption mkIf mkOption;
-  cfg = config.${namespace}.services.calibre-web;
+  cfg = config.${namespace}.services.navidrome;
 in {
   options.${namespace}.services.navidrome = {
     enable = mkEnableOption "Enable Navidrome service";
