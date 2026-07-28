@@ -28,11 +28,11 @@ in {
         ++ mkDirs "/var/lib/" ["bluetooth" "docker" "libvirt" "nixos" "pipewire" "tailscale"]
         ++ mkDirs "/var/lib/systemd/" ["coredump" "timers"];
       files = ["/etc/machine-id"];
+
       users.${user.name} = {
         directories =
           [
             ".dots"
-            ".var/app"
             "dev"
             "docs"
             "download"
@@ -47,13 +47,12 @@ in {
             "BeeperTexts"
             "Element"
             "Equicord"
-            "FreeTube"
+            "faugus-launcher"
             "dconf"
             "discordcanary"
             "equibop"
             "fcitx5"
-            "fractal"
-            "harper-ls"
+            "feishin"
             "heroic"
             "net.imput.helium"
             "noctalia"
@@ -65,6 +64,7 @@ in {
             "sh.cider.genten"
             "vesktop"
             "zed"
+            "uwsm"
           ]
           ++ mkDirs ".local/share/" [
             "Anki2"
@@ -73,7 +73,6 @@ in {
             "Steam"
             "direnv"
             "fish"
-            "lutris"
             "zed"
           ]
           ++ mkDirs ".local/state/" ["syncthing" "wireplumber" "noctalia"]
