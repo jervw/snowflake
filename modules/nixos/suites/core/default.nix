@@ -42,7 +42,7 @@ in {
       };
       security = {
         gpg = mkDefault enabled;
-        doas = mkDefault enabled;
+        sudo = mkDefault enabled;
         pam = mkDefault enabled;
       };
 
