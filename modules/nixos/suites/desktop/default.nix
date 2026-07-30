@@ -35,8 +35,12 @@ in {
     };
 
     programs.dconf.enable = true;
-
     programs.gnupg.agent.pinentryPackage = pkgs.pinentry-gnome3;
+
+    hardware.graphics = {
+      enable = true;
+      enable32Bit = true;
+    };
 
     services = {
       gvfs = mkDefault enabled;
