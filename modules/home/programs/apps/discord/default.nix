@@ -18,7 +18,7 @@ in {
       discord = {
         equicord.enable = true;
         krisp.enable = true;
-        openASAR.enable = false;
+        openASAR.enable = true;
       };
     };
   };
