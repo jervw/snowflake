@@ -18,6 +18,7 @@ in {
       enable = true;
       extraPackages = with pkgs; [
         direnv
+        package-version-server
       ];
 
       # Don't allow changes in Zed editor
@@ -74,7 +75,7 @@ in {
 
         # Agent
         agent = {
-          play_sound_when_agent_done = true;
+          play_sound_when_agent_done = "always";
           default_model = {
             provider = "ollama";
             model = "qwen2.5-coder:7b";
