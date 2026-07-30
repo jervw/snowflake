@@ -35,6 +35,10 @@ in {
 
     services = {
       logind = enabled;
+      ollama = {
+        enable = true;
+        modelsPath = "/persist/ollama";
+      };
     };
 
     suites = {
