@@ -73,6 +73,15 @@ in {
         # Disable collab button from dock
         collaboration_panel.button = false;
 
+        edit_predictions = {
+          provider = "ollama";
+          ollama = {
+            model = "zeta-21-gguf:latest";
+            prompt_format = "zeta2_1";
+            max_output_tokens = 512;
+          };
+        };
+
         # Agent
         agent = {
           play_sound_when_agent_done = "always";
