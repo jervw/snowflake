@@ -14,7 +14,10 @@ in {
     hardware = {
       cpu.amd = enabled;
       video = {
-        nvidia = enabled;
+        nvidia = {
+          enable = true;
+          enableCudaSupport = true;
+        };
         i2c = enabled;
       };
       storage = {

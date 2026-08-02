@@ -52,6 +52,7 @@ in {
           "https://attic.xuyh0120.win/lantian" # CachyOS kernels
           "https://cache.soopy.moe" # Linux T2
           "https://noctalia.cachix.org"
+          "https://cache.nixos-cuda.org"
         ];
         trusted-public-keys = [
           "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
@@ -59,6 +60,7 @@ in {
           "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc="
           "cache.soopy.moe-1:0RZVsQeR+GOh0VQI9rvnHz55nVXkFardDqfm4+afjPo="
           "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
+          "cache.nixos-cuda.org:74DUi4Ye579gUqzH4ziL9IyiJBlDpMRn9MBN8oNan9M="
         ];
       };
       generateNixPathFromInputs = true;
