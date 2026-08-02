@@ -19,11 +19,9 @@ in {
   };
 
   config = mkIf cfg.enable {
-    environment.systemPackages = [pkgs.alpaca pkgs.smartcat];
-
     services.ollama = {
       enable = true;
-      models = mkIf (cfg.modelsPath != null) cfg.modelsPath;
+      modelsDir = mkIf (cfg.modelsPath != null) cfg.modelsPath;
     };
   };
 }
