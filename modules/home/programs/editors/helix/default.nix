@@ -12,7 +12,6 @@
 in {
   options.${namespace}.programs.editors.helix = {
     enable = mkEnableOption "Enable Helix editor";
-    withLsp = mkEnableOption "LSP support";
   };
 
   config = mkIf cfg.enable {
@@ -79,7 +78,7 @@ in {
         };
       };
 
-      languages = mkIf cfg.withLsp {
+      languages = {
         language = [
           {
             name = "nix";
@@ -114,7 +113,7 @@ in {
         ];
 
         # LSP's
-        language-server = mkIf cfg.withLsp {
+        language-server = {
           harper = {
             command = "${pkgs.harper}/bin/harper-ls";
             args = ["--stdio"];

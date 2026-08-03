@@ -37,7 +37,6 @@ in {
 
     snowflake.programs.editors = {
       zed.enable = true;
-      helix.withLsp = true;
     };
   };
 }
