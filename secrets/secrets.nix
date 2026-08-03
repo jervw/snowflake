@@ -3,11 +3,11 @@ let
   loki = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEz5w0gKYQ+Tfj9k0oCLSu4+Ykg57IdS0ruDqN5zLrIC";
   thor = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIM/pd5zQYAXuve8QVj6947m/OTfj3O36Czx6/GUpD1BN";
   fenrir = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDOAj0+XMWCCv/FyM8Y3qh9yfkXn83l+MI7CKeXCSm2d";
-  huginn = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKsLmSM41UUDV2UgLZiUlCVzDDgailNwPiHzKkXkNmMB";
 
-  systems = [loki thor fenrir huginn];
+  users = [jervw];
+  systems = [loki thor fenrir];
 in {
-  "cloudflare.age".publicKeys = [jervw] ++ systems;
-  "tailscale.age".publicKeys = [jervw] ++ systems;
-  "openai-karakeep.age".publicKeys = [jervw] ++ systems;
+  "cloudflare.age".publicKeys = users ++ systems;
+  "tailscale.age".publicKeys = users ++ systems;
+  "openai-karakeep.age".publicKeys = users ++ systems;
 }
