@@ -37,10 +37,6 @@ in {
       hardening = enabled;
     };
 
-    services = {
-      logind = enabled;
-    };
-
     suites = {
       core = enabled;
       server = enabled;

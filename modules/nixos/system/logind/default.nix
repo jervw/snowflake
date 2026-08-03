@@ -6,9 +6,9 @@
 }: let
   inherit (lib) mkIf mkEnableOption;
 
-  cfg = config.${namespace}.services.logind;
+  cfg = config.${namespace}.system.logind;
 in {
-  options.${namespace}.services.logind = {
+  options.${namespace}.system.logind = {
     enable = mkEnableOption "logind";
   };
 

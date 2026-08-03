@@ -46,10 +46,6 @@ in {
         pam = mkDefault enabled;
       };
 
-      services = {
-        logind = mkDefault enabled;
-      };
-
       networking = {
         networkmanager = mkDefault enabled;
         ssh = mkDefault enabled;
@@ -58,6 +54,7 @@ in {
       system = {
         systemd = mkDefault enabled;
         locale = mkDefault enabled;
+        logind = mkDefault enabled;
         time = mkDefault enabled;
       };
     };
