@@ -34,18 +34,22 @@ in {
         "radarr.jervw.dev".extraConfig = ''
           reverse_proxy http://thor:7878
           import cloudflare
+          import tinyauth
         '';
         "sonarr.jervw.dev".extraConfig = ''
           reverse_proxy http://thor:8989
           import cloudflare
+          import tinyauth
         '';
         "prowlarr.jervw.dev".extraConfig = ''
           reverse_proxy http://thor:9696
           import cloudflare
+          import tinyauth
         '';
         "bazarr.jervw.dev".extraConfig = ''
           reverse_proxy http://thor:6767
           import cloudflare
+          import tinyauth
         '';
       };
     };

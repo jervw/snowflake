@@ -30,9 +30,11 @@ in {
         navidrome = mkDefault enabled;
         nfs-server = mkDefault enabled;
         paperless = mkDefault enabled;
+        pocket-id = mkDefault enabled;
         plex = mkDefault enabled;
         profilarr = mkDefault enabled;
         tautulli = mkDefault enabled;
+        tinyauth = mkDefault enabled;
       };
     };
   };

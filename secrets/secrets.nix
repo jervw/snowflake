@@ -10,4 +10,6 @@ in {
   "cloudflare.age".publicKeys = users ++ systems;
   "tailscale.age".publicKeys = users ++ systems;
   "openai-karakeep.age".publicKeys = users ++ systems;
+  "tinyauth-env.age".publicKeys = users ++ systems;
+  "pocket-id.age".publicKeys = users ++ systems;
 }

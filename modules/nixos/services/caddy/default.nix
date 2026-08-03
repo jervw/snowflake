@@ -18,12 +18,19 @@ in {
       enable = true;
       package = pkgs.caddy.withPlugins {
         plugins = ["github.com/caddy-dns/cloudflare@v0.2.1"];
-        hash = "sha256-pNIRthmPf+J6BPfJ51afBCWt66evnRs1+f9wv09EvK0=";
+        hash = "sha256-F7d4HwM4oCkQrFMr4SFSC0r52ONxY+PW6z5BJawW8Ok=";
       };
       extraConfig = ''
         (cloudflare) {
           tls {
             dns cloudflare {env.CF_API_TOKEN}
+          }
+        }
+        (tinyauth) {
+          forward_auth http://localhost:3333 {
+            uri /api/auth/caddy
+
+            copy_headers Remote-User Remote-Groups Remote-Name Remote-Email
           }
         }
       '';
