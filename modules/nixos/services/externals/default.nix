@@ -17,6 +17,7 @@ in {
       "dl.jervw.dev".extraConfig = ''
         reverse_proxy http://thor:8089
         import cloudflare
+        import tinyauth
       '';
 
       # YamTrack
