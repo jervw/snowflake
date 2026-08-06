@@ -70,6 +70,10 @@ in {
         session.trust_all_worktrees = true;
         load_direnv = "shell_hook";
 
+        project_panel = {
+          dock = "left";
+        };
+
         # Disable collab button from dock
         collaboration_panel.button = false;
 
