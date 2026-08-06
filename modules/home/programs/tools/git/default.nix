@@ -45,6 +45,7 @@ in {
         ".direnv/"
         ".env"
         ".envrc"
+        "AGENTS.md"
       ];
 
       lfs = {
