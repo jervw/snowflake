@@ -7,7 +7,6 @@
   inherit (lib) mkIf;
 
   cfg = config.${namespace}.programs.desktop.niri;
-  inherit (config.${namespace}.programs) defaults;
 
   workspaceBinds = count:
     builtins.listToAttrs (
@@ -29,18 +28,16 @@
     );
 
   workspaces = workspaceBinds 9;
-
-  cmdToArgv = cmd: lib.splitString " " cmd;
   noctaliaIpc = args: ["noctalia" "msg"] ++ args;
 in
   mkIf cfg.enable {
     wayland.windowManager.niri.settings.binds =
       {
         # Programs
-        "Mod+Return" = {spawn = cmdToArgv defaults.terminal;};
-        "Mod+D" = {spawn = cmdToArgv defaults.launcher;};
-        "Mod+B" = {spawn = cmdToArgv defaults.browser;};
-        "Mod+N" = {spawn = (cmdToArgv defaults.terminal) ++ ["-e" "yazi"];};
+        "Mod+Return" = {spawn = ["ghostty" "+new-window"];};
+        "Mod+D" = {spawn = noctaliaIpc ["panel-toggle" "launcher"];};
+        "Mod+B" = {spawn = ["uwsm" "app" "--" "helium"];};
+        "Mod+N" = {spawn = ["ghostty" "+new-window" "-e" "yazi"];};
 
         # Essential
         "Mod+Q" = {close-window = {};};
@@ -48,6 +45,14 @@ in
         "Mod+Shift+Z" = {screenshot-window = {};};
         "Mod+Ctrl+Z" = {screenshot-screen = {};};
         "Mod+Shift+Slash" = {show-hotkey-overlay = {};};
+
+        # Noctalia binds
+        "Mod+Shift+E" = {spawn = noctaliaIpc ["panel-toggle" "session"];};
+        "Alt+Tab" = {spawn = noctaliaIpc ["window-switcher"];};
+        "Mod+S" = {spawn = noctaliaIpc ["panel-toggle" "control-center"];};
+        "Mod+C" = {spawn = noctaliaIpc ["panel-toggle" "clipboard"];};
+        "Mod+G" = {spawn = noctaliaIpc ["wallpaper-random"];};
+        "Mod+Shift+G" = {spawn = noctaliaIpc ["panel-toggle" "wallpaper"];};
 
         # Move column focus
         "Mod+H" = {focus-column-or-monitor-left = {};};
@@ -83,7 +88,7 @@ in
         "Mod+Ctrl+R" = {reset-window-height = {};};
         "Mod+F" = {maximize-column = {};};
         "Mod+Shift+F" = {fullscreen-window = {};};
-        "Mod+C" = {center-column = {};};
+        "Mod+W" = {center-column = {};};
         "Mod+V" = {expand-column-to-available-width = {};};
 
         # Mouse bindings with cooldown
@@ -109,6 +114,12 @@ in
         "Mod+Shift+Y" = {set-dynamic-cast-monitor = {};};
         "Mod+U" = {clear-dynamic-cast-target = {};};
 
+        # Window arrangement
+        "Mod+Shift+BracketLeft" = {consume-window-into-column = {};};
+        "Mod+Shift+BracketRight" = {expel-window-from-column = {};};
+        "Mod+BracketLeft" = {consume-or-expel-window-left = {};};
+        "Mod+BracketRight" = {consume-or-expel-window-right = {};};
+
         # Media controls
         "XF86AudioPlay" = {spawn = noctaliaIpc ["media" "toggle"];};
         "XF86AudioPrev" = {spawn = noctaliaIpc ["media" "previous"];};
@@ -119,16 +130,6 @@ in
         # Brightness controls
         "XF86MonBrightnessUp" = {spawn = noctaliaIpc ["brightness" "up"];};
         "XF86MonBrightnessDown" = {spawn = noctaliaIpc ["brightness" "down"];};
-
-        # Session and wallpaper
-        "Mod+Shift+E" = {spawn = noctaliaIpc ["panel-toggle" "session"];};
-        "Mod+G" = {spawn = noctaliaIpc ["wallpaper-random"];};
-
-        # Window arrangement
-        "Mod+Shift+BracketLeft" = {consume-window-into-column = {};};
-        "Mod+Shift+BracketRight" = {expel-window-from-column = {};};
-        "Mod+BracketLeft" = {consume-or-expel-window-left = {};};
-        "Mod+BracketRight" = {consume-or-expel-window-right = {};};
       }
       // workspaces;
   }
