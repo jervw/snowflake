@@ -32,6 +32,7 @@ in {
       users.${user.name} = {
         directories =
           [
+            ".codex"
             ".dots"
             "dev"
             "docs"
