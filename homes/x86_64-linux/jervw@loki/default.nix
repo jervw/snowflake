@@ -26,7 +26,7 @@ in {
       dev = enabled;
       gaming = {
         enable = true;
-        enableEmulators = false;
+        enableEmulators = true;
       };
     };
   };
