@@ -32,7 +32,6 @@ in {
       users.${user.name} = {
         directories =
           [
-            ".codex"
             ".dots"
             "dev"
             "docs"
@@ -46,6 +45,7 @@ in {
           ++ mkDirs ".cache/" ["nix" "noctalia"]
           ++ mkDirs ".config/" [
             "BeeperTexts"
+            "codex"
             "Element"
             "Equicord"
             "faugus-launcher"
