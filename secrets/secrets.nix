@@ -12,4 +12,5 @@ in {
   "openai-karakeep.age".publicKeys = users ++ systems;
   "tinyauth-env.age".publicKeys = users ++ systems;
   "pocket-id.age".publicKeys = users ++ systems;
+  "mcp-context7.age".publicKeys = users ++ systems;
 }

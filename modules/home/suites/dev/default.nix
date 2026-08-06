@@ -6,6 +6,7 @@
   ...
 }: let
   inherit (lib) mkIf;
+  inherit (lib.${namespace}) enabled;
 
   cfg = config.${namespace}.suites.dev;
 in {
@@ -35,8 +36,13 @@ in {
       just
     ];
 
-    snowflake.programs.editors = {
-      zed.enable = true;
+    snowflake.programs = {
+      editors = {
+        zed = enabled;
+      };
+      tools = {
+        mcp = enabled;
+      };
     };
   };
 }

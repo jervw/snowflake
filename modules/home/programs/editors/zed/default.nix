@@ -16,6 +16,7 @@ in {
   config = mkIf cfg.enable {
     programs.zed-editor = {
       enable = true;
+      enableMcpIntegration = true;
       extraPackages = with pkgs; [
         direnv
         package-version-server
@@ -114,14 +115,6 @@ in {
               command = lib.getExe pkgs.alejandra;
               arguments = ["--quiet" "--"];
             };
-          };
-        };
-
-        # MCP
-        context_servers = {
-          mcp-nixos = {
-            command = lib.getExe pkgs.mcp-nixos;
-            args = [];
           };
         };
 
