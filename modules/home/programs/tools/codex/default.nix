@@ -19,6 +19,11 @@ in {
       settings = {
         model = "gpt-5.6-luna";
         model_reasoning_effort = "medium";
+
+        projects = {
+          "/home/jervw/dev".trust_level = "trusted";
+          "/home/jervw/.dots".trust_level = "trusted";
+        };
       };
     };
   };
