@@ -41,6 +41,7 @@ in {
         zed = enabled;
       };
       tools = {
+        codex = enabled;
         mcp = enabled;
       };
     };
