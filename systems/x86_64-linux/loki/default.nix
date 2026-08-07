@@ -50,6 +50,18 @@ in {
     };
 
     system = {
+      backup = {
+        enable = true;
+        paths = [
+          "/persist/etc"
+          "/persist/home"
+          "/persist/password"
+        ];
+        exclude = [
+          "Steam"
+          "games"
+        ];
+      };
       boot = {
         enable = true;
         plymouth = true;

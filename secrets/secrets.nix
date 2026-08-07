@@ -13,4 +13,5 @@ in {
   "tinyauth-env.age".publicKeys = users ++ systems;
   "pocket-id.age".publicKeys = users ++ systems;
   "mcp-context7.age".publicKeys = users ++ systems;
+  "restic.age".publicKeys = users ++ systems;
 }

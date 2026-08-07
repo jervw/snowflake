@@ -42,7 +42,17 @@ in {
       server = enabled;
     };
 
-    system.boot = enabled;
+    system = {
+      backup = {
+        server = enabled;
+        enable = true;
+        paths = [
+          "/home"
+          "/var/lib"
+        ];
+      };
+      boot = enabled;
+    };
 
     virtualisation = {
       docker = enabled;
