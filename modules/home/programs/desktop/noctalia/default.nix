@@ -2,6 +2,7 @@
   config,
   lib,
   namespace,
+  pkgs,
   ...
 }: let
   inherit (lib) mkIf mkForce;
@@ -13,7 +14,6 @@ in {
   };
 
   config = mkIf cfg.enable {
-    programs.noctalia = {};
 
     programs.noctalia = {
       enable = true;
@@ -64,6 +64,7 @@ in {
         shell = {
           avatar_path = "/home/jervw/pics/.face.jpg";
           font_family = "JetBrainsMono Nerd Font";
+          launch_apps_custom_command = "uwsm app -- $CMD";
           niri_overview_type_to_launch_enabled = true;
           screen_time_enabled = true;
         };
