@@ -24,7 +24,7 @@ in {
     services = {
       paperless = {
         enable = true;
-        port = cfg.port;
+        inherit (cfg) port;
         address = "0.0.0.0";
         domain = cfg.host;
       };

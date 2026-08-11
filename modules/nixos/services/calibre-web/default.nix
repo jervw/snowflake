@@ -7,7 +7,7 @@
   inherit (lib) mkEnableOption mkIf mkOption;
   cfg = config.${namespace}.services.calibre-web;
 in {
-  options.${namespace}.services.calibre-web= {
+  options.${namespace}.services.calibre-web = {
     enable = mkEnableOption "Enable Calibre-web service";
     host = mkOption {
       type = lib.types.str;
@@ -22,13 +22,13 @@ in {
 
   config = mkIf cfg.enable {
     services = {
-      calibre-web= {
+      calibre-web = {
         enable = false; # TODO enable after build failure fixed
         openFirewall = true;
 
         listen = {
           ip = "0.0.0.0";
-          port = cfg.port;
+          inherit (cfg) port;
         };
 
         options = {

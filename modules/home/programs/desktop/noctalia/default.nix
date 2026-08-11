@@ -2,7 +2,6 @@
   config,
   lib,
   namespace,
-  pkgs,
   ...
 }: let
   inherit (lib) mkIf mkForce;
@@ -14,7 +13,6 @@ in {
   };
 
   config = mkIf cfg.enable {
-
     programs.noctalia = {
       enable = true;
       settings = {

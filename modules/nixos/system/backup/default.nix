@@ -37,7 +37,7 @@ in {
       # username. Authentication is supplied through the environment file.
       repository = "rest:http://${cfg.serverAddress}/backup/${host}";
       environmentFile = config.age.secrets.restic-password.path;
-      paths = cfg.paths;
+      inherit (cfg) paths;
       exclude = globalExcludes ++ cfg.exclude;
       timerConfig = {
         OnCalendar = "daily";

@@ -23,7 +23,7 @@ in {
     age.secrets.restic.file = "${inputs.self}/secrets/restic.age";
     services.restic.server = {
       enable = true;
-      dataDir = cfg.dataDir;
+      inherit (cfg) dataDir;
       listenAddress = "0.0.0.0:${toString cfg.port}";
       htpasswd-file = "/run/restic/htpasswd";
       privateRepos = true;

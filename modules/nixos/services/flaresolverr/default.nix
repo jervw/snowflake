@@ -18,7 +18,7 @@ in {
   config = mkIf cfg.enable {
     services.flaresolverr = {
       enable = true;
-      port = cfg.port;
+      inherit (cfg) port;
     };
   };
 }

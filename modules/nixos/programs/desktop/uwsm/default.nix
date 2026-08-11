@@ -4,7 +4,7 @@
   namespace,
   ...
 }: let
-  inherit (lib) mkIf mkOption mkEnableOption types mapAttrs' nameValuePair filterAttrs;
+  inherit (lib) mkIf mkOption mkEnableOption types;
   cfg = config.${namespace}.programs.desktop.uwsm;
 in {
   options.${namespace}.programs.desktop.uwsm = {

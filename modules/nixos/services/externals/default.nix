@@ -25,12 +25,6 @@ in {
         reverse_proxy http://thor:8001
         import cloudflare
       '';
-
-      # Wallos
-      "wallos.jervw.dev".extraConfig = ''
-        reverse_proxy http://thor:8282
-        import cloudflare
-      '';
     };
   };
 }
