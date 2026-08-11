@@ -45,6 +45,7 @@ in {
           ++ mkDirs ".cache/" ["nix" "noctalia"]
           ++ mkDirs ".config/" [
             "BeeperTexts"
+            "BraveSoftware"
             "codex"
             "Element"
             "Equicord"
@@ -54,7 +55,6 @@ in {
             "fcitx5"
             "feishin"
             "heroic"
-            "net.imput.helium"
             "noctalia"
             "nushell"
             "obsidian"
@@ -74,6 +74,7 @@ in {
             "direnv"
             "fish"
             "zed"
+            "umu"
           ]
           ++ mkDirs ".local/state/" ["syncthing" "wireplumber" "noctalia"]
           ++ [

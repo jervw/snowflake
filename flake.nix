@@ -7,7 +7,6 @@
     treefmt-nix.url = "github:numtide/treefmt-nix";
     nixcord.url = "github:FlameFlag/nixcord";
     helix.url = "github:gj1118/helix";
-    quadlet-nix.url = "github:SEIAROTg/quadlet-nix";
     ghostty.url = "github:ghostty-org/ghostty";
 
     agenix = {
@@ -33,11 +32,6 @@
 
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    helium = {
-      url = "github:AlvaroParker/helium-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -71,7 +65,6 @@
         impermanence.nixosModule
         lanzaboote.nixosModules.lanzaboote
         nix-index.nixosModules.nix-index
-        quadlet-nix.nixosModules.quadlet
       ];
 
       homes.modules = with inputs; [

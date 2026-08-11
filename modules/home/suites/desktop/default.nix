@@ -2,7 +2,6 @@
   config,
   lib,
   pkgs,
-  inputs,
   namespace,
   ...
 }: let
@@ -17,7 +16,6 @@ in {
 
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
-      inputs.helium.packages.${pkgs.stdenv.hostPlatform.system}.default
       xdg-utils
       anki-bin
       cider-2
@@ -50,6 +48,7 @@ in {
           noctalia = mkDefault enabled;
         };
         apps = {
+          brave = mkDefault enabled;
           discord = mkDefault enabled;
           mpv = mkDefault enabled;
           obs = mkDefault enabled;

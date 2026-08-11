@@ -36,7 +36,7 @@ in
         # Programs
         "Mod+Return" = {spawn = ["ghostty" "+new-window"];};
         "Mod+D" = {spawn = noctaliaIpc ["panel-toggle" "launcher"];};
-        "Mod+B" = {spawn = ["uwsm" "app" "--" "helium"];};
+        "Mod+B" = {spawn = ["uwsm" "app" "--" "brave-origin"];};
         "Mod+N" = {spawn = ["ghostty" "+new-window" "-e" "yazi"];};
 
         # Essential
