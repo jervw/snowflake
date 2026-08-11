@@ -35,6 +35,7 @@ in {
         profilarr = mkDefault enabled;
         tautulli = mkDefault enabled;
         tinyauth = mkDefault enabled;
+        wallos = mkDefault enabled;
       };
     };
   };
