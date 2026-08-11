@@ -14,13 +14,13 @@ in {
   };
 
   config = mkIf cfg.enable {
-    environment.systemPackages = with pkgs; [qmk via vial];
+    environment.systemPackages = with pkgs; [qmk vial];
 
     hardware.keyboard.qmk.enable = true;
 
     services = {
       udev = {
-        packages = [pkgs.via pkgs.vial];
+        packages = [pkgs.vial];
       };
     };
   };
