@@ -1,13 +1,11 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    home-manager.url = "github:nix-community/home-manager";
-    impermanence.url = "github:nix-community/impermanence";
-    nixos-hardware.url = "github:nixos/nixos-hardware";
-    treefmt-nix.url = "github:numtide/treefmt-nix";
-    nixcord.url = "github:FlameFlag/nixcord";
-    helix.url = "github:gj1118/helix";
     ghostty.url = "github:ghostty-org/ghostty";
+    helix.url = "github:gj1118/helix";
+    nixcord.url = "github:FlameFlag/nixcord";
+    nixos-hardware.url = "github:NixOS/nixos-hardware";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    quadlet-nix.url = "github:SEIAROTg/quadlet-nix";
 
     agenix = {
       url = "github:ryantm/agenix";
@@ -15,8 +13,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    snowfall-lib = {
-      url = "github:anntnzrb/snowfall-lib";
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    impermanence = {
+      url = "github:nix-community/impermanence";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -35,9 +38,19 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    snowfall-lib = {
+      url = "github:anntnzrb/snowfall-lib";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     ssh-keys = {
       url = "https://github.com/jervw.keys";
       flake = false;
+    };
+
+    treefmt-nix = {
+      url = "github:numtide/treefmt-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
@@ -65,6 +78,7 @@
         impermanence.nixosModule
         lanzaboote.nixosModules.lanzaboote
         nix-index.nixosModules.nix-index
+        quadlet-nix.nixosModules.quadlet
       ];
 
       homes.modules = with inputs; [
