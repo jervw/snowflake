@@ -36,6 +36,7 @@ in {
         pocket-id = mkDefault enabled;
         plex = mkDefault enabled;
         profilarr = mkDefault enabled;
+        qbittorrent = mkDefault enabled;
         tautulli = mkDefault enabled;
         tinyauth = mkDefault enabled;
         wallos = mkDefault enabled;
