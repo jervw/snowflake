@@ -17,7 +17,9 @@ in {
     snowflake = {
       services = {
         adguard = mkDefault enabled;
-        audiobookshelf = mkDefault enabled;
+        audiobookshelf = {
+          enable = mkDefault true;
+        };
         caddy = mkDefault enabled;
         calibre-web = mkDefault enabled;
         discord-free-game-notifier = mkDefault enabled;
