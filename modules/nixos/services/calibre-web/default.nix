@@ -23,7 +23,7 @@ in {
   config = mkIf cfg.enable {
     services = {
       calibre-web = {
-        enable = false; # TODO enable after build failure fixed
+        enable = true;
         openFirewall = true;
 
         listen = {
