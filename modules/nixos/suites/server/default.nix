@@ -20,6 +20,7 @@ in {
         audiobookshelf = mkDefault enabled;
         caddy = mkDefault enabled;
         calibre-web = mkDefault enabled;
+        discord-free-game-notifier = mkDefault enabled;
         externals = mkDefault enabled;
         flaresolverr = mkDefault enabled;
         glance = mkDefault enabled;
