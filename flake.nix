@@ -73,6 +73,11 @@
         permittedInsecurePackages = ["electron-40.10.5" "pnpm-9.15.9"];
       };
 
+      supportedSystems = [
+        "x86_64-linux"
+        "aarch64-linux"
+      ];
+
       systems.modules.nixos = with inputs; [
         agenix.nixosModules.default
         impermanence.nixosModule
