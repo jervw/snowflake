@@ -12,18 +12,20 @@
   transformedMcpServers = lib.optionalAttrs (config.programs.codex.enableMcpIntegration && config.programs.mcp.enable) (
     lib.mapAttrs (
       name: server:
-      config.lib.mcp.transformMcpServer {
-        inherit server;
-        exclude = ["headers" "type"];
-        extraTransforms = [
-          (s: s // lib.optionalAttrs (s.headers or {} != {}) {http_headers = s.headers;})
-          config.lib.mcp.addType
-          (config.lib.mcp.wrapEnvFilesCommand {inherit pkgs name;})
-        ];
-      }
-    ) config.programs.mcp.servers
+        config.lib.mcp.transformMcpServer {
+          inherit server;
+          exclude = ["headers" "type"];
+          extraTransforms = [
+            (s: s // lib.optionalAttrs (s.headers or {} != {}) {http_headers = s.headers;})
+            config.lib.mcp.addType
+            (config.lib.mcp.wrapEnvFilesCommand {inherit pkgs name;})
+          ];
+        }
+    )
+    config.programs.mcp.servers
   );
-  staticSettings = lib.recursiveUpdate
+  staticSettings =
+    lib.recursiveUpdate
     {mcp_servers = transformedMcpServers;}
     config.programs.codex.settings;
   staticConfig = (pkgs.formats.toml {}).generate "codex-config" staticSettings;
