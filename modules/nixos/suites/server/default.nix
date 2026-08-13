@@ -17,9 +17,7 @@ in {
     snowflake = {
       services = {
         adguard = mkDefault enabled;
-        audiobookshelf = {
-          enable = mkDefault true;
-        };
+        audiobookshelf = mkDefault enabled;
         caddy = mkDefault enabled;
         calibre-web = mkDefault enabled;
         discord-free-game-notifier = mkDefault enabled;
@@ -31,6 +29,7 @@ in {
         mediarr = mkDefault enabled;
         navidrome = mkDefault enabled;
         nfs-server = mkDefault enabled;
+        nixpkgs-webhook = mkDefault enabled;
         paperless = mkDefault enabled;
         pocket-id = mkDefault enabled;
         plex = mkDefault enabled;

@@ -17,4 +17,5 @@ in {
   "gluetun.age".publicKeys = users ++ systems;
   "mcp-context7.age".publicKeys = users ++ systems;
   "restic.age".publicKeys = users ++ systems;
+  "nixpkgs-webhook.age".publicKeys = users ++ systems;
 }
