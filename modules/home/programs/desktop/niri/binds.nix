@@ -2,6 +2,7 @@
   config,
   lib,
   namespace,
+  pkgs,
   ...
 }: let
   inherit (lib) mkIf;
@@ -38,6 +39,7 @@ in
         "Mod+D" = {spawn = noctaliaIpc ["panel-toggle" "launcher"];};
         "Mod+B" = {spawn = ["uwsm" "app" "--" "brave-origin"];};
         "Mod+N" = {spawn = ["ghostty" "+new-window" "-e" "yazi"];};
+        "Mod+O" = {spawn = [(lib.getExe pkgs.${namespace}.wl-ocr)];};
 
         # Essential
         "Mod+Q" = {close-window = {};};
