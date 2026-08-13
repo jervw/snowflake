@@ -1,0 +1,80 @@
+name: Build NixOS systems
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: celler-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build and cache ${{ matrix.host }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+
+    strategy:
+      fail-fast: false
+      matrix:
+        host:
+          - fenrir
+          - loki
+          - thor
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Install Nix
+        uses: cachix/install-nix-action@v31
+        with:
+          extra_nix_config: |
+            extra-substituters = https://nix-community.cachix.org https://attic.xuyh0120.win/lantian https://cache.soopy.moe https://noctalia.cachix.org https://cache.nixos-cuda.org https://cache.jervw.dev/nix
+            extra-trusted-public-keys = nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs= lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc= cache.soopy.moe-1:0RZVsQeR+GOh0VQI9rvnHz55nVXkFardDqfm4+afjPo= noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4= cache.nixos-cuda.org:74DUi4Ye579gUqzH4ziL9IyiJBlDpMRn9MBN8oNan9M= nix:IbdGpiigjEu45Imugs8y6OM6mDSbYr0Zf3Q2E6yz+Xc=
+
+      - name: Connect to Tailscale
+        uses: tailscale/github-action@v4
+        with:
+          authkey: ${{ secrets.TS_AUTHKEY }}
+
+      - name: Verify cache connectivity
+        run: |
+          curl --fail --silent --show-error \
+            --retry 5 \
+            --retry-delay 2 \
+            https://cache.jervw.dev/nix/nix-cache-info
+
+      - name: Install Celler client
+        run: |
+          celler_path="$(
+            nix build \
+              --no-link \
+              --print-out-paths \
+              .#nixosConfigurations.thor.pkgs.celler
+          )"
+          echo "$celler_path/bin" >> "$GITHUB_PATH"
+
+      - name: Log in to Celler
+        env:
+          CELLER_TOKEN: ${{ secrets.CELLER_TOKEN }}
+        run: celler login --set-default ci https://cache.jervw.dev/
+
+      - name: Build system closure
+        id: build
+        run: |
+          system_path="$(
+            nix build \
+              --no-link \
+              --print-out-paths \
+              ".#nixosConfigurations.${{ matrix.host }}.config.system.build.toplevel"
+          )"
+          echo "path=$system_path" >> "$GITHUB_OUTPUT"
+
+      - name: Push system closure
+        run: celler push nix "${{ steps.build.outputs.path }}"
