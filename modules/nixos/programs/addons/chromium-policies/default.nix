@@ -93,7 +93,6 @@ in {
         BackgroundModeEnabled = false;
         BrowserGuestModeEnabled = false;
         BrowserSignin = 0;
-        SyncDisabled = true;
 
         # Downloads
         AlwaysOpenPdfExternally = true;
