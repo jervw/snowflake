@@ -3,6 +3,7 @@ _: {
     environment.pathsToLink = ["/share/applications" "/share/xdg-desktop-portal"];
     home-manager = {
       backupFileExtension = "hm.old";
+      overwriteBackup = true;
       useGlobalPkgs = true;
       useUserPackages = true;
     };
