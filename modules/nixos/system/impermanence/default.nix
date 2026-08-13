@@ -75,6 +75,7 @@ in {
             "fish"
             "zed"
             "umu"
+            "voxtype"
           ]
           ++ mkDirs ".local/state/" ["syncthing" "wireplumber" "noctalia"]
           ++ [

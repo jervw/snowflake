@@ -40,6 +40,8 @@ in
         "Mod+B" = {spawn = ["uwsm" "app" "--" "brave-origin"];};
         "Mod+N" = {spawn = ["ghostty" "+new-window" "-e" "yazi"];};
         "Mod+O" = {spawn = [(lib.getExe pkgs.${namespace}.wl-ocr)];};
+        "Mod+T" = {spawn = ["voxtype" "record" "toggle"];};
+        "Mod+Shift+T" = {spawn = ["voxtype-language"];};
 
         # Essential
         "Mod+Q" = {close-window = {};};

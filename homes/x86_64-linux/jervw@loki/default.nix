@@ -15,6 +15,7 @@ in {
     services = {
       ollama = enabled;
       syncthing = enabled;
+      voxtype = enabled;
     };
 
     system = {
