@@ -155,9 +155,11 @@ in {
                     (mkGroup [
                       {
                         type = "hacker-news";
+                        collapse-after = 10;
                       }
                       {
                         type = "lobsters";
+                        collapse-after = 10;
                       }
                     ])
                   ];
