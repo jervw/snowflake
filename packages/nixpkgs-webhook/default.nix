@@ -32,6 +32,7 @@ python3Packages.buildPythonApplication {
   meta = {
     description = "Send a webhook when NixOS channel revisions change";
     homepage = "https://codeberg.org/jervw/nixpkgs-webhook";
+    mainProgram = "nixpkgs-webhook";
     platforms = lib.platforms.linux;
   };
 }

@@ -35,7 +35,7 @@ in {
       after = ["network-online.target"];
 
       serviceConfig = {
-        ExecStart = lib.getExe inputs.self.packages.${pkgs.system}.nixpkgs-webhook;
+        ExecStart = lib.getExe inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.nixpkgs-webhook;
         EnvironmentFile = config.age.secrets.nixpkgs-webhook.path;
         DynamicUser = true;
         StateDirectory = "nixpkgs-webhook";
