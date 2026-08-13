@@ -13,6 +13,7 @@ in {
     };
 
     services = {
+      ollama = enabled;
       syncthing = enabled;
     };
 

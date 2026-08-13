@@ -36,13 +36,6 @@ in {
       yubikey = enabled;
     };
 
-    services = {
-      ollama = {
-        enable = true;
-        modelsPath = "/persist/ollama";
-      };
-    };
-
     suites = {
       core = enabled;
       desktop = enabled;
