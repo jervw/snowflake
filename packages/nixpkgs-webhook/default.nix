@@ -22,7 +22,10 @@ python3Packages.buildPythonApplication {
 
   installPhase = ''
     runHook preInstall
-    install -Dm755 nixpkgs.py $out/bin/nixpkgs-webhook
+    # Add shebang because i am too lazy to update it upstream
+    sed '1i#!${python3Packages.python.interpreter}' nixpkgs.py \
+      > nixpkgs-webhook
+    install -Dm755 nixpkgs-webhook $out/bin/nixpkgs-webhook
     runHook postInstall
   '';
 
