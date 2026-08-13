@@ -18,11 +18,12 @@
     show-thumbnails = true;
     inherit subreddit;
   };
-  mkRss = feed: {
+  mkRss = title: url: {
     type = "rss";
+    inherit title;
     limit = 10;
     cache = "1h";
-    feeds = [feed];
+    feeds = [{inherit url;}];
   };
 in {
   options.${namespace}.services.glance = {
@@ -172,18 +173,8 @@ in {
                       location = "Espoo, Finland";
                     }
                     (mkGroup [
-                      (mkRss {
-                        url = "https://yle.fi/rss/uutiset/paauutiset";
-                        title = "Yle";
-                      })
-                      (mkRss {
-                          url = "https://www.phoronix.com/rss.php";
-                          title = "Phoronix";
-                        }
-                        // {
-                          style = "horizontal-cards";
-                          collapse-after = 10;
-                        })
+                      (mkRss "Yle" "https://yle.fi/rss/uutiset/paauutiset")
+                      (mkRss "Phoronix" "https://www.phoronix.com/rss.php")
                     ])
                     {
                       type = "custom-api";
