@@ -18,4 +18,5 @@ in {
   "mcp-context7.age".publicKeys = users ++ systems;
   "restic.age".publicKeys = users ++ systems;
   "nixpkgs-webhook.age".publicKeys = users ++ systems;
+  "celler.age".publicKeys = users ++ systems;
 }

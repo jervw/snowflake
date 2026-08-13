@@ -7,6 +7,11 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     quadlet-nix.url = "github:SEIAROTg/quadlet-nix";
 
+    celler = {
+      url = "github:celler-cache/celler";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     agenix = {
       url = "github:ryantm/agenix";
       inputs.darwin.follows = "";
@@ -80,6 +85,7 @@
 
       systems.modules.nixos = with inputs; [
         agenix.nixosModules.default
+        celler.nixosModules.cellerd
         impermanence.nixosModule
         lanzaboote.nixosModules.lanzaboote
         nix-index.nixosModules.nix-index
