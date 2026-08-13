@@ -22,7 +22,7 @@ in {
 
         bar.default = {
           center = ["media"];
-          end = ["tray" "notifications" "clipboard" "network" "volume" "battery" "control-center" "clock" "session"];
+          end = ["tray" "status" "notifications" "clipboard" "network" "volume" "battery" "control-center" "clock" "session"];
           margin_edge = 5;
           margin_ends = 14;
           start = ["launcher" "workspaces"];
