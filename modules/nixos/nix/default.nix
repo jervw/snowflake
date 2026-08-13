@@ -1,13 +1,17 @@
 {
   lib,
   config,
+  inputs,
   namespace,
+  pkgs,
   ...
 }: let
   inherit (lib) mkForce;
   inherit (config.${namespace}) user;
 in {
   config = {
+    environment.systemPackages = [inputs.celler.packages.${pkgs.stdenv.hostPlatform.system}.celler];
+
     programs = {
       command-not-found.enable = false;
       nh = {
@@ -53,6 +57,7 @@ in {
           "https://cache.soopy.moe" # Linux T2
           "https://noctalia.cachix.org"
           "https://cache.nixos-cuda.org"
+          "https://cache.jervw.dev/nix"
         ];
         trusted-public-keys = [
           "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
@@ -61,6 +66,7 @@ in {
           "cache.soopy.moe-1:0RZVsQeR+GOh0VQI9rvnHz55nVXkFardDqfm4+afjPo="
           "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
           "cache.nixos-cuda.org:74DUi4Ye579gUqzH4ziL9IyiJBlDpMRn9MBN8oNan9M="
+          "nix:IbdGpiigjEu45Imugs8y6OM6mDSbYr0Zf3Q2E6yz+Xc="
         ];
       };
       generateNixPathFromInputs = true;
