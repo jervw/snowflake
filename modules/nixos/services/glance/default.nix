@@ -6,6 +6,24 @@
 }: let
   inherit (lib) mkEnableOption mkIf mkOption;
   cfg = config.${namespace}.services.glance;
+
+  # Helper functions to reduce length
+  mkBookmark = title: icon: url: {inherit title icon url;};
+  mkGroup = widgets: {
+    type = "group";
+    inherit widgets;
+  };
+  mkReddit = subreddit: {
+    type = "reddit";
+    show-thumbnails = true;
+    inherit subreddit;
+  };
+  mkRss = feed: {
+    type = "rss";
+    limit = 10;
+    cache = "1h";
+    feeds = [feed];
+  };
 in {
   options.${namespace}.services.glance = {
     enable = mkEnableOption "Enable Glance service";
@@ -49,111 +67,62 @@ in {
                         {
                           title = "Media Servers";
                           links = [
-                            {
-                              title = "Plex";
-                              icon = "sh:plex";
-                              url = "https://plex.jervw.dev";
-                            }
-                            {
-                              title = "Immich";
-                              icon = "sh:immich";
-                              url = "https://media.jervw.dev";
-                            }
-                            {
-                              title = "Audiobookshelf";
-                              icon = "sh:audiobookshelf";
-                              url = "https://shelf.jervw.dev";
-                            }
-                            {
-                              title = "Karakeep";
-                              icon = "di:karakeep";
-                              url = "https://save.jervw.dev";
-                            }
+                            (mkBookmark "Plex" "sh:plex" "https://plex.jervw.dev")
+                            (mkBookmark "Immich" "sh:immich" "https://media.jervw.dev")
+                            (mkBookmark "Navidrome" "sh:navidrome" "https://music.jervw.dev")
+                            (mkBookmark "Audiobookshelf" "sh:audiobookshelf" "https://shelf.jervw.dev")
+                            (mkBookmark "Karakeep" "sh:karakeep" "https://save.jervw.dev")
                           ];
                         }
 
                         {
                           title = "Media Automation";
                           links = [
-                            {
-                              title = "Jellyseerr";
-                              icon = "sh:jellyseerr";
-                              url = "https://seerr.jervw.dev";
-                            }
-                            {
-                              title = "Sonarr";
-                              icon = "sh:sonarr";
-                              url = "https://sonarr.jervw.dev";
-                            }
-                            {
-                              title = "Radarr";
-                              icon = "sh:radarr";
-                              url = "https://radarr.jervw.dev";
-                            }
-                            {
-                              title = "Bazarr";
-                              icon = "di:bazarr";
-                              url = "https://bazarr.jervw.dev";
-                            }
-                            {
-                              title = "Prowlarr";
-                              icon = "sh:prowlarr";
-                              url = "https://prowlarr.jervw.dev";
-                            }
+                            (mkBookmark "Seerr" "sh:jellyseerr" "https://seerr.jervw.dev")
+                            (mkBookmark "Sonarr" "sh:sonarr" "https://sonarr.jervw.dev")
+                            (mkBookmark "Radarr" "sh:radarr" "https://radarr.jervw.dev")
+                            (mkBookmark "Bazarr" "sh:bazarr" "https://bazarr.jervw.dev")
+                            (mkBookmark "Prowlarr" "sh:prowlarr" "https://prowlarr.jervw.dev")
                           ];
                         }
 
                         {
                           title = "Monitoring & Networking";
                           links = [
-                            {
-                              title = "Speedtest Tracker";
-                              icon = "sh:speedtest-tracker";
-                              url = "https://speedtest.jervw.dev";
-                            }
-                            {
-                              title = "Tautulli";
-                              icon = "sh:tautulli";
-                              url = "https://tautulli.jervw.dev";
-                            }
-                            {
-                              title = "AdGuard Home";
-                              icon = "sh:adguard-home";
-                              url = "https://dns.jervw.dev";
-                            }
+                            (mkBookmark "Tautulli" "sh:tautulli" "https://tautulli.jervw.dev")
+                            (mkBookmark "AdGuard Home" "sh:adguard-home" "https://dns.jervw.dev")
                           ];
                         }
                         {
                           title = "Misc";
                           links = [
-                            {
-                              title = "qBittorrent";
-                              icon = "sh:qbittorrent";
-                              url = "https://dl.jervw.dev";
-                            }
-                            {
-                              title = "Profilarr";
-                              icon = "di:profilarr";
-                              url = "https://profilarr.jervw.dev";
-                            }
+                            (mkBookmark "qBittorrent" "sh:qbittorrent" "https://dl.jervw.dev")
+                            (mkBookmark "Wallos" "sh:wallos" "https://wallos.jervw.dev")
+                          ];
+                        }
+                        {
+                          title = "Books & Documents";
+                          links = [
+                            (mkBookmark "Calibre-Web" "sh:calibre-web" "https://calibre.jervw.dev")
+                            (mkBookmark "Paperless-ngx" "sh:paperless-ngx" "https://paperless.jervw.dev")
+                          ];
+                        }
+                        {
+                          title = "Auth";
+                          links = [
+                            (mkBookmark "Pocket ID" "sh:pocket-id" "https://id.jervw.dev")
+                            (mkBookmark "Tinyauth" "sh:tinyauth" "https://auth.jervw.dev")
                           ];
                         }
                       ];
                     }
                     {
-                      type = "twitch-channels";
-                      collapse-after = 10;
-                      channels = [
-                        "xqc"
-                        "theprimeagen"
-                        "Ottomated"
-                        "Distortion2"
-                        "stableronaldo"
-                        "pelaajatcom"
-                        "sodapoppin"
-                        "Geoguessr"
-                        "Arky"
-                        "erobb221"
+                      type = "twitch-top-games";
+                      exclude = [
+                        "slots"
+                        "always-on"
+                        "crypto"
+                        "im-only-sleeping"
                       ];
                     }
                   ];
@@ -166,42 +135,31 @@ in {
                       search-engine = "https://kagi.com/search?q={QUERY}";
                       autofocus = false;
                     }
+                    (mkGroup [
+                      (mkReddit "worldnews")
+                      (mkReddit "linux_gaming")
+                      (mkReddit "NixOS")
+                      (mkReddit "selfhosted")
+                    ])
                     {
-                      type = "group";
-                      widgets = [
-                        {
-                          type = "reddit";
-                          show-thumbnails = true;
-                          subreddit = "worldnews";
-                        }
-                        {
-                          type = "reddit";
-                          show-thumbnails = true;
-                          subreddit = "linux";
-                        }
-                        {
-                          type = "reddit";
-                          show-thumbnails = true;
-                          subreddit = "NixOS";
-                        }
+                      type = "videos";
+                      channels = [
+                        "UCUahpYHkcXv2QqfdSrJT7GA" # Elmo
+                        "UCgCaKhRfd0nmBSlRZKnP2yA" # Paistajat
+                        "UCZXW8E1__d5tZb-wLFOt8TQ" # Bog
+                        "UCXuqSBlHAE6Xw-yeJA0Tunw" # LTT
+                        "UCb14ea61ASi7gq-wVviSJfg" # Viktor
+                        "UCB2wtYpfbCpYDc5TeTwuqFA" # Will
                       ];
                     }
-                    {
-                      type = "rss";
-                      style = "horizontal-cards";
-                      limit = 10;
-                      collapse-after = 10;
-                      cache = "1h";
-                      feeds = [
-                        {
-                          url = "https://feeds.yle.fi/uutiset/v1/majorHeadlines/YLE_UUTISET.rss";
-                          title = "Yle";
-                        }
-                      ];
-                    }
-                    {
-                      type = "hacker-news";
-                    }
+                    (mkGroup [
+                      {
+                        type = "hacker-news";
+                      }
+                      {
+                        type = "lobsters";
+                      }
+                    ])
                   ];
                 }
                 {
@@ -211,17 +169,20 @@ in {
                       type = "weather";
                       location = "Espoo, Finland";
                     }
-                    {
-                      type = "rss";
-                      limit = 10;
-                      cache = "1h";
-                      feeds = [
-                        {
+                    (mkGroup [
+                      (mkRss {
+                        url = "https://yle.fi/rss/uutiset/paauutiset";
+                        title = "Yle";
+                      })
+                      (mkRss {
                           url = "https://www.phoronix.com/rss.php";
                           title = "Phoronix";
                         }
-                      ];
-                    }
+                        // {
+                          style = "horizontal-cards";
+                          collapse-after = 10;
+                        })
+                    ])
                     {
                       type = "custom-api";
                       title = "Bible Verse";
