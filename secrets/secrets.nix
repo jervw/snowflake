@@ -19,4 +19,6 @@ in {
   "restic.age".publicKeys = users ++ systems;
   "nixpkgs-webhook.age".publicKeys = users ++ systems;
   "celler.age".publicKeys = users ++ systems;
+  "grimmory.age".publicKeys = users ++ systems;
+  "grimmory-database.age".publicKeys = users ++ systems;
 }
