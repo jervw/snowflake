@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  inputs,
   namespace,
   ...
 }: let
@@ -26,6 +27,8 @@ in {
       tomato-c
       qbittorrent-enhanced
       fontpreview
+
+      (inputs.helix-notes.packages.${pkgs.stdenv.hostPlatform.system}.default)
 
       # Wayland stuff
       grimblast
