@@ -1,9 +1,14 @@
-name: Build NixOS systems
+name: Cache custom Nix packages
 
 on:
   push:
     branches:
       - main
+    paths:
+      - .github/workflows/celler.yml
+      - flake.lock
+      - flake.nix
+      - packages/**
   workflow_dispatch:
 
 permissions:
@@ -15,18 +20,9 @@ concurrency:
 
 jobs:
   build:
-    name: Build and cache ${{ matrix.host }}
+    name: Build and cache packages
     runs-on: ubuntu-latest
     timeout-minutes: 180
-
-    strategy:
-      fail-fast: false
-      max-parallel: 1
-      matrix:
-        host:
-          - fenrir
-          - loki
-          - thor
 
     steps:
       - name: Check out repository
@@ -34,10 +30,34 @@ jobs:
 
       - name: Install Nix
         uses: cachix/install-nix-action@v31
-        with:
-          extra_nix_config: |
-            extra-substituters = https://nix-community.cachix.org https://attic.xuyh0120.win/lantian https://cache.soopy.moe https://noctalia.cachix.org https://cache.nixos-cuda.org https://cache.jervw.dev/nix
-            extra-trusted-public-keys = nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs= lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc= cache.soopy.moe-1:0RZVsQeR+GOh0VQI9rvnHz55nVXkFardDqfm4+afjPo= noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4= cache.nixos-cuda.org:74DUi4Ye579gUqzH4ziL9IyiJBlDpMRn9MBN8oNan9M= nix:IbdGpiigjEu45Imugs8y6OM6mDSbYr0Zf3Q2E6yz+Xc=
+
+      - name: Load Nix cache configuration
+        run: |
+          cache_config="$(
+            nix eval \
+              --json \
+              --impure \
+              --expr '
+                let
+                  settings =
+                    (builtins.getFlake (toString ./.)).nixosConfigurations.loki.config.nix.settings;
+                in
+                {
+                  inherit (settings) substituters;
+                  trustedPublicKeys = settings."trusted-public-keys";
+                }
+              '
+          )"
+
+          substituters="$(jq -r '.substituters | join(" ")' <<< "$cache_config")"
+          public_keys="$(jq -r '.trustedPublicKeys | join(" ")' <<< "$cache_config")"
+
+          {
+            echo 'NIX_CONFIG<<EOF'
+            echo "substituters = $substituters"
+            echo "trusted-public-keys = $public_keys"
+            echo EOF
+          } >> "$GITHUB_ENV"
 
       - name: Connect to Tailscale
         uses: tailscale/github-action@v4
@@ -57,7 +77,14 @@ jobs:
             nix build \
               --no-link \
               --print-out-paths \
-              .#nixosConfigurations.thor.pkgs.celler
+              --impure \
+              --expr '
+                let
+                  flake = builtins.getFlake (toString ./.);
+                  system = "x86_64-linux";
+                in
+                flake.inputs.celler.packages.${system}.celler
+              '
           )"
           echo "$celler_path/bin" >> "$GITHUB_PATH"
 
@@ -66,16 +93,27 @@ jobs:
           CELLER_TOKEN: ${{ secrets.CELLER_TOKEN }}
         run: celler login --set-default ci https://cache.jervw.dev/
 
-      - name: Build system closure
-        id: build
+      - name: Build cache targets
         run: |
-          system_path="$(
-            nix build \
-              --no-link \
-              --print-out-paths \
-              ".#nixosConfigurations.${{ matrix.host }}.config.system.build.toplevel"
-          )"
-          echo "path=$system_path" >> "$GITHUB_OUTPUT"
+          nix build \
+            --no-link \
+            --print-out-paths \
+            --impure \
+            --expr '
+              let
+                flake = builtins.getFlake (toString ./.);
+                system = "x86_64-linux";
+              in
+              [
+                flake.packages.${system}."nixpkgs-webhook"
+                flake.packages.${system}."wl-ocr"
+                flake.inputs.helix.packages.${system}.default
+                flake.inputs."helix-notes".packages.${system}.default
+              ]
+            ' > "$RUNNER_TEMP/celler-paths"
 
-      - name: Push system closure
-        run: celler push nix "${{ steps.build.outputs.path }}"
+      - name: Push cache targets
+        run: |
+          while IFS= read -r path; do
+            celler push nix "$path"
+          done < "$RUNNER_TEMP/celler-paths"

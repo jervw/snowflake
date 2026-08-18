@@ -52,6 +52,12 @@ in {
       description = "Local Garage S3 API port";
     };
 
+    s3Host = mkOption {
+      type = lib.types.str;
+      default = "cache-s3.jervw.dev";
+      description = "Public host name used for presigned Garage S3 URLs";
+    };
+
     retentionPeriod = mkOption {
       type = lib.types.str;
       default = "1 month";
@@ -82,7 +88,7 @@ in {
             type = "s3";
             region = "garage";
             inherit (cfg) bucket;
-            endpoint = "http://127.0.0.1:${toString cfg.s3Port}";
+            endpoint = "https://${cfg.s3Host}";
           };
 
           chunking = {
@@ -129,10 +135,17 @@ in {
         extraEnvironment.GARAGE_DEFAULT_BUCKET = cfg.bucket;
       };
 
-      caddy.virtualHosts."${cfg.host}".extraConfig = ''
-        reverse_proxy http://127.0.0.1:${toString cfg.port}
-        import cloudflare
-      '';
+      caddy.virtualHosts = {
+        "${cfg.host}".extraConfig = ''
+          reverse_proxy http://127.0.0.1:${toString cfg.port}
+          import cloudflare
+        '';
+
+        "${cfg.s3Host}".extraConfig = ''
+          reverse_proxy http://127.0.0.1:${toString cfg.s3Port}
+          import cloudflare
+        '';
+      };
     };
 
     users = {
