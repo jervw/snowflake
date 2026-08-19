@@ -10,6 +10,12 @@
   inherit (config.${namespace}) user;
 in {
   config = {
+    age.secrets.nix-access-tokens = {
+      file = "${inputs.self}/secrets/nix-access-tokens.age";
+      mode = "0400";
+      owner = user.name;
+    };
+
     environment.systemPackages = [inputs.celler.packages.${pkgs.stdenv.hostPlatform.system}.celler];
 
     programs = {
@@ -42,6 +48,9 @@ in {
 
     nix = {
       channel.enable = false;
+      extraOptions = ''
+        !include ${config.age.secrets.nix-access-tokens.path}
+      '';
       settings = {
         extra-experimental-features = ["flakes" "nix-command"];
         warn-dirty = false;

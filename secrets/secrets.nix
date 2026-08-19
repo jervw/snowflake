@@ -19,4 +19,5 @@ in {
   "restic.age".publicKeys = users ++ systems;
   "nixpkgs-webhook.age".publicKeys = users ++ systems;
   "celler.age".publicKeys = users ++ systems;
+  "nix-access-tokens.age".publicKeys = users ++ systems;
 }
