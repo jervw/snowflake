@@ -87,33 +87,50 @@ jobs:
               '
           )"
           echo "$celler_path/bin" >> "$GITHUB_PATH"
+          echo "CELLER_PATH=$celler_path" >> "$GITHUB_ENV"
 
       - name: Log in to Celler
         env:
           CELLER_TOKEN: ${{ secrets.CELLER_TOKEN }}
         run: celler login --set-default ci https://cache.jervw.dev/
 
-      - name: Build cache targets
+      - name: Push Celler client
+        run: celler push nix "$CELLER_PATH"
+
+      - name: Build and push cache targets
         run: |
-          nix build \
-            --no-link \
-            --print-out-paths \
+          build_and_push() {
+            local name="$1"
+            shift
+
+            echo "::group::Build and push $name"
+            paths="$(nix build --no-link --print-out-paths "$@")"
+
+            while IFS= read -r path; do
+              celler push nix "$path"
+            done <<< "$paths"
+            echo "::endgroup::"
+          }
+
+          build_and_push nixpkgs-webhook .#nixpkgs-webhook
+          build_and_push wl-ocr .#wl-ocr
+
+          build_and_push helix \
             --impure \
             --expr '
               let
                 flake = builtins.getFlake (toString ./.);
                 system = "x86_64-linux";
               in
-              [
-                flake.packages.${system}."nixpkgs-webhook"
-                flake.packages.${system}."wl-ocr"
-                flake.inputs.helix.packages.${system}.default
-                flake.inputs."helix-notes".packages.${system}.default
-              ]
-            ' > "$RUNNER_TEMP/celler-paths"
+              flake.inputs.helix.packages.${system}.default
+            '
 
-      - name: Push cache targets
-        run: |
-          while IFS= read -r path; do
-            celler push nix "$path"
-          done < "$RUNNER_TEMP/celler-paths"
+          build_and_push helix-notes \
+            --impure \
+            --expr '
+              let
+                flake = builtins.getFlake (toString ./.);
+                system = "x86_64-linux";
+              in
+              flake.inputs."helix-notes".packages.${system}.default
+            '
