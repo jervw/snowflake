@@ -34,6 +34,7 @@ in {
         };
         shells = {
           fish = mkDefault enabled;
+          nushell = mkDefault enabled;
         };
         tools = {
           direnv = mkDefault enabled;
