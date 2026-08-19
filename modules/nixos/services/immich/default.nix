@@ -24,14 +24,13 @@ in {
     services = {
       immich = {
         enable = true;
-        openFirewall = true;
         mediaLocation = "/mnt/storage/Immich-Library";
         group = "media";
-        host = "0.0.0.0";
+        host = "127.0.0.1";
         inherit (cfg) port;
       };
       caddy.virtualHosts."${cfg.host}".extraConfig = ''
-        reverse_proxy http://thor:${toString cfg.port}
+        reverse_proxy http://127.0.0.1:${toString cfg.port}
         import cloudflare
       '';
     };

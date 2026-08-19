@@ -22,12 +22,9 @@ in {
 
   config = mkIf cfg.enable {
     services = {
-      jellyfin = {
-        enable = true;
-        openFirewall = true;
-      };
+      jellyfin.enable = true;
       caddy.virtualHosts."${cfg.host}".extraConfig = ''
-        reverse_proxy http://thor:${toString cfg.port}
+        reverse_proxy http://127.0.0.1:${toString cfg.port}
         import cloudflare
       '';
     };

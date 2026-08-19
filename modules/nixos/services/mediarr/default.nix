@@ -15,39 +15,36 @@ in {
     services = {
       radarr = {
         enable = true;
-        openFirewall = true;
+        settings.server.bindaddress = "127.0.0.1";
       };
       sonarr = {
         enable = true;
-        openFirewall = true;
+        settings.server.bindaddress = "127.0.0.1";
       };
       prowlarr = {
         enable = true;
-        openFirewall = true;
+        settings.server.bindaddress = "127.0.0.1";
       };
-      bazarr = {
-        enable = true;
-        openFirewall = true;
-      };
+      bazarr.enable = true;
 
       caddy.virtualHosts = {
         "radarr.jervw.dev".extraConfig = ''
-          reverse_proxy http://thor:7878
+          reverse_proxy http://127.0.0.1:7878
           import cloudflare
           import tinyauth
         '';
         "sonarr.jervw.dev".extraConfig = ''
-          reverse_proxy http://thor:8989
+          reverse_proxy http://127.0.0.1:8989
           import cloudflare
           import tinyauth
         '';
         "prowlarr.jervw.dev".extraConfig = ''
-          reverse_proxy http://thor:9696
+          reverse_proxy http://127.0.0.1:9696
           import cloudflare
           import tinyauth
         '';
         "bazarr.jervw.dev".extraConfig = ''
-          reverse_proxy http://thor:6767
+          reverse_proxy http://127.0.0.1:6767
           import cloudflare
           import tinyauth
         '';

@@ -26,7 +26,7 @@ in {
       pocket-id = {
         enable = true;
         settings = {
-          HOST = "0.0.0.0";
+          HOST = "127.0.0.1";
           PORT = cfg.port;
           APP_URL = "https://${cfg.host}";
           TRUST_PROXY = true;
@@ -36,7 +36,7 @@ in {
       };
 
       caddy.virtualHosts."${cfg.host}".extraConfig = ''
-        reverse_proxy http://thor:${toString cfg.port}
+        reverse_proxy http://127.0.0.1:${toString cfg.port}
         import cloudflare
       '';
     };

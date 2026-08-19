@@ -25,12 +25,12 @@ in {
       paperless = {
         enable = true;
         inherit (cfg) port;
-        address = "0.0.0.0";
+        address = "127.0.0.1";
         domain = cfg.host;
       };
 
       caddy.virtualHosts."${cfg.host}".extraConfig = ''
-        reverse_proxy http://thor:${toString cfg.port}
+        reverse_proxy http://127.0.0.1:${toString cfg.port}
         import cloudflare
       '';
     };

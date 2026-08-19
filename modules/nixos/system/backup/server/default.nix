@@ -54,6 +54,5 @@ in {
     };
 
     systemd.tmpfiles.rules = ["d ${cfg.dataDir} 0700 restic restic -"];
-    networking.firewall.allowedTCPPorts = [cfg.port];
   };
 }

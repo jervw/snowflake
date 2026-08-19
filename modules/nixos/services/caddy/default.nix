@@ -27,7 +27,7 @@ in {
           }
         }
         (tinyauth) {
-          forward_auth http://localhost:3333 {
+          forward_auth http://127.0.0.1:3333 {
             uri /api/auth/caddy
 
             copy_headers Remote-User Remote-Groups Remote-Name Remote-Email

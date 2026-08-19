@@ -24,19 +24,15 @@ in {
     services = {
       adguardhome = {
         enable = true;
-        openFirewall = true;
+        host = "127.0.0.1";
         inherit (cfg) port;
       };
 
       caddy.virtualHosts."${cfg.host}".extraConfig = ''
-        reverse_proxy http://thor:${toString cfg.port}
+        reverse_proxy http://127.0.0.1:${toString cfg.port}
         import cloudflare
         import tinyauth
       '';
-    };
-
-    networking.firewall = {
-      allowedUDPPorts = [53]; # DNS resolver.
     };
   };
 }

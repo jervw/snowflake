@@ -7,6 +7,9 @@
 in {
   imports = [./hardware.nix];
 
+  # AdGuard DNS for LAN clients. Tailnet traffic is allowed via tailscale0.
+  networking.firewall.interfaces.enp4s0.allowedUDPPorts = [53];
+
   snowflake = {
     hardware = {
       cpu.intel = enabled;

@@ -28,14 +28,14 @@ in {
         environmentFile = config.age.secrets.tinyauth-env.path;
         settings = {
           APPURL = "https://${cfg.host}";
-          SERVER_ADDRESS = "0.0.0.0";
+          SERVER_ADDRESS = "127.0.0.1";
           SERVER_PORT = cfg.port;
           AUTH_LOGINTIMEOUT = 0; # TODO: Remove
         };
       };
 
       caddy.virtualHosts."${cfg.host}".extraConfig = ''
-        reverse_proxy http://thor:${toString cfg.port}
+        reverse_proxy http://127.0.0.1:${toString cfg.port}
         import cloudflare
       '';
     };

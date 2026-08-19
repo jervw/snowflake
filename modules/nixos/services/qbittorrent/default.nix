@@ -37,12 +37,6 @@ in {
       default = "/mnt/storage/Media";
       description = "Host media directory mounted at /files in qBittorrent";
     };
-
-    openFirewall = mkOption {
-      type = lib.types.bool;
-      default = true;
-      description = "Open the qBittorrent and Gluetun control server ports";
-    };
   };
 
   config = mkIf cfg.enable {
@@ -81,8 +75,8 @@ in {
             addCapabilities = ["NET_ADMIN"];
             devices = ["/dev/net/tun:/dev/net/tun"];
             publishPorts = [
-              "${toString cfg.controlPort}:8000/tcp"
-              "${toString cfg.webPort}:${toString cfg.webPort}/tcp"
+              "127.0.0.1:${toString cfg.controlPort}:8000/tcp"
+              "127.0.0.1:${toString cfg.webPort}:${toString cfg.webPort}/tcp"
             ];
             environmentFiles = [config.age.secrets.gluetun.path];
             environments = {
@@ -140,13 +134,8 @@ in {
       };
     };
 
-    networking.firewall.allowedTCPPorts = mkIf cfg.openFirewall [
-      cfg.controlPort
-      cfg.webPort
-    ];
-
     services.caddy.virtualHosts."${cfg.host}".extraConfig = ''
-      reverse_proxy http://thor:${toString cfg.webPort}
+      reverse_proxy http://127.0.0.1:${toString cfg.webPort}
       import cloudflare
       import tinyauth
     '';

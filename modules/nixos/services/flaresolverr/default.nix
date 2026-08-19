@@ -20,5 +20,7 @@ in {
       enable = true;
       inherit (cfg) port;
     };
+
+    systemd.services.flaresolverr.environment.HOST = "127.0.0.1";
   };
 }

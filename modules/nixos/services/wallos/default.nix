@@ -46,7 +46,7 @@ in {
 
         containerConfig = {
           image = "docker.io/bellamy/wallos:latest";
-          publishPorts = ["${toString cfg.port}:80/tcp"];
+          publishPorts = ["127.0.0.1:${toString cfg.port}:80/tcp"];
           environments.TZ = "Europe/Helsinki";
           volumes = [
             "${volumes.wallos-db.ref}:/var/www/html/db"
@@ -57,7 +57,7 @@ in {
     };
 
     services.caddy.virtualHosts."${cfg.host}".extraConfig = ''
-      reverse_proxy http://thor:${toString cfg.port}
+      reverse_proxy http://127.0.0.1:${toString cfg.port}
       import cloudflare
     '';
   };

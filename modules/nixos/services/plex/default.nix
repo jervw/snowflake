@@ -20,12 +20,9 @@ in {
 
   config = mkIf cfg.enable {
     services = {
-      plex = {
-        enable = true;
-        openFirewall = true;
-      };
+      plex.enable = true;
       caddy.virtualHosts."${cfg.host}".extraConfig = ''
-        reverse_proxy http://thor:32400
+        reverse_proxy http://127.0.0.1:32400
         import cloudflare
       '';
     };

@@ -28,7 +28,7 @@ in {
   config = mkIf cfg.enable {
     virtualisation.oci-containers.containers.profilarr = {
       image = "santiagosayshey/profilarr:latest";
-      ports = ["${toString cfg.port}:6868"];
+      ports = ["127.0.0.1:${toString cfg.port}:6868"];
       environment = {
         TZ = "Europe/Helsinki";
       };
@@ -42,7 +42,7 @@ in {
     ];
 
     services.caddy.virtualHosts."${cfg.host}".extraConfig = ''
-      reverse_proxy http://thor:${toString cfg.port}
+      reverse_proxy http://127.0.0.1:${toString cfg.port}
       import cloudflare
     '';
   };

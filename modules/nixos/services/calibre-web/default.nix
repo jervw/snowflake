@@ -24,10 +24,9 @@ in {
     services = {
       calibre-web = {
         enable = true;
-        openFirewall = true;
 
         listen = {
-          ip = "0.0.0.0";
+          ip = "127.0.0.1";
           inherit (cfg) port;
         };
 
@@ -38,7 +37,7 @@ in {
         };
       };
       caddy.virtualHosts."${cfg.host}".extraConfig = ''
-        reverse_proxy http://thor:${toString cfg.port}
+        reverse_proxy http://127.0.0.1:${toString cfg.port}
         import cloudflare
       '';
     };

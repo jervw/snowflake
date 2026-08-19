@@ -27,7 +27,7 @@ in {
     networking = {
       firewall = {
         allowedUDPPorts = [config.services.tailscale.port];
-        allowedTCPPorts = [];
+        # Tailnet services do not need global openFirewall rules.
         trustedInterfaces = [config.services.tailscale.interfaceName];
         checkReversePath = "loose";
       };
