@@ -24,7 +24,6 @@ in {
         discord-free-game-notifier = mkDefault enabled;
         flaresolverr = mkDefault enabled;
         glance = mkDefault enabled;
-        grimmory = mkDefault enabled;
         immich = mkDefault enabled;
         seerr = mkDefault enabled;
         karakeep = mkDefault enabled;
