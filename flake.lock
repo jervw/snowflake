@@ -307,11 +307,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1786994273,
-        "narHash": "sha256-qmkSVwW0J08JOFjAErZHlhUCYMj9wWb4Ij9tWFAV9pU=",
+        "lastModified": 1786803502,
+        "narHash": "sha256-E9AZhxOMQ2ila4b9kYNbsR0YVKej3WBvZbBmP0/+7aY=",
         "owner": "ArkHost",
         "repo": "HelixNotes",
-        "rev": "221625aabdb97ca1379a0f3cd91350d3655ed0c7",
+        "rev": "c4a91b8f1c6526882ffa4386822f54d9cf0dd0ee",
         "type": "gitlab"
       },
       "original": {
