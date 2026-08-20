@@ -42,6 +42,7 @@ in {
       };
       tools = {
         codex = enabled;
+        jujutsu = enabled;
         mcp = enabled;
       };
     };
