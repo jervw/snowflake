@@ -89,6 +89,7 @@ in {
                         {
                           title = "Monitoring & Networking";
                           links = [
+                            (mkBookmark "Beszel" "sh:beszel" "https://monitoring.jervw.dev")
                             (mkBookmark "Tautulli" "sh:tautulli" "https://tautulli.jervw.dev")
                             (mkBookmark "AdGuard Home" "sh:adguard-home" "https://dns.jervw.dev")
                           ];
@@ -103,7 +104,6 @@ in {
                         {
                           title = "Books & Documents";
                           links = [
-                            (mkBookmark "Calibre-Web" "sh:calibre-web" "https://calibre.jervw.dev")
                             (mkBookmark "Paperless-ngx" "sh:paperless-ngx" "https://paperless.jervw.dev")
                           ];
                         }
@@ -111,7 +111,7 @@ in {
                           title = "Auth";
                           links = [
                             (mkBookmark "Pocket ID" "sh:pocket-id" "https://id.jervw.dev")
-                            (mkBookmark "Tinyauth" "sh:tinyauth" "https://auth.jervw.dev")
+                            (mkBookmark "Tinyauth" "di:tinyauth" "https://auth.jervw.dev")
                           ];
                         }
                       ];
