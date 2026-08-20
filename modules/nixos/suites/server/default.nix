@@ -18,8 +18,8 @@ in {
       services = {
         adguard = mkDefault enabled;
         audiobookshelf = mkDefault enabled;
+        beszel.hub = mkDefault enabled;
         caddy = mkDefault enabled;
-        calibre-web = mkDefault enabled;
         celler = mkDefault enabled;
         discord-free-game-notifier = mkDefault enabled;
         flaresolverr = mkDefault enabled;
@@ -34,7 +34,6 @@ in {
         paperless = mkDefault enabled;
         pocket-id = mkDefault enabled;
         plex = mkDefault enabled;
-        profilarr = mkDefault enabled;
         qbittorrent = mkDefault enabled;
         tautulli = mkDefault enabled;
         tinyauth = mkDefault enabled;

@@ -8,6 +8,8 @@ let
   systems = [loki thor fenrir];
 in {
   "cloudflare.age".publicKeys = users ++ systems;
+  "beszel-agent.age".publicKeys = users ++ systems;
+  "beszel-hub-key.age".publicKeys = users ++ [thor];
   "abs-storytel-provider.age".publicKeys = users ++ systems;
   "discord-free-game.age".publicKeys = users ++ systems;
   "tailscale.age".publicKeys = users ++ systems;

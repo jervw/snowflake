@@ -46,6 +46,10 @@ in {
         pam = mkDefault enabled;
       };
 
+      services = {
+        beszel.agent = mkDefault enabled;
+      };
+
       networking = {
         networkmanager = mkDefault enabled;
         ssh = mkDefault enabled;
