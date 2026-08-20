@@ -16,7 +16,10 @@ in {
       owner = user.name;
     };
 
-    environment.systemPackages = [inputs.celler.packages.${pkgs.stdenv.hostPlatform.system}.celler];
+    environment.systemPackages = [
+      inputs.agenix.packages.${pkgs.stdenv.hostPlatform.system}.default
+      inputs.celler.packages.${pkgs.stdenv.hostPlatform.system}.celler
+    ];
 
     programs = {
       command-not-found.enable = false;

@@ -115,6 +115,16 @@ jobs:
           build_and_push nixpkgs-webhook .#nixpkgs-webhook
           build_and_push wl-ocr .#wl-ocr
 
+          build_and_push agenix \
+            --impure \
+            --expr '
+              let
+                flake = builtins.getFlake (toString ./.);
+                system = "x86_64-linux";
+              in
+              flake.inputs.agenix.packages.${system}.default
+            '
+
           build_and_push helix \
             --impure \
             --expr '
