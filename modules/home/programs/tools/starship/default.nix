@@ -18,6 +18,9 @@ in {
       enable = true;
       extraPackages = [pkgs.jj-starship];
       settings = {
+        git_branch.disabled = true;
+        git_status.disabled = true;
+
         custom = {
           jj = {
             when = "jj-starship detect";
