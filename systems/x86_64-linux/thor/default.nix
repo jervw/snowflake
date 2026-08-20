@@ -56,10 +56,6 @@ in {
       };
       boot = enabled;
     };
-
-    virtualisation = {
-      docker = enabled;
-    };
   };
 
   system.stateVersion = "24.05";
