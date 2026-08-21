@@ -13,6 +13,7 @@ in {
   snowflake = {
     hardware = {
       cpu.amd = enabled;
+      logitech-mx-master-3s = enabled;
       video = {
         nvidia = {
           enable = true;
