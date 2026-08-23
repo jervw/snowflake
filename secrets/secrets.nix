@@ -17,6 +17,9 @@ in {
   "tinyauth-env.age".publicKeys = users ++ systems;
   "pocket-id.age".publicKeys = users ++ systems;
   "gluetun.age".publicKeys = users ++ systems;
+  "gluetun-slskd.age".publicKeys = users ++ [thor];
+  "gluetun-slskd-auth.age".publicKeys = users ++ [thor];
+  "slskd.age".publicKeys = users ++ [thor];
   "mcp-context7.age".publicKeys = users ++ systems;
   "restic.age".publicKeys = users ++ systems;
   "nixpkgs-webhook.age".publicKeys = users ++ systems;

@@ -18,6 +18,7 @@ in {
       services = {
         adguard = mkDefault enabled;
         audiobookshelf = mkDefault enabled;
+        aurral = mkDefault enabled;
         beszel.hub = mkDefault enabled;
         caddy = mkDefault enabled;
         celler = mkDefault enabled;
@@ -34,6 +35,7 @@ in {
         paperless = mkDefault enabled;
         pocket-id = mkDefault enabled;
         plex = mkDefault enabled;
+        slskd = mkDefault enabled;
         qbittorrent = mkDefault enabled;
         tautulli = mkDefault enabled;
         tinyauth = mkDefault enabled;
