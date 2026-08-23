@@ -6,7 +6,7 @@
   pkgs,
   ...
 }: let
-  inherit (lib) mkBefore mkEnableOption mkIf mkMerge mkOption;
+  inherit (lib) concatStringsSep mapAttrsToList mkBefore mkEnableOption mkIf mkMerge mkOption;
   cfg = config.${namespace}.services.beszel;
 in {
   options.${namespace}.services.beszel = {
@@ -30,6 +30,19 @@ in {
         type = lib.types.port;
         default = 45876;
         description = "Port for the Beszel agent";
+      };
+      extraFilesystems = mkOption {
+        type = lib.types.attrsOf (lib.types.nullOr lib.types.str);
+        default = {};
+        example = {
+          "/mnt/extra" = null;
+          "/mnt/storage" = "Storage";
+        };
+        description = ''
+          Additional filesystems for the Beszel agent to monitor. Map each
+          filesystem path to a custom chart name, or use null to keep the
+          default name.
+        '';
       };
     };
   };
@@ -69,7 +82,16 @@ in {
     (mkIf cfg.agent.enable {
       services.beszel.agent = {
         enable = true;
-        environment.LISTEN = toString cfg.agent.port;
+        environment = {
+          LISTEN = toString cfg.agent.port;
+        } // lib.optionalAttrs (cfg.agent.extraFilesystems != {}) {
+          EXTRA_FILESYSTEMS = concatStringsSep "," (mapAttrsToList (
+            path: name:
+              if name == null
+              then path
+              else "${path}__${name}"
+          ) cfg.agent.extraFilesystems);
+        };
         environmentFile = config.age.secrets.beszel-agent.path;
         openFirewall = false;
         smartmon = {

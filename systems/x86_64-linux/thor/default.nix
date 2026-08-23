@@ -40,6 +40,11 @@ in {
       hardening = enabled;
     };
 
+    services.beszel.agent.extraFilesystems = {
+      "/mnt/extra" = "Extra";
+      "/mnt/storage" = "Storage";
+    };
+
     suites = {
       core = enabled;
       server = enabled;
