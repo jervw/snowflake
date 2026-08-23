@@ -79,8 +79,10 @@ in {
                           title = "Media Automation";
                           links = [
                             (mkBookmark "Seerr" "sh:jellyseerr" "https://seerr.jervw.dev")
+                            (mkBookmark "Aurral" "sh:aurral" "https://aurral.jervw.dev")
                             (mkBookmark "Sonarr" "sh:sonarr" "https://sonarr.jervw.dev")
                             (mkBookmark "Radarr" "sh:radarr" "https://radarr.jervw.dev")
+                            (mkBookmark "Lidarr" "sh:lidarr" "https://lidarr.jervw.dev")
                             (mkBookmark "Bazarr" "sh:bazarr" "https://bazarr.jervw.dev")
                             (mkBookmark "Prowlarr" "sh:prowlarr" "https://prowlarr.jervw.dev")
                           ];

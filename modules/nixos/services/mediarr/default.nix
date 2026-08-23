@@ -8,16 +8,22 @@
   cfg = config.${namespace}.services.mediarr;
 in {
   options.${namespace}.services.mediarr = {
-    enable = mkEnableOption "Enables Radarr, Sonarr, Prowlarr and Bazarr services";
+    enable = mkEnableOption "Enables Radarr, Sonarr, Lidarr, Prowlarr and Bazarr services";
   };
 
   config = mkIf cfg.enable {
+    systemd.services.lidarr.serviceConfig.UMask = "0002";
+
     services = {
       radarr = {
         enable = true;
         settings.server.bindaddress = "127.0.0.1";
       };
       sonarr = {
+        enable = true;
+        settings.server.bindaddress = "127.0.0.1";
+      };
+      lidarr = {
         enable = true;
         settings.server.bindaddress = "127.0.0.1";
       };
@@ -38,6 +44,11 @@ in {
           import cloudflare
           import tinyauth
         '';
+        "lidarr.jervw.dev".extraConfig = ''
+          reverse_proxy http://127.0.0.1:8686
+          import cloudflare
+          import tinyauth
+        '';
         "prowlarr.jervw.dev".extraConfig = ''
           reverse_proxy http://127.0.0.1:9696
           import cloudflare
@@ -54,6 +65,7 @@ in {
       users = {
         radarr.extraGroups = ["media"];
         sonarr.extraGroups = ["media"];
+        lidarr.extraGroups = ["media"];
         bazarr.extraGroups = ["media"];
       };
     };
