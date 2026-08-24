@@ -27,6 +27,7 @@ in {
       tomato-c
       qbittorrent-enhanced
       fontpreview
+      protonmail-desktop
 
       (inputs.helix-notes.packages.${pkgs.stdenv.hostPlatform.system}.default)
 
