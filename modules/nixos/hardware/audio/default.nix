@@ -49,18 +49,9 @@ in {
         jack.enable = true;
         pulse.enable = true;
         wireplumber.enable = true;
-        extraConfig.pipewire."99-low-latency" = {
-          context.properties = {
-            default = {
-              clock = {
-                rate = 48000;
-                quantum = 512;
-                min-quantum = 256;
-                max-quantum = 8192;
-              };
-            };
-          };
-        };
+
+        # NOTE: Depends on nix-gaming flake
+        lowLatency.enable = true;
       };
       pulseaudio.enable = mkForce false;
     };

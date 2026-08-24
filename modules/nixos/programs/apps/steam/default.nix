@@ -25,6 +25,9 @@ in {
       protontricks.enable = true;
       remotePlay.openFirewall = true;
 
+      # NOTE: Depends on nix-gaming flake
+      platformOptimizations.enable = true;
+
       extraCompatPackages = [pkgs.proton-ge-bin];
     };
   };

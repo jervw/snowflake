@@ -6,6 +6,7 @@
     nixos-hardware.url = "github:NixOS/nixos-hardware";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     quadlet-nix.url = "github:SEIAROTg/quadlet-nix";
+    nix-gaming.url = "github:fufexan/nix-gaming";
 
     celler = {
       url = "github:celler-cache/celler";
@@ -95,6 +96,8 @@
         lanzaboote.nixosModules.lanzaboote
         nix-index.nixosModules.nix-index
         quadlet-nix.nixosModules.quadlet
+        nix-gaming.nixosModules.pipewireLowLatency
+        nix-gaming.nixosModules.platformOptimizations
       ];
 
       homes.modules = with inputs; [

@@ -70,6 +70,7 @@ in {
           "https://noctalia.cachix.org"
           "https://cache.nixos-cuda.org"
           "https://cache.jervw.dev/nix"
+          "https://nix-gaming.cachix.org"
         ];
         trusted-public-keys = [
           "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
@@ -79,6 +80,7 @@ in {
           "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
           "cache.nixos-cuda.org:74DUi4Ye579gUqzH4ziL9IyiJBlDpMRn9MBN8oNan9M="
           "nix:IbdGpiigjEu45Imugs8y6OM6mDSbYr0Zf3Q2E6yz+Xc="
+          "nix-gaming.cachix.org-1:nbjlureqMbRAxR1gJ/f3hxemL9svXaZF/Ees8vCUUs4="
         ];
       };
       generateNixPathFromInputs = true;
