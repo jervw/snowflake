@@ -20,6 +20,7 @@ in {
         audiobookshelf = mkDefault enabled;
         aurral = mkDefault enabled;
         beszel.hub = mkDefault enabled;
+        bookorbit = mkDefault enabled;
         caddy = mkDefault enabled;
         celler = mkDefault enabled;
         discord-free-game-notifier = mkDefault enabled;

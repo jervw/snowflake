@@ -67,40 +67,41 @@ in {
                         {
                           title = "Media Servers";
                           links = [
-                            (mkBookmark "Plex" "sh:plex" "https://plex.jervw.dev")
-                            (mkBookmark "Immich" "sh:immich" "https://media.jervw.dev")
-                            (mkBookmark "Navidrome" "sh:navidrome" "https://music.jervw.dev")
                             (mkBookmark "Audiobookshelf" "sh:audiobookshelf" "https://shelf.jervw.dev")
+                            (mkBookmark "BookOrbit" "sh:bookorbit" "https://orbit.jervw.dev")
+                            (mkBookmark "Immich" "sh:immich" "https://media.jervw.dev")
                             (mkBookmark "Karakeep" "sh:karakeep" "https://save.jervw.dev")
+                            (mkBookmark "Navidrome" "sh:navidrome" "https://music.jervw.dev")
+                            (mkBookmark "Plex" "sh:plex" "https://plex.jervw.dev")
                           ];
                         }
 
                         {
                           title = "Media Automation";
                           links = [
-                            (mkBookmark "Seerr" "sh:jellyseerr" "https://seerr.jervw.dev")
                             (mkBookmark "Aurral" "sh:aurral" "https://aurral.jervw.dev")
-                            (mkBookmark "Sonarr" "sh:sonarr" "https://sonarr.jervw.dev")
-                            (mkBookmark "Radarr" "sh:radarr" "https://radarr.jervw.dev")
-                            (mkBookmark "Lidarr" "sh:lidarr" "https://lidarr.jervw.dev")
                             (mkBookmark "Bazarr" "sh:bazarr" "https://bazarr.jervw.dev")
+                            (mkBookmark "Lidarr" "sh:lidarr" "https://lidarr.jervw.dev")
                             (mkBookmark "Prowlarr" "sh:prowlarr" "https://prowlarr.jervw.dev")
+                            (mkBookmark "Radarr" "sh:radarr" "https://radarr.jervw.dev")
+                            (mkBookmark "Seerr" "sh:jellyseerr" "https://seerr.jervw.dev")
+                            (mkBookmark "Sonarr" "sh:sonarr" "https://sonarr.jervw.dev")
                           ];
                         }
 
                         {
                           title = "Monitoring & Networking";
                           links = [
+                            (mkBookmark "AdGuard Home" "sh:adguard-home" "https://dns.jervw.dev")
                             (mkBookmark "Beszel" "sh:beszel" "https://monitoring.jervw.dev")
                             (mkBookmark "Tautulli" "sh:tautulli" "https://tautulli.jervw.dev")
-                            (mkBookmark "AdGuard Home" "sh:adguard-home" "https://dns.jervw.dev")
                           ];
                         }
                         {
                           title = "Misc";
                           links = [
-                            (mkBookmark "qBittorrent" "sh:qbittorrent" "https://dl.jervw.dev")
                             (mkBookmark "Wallos" "sh:wallos" "https://wallos.jervw.dev")
+                            (mkBookmark "qBittorrent" "sh:qbittorrent" "https://dl.jervw.dev")
                           ];
                         }
                         {
