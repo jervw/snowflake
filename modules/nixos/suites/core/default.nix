@@ -15,24 +15,22 @@ in {
   };
 
   config = mkIf cfg.enable {
-    environment = {
-      systemPackages = with pkgs; [
-        git
-        curl
-        killall
-        lazyjournal
-        python3
-        aria2
-        file
-        jq
-        dua
+    environment.systemPackages = with pkgs; [
+      git
+      curl
+      killall
+      lazyjournal
+      python3
+      aria2
+      file
+      jq
+      dua
 
-        # archiving
-        unar
-        zip
-        unzip
-      ];
-    };
+      # archiving
+      unar
+      zip
+      unzip
+    ];
 
     networking.nftables.enable = mkForce true;
 
