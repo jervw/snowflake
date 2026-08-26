@@ -73,6 +73,7 @@ in {
             "helix"
             "Steam"
             "direnv"
+            "osu"
             "fish"
             "zed"
             "umu"
