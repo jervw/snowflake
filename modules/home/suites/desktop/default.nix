@@ -20,7 +20,6 @@ in {
       xdg-utils
       anki-bin
       cider-2
-      # calibre
       beeper
       feishin
       ffmpeg
