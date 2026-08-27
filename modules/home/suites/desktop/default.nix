@@ -27,8 +27,7 @@ in {
       qbittorrent-enhanced
       fontpreview
       protonmail-desktop
-
-      (inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.helixnotes)
+      zennotes-desktop
 
       # Wayland stuff
       grimblast

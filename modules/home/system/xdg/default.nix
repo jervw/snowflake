@@ -98,7 +98,7 @@ in {
         videos = "$HOME/vids";
         music = "$HOME/music";
         pictures = "$HOME/pics";
-        desktop = "$HOME/other";
+        desktop = "$HOME/docs";
         publicShare = "$HOME/other";
         templates = "$HOME/other";
         extraConfig = {

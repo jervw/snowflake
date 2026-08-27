@@ -64,6 +64,7 @@ in {
             "sh.cider.genten"
             "vesktop"
             "zed"
+            "ZenNotes"
             "uwsm"
           ]
           ++ mkDirs ".local/share/" [

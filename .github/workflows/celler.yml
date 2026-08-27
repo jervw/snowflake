@@ -113,7 +113,6 @@ jobs:
           }
 
           build_and_push nixpkgs-webhook .#nixpkgs-webhook
-          build_and_push helixnotes .#helixnotes
           build_and_push wl-ocr .#wl-ocr
 
           build_and_push agenix \
