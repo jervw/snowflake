@@ -15,6 +15,8 @@ in {
   };
 
   config = mkIf cfg.enable {
+    system.nixos.distroName = "Snowflake";
+
     environment.systemPackages = with pkgs; [
       git
       curl
