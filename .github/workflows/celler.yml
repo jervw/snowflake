@@ -113,6 +113,7 @@ jobs:
           }
 
           build_and_push nixpkgs-webhook .#nixpkgs-webhook
+          build_and_push helixnotes .#helixnotes
           build_and_push wl-ocr .#wl-ocr
 
           build_and_push agenix \
@@ -133,14 +134,4 @@ jobs:
                 system = "x86_64-linux";
               in
               flake.inputs.helix.packages.${system}.default
-            '
-
-          build_and_push helix-notes \
-            --impure \
-            --expr '
-              let
-                flake = builtins.getFlake (toString ./.);
-                system = "x86_64-linux";
-              in
-              flake.inputs."helix-notes".packages.${system}.default
             '

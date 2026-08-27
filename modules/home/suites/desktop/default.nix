@@ -28,7 +28,7 @@ in {
       fontpreview
       protonmail-desktop
 
-      (inputs.helix-notes.packages.${pkgs.stdenv.hostPlatform.system}.default)
+      (inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.helixnotes)
 
       # Wayland stuff
       grimblast
