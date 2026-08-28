@@ -15,7 +15,11 @@ in {
   };
 
   config = mkIf cfg.enable {
-    system.nixos.distroName = "Snowflake";
+    system.nixos = {
+      distroName = "Snowflake";
+      distroId = "snowflake";
+      version = "";
+    };
 
     environment.systemPackages = with pkgs; [
       git
