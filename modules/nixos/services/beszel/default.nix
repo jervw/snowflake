@@ -82,16 +82,19 @@ in {
     (mkIf cfg.agent.enable {
       services.beszel.agent = {
         enable = true;
-        environment = {
-          LISTEN = toString cfg.agent.port;
-        } // lib.optionalAttrs (cfg.agent.extraFilesystems != {}) {
-          EXTRA_FILESYSTEMS = concatStringsSep "," (mapAttrsToList (
-            path: name:
-              if name == null
-              then path
-              else "${path}__${name}"
-          ) cfg.agent.extraFilesystems);
-        };
+        environment =
+          {
+            LISTEN = toString cfg.agent.port;
+          }
+          // lib.optionalAttrs (cfg.agent.extraFilesystems != {}) {
+            EXTRA_FILESYSTEMS = concatStringsSep "," (mapAttrsToList (
+                path: name:
+                  if name == null
+                  then path
+                  else "${path}__${name}"
+              )
+              cfg.agent.extraFilesystems);
+          };
         environmentFile = config.age.secrets.beszel-agent.path;
         openFirewall = false;
         smartmon = {
