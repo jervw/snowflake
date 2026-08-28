@@ -23,9 +23,12 @@ in {
         highlight_resolved_externals = true;
         rm.always_trash = true;
 
-        completions.external = {
-          enable = true;
-          max_results = 200;
+        completions = {
+          algorithm = "fuzzy";
+          external = {
+            enable = true;
+            max_results = 100;
+          };
         };
       };
       extraConfig = ''
