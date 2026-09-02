@@ -21,6 +21,10 @@ in {
       osu-mime
     ];
 
+    programs = {
+      gpu-screen-recorder = enabled;
+    };
+
     snowflake = {
       programs = {
         addons = {
