@@ -17,7 +17,8 @@ in {
       enable = true;
       settings = {
         logo = {
-          type = "small";
+          type = "kitty";
+          source = "~/pics/nixos-ff.png";
           padding = {
             top = 1;
             right = 3;
@@ -30,6 +31,8 @@ in {
         };
 
         modules = [
+          "break"
+          "break"
           {
             key = " user";
             type = "title";
