@@ -1,7 +1,7 @@
 {
   inputs = {
     ghostty.url = "github:ghostty-org/ghostty";
-    helix.url = "github:gj1118/helix";
+    helix.url = "github:jervw/helix";
     nixcord.url = "github:FlameFlag/nixcord";
     nixos-hardware.url = "github:NixOS/nixos-hardware";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
