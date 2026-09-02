@@ -25,12 +25,14 @@ in {
         editor = {
           line-number = "relative";
           text-width = 100;
-          bufferline.render-mode = "always";
+          bufferline.render-mode = "multiple";
           rounded-corners = true;
           color-modes = true;
+          auto-reload = true;
           true-color = true;
           undercurl = true;
           smart-tab.enable = false;
+          breadcrumb.enable = true;
           lsp.display-inlay-hints = false;
           end-of-line-diagnostics = "hint";
           inline-diagnostics.cursor-line = "warning";
@@ -42,6 +44,7 @@ in {
           cmdline = {
             style = "popup";
             show-icons = false;
+            use-full-height = true;
           };
           soft-wrap = {
             enable = true;
