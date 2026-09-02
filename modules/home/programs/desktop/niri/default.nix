@@ -8,11 +8,6 @@
 in {
   options.${namespace}.programs.desktop.niri = {
     enable = lib.mkEnableOption "Enable niri";
-    uwsmEntry = lib.mkOption {
-      type = lib.types.nullOr lib.types.attrs;
-      default = null;
-      internal = true;
-    };
   };
 
   imports = lib.snowfall.fs.get-non-default-nix-files ./.;
