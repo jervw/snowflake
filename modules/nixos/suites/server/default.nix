@@ -18,7 +18,6 @@ in {
       services = {
         adguard = mkDefault enabled;
         audiobookshelf = mkDefault enabled;
-        aurral = mkDefault enabled;
         beszel.hub = mkDefault enabled;
         bookorbit = mkDefault enabled;
         caddy = mkDefault enabled;
