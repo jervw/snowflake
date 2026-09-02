@@ -29,6 +29,7 @@ in {
         myip = "${getExe pkgs.curl} ifconfig.me";
         sl = "ls";
         flake = "nix flake";
+        ":q" = "exit";
       };
 
       username = cfg.name;
