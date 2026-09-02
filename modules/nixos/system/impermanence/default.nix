@@ -58,6 +58,7 @@ in {
             "noctalia"
             "nushell"
             "obsidian"
+            "rustdesk"
             "obs-studio"
             "qt6ct"
             "rclone"
@@ -65,6 +66,7 @@ in {
             "vesktop"
             "zed"
             "ZenNotes"
+            "zennotes"
             "uwsm"
           ]
           ++ mkDirs ".local/share/" [

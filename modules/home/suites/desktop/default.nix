@@ -27,6 +27,7 @@ in {
       fontpreview
       protonmail-desktop
       zennotes-desktop
+      rustdesk
 
       # Wayland stuff
       grimblast
