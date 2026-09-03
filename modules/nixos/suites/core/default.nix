@@ -15,6 +15,8 @@ in {
   };
 
   config = mkIf cfg.enable {
+    hardware.enableRedistributableFirmware = true;
+
     system.nixos = {
       distroName = "Snowflake";
       distroId = "snowflake";

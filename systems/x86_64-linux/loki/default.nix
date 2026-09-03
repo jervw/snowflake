@@ -14,6 +14,7 @@ in {
     programs.apps.tether.enable = true;
 
     hardware = {
+      airpods = enabled;
       cpu.amd = enabled;
       logitech-mx-master-3s = enabled;
       video = {

@@ -112,6 +112,7 @@ jobs:
             echo "::endgroup::"
           }
 
+          build_and_push librepods-omarchy .#librepods-omarchy
           build_and_push nixpkgs-webhook .#nixpkgs-webhook
           build_and_push wl-ocr .#wl-ocr
 

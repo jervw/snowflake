@@ -1,7 +1,6 @@
 {
   config,
   lib,
-  pkgs,
   namespace,
   ...
 }: let
@@ -14,7 +13,7 @@ in {
     autoConnect = lib.mkOption {
       type = lib.types.bool;
       default = false;
-      description = "Whether to automatically connect to paired devices on startup";
+      description = "Whether to power on Bluetooth adapters and reconnect paired devices automatically";
     };
   };
 
@@ -22,16 +21,12 @@ in {
     hardware.bluetooth = {
       enable = true;
 
-      package = pkgs.bluez-experimental;
-      powerOnBoot = false;
+      powerOnBoot = cfg.autoConnect;
 
       settings = {
         General = {
-          ControllerMode = "bredr";
-          Experimental = true;
-          JustWorksRepairing = "always";
-          KernelExperimental = true;
-          MultiProfile = "multiple";
+          # Support both Classic Bluetooth and Bluetooth LE devices.
+          ControllerMode = "dual";
         };
         Policy = {
           AutoEnable = cfg.autoConnect;
