@@ -14,10 +14,6 @@ in {
 
   config = mkIf (cfg.enable && config.services.tailscale.enable) {
     environment.systemPackages = [pkgs.nfs-utils];
-    boot.initrd = {
-      supportedFilesystems = ["nfs"];
-      kernelModules = ["nfs"];
-    };
 
     fileSystems."/mnt/share" = {
       device = "thor:/mnt/storage";
