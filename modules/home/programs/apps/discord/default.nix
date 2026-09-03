@@ -36,7 +36,6 @@ in {
         fixSpotifyEmbeds = enabled;
         fixYoutubeEmbeds = enabled;
         fullVcpfp = enabled;
-        ghosted = enabled;
         mentionAvatars = enabled;
         messageLogger = enabled;
         messageLoggerEnhanced = enabled;
