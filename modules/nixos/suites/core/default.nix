@@ -42,6 +42,8 @@ in {
       unzip
     ];
 
+    services.usbmuxd = enabled;
+
     networking.nftables.enable = mkForce true;
 
     snowflake = {
