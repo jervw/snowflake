@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  inputs,
   namespace,
   ...
 }: let
@@ -9,6 +10,7 @@
   inherit (lib.${namespace}) enabled;
 
   cfg = config.${namespace}.suites.core;
+  meta = inputs.self.snowfall.config.meta;
 in {
   options.${namespace}.suites.core = {
     enable = mkEnableOption "Whether to enable the Core suite.";
@@ -18,8 +20,8 @@ in {
     hardware.enableRedistributableFirmware = true;
 
     system.nixos = {
-      distroName = "Snowflake";
-      distroId = "snowflake";
+      distroName = meta.title;
+      distroId = meta.name;
       version = "";
     };
 
