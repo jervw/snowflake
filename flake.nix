@@ -29,11 +29,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    lanzaboote = {
-      url = "github:nix-community/lanzaboote";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     nix-index = {
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -93,7 +88,6 @@
         agenix.nixosModules.default
         celler.nixosModules.cellerd
         impermanence.nixosModule
-        lanzaboote.nixosModules.lanzaboote
         nix-index.nixosModules.nix-index
         quadlet-nix.nixosModules.quadlet
         tether.nixosModules.default

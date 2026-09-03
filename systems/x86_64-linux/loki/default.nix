@@ -61,6 +61,7 @@ in {
       };
       boot = {
         enable = true;
+        loader = "limine";
         plymouth = true;
         secureBoot = true;
         silentBoot = true;

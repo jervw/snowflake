@@ -62,7 +62,10 @@ in {
           "/var/lib"
         ];
       };
-      boot = enabled;
+      boot = {
+        enable = true;
+        loader = "systemd-boot";
+      };
     };
   };
 

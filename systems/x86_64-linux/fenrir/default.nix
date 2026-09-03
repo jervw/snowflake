@@ -38,6 +38,7 @@ in {
     system = {
       boot = {
         enable = true;
+        loader = "systemd-boot";
         plymouth = true;
         silentBoot = true;
       };

@@ -1,38 +1,48 @@
 {
   config,
   lib,
-  pkgs,
   namespace,
   ...
 }: let
-  inherit (lib) mkIf;
+  inherit (lib) mkIf mkOption types;
 
   cfg = config.${namespace}.system.boot;
 in {
   options.${namespace}.system.boot = {
-    enable = lib.mkEnableOption "enable systemd-boot";
+    enable = lib.mkEnableOption "boot configuration";
+    loader = mkOption {
+      type = types.enum ["limine" "systemd-boot"];
+      default = "systemd-boot";
+      description = "Bootloader to use";
+    };
+    generationLimit = mkOption {
+      type = types.nullOr types.int;
+      default = 5;
+      description = "Maximum number of boot generations to retain";
+    };
+    timeout = mkOption {
+      type = types.nullOr types.int;
+      default = 2;
+      description = "Seconds before booting the default menu entry";
+    };
     plymouth = lib.mkEnableOption "plymouth boot splash";
-    secureBoot = lib.mkEnableOption "secure boot";
+    secureBoot = lib.mkEnableOption "Secure Boot";
     silentBoot = lib.mkEnableOption "silent boot";
   };
 
   config = mkIf cfg.enable {
-    environment.systemPackages = with pkgs;
-      [
-        efibootmgr
-        # efitools
-        efivar
-      ]
-      ++ lib.optionals cfg.secureBoot [sbctl tpm2-tss];
-
-    systemd.tpm2.enable = cfg.secureBoot;
+    assertions = [
+      {
+        assertion = !cfg.secureBoot || cfg.loader == "limine";
+        message = "Secure Boot is only supported with the Limine bootloader.";
+      }
+    ];
 
     boot = {
       kernelParams =
-        lib.optionals cfg.plymouth ["quiet" "bgrt_disable"]
+        lib.optionals (cfg.plymouth || cfg.silentBoot) ["quiet"]
+        ++ lib.optionals cfg.plymouth ["bgrt_disable"]
         ++ lib.optionals cfg.silentBoot [
-          "quiet"
-          "loglevel=3"
           "udev.log_level=3"
           "rd.udev.log_level=3"
           "systemd.show_status=auto"
@@ -40,33 +50,12 @@ in {
           "vt.global_cursor_default=0"
         ];
 
-      initrd = {
-        systemd = {
-          enable = true;
-          tpm2.enable = cfg.secureBoot;
-          network.wait-online.enable = false;
-        };
-        verbose = !cfg.silentBoot;
-      };
-
-      consoleLogLevel = lib.mkDefault 0;
-
-      lanzaboote = mkIf cfg.secureBoot {
-        enable = true;
-        pkiBundle = "/var/lib/sbctl";
-      };
+      initrd.verbose = lib.mkDefault (!cfg.silentBoot);
+      consoleLogLevel = lib.mkIf cfg.silentBoot (lib.mkDefault 0);
 
       loader = {
-        efi.canTouchEfiVariables = true;
-
-        systemd-boot = {
-          enable = lib.mkForce (!cfg.secureBoot);
-          configurationLimit = 5;
-          consoleMode = "max";
-          editor = false;
-        };
-
-        timeout = 2;
+        efi.canTouchEfiVariables = lib.mkDefault true;
+        timeout = lib.mkDefault cfg.timeout;
       };
 
       plymouth = {
