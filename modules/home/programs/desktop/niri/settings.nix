@@ -10,6 +10,8 @@ in
   mkIf cfg.enable {
     wayland.windowManager.niri = {
       settings = {
+        _children = lib.${namespace}.monitors.toNiri config.${namespace}.monitors;
+
         prefer-no-csd = {};
         hotkey-overlay.skip-at-startup = {};
 

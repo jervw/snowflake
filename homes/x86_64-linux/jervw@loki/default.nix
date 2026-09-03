@@ -7,6 +7,25 @@
   inherit (lib.${namespace}) enabled;
 in {
   snowflake = {
+    monitors = {
+      "DP-1" = {
+        transform = "normal";
+        mode = {
+          width = 2560;
+          height = 1440;
+          refreshRate = 164.999;
+        };
+      };
+
+      "HDMI-A-1" = {
+        transform = "normal";
+        position = {
+          x = 2560;
+          y = 0;
+        };
+      };
+    };
+
     user = {
       enable = true;
       inherit (config.snowfallorg.user) name;
@@ -33,26 +52,5 @@ in {
     };
   };
 
-  wayland.windowManager.niri.settings = {
-    input.mouse.accel-profile = "flat";
-    _children = [
-      {
-        output = {
-          _args = ["DP-1"];
-          transform = "normal";
-          mode = "2560x1440@164.999";
-        };
-      }
-      {
-        output = {
-          _args = ["HDMI-A-1"];
-          transform = "normal";
-          position._props = {
-            x = 2560;
-            y = 0;
-          };
-        };
-      }
-    ];
-  };
+  wayland.windowManager.niri.settings.input.mouse.accel-profile = "flat";
 }
