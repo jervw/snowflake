@@ -59,6 +59,7 @@ in {
             "nushell"
             "obsidian"
             "rustdesk"
+            "tether"
             "obs-studio"
             "qt6ct"
             "rclone"

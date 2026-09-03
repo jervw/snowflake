@@ -11,6 +11,8 @@ in {
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   snowflake = {
+    programs.apps.tether.enable = true;
+
     hardware = {
       cpu.amd = enabled;
       logitech-mx-master-3s = enabled;

@@ -868,6 +868,7 @@
         "quadlet-nix": "quadlet-nix",
         "snowfall-lib": "snowfall-lib",
         "ssh-keys": "ssh-keys",
+        "tether": "tether",
         "treefmt-nix": "treefmt-nix_3"
       }
     },
@@ -994,6 +995,26 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
+        "type": "github"
+      }
+    },
+    "tether": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1788371645,
+        "narHash": "sha256-7DVWf4ZBcdwDd+/hI1wGDj3NTSvHpHJWNKixzXzac94=",
+        "owner": "zackb",
+        "repo": "tether",
+        "rev": "e684ef836a26725c915f81678d1dda73adebedde",
+        "type": "github"
+      },
+      "original": {
+        "owner": "zackb",
+        "repo": "tether",
         "type": "github"
       }
     },

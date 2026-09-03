@@ -49,6 +49,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    tether = {
+      url = "github:zackb/tether";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     ssh-keys = {
       url = "https://github.com/jervw.keys";
       flake = false;
@@ -91,6 +96,7 @@
         lanzaboote.nixosModules.lanzaboote
         nix-index.nixosModules.nix-index
         quadlet-nix.nixosModules.quadlet
+        tether.nixosModules.default
         nix-gaming.nixosModules.pipewireLowLatency
         nix-gaming.nixosModules.platformOptimizations
       ];
