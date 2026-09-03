@@ -25,4 +25,5 @@ in {
   "nixpkgs-webhook.age".publicKeys = users ++ systems;
   "celler.age".publicKeys = users ++ systems;
   "nix-access-tokens.age".publicKeys = users ++ systems;
+  "dawarich-env.age".publicKeys = users ++ systems;
 }

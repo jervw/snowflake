@@ -79,7 +79,6 @@ in {
                         {
                           title = "Media Automation";
                           links = [
-                            (mkBookmark "Aurral" "sh:aurral" "https://aurral.jervw.dev")
                             (mkBookmark "Bazarr" "sh:bazarr" "https://bazarr.jervw.dev")
                             (mkBookmark "Lidarr" "sh:lidarr" "https://lidarr.jervw.dev")
                             (mkBookmark "Prowlarr" "sh:prowlarr" "https://prowlarr.jervw.dev")
@@ -100,6 +99,7 @@ in {
                         {
                           title = "Misc";
                           links = [
+                            (mkBookmark "Dawarich" "sh:dawarich" "https://timeline.jervw.dev")
                             (mkBookmark "Wallos" "sh:wallos" "https://wallos.jervw.dev")
                             (mkBookmark "qBittorrent" "sh:qbittorrent" "https://dl.jervw.dev")
                           ];

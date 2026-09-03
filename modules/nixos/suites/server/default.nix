@@ -22,6 +22,7 @@ in {
         bookorbit = mkDefault enabled;
         caddy = mkDefault enabled;
         celler = mkDefault enabled;
+        dawarich = mkDefault enabled;
         discord-free-game-notifier = mkDefault enabled;
         flaresolverr = mkDefault enabled;
         glance = mkDefault enabled;
