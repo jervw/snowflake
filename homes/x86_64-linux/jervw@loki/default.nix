@@ -8,20 +8,41 @@
 in {
   snowflake = {
     monitors = {
+      # "DP-1" = {
+      #   transform = "normal";
+      #   mode = {
+      #     width = 2560;
+      #     height = 1440;
+      #     refreshRate = 164.999;
+      #   };
+      # };
+
+      # "HDMI-A-1" = {
+      #   transform = "normal";
+      #   position = {
+      #     x = 2560;
+      #     y = 0;
+      #   };
+      # };
       "DP-1" = {
         transform = "normal";
         mode = {
-          width = 2560;
-          height = 1440;
-          refreshRate = 164.999;
+          width = 1920;
+          height = 1200;
+          refreshRate = 59.950;
+        };
+        position = {
+          x = 1920;
+          y = 0;
         };
       };
 
-      "HDMI-A-1" = {
+      "DP-2" = {
         transform = "normal";
-        position = {
-          x = 2560;
-          y = 0;
+        mode = {
+          width = 1920;
+          height = 1200;
+          refreshRate = 59.950;
         };
       };
     };
