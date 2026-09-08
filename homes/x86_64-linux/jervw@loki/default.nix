@@ -6,7 +6,7 @@
 }: let
   inherit (lib.${namespace}) enabled;
 in {
-  snowflake = {
+  nietos = {
     monitors = {
       # "DP-1" = {
       #   transform = "normal";

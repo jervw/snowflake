@@ -24,6 +24,6 @@ in {
       enable = true;
     };
 
-    snowflake.user.extraGroups = ["docker"];
+    nietos.user.extraGroups = ["docker"];
   };
 }

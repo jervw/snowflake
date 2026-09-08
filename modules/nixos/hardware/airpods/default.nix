@@ -22,7 +22,7 @@ in {
       })
     ];
 
-    snowflake = {
+    nietos = {
       hardware = {
         audio = enabled;
         bluetooth = {

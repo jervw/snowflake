@@ -25,7 +25,7 @@ in {
       gpu-screen-recorder = enabled;
     };
 
-    snowflake = {
+    nietos = {
       programs = {
         addons = {
           gamescope = mkDefault enabled;

@@ -2,11 +2,9 @@
   config,
   lib,
   namespace,
-  pkgs,
   ...
 }: let
   inherit (lib) mkIf;
-  inherit (lib.${namespace}) enabled;
 
   cfg = config.${namespace}.hardware.openrgb;
 in {

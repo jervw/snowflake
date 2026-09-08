@@ -30,7 +30,7 @@ in {
       ]
       ++ cfg.extra-packages;
 
-    snowflake = {
+    nietos = {
       user.extraGroups = ["audio"];
     };
 

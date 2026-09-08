@@ -25,9 +25,7 @@ in {
       fd
     ];
 
-    programs.zed-editor.installRemoteServer = true;
-
-    snowflake = {
+    nietos = {
       programs = {
         editors = {
           helix = mkDefault enabled;

@@ -67,16 +67,15 @@
       src = ./.;
 
       snowfall = {
-        namespace = "snowflake";
+        namespace = "nietos";
         meta = {
-          name = "snowflake";
-          title = "Snowflake";
+          name = "nietos";
+          title = "Nietos";
         };
       };
 
       channels-config = {
         allowUnfree = true;
-        permittedInsecurePackages = ["electron-40.10.5" "pnpm-9.15.9"];
       };
 
       supportedSystems = [

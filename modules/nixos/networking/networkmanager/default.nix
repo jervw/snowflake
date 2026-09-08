@@ -17,6 +17,8 @@ in {
       };
     };
 
+    nietos.user.extraGroups = ["networkmanager"];
+
     systemd.services.NetworkManager-wait-online.enable = lib.mkForce false;
   };
 }

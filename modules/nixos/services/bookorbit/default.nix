@@ -46,7 +46,7 @@ in {
   };
 
   config = mkIf cfg.enable {
-    snowflake.virtualisation.quadlet.enable = true;
+    ${namespace}.virtualisation.quadlet.enable = true;
 
     networking.firewall.interfaces = {
       br-bookorbit.allowedUDPPorts = [53];

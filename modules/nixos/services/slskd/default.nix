@@ -42,7 +42,7 @@ in {
   };
 
   config = mkIf cfg.enable {
-    snowflake.virtualisation.quadlet.enable = true;
+    ${namespace}.virtualisation.quadlet.enable = true;
 
     age.secrets = {
       gluetun-slskd = {

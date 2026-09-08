@@ -15,7 +15,7 @@ in {
       entry: Windows Boot Manager
   '';
 
-  snowflake = {
+  nietos = {
     programs.apps.tether.enable = true;
 
     hardware = {

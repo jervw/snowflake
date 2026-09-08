@@ -13,7 +13,7 @@ in {
     allowedTCPPorts = [443];
   };
 
-  snowflake = {
+  nietos = {
     hardware = {
       cpu.intel = enabled;
       storage = {

@@ -29,7 +29,7 @@ in {
   };
 
   config = mkIf cfg.enable {
-    snowflake.virtualisation.quadlet.enable = mkIf providerCfg.enable true;
+    ${namespace}.virtualisation.quadlet.enable = mkIf providerCfg.enable true;
 
     services = {
       audiobookshelf = {

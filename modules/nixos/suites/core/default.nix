@@ -46,7 +46,7 @@ in {
 
     networking.nftables.enable = mkForce true;
 
-    snowflake = {
+    nietos = {
       programs = {
         shells.fish = mkDefault enabled;
       };

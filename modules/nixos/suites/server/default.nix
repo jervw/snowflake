@@ -14,7 +14,7 @@ in {
   };
 
   config = mkIf cfg.enable {
-    snowflake = {
+    nietos = {
       services = {
         adguard = mkDefault enabled;
         audiobookshelf = mkDefault enabled;

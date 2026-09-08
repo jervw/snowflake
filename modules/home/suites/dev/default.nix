@@ -36,14 +36,16 @@ in {
       just
     ];
 
-    snowflake.programs = {
-      editors = {
-        zed = enabled;
-      };
-      tools = {
-        codex = enabled;
-        jujutsu = enabled;
-        mcp = enabled;
+    nietos = {
+      programs = {
+        editors = {
+          zed = enabled;
+        };
+        tools = {
+          codex = enabled;
+          jujutsu = enabled;
+          mcp = enabled;
+        };
       };
     };
   };

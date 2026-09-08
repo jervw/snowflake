@@ -25,7 +25,7 @@ in {
   };
 
   config = mkIf cfg.enable {
-    snowflake.virtualisation.quadlet.enable = true;
+    ${namespace}.virtualisation.quadlet.enable = true;
 
     virtualisation.quadlet = let
       inherit (config.virtualisation.quadlet) volumes;

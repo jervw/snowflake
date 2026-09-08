@@ -38,6 +38,6 @@ in {
       spiceUSBRedirection.enable = true;
     };
 
-    snowflake.user.extraGroups = ["kvm" "libvirtd"];
+    nietos.user.extraGroups = ["kvm" "libvirtd"];
   };
 }

@@ -6,7 +6,7 @@
 }: let
   inherit (lib.${namespace}) enabled;
 in {
-  snowflake = {
+  nietos = {
     user = {
       enable = true;
       inherit (config.snowfallorg.user) name;

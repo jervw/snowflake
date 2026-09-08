@@ -16,7 +16,7 @@ in {
     efi.efiSysMountPoint = "/boot";
   };
 
-  snowflake = {
+  nietos = {
     hardware = {
       cpu.intel = enabled;
       storage.ssd = true;

@@ -15,7 +15,7 @@ in {
   };
 
   config = mkIf cfg.enable {
-    snowflake = {
+    nietos = {
       programs = {
         addons.chromium-policies = enabled;
         apps = {

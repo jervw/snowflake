@@ -13,7 +13,7 @@ in {
     lib.mkEnableOption "Discord free game notifier service";
 
   config = mkIf cfg.enable {
-    snowflake.virtualisation.quadlet.enable = true;
+    ${namespace}.virtualisation.quadlet.enable = true;
 
     age.secrets.discord-free-game = {
       file = "${inputs.self}/secrets/discord-free-game.age";

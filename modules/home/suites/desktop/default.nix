@@ -42,7 +42,7 @@ in {
       NIXOS_OZONE_WL = 1;
     };
 
-    snowflake = {
+    nietos = {
       theme.enable = true;
       programs = {
         desktop = {
