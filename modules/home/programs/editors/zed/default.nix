@@ -68,7 +68,6 @@ in {
         which_key.enabled = true;
         diagnostics.inline.enabled = true;
         git.inline_blame.delay_ms = 1000;
-        session.trust_all_worktrees = true;
         load_direnv = "shell_hook";
 
         project_panel = {
