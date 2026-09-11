@@ -78,8 +78,6 @@ in {
   };
 
   config = mkIf cfg.enable {
-    home.packages = [pkgs.gcr];
-
     home.preferXdgDirectories = true;
 
     xdg = {
