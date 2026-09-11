@@ -7,6 +7,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     quadlet-nix.url = "github:SEIAROTg/quadlet-nix";
     nix-gaming.url = "github:fufexan/nix-gaming";
+    noctalia.url = "github:noctalia-dev/noctalia-shell";
 
     celler = {
       url = "github:celler-cache/celler";
@@ -31,11 +32,6 @@
 
     nix-index = {
       url = "github:nix-community/nix-index-database";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    noctalia = {
-      url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
