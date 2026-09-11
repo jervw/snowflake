@@ -22,7 +22,7 @@ in {
     };
     timeout = mkOption {
       type = types.nullOr types.int;
-      default = 2;
+      default = 5;
       description = "Seconds before booting the default menu entry";
     };
     plymouth = lib.mkEnableOption "plymouth boot splash";
