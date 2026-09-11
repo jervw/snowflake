@@ -2,6 +2,7 @@
   config,
   lib,
   namespace,
+  inputs,
   ...
 }: let
   inherit (lib) mkEnableOption mkIf mapAttrs;
@@ -29,6 +30,10 @@ in {
     services.syncthing = {
       enable = true;
       guiAddress = "0.0.0.0:8384";
+      guiCredentials = {
+        username = "jervw";
+        passwordFile = config.age.secrets.syncthing.path;
+      };
       settings = {
         devices =
           mapAttrs (_name: id: {
@@ -45,18 +50,17 @@ in {
           other = mkFolder "~/other";
         };
 
-        gui = {
-          user = "user";
-          # TODO add actual password, even if offsite access is not possible
-          password = "apina123";
-        };
-
         options = {
           relaysEnabled = false;
           localAnnounceEnabled = false;
           urAccepted = -1;
         };
       };
+    };
+
+    age.secrets.syncthing = {
+      file = "${inputs.self}/secrets/syncthing.age";
+      path = "${config.home.homeDirectory}/.local/state/agenix/syncthing";
     };
   };
 }

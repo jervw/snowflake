@@ -26,4 +26,5 @@ in {
   "celler.age".publicKeys = users ++ systems;
   "nix-access-tokens.age".publicKeys = users ++ systems;
   "dawarich-env.age".publicKeys = users ++ systems;
+  "syncthing.age".publicKeys = users ++ systems;
 }
