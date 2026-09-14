@@ -14,7 +14,6 @@ in {
     programs.apps.tether.enable = true;
 
     hardware = {
-      openrgb = enabled;
       airpods = enabled;
       cpu.amd = enabled;
       logitech-mx-master-3s = enabled;
