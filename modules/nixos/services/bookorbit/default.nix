@@ -11,6 +11,7 @@
   containerUid = config.users.users.containers.uid;
   secretFile = "/var/lib/bookorbit/bookorbit.env";
 in {
+  # TODO: Combine booksPath, aBooksPath and dropPath
   options.${namespace}.services.bookorbit = {
     enable = mkEnableOption "BookOrbit self-hosted library service";
 
@@ -36,6 +37,18 @@ in {
       type = lib.types.path;
       default = "/mnt/storage/Media/Books";
       description = "Host book library mounted at /books";
+    };
+
+    aBooksPath = mkOption {
+      type = lib.types.path;
+      default = "/mnt/storage/Media/Audiobooks2";
+      description = "Host audiobook library mounted at /audiobooks";
+    };
+
+    dropPath = mkOption {
+      type = lib.types.path;
+      default = "/mnt/storage/Media/Bookdrop";
+      description = "Book Dock mounted at /bookdrop";
     };
 
     nodeMaxOldSpaceSize = mkOption {
@@ -134,7 +147,11 @@ in {
           unitConfig = {
             After = [containers.bookorbit-postgres.ref];
             Requires = [containers.bookorbit-postgres.ref];
-            RequiresMountsFor = [cfg.booksPath];
+            RequiresMountsFor = [
+              cfg.booksPath
+              cfg.aBooksPath
+              cfg.dropPath
+            ];
           };
 
           serviceConfig = {
@@ -174,6 +191,8 @@ in {
             };
             volumes = [
               "${toString cfg.booksPath}:/books"
+              "${toString cfg.booksPath}:/audiobooks"
+              "${toString cfg.booksPath}:/bookdrop"
               "${volumes.bookorbit-app.ref}:/data"
             ];
 
