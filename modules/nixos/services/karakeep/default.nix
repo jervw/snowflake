@@ -24,7 +24,7 @@ in {
   config = mkIf cfg.enable {
     services = {
       karakeep = {
-        enable = false; # TODO ENABLE LATER
+        enable = true;
         environmentFile = config.age.secrets.openai-karakeep.path;
         meilisearch.enable = false;
         extraEnvironment = {
