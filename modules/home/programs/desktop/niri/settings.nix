@@ -26,7 +26,7 @@ in
           keyboard = {
             xkb = {
               layout = "us";
-              options = "caps:none";
+              options = "compose:ralt,caps:none";
             };
             repeat-delay = 200;
           };
