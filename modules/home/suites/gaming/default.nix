@@ -32,7 +32,6 @@ in {
       ++ lib.optionals cfg.enableEmulators [
         # Emulators
         rpcs3
-        shadps4
         azahar
       ];
   };
