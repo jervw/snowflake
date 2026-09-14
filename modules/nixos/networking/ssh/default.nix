@@ -11,9 +11,11 @@ in {
     enable = mkEnableOption "Whether to enable OpenSSH";
   };
 
+  # TODO: Gate options and add optional GPG-agent integration, remove host keys and retire ssh-keys flake input
+
   config = {
     programs.ssh = {
-      startAgent = false; # Don't start, we're using gpg-agent
+      startAgent = false; # Don't start, we're using GPG-agent
 
       # Make regular SSH keys required for Agenix available
       extraConfig = ''
@@ -27,23 +29,17 @@ in {
     };
 
     services.openssh = {
-      # FIXME: For now forcefully enable OpenSSH because Agenix requires it to pass `nix flake check` before having any systems configured unless age.identityPaths is set
       enable = true;
       settings = {
         KbdInteractiveAuthentication = false;
         PasswordAuthentication = lib.mkForce false;
         PubkeyAuthentication = lib.mkForce true;
         PubkeyAuthOptions = "none";
+        PermitRootLogin = "no";
         StreamLocalBindUnlink = "yes";
         GatewayPorts = "clientspecified";
         LogLevel = "VERBOSE";
       };
-      hostKeys = [
-        {
-          path = "/etc/ssh/ssh_host_ed25519_key";
-          type = "ed25519";
-        }
-      ];
     };
 
     users.users.${config.${namespace}.user.name}.openssh.authorizedKeys.keyFiles = [inputs.ssh-keys.outPath];
