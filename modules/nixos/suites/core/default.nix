@@ -35,11 +35,7 @@ in {
       file
       jq
       dua
-
-      # archiving
-      unar
-      zip
-      unzip
+      libarchive
     ];
 
     services.usbmuxd = enabled;
