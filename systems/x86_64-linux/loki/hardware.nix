@@ -16,7 +16,7 @@
     "/nix" = {
       device = "/dev/disk/by-label/nixos";
       fsType = "btrfs";
-      options = ["subvol=nix" "noatime"];
+      options = ["subvol=nix" "compress=zstd" "noatime"];
     };
 
     "/persist" = {
@@ -30,6 +30,12 @@
       device = "/dev/disk/by-label/boot";
       fsType = "vfat";
       options = ["fmask=0022" "dmask=0022"];
+    };
+
+    "/mnt/storage" = {
+      device = "/dev/disk/by-label/storage";
+      fsType = "btrfs";
+      options = ["compress=zstd" "noatime" "nofail"];
     };
   };
 
