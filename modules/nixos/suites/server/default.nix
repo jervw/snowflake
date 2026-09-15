@@ -17,7 +17,6 @@ in {
     nietos = {
       services = {
         adguard = mkDefault enabled;
-        audiobookshelf = mkDefault enabled;
         beszel.hub = mkDefault enabled;
         bookorbit = mkDefault enabled;
         caddy = mkDefault enabled;
