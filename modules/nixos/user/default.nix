@@ -36,6 +36,7 @@ in {
             "tss"
             "power"
             "nix"
+            "media"
           ]
           ++ user.extraGroups;
         group = "users";
