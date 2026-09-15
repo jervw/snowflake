@@ -186,13 +186,13 @@ in {
               PUID = "1000";
               PGID = "1000";
               NODE_MAX_OLD_SPACE_SIZE = toString cfg.nodeMaxOldSpaceSize;
-              LIBRARY_BROWSE_ROOT = "/books";
               OIDC_ALLOW_LOCAL_ISSUERS = "true";
+              BOOK_DOCK_PATH = "/bookdrop";
             };
             volumes = [
               "${toString cfg.booksPath}:/books"
-              "${toString cfg.booksPath}:/audiobooks"
-              "${toString cfg.booksPath}:/bookdrop"
+              "${toString cfg.aBooksPath}:/audiobooks"
+              "${toString cfg.dropPath}:/bookdrop"
               "${volumes.bookorbit-app.ref}:/data"
             ];
 
