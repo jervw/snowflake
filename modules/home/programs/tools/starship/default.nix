@@ -15,6 +15,10 @@ in {
   config = mkIf cfg.enable {
     programs.starship = {
       enable = true;
+      presets = [
+        "nerd-font-symbols"
+        "no-runtime-versions"
+      ];
     };
   };
 }
