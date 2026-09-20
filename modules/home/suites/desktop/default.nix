@@ -59,7 +59,6 @@ in {
         };
         term = {
           ghostty = mkDefault enabled;
-          rio = mkDefault enabled;
         };
       };
     };
