@@ -29,13 +29,13 @@ in {
       git
       curl
       killall
-      lazyjournal
       python3
       aria2
       file
       jq
       dua
       libarchive
+      zmx
     ];
 
     services.usbmuxd = enabled;
