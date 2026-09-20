@@ -61,6 +61,8 @@ in {
       graphics = {
         extraPackages = with pkgs; [nvidia-vaapi-driver];
       };
+
+      nvidia-container-toolkit.enable = mkDefault true;
     };
 
     nixpkgs.config.cudaSupport = cfg.enableCudaSupport;
