@@ -5,7 +5,7 @@
   ...
 }: let
   inherit (lib) mkIf;
-  inherit (lib.${namespace}) enabled;
+  inherit (lib.${namespace}) enabled disabled;
   cfg = config.${namespace}.programs.apps.discord;
 in {
   options.${namespace}.programs.apps.discord = {
@@ -14,10 +14,14 @@ in {
   config = mkIf cfg.enable {
     programs.nixcord = {
       enable = true;
-      discord = {
-        equicord = enabled;
-        krisp = enabled;
-        openASAR = enabled;
+      discord = disabled;
+      goofcord = {
+        enable = true;
+        clientMod = "equicord";
+        settings = {
+          minimizeToTray = true;
+          hardwareAcceleration = true;
+        };
       };
       config.plugins = {
         altKrispSwitch = enabled;
