@@ -7,6 +7,7 @@
     quadlet-nix.url = "github:SEIAROTg/quadlet-nix";
     nix-gaming.url = "github:fufexan/nix-gaming";
     noctalia.url = "github:noctalia-dev/noctalia-shell";
+    millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
 
     celler = {
       url = "github:celler-cache/celler";
@@ -57,6 +58,14 @@
       url = "github:numtide/treefmt-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        home-manager.follows = "home-manager";
+      };
+    };
   };
 
   outputs = inputs:
@@ -82,6 +91,10 @@
         "aarch64-linux"
       ];
 
+      overlays = [
+        inputs.millennium.overlays.default
+      ];
+
       systems.modules.nixos = with inputs; [
         agenix.nixosModules.default
         celler.nixosModules.cellerd
@@ -97,6 +110,7 @@
         agenix.homeManagerModules.default
         noctalia.homeModules.default
         nixcord.homeModules.nixcord
+        zen-browser.homeModules.twilight-official
       ];
 
       # Other generic outputs
