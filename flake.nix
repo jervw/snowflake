@@ -2,7 +2,6 @@
   inputs = {
     ghostty.url = "github:ghostty-org/ghostty";
     helix.url = "github:jervw/helix";
-    nixcord.url = "github:FlameFlag/nixcord";
     nixos-hardware.url = "github:NixOS/nixos-hardware";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     quadlet-nix.url = "github:SEIAROTg/quadlet-nix";
@@ -16,7 +15,11 @@
 
     agenix = {
       url = "github:ryantm/agenix";
-      inputs.darwin.follows = "";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nixcord = {
+      url = "github:FlameFlag/nixcord";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
