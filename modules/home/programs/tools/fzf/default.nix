@@ -16,11 +16,8 @@ in {
   config = mkIf cfg.enable {
     programs.fzf = {
       enable = true;
+      historyWidget.command = ""; # Using atuin's history manager
       defaultCommand = "${lib.getExe pkgs.fd} --type=f --hidden --exclude=.git";
-
-      enableBashIntegration = true;
-      enableZshIntegration = false;
-      enableFishIntegration = true;
     };
   };
 }

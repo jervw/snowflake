@@ -72,6 +72,7 @@ in {
           ]
           ++ mkDirs ".local/share/" [
             "Anki2"
+            "atuin"
             "PrismLauncher"
             "faugus-launcher"
             "helix"

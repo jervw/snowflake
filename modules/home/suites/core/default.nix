@@ -35,6 +35,7 @@ in {
           nushell = mkDefault enabled;
         };
         tools = {
+          atuin = mkDefault enabled;
           direnv = mkDefault enabled;
           fastfetch = mkDefault enabled;
           fzf = mkDefault enabled;
