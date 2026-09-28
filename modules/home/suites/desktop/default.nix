@@ -28,6 +28,8 @@ in {
       protonmail-desktop
       zennotes-desktop
       rustdesk
+      nix-search-tv
+      proton-vpn-cli
 
       # Wayland stuff
       grimblast
