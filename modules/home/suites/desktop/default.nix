@@ -56,6 +56,7 @@ in {
           obs = mkDefault enabled;
           imv = mkDefault enabled;
           zathura = mkDefault enabled;
+          zen = mkDefault enabled;
         };
         term = {
           ghostty = mkDefault enabled;
