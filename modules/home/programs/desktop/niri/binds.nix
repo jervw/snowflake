@@ -76,9 +76,11 @@ in
         "Mod+Shift+K" = {move-column-to-workspace-up = {};};
         "Mod+Shift+J" = {move-column-to-workspace-down = {};};
 
-        # Move between monitors
-        "Mod+comma" = {focus-monitor-next = {};};
-        "Mod+period" = {focus-monitor-previous = {};};
+        # Focus between monitors
+        "Mod+comma" = {focus-monitor-left = {};};
+        "Mod+period" = {focus-monitor-right = {};};
+
+        # Move column to monitor
 
         # Toggle overview
         "Mod+Escape" = {toggle-overview = {};};
