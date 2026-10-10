@@ -33,6 +33,7 @@ in {
         directories =
           [
             ".dots"
+            ".steam" # For some reason this needs to be persisted when using Millenium
             "dev"
             "docs"
             "download"
@@ -47,7 +48,6 @@ in {
             "BeeperTexts"
             "BraveSoftware"
             "codex"
-            "Element"
             "Equicord"
             "faugus-launcher"
             "dconf"
