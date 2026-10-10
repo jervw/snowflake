@@ -621,15 +621,16 @@
         "nixpkgs": "nixpkgs_5"
       },
       "locked": {
-        "lastModified": 1790321948,
-        "narHash": "sha256-mZGHLGi217oLIwzDM4PNRZeCNa6g2WBXURyXbNMFs7Y=",
-        "owner": "NixOS",
+        "lastModified": 1790907906,
+        "narHash": "sha256-9jLDk175t6Tvjzae6ApA24BqiGSt2jkwxbBFFL51wSM=",
+        "owner": "soopyc",
         "repo": "nixos-hardware",
-        "rev": "30d48a0ec6035f8140d0125af274f0de95f1e9b5",
+        "rev": "d0be0faee6885202d213df863c9d436445cfd505",
         "type": "github"
       },
       "original": {
-        "owner": "NixOS",
+        "owner": "soopyc",
+        "ref": "apple-t2-updates",
         "repo": "nixos-hardware",
         "type": "github"
       }
