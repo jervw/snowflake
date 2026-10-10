@@ -43,7 +43,6 @@ in {
         };
         tools = {
           claude-code = enabled;
-          codex = enabled;
           jujutsu = enabled;
           mcp = enabled;
         };
