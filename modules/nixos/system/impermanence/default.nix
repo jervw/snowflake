@@ -47,6 +47,7 @@ in {
           ++ mkDirs ".config/" [
             "BeeperTexts"
             "BraveSoftware"
+            "claude"
             "codex"
             "Equicord"
             "faugus-launcher"
