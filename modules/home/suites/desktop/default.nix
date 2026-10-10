@@ -27,7 +27,7 @@ in {
       fontpreview
       protonmail-desktop
       zennotes-desktop
-      rustdesk
+      # rustdesk
       nix-search-tv
       proton-vpn-cli
 
