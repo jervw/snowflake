@@ -62,6 +62,7 @@ in {
     programs.codex = {
       enable = true;
       enableMcpIntegration = true;
+      context = ../AGENTS.md;
       settings = {
         model = "gpt-5.6-luna";
         model_reasoning_effort = "medium";
