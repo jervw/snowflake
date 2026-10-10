@@ -30,6 +30,11 @@ in {
       };
     };
 
-    age.secrets.mcp-context7.file = "${inputs.self}/secrets/mcp-context7.age";
+    # The default path contains a literal ${XDG_RUNTIME_DIR}, which the MCP
+    # env-file wrapper single-quotes, so it would never be expanded.
+    age.secrets.mcp-context7 = {
+      file = "${inputs.self}/secrets/mcp-context7.age";
+      path = "${config.home.homeDirectory}/.local/state/agenix/mcp-context7";
+    };
   };
 }
