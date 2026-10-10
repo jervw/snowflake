@@ -57,6 +57,7 @@ in {
       settings = {
         extra-experimental-features = ["flakes" "nix-command"];
         warn-dirty = false;
+        keep-going = true;
         keep-outputs = true;
         auto-optimise-store = true;
         allowed-users = ["@wheel"];
