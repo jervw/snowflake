@@ -43,6 +43,10 @@ in {
       group = "caddy";
     };
 
+    networking.firewall.interfaces = mkIf config.services.tailscale.enable {
+      ${config.services.tailscale.interfaceName} = {allowedTCPPorts = [443];};
+    };
+
     systemd.services.caddy = {
       after = ["agenix.service"];
       serviceConfig = {

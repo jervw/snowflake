@@ -10,16 +10,17 @@
   inherit (config.${namespace}) user;
 
   cfg = config.${namespace}.networking.tailscale;
+
+  syncthingEnabled = config.home-manager.users.${user.name}.${namespace}.services.syncthing.enable or false;
 in {
   options.${namespace}.networking.tailscale = with types; {
     enable = lib.mkEnableOption "Tailscale";
     extraUpFlags = mkOpt (listOf str) [] "Extra flags for starting Tailscale";
+    forwarding = lib.mkEnableOption "IP forwarding for subnet routers and exit nodes";
   };
 
   config = mkIf cfg.enable {
-    boot.kernel.sysctl = {
-      # Enable IP forwarding
-      # required for Wireguard & Tailscale/Headscale subnet feature
+    boot.kernel.sysctl = mkIf cfg.forwarding {
       "net.ipv4.ip_forward" = true;
       "net.ipv6.conf.all.forwarding" = true;
     };
@@ -27,8 +28,11 @@ in {
     networking = {
       firewall = {
         allowedUDPPorts = [config.services.tailscale.port];
-        # Tailnet services do not need global openFirewall rules.
-        trustedInterfaces = [config.services.tailscale.interfaceName];
+        # tailscale0 is not trusted; services open their own ports on it.
+        interfaces.${config.services.tailscale.interfaceName} = mkIf syncthingEnabled {
+          allowedTCPPorts = [22000];
+          allowedUDPPorts = [22000];
+        };
         checkReversePath = "loose";
       };
 

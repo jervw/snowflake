@@ -58,6 +58,10 @@ in {
       ip saddr { ${concatStringsSep ", " cfg.lanSubnets} } tcp dport { ${concatStringsSep ", " (map toString config.services.openssh.ports)} } accept
     '';
 
+    networking.firewall.interfaces = mkIf config.services.tailscale.enable {
+      ${config.services.tailscale.interfaceName} = {allowedTCPPorts = config.services.openssh.ports;};
+    };
+
     users.users.${config.${namespace}.user.name}.openssh.authorizedKeys.keys = [personalKey];
   };
 }

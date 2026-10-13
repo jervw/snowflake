@@ -34,5 +34,13 @@ in {
         import tinyauth
       '';
     };
+
+    # Tailnet primary DNS
+    networking.firewall.interfaces = mkIf config.services.tailscale.enable {
+      ${config.services.tailscale.interfaceName} = {
+        allowedTCPPorts = [53];
+        allowedUDPPorts = [53];
+      };
+    };
   };
 }

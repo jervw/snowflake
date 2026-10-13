@@ -54,5 +54,9 @@ in {
     };
 
     systemd.tmpfiles.rules = ["d ${cfg.dataDir} 0700 restic restic -"];
+
+    networking.firewall.interfaces = mkIf config.services.tailscale.enable {
+      ${config.services.tailscale.interfaceName} = {allowedTCPPorts = [cfg.port];};
+    };
   };
 }

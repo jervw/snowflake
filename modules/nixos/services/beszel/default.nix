@@ -111,6 +111,11 @@ in {
       };
 
       systemd.services.beszel-agent.after = ["agenix.service"];
+
+      # Hub on Thor connects to agents over the tailnet.
+      networking.firewall.interfaces = mkIf config.services.tailscale.enable {
+        ${config.services.tailscale.interfaceName} = {allowedTCPPorts = [cfg.agent.port];};
+      };
     })
   ];
 }
