@@ -11,3 +11,6 @@ authoritative source for the question.
 - **context7** — Fetch current upstream documentation for libraries,
   frameworks, and tools when writing or reviewing code that depends on their
   APIs, instead of relying on memory.
+- **github** — Look up issues, pull requests, commits, and repository state
+  through the GitHub MCP server instead of scraping github.com or guessing.
+  Search for existing issues before creating new ones.
