@@ -22,9 +22,6 @@ in {
       ];
     };
 
-    # Ensure time sync happens before services that need it
-    systemd.services.timesyncd.wantedBy = ["sysinit.target"];
-
     # Timezone
     time.timeZone = "Europe/Helsinki";
   };
