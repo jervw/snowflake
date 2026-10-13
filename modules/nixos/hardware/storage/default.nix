@@ -21,7 +21,6 @@ in {
       services.fstrim.enable = mkDefault true;
     })
 
-    # TODO: Maybe someday make pools configurable
     # Enable ZFS support
     (mkIf cfg.zfs {
       boot = {
