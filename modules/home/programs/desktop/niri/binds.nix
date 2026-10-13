@@ -29,7 +29,7 @@
     );
 
   workspaces = workspaceBinds 9;
-  noctaliaIpc = args: ["noctalia" "msg"] ++ args;
+  noctaliaIpc = args: [(lib.getExe config.programs.noctalia.package) "msg"] ++ args;
 in
   mkIf cfg.enable {
     wayland.windowManager.niri.settings.binds =

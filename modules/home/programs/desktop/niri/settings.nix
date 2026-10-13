@@ -15,9 +15,8 @@ in
         prefer-no-csd = {};
         hotkey-overlay.skip-at-startup = {};
 
-        # TODO Maybe use full paths in the future.
         spawn-at-startup = [
-          "noctalia"
+          (lib.getExe config.programs.noctalia.package)
         ];
 
         screenshot-path = "~/pics/Screenshots/Screenshot-%Y%m%d-%H%M%S.png";
