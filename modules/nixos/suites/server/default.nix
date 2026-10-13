@@ -20,7 +20,7 @@ in {
         beszel.hub = mkDefault enabled;
         bookorbit = mkDefault enabled;
         caddy = mkDefault enabled;
-        # celler = mkDefault enabled; # TODO: Migrate to new version, wont start
+        celler = mkDefault enabled;
         dawarich = mkDefault enabled;
         discord-free-game-notifier = mkDefault enabled;
         flaresolverr = mkDefault enabled;

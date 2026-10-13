@@ -105,7 +105,9 @@ in {
             default-retention-period = cfg.retentionPeriod;
           };
 
-          jwt = {};
+          # Derived from CELLER_SERVER_TOKEN_RS256_SECRET_BASE64 in the secret,
+          # which cellerd no longer reads. The private key now only signs tokens.
+          jwt.rs256-public-key-file = ./public-key.pem;
         };
       };
 
