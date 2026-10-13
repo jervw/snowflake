@@ -882,7 +882,6 @@
         "noctalia": "noctalia",
         "quadlet-nix": "quadlet-nix",
         "snowfall-lib": "snowfall-lib",
-        "ssh-keys": "ssh-keys",
         "tether": "tether",
         "treefmt-nix": "treefmt-nix_3",
         "zen-browser": "zen-browser"
@@ -933,18 +932,6 @@
         "owner": "anntnzrb",
         "repo": "snowfall-lib",
         "type": "github"
-      }
-    },
-    "ssh-keys": {
-      "flake": false,
-      "locked": {
-        "narHash": "sha256-E9wq57z/Y2Jva8wSoTPVztRci6Boc9zRonzGYTUzwO4=",
-        "type": "file",
-        "url": "https://github.com/jervw.keys"
-      },
-      "original": {
-        "type": "file",
-        "url": "https://github.com/jervw.keys"
       }
     },
     "systems": {
