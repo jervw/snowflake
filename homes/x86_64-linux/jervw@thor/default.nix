@@ -13,7 +13,10 @@ in {
     };
 
     services = {
-      syncthing = enabled;
+      syncthing = {
+        enable = true;
+        versioning = true;
+      };
     };
 
     system = {

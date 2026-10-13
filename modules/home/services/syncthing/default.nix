@@ -20,25 +20,34 @@
   mkFolder = path: {
     inherit path;
     devices = allDevices;
+    versioning = mkIf cfg.versioning {
+      type = "staggered";
+      params.maxAge = toString (90 * 24 * 60 * 60); # 90 days
+    };
   };
 in {
   options.${namespace}.services.syncthing = {
     enable = mkEnableOption "Enable syncthing service";
+    versioning = mkEnableOption "staggered versioning for all folders";
   };
 
   config = mkIf cfg.enable {
     services.syncthing = {
       enable = true;
-      guiAddress = "0.0.0.0:8384";
+      # Use `ssh -L 8384:localhost:8384 <host>` for remote GUI access.
+      guiAddress = "127.0.0.1:8384";
       guiCredentials = {
         username = "jervw";
         passwordFile = config.age.secrets.syncthing.path;
       };
+      # Devices and folders are fully declarative; GUI changes are reverted.
+      overrideDevices = true;
+      overrideFolders = true;
       settings = {
         devices =
           mapAttrs (_name: id: {
             inherit id;
-            autoAcceptFolders = true;
+            autoAcceptFolders = false;
           })
           deviceIds;
 
