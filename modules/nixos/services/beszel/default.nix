@@ -97,10 +97,7 @@ in {
           };
         environmentFile = config.age.secrets.beszel-agent.path;
         openFirewall = false;
-        smartmon = {
-          enable = true;
-          # TODO: Add deviceAllow if needed
-        };
+        smartmon.enable = true;
         extraPath = lib.optionals config.hardware.nvidia.enabled [
           config.hardware.nvidia.package
         ];
