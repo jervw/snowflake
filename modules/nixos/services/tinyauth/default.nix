@@ -30,7 +30,6 @@ in {
           APPURL = "https://${cfg.host}";
           SERVER_ADDRESS = "127.0.0.1";
           SERVER_PORT = cfg.port;
-          AUTH_LOGINTIMEOUT = 0; # TODO: Remove
         };
       };
 
