@@ -30,6 +30,9 @@ in {
       };
     };
 
+    # Unlock the keyring with the login password
+    security.pam.services.greetd.enableGnomeKeyring = config.services.gnome.gnome-keyring.enable;
+
     environment.etc."greetd/environments".text = lib.concatLines cfg.sessions;
   };
 }
