@@ -27,6 +27,18 @@ in {
           command = lib.getExe pkgs.mcp-nixos;
           args = [];
         };
+        github = {
+          command = lib.getExe pkgs.github-mcp-server;
+          args = ["stdio"];
+          env.GITHUB_PERSONAL_ACCESS_TOKEN.file = config.age.secrets.mcp-github.path;
+        };
+        # zennotes-desktop doesn't ship an MCP wrapper, so run mcp.js with
+        # Electron acting as plain Node.
+        zennotes = {
+          command = "${pkgs.electron_42.unwrapped}/libexec/electron/electron";
+          args = ["${pkgs.zennotes-desktop}/lib/node_modules/zennotes-monorepo/apps/desktop/out/main/mcp.js"];
+          env.ELECTRON_RUN_AS_NODE = "1";
+        };
       };
     };
 
@@ -35,6 +47,11 @@ in {
     age.secrets.mcp-context7 = {
       file = "${inputs.self}/secrets/mcp-context7.age";
       path = "${config.home.homeDirectory}/.local/state/agenix/mcp-context7";
+    };
+
+    age.secrets.mcp-github = {
+      file = "${inputs.self}/secrets/mcp-github.age";
+      path = "${config.home.homeDirectory}/.local/state/agenix/mcp-github";
     };
   };
 }
