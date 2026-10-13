@@ -55,6 +55,7 @@ in {
             "discord"
             "fcitx5"
             "feishin"
+            "gh"
             "heroic"
             "noctalia"
             "nushell"
