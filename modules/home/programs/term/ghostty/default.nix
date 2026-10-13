@@ -69,6 +69,9 @@ in {
           "global:super+tab=toggle_quick_terminal"
           "alt+q=close_surface"
           "ctrl+shift+r=reload_config"
+
+          # Drop the default fullscreen toggle
+          "ctrl+enter=unbind"
         ];
       };
     };
