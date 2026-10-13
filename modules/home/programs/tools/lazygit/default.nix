@@ -21,14 +21,16 @@ in {
         notARepository = "quit";
 
         gui = {
-          authorColors = {
-            "${config.${namespace}.user.fullName}" = "#c6a0f6";
-            "dependabot[bot]" = "#eed49f";
-          };
-          branchColors = {
-            main = "#ed8796";
-            master = "#ed8796";
-            dev = "#8bd5ca";
+          theme = {
+            authorColors = {
+              "${config.${namespace}.user.fullName}" = "#c6a0f6";
+              "dependabot[bot]" = "#eed49f";
+            };
+            branchColorPatterns = {
+              "^main$" = "#ed8796";
+              "^master$" = "#ed8796";
+              "^dev$" = "#8bd5ca";
+            };
           };
           nerdFontsVersion = "3";
         };
