@@ -23,6 +23,8 @@ in {
     };
     networking = {
       nfs = enabled;
+      # Laptop roams; keep SSH Tailscale-only.
+      ssh.lanSubnets = [];
       tailscale = enabled;
     };
 

@@ -4,7 +4,7 @@
   namespace,
   ...
 }: let
-  inherit (lib) mkEnableOption mkIf mkOption types;
+  inherit (lib) concatStringsSep mkEnableOption mkIf mkOption optionalString types;
 
   cfg = config.${namespace}.networking.ssh;
 
@@ -18,6 +18,12 @@ in {
       type = types.bool;
       default = config.${namespace}.security.gpg.enable;
       description = "Use gpg-agent as the SSH agent";
+    };
+
+    lanSubnets = mkOption {
+      type = types.listOf types.str;
+      default = ["10.0.0.0/26"];
+      description = "IPv4 subnets allowed to reach SSH outside of Tailscale";
     };
   };
 
@@ -35,6 +41,8 @@ in {
 
     services.openssh = {
       enable = true;
+      # Reachable via tailscale0 (trusted) and lanSubnets only.
+      openFirewall = false;
       settings = {
         KbdInteractiveAuthentication = false;
         PasswordAuthentication = lib.mkForce false;
@@ -42,12 +50,14 @@ in {
         PubkeyAuthOptions = "none";
         PermitRootLogin = "no";
         StreamLocalBindUnlink = "yes";
-        GatewayPorts = "clientspecified";
         LogLevel = "VERBOSE";
       };
     };
 
+    networking.firewall.extraInputRules = optionalString (cfg.lanSubnets != []) ''
+      ip saddr { ${concatStringsSep ", " cfg.lanSubnets} } tcp dport { ${concatStringsSep ", " (map toString config.services.openssh.ports)} } accept
+    '';
+
     users.users.${config.${namespace}.user.name}.openssh.authorizedKeys.keys = [personalKey];
-    users.users.root.openssh.authorizedKeys.keys = [personalKey];
   };
 }
