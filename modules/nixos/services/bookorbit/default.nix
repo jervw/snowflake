@@ -11,7 +11,7 @@
   containerUid = config.users.users.containers.uid;
   secretFile = "/var/lib/bookorbit/bookorbit.env";
 in {
-  # TODO: Combine booksPath, aBooksPath and dropPath
+  # TODO: Migrate from Quadlet containers to the upstream services.bookorbit NixOS module
   options.${namespace}.services.bookorbit = {
     enable = mkEnableOption "BookOrbit self-hosted library service";
 
