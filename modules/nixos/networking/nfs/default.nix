@@ -20,6 +20,9 @@ in {
       fsType = "nfs";
       options = [
         "rw"
+        "nosuid"
+        "nodev"
+        "noexec"
         "noauto"
         "x-systemd.automount"
         "x-systemd.idle-timeout=600"
