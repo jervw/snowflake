@@ -38,6 +38,13 @@ in {
     };
 
     system = {
+      backup = {
+        enable = true;
+        paths = [
+          "/home"
+          "/var/lib"
+        ];
+      };
       boot = {
         enable = true;
         loader = "systemd-boot";

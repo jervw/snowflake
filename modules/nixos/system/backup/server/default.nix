@@ -51,6 +51,8 @@ in {
     systemd.services.restic-rest-server = {
       requires = ["restic-htpasswd-setup.service"];
       after = ["restic-htpasswd-setup.service"];
+      # Don't fill the root filesystem if the backup disk is missing.
+      unitConfig.RequiresMountsFor = [cfg.dataDir];
     };
 
     systemd.tmpfiles.rules = ["d ${cfg.dataDir} 0700 restic restic -"];
