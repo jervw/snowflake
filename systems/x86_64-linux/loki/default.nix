@@ -53,6 +53,10 @@ in {
           "/persist/etc"
           "/persist/home"
           "/persist/password"
+          "/persist/var/lib/bluetooth"
+          "/persist/var/lib/nixos"
+          "/persist/var/lib/sbctl"
+          "/persist/var/lib/tailscale"
         ];
         exclude = [
           "Steam"

@@ -60,6 +60,14 @@ in {
         paths = [
           "/home"
           "/var/lib"
+          "/mnt/storage/Diat"
+          "/mnt/storage/Immich-Library"
+          "/mnt/storage/NAS"
+        ];
+        # Regenerable by Immich
+        exclude = [
+          "/mnt/storage/Immich-Library/encoded-video"
+          "/mnt/storage/Immich-Library/thumbs"
         ];
       };
       boot = {
