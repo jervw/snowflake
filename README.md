@@ -7,21 +7,21 @@
 
 ## :spiral_notepad: Features
 
-* [NNN-stack](https://the-nnn-stack.github.io/) — NixOS + Niri + Noctalia
-* Opt-in impermanence
-* Full-disk encryption and Secure Boot
-* Agenix for secrets management
-* Built with [Snowfall-lib](https://github.com/snowfallorg/lib)
-* Podman containers managed with [quadlet-nix](https://github.com/SEIAROTg/quadlet-nix)
-* Linted and styled with [alejandra](https://github.com/kamadorueda/alejandra), [deadnix](https://github.com/astro/deadnix), and [statix](https://github.com/nerdypepper/statix)
+- [NNN-stack](https://the-nnn-stack.github.io/) — NixOS + Niri + Noctalia
+- Opt-in impermanence
+- Full-disk encryption and Secure Boot
+- Agenix for secrets management
+- Built with [Snowfall-lib](https://github.com/snowfallorg/lib)
+- Podman containers managed with [quadlet-nix](https://github.com/SEIAROTg/quadlet-nix)
+- Linted and styled with [alejandra](https://github.com/kamadorueda/alejandra), [deadnix](https://github.com/astro/deadnix), and [statix](https://github.com/nerdypepper/statix)
 
 ## Hosts
 
-| Host       | Description    |
+| Host | Description |
 | ---------- | -------------- |
-| **loki**   | Desktop        |
+| **loki** | Desktop |
 | **fenrir** | T2 MacBook Air |
-| **thor**   | Homelab        |
+| **thor** | Homelab |
 
 ## Layout
 
