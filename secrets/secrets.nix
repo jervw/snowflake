@@ -22,7 +22,10 @@ in {
   "slskd.age".publicKeys = users ++ [thor];
   "mcp-context7.age".publicKeys = users ++ systems;
   "mcp-github.age".publicKeys = users ++ systems;
-  "restic.age".publicKeys = users ++ systems;
+  "restic-htpasswd.age".publicKeys = users ++ [thor];
+  "restic-loki.age".publicKeys = users ++ [loki thor];
+  "restic-thor.age".publicKeys = users ++ [thor];
+  "restic-fenrir.age".publicKeys = users ++ [fenrir thor];
   "nixpkgs-webhook.age".publicKeys = users ++ systems;
   "celler.age".publicKeys = users ++ systems;
   "nix-access-tokens.age".publicKeys = users ++ systems;

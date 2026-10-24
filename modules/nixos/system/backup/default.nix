@@ -30,20 +30,20 @@ in {
     };
   };
   config = mkIf cfg.enable {
-    age.secrets.restic-password.file = "${inputs.self}/secrets/restic.age";
+    age.secrets."restic-${host}".file = "${inputs.self}/secrets/restic-${host}.age";
     services.restic.backups."daily-${host}" = {
       initialize = true;
       # privateRepos requires the repository path to start with the REST
-      # username. Authentication is supplied through the environment file.
-      repository = "rest:http://${cfg.serverAddress}/backup/${host}";
-      environmentFile = config.age.secrets.restic-password.path;
+      # username (the hostname). Credentials come from the environment file.
+      repository = "rest:http://${cfg.serverAddress}/${host}";
+      environmentFile = config.age.secrets."restic-${host}".path;
       inherit (cfg) paths;
       exclude = globalExcludes ++ cfg.exclude;
       timerConfig = {
         OnCalendar = "daily";
         Persistent = true;
       };
-      pruneOpts = ["--keep-daily 7" "--keep-weekly 4" "--keep-monthly 6"];
+      # The server is append-only; pruning runs on the server.
       checkOpts = ["--with-cache"];
     };
   };

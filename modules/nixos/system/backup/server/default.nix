@@ -5,7 +5,7 @@
   namespace,
   ...
 }: let
-  inherit (lib) mkIf mkOption mkEnableOption types;
+  inherit (lib) mkIf mkMerge mkOption mkEnableOption types genAttrs listToAttrs nameValuePair;
   cfg = config.${namespace}.system.backup.server;
 in {
   options.${namespace}.system.backup.server = {
@@ -18,42 +18,65 @@ in {
       type = types.port;
       default = 8069;
     };
+    hosts = mkOption {
+      type = types.listOf types.str;
+      default = ["loki" "thor" "fenrir"];
+      description = "Hosts with a private repository at <dataDir>/<host>, pruned server-side.";
+    };
+    pruneOpts = mkOption {
+      type = types.listOf types.str;
+      default = ["--keep-daily 7" "--keep-weekly 4" "--keep-monthly 6"];
+    };
   };
   config = mkIf cfg.enable {
-    age.secrets.restic.file = "${inputs.self}/secrets/restic.age";
+    age.secrets =
+      {
+        restic-htpasswd = {
+          file = "${inputs.self}/secrets/restic-htpasswd.age";
+          owner = "restic";
+        };
+      }
+      # Repository passwords for server-side pruning.
+      // genAttrs (map (h: "restic-${h}") cfg.hosts) (name: {
+        file = "${inputs.self}/secrets/${name}.age";
+        owner = "restic";
+      });
+
     services.restic.server = {
       enable = true;
       inherit (cfg) dataDir;
       listenAddress = "0.0.0.0:${toString cfg.port}";
-      htpasswd-file = "/run/restic/htpasswd";
+      htpasswd-file = config.age.secrets.restic-htpasswd.path;
       privateRepos = true;
+      # Clients can't delete snapshots; pruning runs locally below.
+      appendOnly = true;
     };
 
-    systemd.services.restic-htpasswd-setup = {
-      description = "Setup Restic htpasswd file";
-      after = ["agenix.service"];
-      before = ["restic-rest-server.service"];
-      wantedBy = ["restic-rest-server.service"];
-      serviceConfig = {
-        Type = "oneshot";
-        User = "root";
-      };
-      script = let
-        htpasswdPath = "${config.age.secrets.restic.path}";
-      in ''
-        mkdir -p /run/restic
-        grep '^HTPASSWD_ENTRY=' '${htpasswdPath}' | cut -d= -f2- > /run/restic/htpasswd
-        chmod 400 /run/restic/htpasswd
-        chown restic:restic /run/restic/htpasswd
-      '';
-    };
+    # Weekly local prune per host, as restic so repo files keep their owner.
+    services.restic.backups = listToAttrs (map (h:
+      nameValuePair "prune-${h}" {
+        user = "restic";
+        repository = "${cfg.dataDir}/${h}";
+        environmentFile = config.age.secrets."restic-${h}".path;
+        inherit (cfg) pruneOpts;
+        timerConfig = {
+          OnCalendar = "Sun 04:00";
+          Persistent = true;
+        };
+      })
+    cfg.hosts);
 
-    systemd.services.restic-rest-server = {
-      requires = ["restic-htpasswd-setup.service"];
-      after = ["restic-htpasswd-setup.service"];
-      # Don't fill the root filesystem if the backup disk is missing.
-      unitConfig.RequiresMountsFor = [cfg.dataDir];
-    };
+    systemd.services = mkMerge [
+      {
+        # Don't fill the root filesystem if the backup disk is missing.
+        restic-rest-server.unitConfig.RequiresMountsFor = [cfg.dataDir];
+      }
+      (listToAttrs (map (h:
+        nameValuePair "restic-backups-prune-${h}" {
+          unitConfig.RequiresMountsFor = [cfg.dataDir];
+        })
+      cfg.hosts))
+    ];
 
     systemd.tmpfiles.rules = ["d ${cfg.dataDir} 0700 restic restic -"];
 
