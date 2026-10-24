@@ -74,6 +74,9 @@ in {
     services = {
       cellerd = {
         enable = true;
+        # Same derivation as the client CI pushes; the overlay default would
+        # rebuild it against this system's pkgs.
+        package = inputs.celler.packages.${pkgs.stdenv.hostPlatform.system}.celler;
         environmentFile = config.age.secrets.celler.path;
 
         settings = {

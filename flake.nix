@@ -10,10 +10,9 @@
     noctalia.url = "github:noctalia-dev/noctalia-shell";
     millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
 
-    celler = {
-      url = "github:celler-cache/celler";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # No releases upstream. Pinned with its own nixpkgs so `flake update`
+    # doesn't change the derivation and force a rebuild; bump the rev manually.
+    celler.url = "github:celler-cache/celler/2d5be60ca34a290a1a6c5ce34b3843db67d12f70";
 
     agenix = {
       url = "github:ryantm/agenix";
