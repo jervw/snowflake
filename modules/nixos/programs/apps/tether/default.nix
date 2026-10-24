@@ -20,9 +20,10 @@ in {
   };
 
   config = mkIf cfg.enable {
-    services.avahi.publish = {
-      enable = true;
-      userServices = true;
+    services.avahi.settings.publish = {
+      disable-publishing = false;
+      disable-user-service-publishing = false;
+      publish-addresses = true;
     };
 
     programs.tether = {
