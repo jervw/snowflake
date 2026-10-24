@@ -24,8 +24,7 @@ in {
     services = {
       adguardhome = {
         enable = true;
-        host = "127.0.0.1";
-        inherit (cfg) port;
+        settings.http.address = "127.0.0.1:${toString cfg.port}";
       };
 
       caddy.virtualHosts."${cfg.host}".extraConfig = ''
