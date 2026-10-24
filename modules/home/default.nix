@@ -1,8 +1,4 @@
-{
-  lib,
-  osConfig ? {},
-  ...
-}: {
+{lib, ...}: {
   programs.man.generateCaches = lib.mkForce false;
-  home.stateVersion = lib.mkDefault (osConfig.system.stateVersion or "24.05");
+  home.stateVersion = lib.mkDefault "26.11";
 }
