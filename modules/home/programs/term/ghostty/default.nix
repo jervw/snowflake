@@ -20,6 +20,12 @@ in {
   };
 
   config = mkIf cfg.enable {
+    # Lets GIO (Thunar, xdg-open) launch Terminal=true apps like Helix
+    xdg.terminal-exec = {
+      enable = true;
+      settings.default = ["com.mitchellh.ghostty.desktop"];
+    };
+
     programs.ghostty = {
       enable = true;
       systemd.enable = true;
