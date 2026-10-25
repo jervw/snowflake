@@ -15,7 +15,8 @@
   fileManager = ["thunar"];
   imageViewer = ["imv"];
   mediaPlayer = ["mpv"];
-  docView = ["zathura"];
+  docView = ["org.pwmt.zathura-pdf-mupdf"];
+  officeSuite = ["onlyoffice-desktopeditors"];
   torrentClient = ["org.qbittorrent.qBittorrent"];
   archiveManager = ["org.gnome.FileRoller"];
 
@@ -27,20 +28,86 @@
       })
       list);
 
-  image = xdgAssociations "image" imageViewer ["png" "svg" "jpeg" "gif" ".svg"];
-  video = xdgAssociations "video" mediaPlayer ["mp4" "avi" "mkv" "webm" "mov"];
-  audio = xdgAssociations "audio" mediaPlayer ["mp3" "flac" "wav" "aac"];
-  document = xdgAssociations "documents" docView ["pdf"];
+  image = xdgAssociations "image" imageViewer [
+    "png"
+    "apng"
+    "jpeg"
+    "gif"
+    "webp"
+    "avif"
+    "bmp"
+    "tiff"
+    "svg+xml"
+  ];
+  video = xdgAssociations "video" mediaPlayer [
+    "mp4"
+    "vnd.avi"
+    "x-msvideo"
+    "matroska"
+    "x-matroska"
+    "webm"
+    "quicktime"
+    "ogg"
+    "mpeg"
+    "x-flv"
+  ];
+  audio = xdgAssociations "audio" mediaPlayer [
+    "mpeg"
+    "mp4"
+    "flac"
+    "vnd.wave"
+    "x-wav"
+    "aac"
+    "ogg"
+    "x-opus+ogg"
+    "x-vorbis+ogg"
+  ];
+  document = xdgAssociations "application" docView [
+    "pdf"
+    "epub+zip"
+  ];
+  office = xdgAssociations "application" officeSuite [
+    "msword"
+    "vnd.ms-excel"
+    "vnd.ms-powerpoint"
+    "vnd.openxmlformats-officedocument.wordprocessingml.document"
+    "vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    "vnd.openxmlformats-officedocument.presentationml.presentation"
+    "vnd.oasis.opendocument.text"
+    "vnd.oasis.opendocument.spreadsheet"
+    "vnd.oasis.opendocument.presentation"
+  ];
+  text =
+    (xdgAssociations "text" editor [
+      "plain"
+      "markdown"
+      "csv"
+      "x-log"
+      "x-nix"
+      "x-python"
+      "x-shellscript"
+    ])
+    // (xdgAssociations "application" editor [
+      "json"
+      "toml"
+      "yaml"
+      "x-shellscript"
+    ]);
   archive = xdgAssociations "application" archiveManager [
     "zip"
     "x-tar"
     "x-compressed-tar"
+    "x-bzip2-compressed-tar"
+    "x-xz-compressed-tar"
+    "x-zstd-compressed-tar"
     "gzip"
     "x-bzip"
     "x-bzip2"
-    "x-7z-compressed"
-    "x-rar"
     "x-xz"
+    "zstd"
+    "x-7z-compressed"
+    "vnd.rar"
+    "x-rar"
   ];
   browserTypes =
     (xdgAssociations "application" browser [
@@ -62,7 +129,6 @@
 
   defaultApplications = builtins.mapAttrs (_: v: (map (e: "${e}.desktop") v)) ({
       "text/html" = browser;
-      "text/plain" = editor;
       "inode/directory" = fileManager;
       "x-scheme-handler/magnet" = torrentClient;
     }
@@ -70,6 +136,8 @@
     // video
     // audio
     // document
+    // office
+    // text
     // archive
     // browserTypes);
 in {
