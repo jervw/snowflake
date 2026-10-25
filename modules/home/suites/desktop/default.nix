@@ -24,6 +24,7 @@ in {
       ffmpeg
       tomato-c
       qbittorrent-enhanced
+      onlyoffice-desktopeditors
       fontpreview
       protonmail-desktop
       zennotes-desktop
