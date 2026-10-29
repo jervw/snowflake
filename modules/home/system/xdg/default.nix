@@ -10,7 +10,7 @@
   cfg = config.${namespace}.system.xdg;
 
   # Applications
-  browser = ["brave-origin"];
+  browser = ["librewolf"];
   editor = ["Helix"];
   fileManager = ["thunar"];
   imageViewer = ["imv"];

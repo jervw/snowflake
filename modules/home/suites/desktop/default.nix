@@ -52,13 +52,12 @@ in {
           noctalia = mkDefault enabled;
         };
         apps = {
-          brave = mkDefault enabled;
           discord = mkDefault enabled;
+          librewolf = mkDefault enabled;
           mpv = mkDefault enabled;
           obs = mkDefault enabled;
           imv = mkDefault enabled;
           zathura = mkDefault enabled;
-          zen = mkDefault enabled;
         };
         term = {
           ghostty = mkDefault enabled;

@@ -37,7 +37,7 @@ in
         # Programs
         "Mod+Return" = {spawn = ["ghostty" "+new-window"];};
         "Mod+D" = {spawn = noctaliaIpc ["panel-toggle" "launcher"];};
-        "Mod+B" = {spawn = ["uwsm" "app" "--" "brave-origin"];};
+        "Mod+B" = {spawn = ["uwsm" "app" "--" "librewolf"];};
         "Mod+N" = {spawn = ["ghostty" "+new-window" "-e" "yazi"];};
         "Mod+O" = {spawn = [(lib.getExe pkgs.${namespace}.wl-ocr)];};
         "Mod+T" = {spawn = ["voxtype" "record" "toggle"];};

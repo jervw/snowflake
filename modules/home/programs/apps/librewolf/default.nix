@@ -6,22 +6,27 @@
 }: let
   inherit (lib) mkIf;
 
-  cfg = config.${namespace}.programs.apps.zen;
+  cfg = config.${namespace}.programs.apps.librewolf;
+
+  # LibreWolf uses XDG paths unless ~/.librewolf exists.
+  configPath = "${config.xdg.configHome}/librewolf/librewolf";
 in {
-  options.${namespace}.programs.apps.zen = {
-    enable = lib.mkEnableOption "Enable zen-browser";
+  options.${namespace}.programs.apps.librewolf = {
+    enable = lib.mkEnableOption "Enable LibreWolf";
   };
 
   config = mkIf cfg.enable {
-    programs.zen-browser = {
+    programs.librewolf = {
       enable = true;
+      inherit configPath;
 
-      profiles.default.presets.betterfox.enable = true;
-
+      # Deep-merged over LibreWolf's own policies.json, so only additions go here.
       policies = {
         AutofillAddressEnabled = true;
         AutofillCreditCardEnabled = false;
         OfferToSaveLogins = false;
+        DisablePocket = true;
+        DisableFirefoxAccounts = false;
 
         EnableTrackingProtection = {
           Value = true;
@@ -36,6 +41,7 @@ in {
           FeatureRecommendations = false;
           UrlbarInterventions = false;
           MoreFromMozilla = false;
+          SkipOnboarding = true;
         };
       };
     };

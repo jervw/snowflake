@@ -46,7 +46,6 @@ in {
           ++ mkDirs ".cache/" ["nix" "noctalia"]
           ++ mkDirs ".config/" [
             "BeeperTexts"
-            "BraveSoftware"
             "claude"
             "codex"
             "Equicord"
@@ -57,6 +56,7 @@ in {
             "feishin"
             "gh"
             "heroic"
+            "librewolf"
             "noctalia"
             "nushell"
             "millennium"

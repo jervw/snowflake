@@ -17,7 +17,6 @@ in {
   config = mkIf cfg.enable {
     nietos = {
       programs = {
-        addons.chromium-policies = enabled;
         apps = {
           thunar = mkDefault enabled;
           gpu-screen-recorder = mkDefault enabled;
