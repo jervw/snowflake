@@ -9,15 +9,13 @@ in {
     ./hardware.nix
   ];
 
-  # Suspend is broken on T2-Macs since Sonoma
-  services.logind.settings.Login.HandleLidSwitch = "ignore";
-
   boot.loader = {
     efi.efiSysMountPoint = "/boot";
   };
 
   nietos = {
     hardware = {
+      airpods = enabled;
       cpu.intel = enabled;
       storage.ssd = true;
     };
@@ -30,6 +28,7 @@ in {
 
     security = {
       hardening = enabled;
+      yubikey = enabled;
     };
 
     suites = {
