@@ -1,7 +1,6 @@
 {
   config,
   lib,
-  inputs,
   namespace,
   pkgs,
   ...
@@ -23,7 +22,6 @@ in {
   config = mkIf cfg.enable {
     programs.ghostty = {
       enable = true;
-      package = inputs.ghostty.packages.${pkgs.stdenv.hostPlatform.system}.default;
       systemd.enable = true;
       settings = {
         theme = "Zenbones Dark";

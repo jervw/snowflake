@@ -35,10 +35,10 @@ in
     wayland.windowManager.niri.settings.binds =
       {
         # Programs
-        "Mod+Return" = {spawn = ["ghostty" "+new-window"];};
+        "Mod+Return" = {spawn = ["foot"];};
         "Mod+D" = {spawn = noctaliaIpc ["panel-toggle" "launcher"];};
         "Mod+B" = {spawn = ["uwsm" "app" "--" "librewolf"];};
-        "Mod+N" = {spawn = ["ghostty" "+new-window" "-e" "yazi"];};
+        "Mod+N" = {spawn = ["foot" "yazi"];};
         "Mod+O" = {spawn = [(lib.getExe pkgs.${namespace}.wl-ocr)];};
         "Mod+T" = {spawn = ["voxtype" "record" "toggle"];};
         "Mod+Shift+T" = {spawn = ["voxtype-language"];};

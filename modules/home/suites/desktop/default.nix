@@ -60,7 +60,7 @@ in {
           zathura = mkDefault enabled;
         };
         term = {
-          ghostty = mkDefault enabled;
+          foot = mkDefault enabled;
         };
       };
     };
