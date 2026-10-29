@@ -134,8 +134,13 @@ in
         "XF86AudioLowerVolume" = {spawn = noctaliaIpc ["volume-down"];};
 
         # Brightness controls
-        "XF86MonBrightnessUp" = {spawn = noctaliaIpc ["brightness" "up"];};
-        "XF86MonBrightnessDown" = {spawn = noctaliaIpc ["brightness" "down"];};
+        "XF86MonBrightnessUp" = {spawn = noctaliaIpc ["brightness-up"];};
+        "XF86MonBrightnessDown" = {spawn = noctaliaIpc ["brightness-down"];};
+
+        # Keyboard backlight controls
+        "XF86KbdBrightnessUp" = {spawn = noctaliaIpc ["keyboard-backlight-up"];};
+        "XF86KbdBrightnessDown" = {spawn = noctaliaIpc ["keyboard-backlight-down"];};
+        "XF86KbdLightOnOff" = {spawn = noctaliaIpc ["keyboard-backlight-toggle"];};
       }
       // workspaces;
   }
