@@ -32,6 +32,11 @@ in {
 
         init.defaultBranch = "main";
         push.autoSetupRemote = true;
+
+        url = {
+          "git@github.com:".pushInsteadOf = "https://github.com/";
+          "git@codeberg.org:".pushInsteadOf = "https://codeberg.org/";
+        };
       };
 
       ignores = [
