@@ -44,7 +44,6 @@ in {
         tools = {
           claude-code = enabled;
           jujutsu = enabled;
-          mcp = enabled;
         };
       };
     };

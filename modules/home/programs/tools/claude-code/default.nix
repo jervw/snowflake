@@ -14,6 +14,8 @@ in {
   };
 
   config = mkIf cfg.enable {
+    ${namespace}.programs.tools.mcp.enable = true;
+
     programs.claude-code = {
       enable = true;
       enableMcpIntegration = true;

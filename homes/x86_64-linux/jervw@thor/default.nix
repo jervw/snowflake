@@ -19,6 +19,12 @@ in {
       };
     };
 
+    programs.tools = {
+      claude-code = enabled;
+      # Headless, so no ZenNotes desktop app to talk to.
+      mcp.zennotes = false;
+    };
+
     system = {
       xdg = enabled;
     };

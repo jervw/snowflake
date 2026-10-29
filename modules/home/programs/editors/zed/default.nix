@@ -14,6 +14,8 @@ in {
   };
 
   config = mkIf cfg.enable {
+    ${namespace}.programs.tools.mcp.enable = true;
+
     programs.zed-editor = {
       enable = true;
       enableMcpIntegration = true;

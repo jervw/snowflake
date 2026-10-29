@@ -16,6 +16,10 @@ in {
       syncthing = enabled;
     };
 
+    programs.tools = {
+      claude-code = enabled;
+    };
+
     system = {
       xdg = enabled;
     };
