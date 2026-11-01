@@ -16,7 +16,6 @@ in {
   config = mkIf cfg.enable {
     boot.kernelModules = ["ntsync"];
 
-    # make ntsync device accessible
     services.udev.packages = [
       (pkgs.writeTextFile {
         name = "ntsync-udev-rules";

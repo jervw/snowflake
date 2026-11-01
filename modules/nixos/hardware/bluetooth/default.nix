@@ -25,7 +25,6 @@ in {
 
       settings = {
         General = {
-          # Support both Classic Bluetooth and Bluetooth LE devices.
           ControllerMode = "dual";
         };
         Policy = {

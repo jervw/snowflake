@@ -1,4 +1,3 @@
-# Static IPs are simple. Until they aren't.
 {
   config,
   lib,

@@ -32,7 +32,6 @@ in {
         };
       };
       extraConfig = ''
-        # Fish completer
         let fish_completer = {|spans|
           ^${lib.getExe pkgs.fish} --command $"complete '--do-complete=($spans | str replace --all "'" "\\'" | str join ' ')'"
           | from tsv --flexible --noheaders --no-infer

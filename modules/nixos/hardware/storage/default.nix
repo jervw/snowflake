@@ -21,7 +21,6 @@ in {
       services.fstrim.enable = mkDefault true;
     })
 
-    # Enable ZFS support
     (mkIf cfg.zfs {
       boot = {
         supportedFilesystems = {
@@ -37,7 +36,6 @@ in {
       };
     })
 
-    # Extra storage tools
     (mkIf cfg.extra {
       environment.systemPackages = with pkgs; [
         btrfs-progs

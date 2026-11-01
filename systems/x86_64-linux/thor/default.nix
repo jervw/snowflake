@@ -7,7 +7,6 @@
 in {
   imports = [./hardware.nix];
 
-  # Exceptions
   networking.firewall.interfaces.enp4s0 = {
     allowedUDPPorts = [53];
     allowedTCPPorts = [443];

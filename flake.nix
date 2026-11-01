@@ -99,7 +99,6 @@
         nixcord.homeModules.nixcord
       ];
 
-      # Other generic outputs
       outputs-builder = channels: {
         formatter = inputs.treefmt-nix.lib.mkWrapper channels.nixpkgs {
           projectRootFile = "flake.nix";

@@ -92,7 +92,6 @@ in {
       };
     };
 
-    # Override programs to use noctalia colors
     wayland.windowManager.niri.extraConfig = lib.mkBefore ''
       include "noctalia.kdl" optional=true
     '';

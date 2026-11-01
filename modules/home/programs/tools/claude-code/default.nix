@@ -29,7 +29,6 @@ in {
         model = "sonnet";
         advisorModel = "opus";
 
-        # No Claude attribution (Co-Authored-By trailer, PR footer) in git.
         attribution = {
           commit = "";
           pr = "";

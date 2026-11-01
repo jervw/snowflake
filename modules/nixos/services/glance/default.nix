@@ -7,7 +7,6 @@
   inherit (lib) mkEnableOption mkIf mkOption;
   cfg = config.${namespace}.services.glance;
 
-  # Helper functions to reduce length
   mkBookmark = title: icon: url: {inherit title icon url;};
   mkGroup = widgets: {
     type = "group";

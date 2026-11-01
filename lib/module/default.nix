@@ -25,8 +25,6 @@ in rec {
     then ""
     else (lib.toUpper (lib.substring 0 1 s)) + (lib.substring 1 len s);
 
-  # Return an int (1/0) based on boolean value
-  # `boolToNum true` -> 1
   boolToNum = bool:
     if bool
     then 1

@@ -22,7 +22,6 @@ in {
       ];
     };
 
-    # Timezone
     time.timeZone = "Europe/Helsinki";
   };
 }

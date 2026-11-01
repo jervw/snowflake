@@ -115,7 +115,6 @@ in {
           }
         ];
 
-        # LSP's
         language-server = {
           harper = {
             command = "${pkgs.harper}/bin/harper-ls";
