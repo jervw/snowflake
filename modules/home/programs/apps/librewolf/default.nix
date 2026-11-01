@@ -8,7 +8,6 @@
 
   cfg = config.${namespace}.programs.apps.librewolf;
 
-  # LibreWolf uses XDG paths unless ~/.librewolf exists.
   configPath = "${config.xdg.configHome}/librewolf/librewolf";
 in {
   options.${namespace}.programs.apps.librewolf = {
@@ -20,7 +19,13 @@ in {
       enable = true;
       inherit configPath;
 
-      # Deep-merged over LibreWolf's own policies.json, so only additions go here.
+      settings = {
+        "privacy.resistFingerprinting" = true;
+        "privacy.fingerprintingProtection.overrides" = "+AllTargets,-CSSPrefersColorScheme";
+
+        "identity.fxaccounts.enabled" = true;
+      };
+
       policies = {
         AutofillAddressEnabled = true;
         AutofillCreditCardEnabled = false;
