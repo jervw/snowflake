@@ -30,6 +30,13 @@ in
             repeat-delay = 200;
           };
 
+          touchpad = {
+            natural-scroll = {};
+            tap = {};
+            dwt = {};
+            click-method = "clickfinger";
+          };
+
           focus-follows-mouse = {};
           warp-mouse-to-focus = {};
         };
