@@ -27,9 +27,10 @@
       env.GITHUB_PERSONAL_ACCESS_TOKEN.file = config.age.secrets.mcp-github.path;
     };
     # zennotes-desktop doesn't ship an MCP wrapper, so run mcp.js with
-    # Electron acting as plain Node.
+    # Electron acting as plain Node. mcp.js only needs Node APIs, so the
+    # unversioned electron works regardless of which version zennotes pins.
     zennotes = {
-      command = "${pkgs.electron_42.unwrapped}/libexec/electron/electron";
+      command = "${pkgs.electron}/libexec/electron/electron";
       args = ["${pkgs.zennotes-desktop}/lib/node_modules/zennotes-monorepo/apps/desktop/out/main/mcp.js"];
       env.ELECTRON_RUN_AS_NODE = "1";
     };
