@@ -15,30 +15,31 @@ in {
   };
 
   config = mkIf cfg.enable {
-    home.packages = with pkgs; [
-      xdg-utils
-      anki-bin
-      cider-2
-      beeper
-      feishin
-      ffmpeg
-      tomato-c
-      qbittorrent-enhanced
-      onlyoffice-desktopeditors
-      fontpreview
-      protonmail-desktop
-      zennotes-desktop
-      # rustdesk
-      nix-search-tv
-      proton-vpn-cli
+    home.packages =
+      [pkgs.${namespace}.cider-pixie]
+      ++ (with pkgs; [
+        xdg-utils
+        anki-bin
+        feishin
+        ffmpeg
+        tomato-c
+        qbittorrent-enhanced
+        # TODO: re-enable once onlyoffice-desktopeditors no longer depends on the broken gtk2
+        # onlyoffice-desktopeditors
+        fontpreview
+        protonmail-desktop
+        zennotes-desktop
+        # rustdesk
+        nix-search-tv
+        proton-vpn-cli
 
-      # Wayland stuff
-      grimblast
-      wl-clipboard
-      wtype
-      wlr-randr
-      xclip
-    ];
+        # Wayland stuff
+        grimblast
+        wl-clipboard
+        wtype
+        wlr-randr
+        xclip
+      ]);
 
     home.sessionVariables = {
       QT_WAYLAND_DISABLE_WINDOWDECORATION = 1;

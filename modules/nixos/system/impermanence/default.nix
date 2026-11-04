@@ -45,7 +45,7 @@ in {
           ]
           ++ mkDirs ".cache/" ["nix" "noctalia"]
           ++ mkDirs ".config/" [
-            "BeeperTexts"
+            "cider"
             "claude"
             "codex"
             "Equicord"
@@ -65,7 +65,6 @@ in {
             "obs-studio"
             "qt6ct"
             "rclone"
-            "sh.cider.genten"
             "vesktop"
             "zed"
             "ZenNotes"
