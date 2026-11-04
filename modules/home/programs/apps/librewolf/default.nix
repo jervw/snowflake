@@ -20,9 +20,6 @@ in {
       inherit configPath;
 
       settings = {
-        "privacy.resistFingerprinting" = true;
-        "privacy.fingerprintingProtection.overrides" = "+AllTargets,-CSSPrefersColorScheme";
-
         "identity.fxaccounts.enabled" = true;
       };
 
@@ -32,14 +29,6 @@ in {
         OfferToSaveLogins = false;
         DisablePocket = true;
         DisableFirefoxAccounts = false;
-
-        EnableTrackingProtection = {
-          Value = true;
-          Locked = true;
-          Cryptomining = true;
-          Fingerprinting = true;
-          EmailTracking = true;
-        };
 
         UserMessaging = {
           ExtensionRecommendations = false;
