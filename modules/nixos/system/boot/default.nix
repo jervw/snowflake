@@ -50,7 +50,6 @@ in {
           "vt.global_cursor_default=0"
         ];
 
-      initrd.verbose = lib.mkDefault (!cfg.silentBoot);
       consoleLogLevel = lib.mkIf cfg.silentBoot (lib.mkDefault 0);
 
       loader = {
