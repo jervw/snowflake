@@ -21,10 +21,6 @@ in {
       osu-mime
     ];
 
-    programs = {
-      gpu-screen-recorder = enabled;
-    };
-
     nietos = {
       programs = {
         addons = {
