@@ -47,7 +47,6 @@ in {
           ++ mkDirs ".config/" [
             "cider"
             "claude"
-            "codex"
             "Equicord"
             "faugus-launcher"
             "dconf"

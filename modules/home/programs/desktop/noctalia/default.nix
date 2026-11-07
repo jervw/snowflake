@@ -73,7 +73,7 @@ in {
           wallpaper_scheme = "m3-content";
 
           templates = {
-            builtin_ids = ["btop" "foot" "gtk3" "gtk4" "ghostty" "helix" "niri" "qt"];
+            builtin_ids = ["btop" "foot" "gtk3" "gtk4" "helix" "niri" "qt"];
             community_ids = ["zathura" "zed" "discord" "papirus-icons" "pywalfox" "yazi"];
           };
         };
@@ -97,7 +97,6 @@ in {
     '';
     programs = {
       helix.settings.theme = mkForce "noctalia";
-      ghostty.settings.theme = mkForce "noctalia";
       # foot.ini is a read-only symlink, so include the theme here instead of
       # letting the template's apply hook patch it in.
       foot.settings.main.include = "${config.xdg.configHome}/foot/themes/noctalia";
