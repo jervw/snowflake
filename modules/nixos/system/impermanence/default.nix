@@ -63,6 +63,7 @@ in {
             "rustdesk"
             "tether"
             "obs-studio"
+            "Proton Mail"
             "qt6ct"
             "rclone"
             "vesktop"
