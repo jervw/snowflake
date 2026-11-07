@@ -24,12 +24,12 @@ in {
         ffmpeg
         tomato-c
         qbittorrent-enhanced
-        # TODO: re-enable once onlyoffice-desktopeditors no longer depends on the broken gtk2
-        # onlyoffice-desktopeditors
+        onlyoffice-desktopeditors
         fontpreview
         protonmail-desktop
         zennotes-desktop
-        # rustdesk
+        # The plain rustdesk (Sciter UI) is unfree, so Hydra doesn't build it.
+        rustdesk-flutter
         nix-search-tv
         proton-vpn-cli
 
