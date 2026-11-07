@@ -13,6 +13,12 @@ in {
   };
 
   config = mkIf cfg.enable {
+    # Lets GIO (Thunar, xdg-open) launch Terminal=true apps like Helix
+    xdg.terminal-exec = {
+      enable = true;
+      settings.default = ["foot.desktop"];
+    };
+
     programs.foot = {
       enable = true;
       settings = {
