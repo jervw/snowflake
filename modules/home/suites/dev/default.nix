@@ -41,10 +41,7 @@ in {
         editors = {
           zed = enabled;
         };
-        tools = {
-          claude-code = enabled;
-          jujutsu = enabled;
-        };
+        tools.claude-code = enabled;
       };
     };
   };

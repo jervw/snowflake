@@ -40,7 +40,6 @@ in {
           fastfetch = mkDefault enabled;
           fzf = mkDefault enabled;
           gh = mkDefault enabled;
-          jujutsu = mkDefault enabled;
           lazygit = mkDefault enabled;
           nix-your-shell = mkDefault enabled;
           yazi = mkDefault enabled;
