@@ -24,7 +24,6 @@ in {
           [
             "wheel"
             "systemd-journal"
-            "audio"
             "video"
             "input"
             "plugdev"
