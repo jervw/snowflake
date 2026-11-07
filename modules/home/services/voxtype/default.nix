@@ -53,5 +53,8 @@ in {
         };
       };
     };
+
+    # Don't start at login: the model occupies VRAM while the daemon runs.
+    systemd.user.services.voxtype.Install.WantedBy = lib.mkForce [];
   };
 }
