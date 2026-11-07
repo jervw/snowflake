@@ -45,17 +45,14 @@ in {
         # Fedora
         "appletalk"
         "atm"
-        "ax25"
         "batman-adv"
         "floppy"
         "l2tp_eth"
         "l2tp_ip"
         "l2tp_netlink"
         "l2tp_ppp"
-        "netrom"
         "nfc"
         "rds"
-        "rose"
         "sctp"
       ];
 
