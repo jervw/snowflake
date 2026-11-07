@@ -22,12 +22,7 @@ in {
     services.greetd = {
       enable = true;
       useTextGreeter = true;
-      settings = {
-        default_session = {
-          user = "greeter";
-          command = "${pkgs.tuigreet}/bin/tuigreet --time -r --remember-session --cmd ${lib.escapeShellArg (builtins.head cfg.sessions)}";
-        };
-      };
+      settings.default_session.command = "${pkgs.tuigreet}/bin/tuigreet --time -r --remember-session --cmd ${lib.escapeShellArg (builtins.head cfg.sessions)}";
     };
 
     # Unlock the keyring with the login password

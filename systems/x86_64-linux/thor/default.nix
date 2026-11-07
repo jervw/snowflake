@@ -16,7 +16,6 @@ in {
     hardware = {
       cpu.intel = enabled;
       storage = {
-        ssd = true;
         zfs = true;
         extra = true;
       };
@@ -69,10 +68,7 @@ in {
           "/mnt/storage/Immich-Library/thumbs"
         ];
       };
-      boot = {
-        enable = true;
-        loader = "systemd-boot";
-      };
+      boot = enabled;
     };
   };
 

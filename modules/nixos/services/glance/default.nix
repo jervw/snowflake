@@ -44,7 +44,6 @@ in {
         enable = true;
         settings = {
           server = {
-            host = "127.0.0.1";
             inherit (cfg) port;
             proxied = true;
           };

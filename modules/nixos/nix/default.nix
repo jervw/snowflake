@@ -22,7 +22,6 @@ in {
     ];
 
     programs = {
-      command-not-found.enable = false;
       nh = {
         enable = true;
         flake = "/home/${user.name}/.dots";
@@ -39,14 +38,6 @@ in {
       info.enable = false;
 
       man.cache.enable = mkForce false;
-
-      nixos = {
-        enable = true;
-
-        options = {
-          splitBuild = true;
-        };
-      };
     };
 
     nix = {

@@ -1,5 +1,4 @@
 {
-  config,
   lib,
   namespace,
   ...
@@ -26,10 +25,7 @@ in {
       };
     };
 
-    user = {
-      enable = true;
-      inherit (config.snowfallorg.user) name;
-    };
+    user = enabled;
 
     services = {
       ollama = enabled;
@@ -45,10 +41,7 @@ in {
       core = enabled;
       desktop = enabled;
       dev = enabled;
-      gaming = {
-        enable = true;
-        enableEmulators = true;
-      };
+      gaming = enabled;
     };
   };
 

@@ -17,7 +17,6 @@ in {
       discord = {
         equicord = enabled;
         krisp = enabled;
-        openASAR = enabled;
       };
       config.plugins = {
         altKrispSwitch = enabled;

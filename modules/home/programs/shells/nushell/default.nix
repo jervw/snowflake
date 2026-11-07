@@ -14,7 +14,6 @@ in {
   };
 
   config = mkIf cfg.enable {
-    home.shell.enableNushellIntegration = true;
     programs.nushell = {
       enable = true;
       settings = {

@@ -52,7 +52,6 @@ in {
       services = {
         beszel.hub = {
           enable = true;
-          host = "127.0.0.1";
           inherit (cfg.hub) port;
           environment = {
             APP_URL = "https://${cfg.hub.host}";
@@ -96,7 +95,6 @@ in {
               cfg.agent.extraFilesystems);
           };
         environmentFile = config.age.secrets.beszel-agent.path;
-        openFirewall = false;
         smartmon.enable = true;
         extraPath = lib.optionals config.hardware.nvidia.enabled [
           config.hardware.nvidia.package

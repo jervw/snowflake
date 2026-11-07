@@ -14,7 +14,6 @@ in {
     security.sudo.enable = false;
     security.sudo-rs = {
       enable = true;
-      wheelNeedsPassword = true;
       execWheelOnly = true;
       extraConfig = ''
         # Hardening

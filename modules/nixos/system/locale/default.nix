@@ -14,12 +14,7 @@ in {
   };
 
   config = mkIf cfg.enable {
-    environment.variables = {
-      LOCALE_ARCHIVE = "/run/current-system/sw/lib/locale/locale-archive";
-    };
-
     i18n = {
-      defaultLocale = "en_US.UTF-8";
       inputMethod = {
         enable = true;
         type = "fcitx5";
@@ -51,10 +46,6 @@ in {
         ];
       in
         lib.genAttrs localeCategories (_: config.i18n.defaultLocale);
-      supportedLocales = [
-        "C.UTF-8/UTF-8"
-        "en_US.UTF-8/UTF-8"
-      ];
     };
   };
 }

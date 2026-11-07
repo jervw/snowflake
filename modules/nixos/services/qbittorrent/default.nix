@@ -59,7 +59,6 @@ in {
 
       containers = {
         gluetun = {
-          autoStart = true;
           rootlessConfig.uid = containerUid;
 
           unitConfig.Upholds = [containers.qbittorrent.ref];
@@ -100,7 +99,6 @@ in {
         };
 
         qbittorrent = {
-          autoStart = true;
           rootlessConfig.uid = containerUid;
 
           unitConfig = {

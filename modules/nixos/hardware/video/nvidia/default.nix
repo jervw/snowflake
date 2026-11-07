@@ -46,16 +46,8 @@ in {
     hardware = {
       nvidia = {
         package = config.boot.kernelPackages.nvidiaPackages.latest;
-        modesetting.enable = mkDefault true;
-
-        powerManagement = {
-          enable = mkDefault true;
-          finegrained = mkDefault false;
-        };
-
+        powerManagement.enable = mkDefault true;
         open = mkDefault true;
-        nvidiaSettings = true;
-        nvidiaPersistenced = false;
       };
 
       graphics = {

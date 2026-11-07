@@ -39,10 +39,6 @@ in {
       environmentFile = config.age.secrets."restic-${host}".path;
       inherit (cfg) paths;
       exclude = globalExcludes ++ cfg.exclude;
-      timerConfig = {
-        OnCalendar = "daily";
-        Persistent = true;
-      };
       # The server is append-only; pruning runs on the server.
       checkOpts = ["--with-cache"];
     };

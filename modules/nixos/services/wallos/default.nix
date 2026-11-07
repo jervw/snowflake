@@ -36,7 +36,6 @@ in {
       };
 
       containers.wallos = {
-        autoStart = true;
         rootlessConfig.uid = config.users.users.containers.uid;
 
         serviceConfig = {

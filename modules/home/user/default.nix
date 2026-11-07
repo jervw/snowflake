@@ -31,9 +31,6 @@ in {
         flake = "nix flake";
         ":q" = "exit";
       };
-
-      username = cfg.name;
-      homeDirectory = "/home/${cfg.name}";
     };
     programs.home-manager = enabled;
   };

@@ -11,16 +11,11 @@
   cfg = config.${namespace}.hardware.storage;
 in {
   options.${namespace}.hardware.storage = {
-    ssd = mkBoolOpt false "Whether or not to enable support for SSD storage devices.";
     zfs = mkBoolOpt false "Whether or not to enable support for ZFS filesystem.";
     extra = mkBoolOpt false "Whether or not to enable support for extra filesystems.";
   };
 
   config = mkMerge [
-    (mkIf cfg.ssd {
-      services.fstrim.enable = mkDefault true;
-    })
-
     (mkIf cfg.zfs {
       boot = {
         supportedFilesystems = {

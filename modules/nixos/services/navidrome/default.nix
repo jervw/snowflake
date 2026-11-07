@@ -26,7 +26,6 @@ in {
         settings = {
           MusicFolder = "/mnt/storage/Media/Music";
           BaseUrl = "https://" + cfg.host;
-          Address = "127.0.0.1";
           Port = cfg.port;
         };
       };

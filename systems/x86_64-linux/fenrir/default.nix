@@ -9,15 +9,10 @@ in {
     ./hardware.nix
   ];
 
-  boot.loader = {
-    efi.efiSysMountPoint = "/boot";
-  };
-
   nietos = {
     hardware = {
       airpods = enabled;
       cpu.intel = enabled;
-      storage.ssd = true;
     };
     networking = {
       nfs = enabled;
@@ -46,7 +41,6 @@ in {
       };
       boot = {
         enable = true;
-        loader = "systemd-boot";
         plymouth = true;
         silentBoot = true;
       };

@@ -41,10 +41,6 @@ in {
       };
     };
 
-    dconf = {
-      enable = true;
-    };
-
     ## QT
     qt = {
       enable = true;

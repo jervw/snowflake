@@ -21,16 +21,9 @@ in {
 
     programs.yubikey-touch-detector.enable = true;
 
-    security.pam = {
-      services = {
-        sudo.u2fAuth = true;
-        sudo-rs.u2fAuth = true;
-      };
-      u2f = {
-        enable = true;
-        control = "sufficient";
-        settings.cue = true;
-      };
+    security.pam.u2f = {
+      enable = true;
+      settings.cue = true;
     };
   };
 }

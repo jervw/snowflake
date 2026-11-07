@@ -21,7 +21,6 @@ in {
 
     programs.yazi = {
       enable = true;
-      shellWrapperName = "y";
       settings = {
         manager = {
           layout = [1 4 3];

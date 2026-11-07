@@ -24,10 +24,7 @@ in {
         };
         i2c = enabled;
       };
-      storage = {
-        extra = true;
-        ssd = true;
-      };
+      storage.extra = true;
       qmk = enabled;
     };
     networking = {

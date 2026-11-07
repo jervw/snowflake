@@ -28,7 +28,6 @@ in {
       volumes."discord-free-game-notifier" = {};
 
       containers.discord-free-game-notifier = {
-        autoStart = true;
         rootlessConfig.uid = config.users.users.containers.uid;
 
         serviceConfig = {

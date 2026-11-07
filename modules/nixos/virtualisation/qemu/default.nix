@@ -25,10 +25,7 @@ in {
     virtualisation = {
       libvirtd = {
         enable = true;
-        qemu = {
-          swtpm = enabled;
-          runAsRoot = true;
-        };
+        qemu.swtpm = enabled;
         onBoot = "ignore";
         onShutdown = "shutdown";
         extraConfig = ''

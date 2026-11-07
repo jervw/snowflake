@@ -93,7 +93,6 @@ in {
 
       containers = {
         slskd-gluetun = {
-          autoStart = true;
           rootlessConfig.uid = containerUid;
 
           unitConfig.Upholds = [containers.slskd.ref];
@@ -136,7 +135,6 @@ in {
         };
 
         slskd = {
-          autoStart = true;
           rootlessConfig.uid = containerUid;
 
           unitConfig = {

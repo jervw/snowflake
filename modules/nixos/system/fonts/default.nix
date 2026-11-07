@@ -15,6 +15,7 @@ in {
 
   config = mkIf cfg.enable {
     fonts = {
+      # Not redundant: services.graphical-desktop sets this to mkDefault true.
       enableDefaultPackages = false;
       packages = with pkgs; [
         nerd-fonts.jetbrains-mono

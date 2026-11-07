@@ -1,5 +1,4 @@
 {
-  config,
   lib,
   namespace,
   ...
@@ -7,10 +6,7 @@
   inherit (lib.${namespace}) enabled;
 in {
   nietos = {
-    user = {
-      enable = true;
-      inherit (config.snowfallorg.user) name;
-    };
+    user = enabled;
 
     services = {
       syncthing = enabled;

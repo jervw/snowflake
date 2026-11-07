@@ -13,14 +13,11 @@ in {
   };
 
   config = mkIf cfg.enable {
-    services.timesyncd = {
-      enable = true;
-      servers = [
-        "0.pool.ntp.org"
-        "1.pool.ntp.org"
-        "2.pool.ntp.org"
-      ];
-    };
+    services.timesyncd.servers = [
+      "0.pool.ntp.org"
+      "1.pool.ntp.org"
+      "2.pool.ntp.org"
+    ];
 
     time.timeZone = "Europe/Helsinki";
   };

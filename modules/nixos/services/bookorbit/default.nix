@@ -107,7 +107,6 @@ in {
 
       containers = {
         bookorbit-postgres = {
-          autoStart = true;
           rootlessConfig.uid = containerUid;
 
           serviceConfig = {
@@ -141,7 +140,6 @@ in {
         };
 
         bookorbit = {
-          autoStart = true;
           rootlessConfig.uid = containerUid;
 
           unitConfig = {

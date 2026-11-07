@@ -34,22 +34,13 @@ in {
   config = mkIf cfg.enable {
     services.syncthing = {
       enable = true;
-      # Use `ssh -L 8384:localhost:8384 <host>` for remote GUI access.
-      guiAddress = "127.0.0.1:8384";
+      # GUI listens on 127.0.0.1:8384; use `ssh -L 8384:localhost:8384 <host>` for remote access.
       guiCredentials = {
         username = "jervw";
         passwordFile = config.age.secrets.syncthing.path;
       };
-      # Devices and folders are fully declarative; GUI changes are reverted.
-      overrideDevices = true;
-      overrideFolders = true;
       settings = {
-        devices =
-          mapAttrs (_name: id: {
-            inherit id;
-            autoAcceptFolders = false;
-          })
-          deviceIds;
+        devices = mapAttrs (_name: id: {inherit id;}) deviceIds;
 
         folders = {
           docs = mkFolder "~/docs";
