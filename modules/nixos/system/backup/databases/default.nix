@@ -22,6 +22,8 @@ in {
 
     services.restic.backups."daily-${host}" = {
       paths = [dumps];
+      # A file copy of a running cluster may not be restorable; the dump is.
+      exclude = [config.services.postgresql.dataDir];
     };
   };
 }
