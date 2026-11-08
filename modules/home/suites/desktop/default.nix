@@ -27,6 +27,7 @@ in {
         onlyoffice-desktopeditors
         fontpreview
         protonmail-desktop
+        zapzap
         zennotes-desktop
         # The plain rustdesk (Sciter UI) is unfree, so Hydra doesn't build it.
         rustdesk-flutter
