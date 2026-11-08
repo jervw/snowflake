@@ -21,21 +21,23 @@ in {
 
       settings = {
         "identity.fxaccounts.enabled" = true;
+        "permissions.default.shortcuts" = 2;
       };
 
       policies = {
-        AutofillAddressEnabled = true;
-        AutofillCreditCardEnabled = false;
-        OfferToSaveLogins = false;
-        DisablePocket = true;
-        DisableFirefoxAccounts = false;
+        AutofillAddressEnabled = false;
 
-        UserMessaging = {
-          ExtensionRecommendations = false;
-          FeatureRecommendations = false;
-          UrlbarInterventions = false;
-          MoreFromMozilla = false;
-          SkipOnboarding = true;
+        SearchEngines = {
+          Add = [
+            {
+              Name = "Kagi";
+              URLTemplate = "https://kagi.com/search?q={searchTerms}";
+              SuggestURLTemplate = "https://kagi.com/api/autosuggest?q={searchTerms}";
+              IconURL = "https://kagi.com/favicon.ico";
+              Method = "GET";
+            }
+          ];
+          Default = "Kagi";
         };
       };
     };
