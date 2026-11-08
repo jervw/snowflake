@@ -67,6 +67,7 @@ in {
           "/mnt/storage/Immich-Library/encoded-video"
           "/mnt/storage/Immich-Library/thumbs"
         ];
+        sqliteDirs = ["/var/lib"];
       };
       boot = enabled;
     };
