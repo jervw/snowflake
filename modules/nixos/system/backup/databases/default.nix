@@ -14,16 +14,14 @@ in {
     services.postgresqlBackup = {
       enable = true;
       compression = "zstd";
-      # Triggered by the restic job below instead of its own timer.
+      # Started by the backup job instead of its own timer.
       startAt = [];
     };
 
+    ${namespace}.system.backup.prepareUnits = ["postgresqlBackup.service"];
+
     services.restic.backups."daily-${host}" = {
       paths = [dumps];
-      # Don't skip the file backup if the dump fails.
-      backupPrepareCommand = ''
-        systemctl start postgresqlBackup.service || echo "postgresqlBackup failed; backing up previous dump" >&2
-      '';
     };
   };
 }

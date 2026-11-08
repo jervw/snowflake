@@ -5,7 +5,7 @@
   namespace,
   ...
 }: let
-  inherit (lib) mkIf mkOption mkEnableOption types;
+  inherit (lib) concatMapStrings mkIf mkOption mkEnableOption types;
   cfg = config.${namespace}.system.backup;
   host = config.networking.hostName;
   globalExcludes = import ./excludes.nix;
@@ -28,6 +28,14 @@ in {
       description = "Patterns or paths to exclude from the backup.";
       example = ["/home/*/.cache" ".git"];
     };
+    prepareUnits = mkOption {
+      type = types.listOf types.str;
+      default = [];
+      description = ''
+        Units started before each backup, such as database dumps. A failed
+        unit is logged and the backup continues with its previous output.
+      '';
+    };
   };
   config = mkIf cfg.enable {
     age.secrets."restic-${host}".file = "${inputs.self}/secrets/restic-${host}.age";
@@ -39,6 +47,11 @@ in {
       environmentFile = config.age.secrets."restic-${host}".path;
       inherit (cfg) paths;
       exclude = globalExcludes ++ cfg.exclude;
+      # Upstream takes a single string, so modules register units in prepareUnits.
+      backupPrepareCommand = mkIf (cfg.prepareUnits != []) (concatMapStrings (unit: ''
+          systemctl start ${unit} || echo "${unit} failed; backing up its previous output" >&2
+        '')
+        cfg.prepareUnits);
       # The server is append-only; pruning runs on the server.
       checkOpts = ["--with-cache"];
     };
