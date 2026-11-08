@@ -67,6 +67,7 @@ in {
             "rclone"
             "vesktop"
             "zed"
+            "ZapZap"
             "ZenNotes"
             "zennotes"
             "uwsm"
@@ -85,6 +86,7 @@ in {
             "zed"
             "umu"
             "voxtype"
+            "ZapZap"
           ]
           ++ mkDirs ".local/state/" ["syncthing" "wireplumber" "noctalia"]
           ++ [
