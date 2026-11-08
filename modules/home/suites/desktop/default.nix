@@ -31,7 +31,6 @@ in {
         zennotes-desktop
         # The plain rustdesk (Sciter UI) is unfree, so Hydra doesn't build it.
         rustdesk-flutter
-        nix-search-tv
         proton-vpn-cli
 
         # Wayland stuff
