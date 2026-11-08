@@ -20,7 +20,7 @@ in {
 
     programs.steam = {
       enable = true;
-      package = pkgs.millennium-steam;
+      package = pkgs.steamWithMillennium;
       extest.enable = true;
       localNetworkGameTransfers.openFirewall = true;
       protontricks.enable = true;

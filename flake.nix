@@ -7,7 +7,6 @@
     quadlet-nix.url = "github:SEIAROTg/quadlet-nix";
     nix-gaming.url = "github:fufexan/nix-gaming";
     noctalia.url = "github:noctalia-dev/noctalia-shell";
-    millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
 
     # No releases upstream. Pinned with its own nixpkgs so `flake update`
     # doesn't change the derivation and force a rebuild; bump the rev manually.
@@ -75,10 +74,6 @@
       supportedSystems = [
         "x86_64-linux"
         "aarch64-linux"
-      ];
-
-      overlays = [
-        inputs.millennium.overlays.default
       ];
 
       systems.modules.nixos = with inputs; [
