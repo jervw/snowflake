@@ -43,7 +43,7 @@ in {
             "pics"
             "vids"
           ]
-          ++ mkDirs ".cache/" ["nix" "noctalia"]
+          ++ mkDirs ".cache/" ["nix" "noctalia" "rpcs3"]
           ++ mkDirs ".config/" [
             "cider"
             "claude"
@@ -65,6 +65,7 @@ in {
             "Proton Mail"
             "qt6ct"
             "rclone"
+            "rpcs3"
             "vesktop"
             "zed"
             "ZapZap"
