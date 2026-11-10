@@ -30,7 +30,8 @@ in {
         zapzap
         zennotes-desktop
         # The plain rustdesk (Sciter UI) is unfree, so Hydra doesn't build it.
-        rustdesk-flutter
+        # Disabled: fails to build (libsodium-sys can't find libsodium via pkg-config).
+        # rustdesk-flutter
         proton-vpn-cli
 
         # Wayland stuff
