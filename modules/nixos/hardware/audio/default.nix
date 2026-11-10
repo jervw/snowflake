@@ -14,6 +14,7 @@ in {
     enable = lib.mkEnableOption "audio support";
     extra-packages = mkOpt (listOf package) [
       pkgs.qjackctl
+      pkgs.pipewire.jack # provides the pw-jack wrapper
       pkgs.easyeffects
     ] "Additional packages to install.";
   };
@@ -41,7 +42,6 @@ in {
     services.pipewire = {
       enable = true;
       alsa.enable = true;
-      jack.enable = true;
       pulse.enable = true;
 
       # NOTE: Depends on nix-gaming flake
