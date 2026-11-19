@@ -31,4 +31,5 @@ in {
   "nix-access-tokens.age".publicKeys = users ++ systems;
   "dawarich-env.age".publicKeys = users ++ systems;
   "syncthing.age".publicKeys = users ++ systems;
+  "sparkyfitness-env.age".publicKeys = users ++ [thor];
 }
