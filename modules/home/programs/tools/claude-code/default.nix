@@ -25,7 +25,7 @@ in {
       inherit configDir;
       settings = {
         model = "opus";
-        advisorModel = "fable";
+        advisorModel = "opus";
         spinnerTipsEnabled = false;
 
         attribution = {
