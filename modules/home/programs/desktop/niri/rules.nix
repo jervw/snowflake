@@ -12,11 +12,10 @@
     draw-border-with-background = false;
     geometry-corner-radius = [16.0 16.0 16.0 16.0];
     clip-to-geometry = true;
-    background-effect = {
-      blur = true;
-      xray = false;
-    };
   };
+
+  # App IDs (regex) of windows that get a blurred background.
+  blurApps = [];
 
   # Screencast indicator colors
   screencastColor = {
@@ -70,7 +69,14 @@
     })
     autoFloatApps;
 
-  allWindowRules = [defaultWindowStyle] ++ conditionRules ++ floatingRules;
+  blurRules =
+    map (appId: {
+      match._props.app-id = "^(${appId})$";
+      background-effect.blur = true;
+    })
+    blurApps;
+
+  allWindowRules = [defaultWindowStyle] ++ conditionRules ++ floatingRules ++ blurRules;
 
   layerRules = [
     {
