@@ -44,6 +44,15 @@ in {
           multiplier = 3;
         };
 
+        colors-dark = {
+          alpha = 0.85;
+          blur = true;
+        };
+        colors-light = {
+          alpha = 0.85;
+          blur = true;
+        };
+
         cursor = {
           style = "beam";
           blink = "yes";
