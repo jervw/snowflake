@@ -60,7 +60,7 @@ in {
           "https://cache.soopy.moe" # Linux T2
           "https://noctalia.cachix.org"
           "https://cache.nixos-cuda.org"
-          "https://cache.jervw.dev/nix"
+          # "https://cache.jervw.dev/nix" # disabled: slow/issues
           "https://nix-gaming.cachix.org"
           "https://artcraft.cachix.org"
         ];
