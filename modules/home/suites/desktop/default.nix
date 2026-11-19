@@ -29,6 +29,7 @@ in {
         protonmail-desktop
         zapzap
         zennotes-desktop
+        nix-search-tv
         # The plain rustdesk (Sciter UI) is unfree, so Hydra doesn't build it.
         # Disabled: fails to build (libsodium-sys can't find libsodium via pkg-config).
         # rustdesk-flutter
