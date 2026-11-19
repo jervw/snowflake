@@ -49,6 +49,7 @@ in {
             "claude"
             "Equicord"
             "faugus-launcher"
+            "fluxercanary"
             "dconf"
             "discord"
             "fcitx5"

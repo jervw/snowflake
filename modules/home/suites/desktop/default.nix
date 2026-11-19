@@ -21,6 +21,7 @@ in {
         xdg-utils
         anki-bin
         feishin
+        fluxer-canary-bin
         ffmpeg
         tomato-c
         qbittorrent-enhanced
