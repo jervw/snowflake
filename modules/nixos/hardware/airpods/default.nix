@@ -27,7 +27,7 @@ in {
         audio = enabled;
         bluetooth = {
           enable = true;
-          autoConnect = true;
+          autoConnect = false;
         };
       };
       user.extraGroups = ["librepods"];
