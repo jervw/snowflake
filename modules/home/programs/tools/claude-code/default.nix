@@ -24,10 +24,9 @@ in {
       context = ../AGENTS.md;
       inherit configDir;
       settings = {
-        # Recommended advisor setup: Sonnet does the work and consults Opus.
-        # The advisor must be at least as capable as the main model.
-        model = "sonnet";
-        advisorModel = "opus";
+        model = "opus";
+        advisorModel = "fable";
+        spinnerTipsEnabled = false;
 
         attribution = {
           commit = "";
