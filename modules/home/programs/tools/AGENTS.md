@@ -14,3 +14,8 @@ authoritative source for the question.
 - **github** — Look up issues, pull requests, commits, and repository state
   through the GitHub MCP server instead of scraping github.com or guessing.
   Search for existing issues before creating new ones.
+
+## Code Comments
+
+Do not add self-explanatory comments that restate what the code already says.
+Only comment on non-obvious intent, constraints, or workarounds.
