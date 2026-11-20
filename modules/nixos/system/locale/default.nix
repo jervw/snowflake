@@ -21,7 +21,7 @@ in {
         fcitx5 = {
           waylandFrontend = true;
           addons = with pkgs; [
-            # fcitx5-mozc # build fails
+            fcitx5-mozc
             fcitx5-gtk
             fcitx5-fluent
           ];
