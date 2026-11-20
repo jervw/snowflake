@@ -29,8 +29,8 @@ in {
 
     image = mkOption {
       type = lib.types.str;
-      default = "ghcr.io/bookorbit/bookorbit:latest";
-      description = "BookOrbit container image; pin a release tag or digest for reproducible deployments";
+      default = "ghcr.io/bookorbit/bookorbit:3.9.0";
+      description = "BookOrbit container image. Keep it pinned: the database schema cannot be downgraded";
     };
 
     booksPath = mkOption {
@@ -161,7 +161,6 @@ in {
           containerConfig = {
             name = "bookorbit-app";
             inherit (cfg) image;
-            pull = "newer";
             runInit = true;
             networks = [networks.bookorbit.ref];
             networkAliases = ["app"];
