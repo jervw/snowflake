@@ -30,7 +30,7 @@ in {
     services = {
       ollama = enabled;
       syncthing = enabled;
-      # voxtype = enabled; # disabled: fails to build
+      voxtype = enabled;
     };
 
     system = {
