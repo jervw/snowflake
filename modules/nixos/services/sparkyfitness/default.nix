@@ -57,7 +57,7 @@ in {
     in {
       networks.sparkyfitness = {
         rootlessConfig.uid = containerUid;
-        networkConfig.interfaceName = "br-sparkyfitness";
+        networkConfig.interfaceName = "br-sparky";
       };
 
       volumes = {
