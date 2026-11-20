@@ -29,7 +29,6 @@ in {
       };
 
       scripts = with pkgs.mpvScripts; [
-        # mpv-cheatsheet # help
         mpris # media key control
         uosc # UI
         acompressor # FFMPEG audio compress
