@@ -40,7 +40,6 @@ in {
     suites = {
       core = enabled;
       desktop = enabled;
-      dev = enabled;
       gaming = enabled;
     };
   };

@@ -64,6 +64,11 @@ in {
           imv = mkDefault enabled;
           zathura = mkDefault enabled;
         };
+
+        tools = {
+          claude-code = enabled;
+        };
+
         term = {
           foot = mkDefault enabled;
         };
