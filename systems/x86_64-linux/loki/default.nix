@@ -16,6 +16,7 @@ in {
     hardware = {
       airpods = enabled;
       cpu.amd = enabled;
+      headsetcontrol = enabled;
       logitech-mx-master-3s = enabled;
       video = {
         nvidia = {
