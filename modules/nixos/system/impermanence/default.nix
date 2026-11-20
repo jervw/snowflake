@@ -60,7 +60,6 @@ in {
             "noctalia"
             "nushell"
             "millennium"
-            "rustdesk"
             "tether"
             "obs-studio"
             "Proton Mail"
