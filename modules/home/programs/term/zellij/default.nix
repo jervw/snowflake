@@ -6,9 +6,9 @@
 }: let
   inherit (lib) mkIf;
 
-  cfg = config.${namespace}.programs.tools.zellij;
+  cfg = config.${namespace}.programs.term.zellij;
 in {
-  options.${namespace}.programs.tools.zellij = {
+  options.${namespace}.programs.term.zellij = {
     enable = lib.mkEnableOption "Enable Zellij";
   };
 

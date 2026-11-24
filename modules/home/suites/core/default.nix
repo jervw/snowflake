@@ -47,6 +47,8 @@ in {
           eza = mkDefault enabled;
           git = mkDefault enabled;
           starship = mkDefault enabled;
+        };
+        term = {
           zellij = mkDefault enabled;
         };
       };
