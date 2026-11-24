@@ -98,6 +98,7 @@ in {
                           title = "Misc";
                           links = [
                             (mkBookmark "Dawarich" "sh:dawarich" "https://timeline.jervw.dev")
+                            (mkBookmark "SparkyFitness" "sh:sparkyfitness.png" "https://fit.jervw.dev")
                             (mkBookmark "Wallos" "sh:wallos" "https://wallos.jervw.dev")
                             (mkBookmark "qBittorrent" "sh:qbittorrent" "https://dl.jervw.dev")
                           ];
