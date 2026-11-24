@@ -17,6 +17,8 @@ in {
       discord = {
         equicord = enabled;
         krisp = enabled;
+        # nixpkgs' openasar no longer builds with the patch nixcord applies to it
+        openASAR.enable = false;
       };
       config.plugins = {
         altKrispSwitch = enabled;
