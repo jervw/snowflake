@@ -27,6 +27,7 @@ in {
       };
       storage.extra = true;
       qmk = enabled;
+      sony-inzone-h9-ii = enabled;
     };
     networking = {
       nfs = enabled;
