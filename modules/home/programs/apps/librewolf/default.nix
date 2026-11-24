@@ -15,6 +15,12 @@ in {
   };
 
   config = mkIf cfg.enable {
+    # The HM module hardcodes the legacy ~/.librewolf overrides path, but with an
+    # XDG profile LibreWolf only reads it from next to profiles.ini.
+    home.file.".librewolf/librewolf.overrides.cfg".enable = false;
+    xdg.configFile."librewolf/librewolf/librewolf.overrides.cfg".text =
+      config.home.file.".librewolf/librewolf.overrides.cfg".text;
+
     programs.librewolf = {
       enable = true;
       inherit configPath;
@@ -22,6 +28,7 @@ in {
       settings = {
         "identity.fxaccounts.enabled" = true;
         "permissions.default.shortcuts" = 2;
+        "widget.use-xdg-desktop-portal.file-picker" = 1;
       };
 
       policies = {
