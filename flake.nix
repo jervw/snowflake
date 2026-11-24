@@ -7,9 +7,9 @@
     quadlet-nix.url = "github:SEIAROTg/quadlet-nix";
     nix-gaming.url = "github:fufexan/nix-gaming";
     noctalia.url = "github:noctalia-dev/noctalia-shell";
+    # Tracks the branch CI has pushed to noctalia.cachix.org; no follows to keep cache hits.
+    luciole.url = "github:noctalia-dev/luciole/cachix";
 
-    # No releases upstream. Pinned with its own nixpkgs so `flake update`
-    # doesn't change the derivation and force a rebuild; bump the rev manually.
     celler.url = "github:celler-cache/celler/2d5be60ca34a290a1a6c5ce34b3843db67d12f70";
 
     agenix = {
