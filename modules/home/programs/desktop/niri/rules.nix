@@ -15,7 +15,9 @@
   };
 
   # App IDs (regex) of windows that get a blurred background.
-  blurApps = [];
+  blurApps = [
+    "dev\\.zellij\\.Zellij"
+  ];
 
   # Screencast indicator colors
   screencastColor = {

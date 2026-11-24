@@ -20,6 +20,14 @@ in {
         pane_frames = false;
         show_startup_tips = false;
         show_release_notes = false;
+
+        terminal = {
+          font = "JetBrainsMono Nerd Font";
+          font_size = 12;
+          opacity = 0.85;
+          blur = true;
+          padding = 4;
+        };
       };
     };
   };

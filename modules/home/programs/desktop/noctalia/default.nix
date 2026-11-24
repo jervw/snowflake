@@ -74,7 +74,7 @@ in {
 
           templates = {
             builtin_ids = ["btop" "foot" "gtk3" "gtk4" "helix" "luciole" "niri" "qt"];
-            community_ids = ["zathura" "zed" "discord" "papirus-icons" "pywalfox" "yazi"];
+            community_ids = ["zathura" "zed" "discord" "papirus-icons" "pywalfox" "yazi" "zellij"];
           };
         };
 
@@ -101,6 +101,7 @@ in {
       # letting the template's apply hook patch it in.
       foot.settings.main.include = "${config.xdg.configHome}/foot/themes/noctalia";
       zathura.extraConfig = "include noctaliarc";
+      zellij.settings.theme = "noctalia";
     };
   };
 }
