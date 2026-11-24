@@ -73,7 +73,7 @@ in {
           wallpaper_scheme = "m3-content";
 
           templates = {
-            builtin_ids = ["btop" "foot" "gtk3" "gtk4" "helix" "niri" "qt"];
+            builtin_ids = ["btop" "foot" "gtk3" "gtk4" "helix" "luciole" "niri" "qt"];
             community_ids = ["zathura" "zed" "discord" "papirus-icons" "pywalfox" "yazi"];
           };
         };

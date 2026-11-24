@@ -18,7 +18,6 @@ in {
     nietos = {
       programs = {
         apps = {
-          thunar = mkDefault enabled;
           gpu-screen-recorder = mkDefault enabled;
         };
         desktop.uwsm = mkDefault enabled;

@@ -90,6 +90,7 @@
       homes.modules = with inputs; [
         agenix.homeManagerModules.default
         noctalia.homeModules.default
+        luciole.homeModules.default
         nixcord.homeModules.nixcord
       ];
 

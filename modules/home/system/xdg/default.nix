@@ -12,7 +12,7 @@
   # Applications
   browser = ["librewolf"];
   editor = ["Helix"];
-  fileManager = ["thunar"];
+  fileManager = ["dev.noctalia.luciole"];
   imageViewer = ["imv"];
   mediaPlayer = ["mpv"];
   docView = ["org.pwmt.zathura-pdf-mupdf"];
@@ -189,7 +189,6 @@ in {
             "org.freedesktop.impl.portal.Device" = "gtk";
             "org.freedesktop.impl.portal.DynamicLauncher" = "gtk";
             "org.freedesktop.impl.portal.Email" = "gtk";
-            "org.freedesktop.impl.portal.FileChooser" = "gtk";
             "org.freedesktop.impl.portal.Lockdown" = "gtk";
             "org.freedesktop.impl.portal.Notification" = "gtk";
             "org.freedesktop.impl.portal.Print" = "gtk";

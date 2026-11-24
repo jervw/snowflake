@@ -20,6 +20,7 @@ in {
       ++ (with pkgs; [
         xdg-utils
         anki-bin
+        file-roller
         feishin
         fluxer-canary-bin
         ffmpeg
@@ -59,6 +60,7 @@ in {
           mpv = mkDefault enabled;
           obs = mkDefault enabled;
           imv = mkDefault enabled;
+          luciole = mkDefault enabled;
           zathura = mkDefault enabled;
         };
 
