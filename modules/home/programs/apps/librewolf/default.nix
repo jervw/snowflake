@@ -27,8 +27,6 @@ in {
 
       settings = {
         "identity.fxaccounts.enabled" = true;
-        "permissions.default.shortcuts" = 2;
-        "widget.use-xdg-desktop-portal.file-picker" = 1;
       };
 
       policies = {
