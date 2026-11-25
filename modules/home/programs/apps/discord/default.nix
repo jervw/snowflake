@@ -20,6 +20,7 @@ in {
         # nixpkgs' openasar no longer builds with the patch nixcord applies to it
         openASAR.enable = false;
       };
+      config.enabledThemes = ["caelestia.theme.css"];
       config.plugins = {
         altKrispSwitch = enabled;
         alwaysTrust = enabled;
