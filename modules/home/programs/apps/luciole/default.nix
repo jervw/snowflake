@@ -17,7 +17,6 @@ in {
 
     xdg.portal = {
       extraPortals = [config.programs.luciole.package];
-      # gtk is only used when the luciole backend is absent, not when it fails.
       config.common."org.freedesktop.impl.portal.FileChooser" = ["luciole" "gtk"];
     };
 
