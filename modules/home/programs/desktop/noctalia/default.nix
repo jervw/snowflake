@@ -62,6 +62,7 @@ in {
         shell = {
           avatar_path = "/home/jervw/pics/.face.jpg";
           font_family = "JetBrainsMono Nerd Font";
+          greeter_sync.auto_sync = true;
           launch_apps_custom_command = "uwsm app -- $CMD";
           niri_overview_type_to_launch_enabled = true;
           screen_time_enabled = true;

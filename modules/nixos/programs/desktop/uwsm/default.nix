@@ -6,14 +6,13 @@
 }: let
   inherit (lib) mkIf mkOption mkEnableOption types;
   cfg = config.${namespace}.programs.desktop.uwsm;
-  niri = config.programs.uwsm.waylandCompositors.niri;
 in {
   options.${namespace}.programs.desktop.uwsm = {
     enable = mkEnableOption "uwsm";
     autoStart = mkOption {
       type = types.bool;
       default = true;
-      description = "Whether to start the uwsm session from greetd";
+      description = "Whether to enable greetd for logging in to the uwsm sessions";
     };
   };
 
@@ -30,10 +29,6 @@ in {
       };
     };
 
-    ${namespace}.programs.desktop.greetd = mkIf cfg.autoStart {
-      enable = true;
-      # Same command as the generated niri-uwsm.desktop entry
-      sessions = ["uwsm start -F -- ${lib.concatStringsSep " " ([niri.binPath] ++ niri.extraArgs)}"];
-    };
+    ${namespace}.programs.desktop.greetd.enable = mkIf cfg.autoStart true;
   };
 }
