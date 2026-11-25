@@ -52,6 +52,7 @@ in {
       programs = {
         desktop = {
           niri = mkDefault enabled;
+          umbriel = mkDefault enabled;
           noctalia = mkDefault enabled;
         };
         apps = {

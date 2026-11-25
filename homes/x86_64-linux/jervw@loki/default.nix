@@ -45,4 +45,5 @@ in {
   };
 
   wayland.windowManager.niri.settings.input.mouse.accel-profile = "flat";
+  programs.umbriel.settings.input.mouse.accel_profile = "flat";
 }
