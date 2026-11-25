@@ -61,5 +61,7 @@ in {
         enable = cfg.plymouth;
       };
     };
+
+    environment.sessionVariables.UWSM_SILENT_START = mkIf cfg.silentBoot 1;
   };
 }
