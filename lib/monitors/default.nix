@@ -1,5 +1,5 @@
 {lib, ...}: let
-  inherit (lib) mapAttrsToList optionalAttrs optionalString;
+  inherit (lib) mapAttrs mapAttrsToList optionalAttrs optionalString;
 
   formatMode = mode:
     "${toString mode.width}x${toString mode.height}"
@@ -33,6 +33,31 @@
           }
       );
   };
+
+  toUmbrielOutput = monitor:
+    if !monitor.enabled
+    then {
+      enabled = false;
+    }
+    else
+      optionalAttrs (monitor.mode != null) {
+        mode = formatMode monitor.mode;
+      }
+      // optionalAttrs (monitor.position != null) {
+        position = [monitor.position.x monitor.position.y];
+      }
+      // optionalAttrs (monitor.scale != null) {
+        inherit (monitor) scale;
+      }
+      // optionalAttrs (monitor.transform != null) {
+        inherit (monitor) transform;
+      }
+      // optionalAttrs monitor.vrr {
+        vrr = "always";
+      };
 in {
-  monitors.toNiri = monitors: mapAttrsToList toNiriOutput monitors;
+  monitors = {
+    toNiri = monitors: mapAttrsToList toNiriOutput monitors;
+    toUmbriel = monitors: mapAttrs (_: toUmbrielOutput) monitors;
+  };
 }
