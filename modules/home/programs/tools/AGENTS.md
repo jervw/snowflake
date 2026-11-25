@@ -17,5 +17,18 @@ authoritative source for the question.
 
 ## Code Comments
 
-Do not add self-explanatory comments that restate what the code already says.
-Only comment on non-obvious intent, constraints, or workarounds.
+Default to writing no comments. Most changes, especially config one-liners,
+need none.
+
+Add a comment only if a competent reader would otherwise make a mistake,
+such as "removing" a workaround, "fixing" a deliberate oddity, or missing
+a hidden constraint (upstream bug, ordering requirement, pinned version).
+
+Not acceptable as comments:
+- Restating what the line does or what an option means
+- Where a value or file comes from, or why the change was made (put that
+  in the commit message or your reply)
+- Narrating the change ("Added X", "Now uses Y")
+
+Before finishing, re-read your diff and delete any comment that fails the
+test above.
