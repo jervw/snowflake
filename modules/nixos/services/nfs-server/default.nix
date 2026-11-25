@@ -39,9 +39,17 @@ in {
       exports = ''
         /mnt/storage ${concatStringsSep " " (mapAttrsToList (ip: opts: "${ip}(${concatStringsSep "," (["rw" "no_subtree_check" "sync"] ++ opts)})") cfg.clients)}
       '';
+      # Pinned so the NFSv3 side-band daemons can be firewalled.
+      statdPort = 4000;
+      lockdPort = 4001;
+      mountdPort = 4002;
     };
 
-    # NFSv4 only needs 2049; rpcbind/mountd/statd stay closed.
-    networking.firewall.interfaces.${config.services.tailscale.interfaceName}.allowedTCPPorts = [2049];
+    networking.firewall.interfaces.${config.services.tailscale.interfaceName} = let
+      ports = [111 2049 4000 4001 4002];
+    in {
+      allowedTCPPorts = ports;
+      allowedUDPPorts = ports;
+    };
   };
 }
