@@ -20,7 +20,10 @@ in {
         apps = {
           gpu-screen-recorder = mkDefault enabled;
         };
-        desktop.uwsm = mkDefault enabled;
+        desktop = {
+          uwsm = mkDefault enabled;
+          umbriel = mkDefault enabled;
+        };
       };
       hardware = {
         audio = mkDefault enabled;
