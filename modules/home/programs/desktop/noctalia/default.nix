@@ -73,7 +73,7 @@ in {
           wallpaper_scheme = "m3-content";
 
           templates = {
-            builtin_ids = ["btop" "foot" "gtk3" "gtk4" "helix" "luciole" "niri" "qt"];
+            builtin_ids = ["btop" "foot" "gtk3" "gtk4" "helix" "luciole" "niri" "qt" "umbriel"];
             community_ids = ["zathura" "zed" "discord" "papirus-icons" "pywalfox" "yazi" "zellij"];
           };
         };
@@ -95,6 +95,8 @@ in {
     wayland.windowManager.niri.extraConfig = lib.mkBefore ''
       include "noctalia.kdl" optional=true
     '';
+    # config.toml is a read-only store symlink, so Noctalia cannot add this include itself
+    programs.umbriel.settings.include.optional.files = ["${config.xdg.configHome}/umbriel/noctalia.toml"];
     programs = {
       helix.settings.theme = mkForce "noctalia";
       # foot.ini is a read-only symlink, so include the theme here instead of
