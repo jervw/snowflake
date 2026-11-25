@@ -1,8 +1,7 @@
 {
   inputs = {
     helix.url = "github:jervw/helix";
-    # nixos-hardware.url = "github:NixOS/nixos-hardware";
-    nixos-hardware.url = "github:soopyc/nixos-hardware/apple-t2-updates"; # TODO: Remove after #1934 merged
+    nixos-hardware.url = "github:NixOS/nixos-hardware";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     quadlet-nix.url = "github:SEIAROTg/quadlet-nix";
     nix-gaming.url = "github:fufexan/nix-gaming";
