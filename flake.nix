@@ -41,6 +41,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    umbriel = {
+      url = "github:noctalia-dev/umbriel";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     tether = {
       url = "github:zackb/tether";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -84,6 +89,7 @@
         tether.nixosModules.default
         nix-gaming.nixosModules.pipewireLowLatency
         nix-gaming.nixosModules.platformOptimizations
+        umbriel.nixosModules.default
       ];
 
       homes.modules = with inputs; [
@@ -91,6 +97,7 @@
         noctalia.homeModules.default
         luciole.homeModules.default
         nixcord.homeModules.nixcord
+        umbriel.homeModules.default
       ];
 
       outputs-builder = channels: {
